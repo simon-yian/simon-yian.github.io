@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/H%20.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"simon-yian.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于SSM框架的电⼦书城项⽬开发笔记">
+<meta property="og:url" content="https://simon-yian.github.io/2022/04/23/SSMknowledge/index.html">
+<meta property="og:site_name" content="simon·yian&#39;Blog">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/10/25/lQXn9eE8fIvHCYp.jpg">
+<meta property="article:published_time" content="2022-04-23T13:29:18.000Z">
+<meta property="article:modified_time" content="2022-04-23T13:53:50.000Z">
+<meta property="article:author" content="simon·yi an">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/10/25/lQXn9eE8fIvHCYp.jpg">
+
+
+<link rel="canonical" href="https://simon-yian.github.io/2022/04/23/SSMknowledge/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://simon-yian.github.io/2022/04/23/SSMknowledge/","path":"2022/04/23/SSMknowledge/","title":"基于SSM框架的电⼦书城项⽬开发笔记"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>基于SSM框架的电⼦书城项⽬开发笔记 | simon·yian'Blog</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+
+
+  <!-- 添加萝莉-->
+  <script src="/live2d-widget/autoload.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">simon·yian'Blog</h1>
+      <i class="logo-line"></i>
+    </a>
+      <img class="custom-logo-image" src="/images/simon.png" alt="simon·yian'Blog">
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-commonweal"><a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fas fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-message"><a href="/message/" rel="section"><i class="fas fa-comment fa-fw"></i>留言板</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%94%B5%E2%BC%A6%E4%B9%A6%E5%9F%8E%E9%A1%B9%E2%BD%AC%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0"><span class="nav-number">1.</span> <span class="nav-text">电⼦书城项⽬开发笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%BC%80%E3%80%81%E9%A1%B9%E2%BD%AC%E7%AE%80%E4%BB%8B"><span class="nav-number">1.1.</span> <span class="nav-text">⼀、项⽬简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%BC%86%E3%80%81%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1"><span class="nav-number">1.2.</span> <span class="nav-text">⼆、数据库设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81SSM%E9%A1%B9%E2%BD%AC%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA"><span class="nav-number">1.3.</span> <span class="nav-text">三、SSM项⽬框架搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%AF%BC%E2%BC%8Aspring%E5%8F%8AspringMVC%E7%9B%B8%E5%85%B3%E7%9A%84%E5%8C%85"><span class="nav-number">1.3.1.</span> <span class="nav-text">1.导⼊spring及springMVC相关的包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%AF%BC%E2%BC%8Amybatis%E7%9B%B8%E5%85%B3%E7%9A%84%E5%8C%85"><span class="nav-number">1.3.2.</span> <span class="nav-text">2.导⼊mybatis相关的包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%AF%BC%E2%BC%8A%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BF%E9%97%AE%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0%E7%9B%B8%E5%85%B3%E7%9A%84%E5%8C%85"><span class="nav-number">1.3.3.</span> <span class="nav-text">3.导⼊数据库访问及数据库连接池相关的包</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%B9%E2%BD%AC%E6%90%AD%E5%BB%BA%E5%90%8E%E7%9A%84%E7%BB%93%E6%9E%84%E5%9B%BE%E5%A6%82%E4%B8%8B%EF%BC%9A"><span class="nav-number">1.4.</span> <span class="nav-text">项⽬搭建后的结构图如下：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E9%85%8D%E7%BD%AESpringMVC%E7%9A%84%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9%E3%80%82"><span class="nav-number">1.4.1.</span> <span class="nav-text">1.配置SpringMVC的相关内容。</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="simon·yi an"
+      src="/images/avator.jpg">
+  <p class="site-author-name" itemprop="name">simon·yi an</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/simon-yian" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;simon-yian" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yourname@gmail.com" title="E-Mail → mailto:yourname@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/yourname" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://plus.google.com/yourname" title="Google → https:&#x2F;&#x2F;plus.google.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-google fa-fw"></i>Google</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/yourname" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+  </div>
+
+
+
+        </div><div>
+  <canvas id="canvasDiyBlock" style="width:60%;">当前浏览器不支持canvas，请更换浏览器后再试</canvas><script src="/js/custom/clock.js"></script>
+</div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://simon-yian.github.io/2022/04/23/SSMknowledge/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avator.jpg">
+      <meta itemprop="name" content="simon·yi an">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="simon·yian'Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          基于SSM框架的电⼦书城项⽬开发笔记
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-04-23 21:29:18 / 修改时间：21:53:50" itemprop="dateCreated datePublished" datetime="2022-04-23T21:29:18+08:00">2022-04-23</time>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>14k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>13 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <img src="https://i.loli.net/2021/10/25/lQXn9eE8fIvHCYp.jpg" align="center" width="800" height="250" div>
+<span id="more"></span>
+
+<h1 id="电⼦书城项⽬开发笔记"><a href="#电⼦书城项⽬开发笔记" class="headerlink" title="电⼦书城项⽬开发笔记"></a>电⼦书城项⽬开发笔记</h1><h2 id="⼀、项⽬简介"><a href="#⼀、项⽬简介" class="headerlink" title="⼀、项⽬简介"></a>⼀、项⽬简介</h2><p>电⼦书城项⽬的基本实现的要求与技术指标。<br>系统的功能结构：<br>前端部分：<br>⽤户操作<br>⽤户的⼀些基本操作以及相关的购买⾏为的实现<br>图书浏览<br>按类别浏览图书信息、根据图书的名称搜索相关的图书<br>后端部分：<br>商品管理、销售榜单、公告管理、订单管理</p>
+<h2 id="⼆、数据库设计"><a href="#⼆、数据库设计" class="headerlink" title="⼆、数据库设计"></a>⼆、数据库设计</h2><p>项⽬中实体E-R图的分析：<br>⽤户实体User E-R图：<br>商品实体products E-R图<br>订单实体orders E-R图<br>订单项orderitem E-R图<br>公告栏实体notice E-R图<br>根据E-R图来创建数据库及相关的表。<br> 创建数据库、数据库名称为xbmubookstore<br>create database if not exists xbmubookstore default charset=utf8mb4;<br> 使⽤use xbmubookstore来使⽤该数据库<br>use xbmubookstore;<br>查看当前数据库中存在的表信息<br>show tables;<br> 创建表格 user表<br> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"> create table if not exists user(</span><br><span class="line"> id int(11) not null auto_increment,</span><br><span class="line"> username varchar(20) not null,</span><br><span class="line"> password varchar(20) not null,</span><br><span class="line"> gender varchar(2),</span><br><span class="line"> email varchar(50),</span><br><span class="line"> telephone varchar(20),</span><br><span class="line"> introduce varchar(100),</span><br><span class="line"> activeCode varchar(50),</span><br><span class="line"> state int(4),</span><br><span class="line"> role varchar(10),</span><br><span class="line"> registTime timestamp,</span><br><span class="line"> primary key (id)</span><br><span class="line">user:</span><br><span class="line">products:</span><br><span class="line">orders:</span><br><span class="line">orderitem:</span><br><span class="line">notice:</span><br></pre></td></tr></table></figure></p>
+<h2 id="三、SSM项⽬框架搭建"><a href="#三、SSM项⽬框架搭建" class="headerlink" title="三、SSM项⽬框架搭建"></a>三、SSM项⽬框架搭建</h2><p>使⽤Eclipse创建⼀个Web Project⼯程。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">)engine=innodb charset=utf8mb4;</span><br><span class="line">desc user;</span><br><span class="line">create table if not exists notice(</span><br><span class="line"> n_id int(11) not null auto_increment,</span><br><span class="line"> title varchar(10) not null,</span><br><span class="line"> primary key(n_id) );</span><br></pre></td></tr></table></figure>
+
+<p>选择创建Dynamic Web Project项⽬，按向导给项⽬填写名称<br>注意个性 Context root为系统的指定的上下⽂路径<br>项⽬创建完成后的结构组织图如下：<br>接着开始完成SSM的项⽬搭建⼯作</p>
+<h3 id="1-导⼊spring及springMVC相关的包"><a href="#1-导⼊spring及springMVC相关的包" class="headerlink" title="1.导⼊spring及springMVC相关的包"></a>1.导⼊spring及springMVC相关的包</h3><p>在spring framework压缩包中的libs⽬录下将以下的jar包，复制到创建的项⽬的webapp–&gt;WEB-INF–lib⽬录下。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">spring-aop-5.2.19.RELEASE.jar</span><br><span class="line">spring-aspects-5.2.19.RELEASE.jar</span><br><span class="line">spring-beans-5.2.19.RELEASE.jar</span><br><span class="line">spring-context-5.2.19.RELEASE.jar</span><br><span class="line">spring-core-5.2.19.RELEASE.jar</span><br><span class="line">spring-expression-5.2.19.RELEASE.jar</span><br><span class="line">spring-jdbc-5.2.19.RELEASE.jar</span><br><span class="line">spring-tx-5.2.19.RELEASE.jar</span><br><span class="line">spring-web-5.2.19.RELEASE.jar</span><br><span class="line">spring-webmvc-5.2.19.RELEASE.jar</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-导⼊mybatis相关的包"><a href="#2-导⼊mybatis相关的包" class="headerlink" title="2.导⼊mybatis相关的包"></a>2.导⼊mybatis相关的包</h3><p>到mybatis的压缩包中，解压后复制以下jar包到项⽬⼯程的lib⽬录下。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mybatis-3.5.6.jar</span><br><span class="line">log4j-1.2.17.jar</span><br><span class="line">log4j-api-2.13.3.jar</span><br><span class="line">log4j-core-2.13.3.jar</span><br><span class="line">commons-logging-1.2.jar</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-导⼊数据库访问及数据库连接池相关的包"><a href="#3-导⼊数据库访问及数据库连接池相关的包" class="headerlink" title="3.导⼊数据库访问及数据库连接池相关的包"></a>3.导⼊数据库访问及数据库连接池相关的包</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">commons-pool2-2.11.1.jar</span><br><span class="line">commons-dbcp2-2.9.0.jar</span><br><span class="line">mysql-connector-java-8.0.28.jar</span><br></pre></td></tr></table></figure>
+
+
+<p>4.导⼊其它的相关的jar包</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">aspectjweaver-1.9.6.jar</span><br><span class="line">commons-io-1.3.2.jar</span><br><span class="line">jstl-1.2.jar</span><br><span class="line">javax.servlet-api-3.1.0.jar</span><br><span class="line">mybatis-spring-2.0.7.jar</span><br><span class="line">standard-1.1.2.jar</span><br></pre></td></tr></table></figure>
+
+<h2 id="项⽬搭建后的结构图如下："><a href="#项⽬搭建后的结构图如下：" class="headerlink" title="项⽬搭建后的结构图如下："></a>项⽬搭建后的结构图如下：</h2><p>然后，可以启动服务器，查看创建的初步结构。<br>如果启动的过程顺利，没有错误出现，则可以进⾏⼀下步的配置⼯作。</p>
+<h3 id="1-配置SpringMVC的相关内容。"><a href="#1-配置SpringMVC的相关内容。" class="headerlink" title="1.配置SpringMVC的相关内容。"></a>1.配置SpringMVC的相关内容。</h3><p>因为要使⽤SpringMVC的技术来管理web应⽤的请求，所以需要指定替换原来Tomcat中的web应⽤处理请求的<br>Servlet(DefaultServlet)。<br>在项⽬的WEB-INF⽬录下的web.xml中进⾏如下的配置。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;web-app xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line"> xmlns=&quot;http://xmlns.jcp.org/xml/ns/javaee&quot;</span><br><span class="line"> xsi:schemaLocation=&quot;http://xmlns.jcp.org/xml/ns/javaee</span><br><span class="line">http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd&quot;</span><br><span class="line"> id=&quot;WebApp_ID&quot; version=&quot;3.1&quot;&gt;</span><br><span class="line"> &lt;!-- 配置SpringMVC的默认Servlet替换Tomcat的原默认Servlet --&gt;</span><br><span class="line"> &lt;servlet&gt;</span><br><span class="line"> &lt;servlet-name&gt;SpringMVC&lt;/servlet-name&gt;</span><br><span class="line"> &lt;servlet-class&gt;</span><br><span class="line"> org.springframework.web.servlet.DispatcherServlet</span><br><span class="line"> &lt;/servlet-class&gt;</span><br><span class="line"> &lt;load-on-startup&gt;1&lt;/load-on-startup&gt;</span><br><span class="line"> &lt;/servlet&gt;</span><br><span class="line"> &lt;servlet-mapping&gt;</span><br><span class="line"> &lt;servlet-name&gt;SpringMVC&lt;/servlet-name&gt;</span><br><span class="line"> &lt;url-pattern&gt;/&lt;/url-pattern&gt;</span><br><span class="line"> &lt;/servlet-mapping&gt;</span><br><span class="line">&lt;/web-app&gt;</span><br></pre></td></tr></table></figure>
+
+<p>配置完成后，启动服务器检查配置的情况。<br>这时会发现，启动过程中出现错误。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">严重: Servlet[SpringMVC]的Servlet.init（）引发异常</span><br><span class="line">org.springframework.beans.factory.BeanDefinitionStoreException: IOException parsing XML</span><br><span class="line">document from ServletContext resource [/WEB-INF/SpringMVC-servlet.xml]; nested exception is</span><br><span class="line">java.io.FileNotFoundException: Could not open ServletContext resource [/WEB-INF/SpringMVC￾servlet.xml]</span><br><span class="line"> at</span><br><span class="line">org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefini</span><br><span class="line">tionReader.java:342)</span><br></pre></td></tr></table></figure>
+
+<p>这是因为，配置了springmvc的DispatcherServlet后，系统会寻找spring初始化的配置⽂件，默认会到WEB-INF⽬<br>录下寻找以servlet-name为名称前缀，并且后⾯为-servlet.xml的配置⽂件，因为还没有配置该⽂件，所以系统在<br>启动时，初始化spring会报异常。<br>所以要在WEB-INF⽬录下创建⼀个spring初始化配置⽂件：<br>SpringMVC-servlet.xml</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;</span><br><span class="line"> xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line"> xmlns:context=&quot;http://www.springframework.org/schema/context&quot;</span><br><span class="line"> xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans</span><br><span class="line"> https://www.springframework.org/schema/beans/spring-beans.xsd</span><br><span class="line"> http://www.springframework.org/schema/context</span><br><span class="line"> https://www.springframework.org/schema/context/spring-context.xsd&quot;&gt;</span><br><span class="line"> </span><br><span class="line"> &lt;!-- 启⽤注解 --&gt; </span><br><span class="line"> &lt;context:annotation-config /&gt;</span><br><span class="line"> &lt;!-- 扫描包 --&gt;</span><br><span class="line"> &lt;context:component-scan base-package=&quot;com.lz.xbmu&quot;&gt;&lt;/context:component-scan&gt;</span><br><span class="line"> </span><br><span class="line">&lt;/beans&gt;</span><br></pre></td></tr></table></figure>
+
+<p>再次启动服务器，检查启动过程的⽇志，会发现没有错误出现。<br>到此基本的配置完成。<br>2.编写第⼀个控制器MyController<br>⾸先，创建包路径: com.lz.xbmu<br>在该包路径下新建包 controller及类MyController</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">package com.lz.xbmu.controller;</span><br><span class="line">import org.springframework.stereotype.Controller;</span><br><span class="line">import org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line">//第⼀个控制器</span><br><span class="line">@Controller</span><br><span class="line">public class MyController &#123;</span><br><span class="line"> </span><br><span class="line"> @RequestMapping(&quot;/mytest&quot;)</span><br><span class="line"> public String myTest() &#123;</span><br><span class="line"> System.out.println(&quot;MyController myTest() is running...&quot;);</span><br><span class="line"> return &quot;hello&quot;;</span><br><span class="line"> &#125; &#125;</span><br></pre></td></tr></table></figure>
+
+<p>当通过<a target="_blank" rel="noopener" href="http://loclahost:8080/book/mytest">http://loclahost:8080/book/mytest</a><br>请求访问时，系统报异常：<br>如果是循环访问的错误，则需要修改⼀下控制器的返回字符串。<br>修改完循环引⽤访问的问题后，再启动访问发现404错误。<br>这是因为没有配置视图解析器造成的，所以要配置视图解析器，可以参考帮助⽂档中的内容（web.pdf）。<br>如果提示404未找到WEB-INF/jsp⽬录下的hello.jsp⽂件，说明还没有创建该⽂件。<br>创建hello.jsp⽂件，再启动服务器。<br>2.通过springmvc请求数据发送<br>服务器启动后，访问地址<a target="_blank" rel="noopener" href="http://localhost:8080/book/%E6%97%B6%EF%BC%8C%E4%BC%9A%E9%BB%98%E8%AE%A4%E8%AE%BF%E9%97%AE%E5%88%B0webapp%E2%BD%AC%E5%BD%95%E4%B8%8B%E7%9A%84index.jsp%E2%BB%9A%E2%BE%AF%EF%BC%8C%E5%BD%93%E8%AE%BF%E9%97%AE">http://localhost:8080/book/时，会默认访问到webapp⽬录下的index.jsp⻚⾯，当访问</a><br>到该⻚⾯时，其中的的jsp动作，forward会跳转访问到/mytest，也就是请求了MyControll中的相对应的⽅法，该<br>⽅法的返回字符串就是跳转后的⻚⾯的名称。<br>也就是WEB-INF/jsp/hello.jsp⻚⾯。<br>@PostMapping注解的使⽤<br>ModelAndView对象的使⽤<br>通过pojo对象来包装数据<br>中⽂乱码的解决，使⽤全局过滤器来解决。<br>3.部署client前端的资源</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 配置视图解析器 --&gt;</span><br><span class="line"> &lt;bean id=&quot;viewResolver&quot;</span><br><span class="line"> class=&quot;org.springframework.web.servlet.view.InternalResourceViewResolver&quot;&gt;</span><br><span class="line"> &lt;property name=&quot;prefix&quot; value=&quot;/WEB-INF/jsp/&quot; /&gt;</span><br><span class="line"> &lt;property name=&quot;suffix&quot; value=&quot;.jsp&quot; /&gt;</span><br><span class="line"> &lt;/bean&gt;</span><br><span class="line">&lt;filter&gt;</span><br><span class="line"> &lt;filter-name&gt;encoding&lt;/filter-name&gt;</span><br><span class="line"> &lt;filter-class&gt;org.springframework.web.filter.CharacterEncodingFilter&lt;/filter-class&gt;</span><br><span class="line"> &lt;init-param&gt;</span><br><span class="line"> &lt;param-name&gt;encoding&lt;/param-name&gt;</span><br><span class="line"> &lt;param-value&gt;utf-8&lt;/param-value&gt;</span><br><span class="line"> &lt;/init-param&gt; </span><br><span class="line"> &lt;/filter&gt;</span><br><span class="line"> &lt;filter-mapping&gt;</span><br><span class="line"> &lt;filter-name&gt;encoding&lt;/filter-name&gt;</span><br><span class="line"> &lt;url-pattern&gt;/*&lt;/url-pattern&gt;</span><br><span class="line"> &lt;/filter-mapping&gt;</span><br></pre></td></tr></table></figure>
+<p>在该⽂件夹中存在这资源内容和相关的jsp⻚⾯。<br>将资源⽂件内容与jsp⻚⾯分别进⾏部署。<br>⾸先在webapp⽬录下创建⼀个名为client的⽬录，然后将ad，bookcover，css，images，js这五个⽬录及其中的<br>内容均考⻉到client⽬录中。<br>在WEB-INF/jsp⽬录下再创建⼀个名为client的⽬录，然后将剩余的jsp⽂件都考⻉到该⽬录下。<br>个性MyController类中的mytest请求访问⽅法的返回字符串路径：<br>四、项⽬的前端模块应⽤<br>1.部署相关的资源<br>将资源分为两个部分，⻚⾯jsp都放到webapp–&gt;WEB-INF–&gt;jsp–&gt;⽬录内，可以提⾼安全性。只能通过SpringMVC<br>的视图解析器才能访问到。<br>其它的⻚⾯内的样式表、js、图⽚等内容都放到webapp–&gt;client⽬录下，这些内容是可以通过浏览器直接访问到。<br>⻚⾯中的资源⽆法访问的原因：是因为在web.xml中配置了DispatcherServlet来处理全部的映射请求的路径，⽽该<br>servlet是SpringMVC中的前端控制器，只负责处理url映射请求对应的处理器，⽽⽆法处理静态资源，所以⻚⾯中<br>的静态资源是不能被调⽤。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@RequestMapping(&quot;/mytest&quot;)</span><br><span class="line">public String myTest() &#123;</span><br><span class="line">System.out.println(&quot;跳转到书城的⾸⻚⾯&quot;);</span><br><span class="line">//return &quot;hello&quot;;</span><br><span class="line">return &quot;client/index&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>2.处理静态资源的⽅法<br>a.使⽤Tomcat的默认处理Servlet（defaultServlet）<br>2.将DispatcherServlet的处理url映射请求进⾏设定<br>3.使⽤SpringMVC的配置⽅式<br>将静态资源的处理过程添加到SpringMVC-servlet.xml⽂件中去<br>3.⽤户注册功能<br>要通过注册⻚⾯来实现⽤户的注册功能。<br>因为现在的jsp⻚⾯都在WEB-INF⽬录下，所以不能直接访问到。<br>通过SpringMVC视图解析器来反回⼀个注册⻚⾯。<br>⾸先分析client/index.jsp⻚⾯的组成</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"> &lt;servlet-mapping&gt;</span><br><span class="line"> &lt;servlet-name&gt;default&lt;/servlet-name&gt;</span><br><span class="line"> &lt;url-pattern&gt;*.js&lt;/url-pattern&gt;</span><br><span class="line"> &lt;url-pattern&gt;*.css&lt;/url-pattern&gt;</span><br><span class="line"> &lt;url-pattern&gt;*.jpg&lt;/url-pattern&gt;</span><br><span class="line"> &lt;url-pattern&gt;*.png&lt;/url-pattern&gt;</span><br><span class="line"> &lt;url-pattern&gt;*.gif&lt;/url-pattern&gt;</span><br><span class="line"> &lt;/servlet-mapping&gt;</span><br><span class="line">&lt;servlet&gt;</span><br><span class="line"> &lt;servlet-name&gt;SpringMVC&lt;/servlet-name&gt;</span><br><span class="line"> &lt;servlet-class&gt;</span><br><span class="line"> org.springframework.web.servlet.DispatcherServlet</span><br><span class="line"> &lt;/servlet-class&gt;</span><br><span class="line"> &lt;load-on-startup&gt;1&lt;/load-on-startup&gt;</span><br><span class="line"> &lt;/servlet&gt;</span><br><span class="line"> &lt;servlet-mapping&gt;</span><br><span class="line"> &lt;servlet-name&gt;SpringMVC&lt;/servlet-name&gt;</span><br><span class="line"> &lt;url-pattern&gt;*.action&lt;/url-pattern&gt;</span><br><span class="line"> &lt;/servlet-mapping&gt;</span><br><span class="line">&lt;!-- 静态资源解析 --&gt;</span><br><span class="line"> &lt;mvc:annotation-driven/&gt;</span><br><span class="line"> &lt;mvc:resources location=&quot;client/css/&quot; mapping=&quot;client/css/**&quot;&gt;&lt;/mvc:resources&gt;</span><br><span class="line"> &lt;mvc:resources location=&quot;client/ad/&quot; mapping=&quot;client/ad/**&quot;&gt;&lt;/mvc:resources&gt;</span><br><span class="line"> &lt;mvc:resources location=&quot;client/bookcover/&quot; mapping=&quot;client/bookcover/**&quot;&gt;&lt;/mvc:resources&gt;</span><br><span class="line"> &lt;mvc:resources location=&quot;client/js/&quot; mapping=&quot;client/js/**&quot;&gt;&lt;/mvc:resources&gt;</span><br><span class="line"> &lt;mvc:resources location=&quot;client/images/&quot; mapping=&quot;client/images/**&quot;&gt;&lt;/mvc:resources&gt;</span><br></pre></td></tr></table></figure>
+
+<p>需要在对应的⻚⾯中去设置相关的链接或是请求的url<br>在head.jsp⻚⾯中添加以下的内容<br><a href="${pageContext.request.contextPath}/registerpage">新⽤户注册</a><br>这样就可以通过请求UserController中的对应的处理器⽅法来返回指定的jsp⻚⾯。<br>通过form表单提交注册⽤户的信息<br>UserController.java</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">package com.lz.xbmu.controller;</span><br><span class="line">import org.springframework.stereotype.Controller;</span><br><span class="line">import org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line">import org.springframework.web.bind.annotation.RequestMethod;</span><br><span class="line">import com.lz.xbmu.po.User;</span><br><span class="line">@Controller</span><br><span class="line">public class UserController &#123;</span><br><span class="line"> //跳转到⽤户注册⻚⾯</span><br><span class="line"> @RequestMapping(value=&quot;/registerpage&quot;,method=RequestMethod.GET)</span><br><span class="line"> public String registerPage() &#123;</span><br><span class="line"> System.out.println(&quot;跳转到⽤户注册⻚⾯...&quot;);</span><br><span class="line"> return &quot;client/register&quot;;</span><br></pre></td></tr></table></figure>
+
+<p>4.整合spring与mybatis<br>⾸先将相关的spring包及mybatis的包导⼊到项⽬中去。<br>然后是相关的数据库驱动、数据库连接、⽇志等相关的包也要导⼊到项⽬中去。<br>然后就要在项⽬添加整合的配置⽂件。<br>因为spring和springMVC都是springframework框架中的内容，所以它们之间不需要进⾏整合的配置，只是要对<br>spring与mybatis及springmvc与mybatis进⾏整合。<br>配置⽂件参考spring与mybatis整合的章节内容。<br>使⽤三层结构来完成项⽬的功能模块。<br>⾸先创建com.lz.xbmu.mapper包，在该包中创建接⼝及对应的映射⽂件。<br> }<br> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">  //获取⽤户注册信息</span><br><span class="line"> @RequestMapping(value=&quot;/registeruser&quot;,method=RequestMethod.POST)</span><br><span class="line"> public String registerInfo(User user) &#123;</span><br><span class="line"> System.out.println(user);</span><br><span class="line"> //注册后的⽤户数据将要写⼊数据库中</span><br><span class="line"> </span><br><span class="line"> return &quot;client/registersuccess&quot;;</span><br><span class="line"> &#125; &#125;</span><br><span class="line">package com.lz.xbmu.mapper;</span><br><span class="line">import com.lz.xbmu.po.User;</span><br><span class="line">public interface UserMapper &#123;</span><br><span class="line"> public int insertUser(User user);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</span><br><span class="line">&lt;!DOCTYPE mapper</span><br><span class="line"> PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;</span><br><span class="line"> &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;</span><br><span class="line">&lt;mapper namespace=&quot;com.lz.xbmu.mapper.UserMapper&quot;&gt;</span><br><span class="line"> &lt;!-- 插⼊⽤户数据 --&gt;</span><br><span class="line"> &lt;insert id=&quot;insertUser&quot; parameterType=&quot;user&quot;&gt;</span><br><span class="line"> insert into user</span><br><span class="line"> value(null,#&#123;username&#125;,#&#123;password&#125;,#&#123;gender&#125;,#&#123;email&#125;,#&#123;telephone&#125;,#&#123;introduce&#125;,#</span><br><span class="line">&#123;activeCode&#125;,#&#123;state&#125;,#&#123;role&#125;,#&#123;registTime&#125;)</span><br><span class="line"> &lt;/insert&gt;</span><br><span class="line">&lt;/mapper&gt;</span><br></pre></td></tr></table></figure>
+
+<p>接着创建⽤户接⼝及实现类</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">package com.lz.xbmu.service;</span><br><span class="line">import com.lz.xbmu.po.User;</span><br><span class="line">public interface UserService &#123;</span><br><span class="line"> public int addUser(User user);</span><br><span class="line">&#125;</span><br><span class="line">package com.lz.xbmu.service.impl;</span><br><span class="line">import java.util.Date;</span><br><span class="line">import java.util.UUID;</span><br><span class="line">import org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line">import org.springframework.stereotype.Service;</span><br><span class="line">import com.lz.xbmu.mapper.UserMapper;</span><br><span class="line">import com.lz.xbmu.po.User;</span><br><span class="line">import com.lz.xbmu.service.UserService;</span><br><span class="line">@Service</span><br><span class="line">public class UserServiceImpl implements UserService &#123;</span><br><span class="line"> </span><br><span class="line"> @Autowired</span><br><span class="line"> private UserMapper userMapper;</span><br><span class="line"> </span><br><span class="line"> @Override</span><br><span class="line"> public int addUser(User user) &#123;</span><br><span class="line"> // 添加业务⽅法</span><br><span class="line"> //activeCode 激活码</span><br><span class="line"> //user.setActiveCode(UUID.randomUUID().toString());</span><br></pre></td></tr></table></figure>
+
+<p>记得要检查所有的配置信息，否则会出现意外的错误。⽐如数据库名称，地址等配置信息的错误。<br>现在已经完成了将前端的数据获取到，并通过业务⽅法再将数据使⽤持久化的机制保存到了指定的数据库。现在就<br>完成了SSM框架的整合⼯作。<br>五、后端业务处理及数据维护<br>1.⽤户登录实现<br>在系统的前端没有设计专⻔的⽤户登录连接，⽽是通过⼏种⽅式跳转到登录⻚⾯。<br>当⽤户访问我的帐户时，因为要判断⽤户是否是登录状态，如是已经登录的状态，则跳转到我的帐户⻚⾯。不是登<br>录状态时则要跳转到登录⻚⾯完成登录后才能访问我的帐户⻚⾯。<br>如何检查⽤户是否是登录状态？<br>在登录⻚⾯中填写⽤户的登录信息，在后端检查⽤户的信息，并且进⾏登录业务处理。<br>我的帐户</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">//state状态码 0末激活，1已激活</span><br><span class="line"> user.setState(1);</span><br><span class="line"> //role 普通⽤户，管理员</span><br><span class="line"> user.setRole(&quot;普通⽤户&quot;);</span><br><span class="line"> //注册时间</span><br><span class="line"> user.setRegistTime(new Date());</span><br><span class="line"> return this.userMapper.insertUser(user);</span><br><span class="line"> &#125; &#125;</span><br><span class="line"> //⽤户帐户⻚⾯跳转</span><br><span class="line"> @GetMapping(&quot;/myaccount&quot;)</span><br><span class="line"> public ModelAndView myAccount(HttpSession session, ModelAndView mav) &#123;</span><br><span class="line"> //因为在登录是会将⽤户信息存储到session中</span><br><span class="line"> User user = (User) session.getAttribute(&quot;user&quot;);</span><br><span class="line"> if (user != null) &#123;</span><br><span class="line"> mav.setViewName(&quot;client/myAccount&quot;);</span><br><span class="line"> &#125;else &#123;</span><br><span class="line"> mav.addObject(&quot;info&quot;,&quot;请先登录&quot;);</span><br><span class="line"> mav.setViewName(&quot;client/login&quot;);</span><br><span class="line"> &#125;</span><br><span class="line"> return mav;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;sql id=&quot;userColumns&quot;&gt;</span><br><span class="line">id,username,gender,email,telephone,introduce,activeCode,state,role,registTime</span><br><span class="line">&lt;/sql&gt;</span><br><span class="line">&lt;!-- 根据⽤户名及密码检查⽤户 --&gt;</span><br><span class="line">&lt;select id=&quot;selectUserByNameAndPass&quot; parameterType=&quot;Map&quot;</span><br><span class="line">resultType=&quot;user&quot;&gt;</span><br><span class="line">select &lt;include refid=&quot;userColumns&quot; /&gt;</span><br><span class="line">from user</span><br><span class="line">where username=#&#123;username&#125; and password=#&#123;password&#125;</span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">package com.lz.xbmu.mapper;</span><br><span class="line">import java.util.Map;</span><br><span class="line">import com.lz.xbmu.po.User;</span><br><span class="line">public interface UserMapper &#123;</span><br><span class="line"> public int insertUser(User user);</span><br><span class="line"> public User selectUserByNameAndPass(Map&lt;String,String&gt; map);</span><br><span class="line">&#125;</span><br><span class="line"> @Override</span><br><span class="line"> public User findUserByNameAndPass(String name, String pass) &#123;</span><br><span class="line"> // TODO Auto-generated method stub</span><br><span class="line"> Map&lt;String,String&gt; map = new HashMap&lt;&gt;();</span><br><span class="line"> map.put(&quot;username&quot;, name);</span><br><span class="line"> map.put(&quot;password&quot;, pass);</span><br><span class="line"> return userMapper.selectUserByNameAndPass(map);</span><br><span class="line"> &#125;</span><br><span class="line"> //⽤户登录</span><br><span class="line"> @PostMapping(&quot;/userlogin&quot;)</span><br><span class="line"> public ModelAndView userLogin(String username,String password,</span><br><span class="line"> HttpSession session, ModelAndView mav) &#123;</span><br><span class="line"> System.out.println(&quot;username=&quot;+username+&quot;,password=&quot;+password);</span><br><span class="line"> //通过⽤户名与密码到数据库中检查是否是注册⽤户</span><br><span class="line"> User user = userService.findUserByNameAndPass(username, password);</span><br><span class="line"> System.out.println(user);</span><br><span class="line"> boolean flag = true;</span><br><span class="line"> if(user != null) &#123;</span><br><span class="line"> //if(user.getActiveCode() == null) flag = false;</span><br><span class="line"> if(user.getState() != 1) flag = false;</span><br><span class="line"> if(user.getRegistTime() == null) flag = false;</span><br><span class="line"> if(flag) &#123;</span><br><span class="line"> session.setAttribute(&quot;user&quot;, user);</span><br><span class="line"> if(&quot;普通⽤户&quot;.equalsIgnoreCase(user.getRole()))&#123;</span><br><span class="line"> mav.setViewName(&quot;client/index&quot;);</span><br><span class="line"> &#125;else &#123;</span><br><span class="line"> mav.setViewName(&quot;admin/manager&quot;);</span><br><span class="line"> &#125;</span><br><span class="line"> &#125;else &#123;</span><br><span class="line"> mav.addObject(&quot;info&quot;,&quot;登录失败&quot;);</span><br><span class="line"> mav.setViewName(&quot;client/login&quot;);</span><br><span class="line"> &#125;</span><br><span class="line"> &#125;else &#123;</span><br><span class="line"> mav.addObject(&quot;info&quot;,&quot;⽤户名或密码错误&quot;);</span><br><span class="line"> mav.setViewName(&quot;client/login&quot;);</span><br><span class="line"> &#125;</span><br><span class="line"> </span><br><span class="line"> return mav;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//⽤户退出系统</span><br><span class="line">@GetMapping(&quot;/logout&quot;)</span><br><span class="line">public String userLogout(HttpSession session) &#123;</span><br><span class="line">System.out.println(&quot;⽤户退出系统&quot;);</span><br><span class="line">session.setAttribute(&quot;user&quot;, null);</span><br><span class="line">session.setAttribute(&quot;info&quot;, null);</span><br><span class="line">session.invalidate();</span><br><span class="line">return &quot;redirect:mytest&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+    
+    <div>
+      
+         <div>
+	
+		<div style="text-align:center;color:#bfbfbf;font-size:16px;"> 
+ 		<span>-------- 本文结束 </span> 
+ 		<i class="fa fa-paw"></i> 
+ 		<span> 感谢阅读 --------</span>
+		</div> 
+  	
+</div>
+      
+    </div>
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div></div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.png" alt="simon·yi an 微信">
+        <span>微信</span>
+      </div>
+
+  </div>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/11/27/SpringFrame/" rel="prev" title="Spring知识点梳理：">
+                  <i class="fa fa-chevron-left"></i> Spring知识点梳理：
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">simon·yi an</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">92k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">1:23</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+  <div class="powered-by">
+  <i class="fa fa-user-md"></i>
+  <span id="busuanzi_container_site_uv">
+    本站总访客数:<span id="busuanzi_value_site_uv"></span>&nbsp;&nbsp;| 
+  </span>
+  <span id="busuanzi_container_site_pv">
+      &nbsp;本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  </span>
+  </div>
+  </div>
+<script>
+      var now = new Date(); 
+      function createtime() { 
+          var grt= new Date("03/12/2019 12:00:00");//此处修改你的建站时间或者网站上线时间 
+          now.setTime(now.getTime()+250); 
+          days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+          hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+          if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+          mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+          seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+          snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+          document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+          document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+      } 
+  setInterval("createtime()",250);
+  </script>
+    </div>
+  </footer>
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="https://cdn.jsdelivr.net/npm/ribbon.js@1.0.2/dist/ribbon.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+  <script async src="/js/cursor/fireworks.js"></script>
+
+
+
+
+  <script src="/js/activate-power-mode.min.js"></script>
+  <script>
+    POWERMODE.colorful = true;
+    POWERMODE.shake = false;
+    document.body.addEventListener('input', POWERMODE);
+  </script>
+
+</body>
+</html>

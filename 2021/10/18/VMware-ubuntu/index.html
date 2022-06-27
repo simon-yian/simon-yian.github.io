@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/H%20.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"simon-yian.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="此篇是创建VMware16虚拟机安装ubuntu21.04系统的超详细操作过程，希望对小白白有所帮助">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在VMware16中创建虚拟机安装ubuntu 21.04系统">
+<meta property="og:url" content="https://simon-yian.github.io/2021/10/18/VMware-ubuntu/index.html">
+<meta property="og:site_name" content="simon·yian&#39;Blog">
+<meta property="og:description" content="此篇是创建VMware16虚拟机安装ubuntu21.04系统的超详细操作过程，希望对小白白有所帮助">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/10/18/X4BvRZr2LKb5SyD.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/10/18/Prph8EuT6vaHiyQ.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/10/18/DqtysojVQrFE2R9.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/10/18/VzTAbUosOP4dK3W.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/10/18/DqtysojVQrFE2R9.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/10/18/ONQ954xcuaLZYBK.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/10/18/n2RPhJVXakzLgHU.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/10/18/xe8kFh4T72tSAld.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/10/18/KzBpH8OeDyn5V3F.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/10/18/AaUSlwWnMCFJ3c1.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/10/18/QWASzB7OuMIb6xm.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/10/18/9CzmqQYUDNeRo56.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/10/18/XZi389ajePvqRDk.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/10/18/XAgZ4IvWTji5CUK.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/10/18/owxQLiVrmWdJsYa.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/10/18/DKBEnuG6or3f4wx.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/10/18/VlZBfoPbR9e8MSc.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/10/18/AdjlBFmEVDNhr1O.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/10/18/C8p4cyMIBuGbYWU.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/10/18/IyBJxuMrLhml3Ko.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/10/18/HwJm6DONtYMhFCz.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/10/18/cjkhgORexpbFm4K.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/10/18/pfz13yURdGDW8qI.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/10/18/VlZBfoPbR9e8MSc.jpg">
+<meta property="article:published_time" content="2021-10-18T11:59:48.000Z">
+<meta property="article:modified_time" content="2021-10-22T04:03:30.000Z">
+<meta property="article:author" content="simon·yi an">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/10/18/X4BvRZr2LKb5SyD.jpg">
+
+
+<link rel="canonical" href="https://simon-yian.github.io/2021/10/18/VMware-ubuntu/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://simon-yian.github.io/2021/10/18/VMware-ubuntu/","path":"2021/10/18/VMware-ubuntu/","title":"在VMware16中创建虚拟机安装ubuntu 21.04系统"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>在VMware16中创建虚拟机安装ubuntu 21.04系统 | simon·yian'Blog</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+
+
+  <!-- 添加萝莉-->
+  <script src="/live2d-widget/autoload.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">simon·yian'Blog</h1>
+      <i class="logo-line"></i>
+    </a>
+      <img class="custom-logo-image" src="/images/simon.png" alt="simon·yian'Blog">
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-commonweal"><a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fas fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-message"><a href="/message/" rel="section"><i class="fas fa-comment fa-fw"></i>留言板</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85VMware-16"><span class="nav-number">1.</span> <span class="nav-text">安装VMware 16</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8VMware%E4%B8%AD%E5%AE%89%E8%A3%85ubuntu-21-04%E7%B3%BB%E7%BB%9F"><span class="nav-number">2.</span> <span class="nav-text">在VMware中安装ubuntu 21.04系统</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="simon·yi an"
+      src="/images/avator.jpg">
+  <p class="site-author-name" itemprop="name">simon·yi an</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/simon-yian" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;simon-yian" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yourname@gmail.com" title="E-Mail → mailto:yourname@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/yourname" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://plus.google.com/yourname" title="Google → https:&#x2F;&#x2F;plus.google.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-google fa-fw"></i>Google</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/yourname" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+  </div>
+
+
+
+        </div><div>
+  <canvas id="canvasDiyBlock" style="width:60%;">当前浏览器不支持canvas，请更换浏览器后再试</canvas><script src="/js/custom/clock.js"></script>
+</div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://simon-yian.github.io/2021/10/18/VMware-ubuntu/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avator.jpg">
+      <meta itemprop="name" content="simon·yi an">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="simon·yian'Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          在VMware16中创建虚拟机安装ubuntu 21.04系统
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-10-18 19:59:48" itemprop="dateCreated datePublished" datetime="2021-10-18T19:59:48+08:00">2021-10-18</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-10-22 12:03:30" itemprop="dateModified" datetime="2021-10-22T12:03:30+08:00">2021-10-22</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/VMware/" itemprop="url" rel="index"><span itemprop="name">VMware</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.4k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <table>
+<tr><td bgcolor="CFCFCF">此篇是创建VMware16虚拟机安装ubuntu21.04系统的超详细操作过程，希望对小白白有所帮助
+</td></tr></table>
+
+<span id="more"></span>
+
+<p>安装环境： windows 10</p>
+<p>VMware 16安装包：我用阿里云盘分享了「VMware-workstation-full-16.1.2-17966106.exe」，你可以不限速下载🚀<br>复制这段内容打开「阿里云盘」App 即可获取<br>链接：<a target="_blank" rel="noopener" href="https://www.aliyundrive.com/s/7acSRwmGho2">https://www.aliyundrive.com/s/7acSRwmGho2</a></p>
+<p>ubuntu 21.04镜像：链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1ktE78cieRE9Y7_BhrG9vjQ">https://pan.baidu.com/s/1ktE78cieRE9Y7_BhrG9vjQ</a><br>提取码：n9ms</p>
+<h3 id="安装VMware-16"><a href="#安装VMware-16" class="headerlink" title="安装VMware 16"></a>安装VMware 16</h3><p>1、 直接双击下载好的VMware，这个过程可能会显示重新启动系统，那你点就是了。重新启动后再次双击下载好的VMware，然后点击【下一步】。</p>
+<img src="https://i.loli.net/2021/10/18/X4BvRZr2LKb5SyD.jpg" width="850" height="400" div align="right">
+
+<p>2、勾选【我接受许可协议中的条款】，点击【下一步】</p>
+<img src="https://i.loli.net/2021/10/18/Prph8EuT6vaHiyQ.jpg" width="850" height="400" div align="right">
+
+<p>3、可以默认，也可更改安装位置</p>
+<img src="https://i.loli.net/2021/10/18/DqtysojVQrFE2R9.jpg" width="850" height="400" div align="right">
+
+<p>4、选择安装位置，然后点击【确定】</p>
+<img src="https://i.loli.net/2021/10/18/VzTAbUosOP4dK3W.jpg" width="850" height="400" div align="right">
+
+<p>5、点击【下一步】</p>
+<img src="https://i.loli.net/2021/10/18/DqtysojVQrFE2R9.jpg" width="850" height="400" div align="right">
+
+<p>6、取消勾选【启动时检查产品更新】和【加入VMware客户体验改进计划】，点击【下一步</p>
+<img src="https://i.loli.net/2021/10/18/ONQ954xcuaLZYBK.jpg" width="850" height="400" div align="right">
+
+<p>7、点击【下一步】</p>
+<img src="https://i.loli.net/2021/10/18/n2RPhJVXakzLgHU.jpg" width="850" height="400" div align="right">
+
+<p>8、点击【安装】</p>
+<img src="https://i.loli.net/2021/10/18/xe8kFh4T72tSAld.jpg" width="850" height="400" div align="right">
+
+<p>9、正在安装，等待几分钟</p>
+<img src="https://i.loli.net/2021/10/18/KzBpH8OeDyn5V3F.jpg" width="850" height="400" div align="right">
+
+<p>10、点击【许可证】</p>
+<img src="https://i.loli.net/2021/10/18/AaUSlwWnMCFJ3c1.jpg" width="850" height="400" div align="right">
+
+<p>11、框中输入许可证：ZF3R0-FHED2-M80TY-8QYGC-NPKYF，（复制粘贴就可以）然后点击【输入】</p>
+<p>12、点击【完成】</p>
+<p>恭喜你这会你的虚拟机已经安装好了，是不是直接点击下一步就可以</p>
+<h3 id="在VMware中安装ubuntu-21-04系统"><a href="#在VMware中安装ubuntu-21-04系统" class="headerlink" title="在VMware中安装ubuntu 21.04系统"></a>在VMware中安装ubuntu 21.04系统</h3><p>1、双击打开你创建在桌面的虚拟机，然后点击【创建新的虚拟机】</p>
+<img src="https://i.loli.net/2021/10/18/QWASzB7OuMIb6xm.jpg" width="850" height="400" div align="right">
+
+<p>2、选择【典型】（默认便是典型），点击【下一步】</p>
+<img src="https://i.loli.net/2021/10/18/9CzmqQYUDNeRo56.jpg" width="850" height="400" div align="right">
+
+<p>3、选择【稍后安装操作系统】，点击【下一步】</p>
+<img src="https://i.loli.net/2021/10/18/XZi389ajePvqRDk.jpg" width="850" height="400" div align="right">
+
+<p>4、客户机操作系统选择【Linux】，版本选择【Ubuntu64位】，然后点击【下一步】</p>
+<img src="https://i.loli.net/2021/10/18/XAgZ4IvWTji5CUK.jpg" width="850" height="400" div align="right">
+
+<p>5、位置可更改，点击【下一步】</p>
+<img src="https://i.loli.net/2021/10/18/owxQLiVrmWdJsYa.jpg" width="850" height="400" div align="right">
+
+<p>6、最大磁盘大小【20】GB，选择【将虚拟机磁盘拆分成多个文件】，然后点击【下一步】</p>
+<img src="https://i.loli.net/2021/10/18/DKBEnuG6or3f4wx.jpg" width="850" height="400" div align="right">
+
+<p>7、点击【自定义硬件】</p>
+<img src="https://i.loli.net/2021/10/18/VlZBfoPbR9e8MSc.jpg" width="850" height="400" div align="right">
+
+<p>8、选择【内存】，此虚拟机的内存设为【2048MB】</p>
+<img src="https://i.loli.net/2021/10/18/AdjlBFmEVDNhr1O.jpg" width="850" height="400" div align="right">
+
+<p>9、选择【新CD/DVD(TATA)】后选择【使用ISO映像文件】，点击【浏览】，找到下载后文件夹里面的【ubuntu-21.04-desktop-amd64.iso】这个镜像并选择！</p>
+<img src="https://i.loli.net/2021/10/18/C8p4cyMIBuGbYWU.jpg" width="850" height="400" div align="right">
+
+<p>10、选择【网络适配器】，然后选择【仅主机模式】</p>
+<img src="https://i.loli.net/2021/10/18/IyBJxuMrLhml3Ko.jpg" width="850" height="400" div align="right">
+
+<p>11、选择【USB控制器】，点击【移除】</p>
+<img src="https://i.loli.net/2021/10/18/HwJm6DONtYMhFCz.jpg" width="850" height="400" div align="right">
+
+<p>12、选择【打印机】，点击【移除】</p>
+<img src="https://i.loli.net/2021/10/18/cjkhgORexpbFm4K.jpg" width="850" height="400" div align="right">
+
+<p>13、点击【关闭】</p>
+<img src="https://i.loli.net/2021/10/18/pfz13yURdGDW8qI.jpg" width="850" height="400" div align="right">
+
+<p>14、点击【完成】</p>
+<img src="https://i.loli.net/2021/10/18/VlZBfoPbR9e8MSc.jpg" width="850" height="400" div align="right">
+
+<p><font color="red" size="5"> 实在没有耐心放图片了，等闲了再贴图片吧,相信自己即使看文字你也可以安装完成的，加油！</font></p>
+<p>15、点击【开启此虚拟机】，等待开启</p>
+<p>16、择【中文简体】，点击【安装Ubuntu】</p>
+<p>17、点击【继续】</p>
+<p>18、点击【继续】</p>
+<p>19、点击【现在安装】</p>
+<p>20、点击【继续】</p>
+<p>21、这里默认【Shanghai】就OK</p>
+<p>22、创建用户账号（记住密码哦！）。不要担心你的计算机名是什么，你只需要输入姓名，计算机名就会自动生成。然后点击[继续]</p>
+<p>23、安装中，耐心等待（这个可能需要多点时间）</p>
+<p>24、点击【现在重启】，重启一会看屏幕中下方转圈其他都不动，键盘上点击【enter】</p>
+<p>25、点击账户，我这里是【simon-yian】</p>
+<p>26、输入之前创建用户账号时设的密码，然后点击【登录】</p>
+<p>27、至此Ubuntu系统安装完成！</p>
+<p><font color="red"><b>如果你觉得可以千万不要忘记动动你的小手，赞赏一下贫困的博客主</b><br><b>记得收藏啊，以后会有更好的内容给您分享</b></font></p>
+
+    </div>
+
+    
+    
+    
+    
+    <div>
+      
+         <div>
+	
+		<div style="text-align:center;color:#bfbfbf;font-size:16px;"> 
+ 		<span>-------- 本文结束 </span> 
+ 		<i class="fa fa-paw"></i> 
+ 		<span> 感谢阅读 --------</span>
+		</div> 
+  	
+</div>
+      
+    </div>
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div></div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.png" alt="simon·yi an 微信">
+        <span>微信</span>
+      </div>
+
+  </div>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/10/18/picture/" rel="prev" title="makedown进阶（改变字体颜色，大小，设置文字背景，调整图片大小设置剧中）">
+                  <i class="fa fa-chevron-left"></i> makedown进阶（改变字体颜色，大小，设置文字背景，调整图片大小设置剧中）
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/10/22/hexo-relevant/" rel="next" title="hexo-relevant">
+                  hexo-relevant <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">simon·yi an</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">92k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">1:23</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+  <div class="powered-by">
+  <i class="fa fa-user-md"></i>
+  <span id="busuanzi_container_site_uv">
+    本站总访客数:<span id="busuanzi_value_site_uv"></span>&nbsp;&nbsp;| 
+  </span>
+  <span id="busuanzi_container_site_pv">
+      &nbsp;本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  </span>
+  </div>
+  </div>
+<script>
+      var now = new Date(); 
+      function createtime() { 
+          var grt= new Date("03/12/2019 12:00:00");//此处修改你的建站时间或者网站上线时间 
+          now.setTime(now.getTime()+250); 
+          days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+          hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+          if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+          mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+          seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+          snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+          document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+          document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+      } 
+  setInterval("createtime()",250);
+  </script>
+    </div>
+  </footer>
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="https://cdn.jsdelivr.net/npm/ribbon.js@1.0.2/dist/ribbon.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+  <script async src="/js/cursor/fireworks.js"></script>
+
+
+
+
+  <script src="/js/activate-power-mode.min.js"></script>
+  <script>
+    POWERMODE.colorful = true;
+    POWERMODE.shake = false;
+    document.body.addEventListener('input', POWERMODE);
+  </script>
+
+</body>
+</html>
