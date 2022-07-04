@@ -388,113 +388,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>在VMware16中创建虚拟机安装ubuntu 21.04系统</title>
-    <url>/2021/10/18/VMware-ubuntu/</url>
-    <content><![CDATA[<table>
-<tr><td bgcolor="CFCFCF">此篇是创建VMware16虚拟机安装ubuntu21.04系统的超详细操作过程，希望对小白白有所帮助
-</td></tr></table>
-
-<span id="more"></span>
-
-<p>安装环境： windows 10</p>
-<p>VMware 16安装包：我用阿里云盘分享了「VMware-workstation-full-16.1.2-17966106.exe」，你可以不限速下载🚀<br>复制这段内容打开「阿里云盘」App 即可获取<br>链接：<a href="https://www.aliyundrive.com/s/7acSRwmGho2">https://www.aliyundrive.com/s/7acSRwmGho2</a></p>
-<p>ubuntu 21.04镜像：链接：<a href="https://pan.baidu.com/s/1ktE78cieRE9Y7_BhrG9vjQ">https://pan.baidu.com/s/1ktE78cieRE9Y7_BhrG9vjQ</a><br>提取码：n9ms</p>
-<h3 id="安装VMware-16"><a href="#安装VMware-16" class="headerlink" title="安装VMware 16"></a>安装VMware 16</h3><p>1、 直接双击下载好的VMware，这个过程可能会显示重新启动系统，那你点就是了。重新启动后再次双击下载好的VMware，然后点击【下一步】。</p>
-<img src="https://i.loli.net/2021/10/18/X4BvRZr2LKb5SyD.jpg" width="850" height="400" div align="right">
-
-<p>2、勾选【我接受许可协议中的条款】，点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/Prph8EuT6vaHiyQ.jpg" width="850" height="400" div align="right">
-
-<p>3、可以默认，也可更改安装位置</p>
-<img src="https://i.loli.net/2021/10/18/DqtysojVQrFE2R9.jpg" width="850" height="400" div align="right">
-
-<p>4、选择安装位置，然后点击【确定】</p>
-<img src="https://i.loli.net/2021/10/18/VzTAbUosOP4dK3W.jpg" width="850" height="400" div align="right">
-
-<p>5、点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/DqtysojVQrFE2R9.jpg" width="850" height="400" div align="right">
-
-<p>6、取消勾选【启动时检查产品更新】和【加入VMware客户体验改进计划】，点击【下一步</p>
-<img src="https://i.loli.net/2021/10/18/ONQ954xcuaLZYBK.jpg" width="850" height="400" div align="right">
-
-<p>7、点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/n2RPhJVXakzLgHU.jpg" width="850" height="400" div align="right">
-
-<p>8、点击【安装】</p>
-<img src="https://i.loli.net/2021/10/18/xe8kFh4T72tSAld.jpg" width="850" height="400" div align="right">
-
-<p>9、正在安装，等待几分钟</p>
-<img src="https://i.loli.net/2021/10/18/KzBpH8OeDyn5V3F.jpg" width="850" height="400" div align="right">
-
-<p>10、点击【许可证】</p>
-<img src="https://i.loli.net/2021/10/18/AaUSlwWnMCFJ3c1.jpg" width="850" height="400" div align="right">
-
-<p>11、框中输入许可证：ZF3R0-FHED2-M80TY-8QYGC-NPKYF，（复制粘贴就可以）然后点击【输入】</p>
-<p>12、点击【完成】</p>
-<p>恭喜你这会你的虚拟机已经安装好了，是不是直接点击下一步就可以</p>
-<h3 id="在VMware中安装ubuntu-21-04系统"><a href="#在VMware中安装ubuntu-21-04系统" class="headerlink" title="在VMware中安装ubuntu 21.04系统"></a>在VMware中安装ubuntu 21.04系统</h3><p>1、双击打开你创建在桌面的虚拟机，然后点击【创建新的虚拟机】</p>
-<img src="https://i.loli.net/2021/10/18/QWASzB7OuMIb6xm.jpg" width="850" height="400" div align="right">
-
-<p>2、选择【典型】（默认便是典型），点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/9CzmqQYUDNeRo56.jpg" width="850" height="400" div align="right">
-
-<p>3、选择【稍后安装操作系统】，点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/XZi389ajePvqRDk.jpg" width="850" height="400" div align="right">
-
-<p>4、客户机操作系统选择【Linux】，版本选择【Ubuntu64位】，然后点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/XAgZ4IvWTji5CUK.jpg" width="850" height="400" div align="right">
-
-<p>5、位置可更改，点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/owxQLiVrmWdJsYa.jpg" width="850" height="400" div align="right">
-
-<p>6、最大磁盘大小【20】GB，选择【将虚拟机磁盘拆分成多个文件】，然后点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/DKBEnuG6or3f4wx.jpg" width="850" height="400" div align="right">
-
-<p>7、点击【自定义硬件】</p>
-<img src="https://i.loli.net/2021/10/18/VlZBfoPbR9e8MSc.jpg" width="850" height="400" div align="right">
-
-<p>8、选择【内存】，此虚拟机的内存设为【2048MB】</p>
-<img src="https://i.loli.net/2021/10/18/AdjlBFmEVDNhr1O.jpg" width="850" height="400" div align="right">
-
-<p>9、选择【新CD/DVD(TATA)】后选择【使用ISO映像文件】，点击【浏览】，找到下载后文件夹里面的【ubuntu-21.04-desktop-amd64.iso】这个镜像并选择！</p>
-<img src="https://i.loli.net/2021/10/18/C8p4cyMIBuGbYWU.jpg" width="850" height="400" div align="right">
-
-<p>10、选择【网络适配器】，然后选择【仅主机模式】</p>
-<img src="https://i.loli.net/2021/10/18/IyBJxuMrLhml3Ko.jpg" width="850" height="400" div align="right">
-
-<p>11、选择【USB控制器】，点击【移除】</p>
-<img src="https://i.loli.net/2021/10/18/HwJm6DONtYMhFCz.jpg" width="850" height="400" div align="right">
-
-<p>12、选择【打印机】，点击【移除】</p>
-<img src="https://i.loli.net/2021/10/18/cjkhgORexpbFm4K.jpg" width="850" height="400" div align="right">
-
-<p>13、点击【关闭】</p>
-<img src="https://i.loli.net/2021/10/18/pfz13yURdGDW8qI.jpg" width="850" height="400" div align="right">
-
-<p>14、点击【完成】</p>
-<img src="https://i.loli.net/2021/10/18/VlZBfoPbR9e8MSc.jpg" width="850" height="400" div align="right">
-
-<p><font color="red" size="5"> 实在没有耐心放图片了，等闲了再贴图片吧,相信自己即使看文字你也可以安装完成的，加油！</font></p>
-<p>15、点击【开启此虚拟机】，等待开启</p>
-<p>16、择【中文简体】，点击【安装Ubuntu】</p>
-<p>17、点击【继续】</p>
-<p>18、点击【继续】</p>
-<p>19、点击【现在安装】</p>
-<p>20、点击【继续】</p>
-<p>21、这里默认【Shanghai】就OK</p>
-<p>22、创建用户账号（记住密码哦！）。不要担心你的计算机名是什么，你只需要输入姓名，计算机名就会自动生成。然后点击[继续]</p>
-<p>23、安装中，耐心等待（这个可能需要多点时间）</p>
-<p>24、点击【现在重启】，重启一会看屏幕中下方转圈其他都不动，键盘上点击【enter】</p>
-<p>25、点击账户，我这里是【simon-yian】</p>
-<p>26、输入之前创建用户账号时设的密码，然后点击【登录】</p>
-<p>27、至此Ubuntu系统安装完成！</p>
-<p><font color="red"><b>如果你觉得可以千万不要忘记动动你的小手，赞赏一下贫困的博客主</b><br><b>记得收藏啊，以后会有更好的内容给您分享</b></font></p>
-]]></content>
-      <categories>
-        <category>VMware</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Spring知识点梳理：</title>
     <url>/2021/11/27/SpringFrame/</url>
     <content><![CDATA[ <img src="https://i.loli.net/2021/11/15/vKFjo15HqAybLmE.png" align="center" width="600" height="400" div>
@@ -640,31 +533,116 @@
 ]]></content>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2021/10/11/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+    <title>在VMware16中创建虚拟机安装ubuntu 21.04系统</title>
+    <url>/2021/10/18/VMware-ubuntu/</url>
+    <content><![CDATA[<table>
+<tr><td bgcolor="CFCFCF">此篇是创建VMware16虚拟机安装ubuntu21.04系统的超详细操作过程，希望对小白白有所帮助
+</td></tr></table>
+
 <span id="more"></span>
 
-<h2 id="顾浩儿"><a href="#顾浩儿" class="headerlink" title="顾浩儿"></a>顾浩儿</h2><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>安装环境： windows 10</p>
+<p>VMware 16安装包：我用阿里云盘分享了「VMware-workstation-full-16.1.2-17966106.exe」，你可以不限速下载🚀<br>复制这段内容打开「阿里云盘」App 即可获取<br>链接：<a href="https://www.aliyundrive.com/s/7acSRwmGho2">https://www.aliyundrive.com/s/7acSRwmGho2</a></p>
+<p>ubuntu 21.04镜像：链接：<a href="https://pan.baidu.com/s/1ktE78cieRE9Y7_BhrG9vjQ">https://pan.baidu.com/s/1ktE78cieRE9Y7_BhrG9vjQ</a><br>提取码：n9ms</p>
+<h3 id="安装VMware-16"><a href="#安装VMware-16" class="headerlink" title="安装VMware 16"></a>安装VMware 16</h3><p>1、 直接双击下载好的VMware，这个过程可能会显示重新启动系统，那你点就是了。重新启动后再次双击下载好的VMware，然后点击【下一步】。</p>
+<img src="https://i.loli.net/2021/10/18/X4BvRZr2LKb5SyD.jpg" width="850" height="400" div align="right">
 
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="清除缓存文件"><a href="#清除缓存文件" class="headerlink" title="清除缓存文件"></a>清除缓存文件</h3><p>为了避免不必要的错误，在生成静态文件前，强烈建议先运行以下命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ hexo clean</span><br></pre></td></tr></table></figure>
+<p>2、勾选【我接受许可协议中的条款】，点击【下一步】</p>
+<img src="https://i.loli.net/2021/10/18/Prph8EuT6vaHiyQ.jpg" width="850" height="400" div align="right">
 
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>3、可以默认，也可更改安装位置</p>
+<img src="https://i.loli.net/2021/10/18/DqtysojVQrFE2R9.jpg" width="850" height="400" div align="right">
 
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>4、选择安装位置，然后点击【确定】</p>
+<img src="https://i.loli.net/2021/10/18/VzTAbUosOP4dK3W.jpg" width="850" height="400" div align="right">
 
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<p>5、点击【下一步】</p>
+<img src="https://i.loli.net/2021/10/18/DqtysojVQrFE2R9.jpg" width="850" height="400" div align="right">
+
+<p>6、取消勾选【启动时检查产品更新】和【加入VMware客户体验改进计划】，点击【下一步</p>
+<img src="https://i.loli.net/2021/10/18/ONQ954xcuaLZYBK.jpg" width="850" height="400" div align="right">
+
+<p>7、点击【下一步】</p>
+<img src="https://i.loli.net/2021/10/18/n2RPhJVXakzLgHU.jpg" width="850" height="400" div align="right">
+
+<p>8、点击【安装】</p>
+<img src="https://i.loli.net/2021/10/18/xe8kFh4T72tSAld.jpg" width="850" height="400" div align="right">
+
+<p>9、正在安装，等待几分钟</p>
+<img src="https://i.loli.net/2021/10/18/KzBpH8OeDyn5V3F.jpg" width="850" height="400" div align="right">
+
+<p>10、点击【许可证】</p>
+<img src="https://i.loli.net/2021/10/18/AaUSlwWnMCFJ3c1.jpg" width="850" height="400" div align="right">
+
+<p>11、框中输入许可证：ZF3R0-FHED2-M80TY-8QYGC-NPKYF，（复制粘贴就可以）然后点击【输入】</p>
+<p>12、点击【完成】</p>
+<p>恭喜你这会你的虚拟机已经安装好了，是不是直接点击下一步就可以</p>
+<h3 id="在VMware中安装ubuntu-21-04系统"><a href="#在VMware中安装ubuntu-21-04系统" class="headerlink" title="在VMware中安装ubuntu 21.04系统"></a>在VMware中安装ubuntu 21.04系统</h3><p>1、双击打开你创建在桌面的虚拟机，然后点击【创建新的虚拟机】</p>
+<img src="https://i.loli.net/2021/10/18/QWASzB7OuMIb6xm.jpg" width="850" height="400" div align="right">
+
+<p>2、选择【典型】（默认便是典型），点击【下一步】</p>
+<img src="https://i.loli.net/2021/10/18/9CzmqQYUDNeRo56.jpg" width="850" height="400" div align="right">
+
+<p>3、选择【稍后安装操作系统】，点击【下一步】</p>
+<img src="https://i.loli.net/2021/10/18/XZi389ajePvqRDk.jpg" width="850" height="400" div align="right">
+
+<p>4、客户机操作系统选择【Linux】，版本选择【Ubuntu64位】，然后点击【下一步】</p>
+<img src="https://i.loli.net/2021/10/18/XAgZ4IvWTji5CUK.jpg" width="850" height="400" div align="right">
+
+<p>5、位置可更改，点击【下一步】</p>
+<img src="https://i.loli.net/2021/10/18/owxQLiVrmWdJsYa.jpg" width="850" height="400" div align="right">
+
+<p>6、最大磁盘大小【20】GB，选择【将虚拟机磁盘拆分成多个文件】，然后点击【下一步】</p>
+<img src="https://i.loli.net/2021/10/18/DKBEnuG6or3f4wx.jpg" width="850" height="400" div align="right">
+
+<p>7、点击【自定义硬件】</p>
+<img src="https://i.loli.net/2021/10/18/VlZBfoPbR9e8MSc.jpg" width="850" height="400" div align="right">
+
+<p>8、选择【内存】，此虚拟机的内存设为【2048MB】</p>
+<img src="https://i.loli.net/2021/10/18/AdjlBFmEVDNhr1O.jpg" width="850" height="400" div align="right">
+
+<p>9、选择【新CD/DVD(TATA)】后选择【使用ISO映像文件】，点击【浏览】，找到下载后文件夹里面的【ubuntu-21.04-desktop-amd64.iso】这个镜像并选择！</p>
+<img src="https://i.loli.net/2021/10/18/C8p4cyMIBuGbYWU.jpg" width="850" height="400" div align="right">
+
+<p>10、选择【网络适配器】，然后选择【仅主机模式】</p>
+<img src="https://i.loli.net/2021/10/18/IyBJxuMrLhml3Ko.jpg" width="850" height="400" div align="right">
+
+<p>11、选择【USB控制器】，点击【移除】</p>
+<img src="https://i.loli.net/2021/10/18/HwJm6DONtYMhFCz.jpg" width="850" height="400" div align="right">
+
+<p>12、选择【打印机】，点击【移除】</p>
+<img src="https://i.loli.net/2021/10/18/cjkhgORexpbFm4K.jpg" width="850" height="400" div align="right">
+
+<p>13、点击【关闭】</p>
+<img src="https://i.loli.net/2021/10/18/pfz13yURdGDW8qI.jpg" width="850" height="400" div align="right">
+
+<p>14、点击【完成】</p>
+<img src="https://i.loli.net/2021/10/18/VlZBfoPbR9e8MSc.jpg" width="850" height="400" div align="right">
+
+<p><font color="red" size="5"> 实在没有耐心放图片了，等闲了再贴图片吧,相信自己即使看文字你也可以安装完成的，加油！</font></p>
+<p>15、点击【开启此虚拟机】，等待开启</p>
+<p>16、择【中文简体】，点击【安装Ubuntu】</p>
+<p>17、点击【继续】</p>
+<p>18、点击【继续】</p>
+<p>19、点击【现在安装】</p>
+<p>20、点击【继续】</p>
+<p>21、这里默认【Shanghai】就OK</p>
+<p>22、创建用户账号（记住密码哦！）。不要担心你的计算机名是什么，你只需要输入姓名，计算机名就会自动生成。然后点击[继续]</p>
+<p>23、安装中，耐心等待（这个可能需要多点时间）</p>
+<p>24、点击【现在重启】，重启一会看屏幕中下方转圈其他都不动，键盘上点击【enter】</p>
+<p>25、点击账户，我这里是【simon-yian】</p>
+<p>26、输入之前创建用户账号时设的密码，然后点击【登录】</p>
+<p>27、至此Ubuntu系统安装完成！</p>
+<p><font color="red"><b>如果你觉得可以千万不要忘记动动你的小手，赞赏一下贫困的博客主</b><br><b>记得收藏啊，以后会有更好的内容给您分享</b></font></p>
 ]]></content>
+      <categories>
+        <category>VMware</category>
+      </categories>
   </entry>
   <entry>
-    <title>培训心得20220627</title>
+    <title>培训心得&amp;emsp;&amp;emsp;[走进HTML]</title>
     <url>/2022/06/27/XiAnTrain20220627/</url>
-    <content><![CDATA[<p><em><strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;学习打卡第一天</strong></em></p>
+    <content><![CDATA[<p><em><strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;学习打卡第一天</strong></em><br>学习链接：<a href="https://www.yuque.com/docs/share/7867136c-a7d4-4864-b727-a1404d1fe251">https://www.yuque.com/docs/share/7867136c-a7d4-4864-b727-a1404d1fe251</a></p>
 <span id="more"></span>
 
 
@@ -757,6 +735,70 @@
       <categories>
         <category>XiAnTrain</category>
       </categories>
+  </entry>
+  <entry>
+    <title>培训心得&amp;emsp;&amp;emsp;[表单]</title>
+    <url>/2022/06/29/XiAnTrain20220628/</url>
+    <content><![CDATA[<p><em><strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;学习打卡第二天</strong></em><br>学习链接：<a href="https://www.yuque.com/docs/share/b84dd032-287e-4aa0-a6be-ae7eb275b0ee#">https://www.yuque.com/docs/share/b84dd032-287e-4aa0-a6be-ae7eb275b0ee?#</a></p>
+<span id="more"></span>
+<h1 id="第二章-表单"><a href="#第二章-表单" class="headerlink" title="第二章 表单"></a>第二章 表单</h1><p>表单是用来显示，收集，提交用户信息，表单在网页中主要负责数据采集功能，一个表单由三个基本部分组成：表单元素、表单域、按钮</p>
+<h2 id="2-1表单"><a href="#2-1表单" class="headerlink" title="2.1表单"></a>2.1表单</h2><p>表单是一个包含表单元素的区域，使用<code>&lt;form&gt;...&lt;/form&gt;</code>定义，通过在表单中添加对应的表单元素使得用户可以在网页上输入数据<br><code>&lt;form&gt;</code>中含有诸多属性用来规定表单的格式，详见下表</p>
+<h2 id="2-2-表单元素"><a href="#2-2-表单元素" class="headerlink" title="2.2 表单元素"></a>2.2 表单元素</h2><h3 id="2-2-1-输入标签"><a href="#2-2-1-输入标签" class="headerlink" title="2.2.1 输入标签"></a>2.2.1 输入标签</h3><p>多数情况下使用的表单元素是输入标签<code>&lt;input&gt;</code><br>元素内输入类型有标签中的type属性定义，常用的元素类型如下表：</p>
+<h3 id="2-2-2-下拉标签"><a href="#2-2-2-下拉标签" class="headerlink" title="2.2.2 下拉标签"></a>2.2.2 下拉标签</h3><p>● <code>&lt;select&gt;</code>元素为表单控件，用于在表单中接收数据<br>  ○ <code>&lt;select&gt;</code>元素可创建单选或多选菜单<br>  ○ <code>&lt;option&gt;</code>标签定义了菜单中的可选项<br>● 下拉列表支持属性</p>
+<h3 id="2-2-3-按钮"><a href="#2-2-3-按钮" class="headerlink" title="2.2.3 按钮"></a>2.2.3 按钮</h3><p>● 按钮在网页中一般用于提交，重置页面数据，也可以与javascript配置做一些交互响应事件<br>● 在HTML中按钮一般使用<code>&lt;input&gt;</code>或<code>&lt;button&gt;</code>来定义<br>● 按钮属性</p>
+<p>● <code>&lt;button&gt;</code>与<code>&lt;input&gt;</code>按钮区别<br>  ○<code> &lt;button&gt;</code>按钮如果不设置type属性，在不同浏览器中可能会提交不同值<br>  ○ <code>&lt;button&gt;</code>按钮是成对出现的，可放置文本，图像等，<code>&lt;input&gt;</code>标签只能通过value属性为其设置文本<br>  ○ 需要注意的是虽然<code>&lt;button&gt;</code>按钮可以嵌套其它标签，但不能再去嵌套按钮<br>示例</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;form&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            文本：&lt;input type=&quot;text&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            密码：&lt;input type=&quot;password&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            颜色色：&lt;input type=&quot;color&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;单选：</span><br><span class="line">            男&lt;input type=&quot;radio&quot; name=&quot;gender&quot;&gt;</span><br><span class="line">            女&lt;input type=&quot;radio&quot; name=&quot;gender&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;复选：</span><br><span class="line">            爱好1&lt;input type=&quot;checkbox&quot;&gt;</span><br><span class="line">            爱好2&lt;input type=&quot;checkbox&quot;&gt;</span><br><span class="line">            爱好3&lt;input type=&quot;checkbox&quot;&gt;</span><br><span class="line">            爱好4&lt;input type=&quot;checkbox&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            下拉：&lt;select name=&quot;&quot; &gt;</span><br><span class="line">                &lt;option value=&quot;&quot;&gt;[请输入...]&lt;/option&gt;</span><br><span class="line">                &lt;option value=&quot;&quot;&gt;选择数据一&lt;/option&gt;</span><br><span class="line">                &lt;option value=&quot;&quot;&gt;选择数据二&lt;/option&gt;</span><br><span class="line">            &lt;/select&gt;县</span><br><span class="line">            &lt;select name=&quot;&quot; &gt;</span><br><span class="line">                &lt;option value=&quot;&quot;&gt;[请输入...]&lt;/option&gt;</span><br><span class="line">                &lt;option value=&quot;&quot;&gt;选择数据一&lt;/option&gt;</span><br><span class="line">                &lt;option value=&quot;&quot;&gt;选择数据二&lt;/option&gt;</span><br><span class="line">            &lt;/select&gt;村</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            日期：&lt;input type=&quot;date&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            时间：&lt;input type=&quot;time&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            月份：&lt;input type=&quot;month&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            文件：&lt;input type=&quot;file&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            数字：&lt;input type=&quot;number&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            数字范围：&lt;input type=&quot;range&quot; max=&quot;10&quot; min=&quot;0&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            邮箱：&lt;input type=&quot;email&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            地址：&lt;input type=&quot;url&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            隐藏：&lt;input type=&quot;hidden&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            &lt;input type=&quot;submit&quot; value=&quot;input提交按钮&quot;&gt;</span><br><span class="line">            &lt;input type=&quot;reset&quot; value=&quot;input重置按钮&quot;&gt;</span><br><span class="line">            &lt;input type=&quot;button&quot; value=&quot;input按钮&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            &lt;button type=&quot;submit&quot;&gt;button提交按钮&lt;/button&gt;</span><br><span class="line">            &lt;button type=&quot;reset&quot;&gt;button重置按钮&lt;/button&gt;</span><br><span class="line">            &lt;button type=&quot;button&quot;&gt;button按钮&lt;/button&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">    &lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="2-3-HTML5-表单增强"><a href="#2-3-HTML5-表单增强" class="headerlink" title="2.3 HTML5 表单增强"></a>2.3 HTML5 表单增强</h2><h3 id="2-3-1-form属性"><a href="#2-3-1-form属性" class="headerlink" title="2.3.1 form属性"></a>2.3.1 form属性</h3><p>在HTML4中，表单内的从属元素必须书写在表单内部，但在HTML5中，可以把它书写在页面的任意地方，然后给该元素指定一个form属性，属性值为该表单的id，这样就可以声明该元素从属于指定的表单<br>示例</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;form id=&quot;formTest&quot;&gt;</span><br><span class="line">	&lt;input type=&quot;text&quot; name=&quot;username&quot;/&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line">&lt;input type=&quot;password&quot; name=&quot;password&quot; form=&quot;formTest&quot;&gt;</span><br></pre></td></tr></table></figure>
+<p>代码解析：</p>
+<ol>
+<li>第一个input标签从属form表单，它被书写在form表单内部，所以用不着对它指定form属性</li>
+<li>第二个input表单被书写在form之外，但想要它从属form，这时就可以为其添加form属性并指定表单id让它从属form表单<h3 id="2-3-2-formaction属性"><a href="#2-3-2-formaction属性" class="headerlink" title="2.3.2 formaction属性"></a>2.3.2 formaction属性</h3>在HTML 4中，一个表单内的所有元素都只能通过表单的action属性统一提交到另一个页面，而在HTML 5中可以给所有的提交按钮，诸如<code>&lt;input type=&quot;submit&quot;&gt;、&lt;inputtype=&quot;image&quot;&gt;、&lt;button type=&quot;submit&quot;&gt;</code>都增加不同的formaction属性，使得点击不同的按钮，可以将表单提交到不同的页面，formaction属性的使用方法如下：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;form id=&quot;testform&quot; action=&quot; serve.jsp&quot;&gt;</span><br><span class="line">  &lt;input type=&quot;submit&quot; name=&quot;s1&quot; value=&quot;v1&quot; formaction=&quot;s1.jsp&quot;&gt;提交到s1</span><br><span class="line">  &lt;input type=&quot;submit&quot; name=&quot;s2&quot; value=&quot;v2&quot; formaction=&quot;s2.jsp&quot;&gt;提交到s2</span><br><span class="line">  &lt;input type=&quot;submit&quot; name=&quot;s3&quot; value=&quot;v3&quot; formaction=&quot;s3.jsp&quot;&gt;提交到s3</span><br><span class="line">  &lt;input type= &quot;submit&quot;&gt;</span><br><span class="line">&lt;form&gt;</span><br></pre></td></tr></table></figure>
+注：该属性目前支持的浏览器并不多，慎重使用<h3 id="2-3-3-list属性"><a href="#2-3-3-list属性" class="headerlink" title="2.3.3 list属性"></a>2.3.3 list属性</h3>在HTML 5中，为单行文本框(<code>&lt;input type=&quot;text&quot;&gt;</code>)增加了一个list属性，该属性的值为某个datalist元素的id。datalist元素也是HTML 5中新增元素，该元素类似于选择框( select&gt;)，但是当用户想要设定的值不在选择列表之内时，允许其自行输入。该元素本身并不显示，而是当文本框获得焦点时以提示输入的方式显示。为了避免在没有支持该元素的浏览器上出现显示错误，可以用CSS等将它设定为不显示。<br>示例</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    text: &lt;input type=&quot;text&quot; name=&quot; greeting&quot; list=&quot;greetings&quot;&gt;</span><br><span class="line">    &lt;datalist id=&quot;greetings&quot;&gt;</span><br><span class="line">        &lt;option value=&quot;Good Morning&quot;&gt;Good Morning&lt;/option&gt;</span><br><span class="line">        &lt;option value=&quot;Hello&quot;&gt;Hello&lt;/option&gt;</span><br><span class="line">        &lt;option value=&quot;Good Afternoon&quot;&gt;Good Afternoon&lt;/option&gt;</span><br><span class="line">    &lt;/datalist&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="2-3-4-autocomplete属性"><a href="#2-3-4-autocomplete属性" class="headerlink" title="2.3.4 autocomplete属性"></a>2.3.4 autocomplete属性</h3><p>辅助输入所用的自动完成功能，是一个节省输入时间，同时也十分方便的功能。在HTML5之前，因为谁都可以看见输入的值，所以存在安全隐患，但只要使用autocomplete属性，安全性就可以得到很好的控制。.<br>对于autocomplete属性，可以指定“on”、“off”与“”(不指定）这三种值。不指定时，使用浏览器的默认值(取决于各浏览器的决定)。把该属性设为on时，可以显式指定候补输入的数据列表。使用detalist元素与list属性提供候补输入的数据列表，自动完成时，可以将该datalist元素中的数据作为候补输入的数据在文本框中自动显示。autocomplete属性的使用方法如下所示。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    text: &lt;input type=&quot;text&quot; name=&quot;greeting&quot; list=&quot;greetings&quot; autocomplete=&quot;on&quot;&gt;</span><br><span class="line">    &lt;datalist id=&quot;greetings&quot;&gt;</span><br><span class="line">        &lt;option value=&quot;Good Morning&quot;&gt;Good Morning&lt;/option&gt;</span><br><span class="line">        &lt;option value=&quot;Hello&quot;&gt;Hello&lt;/option&gt;</span><br><span class="line">        &lt;option value=&quot;Good Afternoon&quot;&gt;Good Afternoon&lt;/option&gt;</span><br><span class="line">    &lt;/datalist&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="2-3-5-output标签"><a href="#2-3-5-output标签" class="headerlink" title="2.3.5 output标签"></a>2.3.5 output标签</h3><p>● output为H5的新增标签，用来定义不同类型的输出，长和form表单一起使用，用来输出显示计算结果<br>● 语法</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;output name=&quot;名称&quot; for=&quot;element_id&quot;&gt;默认内容&lt;/output&gt;</span><br></pre></td></tr></table></figure>
+<p>● 标签属性<br>  ○ for：定义输出域相关的一个或多个元素，以空格隔开；<br>  ○ form：定义输入字段所属的一个或多个表单，以空格隔开；<br>  ○ name：定义对象的唯一名称（表单提交时使用）。<br>示例</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;form oninput=&quot;o.value=parseInt(a.value)&quot;&gt;</span><br><span class="line">        选择数字范围：&lt;input type=&quot;range&quot; min=&quot;0&quot; max=&quot;100&quot; id=&quot;a&quot;&gt;</span><br><span class="line">        &lt;output id=&quot;o&quot; &gt;50&lt;/output&gt;</span><br><span class="line">    &lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>示例二</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;form oninput=&quot;x.value=parseInt(a.value)+parseInt(b.value)&quot;&gt;</span><br><span class="line">        &lt;input type=&quot;number&quot; id=&quot;a&quot; value=&quot;0&quot;&gt; +</span><br><span class="line">        &lt;input type=&quot;number&quot; id=&quot;b&quot; value=&quot;0&quot;&gt; =</span><br><span class="line">        &lt;output name=&quot;x&quot; for=&quot;a b&quot;&gt;0&lt;/output&gt;</span><br><span class="line">    &lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>注：<br>oninput为表单事件，表示当对元素输入数据时触发<br>parseInt为javascript函数，用来解析一个字符串，并返回一个整数</p>
+<h3 id="2-3-6-表单验证"><a href="#2-3-6-表单验证" class="headerlink" title="2.3.6 表单验证"></a>2.3.6 表单验证</h3><p>在H5中，新增了大量在提交时对表单与表单内新增元素进行有效性验证的功能</p>
+<h3 id="2-3-6-1-自动验证"><a href="#2-3-6-1-自动验证" class="headerlink" title="2.3.6.1 自动验证"></a>2.3.6.1 自动验证</h3><p>在H5中，新增的一些表单元素本身就带有简单的提交格式验证，如邮箱（email）就有固定的格式“@”，“.”，但普通的表单元素就要通过对元素使用属性的方法，来实现在表单提交时执行自动验证的功能<br>普通表单元素的验证属性</p>
+<ol>
+<li>required属性<br>HTML 5中新增的required属性可以应用在大多数输入元素上（除了隐藏元素、图片元素按钮上)。在提交时，如果元素中内容为空白，则不允许提交，同时在浏览器中显示信息提示文字，提示用户这个元素中必须输入内容。</li>
+<li>pattern属性<br>之前提到的一些新增的input元素，譬如email、number、url等，要求输入内容符合–定的格式，对input元素使用pattern属性，并且将属性值设为某个格式的正则表达式，在提交时会检查其内容是否符合给定格式。当输入的内容不符合给定格式时，则不允许提交，同时在浏览器中显示信息提示文字，提示输入的内容必须符合给定格式。譬如下面所示，要求输入内容为三个大写字母。</li>
+<li>min属性与max属性<br>min与max这两个属性是数值类型或日期类型的input元素的专用属性，它们限制了在input元素中输入的数值与日期的范围。</li>
+</ol>
+]]></content>
+      <categories>
+        <category>XiAnTrain</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2021/10/11/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<span id="more"></span>
+
+<h2 id="顾浩儿"><a href="#顾浩儿" class="headerlink" title="顾浩儿"></a>顾浩儿</h2><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="清除缓存文件"><a href="#清除缓存文件" class="headerlink" title="清除缓存文件"></a>清除缓存文件</h3><p>为了避免不必要的错误，在生成静态文件前，强烈建议先运行以下命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ hexo clean</span><br></pre></td></tr></table></figure>
+
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
   </entry>
   <entry>
     <title>使用hexo+github搭建博客</title>
@@ -932,6 +974,50 @@
   <table><tr><td bgcolor="yellow">背景色yellow</td></tr></table>]]></content>
       <categories>
         <category>hexo</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>培训心得&amp;emsp;&amp;emsp;[HTML5]</title>
+    <url>/2022/06/30/xianTrain3/</url>
+    <content><![CDATA[<p><em><strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;学习打卡第三天</strong></em><br>学习链接：<a href="https://www.yuque.com/docs/share/9ce7b3ef-6298-4b49-a687-39a524629130#">https://www.yuque.com/docs/share/9ce7b3ef-6298-4b49-a687-39a524629130?#</a> </p>
+<span id="more"></span>
+
+<h1 id="3-1新增元素"><a href="#3-1新增元素" class="headerlink" title="3.1新增元素"></a>3.1新增元素</h1><h2 id="3-1-1-新增的结构元素"><a href="#3-1-1-新增的结构元素" class="headerlink" title="3.1.1 新增的结构元素"></a>3.1.1 新增的结构元素</h2><h3 id="●-lt-section-gt-元素"><a href="#●-lt-section-gt-元素" class="headerlink" title="● &lt;section&gt;元素"></a>● <code>&lt;section&gt;</code>元素</h3><p><code>&lt;section&gt;</code>元素表示页面中的内容区块，如：页眉，页脚，章节等部分<br>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt; </span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt; </span><br><span class="line">&lt;title&gt;section&lt;/title&gt; </span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;section&gt;</span><br><span class="line">    &lt;h1&gt;区域一&lt;/h1&gt;</span><br><span class="line">    &lt;p&gt;这里是区域一的内容&lt;/p&gt;</span><br><span class="line">  &lt;/section&gt;</span><br><span class="line"></span><br><span class="line">  &lt;section&gt;</span><br><span class="line">   &lt;h1&gt;区域二&lt;/h1&gt;</span><br><span class="line">    &lt;p&gt;这里是区域二的内容&lt;/p&gt;</span><br><span class="line">  &lt;/section&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="●-lt-article-gt-元素"><a href="#●-lt-article-gt-元素" class="headerlink" title="● &lt;article&gt;元素"></a>● <code>&lt;article&gt;</code>元素</h3><p><code>&lt;article&gt;</code>元素表示页面中的一块与上下文不相关的独立内容，如：新闻页中诸多文章中的某篇文章<br>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt; </span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt; </span><br><span class="line">&lt;title&gt;article&lt;/title&gt; </span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">  &lt;article&gt;</span><br><span class="line">    &lt;h1&gt;两个“万岁”&lt;/h1&gt;</span><br><span class="line">    &lt;p&gt;“伟大、光荣、正确的中国共产党万岁！”&lt;/p&gt;</span><br><span class="line">		&lt;p&gt;“伟大、光荣、英雄的中国人民万岁！”&lt;/p&gt;</span><br><span class="line">  &lt;/article&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="●-lt-aside-gt-元素"><a href="#●-lt-aside-gt-元素" class="headerlink" title="● &lt;aside&gt;元素"></a>● <code>&lt;aside&gt;</code>元素</h3><p><code>&lt;aside&gt;</code>表示<code>&lt;article&gt;</code>元素的内容之外的，它的内容应该与附近内容相关<br>代码：</p>
+<figure class="highlight plaintext"><figcaption><span>html></span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt; </span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt; </span><br><span class="line">&lt;title&gt;aside&lt;/title&gt; </span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">  &lt;p&gt;神州十二号飞船成功升空&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">  &lt;aside&gt;</span><br><span class="line">    &lt;h4&gt;飞船抵达中国空间站&lt;/h4&gt;</span><br><span class="line">    &lt;p&gt;6月19日上午，神舟十二号飞船抵达距离天和核心舱200米的停留点，开始进行对接准备。</span><br><span class="line">      通过使用最先进的快速交会对接自动化技术</span><br><span class="line">      这一切都要归功于从一次次太空飞行中总结的的经验。&lt;/p&gt;</span><br><span class="line">  &lt;/aside&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="●-lt-header-gt-元素"><a href="#●-lt-header-gt-元素" class="headerlink" title="● &lt;header&gt;元素"></a>●<code> &lt;header&gt;</code>元素</h3><p><code>&lt;header&gt;</code>元素表示页面中的一个内容块或整个页面的标题<br>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt; </span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt; </span><br><span class="line">&lt;title&gt;header&lt;/title&gt; </span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;article&gt;</span><br><span class="line">    &lt;header&gt;</span><br><span class="line">      &lt;h1&gt;飞船抵达中国空间站&lt;/h1&gt;</span><br><span class="line">    &lt;/header&gt;</span><br><span class="line">    &lt;p&gt;</span><br><span class="line">      6月19日上午，神舟十二号飞船抵达距离天和核心舱200米的停留点，开始进行对接准备。</span><br><span class="line">      通过使用最先进的快速交会对接自动化技术</span><br><span class="line">      这一切都要归功于从一次次太空飞行中总结的的经验。</span><br><span class="line">    &lt;/p&gt;</span><br><span class="line">  &lt;/article&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="●-lt-footer-gt-元素"><a href="#●-lt-footer-gt-元素" class="headerlink" title="● &lt;footer&gt;元素"></a>●<code> &lt;footer&gt;</code>元素</h3><p><code>&lt;footer&gt;</code>元素表示整个页面或页面中一个区域内的脚注，一般包含作者的基本信息<br>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt; </span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;header&lt;/title&gt; </span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;article&gt;</span><br><span class="line">        &lt;header&gt;</span><br><span class="line">            &lt;h1&gt;飞船抵达中国空间站&lt;/h1&gt;</span><br><span class="line">        &lt;/header&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            6月19日上午，神舟十二号飞船抵达距离天和核心舱200米的停留点，开始进行对接准备。</span><br><span class="line">            通过使用最先进的快速交会对接自动化技术</span><br><span class="line">            这一切都要归功于从一次次太空飞行中总结的的经验。</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">    &lt;/article&gt;</span><br><span class="line">    &lt;footer&gt;</span><br><span class="line">        &lt;p&gt;&amp;copy;环球网&lt;/p&gt;</span><br><span class="line">      	&lt;p&gt;发表时间：7-12&lt;/p&gt;</span><br><span class="line">    &lt;/footer&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="●-lt-nav-gt-元素"><a href="#●-lt-nav-gt-元素" class="headerlink" title="● &lt;nav&gt;元素"></a>● <code>&lt;nav&gt;</code>元素</h3><p><code>&lt;nav&gt;</code>元素通常在内嵌套<code>&lt;a&gt;</code>标签表示页面的导航链接部分<br>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt; </span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt; </span><br><span class="line">&lt;title&gt;nav&lt;/title&gt; </span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">  &lt;nav&gt;</span><br><span class="line">    &lt;a href=&quot;/html/&quot;&gt;HTML&lt;/a&gt; |</span><br><span class="line">    &lt;a href=&quot;/css/&quot;&gt;CSS&lt;/a&gt; |</span><br><span class="line">    &lt;a href=&quot;/js/&quot;&gt;JavaScript&lt;/a&gt; |</span><br><span class="line">    &lt;a href=&quot;/jquery/&quot;&gt;jQuery&lt;/a&gt;</span><br><span class="line">  &lt;/nav&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="●-lt-video-gt-元素"><a href="#●-lt-video-gt-元素" class="headerlink" title="● &lt;video&gt;元素"></a>● <code>&lt;video&gt;</code>元素</h3><p>  ○ <code>&lt;video&gt;</code>元素用来插入视频<br>  ○ <code>&lt;video&gt;</code>元素仅支持MP4，WebM，Ogg视频格式<br>  ○ 元素属性表：<br><img src="https://s2.loli.net/2022/07/04/s2cxC4aoOdI5mwN.jpg" align="center" width="800" height="250" div></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt; </span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt; </span><br><span class="line">&lt;title&gt;video&lt;/title&gt; </span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">  &lt;video width=&quot;320&quot; height=&quot;240&quot; controls&gt;</span><br><span class="line">    &lt;source src=&quot;movie.mp4&quot;  type=&quot;video/mp4&quot;&gt;</span><br><span class="line">    &lt;source src=&quot;movie.ogg&quot;  type=&quot;video/ogg&quot;&gt;</span><br><span class="line">    您的浏览器不支持 HTML5 video 标签。</span><br><span class="line">  &lt;/video&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="●-lt-audio-gt-元素"><a href="#●-lt-audio-gt-元素" class="headerlink" title="● &lt;audio&gt;元素"></a>● <code>&lt;audio&gt;</code>元素</h3><p>  ○ <code>&lt;audio&gt;</code>元素用来插入音频<br>  ○ <code>&lt;audio&gt;</code>元素仅支持Ogg和MP3格式<br>  ○ 元素属性表<br>  <img src="https://s2.loli.net/2022/07/04/uAO9yGsiZLHmkUq.jpg" align="center" width="800" height="250" div></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">  &lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt; </span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt; </span><br><span class="line">&lt;title&gt;audio&lt;/title&gt; </span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;audio controls&gt;</span><br><span class="line">    &lt;source src=&quot;music.ogg&quot; type=&quot;audio/ogg&quot;&gt;</span><br><span class="line">    &lt;source src=&quot;music.mp3&quot; type=&quot;audio/mpeg&quot;&gt;</span><br><span class="line">  您的浏览器不支持 audio 元素。</span><br><span class="line">  &lt;/audio&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="●-lt-mark-gt-元素"><a href="#●-lt-mark-gt-元素" class="headerlink" title="● &lt;mark&gt;元素"></a>● <code>&lt;mark&gt;</code>元素</h3><p><code>&lt;mark&gt;</code>元素主要用来在视觉上向用户呈现哪些需要突出显示或高亮显示的文字，一般用在搜索结果中向用户高亮显示搜索关键词<br>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt; </span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt; </span><br><span class="line">&lt;title&gt;mark&lt;/title&gt; </span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;p&gt;神舟十二号航天员乘组圆满完成空间站阶段&lt;mark&gt;首次出舱&lt;/mark&gt;活动全部既定任务&lt;/p&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="●-lt-ruby-gt-元素"><a href="#●-lt-ruby-gt-元素" class="headerlink" title="● &lt;ruby&gt;元素"></a>● <code>&lt;ruby&gt;</code>元素</h3><p><code>&lt;ruby&gt;</code>表示中文注音或字符</p>
+<h3 id="●-lt-rt-gt-元素"><a href="#●-lt-rt-gt-元素" class="headerlink" title="● &lt;rt&gt;元素"></a>● <code>&lt;rt&gt;</code>元素</h3><p><code>&lt;rt&gt;</code>元素与<code>&lt;ruby&gt;</code>配合使用用来解释或发音</p>
+<h3 id="●-lt-rp-gt-元素"><a href="#●-lt-rp-gt-元素" class="headerlink" title="● &lt;rp&gt;元素"></a>● <code>&lt;rp&gt;</code>元素</h3><p><code>&lt;rp&gt;</code>元素与<code>&lt;ruby&gt;</code>一起使用，以定义不支持<code>&lt;ruby&gt;</code>元素的浏览器显示内容，以括号的形式出现如：汉字(Han Zi)<br>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt; </span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt; </span><br><span class="line">&lt;title&gt;ruby,rt,rp</span><br><span class="line">  &lt;/title&gt; </span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;ruby&gt;</span><br><span class="line">  汉 &lt;rp&gt;(&lt;/rp&gt;&lt;rt&gt;Han&lt;/rt&gt;&lt;rp&gt;)&lt;/rp&gt;</span><br><span class="line">  字 &lt;rp&gt;(&lt;/rp&gt;&lt;rt&gt;zi&lt;/rt&gt;&lt;rp&gt;)&lt;/rp&gt;</span><br><span class="line">&lt;/ruby&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="●-lt-details-gt-元素"><a href="#●-lt-details-gt-元素" class="headerlink" title="● &lt;details&gt;元素"></a>● <code>&lt;details&gt;</code>元素</h3><p><code>&lt;details&gt;</code>元素表示用户要求得到的细节信息，与<code>&lt;summary&gt;</code>配合使用，<code>&lt;summary&gt;</code>提供标题或图例，用户点击标题时，会显示户细节信息，<code>&lt;summary&gt;</code>元素应该是<code>&lt;details&gt;</code>元素的第一个元素<br>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;details&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;details&gt;</span><br><span class="line">        &lt;summary&gt;空间站&lt;/summary&gt;</span><br><span class="line">        空间站（space station）又称太空站、航天站。</span><br><span class="line">      	是一种在近地轨道长时间运行、可供多名航天员巡访、长期工作和生活的载人航天器。</span><br><span class="line">      	空间站分为单模块空间站和多模块空间站两种。</span><br><span class="line">      	单模块空间站可由航天运载器一次发射入轨，多模块空间站则由航天运载器分批将各模块送入轨道，在太空中将各模块组装而成。</span><br><span class="line">      	在空间站中要有人能够生活的一切设施，空间站不具备返回地球的能力。</span><br><span class="line">    &lt;/details&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="3-2-全局属性"><a href="#3-2-全局属性" class="headerlink" title="3.2 全局属性"></a>3.2 全局属性</h1><h2 id="3-2-1-contentEditable属性"><a href="#3-2-1-contentEditable属性" class="headerlink" title="3.2.1 contentEditable属性"></a>3.2.1 contentEditable属性</h2><p>contentEditable属性由微软开发并被其它浏览器反编译投入引用的一个全局属性，该属性允许用户编辑元素内容，该属性是一个布尔值的属性，可以被指定false或true<br>该属性默认inherit（继承）状态，属性为true时，元素被指定为允许编辑；属性为false时，元素被指定为不允许编辑状态；未指定值时，则由inherit状态决定，如果父元素是可编辑元素，则该元素也可编辑<br>在编辑完成后，如果想要保存其中的内容，只能把该元素的innerHTML发送到服务器端进行保存，目前还没有特别的API来保存编辑后的元素内容<br>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;contenteditable&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;ul contenteditable=&quot;true&quot;&gt;</span><br><span class="line">        &lt;li&gt;这是预编译内容&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;这是预编译内容&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;这是预编译内容&lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="3-2-2-designMode属性"><a href="#3-2-2-designMode属性" class="headerlink" title="3.2.2 designMode属性"></a>3.2.2 designMode属性</h2><p>designModel属性用来指定整个页面是否可编辑，当页面可编辑时，页面中任何支持contenteditable属性的元素都变成可编辑状态。该属性只能在JavaScript脚本里被编辑修改，该属性有两个值 “on”或“off”，当属性被指定为“on”时，页面为可编辑状态，为“off”时，页面不可编辑<br>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;designMode&lt;/title&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        document.designMode=&quot;on&quot;;</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">        &lt;li&gt;这是原有内容&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;这是原有内容&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;这是原有内容&lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">    &lt;a href=&quot;javascript:void(0)&quot;&gt;链接&lt;/a&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="3-2-3-hidden属性"><a href="#3-2-3-hidden属性" class="headerlink" title="3.2.3 hidden属性"></a>3.2.3 hidden属性</h2><p>在HTML 5中，所有的元素都允许使用一个hidden属性。该属性类似于input元素中的 hidden元素，功能是通知浏览器不渲染该元素。使该元素处干不可见状态。但是元素中的内容还是浏览器创建的，也就是说页面装载后允许使用JavaScript脚本将该属性取消，取消后该元素变为可见状态，同时元素中的内容也即时显示出来。Hidden属性是一个布尔值的属性。当设为true时，元素处于不可见状态;当设为false时，元素处于可见状态</p>
+]]></content>
+      <categories>
+        <category>XiAnTrain</category>
       </categories>
   </entry>
 </search>
