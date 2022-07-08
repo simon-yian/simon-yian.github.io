@@ -19,52 +19,27 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"simon-yian.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-<meta name="description" content="此篇是创建VMware16虚拟机安装ubuntu21.04系统的超详细操作过程，希望对小白白有所帮助">
+<meta name="description" content="&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;学习打卡第嗯天">
 <meta property="og:type" content="article">
-<meta property="og:title" content="在VMware16中创建虚拟机安装ubuntu 21.04系统">
-<meta property="og:url" content="https://simon-yian.github.io/2021/10/18/VMware-ubuntu/index.html">
+<meta property="og:title" content="培训心得 [javaScript对象]">
+<meta property="og:url" content="https://simon-yian.github.io/2022/07/07/xianTrain4-jsObject/index.html">
 <meta property="og:site_name" content="simon·yian&#39;Blog">
-<meta property="og:description" content="此篇是创建VMware16虚拟机安装ubuntu21.04系统的超详细操作过程，希望对小白白有所帮助">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;学习打卡第嗯天">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://i.loli.net/2021/10/18/X4BvRZr2LKb5SyD.jpg">
-<meta property="og:image" content="https://i.loli.net/2021/10/18/Prph8EuT6vaHiyQ.jpg">
-<meta property="og:image" content="https://i.loli.net/2021/10/18/DqtysojVQrFE2R9.jpg">
-<meta property="og:image" content="https://i.loli.net/2021/10/18/VzTAbUosOP4dK3W.jpg">
-<meta property="og:image" content="https://i.loli.net/2021/10/18/DqtysojVQrFE2R9.jpg">
-<meta property="og:image" content="https://i.loli.net/2021/10/18/ONQ954xcuaLZYBK.jpg">
-<meta property="og:image" content="https://i.loli.net/2021/10/18/n2RPhJVXakzLgHU.jpg">
-<meta property="og:image" content="https://i.loli.net/2021/10/18/xe8kFh4T72tSAld.jpg">
-<meta property="og:image" content="https://i.loli.net/2021/10/18/KzBpH8OeDyn5V3F.jpg">
-<meta property="og:image" content="https://i.loli.net/2021/10/18/AaUSlwWnMCFJ3c1.jpg">
-<meta property="og:image" content="https://i.loli.net/2021/10/18/QWASzB7OuMIb6xm.jpg">
-<meta property="og:image" content="https://i.loli.net/2021/10/18/9CzmqQYUDNeRo56.jpg">
-<meta property="og:image" content="https://i.loli.net/2021/10/18/XZi389ajePvqRDk.jpg">
-<meta property="og:image" content="https://i.loli.net/2021/10/18/XAgZ4IvWTji5CUK.jpg">
-<meta property="og:image" content="https://i.loli.net/2021/10/18/owxQLiVrmWdJsYa.jpg">
-<meta property="og:image" content="https://i.loli.net/2021/10/18/DKBEnuG6or3f4wx.jpg">
-<meta property="og:image" content="https://i.loli.net/2021/10/18/VlZBfoPbR9e8MSc.jpg">
-<meta property="og:image" content="https://i.loli.net/2021/10/18/AdjlBFmEVDNhr1O.jpg">
-<meta property="og:image" content="https://i.loli.net/2021/10/18/C8p4cyMIBuGbYWU.jpg">
-<meta property="og:image" content="https://i.loli.net/2021/10/18/IyBJxuMrLhml3Ko.jpg">
-<meta property="og:image" content="https://i.loli.net/2021/10/18/HwJm6DONtYMhFCz.jpg">
-<meta property="og:image" content="https://i.loli.net/2021/10/18/cjkhgORexpbFm4K.jpg">
-<meta property="og:image" content="https://i.loli.net/2021/10/18/pfz13yURdGDW8qI.jpg">
-<meta property="og:image" content="https://i.loli.net/2021/10/18/VlZBfoPbR9e8MSc.jpg">
-<meta property="article:published_time" content="2021-10-18T11:59:48.000Z">
-<meta property="article:modified_time" content="2021-10-22T04:03:30.000Z">
+<meta property="article:published_time" content="2022-07-07T11:58:17.000Z">
+<meta property="article:modified_time" content="2022-07-08T11:03:10.000Z">
 <meta property="article:author" content="simon·yi an">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://i.loli.net/2021/10/18/X4BvRZr2LKb5SyD.jpg">
 
 
-<link rel="canonical" href="https://simon-yian.github.io/2021/10/18/VMware-ubuntu/">
+<link rel="canonical" href="https://simon-yian.github.io/2022/07/07/xianTrain4-jsObject/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://simon-yian.github.io/2021/10/18/VMware-ubuntu/","path":"2021/10/18/VMware-ubuntu/","title":"在VMware16中创建虚拟机安装ubuntu 21.04系统"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://simon-yian.github.io/2022/07/07/xianTrain4-jsObject/","path":"2022/07/07/xianTrain4-jsObject/","title":"培训心得 [javaScript对象]"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>在VMware16中创建虚拟机安装ubuntu 21.04系统 | simon·yian'Blog</title>
+<title>培训心得 [javaScript对象] | simon·yian'Blog</title>
   
 
 
@@ -180,7 +155,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85VMware-16"><span class="nav-number">1.</span> <span class="nav-text">安装VMware 16</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8VMware%E4%B8%AD%E5%AE%89%E8%A3%85ubuntu-21-04%E7%B3%BB%E7%BB%9F"><span class="nav-number">2.</span> <span class="nav-text">在VMware中安装ubuntu 21.04系统</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">1、什么是对象？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2%E3%80%81%E8%AE%A4%E8%AF%86%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.</span> <span class="nav-text">2、认识对象</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3%E3%80%81%E5%B1%9E%E6%80%A7%E7%9A%84%E7%B1%BB%E5%9E%8B%EF%BC%88%E4%B8%A4%E7%A7%8D%EF%BC%89"><span class="nav-number">3.</span> <span class="nav-text">3、属性的类型（两种）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4%E3%80%81%E8%AE%BF%E9%97%AE%E5%99%A8%E5%B1%9E%E6%80%A7"><span class="nav-number">4.</span> <span class="nav-text">4、访问器属性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5%E3%80%81%E5%AF%B9%E8%B1%A1%E5%90%88%E5%B9%B6"><span class="nav-number">5.</span> <span class="nav-text">5、对象合并</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6%E3%80%81%E5%A2%9E%E5%BC%BA%E5%AF%B9%E8%B1%A1%E8%AF%AD%E6%B3%95"><span class="nav-number">6.</span> <span class="nav-text">6、增强对象语法</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -260,7 +235,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://simon-yian.github.io/2021/10/18/VMware-ubuntu/">
+    <link itemprop="mainEntityOfPage" href="https://simon-yian.github.io/2022/07/07/xianTrain4-jsObject/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avator.jpg">
@@ -273,7 +248,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          在VMware16中创建虚拟机安装ubuntu 21.04系统
+          培训心得 [javaScript对象]
         </h1>
 
         <div class="post-meta-container">
@@ -284,14 +259,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2021-10-18 19:59:48" itemprop="dateCreated datePublished" datetime="2021-10-18T19:59:48+08:00">2021-10-18</time>
+      <time title="创建时间：2022-07-07 19:58:17" itemprop="dateCreated datePublished" datetime="2022-07-07T19:58:17+08:00">2022-07-07</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-22 12:03:30" itemprop="dateModified" datetime="2021-10-22T12:03:30+08:00">2021-10-22</time>
+        <time title="修改时间：2022-07-08 19:03:10" itemprop="dateModified" datetime="2022-07-08T19:03:10+08:00">2022-07-08</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -299,7 +274,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/VMware/" itemprop="url" rel="index"><span itemprop="name">VMware</span></a>
+          <a href="/categories/XiAnTrain/" itemprop="url" rel="index"><span itemprop="name">XiAnTrain</span></a>
         </span>
     </span>
 
@@ -317,14 +292,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1.4k</span>
+      <span>1.9k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
+      <span>2 分钟</span>
     </span>
 </div>
 
@@ -335,106 +310,56 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <table>
-<tr><td bgcolor="CFCFCF">此篇是创建VMware16虚拟机安装ubuntu21.04系统的超详细操作过程，希望对小白白有所帮助
-</td></tr></table>
-
+        <p><em><strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;学习打卡第嗯天</strong></em></p>
 <span id="more"></span>
 
-<p>安装环境： windows 10</p>
-<p>VMware 16安装包：我用阿里云盘分享了「VMware-workstation-full-16.1.2-17966106.exe」，你可以不限速下载🚀<br>复制这段内容打开「阿里云盘」App 即可获取<br>链接：<a target="_blank" rel="noopener" href="https://www.aliyundrive.com/s/7acSRwmGho2">https://www.aliyundrive.com/s/7acSRwmGho2</a></p>
-<p>ubuntu 21.04镜像：链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1ktE78cieRE9Y7_BhrG9vjQ">https://pan.baidu.com/s/1ktE78cieRE9Y7_BhrG9vjQ</a><br>提取码：n9ms</p>
-<h3 id="安装VMware-16"><a href="#安装VMware-16" class="headerlink" title="安装VMware 16"></a>安装VMware 16</h3><p>1、 直接双击下载好的VMware，这个过程可能会显示重新启动系统，那你点就是了。重新启动后再次双击下载好的VMware，然后点击【下一步】。</p>
-<img src="https://i.loli.net/2021/10/18/X4BvRZr2LKb5SyD.jpg" width="850" height="400" div align="right">
 
-<p>2、勾选【我接受许可协议中的条款】，点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/Prph8EuT6vaHiyQ.jpg" width="850" height="400" div align="right">
+<h1 id="1、什么是对象？"><a href="#1、什么是对象？" class="headerlink" title="1、什么是对象？"></a>1、什么是对象？</h1><pre><code>    对象是一种复合值，他汇聚多个值，  并且允许我们按照名称存储和获取这些值
+    对象是无序的集合，一一对应，每个属性都有自己的名称和值类似于字典
+    在javaScript中对象可以从其他对象继承属性
+    javaScript对象是动态的，既可以动态的添加和删除对象属性（结构体）
+    
+</code></pre>
+<h1 id="2、认识对象"><a href="#2、认识对象" class="headerlink" title="2、认识对象"></a>2、认识对象</h1><pre><code>    创建自定义对象object实例实现，然后再添加属性和方法（函数）
 
-<p>3、可以默认，也可更改安装位置</p>
-<img src="https://i.loli.net/2021/10/18/DqtysojVQrFE2R9.jpg" width="850" height="400" div align="right">
-
-<p>4、选择安装位置，然后点击【确定】</p>
-<img src="https://i.loli.net/2021/10/18/VzTAbUosOP4dK3W.jpg" width="850" height="400" div align="right">
-
-<p>5、点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/DqtysojVQrFE2R9.jpg" width="850" height="400" div align="right">
-
-<p>6、取消勾选【启动时检查产品更新】和【加入VMware客户体验改进计划】，点击【下一步</p>
-<img src="https://i.loli.net/2021/10/18/ONQ954xcuaLZYBK.jpg" width="850" height="400" div align="right">
-
-<p>7、点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/n2RPhJVXakzLgHU.jpg" width="850" height="400" div align="right">
-
-<p>8、点击【安装】</p>
-<img src="https://i.loli.net/2021/10/18/xe8kFh4T72tSAld.jpg" width="850" height="400" div align="right">
-
-<p>9、正在安装，等待几分钟</p>
-<img src="https://i.loli.net/2021/10/18/KzBpH8OeDyn5V3F.jpg" width="850" height="400" div align="right">
-
-<p>10、点击【许可证】</p>
-<img src="https://i.loli.net/2021/10/18/AaUSlwWnMCFJ3c1.jpg" width="850" height="400" div align="right">
-
-<p>11、框中输入许可证：ZF3R0-FHED2-M80TY-8QYGC-NPKYF，（复制粘贴就可以）然后点击【输入】</p>
-<p>12、点击【完成】</p>
-<p>恭喜你这会你的虚拟机已经安装好了，是不是直接点击下一步就可以</p>
-<h3 id="在VMware中安装ubuntu-21-04系统"><a href="#在VMware中安装ubuntu-21-04系统" class="headerlink" title="在VMware中安装ubuntu 21.04系统"></a>在VMware中安装ubuntu 21.04系统</h3><p>1、双击打开你创建在桌面的虚拟机，然后点击【创建新的虚拟机】</p>
-<img src="https://i.loli.net/2021/10/18/QWASzB7OuMIb6xm.jpg" width="850" height="400" div align="right">
-
-<p>2、选择【典型】（默认便是典型），点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/9CzmqQYUDNeRo56.jpg" width="850" height="400" div align="right">
-
-<p>3、选择【稍后安装操作系统】，点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/XZi389ajePvqRDk.jpg" width="850" height="400" div align="right">
-
-<p>4、客户机操作系统选择【Linux】，版本选择【Ubuntu64位】，然后点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/XAgZ4IvWTji5CUK.jpg" width="850" height="400" div align="right">
-
-<p>5、位置可更改，点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/owxQLiVrmWdJsYa.jpg" width="850" height="400" div align="right">
-
-<p>6、最大磁盘大小【20】GB，选择【将虚拟机磁盘拆分成多个文件】，然后点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/DKBEnuG6or3f4wx.jpg" width="850" height="400" div align="right">
-
-<p>7、点击【自定义硬件】</p>
-<img src="https://i.loli.net/2021/10/18/VlZBfoPbR9e8MSc.jpg" width="850" height="400" div align="right">
-
-<p>8、选择【内存】，此虚拟机的内存设为【2048MB】</p>
-<img src="https://i.loli.net/2021/10/18/AdjlBFmEVDNhr1O.jpg" width="850" height="400" div align="right">
-
-<p>9、选择【新CD/DVD(TATA)】后选择【使用ISO映像文件】，点击【浏览】，找到下载后文件夹里面的【ubuntu-21.04-desktop-amd64.iso】这个镜像并选择！</p>
-<img src="https://i.loli.net/2021/10/18/C8p4cyMIBuGbYWU.jpg" width="850" height="400" div align="right">
-
-<p>10、选择【网络适配器】，然后选择【仅主机模式】</p>
-<img src="https://i.loli.net/2021/10/18/IyBJxuMrLhml3Ko.jpg" width="850" height="400" div align="right">
-
-<p>11、选择【USB控制器】，点击【移除】</p>
-<img src="https://i.loli.net/2021/10/18/HwJm6DONtYMhFCz.jpg" width="850" height="400" div align="right">
-
-<p>12、选择【打印机】，点击【移除】</p>
-<img src="https://i.loli.net/2021/10/18/cjkhgORexpbFm4K.jpg" width="850" height="400" div align="right">
-
-<p>13、点击【关闭】</p>
-<img src="https://i.loli.net/2021/10/18/pfz13yURdGDW8qI.jpg" width="850" height="400" div align="right">
-
-<p>14、点击【完成】</p>
-<img src="https://i.loli.net/2021/10/18/VlZBfoPbR9e8MSc.jpg" width="850" height="400" div align="right">
-
-<p><font color="red" size="5"> 实在没有耐心放图片了，等闲了再贴图片吧,相信自己即使看文字你也可以安装完成的，加油！</font></p>
-<p>15、点击【开启此虚拟机】，等待开启</p>
-<p>16、择【中文简体】，点击【安装Ubuntu】</p>
-<p>17、点击【继续】</p>
-<p>18、点击【继续】</p>
-<p>19、点击【现在安装】</p>
-<p>20、点击【继续】</p>
-<p>21、这里默认【Shanghai】就OK</p>
-<p>22、创建用户账号（记住密码哦！）。不要担心你的计算机名是什么，你只需要输入姓名，计算机名就会自动生成。然后点击[继续]</p>
-<p>23、安装中，耐心等待（这个可能需要多点时间）</p>
-<p>24、点击【现在重启】，重启一会看屏幕中下方转圈其他都不动，键盘上点击【enter】</p>
-<p>25、点击账户，我这里是【simon-yian】</p>
-<p>26、输入之前创建用户账号时设的密码，然后点击【登录】</p>
-<p>27、至此Ubuntu系统安装完成！</p>
-<p><font color="red"><b>如果你觉得可以千万不要忘记动动你的小手，赞赏一下贫困的博客主</b><br><b>记得收藏啊，以后会有更好的内容给您分享</b></font></p>
-
+    方法一、
+</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">let person = new Object();</span><br><span class="line">person.name=&quot;zhangsan&quot;</span><br><span class="line">person.age=18;</span><br><span class="line">person.job=&quot;洗脚&quot;;</span><br><span class="line">person.work=function()&#123;</span><br><span class="line">	console.log(this.name + &quot;,年龄&quot; + this.age + &quot;岁，他的工作是：&quot; +this,job);</span><br><span class="line">&#125;d</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code>    方法二、
+</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">let person = &#123;</span><br><span class="line">	name=&quot;zhangsan&quot;,</span><br><span class="line">	age=18,</span><br><span class="line">	job=&quot;洗脚&quot;,</span><br><span class="line">	work=function()&#123;</span><br><span class="line">	console.log(this.name + &quot;,年龄&quot; + this.age + &quot;岁，他的工作是：&quot; +this,job);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>    注：方法一二作用相同，使用哪个看自己心情
+        
+</code></pre>
+<h1 id="3、属性的类型（两种）"><a href="#3、属性的类型（两种）" class="headerlink" title="3、属性的类型（两种）"></a>3、属性的类型（两种）</h1><pre><code>    数据属性：
+        数据属性包含一个保存数据值的位置，数据的值会从这个位置中读取，当然也可以写到这个位置，数据属性有4个特性描述他的行为
+            Configyuable:表示属性是否可以通过
+            delete删除并重新定义，是否可以修改他的特性，以及是狗可以把他改为访问器属性，默认为true
+            Enumerable:属性是否可以通过forin 循环返回默认的情况为true
+            writable：属性的值是够可以被修改默认的情况为true··
+            Value:包含属性的实际值，默认为undefined
+        注：在定义时无需添加前三个，而value会被我们定义
+            如果要修改这些默认特性，就必须使用object.defineProperty()方法，这个方法在使用时接收三个参数:要给其添加属性的对象，属性的名称，以及一个描述特性的对象及其参数
+</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">		</span><br><span class="line">&lt;script&gt;         </span><br><span class="line">        Let person = &#123;&#125;;</span><br><span class="line">        Object.defineProperty(person,&quot;name&quot;,&#123;</span><br><span class="line">        Writable:false,</span><br><span class="line">        Value:&quot;蔺成龙&quot;</span><br><span class="line">        &#125;)；</span><br><span class="line">        Console.log(person,name);</span><br><span class="line">        Person.name=&quot;找金条&quot;；</span><br><span class="line">        Console.log(person.name);</span><br><span class="line">&lt;/script&gt;    </span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="4、访问器属性"><a href="#4、访问器属性" class="headerlink" title="4、访问器属性"></a>4、访问器属性</h1><pre><code>    包含getter函数和setter函数各一个，不包含数据值
+    在读取访问器属性时，程序会自个调用获取函数，（也就是说获取函数的主要任务就是返回一个有效的值）
+    四种访问器属性的特性
+        conofigurable默认值为true，表示能否通过delete删除属性从而定义属性，能否修改属性的特性，能否把属性修改为访问器属性
+        Enumerable 默认值为true,能否通过for-in循环返回属性
+        get读取这个属性时调用的函数（getter函数）
+        set给属性赋值时调用此函数（setter函数）
+</code></pre>
+<h1 id="5、对象合并"><a href="#5、对象合并" class="headerlink" title="5、对象合并"></a>5、对象合并</h1><pre><code>    把一个对象的所哟属性复制到目标对象上，这种方式称之为混入，通过对象的合并我们可以增强对象的功能
+    Object.assign()方法,这个方法接收一个目标对象和一个或多个其他对象，然后将每个原对象中自有属性复制到目标对象
+</code></pre>
+<h1 id="6、增强对象语法"><a href="#6、增强对象语法" class="headerlink" title="6、增强对象语法"></a>6、增强对象语法</h1><pre><code>    属性值的简写
+        使用一、在给对象添加值时我们可以引用变量
+</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt; </span><br><span class="line">			Let username = &quot;sanlvzi&quot;;</span><br><span class="line">			Let person=&#123;</span><br><span class="line">			Username:username</span><br><span class="line">			&#125;;</span><br><span class="line">			Console.log(person)</span><br><span class="line">			&lt;/script&gt;    </span><br><span class="line">			</span><br></pre></td></tr></table></figure>
+<pre><code>        使用二、当变量名域对象的属性名相同就可以不用赋值
+</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;sccript&gt;</span><br><span class="line">Let username = &quot;sanxing&quot;;</span><br><span class="line">Let person = &#123;</span><br><span class="line">        username</span><br><span class="line">&#125;;</span><br><span class="line">Console/log(person);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -475,13 +400,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2021/10/18/picture/" rel="prev" title="makedown进阶（改变字体颜色，大小，设置文字背景，调整图片大小设置剧中）">
-                  <i class="fa fa-chevron-left"></i> makedown进阶（改变字体颜色，大小，设置文字背景，调整图片大小设置剧中）
+                <a href="/2022/06/30/xianTrain3/" rel="prev" title="培训心得&emsp;&emsp;[HTML5]">
+                  <i class="fa fa-chevron-left"></i> 培训心得&emsp;&emsp;[HTML5]
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2021/10/22/hexo-relevant/" rel="next" title="hexo-relevant">
-                  hexo-relevant <i class="fa fa-chevron-right"></i>
+                <a href="/2022/07/07/xianTrain5-jsBasics/" rel="next" title="培训心得 [javaScript基础]">
+                  培训心得 [javaScript基础] <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
