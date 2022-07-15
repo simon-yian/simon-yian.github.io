@@ -327,113 +327,6 @@
       </categories>
   </entry>
   <entry>
-    <title>在VMware16中创建虚拟机安装ubuntu 21.04系统</title>
-    <url>/2021/10/18/VMware-ubuntu/</url>
-    <content><![CDATA[<table>
-<tr><td bgcolor="CFCFCF">此篇是创建VMware16虚拟机安装ubuntu21.04系统的超详细操作过程，希望对小白白有所帮助
-</td></tr></table>
-
-<span id="more"></span>
-
-<p>安装环境： windows 10</p>
-<p>VMware 16安装包：我用阿里云盘分享了「VMware-workstation-full-16.1.2-17966106.exe」，你可以不限速下载🚀<br>复制这段内容打开「阿里云盘」App 即可获取<br>链接：<a href="https://www.aliyundrive.com/s/7acSRwmGho2">https://www.aliyundrive.com/s/7acSRwmGho2</a></p>
-<p>ubuntu 21.04镜像：链接：<a href="https://pan.baidu.com/s/1ktE78cieRE9Y7_BhrG9vjQ">https://pan.baidu.com/s/1ktE78cieRE9Y7_BhrG9vjQ</a><br>提取码：n9ms</p>
-<h3 id="安装VMware-16"><a href="#安装VMware-16" class="headerlink" title="安装VMware 16"></a>安装VMware 16</h3><p>1、 直接双击下载好的VMware，这个过程可能会显示重新启动系统，那你点就是了。重新启动后再次双击下载好的VMware，然后点击【下一步】。</p>
-<img src="https://i.loli.net/2021/10/18/X4BvRZr2LKb5SyD.jpg" width="850" height="400" div align="right">
-
-<p>2、勾选【我接受许可协议中的条款】，点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/Prph8EuT6vaHiyQ.jpg" width="850" height="400" div align="right">
-
-<p>3、可以默认，也可更改安装位置</p>
-<img src="https://i.loli.net/2021/10/18/DqtysojVQrFE2R9.jpg" width="850" height="400" div align="right">
-
-<p>4、选择安装位置，然后点击【确定】</p>
-<img src="https://i.loli.net/2021/10/18/VzTAbUosOP4dK3W.jpg" width="850" height="400" div align="right">
-
-<p>5、点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/DqtysojVQrFE2R9.jpg" width="850" height="400" div align="right">
-
-<p>6、取消勾选【启动时检查产品更新】和【加入VMware客户体验改进计划】，点击【下一步</p>
-<img src="https://i.loli.net/2021/10/18/ONQ954xcuaLZYBK.jpg" width="850" height="400" div align="right">
-
-<p>7、点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/n2RPhJVXakzLgHU.jpg" width="850" height="400" div align="right">
-
-<p>8、点击【安装】</p>
-<img src="https://i.loli.net/2021/10/18/xe8kFh4T72tSAld.jpg" width="850" height="400" div align="right">
-
-<p>9、正在安装，等待几分钟</p>
-<img src="https://i.loli.net/2021/10/18/KzBpH8OeDyn5V3F.jpg" width="850" height="400" div align="right">
-
-<p>10、点击【许可证】</p>
-<img src="https://i.loli.net/2021/10/18/AaUSlwWnMCFJ3c1.jpg" width="850" height="400" div align="right">
-
-<p>11、框中输入许可证：ZF3R0-FHED2-M80TY-8QYGC-NPKYF，（复制粘贴就可以）然后点击【输入】</p>
-<p>12、点击【完成】</p>
-<p>恭喜你这会你的虚拟机已经安装好了，是不是直接点击下一步就可以</p>
-<h3 id="在VMware中安装ubuntu-21-04系统"><a href="#在VMware中安装ubuntu-21-04系统" class="headerlink" title="在VMware中安装ubuntu 21.04系统"></a>在VMware中安装ubuntu 21.04系统</h3><p>1、双击打开你创建在桌面的虚拟机，然后点击【创建新的虚拟机】</p>
-<img src="https://i.loli.net/2021/10/18/QWASzB7OuMIb6xm.jpg" width="850" height="400" div align="right">
-
-<p>2、选择【典型】（默认便是典型），点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/9CzmqQYUDNeRo56.jpg" width="850" height="400" div align="right">
-
-<p>3、选择【稍后安装操作系统】，点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/XZi389ajePvqRDk.jpg" width="850" height="400" div align="right">
-
-<p>4、客户机操作系统选择【Linux】，版本选择【Ubuntu64位】，然后点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/XAgZ4IvWTji5CUK.jpg" width="850" height="400" div align="right">
-
-<p>5、位置可更改，点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/owxQLiVrmWdJsYa.jpg" width="850" height="400" div align="right">
-
-<p>6、最大磁盘大小【20】GB，选择【将虚拟机磁盘拆分成多个文件】，然后点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/DKBEnuG6or3f4wx.jpg" width="850" height="400" div align="right">
-
-<p>7、点击【自定义硬件】</p>
-<img src="https://i.loli.net/2021/10/18/VlZBfoPbR9e8MSc.jpg" width="850" height="400" div align="right">
-
-<p>8、选择【内存】，此虚拟机的内存设为【2048MB】</p>
-<img src="https://i.loli.net/2021/10/18/AdjlBFmEVDNhr1O.jpg" width="850" height="400" div align="right">
-
-<p>9、选择【新CD/DVD(TATA)】后选择【使用ISO映像文件】，点击【浏览】，找到下载后文件夹里面的【ubuntu-21.04-desktop-amd64.iso】这个镜像并选择！</p>
-<img src="https://i.loli.net/2021/10/18/C8p4cyMIBuGbYWU.jpg" width="850" height="400" div align="right">
-
-<p>10、选择【网络适配器】，然后选择【仅主机模式】</p>
-<img src="https://i.loli.net/2021/10/18/IyBJxuMrLhml3Ko.jpg" width="850" height="400" div align="right">
-
-<p>11、选择【USB控制器】，点击【移除】</p>
-<img src="https://i.loli.net/2021/10/18/HwJm6DONtYMhFCz.jpg" width="850" height="400" div align="right">
-
-<p>12、选择【打印机】，点击【移除】</p>
-<img src="https://i.loli.net/2021/10/18/cjkhgORexpbFm4K.jpg" width="850" height="400" div align="right">
-
-<p>13、点击【关闭】</p>
-<img src="https://i.loli.net/2021/10/18/pfz13yURdGDW8qI.jpg" width="850" height="400" div align="right">
-
-<p>14、点击【完成】</p>
-<img src="https://i.loli.net/2021/10/18/VlZBfoPbR9e8MSc.jpg" width="850" height="400" div align="right">
-
-<p><font color="red" size="5"> 实在没有耐心放图片了，等闲了再贴图片吧,相信自己即使看文字你也可以安装完成的，加油！</font></p>
-<p>15、点击【开启此虚拟机】，等待开启</p>
-<p>16、择【中文简体】，点击【安装Ubuntu】</p>
-<p>17、点击【继续】</p>
-<p>18、点击【继续】</p>
-<p>19、点击【现在安装】</p>
-<p>20、点击【继续】</p>
-<p>21、这里默认【Shanghai】就OK</p>
-<p>22、创建用户账号（记住密码哦！）。不要担心你的计算机名是什么，你只需要输入姓名，计算机名就会自动生成。然后点击[继续]</p>
-<p>23、安装中，耐心等待（这个可能需要多点时间）</p>
-<p>24、点击【现在重启】，重启一会看屏幕中下方转圈其他都不动，键盘上点击【enter】</p>
-<p>25、点击账户，我这里是【simon-yian】</p>
-<p>26、输入之前创建用户账号时设的密码，然后点击【登录】</p>
-<p>27、至此Ubuntu系统安装完成！</p>
-<p><font color="red"><b>如果你觉得可以千万不要忘记动动你的小手，赞赏一下贫困的博客主</b><br><b>记得收藏啊，以后会有更好的内容给您分享</b></font></p>
-]]></content>
-      <categories>
-        <category>VMware</category>
-      </categories>
-  </entry>
-  <entry>
     <title>基于SSM框架的电⼦书城项⽬开发笔记</title>
     <url>/2022/04/23/SSMknowledge/</url>
     <content><![CDATA[<img src="https://i.loli.net/2021/10/25/lQXn9eE8fIvHCYp.jpg" align="center" width="800" height="250" div>
@@ -638,6 +531,113 @@
 <p>请求处理的Controller</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package com.lz.xbmu.controller;</span><br><span class="line">import java.io.File;</span><br><span class="line">import java.io.IOException;</span><br><span class="line">import java.io.UnsupportedEncodingException;</span><br><span class="line">import java.net.URLEncoder;</span><br><span class="line">import javax.servlet.http.HttpServletRequest;</span><br><span class="line">import org.apache.commons.io.FileUtils;</span><br><span class="line">import org.springframework.http.HttpHeaders;</span><br><span class="line">import org.springframework.http.HttpStatus;</span><br><span class="line">import org.springframework.http.MediaType;</span><br><span class="line">import org.springframework.http.ResponseEntity;</span><br><span class="line">import org.springframework.stereotype.Controller;</span><br><span class="line">import org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line">@Controller</span><br><span class="line">public class FileDownloadController &#123;</span><br><span class="line"> @RequestMapping(&quot;/downloadfile&quot;)</span><br><span class="line"> public ResponseEntity&lt;byte[]&gt; fileDownload(String filename,HttpServletRequest request)</span><br><span class="line"> throws IOException&#123;</span><br><span class="line"> //指定要下载的⽂件的路径</span><br><span class="line"> String path = request.getServletContext().getRealPath(&quot;/upload/&quot;);</span><br><span class="line"> //创建下载⽂件对象</span><br><span class="line"> File file = new File(path + File.separator + filename);</span><br><span class="line"> //对⽂件名编码，防⽌中⽂乱码</span><br><span class="line"> filename = this.getFilename(request,filename);</span><br><span class="line"> //设置响应头</span><br><span class="line"> HttpHeaders headers = new HttpHeaders();</span><br><span class="line"> headers.setContentDispositionFormData(&quot;attachment&quot;, filename);</span><br><span class="line"> //定义以流的形式下载返回⽂件数据</span><br><span class="line"> headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);</span><br><span class="line"> //使⽤SpringMVC框架的对象封装返回下载的数据</span><br><span class="line"> return new ResponseEntity&lt;byte[]&gt;(FileUtils.readFileToByteArray(file),</span><br><span class="line"> headers,HttpStatus.OK);</span><br><span class="line"> &#125;</span><br><span class="line"> private String getFilename(HttpServletRequest request, String filename)</span><br><span class="line"> throws UnsupportedEncodingException &#123;</span><br><span class="line"> //根据不同浏览器来判断</span><br><span class="line"> String[] IEBrowserKeyWords = &#123;&quot;MSIE&quot;,&quot;Trident&quot;,&quot;Edge&quot;&#125;;</span><br><span class="line"> //获取请求头代理信息</span><br><span class="line"> String userAgent = request.getHeader(&quot;User-Agent&quot;);</span><br><span class="line"> for (String keyWord : IEBrowserKeyWords) &#123;</span><br><span class="line"> if(userAgent.contains(keyWord)) &#123;</span><br><span class="line"> //进⾏统⼀编码</span><br><span class="line"> return URLEncoder.encode(filename,&quot;UTF-8&quot;);</span><br><span class="line"> &#125;</span><br><span class="line"> &#125;</span><br><span class="line"> //其它的浏览器统⼀为ISO-8859-1编码显示</span><br><span class="line"> return new String(filename.getBytes(&quot;UTF-8&quot;),&quot;ISO-8859-1&quot;);</span><br><span class="line"> &#125; &#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
+  </entry>
+  <entry>
+    <title>在VMware16中创建虚拟机安装ubuntu 21.04系统</title>
+    <url>/2021/10/18/VMware-ubuntu/</url>
+    <content><![CDATA[<table>
+<tr><td bgcolor="CFCFCF">此篇是创建VMware16虚拟机安装ubuntu21.04系统的超详细操作过程，希望对小白白有所帮助
+</td></tr></table>
+
+<span id="more"></span>
+
+<p>安装环境： windows 10</p>
+<p>VMware 16安装包：我用阿里云盘分享了「VMware-workstation-full-16.1.2-17966106.exe」，你可以不限速下载🚀<br>复制这段内容打开「阿里云盘」App 即可获取<br>链接：<a href="https://www.aliyundrive.com/s/7acSRwmGho2">https://www.aliyundrive.com/s/7acSRwmGho2</a></p>
+<p>ubuntu 21.04镜像：链接：<a href="https://pan.baidu.com/s/1ktE78cieRE9Y7_BhrG9vjQ">https://pan.baidu.com/s/1ktE78cieRE9Y7_BhrG9vjQ</a><br>提取码：n9ms</p>
+<h3 id="安装VMware-16"><a href="#安装VMware-16" class="headerlink" title="安装VMware 16"></a>安装VMware 16</h3><p>1、 直接双击下载好的VMware，这个过程可能会显示重新启动系统，那你点就是了。重新启动后再次双击下载好的VMware，然后点击【下一步】。</p>
+<img src="https://i.loli.net/2021/10/18/X4BvRZr2LKb5SyD.jpg" width="850" height="400" div align="right">
+
+<p>2、勾选【我接受许可协议中的条款】，点击【下一步】</p>
+<img src="https://i.loli.net/2021/10/18/Prph8EuT6vaHiyQ.jpg" width="850" height="400" div align="right">
+
+<p>3、可以默认，也可更改安装位置</p>
+<img src="https://i.loli.net/2021/10/18/DqtysojVQrFE2R9.jpg" width="850" height="400" div align="right">
+
+<p>4、选择安装位置，然后点击【确定】</p>
+<img src="https://i.loli.net/2021/10/18/VzTAbUosOP4dK3W.jpg" width="850" height="400" div align="right">
+
+<p>5、点击【下一步】</p>
+<img src="https://i.loli.net/2021/10/18/DqtysojVQrFE2R9.jpg" width="850" height="400" div align="right">
+
+<p>6、取消勾选【启动时检查产品更新】和【加入VMware客户体验改进计划】，点击【下一步</p>
+<img src="https://i.loli.net/2021/10/18/ONQ954xcuaLZYBK.jpg" width="850" height="400" div align="right">
+
+<p>7、点击【下一步】</p>
+<img src="https://i.loli.net/2021/10/18/n2RPhJVXakzLgHU.jpg" width="850" height="400" div align="right">
+
+<p>8、点击【安装】</p>
+<img src="https://i.loli.net/2021/10/18/xe8kFh4T72tSAld.jpg" width="850" height="400" div align="right">
+
+<p>9、正在安装，等待几分钟</p>
+<img src="https://i.loli.net/2021/10/18/KzBpH8OeDyn5V3F.jpg" width="850" height="400" div align="right">
+
+<p>10、点击【许可证】</p>
+<img src="https://i.loli.net/2021/10/18/AaUSlwWnMCFJ3c1.jpg" width="850" height="400" div align="right">
+
+<p>11、框中输入许可证：ZF3R0-FHED2-M80TY-8QYGC-NPKYF，（复制粘贴就可以）然后点击【输入】</p>
+<p>12、点击【完成】</p>
+<p>恭喜你这会你的虚拟机已经安装好了，是不是直接点击下一步就可以</p>
+<h3 id="在VMware中安装ubuntu-21-04系统"><a href="#在VMware中安装ubuntu-21-04系统" class="headerlink" title="在VMware中安装ubuntu 21.04系统"></a>在VMware中安装ubuntu 21.04系统</h3><p>1、双击打开你创建在桌面的虚拟机，然后点击【创建新的虚拟机】</p>
+<img src="https://i.loli.net/2021/10/18/QWASzB7OuMIb6xm.jpg" width="850" height="400" div align="right">
+
+<p>2、选择【典型】（默认便是典型），点击【下一步】</p>
+<img src="https://i.loli.net/2021/10/18/9CzmqQYUDNeRo56.jpg" width="850" height="400" div align="right">
+
+<p>3、选择【稍后安装操作系统】，点击【下一步】</p>
+<img src="https://i.loli.net/2021/10/18/XZi389ajePvqRDk.jpg" width="850" height="400" div align="right">
+
+<p>4、客户机操作系统选择【Linux】，版本选择【Ubuntu64位】，然后点击【下一步】</p>
+<img src="https://i.loli.net/2021/10/18/XAgZ4IvWTji5CUK.jpg" width="850" height="400" div align="right">
+
+<p>5、位置可更改，点击【下一步】</p>
+<img src="https://i.loli.net/2021/10/18/owxQLiVrmWdJsYa.jpg" width="850" height="400" div align="right">
+
+<p>6、最大磁盘大小【20】GB，选择【将虚拟机磁盘拆分成多个文件】，然后点击【下一步】</p>
+<img src="https://i.loli.net/2021/10/18/DKBEnuG6or3f4wx.jpg" width="850" height="400" div align="right">
+
+<p>7、点击【自定义硬件】</p>
+<img src="https://i.loli.net/2021/10/18/VlZBfoPbR9e8MSc.jpg" width="850" height="400" div align="right">
+
+<p>8、选择【内存】，此虚拟机的内存设为【2048MB】</p>
+<img src="https://i.loli.net/2021/10/18/AdjlBFmEVDNhr1O.jpg" width="850" height="400" div align="right">
+
+<p>9、选择【新CD/DVD(TATA)】后选择【使用ISO映像文件】，点击【浏览】，找到下载后文件夹里面的【ubuntu-21.04-desktop-amd64.iso】这个镜像并选择！</p>
+<img src="https://i.loli.net/2021/10/18/C8p4cyMIBuGbYWU.jpg" width="850" height="400" div align="right">
+
+<p>10、选择【网络适配器】，然后选择【仅主机模式】</p>
+<img src="https://i.loli.net/2021/10/18/IyBJxuMrLhml3Ko.jpg" width="850" height="400" div align="right">
+
+<p>11、选择【USB控制器】，点击【移除】</p>
+<img src="https://i.loli.net/2021/10/18/HwJm6DONtYMhFCz.jpg" width="850" height="400" div align="right">
+
+<p>12、选择【打印机】，点击【移除】</p>
+<img src="https://i.loli.net/2021/10/18/cjkhgORexpbFm4K.jpg" width="850" height="400" div align="right">
+
+<p>13、点击【关闭】</p>
+<img src="https://i.loli.net/2021/10/18/pfz13yURdGDW8qI.jpg" width="850" height="400" div align="right">
+
+<p>14、点击【完成】</p>
+<img src="https://i.loli.net/2021/10/18/VlZBfoPbR9e8MSc.jpg" width="850" height="400" div align="right">
+
+<p><font color="red" size="5"> 实在没有耐心放图片了，等闲了再贴图片吧,相信自己即使看文字你也可以安装完成的，加油！</font></p>
+<p>15、点击【开启此虚拟机】，等待开启</p>
+<p>16、择【中文简体】，点击【安装Ubuntu】</p>
+<p>17、点击【继续】</p>
+<p>18、点击【继续】</p>
+<p>19、点击【现在安装】</p>
+<p>20、点击【继续】</p>
+<p>21、这里默认【Shanghai】就OK</p>
+<p>22、创建用户账号（记住密码哦！）。不要担心你的计算机名是什么，你只需要输入姓名，计算机名就会自动生成。然后点击[继续]</p>
+<p>23、安装中，耐心等待（这个可能需要多点时间）</p>
+<p>24、点击【现在重启】，重启一会看屏幕中下方转圈其他都不动，键盘上点击【enter】</p>
+<p>25、点击账户，我这里是【simon-yian】</p>
+<p>26、输入之前创建用户账号时设的密码，然后点击【登录】</p>
+<p>27、至此Ubuntu系统安装完成！</p>
+<p><font color="red"><b>如果你觉得可以千万不要忘记动动你的小手，赞赏一下贫困的博客主</b><br><b>记得收藏啊，以后会有更好的内容给您分享</b></font></p>
+]]></content>
+      <categories>
+        <category>VMware</category>
+      </categories>
   </entry>
   <entry>
     <title>培训心得&amp;emsp;&amp;emsp;[走进HTML]</title>
@@ -1189,6 +1189,134 @@ elementN:  可选。可向数组添加若干元素。
       </categories>
   </entry>
   <entry>
+    <title>培训心得 [JQuery]</title>
+    <url>/2022/07/13/xianTrain8-JQuery/</url>
+    <content><![CDATA[<p><em><strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;学习打卡第嗯-2天</strong></em></p>
+<span id="more"></span>
+<h1 id="JQuery的定义"><a href="#JQuery的定义" class="headerlink" title="JQuery的定义"></a>JQuery的定义</h1><blockquote>
+<ul>
+<li>它是javaScript的封装，它可以说是开源的JavaScript的函数</li>
+<li>简化了JavaScript开发</li>
+</ul>
+</blockquote>
+<h1 id="JQuery的下载及引用"><a href="#JQuery的下载及引用" class="headerlink" title="JQuery的下载及引用"></a>JQuery的下载及引用</h1><blockquote>
+<ul>
+<li>下载：<a href="https://jquery.com/download/">https://jquery.com/download/</a></li>
+<li>应用方法：</li>
+</ul>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script src=&quot;jquery-3.6.0.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"> &lt;script&gt;</span><br><span class="line"> //调用Jquery代码</span><br><span class="line"> &lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="JQuery选择器"><a href="#JQuery选择器" class="headerlink" title="JQuery选择器"></a>JQuery选择器</h1><blockquote>
+<ul>
+<li>JQuery选择器可以用来快速的选中一个元素，获取或修改其信息，其使用规则和CSS样式是一样的。</li>
+<li>种类<blockquote>
+<ul>
+<li>标签选择器</li>
+<li>类选择器</li>
+<li>id选择器</li>
+<li>后代选择器（层级选择器）</li>
+</ul>
+</blockquote>
+</li>
+<li>使用方法即$(CSS选择器使用规则)</li>
+</ul>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$(“#id”)</td>
+<td>$(“.class”)</td>
+<td>$(“.class ul li”)</td>
+<td>$(“div”)</td>
+</tr>
+</tbody></table>
+<h1 id="选择器过滤"><a href="#选择器过滤" class="headerlink" title="选择器过滤"></a>选择器过滤</h1><blockquote>
+<ul>
+<li>过滤就是在选择标签的集合中过滤出自己需要的标签</li>
+<li>has()<blockquote>
+<ul>
+<li>has(选择器名称)， 表示选取指定选择器的标签</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line"> &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line"> &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line"> &lt;script src=&quot;jquery-3.6.0.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"> &lt;script&gt;</span><br><span class="line"> $(function () &#123;</span><br><span class="line"> //使用has方法</span><br><span class="line"> $(&quot;div&quot;).has(&quot;#demo&quot;).css(&quot;color&quot;,&quot;red&quot;);</span><br><span class="line"> &#125;)</span><br><span class="line"> &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"> &lt;div&gt;</span><br><span class="line"> &lt;input type=&quot;text&quot;&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line"> &lt;div&gt;</span><br><span class="line"> &lt;input type=&quot;text&quot; id=&quot;demo&quot;&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<blockquote>
+<ul>
+<li>eq(索引)，表示选取指定索引的元素</li>
+</ul>
+</blockquote>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line"> &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line"> &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line"> &lt;script src=&quot;jquery-3.6.0.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"> &lt;script&gt;</span><br><span class="line"> $(function () &#123;</span><br><span class="line"> $(&quot;div&quot;).eq(0).children().css(&quot;color&quot;,&quot;red&quot;);</span><br><span class="line"> &#125;)</span><br><span class="line"> &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"> &lt;div&gt;</span><br><span class="line"> &lt;input type=&quot;text&quot; placeholder=&quot;这是第一个div里面的input&quot;&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line"> &lt;div&gt;</span><br><span class="line"> &lt;input type=&quot;text&quot; placeholder=&quot;这是第二个div里面的input&quot;&gt;</span><br><span class="line"> &lt;input type=&quot;submit&quot;&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>选择转移<blockquote>
+<ul>
+<li>我们可以以一个元素为参照，找到其它元素（节点选择）</li>
+<li>详细如下：<blockquote>
+<p>$(‘#box’).prev(); 表示选择id是box元素的兄弟节点<br>$(‘#box’).prevAll(); 表示选择id是box元素的上面所有的同级元素<br>$(‘#box’).next(); 表示选择id是box元素的兄弟节点<br>$(‘#box’).nextAll(); 表示选择id是box元素的下面所有的同级元素<br>$(‘#box’).parent(); 表示选择id是box元素的父元素<br>$(‘#box’).children(); 表示选择id是box元素的所有子元素<br>$(‘#box’).siblings(); 表示选择id是box元素的其它同级元素<br>$(‘#box’).find(‘.myClass’); 表示选择id是box元素的class等于myClass的元素</p>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line"> &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line"> &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line"> &lt;script src=&quot;jquery-3.6.0.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"> &lt;script&gt;</span><br><span class="line"> $(function () &#123;</span><br><span class="line"> //确定参照节点</span><br><span class="line"> var $div = $(&quot;#demo&quot;);</span><br><span class="line"> $div.prev().css(&quot;color&quot;,&quot;red&quot;);</span><br><span class="line"> $div.prevAll().css(&quot;font-size&quot;,33);</span><br><span class="line"> $div.next().css(&quot;color&quot;,&quot;blue&quot;);</span><br><span class="line"> $div.nextAll().css(&quot;background&quot;,&quot;gray&quot;);</span><br><span class="line"> $div.parent().css(&quot;background&quot;,&quot;#ff6700&quot;);</span><br><span class="line"> $div.children().css(&quot;color&quot;,&quot;gold&quot;);</span><br><span class="line"> &#125;)</span><br><span class="line"> &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"> &lt;h1&gt;这是一个标题&lt;/h1&gt;</span><br><span class="line">  &lt;p&gt;这是一个段落&lt;/p&gt;</span><br><span class="line"> &lt;div id=&quot;demo&quot;&gt;这是一个div</span><br><span class="line"> &lt;span&gt;这是div里面的span&lt;/span&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line"> &lt;h3&gt;这又是一个标题&lt;/h3&gt;</span><br><span class="line"> &lt;a href=&quot;#&quot;&gt;这是一个a标签&lt;/a&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>html方法的使用<blockquote>
+<ul>
+<li>在jquery中可以通过html属性为元素设置html内容</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line"> &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line"> &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line"> &lt;script src=&quot;jquery-3.6.0.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"> &lt;script&gt;</span><br><span class="line"> $(function () &#123;</span><br><span class="line"> var $div = $(&quot;#demo&quot;);</span><br><span class="line"> //如果要获取内容</span><br><span class="line"> var rs = $div.html();</span><br><span class="line"> alert(rs)</span><br><span class="line"> $div.html(&quot;&lt;span style=&#x27;color: red&#x27;&gt;哈嘿~~~~&lt;/span&gt;&quot;);</span><br><span class="line"> //在元素后追加内容</span><br><span class="line"> $div.append(&quot;&lt;span style=&#x27;color: red&#x27;&gt;大宝贝&lt;/span&gt;&quot;);</span><br><span class="line"> &#125;)</span><br><span class="line"> &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"> &lt;div id=&quot;demo&quot;&gt;</span><br><span class="line"> &lt;p&gt;这是字&lt;/p&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>获取和设置元素的属性<blockquote>
+<ul>
+<li>prop方法：css方法可以设置元素的样式属性，而该方法可以设置元素的其他属性</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line"> &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line"> &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line"> &lt;script src=&quot;jquery-3.6.0.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"> &lt;script&gt;</span><br><span class="line"> $(function () &#123;</span><br><span class="line"> var $a = $(&quot;#aId&quot;);</span><br><span class="line"> var $input = $(&quot;#InputId&quot;);</span><br><span class="line"> //可以获取</span><br><span class="line"> var Sa = $a.prop(&quot;id&quot;);</span><br><span class="line"> // alert(Sa);</span><br><span class="line"> //设置元素属性</span><br><span class="line"> $a.prop(&#123;&quot;href&quot;:&quot;http://www.baidu.com&quot;,&quot;class&quot;:&quot;aClass&quot;,&quot;title&quot;:&quot;这是</span><br><span class="line">标题&quot;&#125;);</span><br><span class="line"> //获取input中的属性value使用的是val()方法</span><br><span class="line"> // var Sinput = $input.prop(&quot;value&quot;);</span><br><span class="line"> // alert(Sinput);</span><br><span class="line"> var Sinput = $input.val();</span><br><span class="line"> alert(Sinput);</span><br><span class="line"> //设置value值</span><br><span class="line"> $input.val(&quot;12313212&quot;);</span><br><span class="line"> &#125;)</span><br><span class="line"> &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"> &lt;a id=&quot;aId&quot;&gt;这是a标签&lt;/a&gt;</span><br><span class="line"> &lt;input id=&quot;InputId&quot; type=&quot;text&quot; value=&quot;123&quot;/&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<h1 id="JQuery事件"><a href="#JQuery事件" class="headerlink" title="JQuery事件"></a>JQuery事件</h1><blockquote>
+<ul>
+<li>常用事件<blockquote>
+<ul>
+<li>click()鼠标点击事件</li>
+<li>blur() 离焦事件</li>
+<li>focus() 聚焦事件</li>
+<li>mouseover() 鼠标进入事件</li>
+<li>mouseout() 鼠标离开事件</li>
+<li>ready() DOM加载完毕触发</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line"> &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line"> &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line"> &lt;script src=&quot;jquery-3.6.0.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"> &lt;script&gt;</span><br><span class="line"> $(function () &#123;</span><br><span class="line"> var $li = $(&quot;.list li&quot;);</span><br><span class="line"> var $input = $(&quot;#in_one&quot;);</span><br><span class="line"> var $btn = $(&quot;#btn&quot;);</span><br><span class="line"> var $div = $(&quot;#demo&quot;);</span><br><span class="line"> //点击事件</span><br><span class="line"> $li.click(function () &#123;</span><br><span class="line"> $(this).css(&#123;&quot;background&quot;:&quot;red&quot;&#125;);</span><br><span class="line"> //index()方法可以获取当前元素的索引值</span><br><span class="line"> //alert($(this).index())</span><br><span class="line"> &#125;);</span><br><span class="line"> //获取焦点</span><br><span class="line">$input.focus(function () &#123;</span><br><span class="line"> $(this).val(&quot;嗨嗨嘿&quot;);</span><br><span class="line"> &#125;)</span><br><span class="line"> &#125;)</span><br><span class="line"> &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"> &lt;div id=&quot;demo&quot;&gt;</span><br><span class="line"> &lt;ul class=&quot;list&quot;&gt;</span><br><span class="line"> &lt;li&gt;这是一行字&lt;/li&gt;</span><br><span class="line"> &lt;li&gt;这是一行字&lt;/li&gt;</span><br><span class="line"> &lt;li&gt;这是一行字&lt;/li&gt;</span><br><span class="line"> &lt;li&gt;这是一行字&lt;/li&gt;</span><br><span class="line"> &lt;/ul&gt;</span><br><span class="line"> &lt;input type=&quot;text&quot; id=&quot;in_one&quot;/&gt;</span><br><span class="line"> &lt;input type=&quot;submit&quot; id=&quot;btn&quot; value=&quot;点一下&quot;/&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>XiAnTrain</category>
+      </categories>
+  </entry>
+  <entry>
     <title>培训心得 [JavaScript BOM与DOM]</title>
     <url>/2022/07/12/xianTrain7-JSBomDom/</url>
     <content><![CDATA[<p><em><strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;学习打卡第嗯-2天</strong></em></p>
@@ -1400,134 +1528,6 @@ elementN:  可选。可向数组添加若干元素。
 </ul>
 </blockquote>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">        div &#123;</span><br><span class="line">            width: 50px;</span><br><span class="line">            height: 50px;</span><br><span class="line">            background-color: pink;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div id=&quot;dv&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    document.getElementById(&quot;dv&quot;).onmousedown = function () &#123;</span><br><span class="line">        console.log(&quot;鼠标按下了&quot;);</span><br><span class="line">    &#125;;</span><br><span class="line">    document.getElementById(&quot;dv&quot;).onmouseup = function () &#123;</span><br><span class="line">        console.log(&quot;鼠标抬起了&quot;);</span><br><span class="line">    &#125;;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>XiAnTrain</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>培训心得 [JQuery]</title>
-    <url>/2022/07/13/xianTrain8-JQuery/</url>
-    <content><![CDATA[<p><em><strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;学习打卡第嗯-2天</strong></em></p>
-<span id="more"></span>
-<h1 id="JQuery的定义"><a href="#JQuery的定义" class="headerlink" title="JQuery的定义"></a>JQuery的定义</h1><blockquote>
-<ul>
-<li>它是javaScript的封装，它可以说是开源的JavaScript的函数</li>
-<li>简化了JavaScript开发</li>
-</ul>
-</blockquote>
-<h1 id="JQuery的下载及引用"><a href="#JQuery的下载及引用" class="headerlink" title="JQuery的下载及引用"></a>JQuery的下载及引用</h1><blockquote>
-<ul>
-<li>下载：<a href="https://jquery.com/download/">https://jquery.com/download/</a></li>
-<li>应用方法：</li>
-</ul>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script src=&quot;jquery-3.6.0.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"> &lt;script&gt;</span><br><span class="line"> //调用Jquery代码</span><br><span class="line"> &lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<h1 id="JQuery选择器"><a href="#JQuery选择器" class="headerlink" title="JQuery选择器"></a>JQuery选择器</h1><blockquote>
-<ul>
-<li>JQuery选择器可以用来快速的选中一个元素，获取或修改其信息，其使用规则和CSS样式是一样的。</li>
-<li>种类<blockquote>
-<ul>
-<li>标签选择器</li>
-<li>类选择器</li>
-<li>id选择器</li>
-<li>后代选择器（层级选择器）</li>
-</ul>
-</blockquote>
-</li>
-<li>使用方法即$(CSS选择器使用规则)</li>
-</ul>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>$(“#id”)</td>
-<td>$(“.class”)</td>
-<td>$(“.class ul li”)</td>
-<td>$(“div”)</td>
-</tr>
-</tbody></table>
-<h1 id="选择器过滤"><a href="#选择器过滤" class="headerlink" title="选择器过滤"></a>选择器过滤</h1><blockquote>
-<ul>
-<li>过滤就是在选择标签的集合中过滤出自己需要的标签</li>
-<li>has()<blockquote>
-<ul>
-<li>has(选择器名称)， 表示选取指定选择器的标签</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line"> &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line"> &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line"> &lt;script src=&quot;jquery-3.6.0.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"> &lt;script&gt;</span><br><span class="line"> $(function () &#123;</span><br><span class="line"> //使用has方法</span><br><span class="line"> $(&quot;div&quot;).has(&quot;#demo&quot;).css(&quot;color&quot;,&quot;red&quot;);</span><br><span class="line"> &#125;)</span><br><span class="line"> &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"> &lt;div&gt;</span><br><span class="line"> &lt;input type=&quot;text&quot;&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line"> &lt;div&gt;</span><br><span class="line"> &lt;input type=&quot;text&quot; id=&quot;demo&quot;&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<blockquote>
-<ul>
-<li>eq(索引)，表示选取指定索引的元素</li>
-</ul>
-</blockquote>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line"> &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line"> &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line"> &lt;script src=&quot;jquery-3.6.0.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"> &lt;script&gt;</span><br><span class="line"> $(function () &#123;</span><br><span class="line"> $(&quot;div&quot;).eq(0).children().css(&quot;color&quot;,&quot;red&quot;);</span><br><span class="line"> &#125;)</span><br><span class="line"> &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"> &lt;div&gt;</span><br><span class="line"> &lt;input type=&quot;text&quot; placeholder=&quot;这是第一个div里面的input&quot;&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line"> &lt;div&gt;</span><br><span class="line"> &lt;input type=&quot;text&quot; placeholder=&quot;这是第二个div里面的input&quot;&gt;</span><br><span class="line"> &lt;input type=&quot;submit&quot;&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<ul>
-<li>选择转移<blockquote>
-<ul>
-<li>我们可以以一个元素为参照，找到其它元素（节点选择）</li>
-<li>详细如下：<blockquote>
-<p>$(‘#box’).prev(); 表示选择id是box元素的兄弟节点<br>$(‘#box’).prevAll(); 表示选择id是box元素的上面所有的同级元素<br>$(‘#box’).next(); 表示选择id是box元素的兄弟节点<br>$(‘#box’).nextAll(); 表示选择id是box元素的下面所有的同级元素<br>$(‘#box’).parent(); 表示选择id是box元素的父元素<br>$(‘#box’).children(); 表示选择id是box元素的所有子元素<br>$(‘#box’).siblings(); 表示选择id是box元素的其它同级元素<br>$(‘#box’).find(‘.myClass’); 表示选择id是box元素的class等于myClass的元素</p>
-</blockquote>
-</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line"> &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line"> &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line"> &lt;script src=&quot;jquery-3.6.0.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"> &lt;script&gt;</span><br><span class="line"> $(function () &#123;</span><br><span class="line"> //确定参照节点</span><br><span class="line"> var $div = $(&quot;#demo&quot;);</span><br><span class="line"> $div.prev().css(&quot;color&quot;,&quot;red&quot;);</span><br><span class="line"> $div.prevAll().css(&quot;font-size&quot;,33);</span><br><span class="line"> $div.next().css(&quot;color&quot;,&quot;blue&quot;);</span><br><span class="line"> $div.nextAll().css(&quot;background&quot;,&quot;gray&quot;);</span><br><span class="line"> $div.parent().css(&quot;background&quot;,&quot;#ff6700&quot;);</span><br><span class="line"> $div.children().css(&quot;color&quot;,&quot;gold&quot;);</span><br><span class="line"> &#125;)</span><br><span class="line"> &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"> &lt;h1&gt;这是一个标题&lt;/h1&gt;</span><br><span class="line">  &lt;p&gt;这是一个段落&lt;/p&gt;</span><br><span class="line"> &lt;div id=&quot;demo&quot;&gt;这是一个div</span><br><span class="line"> &lt;span&gt;这是div里面的span&lt;/span&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line"> &lt;h3&gt;这又是一个标题&lt;/h3&gt;</span><br><span class="line"> &lt;a href=&quot;#&quot;&gt;这是一个a标签&lt;/a&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<blockquote>
-<ul>
-<li>html方法的使用<blockquote>
-<ul>
-<li>在jquery中可以通过html属性为元素设置html内容</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line"> &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line"> &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line"> &lt;script src=&quot;jquery-3.6.0.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"> &lt;script&gt;</span><br><span class="line"> $(function () &#123;</span><br><span class="line"> var $div = $(&quot;#demo&quot;);</span><br><span class="line"> //如果要获取内容</span><br><span class="line"> var rs = $div.html();</span><br><span class="line"> alert(rs)</span><br><span class="line"> $div.html(&quot;&lt;span style=&#x27;color: red&#x27;&gt;哈嘿~~~~&lt;/span&gt;&quot;);</span><br><span class="line"> //在元素后追加内容</span><br><span class="line"> $div.append(&quot;&lt;span style=&#x27;color: red&#x27;&gt;大宝贝&lt;/span&gt;&quot;);</span><br><span class="line"> &#125;)</span><br><span class="line"> &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"> &lt;div id=&quot;demo&quot;&gt;</span><br><span class="line"> &lt;p&gt;这是字&lt;/p&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<ul>
-<li>获取和设置元素的属性<blockquote>
-<ul>
-<li>prop方法：css方法可以设置元素的样式属性，而该方法可以设置元素的其他属性</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line"> &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line"> &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line"> &lt;script src=&quot;jquery-3.6.0.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"> &lt;script&gt;</span><br><span class="line"> $(function () &#123;</span><br><span class="line"> var $a = $(&quot;#aId&quot;);</span><br><span class="line"> var $input = $(&quot;#InputId&quot;);</span><br><span class="line"> //可以获取</span><br><span class="line"> var Sa = $a.prop(&quot;id&quot;);</span><br><span class="line"> // alert(Sa);</span><br><span class="line"> //设置元素属性</span><br><span class="line"> $a.prop(&#123;&quot;href&quot;:&quot;http://www.baidu.com&quot;,&quot;class&quot;:&quot;aClass&quot;,&quot;title&quot;:&quot;这是</span><br><span class="line">标题&quot;&#125;);</span><br><span class="line"> //获取input中的属性value使用的是val()方法</span><br><span class="line"> // var Sinput = $input.prop(&quot;value&quot;);</span><br><span class="line"> // alert(Sinput);</span><br><span class="line"> var Sinput = $input.val();</span><br><span class="line"> alert(Sinput);</span><br><span class="line"> //设置value值</span><br><span class="line"> $input.val(&quot;12313212&quot;);</span><br><span class="line"> &#125;)</span><br><span class="line"> &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"> &lt;a id=&quot;aId&quot;&gt;这是a标签&lt;/a&gt;</span><br><span class="line"> &lt;input id=&quot;InputId&quot; type=&quot;text&quot; value=&quot;123&quot;/&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-
-<h1 id="JQuery事件"><a href="#JQuery事件" class="headerlink" title="JQuery事件"></a>JQuery事件</h1><blockquote>
-<ul>
-<li>常用事件<blockquote>
-<ul>
-<li>click()鼠标点击事件</li>
-<li>blur() 离焦事件</li>
-<li>focus() 聚焦事件</li>
-<li>mouseover() 鼠标进入事件</li>
-<li>mouseout() 鼠标离开事件</li>
-<li>ready() DOM加载完毕触发</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line"> &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line"> &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line"> &lt;script src=&quot;jquery-3.6.0.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"> &lt;script&gt;</span><br><span class="line"> $(function () &#123;</span><br><span class="line"> var $li = $(&quot;.list li&quot;);</span><br><span class="line"> var $input = $(&quot;#in_one&quot;);</span><br><span class="line"> var $btn = $(&quot;#btn&quot;);</span><br><span class="line"> var $div = $(&quot;#demo&quot;);</span><br><span class="line"> //点击事件</span><br><span class="line"> $li.click(function () &#123;</span><br><span class="line"> $(this).css(&#123;&quot;background&quot;:&quot;red&quot;&#125;);</span><br><span class="line"> //index()方法可以获取当前元素的索引值</span><br><span class="line"> //alert($(this).index())</span><br><span class="line"> &#125;);</span><br><span class="line"> //获取焦点</span><br><span class="line">$input.focus(function () &#123;</span><br><span class="line"> $(this).val(&quot;嗨嗨嘿&quot;);</span><br><span class="line"> &#125;)</span><br><span class="line"> &#125;)</span><br><span class="line"> &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"> &lt;div id=&quot;demo&quot;&gt;</span><br><span class="line"> &lt;ul class=&quot;list&quot;&gt;</span><br><span class="line"> &lt;li&gt;这是一行字&lt;/li&gt;</span><br><span class="line"> &lt;li&gt;这是一行字&lt;/li&gt;</span><br><span class="line"> &lt;li&gt;这是一行字&lt;/li&gt;</span><br><span class="line"> &lt;li&gt;这是一行字&lt;/li&gt;</span><br><span class="line"> &lt;/ul&gt;</span><br><span class="line"> &lt;input type=&quot;text&quot; id=&quot;in_one&quot;/&gt;</span><br><span class="line"> &lt;input type=&quot;submit&quot; id=&quot;btn&quot; value=&quot;点一下&quot;/&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>XiAnTrain</category>
       </categories>
