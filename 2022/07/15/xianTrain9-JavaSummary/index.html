@@ -19,52 +19,27 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"simon-yian.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-<meta name="description" content="此篇是创建VMware16虚拟机安装ubuntu21.04系统的超详细操作过程，希望对小白白有所帮助">
+<meta name="description" content="&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;Java基础学习打卡第1天学习链接：https:&#x2F;&#x2F;www.yuque.com&#x2F;docs&#x2F;share&#x2F;8290264f-2175-46ce-8b20-711eac7ac369?# 《第1章 Java语言概述》密码：syl5">
 <meta property="og:type" content="article">
-<meta property="og:title" content="在VMware16中创建虚拟机安装ubuntu 21.04系统">
-<meta property="og:url" content="https://simon-yian.github.io/2021/10/18/VMware-ubuntu/index.html">
+<meta property="og:title" content="培训心得[Java语言概述]">
+<meta property="og:url" content="https://simon-yian.github.io/2022/07/15/xianTrain9-JavaSummary/index.html">
 <meta property="og:site_name" content="simon·yian&#39;Blog">
-<meta property="og:description" content="此篇是创建VMware16虚拟机安装ubuntu21.04系统的超详细操作过程，希望对小白白有所帮助">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;Java基础学习打卡第1天学习链接：https:&#x2F;&#x2F;www.yuque.com&#x2F;docs&#x2F;share&#x2F;8290264f-2175-46ce-8b20-711eac7ac369?# 《第1章 Java语言概述》密码：syl5">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://i.loli.net/2021/10/18/X4BvRZr2LKb5SyD.jpg">
-<meta property="og:image" content="https://i.loli.net/2021/10/18/Prph8EuT6vaHiyQ.jpg">
-<meta property="og:image" content="https://i.loli.net/2021/10/18/DqtysojVQrFE2R9.jpg">
-<meta property="og:image" content="https://i.loli.net/2021/10/18/VzTAbUosOP4dK3W.jpg">
-<meta property="og:image" content="https://i.loli.net/2021/10/18/DqtysojVQrFE2R9.jpg">
-<meta property="og:image" content="https://i.loli.net/2021/10/18/ONQ954xcuaLZYBK.jpg">
-<meta property="og:image" content="https://i.loli.net/2021/10/18/n2RPhJVXakzLgHU.jpg">
-<meta property="og:image" content="https://i.loli.net/2021/10/18/xe8kFh4T72tSAld.jpg">
-<meta property="og:image" content="https://i.loli.net/2021/10/18/KzBpH8OeDyn5V3F.jpg">
-<meta property="og:image" content="https://i.loli.net/2021/10/18/AaUSlwWnMCFJ3c1.jpg">
-<meta property="og:image" content="https://i.loli.net/2021/10/18/QWASzB7OuMIb6xm.jpg">
-<meta property="og:image" content="https://i.loli.net/2021/10/18/9CzmqQYUDNeRo56.jpg">
-<meta property="og:image" content="https://i.loli.net/2021/10/18/XZi389ajePvqRDk.jpg">
-<meta property="og:image" content="https://i.loli.net/2021/10/18/XAgZ4IvWTji5CUK.jpg">
-<meta property="og:image" content="https://i.loli.net/2021/10/18/owxQLiVrmWdJsYa.jpg">
-<meta property="og:image" content="https://i.loli.net/2021/10/18/DKBEnuG6or3f4wx.jpg">
-<meta property="og:image" content="https://i.loli.net/2021/10/18/VlZBfoPbR9e8MSc.jpg">
-<meta property="og:image" content="https://i.loli.net/2021/10/18/AdjlBFmEVDNhr1O.jpg">
-<meta property="og:image" content="https://i.loli.net/2021/10/18/C8p4cyMIBuGbYWU.jpg">
-<meta property="og:image" content="https://i.loli.net/2021/10/18/IyBJxuMrLhml3Ko.jpg">
-<meta property="og:image" content="https://i.loli.net/2021/10/18/HwJm6DONtYMhFCz.jpg">
-<meta property="og:image" content="https://i.loli.net/2021/10/18/cjkhgORexpbFm4K.jpg">
-<meta property="og:image" content="https://i.loli.net/2021/10/18/pfz13yURdGDW8qI.jpg">
-<meta property="og:image" content="https://i.loli.net/2021/10/18/VlZBfoPbR9e8MSc.jpg">
-<meta property="article:published_time" content="2021-10-18T11:59:48.000Z">
-<meta property="article:modified_time" content="2021-10-22T04:03:30.000Z">
+<meta property="article:published_time" content="2022-07-15T11:33:58.000Z">
+<meta property="article:modified_time" content="2022-07-15T13:01:56.000Z">
 <meta property="article:author" content="simon·yi an">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://i.loli.net/2021/10/18/X4BvRZr2LKb5SyD.jpg">
 
 
-<link rel="canonical" href="https://simon-yian.github.io/2021/10/18/VMware-ubuntu/">
+<link rel="canonical" href="https://simon-yian.github.io/2022/07/15/xianTrain9-JavaSummary/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://simon-yian.github.io/2021/10/18/VMware-ubuntu/","path":"2021/10/18/VMware-ubuntu/","title":"在VMware16中创建虚拟机安装ubuntu 21.04系统"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://simon-yian.github.io/2022/07/15/xianTrain9-JavaSummary/","path":"2022/07/15/xianTrain9-JavaSummary/","title":"培训心得[Java语言概述]"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>在VMware16中创建虚拟机安装ubuntu 21.04系统 | simon·yian'Blog</title>
+<title>培训心得[Java语言概述] | simon·yian'Blog</title>
   
 
 
@@ -180,7 +155,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85VMware-16"><span class="nav-number">1.</span> <span class="nav-text">安装VMware 16</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8VMware%E4%B8%AD%E5%AE%89%E8%A3%85ubuntu-21-04%E7%B3%BB%E7%BB%9F"><span class="nav-number">2.</span> <span class="nav-text">在VMware中安装ubuntu 21.04系统</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#java%E8%AF%AD%E8%A8%80%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">java语言概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Java%E5%8F%91%E5%B1%95%E7%AE%80%E5%8F%B2"><span class="nav-number">1.1.</span> <span class="nav-text">Java发展简史</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java%E7%A8%8B%E5%BA%8F%E7%9A%84%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6"><span class="nav-number">1.2.</span> <span class="nav-text">java程序的运行机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java%E8%AF%AD%E8%A8%80%E7%9A%84%E7%89%B9%E7%82%B9"><span class="nav-number">1.3.</span> <span class="nav-text">Java语言的特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%80%E6%9C%AF%E5%90%8D%E8%AF%8D"><span class="nav-number">1.4.</span> <span class="nav-text">技术名词</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85"><span class="nav-number">1.5.</span> <span class="nav-text">Java下载安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%96%E5%86%99%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%A8%8B%E5%BA%8FHelloWorld"><span class="nav-number">1.6.</span> <span class="nav-text">编写第一个程序HelloWorld</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java%E6%A0%87%E8%AF%86%E7%AC%A6"><span class="nav-number">1.7.</span> <span class="nav-text">java标识符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java%E5%91%BD%E5%90%8D%E6%96%B9%E5%BC%8F"><span class="nav-number">1.8.</span> <span class="nav-text">Java命名方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.9.</span> <span class="nav-text">Java数据类型</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -260,7 +235,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://simon-yian.github.io/2021/10/18/VMware-ubuntu/">
+    <link itemprop="mainEntityOfPage" href="https://simon-yian.github.io/2022/07/15/xianTrain9-JavaSummary/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avator.jpg">
@@ -273,7 +248,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          在VMware16中创建虚拟机安装ubuntu 21.04系统
+          培训心得[Java语言概述]
         </h1>
 
         <div class="post-meta-container">
@@ -283,23 +258,17 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2021-10-18 19:59:48" itemprop="dateCreated datePublished" datetime="2021-10-18T19:59:48+08:00">2021-10-18</time>
+      <time title="创建时间：2022-07-15 19:33:58 / 修改时间：21:01:56" itemprop="dateCreated datePublished" datetime="2022-07-15T19:33:58+08:00">2022-07-15</time>
     </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-22 12:03:30" itemprop="dateModified" datetime="2021-10-22T12:03:30+08:00">2021-10-22</time>
-      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/VMware/" itemprop="url" rel="index"><span itemprop="name">VMware</span></a>
+          <a href="/categories/XiAnTrain/" itemprop="url" rel="index"><span itemprop="name">XiAnTrain</span></a>
         </span>
     </span>
 
@@ -317,14 +286,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1.4k</span>
+      <span>1.8k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
+      <span>2 分钟</span>
     </span>
 </div>
 
@@ -335,105 +304,185 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <table>
-<tr><td bgcolor="CFCFCF">此篇是创建VMware16虚拟机安装ubuntu21.04系统的超详细操作过程，希望对小白白有所帮助
-</td></tr></table>
-
+        <p><em><strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Java基础学习打卡第1天<br>学习链接：<a target="_blank" rel="noopener" href="https://www.yuque.com/docs/share/8290264f-2175-46ce-8b20-711eac7ac369#">https://www.yuque.com/docs/share/8290264f-2175-46ce-8b20-711eac7ac369?#</a> 《第1章 Java语言概述》密码：syl5</strong></em></p>
 <span id="more"></span>
-
-<p>安装环境： windows 10</p>
-<p>VMware 16安装包：我用阿里云盘分享了「VMware-workstation-full-16.1.2-17966106.exe」，你可以不限速下载🚀<br>复制这段内容打开「阿里云盘」App 即可获取<br>链接：<a target="_blank" rel="noopener" href="https://www.aliyundrive.com/s/7acSRwmGho2">https://www.aliyundrive.com/s/7acSRwmGho2</a></p>
-<p>ubuntu 21.04镜像：链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1ktE78cieRE9Y7_BhrG9vjQ">https://pan.baidu.com/s/1ktE78cieRE9Y7_BhrG9vjQ</a><br>提取码：n9ms</p>
-<h3 id="安装VMware-16"><a href="#安装VMware-16" class="headerlink" title="安装VMware 16"></a>安装VMware 16</h3><p>1、 直接双击下载好的VMware，这个过程可能会显示重新启动系统，那你点就是了。重新启动后再次双击下载好的VMware，然后点击【下一步】。</p>
-<img src="https://i.loli.net/2021/10/18/X4BvRZr2LKb5SyD.jpg" width="850" height="400" div align="right">
-
-<p>2、勾选【我接受许可协议中的条款】，点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/Prph8EuT6vaHiyQ.jpg" width="850" height="400" div align="right">
-
-<p>3、可以默认，也可更改安装位置</p>
-<img src="https://i.loli.net/2021/10/18/DqtysojVQrFE2R9.jpg" width="850" height="400" div align="right">
-
-<p>4、选择安装位置，然后点击【确定】</p>
-<img src="https://i.loli.net/2021/10/18/VzTAbUosOP4dK3W.jpg" width="850" height="400" div align="right">
-
-<p>5、点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/DqtysojVQrFE2R9.jpg" width="850" height="400" div align="right">
-
-<p>6、取消勾选【启动时检查产品更新】和【加入VMware客户体验改进计划】，点击【下一步</p>
-<img src="https://i.loli.net/2021/10/18/ONQ954xcuaLZYBK.jpg" width="850" height="400" div align="right">
-
-<p>7、点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/n2RPhJVXakzLgHU.jpg" width="850" height="400" div align="right">
-
-<p>8、点击【安装】</p>
-<img src="https://i.loli.net/2021/10/18/xe8kFh4T72tSAld.jpg" width="850" height="400" div align="right">
-
-<p>9、正在安装，等待几分钟</p>
-<img src="https://i.loli.net/2021/10/18/KzBpH8OeDyn5V3F.jpg" width="850" height="400" div align="right">
-
-<p>10、点击【许可证】</p>
-<img src="https://i.loli.net/2021/10/18/AaUSlwWnMCFJ3c1.jpg" width="850" height="400" div align="right">
-
-<p>11、框中输入许可证：ZF3R0-FHED2-M80TY-8QYGC-NPKYF，（复制粘贴就可以）然后点击【输入】</p>
-<p>12、点击【完成】</p>
-<p>恭喜你这会你的虚拟机已经安装好了，是不是直接点击下一步就可以</p>
-<h3 id="在VMware中安装ubuntu-21-04系统"><a href="#在VMware中安装ubuntu-21-04系统" class="headerlink" title="在VMware中安装ubuntu 21.04系统"></a>在VMware中安装ubuntu 21.04系统</h3><p>1、双击打开你创建在桌面的虚拟机，然后点击【创建新的虚拟机】</p>
-<img src="https://i.loli.net/2021/10/18/QWASzB7OuMIb6xm.jpg" width="850" height="400" div align="right">
-
-<p>2、选择【典型】（默认便是典型），点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/9CzmqQYUDNeRo56.jpg" width="850" height="400" div align="right">
-
-<p>3、选择【稍后安装操作系统】，点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/XZi389ajePvqRDk.jpg" width="850" height="400" div align="right">
-
-<p>4、客户机操作系统选择【Linux】，版本选择【Ubuntu64位】，然后点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/XAgZ4IvWTji5CUK.jpg" width="850" height="400" div align="right">
-
-<p>5、位置可更改，点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/owxQLiVrmWdJsYa.jpg" width="850" height="400" div align="right">
-
-<p>6、最大磁盘大小【20】GB，选择【将虚拟机磁盘拆分成多个文件】，然后点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/DKBEnuG6or3f4wx.jpg" width="850" height="400" div align="right">
-
-<p>7、点击【自定义硬件】</p>
-<img src="https://i.loli.net/2021/10/18/VlZBfoPbR9e8MSc.jpg" width="850" height="400" div align="right">
-
-<p>8、选择【内存】，此虚拟机的内存设为【2048MB】</p>
-<img src="https://i.loli.net/2021/10/18/AdjlBFmEVDNhr1O.jpg" width="850" height="400" div align="right">
-
-<p>9、选择【新CD/DVD(TATA)】后选择【使用ISO映像文件】，点击【浏览】，找到下载后文件夹里面的【ubuntu-21.04-desktop-amd64.iso】这个镜像并选择！</p>
-<img src="https://i.loli.net/2021/10/18/C8p4cyMIBuGbYWU.jpg" width="850" height="400" div align="right">
-
-<p>10、选择【网络适配器】，然后选择【仅主机模式】</p>
-<img src="https://i.loli.net/2021/10/18/IyBJxuMrLhml3Ko.jpg" width="850" height="400" div align="right">
-
-<p>11、选择【USB控制器】，点击【移除】</p>
-<img src="https://i.loli.net/2021/10/18/HwJm6DONtYMhFCz.jpg" width="850" height="400" div align="right">
-
-<p>12、选择【打印机】，点击【移除】</p>
-<img src="https://i.loli.net/2021/10/18/cjkhgORexpbFm4K.jpg" width="850" height="400" div align="right">
-
-<p>13、点击【关闭】</p>
-<img src="https://i.loli.net/2021/10/18/pfz13yURdGDW8qI.jpg" width="850" height="400" div align="right">
-
-<p>14、点击【完成】</p>
-<img src="https://i.loli.net/2021/10/18/VlZBfoPbR9e8MSc.jpg" width="850" height="400" div align="right">
-
-<p><font color="red" size="5"> 实在没有耐心放图片了，等闲了再贴图片吧,相信自己即使看文字你也可以安装完成的，加油！</font></p>
-<p>15、点击【开启此虚拟机】，等待开启</p>
-<p>16、择【中文简体】，点击【安装Ubuntu】</p>
-<p>17、点击【继续】</p>
-<p>18、点击【继续】</p>
-<p>19、点击【现在安装】</p>
-<p>20、点击【继续】</p>
-<p>21、这里默认【Shanghai】就OK</p>
-<p>22、创建用户账号（记住密码哦！）。不要担心你的计算机名是什么，你只需要输入姓名，计算机名就会自动生成。然后点击[继续]</p>
-<p>23、安装中，耐心等待（这个可能需要多点时间）</p>
-<p>24、点击【现在重启】，重启一会看屏幕中下方转圈其他都不动，键盘上点击【enter】</p>
-<p>25、点击账户，我这里是【simon-yian】</p>
-<p>26、输入之前创建用户账号时设的密码，然后点击【登录】</p>
-<p>27、至此Ubuntu系统安装完成！</p>
-<p><font color="red"><b>如果你觉得可以千万不要忘记动动你的小手，赞赏一下贫困的博客主</b><br><b>记得收藏啊，以后会有更好的内容给您分享</b></font></p>
+<h1 id="java语言概述"><a href="#java语言概述" class="headerlink" title="java语言概述"></a>java语言概述</h1><h2 id="Java发展简史"><a href="#Java发展简史" class="headerlink" title="Java发展简史"></a>Java发展简史</h2><blockquote>
+<ul>
+<li>Java是由Sun公司于1995年5月推出的，可以编写跨平台，分布式应用软件的面向对象的程序设计语言。</li>
+<li>java一分为三：<blockquote>
+<ul>
+<li>J2ME:主要用于移动设备和信息家电设备等（现已被淘汰）</li>
+<li>J2SE:JAVA技术的核心和技术</li>
+<li>J2EE:java技术中应用最广泛的部分</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<h2 id="java程序的运行机制"><a href="#java程序的运行机制" class="headerlink" title="java程序的运行机制"></a>java程序的运行机制</h2><blockquote>
+<ul>
+<li>运行Java程序过程：编写源程序—&gt;编译—&gt;运行<blockquote>
+<ul>
+<li>java编译之后，不会生成特定的平台机器码，而是一种与平台无关的字节码(.class文件)。</li>
+<li>字节码（.class文件）不能直接执行，而是运行在java虚拟机中</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li><b style="font-size: 20px; color: red;"> （面试题）</b>java跨平台实现的核心原理：<blockquote>
+<ul>
+<li>java源代码在运行之前会先根据JVM规范生成平台无关的字节码文件（class文件）,字节码文件不依赖于任何平台。</li>
+<li>Java为不同平台实现对应的虚拟机，JVM在加载字节码文件后由JVM生成对应平台的计算机指令</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<h2 id="Java语言的特点"><a href="#Java语言的特点" class="headerlink" title="Java语言的特点"></a>Java语言的特点</h2><blockquote>
+<ul>
+<li>简单性：相对于c语言少了指针、头文件等，并增加了垃圾回收机制。</li>
+<li>面向对象：将重点放在数据和对象上，而不是过程中</li>
+<li>分布式：java应用程序能够通过URL打开和访问网络上的对象</li>
+<li>安全性：防范个各种攻击</li>
+<li>多线程：解决高并发存在的问题</li>
+<li>可移植：不同平台可生成相同字节码文件，通过不同平台对应的JVM来运行。</li>
+</ul>
+</blockquote>
+<h2 id="技术名词"><a href="#技术名词" class="headerlink" title="技术名词"></a>技术名词</h2><p>JDK(Java Develop Kit):Java 开发工具</p>
+<p>JRE(Java Runtime Environment)：Java 运行环境</p>
+<p>JVM(Java Virtual machine )：Java虚拟机</p>
+<h2 id="Java下载安装"><a href="#Java下载安装" class="headerlink" title="Java下载安装"></a>Java下载安装</h2><blockquote>
+<ul>
+<li>JDK下载官网：<a target="_blank" rel="noopener" href="https://www.oracle.com/java/technologies/downloads/index.html">https://www.oracle.com/java/technologies/downloads/index.html</a> (安装java SE 11,点击运行安装即可)</li>
+<li>配置环境变量：<blockquote>
+<ul>
+<li>配置JAVA_HOME<blockquote>
+<p>变量名：JAVA_HOME<br>变量值: (JDK的安装路径)</p>
+</blockquote>
+</li>
+<li>配置Path<blockquote>
+<p>找到Path在变量值中添加：<code>%JAVA_HOME%\bin</code></p>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<h2 id="编写第一个程序HelloWorld"><a href="#编写第一个程序HelloWorld" class="headerlink" title="编写第一个程序HelloWorld"></a>编写第一个程序HelloWorld</h2><p>在txt中编写：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">class Hello&#123;</span><br><span class="line">	public static void main(String[] args)&#123;</span><br><span class="line">    	System.out.print(&quot;Hello World&quot;);</span><br><span class="line">	&#125;	   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<blockquote>
+<p>保存后修改扩展名.java<br>打开终端，进入创建该txt的文件夹(cd 位置)<br>源程序进行编译:javac Hello.java<br>运行:java Hello</p>
+</blockquote>
+</blockquote>
+<p><b>注意事项：</b><br>1、Java源文件的命名和类名一致，并且首字符大写，如果有多个单词，所有单词的首字母均大写</p>
+<h2 id="java标识符"><a href="#java标识符" class="headerlink" title="java标识符"></a>java标识符</h2><blockquote>
+<ul>
+<li>标识符：类名、方法名、变量名<blockquote>
+<ul>
+<li>可以包含数字、字母、下划线、$</li>
+<li>不能数字开头</li>
+<li>不能使用Java关键字<table>
+<thead>
+<tr>
+<th>abstract</th>
+<th>continue</th>
+<th>for</th>
+<th>new</th>
+<th>switch</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>assert</td>
+<td>default</td>
+<td>if</td>
+<td>package</td>
+<td>synchronized</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>do</td>
+<td>goto</td>
+<td>private</td>
+<td>this</td>
+</tr>
+<tr>
+<td>break</td>
+<td>double</td>
+<td>implements</td>
+<td>protected</td>
+<td>throw</td>
+</tr>
+<tr>
+<td>byte</td>
+<td>else</td>
+<td>import</td>
+<td>public</td>
+<td>throw</td>
+</tr>
+<tr>
+<td>case</td>
+<td>enum</td>
+<td>instanceof</td>
+<td>return</td>
+<td>transient</td>
+</tr>
+<tr>
+<td>catch</td>
+<td>extends</td>
+<td>int</td>
+<td>short</td>
+<td>try</td>
+</tr>
+<tr>
+<td>char</td>
+<td>final</td>
+<td>interface</td>
+<td>static</td>
+<td>void</td>
+</tr>
+<tr>
+<td>class</td>
+<td>finally</td>
+<td>long</td>
+<td>strictfp</td>
+<td>volatile</td>
+</tr>
+<tr>
+<td>const</td>
+<td>float</td>
+<td>native</td>
+<td>super</td>
+<td></td>
+</tr>
+<tr>
+<td>while</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<h2 id="Java命名方式"><a href="#Java命名方式" class="headerlink" title="Java命名方式"></a>Java命名方式</h2><blockquote>
+<ul>
+<li>帕斯卡命名法：所有单词首字母均大写。适用于类名，例如：StudentManager</li>
+<li>驼峰命名法：第一个单词的首字母小写，如果有多个但是，其余单词首字母均大写，适用于方法名，变量名。例如：studentAge，studentGender</li>
+</ul>
+</blockquote>
+<h2 id="Java数据类型"><a href="#Java数据类型" class="headerlink" title="Java数据类型"></a>Java数据类型</h2><ol>
+<li>基本类型：byte short int long float double boolean char</li>
+<li>引用类型: 数组， 类，接口</li>
+</ol>
 
     </div>
 
@@ -475,14 +524,11 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2021/10/18/picture/" rel="prev" title="makedown进阶（改变字体颜色，大小，设置文字背景，调整图片大小设置剧中）">
-                  <i class="fa fa-chevron-left"></i> makedown进阶（改变字体颜色，大小，设置文字背景，调整图片大小设置剧中）
+                <a href="/2022/07/15/baidu_verify_code-lKi6sS4j7S/" rel="prev" title="">
+                  <i class="fa fa-chevron-left"></i> 
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2021/10/22/hexo-relevant/" rel="next" title="hexo-relevant">
-                  hexo-relevant <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>

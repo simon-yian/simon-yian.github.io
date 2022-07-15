@@ -28,6 +28,21 @@
       </categories>
   </entry>
   <entry>
+    <title>LeetCode102 二叉树的层序遍历</title>
+    <url>/2021/11/25/LeetCode102/</url>
+    <content><![CDATA[<p>层序遍历（宽度优先遍历）<br>实则将非递归先序遍历中的栈（stack）转化成队列（queue）</p>
+<span id="more"></span>
+
+<p>此题方法两种大体结构相同</p>
+<h3 id="方法1："><a href="#方法1：" class="headerlink" title="方法1："></a>方法1：</h3><p>核心思想：宽度优先遍历，再循环中设置count，当count = 0时说明当前层已经输出完毕</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">public List&lt;List&lt;Integer&gt;&gt; levelOrder(TreeNode root) &#123;</span><br><span class="line">    if(root == null)</span><br><span class="line">        return new ArrayList&lt;&gt;();</span><br><span class="line">    List&lt;List&lt;Integer&gt;&gt; res = new ArrayList&lt;&gt;();</span><br><span class="line">    Queue&lt;TreeNode&gt; queue = new LinkedList&lt;TreeNode&gt;();</span><br><span class="line">    queue.add(root);</span><br><span class="line">    while(!queue.isEmpty())&#123;</span><br><span class="line">        int count = queue.size();  //输出当前层有几个节点</span><br><span class="line">        List&lt;Integer&gt; list = new ArrayList&lt;Integer&gt;();</span><br><span class="line">        while(count &gt; 0)&#123;                    //判断当前层是否输入完毕</span><br><span class="line">            TreeNode node = queue.poll();</span><br><span class="line">            list.add(node.val);</span><br><span class="line">            if(node.left != null)</span><br><span class="line">                queue.add(node.left);</span><br><span class="line">            if(node.right != null)</span><br><span class="line">                queue.add(node.right);</span><br><span class="line">            count--;              //poll一次count减1</span><br><span class="line">        &#125;</span><br><span class="line">        res.add(list);</span><br><span class="line">    &#125;</span><br><span class="line">    return res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="方法2："><a href="#方法2：" class="headerlink" title="方法2："></a>方法2：</h3><p>核心思想：宽度优先遍历 + HashMap（记录节点对应层数）及找出最大层数；<br>通过使用宽度优先遍历的方法将整个输出的结果存放在list中<br>通过使用HashMap找到结点所对应的层数并找到最大层数，以方便后续的整体遍历产生List&lt;List<Integer>&gt;</Integer></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">	import java.util.*;</span><br><span class="line">class Solution &#123;</span><br><span class="line"></span><br><span class="line">    public List&lt;List&lt;Integer&gt;&gt; levelOrder(TreeNode node) &#123;</span><br><span class="line">        if(node == null)&#123;</span><br><span class="line">            return  new ArrayList&lt;&gt;();</span><br><span class="line">        &#125;</span><br><span class="line">        int max = 0; //存放最大层数以供后续的遍历产生 List&lt;List&lt;Integer&gt;&gt;</span><br><span class="line">        HashMap&lt;TreeNode,Integer&gt; map = new HashMap&lt;&gt;();  //存放每个结点所对应的层数</span><br><span class="line">        Queue&lt;TreeNode&gt; queue = new LinkedList&lt;TreeNode&gt;(); </span><br><span class="line">        List&lt;TreeNode&gt; list = new ArrayList&lt;&gt;();  //存放宽度优先遍历的结果</span><br><span class="line">	</span><br><span class="line">        queue.add(node);</span><br><span class="line">        map.put(node,1);  //给头结点初始值为1；</span><br><span class="line">	</span><br><span class="line">        while(!queue.isEmpty())&#123;</span><br><span class="line">            </span><br><span class="line">            TreeNode head = queue.poll();</span><br><span class="line">            list.add(head);</span><br><span class="line"></span><br><span class="line">            if(max &lt; map.get(head))&#123;   //进行判断是否是最大值</span><br><span class="line">                max = map.get(head); </span><br><span class="line">            &#125;</span><br><span class="line">            if(head.left != null)&#123;</span><br><span class="line">                queue.add(head.left);</span><br><span class="line">                map.put(head.left,map.get(head)+1);    //每个子节点都是在父节点的基础上 +1</span><br><span class="line">            &#125;</span><br><span class="line">            if(head.right != null)&#123;</span><br><span class="line">                queue.add(head.right);</span><br><span class="line">                map.put(head.right,map.get(head)+1);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        List&lt;List&lt;Integer&gt;&gt; dbList = new ArrayList&lt;&gt;();</span><br><span class="line">        int flag = map.get(node);</span><br><span class="line">        for(int i = 1; i &lt;= max;i++)&#123;   //循环最大层数次</span><br><span class="line">            List&lt;Integer&gt; num = new ArrayList&lt;&gt;();</span><br><span class="line">            for(TreeNode str : list)&#123;  </span><br><span class="line">								if(i == map.get(str))&#123;   //每个结点层数相同的放在同一个List(num)中    </span><br><span class="line">                    num.add(str.val);</span><br><span class="line">                &#125;</span><br><span class="line">                else&#123;</span><br><span class="line">                    continue;    //宽度优先遍历中结点层数是依次排好序的，当出现不同时，后续再就没有相同的值。</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            dbList.add(num);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        return dbList;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+  </entry>
+  <entry>
     <title>一致性哈希算法</title>
     <url>/2021/11/15/ConsistentHash/</url>
     <content><![CDATA[<img src="https://i.loli.net/2021/11/15/vKFjo15HqAybLmE.png" align="center" width="600" height="400" div>
@@ -51,21 +66,6 @@
 ]]></content>
       <categories>
         <category>algorithm</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>LeetCode102 二叉树的层序遍历</title>
-    <url>/2021/11/25/LeetCode102/</url>
-    <content><![CDATA[<p>层序遍历（宽度优先遍历）<br>实则将非递归先序遍历中的栈（stack）转化成队列（queue）</p>
-<span id="more"></span>
-
-<p>此题方法两种大体结构相同</p>
-<h3 id="方法1："><a href="#方法1：" class="headerlink" title="方法1："></a>方法1：</h3><p>核心思想：宽度优先遍历，再循环中设置count，当count = 0时说明当前层已经输出完毕</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">public List&lt;List&lt;Integer&gt;&gt; levelOrder(TreeNode root) &#123;</span><br><span class="line">    if(root == null)</span><br><span class="line">        return new ArrayList&lt;&gt;();</span><br><span class="line">    List&lt;List&lt;Integer&gt;&gt; res = new ArrayList&lt;&gt;();</span><br><span class="line">    Queue&lt;TreeNode&gt; queue = new LinkedList&lt;TreeNode&gt;();</span><br><span class="line">    queue.add(root);</span><br><span class="line">    while(!queue.isEmpty())&#123;</span><br><span class="line">        int count = queue.size();  //输出当前层有几个节点</span><br><span class="line">        List&lt;Integer&gt; list = new ArrayList&lt;Integer&gt;();</span><br><span class="line">        while(count &gt; 0)&#123;                    //判断当前层是否输入完毕</span><br><span class="line">            TreeNode node = queue.poll();</span><br><span class="line">            list.add(node.val);</span><br><span class="line">            if(node.left != null)</span><br><span class="line">                queue.add(node.left);</span><br><span class="line">            if(node.right != null)</span><br><span class="line">                queue.add(node.right);</span><br><span class="line">            count--;              //poll一次count减1</span><br><span class="line">        &#125;</span><br><span class="line">        res.add(list);</span><br><span class="line">    &#125;</span><br><span class="line">    return res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="方法2："><a href="#方法2：" class="headerlink" title="方法2："></a>方法2：</h3><p>核心思想：宽度优先遍历 + HashMap（记录节点对应层数）及找出最大层数；<br>通过使用宽度优先遍历的方法将整个输出的结果存放在list中<br>通过使用HashMap找到结点所对应的层数并找到最大层数，以方便后续的整体遍历产生List&lt;List<Integer>&gt;</Integer></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">	import java.util.*;</span><br><span class="line">class Solution &#123;</span><br><span class="line"></span><br><span class="line">    public List&lt;List&lt;Integer&gt;&gt; levelOrder(TreeNode node) &#123;</span><br><span class="line">        if(node == null)&#123;</span><br><span class="line">            return  new ArrayList&lt;&gt;();</span><br><span class="line">        &#125;</span><br><span class="line">        int max = 0; //存放最大层数以供后续的遍历产生 List&lt;List&lt;Integer&gt;&gt;</span><br><span class="line">        HashMap&lt;TreeNode,Integer&gt; map = new HashMap&lt;&gt;();  //存放每个结点所对应的层数</span><br><span class="line">        Queue&lt;TreeNode&gt; queue = new LinkedList&lt;TreeNode&gt;(); </span><br><span class="line">        List&lt;TreeNode&gt; list = new ArrayList&lt;&gt;();  //存放宽度优先遍历的结果</span><br><span class="line">	</span><br><span class="line">        queue.add(node);</span><br><span class="line">        map.put(node,1);  //给头结点初始值为1；</span><br><span class="line">	</span><br><span class="line">        while(!queue.isEmpty())&#123;</span><br><span class="line">            </span><br><span class="line">            TreeNode head = queue.poll();</span><br><span class="line">            list.add(head);</span><br><span class="line"></span><br><span class="line">            if(max &lt; map.get(head))&#123;   //进行判断是否是最大值</span><br><span class="line">                max = map.get(head); </span><br><span class="line">            &#125;</span><br><span class="line">            if(head.left != null)&#123;</span><br><span class="line">                queue.add(head.left);</span><br><span class="line">                map.put(head.left,map.get(head)+1);    //每个子节点都是在父节点的基础上 +1</span><br><span class="line">            &#125;</span><br><span class="line">            if(head.right != null)&#123;</span><br><span class="line">                queue.add(head.right);</span><br><span class="line">                map.put(head.right,map.get(head)+1);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        List&lt;List&lt;Integer&gt;&gt; dbList = new ArrayList&lt;&gt;();</span><br><span class="line">        int flag = map.get(node);</span><br><span class="line">        for(int i = 1; i &lt;= max;i++)&#123;   //循环最大层数次</span><br><span class="line">            List&lt;Integer&gt; num = new ArrayList&lt;&gt;();</span><br><span class="line">            for(TreeNode str : list)&#123;  </span><br><span class="line">								if(i == map.get(str))&#123;   //每个结点层数相同的放在同一个List(num)中    </span><br><span class="line">                    num.add(str.val);</span><br><span class="line">                &#125;</span><br><span class="line">                else&#123;</span><br><span class="line">                    continue;    //宽度优先遍历中结点层数是依次排好序的，当出现不同时，后续再就没有相同的值。</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            dbList.add(num);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        return dbList;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>LeetCode</category>
       </categories>
   </entry>
   <entry>
@@ -388,6 +388,113 @@
 ]]></content>
   </entry>
   <entry>
+    <title>在VMware16中创建虚拟机安装ubuntu 21.04系统</title>
+    <url>/2021/10/18/VMware-ubuntu/</url>
+    <content><![CDATA[<table>
+<tr><td bgcolor="CFCFCF">此篇是创建VMware16虚拟机安装ubuntu21.04系统的超详细操作过程，希望对小白白有所帮助
+</td></tr></table>
+
+<span id="more"></span>
+
+<p>安装环境： windows 10</p>
+<p>VMware 16安装包：我用阿里云盘分享了「VMware-workstation-full-16.1.2-17966106.exe」，你可以不限速下载🚀<br>复制这段内容打开「阿里云盘」App 即可获取<br>链接：<a href="https://www.aliyundrive.com/s/7acSRwmGho2">https://www.aliyundrive.com/s/7acSRwmGho2</a></p>
+<p>ubuntu 21.04镜像：链接：<a href="https://pan.baidu.com/s/1ktE78cieRE9Y7_BhrG9vjQ">https://pan.baidu.com/s/1ktE78cieRE9Y7_BhrG9vjQ</a><br>提取码：n9ms</p>
+<h3 id="安装VMware-16"><a href="#安装VMware-16" class="headerlink" title="安装VMware 16"></a>安装VMware 16</h3><p>1、 直接双击下载好的VMware，这个过程可能会显示重新启动系统，那你点就是了。重新启动后再次双击下载好的VMware，然后点击【下一步】。</p>
+<img src="https://i.loli.net/2021/10/18/X4BvRZr2LKb5SyD.jpg" width="850" height="400" div align="right">
+
+<p>2、勾选【我接受许可协议中的条款】，点击【下一步】</p>
+<img src="https://i.loli.net/2021/10/18/Prph8EuT6vaHiyQ.jpg" width="850" height="400" div align="right">
+
+<p>3、可以默认，也可更改安装位置</p>
+<img src="https://i.loli.net/2021/10/18/DqtysojVQrFE2R9.jpg" width="850" height="400" div align="right">
+
+<p>4、选择安装位置，然后点击【确定】</p>
+<img src="https://i.loli.net/2021/10/18/VzTAbUosOP4dK3W.jpg" width="850" height="400" div align="right">
+
+<p>5、点击【下一步】</p>
+<img src="https://i.loli.net/2021/10/18/DqtysojVQrFE2R9.jpg" width="850" height="400" div align="right">
+
+<p>6、取消勾选【启动时检查产品更新】和【加入VMware客户体验改进计划】，点击【下一步</p>
+<img src="https://i.loli.net/2021/10/18/ONQ954xcuaLZYBK.jpg" width="850" height="400" div align="right">
+
+<p>7、点击【下一步】</p>
+<img src="https://i.loli.net/2021/10/18/n2RPhJVXakzLgHU.jpg" width="850" height="400" div align="right">
+
+<p>8、点击【安装】</p>
+<img src="https://i.loli.net/2021/10/18/xe8kFh4T72tSAld.jpg" width="850" height="400" div align="right">
+
+<p>9、正在安装，等待几分钟</p>
+<img src="https://i.loli.net/2021/10/18/KzBpH8OeDyn5V3F.jpg" width="850" height="400" div align="right">
+
+<p>10、点击【许可证】</p>
+<img src="https://i.loli.net/2021/10/18/AaUSlwWnMCFJ3c1.jpg" width="850" height="400" div align="right">
+
+<p>11、框中输入许可证：ZF3R0-FHED2-M80TY-8QYGC-NPKYF，（复制粘贴就可以）然后点击【输入】</p>
+<p>12、点击【完成】</p>
+<p>恭喜你这会你的虚拟机已经安装好了，是不是直接点击下一步就可以</p>
+<h3 id="在VMware中安装ubuntu-21-04系统"><a href="#在VMware中安装ubuntu-21-04系统" class="headerlink" title="在VMware中安装ubuntu 21.04系统"></a>在VMware中安装ubuntu 21.04系统</h3><p>1、双击打开你创建在桌面的虚拟机，然后点击【创建新的虚拟机】</p>
+<img src="https://i.loli.net/2021/10/18/QWASzB7OuMIb6xm.jpg" width="850" height="400" div align="right">
+
+<p>2、选择【典型】（默认便是典型），点击【下一步】</p>
+<img src="https://i.loli.net/2021/10/18/9CzmqQYUDNeRo56.jpg" width="850" height="400" div align="right">
+
+<p>3、选择【稍后安装操作系统】，点击【下一步】</p>
+<img src="https://i.loli.net/2021/10/18/XZi389ajePvqRDk.jpg" width="850" height="400" div align="right">
+
+<p>4、客户机操作系统选择【Linux】，版本选择【Ubuntu64位】，然后点击【下一步】</p>
+<img src="https://i.loli.net/2021/10/18/XAgZ4IvWTji5CUK.jpg" width="850" height="400" div align="right">
+
+<p>5、位置可更改，点击【下一步】</p>
+<img src="https://i.loli.net/2021/10/18/owxQLiVrmWdJsYa.jpg" width="850" height="400" div align="right">
+
+<p>6、最大磁盘大小【20】GB，选择【将虚拟机磁盘拆分成多个文件】，然后点击【下一步】</p>
+<img src="https://i.loli.net/2021/10/18/DKBEnuG6or3f4wx.jpg" width="850" height="400" div align="right">
+
+<p>7、点击【自定义硬件】</p>
+<img src="https://i.loli.net/2021/10/18/VlZBfoPbR9e8MSc.jpg" width="850" height="400" div align="right">
+
+<p>8、选择【内存】，此虚拟机的内存设为【2048MB】</p>
+<img src="https://i.loli.net/2021/10/18/AdjlBFmEVDNhr1O.jpg" width="850" height="400" div align="right">
+
+<p>9、选择【新CD/DVD(TATA)】后选择【使用ISO映像文件】，点击【浏览】，找到下载后文件夹里面的【ubuntu-21.04-desktop-amd64.iso】这个镜像并选择！</p>
+<img src="https://i.loli.net/2021/10/18/C8p4cyMIBuGbYWU.jpg" width="850" height="400" div align="right">
+
+<p>10、选择【网络适配器】，然后选择【仅主机模式】</p>
+<img src="https://i.loli.net/2021/10/18/IyBJxuMrLhml3Ko.jpg" width="850" height="400" div align="right">
+
+<p>11、选择【USB控制器】，点击【移除】</p>
+<img src="https://i.loli.net/2021/10/18/HwJm6DONtYMhFCz.jpg" width="850" height="400" div align="right">
+
+<p>12、选择【打印机】，点击【移除】</p>
+<img src="https://i.loli.net/2021/10/18/cjkhgORexpbFm4K.jpg" width="850" height="400" div align="right">
+
+<p>13、点击【关闭】</p>
+<img src="https://i.loli.net/2021/10/18/pfz13yURdGDW8qI.jpg" width="850" height="400" div align="right">
+
+<p>14、点击【完成】</p>
+<img src="https://i.loli.net/2021/10/18/VlZBfoPbR9e8MSc.jpg" width="850" height="400" div align="right">
+
+<p><font color="red" size="5"> 实在没有耐心放图片了，等闲了再贴图片吧,相信自己即使看文字你也可以安装完成的，加油！</font></p>
+<p>15、点击【开启此虚拟机】，等待开启</p>
+<p>16、择【中文简体】，点击【安装Ubuntu】</p>
+<p>17、点击【继续】</p>
+<p>18、点击【继续】</p>
+<p>19、点击【现在安装】</p>
+<p>20、点击【继续】</p>
+<p>21、这里默认【Shanghai】就OK</p>
+<p>22、创建用户账号（记住密码哦！）。不要担心你的计算机名是什么，你只需要输入姓名，计算机名就会自动生成。然后点击[继续]</p>
+<p>23、安装中，耐心等待（这个可能需要多点时间）</p>
+<p>24、点击【现在重启】，重启一会看屏幕中下方转圈其他都不动，键盘上点击【enter】</p>
+<p>25、点击账户，我这里是【simon-yian】</p>
+<p>26、输入之前创建用户账号时设的密码，然后点击【登录】</p>
+<p>27、至此Ubuntu系统安装完成！</p>
+<p><font color="red"><b>如果你觉得可以千万不要忘记动动你的小手，赞赏一下贫困的博客主</b><br><b>记得收藏啊，以后会有更好的内容给您分享</b></font></p>
+]]></content>
+      <categories>
+        <category>VMware</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Spring知识点梳理：</title>
     <url>/2021/11/27/SpringFrame/</url>
     <content><![CDATA[ <img src="https://i.loli.net/2021/11/15/vKFjo15HqAybLmE.png" align="center" width="600" height="400" div>
@@ -531,113 +638,6 @@
 <p>请求处理的Controller</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package com.lz.xbmu.controller;</span><br><span class="line">import java.io.File;</span><br><span class="line">import java.io.IOException;</span><br><span class="line">import java.io.UnsupportedEncodingException;</span><br><span class="line">import java.net.URLEncoder;</span><br><span class="line">import javax.servlet.http.HttpServletRequest;</span><br><span class="line">import org.apache.commons.io.FileUtils;</span><br><span class="line">import org.springframework.http.HttpHeaders;</span><br><span class="line">import org.springframework.http.HttpStatus;</span><br><span class="line">import org.springframework.http.MediaType;</span><br><span class="line">import org.springframework.http.ResponseEntity;</span><br><span class="line">import org.springframework.stereotype.Controller;</span><br><span class="line">import org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line">@Controller</span><br><span class="line">public class FileDownloadController &#123;</span><br><span class="line"> @RequestMapping(&quot;/downloadfile&quot;)</span><br><span class="line"> public ResponseEntity&lt;byte[]&gt; fileDownload(String filename,HttpServletRequest request)</span><br><span class="line"> throws IOException&#123;</span><br><span class="line"> //指定要下载的⽂件的路径</span><br><span class="line"> String path = request.getServletContext().getRealPath(&quot;/upload/&quot;);</span><br><span class="line"> //创建下载⽂件对象</span><br><span class="line"> File file = new File(path + File.separator + filename);</span><br><span class="line"> //对⽂件名编码，防⽌中⽂乱码</span><br><span class="line"> filename = this.getFilename(request,filename);</span><br><span class="line"> //设置响应头</span><br><span class="line"> HttpHeaders headers = new HttpHeaders();</span><br><span class="line"> headers.setContentDispositionFormData(&quot;attachment&quot;, filename);</span><br><span class="line"> //定义以流的形式下载返回⽂件数据</span><br><span class="line"> headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);</span><br><span class="line"> //使⽤SpringMVC框架的对象封装返回下载的数据</span><br><span class="line"> return new ResponseEntity&lt;byte[]&gt;(FileUtils.readFileToByteArray(file),</span><br><span class="line"> headers,HttpStatus.OK);</span><br><span class="line"> &#125;</span><br><span class="line"> private String getFilename(HttpServletRequest request, String filename)</span><br><span class="line"> throws UnsupportedEncodingException &#123;</span><br><span class="line"> //根据不同浏览器来判断</span><br><span class="line"> String[] IEBrowserKeyWords = &#123;&quot;MSIE&quot;,&quot;Trident&quot;,&quot;Edge&quot;&#125;;</span><br><span class="line"> //获取请求头代理信息</span><br><span class="line"> String userAgent = request.getHeader(&quot;User-Agent&quot;);</span><br><span class="line"> for (String keyWord : IEBrowserKeyWords) &#123;</span><br><span class="line"> if(userAgent.contains(keyWord)) &#123;</span><br><span class="line"> //进⾏统⼀编码</span><br><span class="line"> return URLEncoder.encode(filename,&quot;UTF-8&quot;);</span><br><span class="line"> &#125;</span><br><span class="line"> &#125;</span><br><span class="line"> //其它的浏览器统⼀为ISO-8859-1编码显示</span><br><span class="line"> return new String(filename.getBytes(&quot;UTF-8&quot;),&quot;ISO-8859-1&quot;);</span><br><span class="line"> &#125; &#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
-  </entry>
-  <entry>
-    <title>在VMware16中创建虚拟机安装ubuntu 21.04系统</title>
-    <url>/2021/10/18/VMware-ubuntu/</url>
-    <content><![CDATA[<table>
-<tr><td bgcolor="CFCFCF">此篇是创建VMware16虚拟机安装ubuntu21.04系统的超详细操作过程，希望对小白白有所帮助
-</td></tr></table>
-
-<span id="more"></span>
-
-<p>安装环境： windows 10</p>
-<p>VMware 16安装包：我用阿里云盘分享了「VMware-workstation-full-16.1.2-17966106.exe」，你可以不限速下载🚀<br>复制这段内容打开「阿里云盘」App 即可获取<br>链接：<a href="https://www.aliyundrive.com/s/7acSRwmGho2">https://www.aliyundrive.com/s/7acSRwmGho2</a></p>
-<p>ubuntu 21.04镜像：链接：<a href="https://pan.baidu.com/s/1ktE78cieRE9Y7_BhrG9vjQ">https://pan.baidu.com/s/1ktE78cieRE9Y7_BhrG9vjQ</a><br>提取码：n9ms</p>
-<h3 id="安装VMware-16"><a href="#安装VMware-16" class="headerlink" title="安装VMware 16"></a>安装VMware 16</h3><p>1、 直接双击下载好的VMware，这个过程可能会显示重新启动系统，那你点就是了。重新启动后再次双击下载好的VMware，然后点击【下一步】。</p>
-<img src="https://i.loli.net/2021/10/18/X4BvRZr2LKb5SyD.jpg" width="850" height="400" div align="right">
-
-<p>2、勾选【我接受许可协议中的条款】，点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/Prph8EuT6vaHiyQ.jpg" width="850" height="400" div align="right">
-
-<p>3、可以默认，也可更改安装位置</p>
-<img src="https://i.loli.net/2021/10/18/DqtysojVQrFE2R9.jpg" width="850" height="400" div align="right">
-
-<p>4、选择安装位置，然后点击【确定】</p>
-<img src="https://i.loli.net/2021/10/18/VzTAbUosOP4dK3W.jpg" width="850" height="400" div align="right">
-
-<p>5、点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/DqtysojVQrFE2R9.jpg" width="850" height="400" div align="right">
-
-<p>6、取消勾选【启动时检查产品更新】和【加入VMware客户体验改进计划】，点击【下一步</p>
-<img src="https://i.loli.net/2021/10/18/ONQ954xcuaLZYBK.jpg" width="850" height="400" div align="right">
-
-<p>7、点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/n2RPhJVXakzLgHU.jpg" width="850" height="400" div align="right">
-
-<p>8、点击【安装】</p>
-<img src="https://i.loli.net/2021/10/18/xe8kFh4T72tSAld.jpg" width="850" height="400" div align="right">
-
-<p>9、正在安装，等待几分钟</p>
-<img src="https://i.loli.net/2021/10/18/KzBpH8OeDyn5V3F.jpg" width="850" height="400" div align="right">
-
-<p>10、点击【许可证】</p>
-<img src="https://i.loli.net/2021/10/18/AaUSlwWnMCFJ3c1.jpg" width="850" height="400" div align="right">
-
-<p>11、框中输入许可证：ZF3R0-FHED2-M80TY-8QYGC-NPKYF，（复制粘贴就可以）然后点击【输入】</p>
-<p>12、点击【完成】</p>
-<p>恭喜你这会你的虚拟机已经安装好了，是不是直接点击下一步就可以</p>
-<h3 id="在VMware中安装ubuntu-21-04系统"><a href="#在VMware中安装ubuntu-21-04系统" class="headerlink" title="在VMware中安装ubuntu 21.04系统"></a>在VMware中安装ubuntu 21.04系统</h3><p>1、双击打开你创建在桌面的虚拟机，然后点击【创建新的虚拟机】</p>
-<img src="https://i.loli.net/2021/10/18/QWASzB7OuMIb6xm.jpg" width="850" height="400" div align="right">
-
-<p>2、选择【典型】（默认便是典型），点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/9CzmqQYUDNeRo56.jpg" width="850" height="400" div align="right">
-
-<p>3、选择【稍后安装操作系统】，点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/XZi389ajePvqRDk.jpg" width="850" height="400" div align="right">
-
-<p>4、客户机操作系统选择【Linux】，版本选择【Ubuntu64位】，然后点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/XAgZ4IvWTji5CUK.jpg" width="850" height="400" div align="right">
-
-<p>5、位置可更改，点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/owxQLiVrmWdJsYa.jpg" width="850" height="400" div align="right">
-
-<p>6、最大磁盘大小【20】GB，选择【将虚拟机磁盘拆分成多个文件】，然后点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/DKBEnuG6or3f4wx.jpg" width="850" height="400" div align="right">
-
-<p>7、点击【自定义硬件】</p>
-<img src="https://i.loli.net/2021/10/18/VlZBfoPbR9e8MSc.jpg" width="850" height="400" div align="right">
-
-<p>8、选择【内存】，此虚拟机的内存设为【2048MB】</p>
-<img src="https://i.loli.net/2021/10/18/AdjlBFmEVDNhr1O.jpg" width="850" height="400" div align="right">
-
-<p>9、选择【新CD/DVD(TATA)】后选择【使用ISO映像文件】，点击【浏览】，找到下载后文件夹里面的【ubuntu-21.04-desktop-amd64.iso】这个镜像并选择！</p>
-<img src="https://i.loli.net/2021/10/18/C8p4cyMIBuGbYWU.jpg" width="850" height="400" div align="right">
-
-<p>10、选择【网络适配器】，然后选择【仅主机模式】</p>
-<img src="https://i.loli.net/2021/10/18/IyBJxuMrLhml3Ko.jpg" width="850" height="400" div align="right">
-
-<p>11、选择【USB控制器】，点击【移除】</p>
-<img src="https://i.loli.net/2021/10/18/HwJm6DONtYMhFCz.jpg" width="850" height="400" div align="right">
-
-<p>12、选择【打印机】，点击【移除】</p>
-<img src="https://i.loli.net/2021/10/18/cjkhgORexpbFm4K.jpg" width="850" height="400" div align="right">
-
-<p>13、点击【关闭】</p>
-<img src="https://i.loli.net/2021/10/18/pfz13yURdGDW8qI.jpg" width="850" height="400" div align="right">
-
-<p>14、点击【完成】</p>
-<img src="https://i.loli.net/2021/10/18/VlZBfoPbR9e8MSc.jpg" width="850" height="400" div align="right">
-
-<p><font color="red" size="5"> 实在没有耐心放图片了，等闲了再贴图片吧,相信自己即使看文字你也可以安装完成的，加油！</font></p>
-<p>15、点击【开启此虚拟机】，等待开启</p>
-<p>16、择【中文简体】，点击【安装Ubuntu】</p>
-<p>17、点击【继续】</p>
-<p>18、点击【继续】</p>
-<p>19、点击【现在安装】</p>
-<p>20、点击【继续】</p>
-<p>21、这里默认【Shanghai】就OK</p>
-<p>22、创建用户账号（记住密码哦！）。不要担心你的计算机名是什么，你只需要输入姓名，计算机名就会自动生成。然后点击[继续]</p>
-<p>23、安装中，耐心等待（这个可能需要多点时间）</p>
-<p>24、点击【现在重启】，重启一会看屏幕中下方转圈其他都不动，键盘上点击【enter】</p>
-<p>25、点击账户，我这里是【simon-yian】</p>
-<p>26、输入之前创建用户账号时设的密码，然后点击【登录】</p>
-<p>27、至此Ubuntu系统安装完成！</p>
-<p><font color="red"><b>如果你觉得可以千万不要忘记动动你的小手，赞赏一下贫困的博客主</b><br><b>记得收藏啊，以后会有更好的内容给您分享</b></font></p>
-]]></content>
-      <categories>
-        <category>VMware</category>
-      </categories>
   </entry>
   <entry>
     <title>培训心得&amp;emsp;&amp;emsp;[走进HTML]</title>
@@ -1528,6 +1528,193 @@ elementN:  可选。可向数组添加若干元素。
 </ul>
 </blockquote>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line"> &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line"> &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line"> &lt;script src=&quot;jquery-3.6.0.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"> &lt;script&gt;</span><br><span class="line"> $(function () &#123;</span><br><span class="line"> var $li = $(&quot;.list li&quot;);</span><br><span class="line"> var $input = $(&quot;#in_one&quot;);</span><br><span class="line"> var $btn = $(&quot;#btn&quot;);</span><br><span class="line"> var $div = $(&quot;#demo&quot;);</span><br><span class="line"> //点击事件</span><br><span class="line"> $li.click(function () &#123;</span><br><span class="line"> $(this).css(&#123;&quot;background&quot;:&quot;red&quot;&#125;);</span><br><span class="line"> //index()方法可以获取当前元素的索引值</span><br><span class="line"> //alert($(this).index())</span><br><span class="line"> &#125;);</span><br><span class="line"> //获取焦点</span><br><span class="line">$input.focus(function () &#123;</span><br><span class="line"> $(this).val(&quot;嗨嗨嘿&quot;);</span><br><span class="line"> &#125;)</span><br><span class="line"> &#125;)</span><br><span class="line"> &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"> &lt;div id=&quot;demo&quot;&gt;</span><br><span class="line"> &lt;ul class=&quot;list&quot;&gt;</span><br><span class="line"> &lt;li&gt;这是一行字&lt;/li&gt;</span><br><span class="line"> &lt;li&gt;这是一行字&lt;/li&gt;</span><br><span class="line"> &lt;li&gt;这是一行字&lt;/li&gt;</span><br><span class="line"> &lt;li&gt;这是一行字&lt;/li&gt;</span><br><span class="line"> &lt;/ul&gt;</span><br><span class="line"> &lt;input type=&quot;text&quot; id=&quot;in_one&quot;/&gt;</span><br><span class="line"> &lt;input type=&quot;submit&quot; id=&quot;btn&quot; value=&quot;点一下&quot;/&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>XiAnTrain</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>培训心得[Java语言概述]</title>
+    <url>/2022/07/15/xianTrain9-JavaSummary/</url>
+    <content><![CDATA[<p><em><strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Java基础学习打卡第1天<br>学习链接：<a href="https://www.yuque.com/docs/share/8290264f-2175-46ce-8b20-711eac7ac369#">https://www.yuque.com/docs/share/8290264f-2175-46ce-8b20-711eac7ac369?#</a> 《第1章 Java语言概述》密码：syl5</strong></em></p>
+<span id="more"></span>
+<h1 id="java语言概述"><a href="#java语言概述" class="headerlink" title="java语言概述"></a>java语言概述</h1><h2 id="Java发展简史"><a href="#Java发展简史" class="headerlink" title="Java发展简史"></a>Java发展简史</h2><blockquote>
+<ul>
+<li>Java是由Sun公司于1995年5月推出的，可以编写跨平台，分布式应用软件的面向对象的程序设计语言。</li>
+<li>java一分为三：<blockquote>
+<ul>
+<li>J2ME:主要用于移动设备和信息家电设备等（现已被淘汰）</li>
+<li>J2SE:JAVA技术的核心和技术</li>
+<li>J2EE:java技术中应用最广泛的部分</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<h2 id="java程序的运行机制"><a href="#java程序的运行机制" class="headerlink" title="java程序的运行机制"></a>java程序的运行机制</h2><blockquote>
+<ul>
+<li>运行Java程序过程：编写源程序—&gt;编译—&gt;运行<blockquote>
+<ul>
+<li>java编译之后，不会生成特定的平台机器码，而是一种与平台无关的字节码(.class文件)。</li>
+<li>字节码（.class文件）不能直接执行，而是运行在java虚拟机中</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li><b style="font-size: 20px; color: red;"> （面试题）</b>java跨平台实现的核心原理：<blockquote>
+<ul>
+<li>java源代码在运行之前会先根据JVM规范生成平台无关的字节码文件（class文件）,字节码文件不依赖于任何平台。</li>
+<li>Java为不同平台实现对应的虚拟机，JVM在加载字节码文件后由JVM生成对应平台的计算机指令</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<h2 id="Java语言的特点"><a href="#Java语言的特点" class="headerlink" title="Java语言的特点"></a>Java语言的特点</h2><blockquote>
+<ul>
+<li>简单性：相对于c语言少了指针、头文件等，并增加了垃圾回收机制。</li>
+<li>面向对象：将重点放在数据和对象上，而不是过程中</li>
+<li>分布式：java应用程序能够通过URL打开和访问网络上的对象</li>
+<li>安全性：防范个各种攻击</li>
+<li>多线程：解决高并发存在的问题</li>
+<li>可移植：不同平台可生成相同字节码文件，通过不同平台对应的JVM来运行。</li>
+</ul>
+</blockquote>
+<h2 id="技术名词"><a href="#技术名词" class="headerlink" title="技术名词"></a>技术名词</h2><p>JDK(Java Develop Kit):Java 开发工具</p>
+<p>JRE(Java Runtime Environment)：Java 运行环境</p>
+<p>JVM(Java Virtual machine )：Java虚拟机</p>
+<h2 id="Java下载安装"><a href="#Java下载安装" class="headerlink" title="Java下载安装"></a>Java下载安装</h2><blockquote>
+<ul>
+<li>JDK下载官网：<a href="https://www.oracle.com/java/technologies/downloads/index.html">https://www.oracle.com/java/technologies/downloads/index.html</a> (安装java SE 11,点击运行安装即可)</li>
+<li>配置环境变量：<blockquote>
+<ul>
+<li>配置JAVA_HOME<blockquote>
+<p>变量名：JAVA_HOME<br>变量值: (JDK的安装路径)</p>
+</blockquote>
+</li>
+<li>配置Path<blockquote>
+<p>找到Path在变量值中添加：<code>%JAVA_HOME%\bin</code></p>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<h2 id="编写第一个程序HelloWorld"><a href="#编写第一个程序HelloWorld" class="headerlink" title="编写第一个程序HelloWorld"></a>编写第一个程序HelloWorld</h2><p>在txt中编写：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Hello&#123;</span><br><span class="line">	public static void main(String[] args)&#123;</span><br><span class="line">    	System.out.print(&quot;Hello World&quot;);</span><br><span class="line">	&#125;	   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<blockquote>
+<p>保存后修改扩展名.java<br>打开终端，进入创建该txt的文件夹(cd 位置)<br>源程序进行编译:javac Hello.java<br>运行:java Hello</p>
+</blockquote>
+</blockquote>
+<p><b>注意事项：</b><br>1、Java源文件的命名和类名一致，并且首字符大写，如果有多个单词，所有单词的首字母均大写</p>
+<h2 id="java标识符"><a href="#java标识符" class="headerlink" title="java标识符"></a>java标识符</h2><blockquote>
+<ul>
+<li>标识符：类名、方法名、变量名<blockquote>
+<ul>
+<li>可以包含数字、字母、下划线、$</li>
+<li>不能数字开头</li>
+<li>不能使用Java关键字<table>
+<thead>
+<tr>
+<th>abstract</th>
+<th>continue</th>
+<th>for</th>
+<th>new</th>
+<th>switch</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>assert</td>
+<td>default</td>
+<td>if</td>
+<td>package</td>
+<td>synchronized</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>do</td>
+<td>goto</td>
+<td>private</td>
+<td>this</td>
+</tr>
+<tr>
+<td>break</td>
+<td>double</td>
+<td>implements</td>
+<td>protected</td>
+<td>throw</td>
+</tr>
+<tr>
+<td>byte</td>
+<td>else</td>
+<td>import</td>
+<td>public</td>
+<td>throw</td>
+</tr>
+<tr>
+<td>case</td>
+<td>enum</td>
+<td>instanceof</td>
+<td>return</td>
+<td>transient</td>
+</tr>
+<tr>
+<td>catch</td>
+<td>extends</td>
+<td>int</td>
+<td>short</td>
+<td>try</td>
+</tr>
+<tr>
+<td>char</td>
+<td>final</td>
+<td>interface</td>
+<td>static</td>
+<td>void</td>
+</tr>
+<tr>
+<td>class</td>
+<td>finally</td>
+<td>long</td>
+<td>strictfp</td>
+<td>volatile</td>
+</tr>
+<tr>
+<td>const</td>
+<td>float</td>
+<td>native</td>
+<td>super</td>
+<td></td>
+</tr>
+<tr>
+<td>while</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<h2 id="Java命名方式"><a href="#Java命名方式" class="headerlink" title="Java命名方式"></a>Java命名方式</h2><blockquote>
+<ul>
+<li>帕斯卡命名法：所有单词首字母均大写。适用于类名，例如：StudentManager</li>
+<li>驼峰命名法：第一个单词的首字母小写，如果有多个但是，其余单词首字母均大写，适用于方法名，变量名。例如：studentAge，studentGender</li>
+</ul>
+</blockquote>
+<h2 id="Java数据类型"><a href="#Java数据类型" class="headerlink" title="Java数据类型"></a>Java数据类型</h2><ol>
+<li>基本类型：byte short int long float double boolean char</li>
+<li>引用类型: 数组， 类，接口</li>
+</ol>
+]]></content>
       <categories>
         <category>XiAnTrain</category>
       </categories>
