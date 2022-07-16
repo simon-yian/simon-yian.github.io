@@ -640,48 +640,6 @@
       </categories>
   </entry>
   <entry>
-    <title>培训心得&amp;emsp;&amp;emsp;[表单]</title>
-    <url>/2022/06/29/XiAnTrain20220628/</url>
-    <content><![CDATA[<p><em><strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;学习打卡第二天</strong></em><br>学习链接：<a href="https://www.yuque.com/docs/share/b84dd032-287e-4aa0-a6be-ae7eb275b0ee#">https://www.yuque.com/docs/share/b84dd032-287e-4aa0-a6be-ae7eb275b0ee?#</a></p>
-<span id="more"></span>
-<h1 id="第二章-表单"><a href="#第二章-表单" class="headerlink" title="第二章 表单"></a>第二章 表单</h1><p>表单是用来显示，收集，提交用户信息，表单在网页中主要负责数据采集功能，一个表单由三个基本部分组成：表单元素、表单域、按钮</p>
-<h2 id="2-1表单"><a href="#2-1表单" class="headerlink" title="2.1表单"></a>2.1表单</h2><p>表单是一个包含表单元素的区域，使用<code>&lt;form&gt;...&lt;/form&gt;</code>定义，通过在表单中添加对应的表单元素使得用户可以在网页上输入数据<br><code>&lt;form&gt;</code>中含有诸多属性用来规定表单的格式，详见下表</p>
-<h2 id="2-2-表单元素"><a href="#2-2-表单元素" class="headerlink" title="2.2 表单元素"></a>2.2 表单元素</h2><h3 id="2-2-1-输入标签"><a href="#2-2-1-输入标签" class="headerlink" title="2.2.1 输入标签"></a>2.2.1 输入标签</h3><p>多数情况下使用的表单元素是输入标签<code>&lt;input&gt;</code><br>元素内输入类型有标签中的type属性定义，常用的元素类型如下表：</p>
-<h3 id="2-2-2-下拉标签"><a href="#2-2-2-下拉标签" class="headerlink" title="2.2.2 下拉标签"></a>2.2.2 下拉标签</h3><p>● <code>&lt;select&gt;</code>元素为表单控件，用于在表单中接收数据<br>  ○ <code>&lt;select&gt;</code>元素可创建单选或多选菜单<br>  ○ <code>&lt;option&gt;</code>标签定义了菜单中的可选项<br>● 下拉列表支持属性</p>
-<h3 id="2-2-3-按钮"><a href="#2-2-3-按钮" class="headerlink" title="2.2.3 按钮"></a>2.2.3 按钮</h3><p>● 按钮在网页中一般用于提交，重置页面数据，也可以与javascript配置做一些交互响应事件<br>● 在HTML中按钮一般使用<code>&lt;input&gt;</code>或<code>&lt;button&gt;</code>来定义<br>● 按钮属性</p>
-<p>● <code>&lt;button&gt;</code>与<code>&lt;input&gt;</code>按钮区别<br>  ○<code> &lt;button&gt;</code>按钮如果不设置type属性，在不同浏览器中可能会提交不同值<br>  ○ <code>&lt;button&gt;</code>按钮是成对出现的，可放置文本，图像等，<code>&lt;input&gt;</code>标签只能通过value属性为其设置文本<br>  ○ 需要注意的是虽然<code>&lt;button&gt;</code>按钮可以嵌套其它标签，但不能再去嵌套按钮<br>示例</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;form&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            文本：&lt;input type=&quot;text&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            密码：&lt;input type=&quot;password&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            颜色色：&lt;input type=&quot;color&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;单选：</span><br><span class="line">            男&lt;input type=&quot;radio&quot; name=&quot;gender&quot;&gt;</span><br><span class="line">            女&lt;input type=&quot;radio&quot; name=&quot;gender&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;复选：</span><br><span class="line">            爱好1&lt;input type=&quot;checkbox&quot;&gt;</span><br><span class="line">            爱好2&lt;input type=&quot;checkbox&quot;&gt;</span><br><span class="line">            爱好3&lt;input type=&quot;checkbox&quot;&gt;</span><br><span class="line">            爱好4&lt;input type=&quot;checkbox&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            下拉：&lt;select name=&quot;&quot; &gt;</span><br><span class="line">                &lt;option value=&quot;&quot;&gt;[请输入...]&lt;/option&gt;</span><br><span class="line">                &lt;option value=&quot;&quot;&gt;选择数据一&lt;/option&gt;</span><br><span class="line">                &lt;option value=&quot;&quot;&gt;选择数据二&lt;/option&gt;</span><br><span class="line">            &lt;/select&gt;县</span><br><span class="line">            &lt;select name=&quot;&quot; &gt;</span><br><span class="line">                &lt;option value=&quot;&quot;&gt;[请输入...]&lt;/option&gt;</span><br><span class="line">                &lt;option value=&quot;&quot;&gt;选择数据一&lt;/option&gt;</span><br><span class="line">                &lt;option value=&quot;&quot;&gt;选择数据二&lt;/option&gt;</span><br><span class="line">            &lt;/select&gt;村</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            日期：&lt;input type=&quot;date&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            时间：&lt;input type=&quot;time&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            月份：&lt;input type=&quot;month&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            文件：&lt;input type=&quot;file&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            数字：&lt;input type=&quot;number&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            数字范围：&lt;input type=&quot;range&quot; max=&quot;10&quot; min=&quot;0&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            邮箱：&lt;input type=&quot;email&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            地址：&lt;input type=&quot;url&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            隐藏：&lt;input type=&quot;hidden&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            &lt;input type=&quot;submit&quot; value=&quot;input提交按钮&quot;&gt;</span><br><span class="line">            &lt;input type=&quot;reset&quot; value=&quot;input重置按钮&quot;&gt;</span><br><span class="line">            &lt;input type=&quot;button&quot; value=&quot;input按钮&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            &lt;button type=&quot;submit&quot;&gt;button提交按钮&lt;/button&gt;</span><br><span class="line">            &lt;button type=&quot;reset&quot;&gt;button重置按钮&lt;/button&gt;</span><br><span class="line">            &lt;button type=&quot;button&quot;&gt;button按钮&lt;/button&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">    &lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="2-3-HTML5-表单增强"><a href="#2-3-HTML5-表单增强" class="headerlink" title="2.3 HTML5 表单增强"></a>2.3 HTML5 表单增强</h2><h3 id="2-3-1-form属性"><a href="#2-3-1-form属性" class="headerlink" title="2.3.1 form属性"></a>2.3.1 form属性</h3><p>在HTML4中，表单内的从属元素必须书写在表单内部，但在HTML5中，可以把它书写在页面的任意地方，然后给该元素指定一个form属性，属性值为该表单的id，这样就可以声明该元素从属于指定的表单<br>示例</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;form id=&quot;formTest&quot;&gt;</span><br><span class="line">	&lt;input type=&quot;text&quot; name=&quot;username&quot;/&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line">&lt;input type=&quot;password&quot; name=&quot;password&quot; form=&quot;formTest&quot;&gt;</span><br></pre></td></tr></table></figure>
-<p>代码解析：</p>
-<ol>
-<li>第一个input标签从属form表单，它被书写在form表单内部，所以用不着对它指定form属性</li>
-<li>第二个input表单被书写在form之外，但想要它从属form，这时就可以为其添加form属性并指定表单id让它从属form表单<h3 id="2-3-2-formaction属性"><a href="#2-3-2-formaction属性" class="headerlink" title="2.3.2 formaction属性"></a>2.3.2 formaction属性</h3>在HTML 4中，一个表单内的所有元素都只能通过表单的action属性统一提交到另一个页面，而在HTML 5中可以给所有的提交按钮，诸如<code>&lt;input type=&quot;submit&quot;&gt;、&lt;inputtype=&quot;image&quot;&gt;、&lt;button type=&quot;submit&quot;&gt;</code>都增加不同的formaction属性，使得点击不同的按钮，可以将表单提交到不同的页面，formaction属性的使用方法如下：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;form id=&quot;testform&quot; action=&quot; serve.jsp&quot;&gt;</span><br><span class="line">  &lt;input type=&quot;submit&quot; name=&quot;s1&quot; value=&quot;v1&quot; formaction=&quot;s1.jsp&quot;&gt;提交到s1</span><br><span class="line">  &lt;input type=&quot;submit&quot; name=&quot;s2&quot; value=&quot;v2&quot; formaction=&quot;s2.jsp&quot;&gt;提交到s2</span><br><span class="line">  &lt;input type=&quot;submit&quot; name=&quot;s3&quot; value=&quot;v3&quot; formaction=&quot;s3.jsp&quot;&gt;提交到s3</span><br><span class="line">  &lt;input type= &quot;submit&quot;&gt;</span><br><span class="line">&lt;form&gt;</span><br></pre></td></tr></table></figure>
-注：该属性目前支持的浏览器并不多，慎重使用<h3 id="2-3-3-list属性"><a href="#2-3-3-list属性" class="headerlink" title="2.3.3 list属性"></a>2.3.3 list属性</h3>在HTML 5中，为单行文本框(<code>&lt;input type=&quot;text&quot;&gt;</code>)增加了一个list属性，该属性的值为某个datalist元素的id。datalist元素也是HTML 5中新增元素，该元素类似于选择框( select&gt;)，但是当用户想要设定的值不在选择列表之内时，允许其自行输入。该元素本身并不显示，而是当文本框获得焦点时以提示输入的方式显示。为了避免在没有支持该元素的浏览器上出现显示错误，可以用CSS等将它设定为不显示。<br>示例</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    text: &lt;input type=&quot;text&quot; name=&quot; greeting&quot; list=&quot;greetings&quot;&gt;</span><br><span class="line">    &lt;datalist id=&quot;greetings&quot;&gt;</span><br><span class="line">        &lt;option value=&quot;Good Morning&quot;&gt;Good Morning&lt;/option&gt;</span><br><span class="line">        &lt;option value=&quot;Hello&quot;&gt;Hello&lt;/option&gt;</span><br><span class="line">        &lt;option value=&quot;Good Afternoon&quot;&gt;Good Afternoon&lt;/option&gt;</span><br><span class="line">    &lt;/datalist&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="2-3-4-autocomplete属性"><a href="#2-3-4-autocomplete属性" class="headerlink" title="2.3.4 autocomplete属性"></a>2.3.4 autocomplete属性</h3><p>辅助输入所用的自动完成功能，是一个节省输入时间，同时也十分方便的功能。在HTML5之前，因为谁都可以看见输入的值，所以存在安全隐患，但只要使用autocomplete属性，安全性就可以得到很好的控制。.<br>对于autocomplete属性，可以指定“on”、“off”与“”(不指定）这三种值。不指定时，使用浏览器的默认值(取决于各浏览器的决定)。把该属性设为on时，可以显式指定候补输入的数据列表。使用detalist元素与list属性提供候补输入的数据列表，自动完成时，可以将该datalist元素中的数据作为候补输入的数据在文本框中自动显示。autocomplete属性的使用方法如下所示。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    text: &lt;input type=&quot;text&quot; name=&quot;greeting&quot; list=&quot;greetings&quot; autocomplete=&quot;on&quot;&gt;</span><br><span class="line">    &lt;datalist id=&quot;greetings&quot;&gt;</span><br><span class="line">        &lt;option value=&quot;Good Morning&quot;&gt;Good Morning&lt;/option&gt;</span><br><span class="line">        &lt;option value=&quot;Hello&quot;&gt;Hello&lt;/option&gt;</span><br><span class="line">        &lt;option value=&quot;Good Afternoon&quot;&gt;Good Afternoon&lt;/option&gt;</span><br><span class="line">    &lt;/datalist&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="2-3-5-output标签"><a href="#2-3-5-output标签" class="headerlink" title="2.3.5 output标签"></a>2.3.5 output标签</h3><p>● output为H5的新增标签，用来定义不同类型的输出，长和form表单一起使用，用来输出显示计算结果<br>● 语法</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;output name=&quot;名称&quot; for=&quot;element_id&quot;&gt;默认内容&lt;/output&gt;</span><br></pre></td></tr></table></figure>
-<p>● 标签属性<br>  ○ for：定义输出域相关的一个或多个元素，以空格隔开；<br>  ○ form：定义输入字段所属的一个或多个表单，以空格隔开；<br>  ○ name：定义对象的唯一名称（表单提交时使用）。<br>示例</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;form oninput=&quot;o.value=parseInt(a.value)&quot;&gt;</span><br><span class="line">        选择数字范围：&lt;input type=&quot;range&quot; min=&quot;0&quot; max=&quot;100&quot; id=&quot;a&quot;&gt;</span><br><span class="line">        &lt;output id=&quot;o&quot; &gt;50&lt;/output&gt;</span><br><span class="line">    &lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<p>示例二</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;form oninput=&quot;x.value=parseInt(a.value)+parseInt(b.value)&quot;&gt;</span><br><span class="line">        &lt;input type=&quot;number&quot; id=&quot;a&quot; value=&quot;0&quot;&gt; +</span><br><span class="line">        &lt;input type=&quot;number&quot; id=&quot;b&quot; value=&quot;0&quot;&gt; =</span><br><span class="line">        &lt;output name=&quot;x&quot; for=&quot;a b&quot;&gt;0&lt;/output&gt;</span><br><span class="line">    &lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<p>注：<br>oninput为表单事件，表示当对元素输入数据时触发<br>parseInt为javascript函数，用来解析一个字符串，并返回一个整数</p>
-<h3 id="2-3-6-表单验证"><a href="#2-3-6-表单验证" class="headerlink" title="2.3.6 表单验证"></a>2.3.6 表单验证</h3><p>在H5中，新增了大量在提交时对表单与表单内新增元素进行有效性验证的功能</p>
-<h3 id="2-3-6-1-自动验证"><a href="#2-3-6-1-自动验证" class="headerlink" title="2.3.6.1 自动验证"></a>2.3.6.1 自动验证</h3><p>在H5中，新增的一些表单元素本身就带有简单的提交格式验证，如邮箱（email）就有固定的格式“@”，“.”，但普通的表单元素就要通过对元素使用属性的方法，来实现在表单提交时执行自动验证的功能<br>普通表单元素的验证属性</p>
-<ol>
-<li>required属性<br>HTML 5中新增的required属性可以应用在大多数输入元素上（除了隐藏元素、图片元素按钮上)。在提交时，如果元素中内容为空白，则不允许提交，同时在浏览器中显示信息提示文字，提示用户这个元素中必须输入内容。</li>
-<li>pattern属性<br>之前提到的一些新增的input元素，譬如email、number、url等，要求输入内容符合–定的格式，对input元素使用pattern属性，并且将属性值设为某个格式的正则表达式，在提交时会检查其内容是否符合给定格式。当输入的内容不符合给定格式时，则不允许提交，同时在浏览器中显示信息提示文字，提示输入的内容必须符合给定格式。譬如下面所示，要求输入内容为三个大写字母。</li>
-<li>min属性与max属性<br>min与max这两个属性是数值类型或日期类型的input元素的专用属性，它们限制了在input元素中输入的数值与日期的范围。</li>
-</ol>
-]]></content>
-      <categories>
-        <category>XiAnTrain</category>
-      </categories>
-  </entry>
-  <entry>
     <title>培训心得&amp;emsp;&amp;emsp;[走进HTML]</title>
     <url>/2022/06/27/XiAnTrain20220627/</url>
     <content><![CDATA[<p><em><strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;学习打卡第一天</strong></em><br>学习链接：<a href="https://www.yuque.com/docs/share/7867136c-a7d4-4864-b727-a1404d1fe251">https://www.yuque.com/docs/share/7867136c-a7d4-4864-b727-a1404d1fe251</a></p>
@@ -779,6 +737,48 @@
       </categories>
   </entry>
   <entry>
+    <title>培训心得&amp;emsp;&amp;emsp;[表单]</title>
+    <url>/2022/06/29/XiAnTrain20220628/</url>
+    <content><![CDATA[<p><em><strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;学习打卡第二天</strong></em><br>学习链接：<a href="https://www.yuque.com/docs/share/b84dd032-287e-4aa0-a6be-ae7eb275b0ee#">https://www.yuque.com/docs/share/b84dd032-287e-4aa0-a6be-ae7eb275b0ee?#</a></p>
+<span id="more"></span>
+<h1 id="第二章-表单"><a href="#第二章-表单" class="headerlink" title="第二章 表单"></a>第二章 表单</h1><p>表单是用来显示，收集，提交用户信息，表单在网页中主要负责数据采集功能，一个表单由三个基本部分组成：表单元素、表单域、按钮</p>
+<h2 id="2-1表单"><a href="#2-1表单" class="headerlink" title="2.1表单"></a>2.1表单</h2><p>表单是一个包含表单元素的区域，使用<code>&lt;form&gt;...&lt;/form&gt;</code>定义，通过在表单中添加对应的表单元素使得用户可以在网页上输入数据<br><code>&lt;form&gt;</code>中含有诸多属性用来规定表单的格式，详见下表</p>
+<h2 id="2-2-表单元素"><a href="#2-2-表单元素" class="headerlink" title="2.2 表单元素"></a>2.2 表单元素</h2><h3 id="2-2-1-输入标签"><a href="#2-2-1-输入标签" class="headerlink" title="2.2.1 输入标签"></a>2.2.1 输入标签</h3><p>多数情况下使用的表单元素是输入标签<code>&lt;input&gt;</code><br>元素内输入类型有标签中的type属性定义，常用的元素类型如下表：</p>
+<h3 id="2-2-2-下拉标签"><a href="#2-2-2-下拉标签" class="headerlink" title="2.2.2 下拉标签"></a>2.2.2 下拉标签</h3><p>● <code>&lt;select&gt;</code>元素为表单控件，用于在表单中接收数据<br>  ○ <code>&lt;select&gt;</code>元素可创建单选或多选菜单<br>  ○ <code>&lt;option&gt;</code>标签定义了菜单中的可选项<br>● 下拉列表支持属性</p>
+<h3 id="2-2-3-按钮"><a href="#2-2-3-按钮" class="headerlink" title="2.2.3 按钮"></a>2.2.3 按钮</h3><p>● 按钮在网页中一般用于提交，重置页面数据，也可以与javascript配置做一些交互响应事件<br>● 在HTML中按钮一般使用<code>&lt;input&gt;</code>或<code>&lt;button&gt;</code>来定义<br>● 按钮属性</p>
+<p>● <code>&lt;button&gt;</code>与<code>&lt;input&gt;</code>按钮区别<br>  ○<code> &lt;button&gt;</code>按钮如果不设置type属性，在不同浏览器中可能会提交不同值<br>  ○ <code>&lt;button&gt;</code>按钮是成对出现的，可放置文本，图像等，<code>&lt;input&gt;</code>标签只能通过value属性为其设置文本<br>  ○ 需要注意的是虽然<code>&lt;button&gt;</code>按钮可以嵌套其它标签，但不能再去嵌套按钮<br>示例</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;form&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            文本：&lt;input type=&quot;text&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            密码：&lt;input type=&quot;password&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            颜色色：&lt;input type=&quot;color&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;单选：</span><br><span class="line">            男&lt;input type=&quot;radio&quot; name=&quot;gender&quot;&gt;</span><br><span class="line">            女&lt;input type=&quot;radio&quot; name=&quot;gender&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;复选：</span><br><span class="line">            爱好1&lt;input type=&quot;checkbox&quot;&gt;</span><br><span class="line">            爱好2&lt;input type=&quot;checkbox&quot;&gt;</span><br><span class="line">            爱好3&lt;input type=&quot;checkbox&quot;&gt;</span><br><span class="line">            爱好4&lt;input type=&quot;checkbox&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            下拉：&lt;select name=&quot;&quot; &gt;</span><br><span class="line">                &lt;option value=&quot;&quot;&gt;[请输入...]&lt;/option&gt;</span><br><span class="line">                &lt;option value=&quot;&quot;&gt;选择数据一&lt;/option&gt;</span><br><span class="line">                &lt;option value=&quot;&quot;&gt;选择数据二&lt;/option&gt;</span><br><span class="line">            &lt;/select&gt;县</span><br><span class="line">            &lt;select name=&quot;&quot; &gt;</span><br><span class="line">                &lt;option value=&quot;&quot;&gt;[请输入...]&lt;/option&gt;</span><br><span class="line">                &lt;option value=&quot;&quot;&gt;选择数据一&lt;/option&gt;</span><br><span class="line">                &lt;option value=&quot;&quot;&gt;选择数据二&lt;/option&gt;</span><br><span class="line">            &lt;/select&gt;村</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            日期：&lt;input type=&quot;date&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            时间：&lt;input type=&quot;time&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            月份：&lt;input type=&quot;month&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            文件：&lt;input type=&quot;file&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            数字：&lt;input type=&quot;number&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            数字范围：&lt;input type=&quot;range&quot; max=&quot;10&quot; min=&quot;0&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            邮箱：&lt;input type=&quot;email&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            地址：&lt;input type=&quot;url&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            隐藏：&lt;input type=&quot;hidden&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            &lt;input type=&quot;submit&quot; value=&quot;input提交按钮&quot;&gt;</span><br><span class="line">            &lt;input type=&quot;reset&quot; value=&quot;input重置按钮&quot;&gt;</span><br><span class="line">            &lt;input type=&quot;button&quot; value=&quot;input按钮&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            &lt;button type=&quot;submit&quot;&gt;button提交按钮&lt;/button&gt;</span><br><span class="line">            &lt;button type=&quot;reset&quot;&gt;button重置按钮&lt;/button&gt;</span><br><span class="line">            &lt;button type=&quot;button&quot;&gt;button按钮&lt;/button&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">    &lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="2-3-HTML5-表单增强"><a href="#2-3-HTML5-表单增强" class="headerlink" title="2.3 HTML5 表单增强"></a>2.3 HTML5 表单增强</h2><h3 id="2-3-1-form属性"><a href="#2-3-1-form属性" class="headerlink" title="2.3.1 form属性"></a>2.3.1 form属性</h3><p>在HTML4中，表单内的从属元素必须书写在表单内部，但在HTML5中，可以把它书写在页面的任意地方，然后给该元素指定一个form属性，属性值为该表单的id，这样就可以声明该元素从属于指定的表单<br>示例</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;form id=&quot;formTest&quot;&gt;</span><br><span class="line">	&lt;input type=&quot;text&quot; name=&quot;username&quot;/&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line">&lt;input type=&quot;password&quot; name=&quot;password&quot; form=&quot;formTest&quot;&gt;</span><br></pre></td></tr></table></figure>
+<p>代码解析：</p>
+<ol>
+<li>第一个input标签从属form表单，它被书写在form表单内部，所以用不着对它指定form属性</li>
+<li>第二个input表单被书写在form之外，但想要它从属form，这时就可以为其添加form属性并指定表单id让它从属form表单<h3 id="2-3-2-formaction属性"><a href="#2-3-2-formaction属性" class="headerlink" title="2.3.2 formaction属性"></a>2.3.2 formaction属性</h3>在HTML 4中，一个表单内的所有元素都只能通过表单的action属性统一提交到另一个页面，而在HTML 5中可以给所有的提交按钮，诸如<code>&lt;input type=&quot;submit&quot;&gt;、&lt;inputtype=&quot;image&quot;&gt;、&lt;button type=&quot;submit&quot;&gt;</code>都增加不同的formaction属性，使得点击不同的按钮，可以将表单提交到不同的页面，formaction属性的使用方法如下：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;form id=&quot;testform&quot; action=&quot; serve.jsp&quot;&gt;</span><br><span class="line">  &lt;input type=&quot;submit&quot; name=&quot;s1&quot; value=&quot;v1&quot; formaction=&quot;s1.jsp&quot;&gt;提交到s1</span><br><span class="line">  &lt;input type=&quot;submit&quot; name=&quot;s2&quot; value=&quot;v2&quot; formaction=&quot;s2.jsp&quot;&gt;提交到s2</span><br><span class="line">  &lt;input type=&quot;submit&quot; name=&quot;s3&quot; value=&quot;v3&quot; formaction=&quot;s3.jsp&quot;&gt;提交到s3</span><br><span class="line">  &lt;input type= &quot;submit&quot;&gt;</span><br><span class="line">&lt;form&gt;</span><br></pre></td></tr></table></figure>
+注：该属性目前支持的浏览器并不多，慎重使用<h3 id="2-3-3-list属性"><a href="#2-3-3-list属性" class="headerlink" title="2.3.3 list属性"></a>2.3.3 list属性</h3>在HTML 5中，为单行文本框(<code>&lt;input type=&quot;text&quot;&gt;</code>)增加了一个list属性，该属性的值为某个datalist元素的id。datalist元素也是HTML 5中新增元素，该元素类似于选择框( select&gt;)，但是当用户想要设定的值不在选择列表之内时，允许其自行输入。该元素本身并不显示，而是当文本框获得焦点时以提示输入的方式显示。为了避免在没有支持该元素的浏览器上出现显示错误，可以用CSS等将它设定为不显示。<br>示例</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    text: &lt;input type=&quot;text&quot; name=&quot; greeting&quot; list=&quot;greetings&quot;&gt;</span><br><span class="line">    &lt;datalist id=&quot;greetings&quot;&gt;</span><br><span class="line">        &lt;option value=&quot;Good Morning&quot;&gt;Good Morning&lt;/option&gt;</span><br><span class="line">        &lt;option value=&quot;Hello&quot;&gt;Hello&lt;/option&gt;</span><br><span class="line">        &lt;option value=&quot;Good Afternoon&quot;&gt;Good Afternoon&lt;/option&gt;</span><br><span class="line">    &lt;/datalist&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="2-3-4-autocomplete属性"><a href="#2-3-4-autocomplete属性" class="headerlink" title="2.3.4 autocomplete属性"></a>2.3.4 autocomplete属性</h3><p>辅助输入所用的自动完成功能，是一个节省输入时间，同时也十分方便的功能。在HTML5之前，因为谁都可以看见输入的值，所以存在安全隐患，但只要使用autocomplete属性，安全性就可以得到很好的控制。.<br>对于autocomplete属性，可以指定“on”、“off”与“”(不指定）这三种值。不指定时，使用浏览器的默认值(取决于各浏览器的决定)。把该属性设为on时，可以显式指定候补输入的数据列表。使用detalist元素与list属性提供候补输入的数据列表，自动完成时，可以将该datalist元素中的数据作为候补输入的数据在文本框中自动显示。autocomplete属性的使用方法如下所示。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    text: &lt;input type=&quot;text&quot; name=&quot;greeting&quot; list=&quot;greetings&quot; autocomplete=&quot;on&quot;&gt;</span><br><span class="line">    &lt;datalist id=&quot;greetings&quot;&gt;</span><br><span class="line">        &lt;option value=&quot;Good Morning&quot;&gt;Good Morning&lt;/option&gt;</span><br><span class="line">        &lt;option value=&quot;Hello&quot;&gt;Hello&lt;/option&gt;</span><br><span class="line">        &lt;option value=&quot;Good Afternoon&quot;&gt;Good Afternoon&lt;/option&gt;</span><br><span class="line">    &lt;/datalist&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="2-3-5-output标签"><a href="#2-3-5-output标签" class="headerlink" title="2.3.5 output标签"></a>2.3.5 output标签</h3><p>● output为H5的新增标签，用来定义不同类型的输出，长和form表单一起使用，用来输出显示计算结果<br>● 语法</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;output name=&quot;名称&quot; for=&quot;element_id&quot;&gt;默认内容&lt;/output&gt;</span><br></pre></td></tr></table></figure>
+<p>● 标签属性<br>  ○ for：定义输出域相关的一个或多个元素，以空格隔开；<br>  ○ form：定义输入字段所属的一个或多个表单，以空格隔开；<br>  ○ name：定义对象的唯一名称（表单提交时使用）。<br>示例</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;form oninput=&quot;o.value=parseInt(a.value)&quot;&gt;</span><br><span class="line">        选择数字范围：&lt;input type=&quot;range&quot; min=&quot;0&quot; max=&quot;100&quot; id=&quot;a&quot;&gt;</span><br><span class="line">        &lt;output id=&quot;o&quot; &gt;50&lt;/output&gt;</span><br><span class="line">    &lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>示例二</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;form oninput=&quot;x.value=parseInt(a.value)+parseInt(b.value)&quot;&gt;</span><br><span class="line">        &lt;input type=&quot;number&quot; id=&quot;a&quot; value=&quot;0&quot;&gt; +</span><br><span class="line">        &lt;input type=&quot;number&quot; id=&quot;b&quot; value=&quot;0&quot;&gt; =</span><br><span class="line">        &lt;output name=&quot;x&quot; for=&quot;a b&quot;&gt;0&lt;/output&gt;</span><br><span class="line">    &lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>注：<br>oninput为表单事件，表示当对元素输入数据时触发<br>parseInt为javascript函数，用来解析一个字符串，并返回一个整数</p>
+<h3 id="2-3-6-表单验证"><a href="#2-3-6-表单验证" class="headerlink" title="2.3.6 表单验证"></a>2.3.6 表单验证</h3><p>在H5中，新增了大量在提交时对表单与表单内新增元素进行有效性验证的功能</p>
+<h3 id="2-3-6-1-自动验证"><a href="#2-3-6-1-自动验证" class="headerlink" title="2.3.6.1 自动验证"></a>2.3.6.1 自动验证</h3><p>在H5中，新增的一些表单元素本身就带有简单的提交格式验证，如邮箱（email）就有固定的格式“@”，“.”，但普通的表单元素就要通过对元素使用属性的方法，来实现在表单提交时执行自动验证的功能<br>普通表单元素的验证属性</p>
+<ol>
+<li>required属性<br>HTML 5中新增的required属性可以应用在大多数输入元素上（除了隐藏元素、图片元素按钮上)。在提交时，如果元素中内容为空白，则不允许提交，同时在浏览器中显示信息提示文字，提示用户这个元素中必须输入内容。</li>
+<li>pattern属性<br>之前提到的一些新增的input元素，譬如email、number、url等，要求输入内容符合–定的格式，对input元素使用pattern属性，并且将属性值设为某个格式的正则表达式，在提交时会检查其内容是否符合给定格式。当输入的内容不符合给定格式时，则不允许提交，同时在浏览器中显示信息提示文字，提示输入的内容必须符合给定格式。譬如下面所示，要求输入内容为三个大写字母。</li>
+<li>min属性与max属性<br>min与max这两个属性是数值类型或日期类型的input元素的专用属性，它们限制了在input元素中输入的数值与日期的范围。</li>
+</ol>
+]]></content>
+      <categories>
+        <category>XiAnTrain</category>
+      </categories>
+  </entry>
+  <entry>
     <title></title>
     <url>/2022/07/15/baidu_verify_code-lKi6sS4j7S/</url>
     <content><![CDATA[f2c7aa5496980a4ac5b119f84ca39e87]]></content>
@@ -804,6 +804,24 @@
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>hexo-relevant</title>
+    <url>/2021/10/22/hexo-relevant/</url>
+    <content><![CDATA[<img src="https://i.loli.net/2021/10/25/IQbfDr4LFY6hgl3.jpg" align="center" width="800" height="250" div>
+<span id="more"></span>
+
+
+<p>修改博客内容整体上边界<br>目录：[simon-yian]–&gt;[themes]–&gt;[next]–&gt;[source]–&gt;[css]–&gt;[_common]–&gt;[scaffolding]–&gt;[normalize.styl]</p>
+<p>第十八行<br>/**</p>
+<ul>
+<li>Remove the margin in all browsers.</li>
+<li>/<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"> body &#123;</span><br><span class="line">  margin: 40px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
   </entry>
   <entry>
     <title>使用hexo+github搭建博客</title>
@@ -932,24 +950,6 @@
       </categories>
   </entry>
   <entry>
-    <title>hexo-relevant</title>
-    <url>/2021/10/22/hexo-relevant/</url>
-    <content><![CDATA[<img src="https://i.loli.net/2021/10/25/IQbfDr4LFY6hgl3.jpg" align="center" width="800" height="250" div>
-<span id="more"></span>
-
-
-<p>修改博客内容整体上边界<br>目录：[simon-yian]–&gt;[themes]–&gt;[next]–&gt;[source]–&gt;[css]–&gt;[_common]–&gt;[scaffolding]–&gt;[normalize.styl]</p>
-<p>第十八行<br>/**</p>
-<ul>
-<li>Remove the margin in all browsers.</li>
-<li>/<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"> body &#123;</span><br><span class="line">  margin: 40px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
-  </entry>
-  <entry>
     <title>makedown进阶（改变字体颜色，大小，设置文字背景，调整图片大小设置剧中）</title>
     <url>/2021/10/18/picture/</url>
     <content><![CDATA[<img src="https://i.loli.net/2021/10/22/91RXecYS4vTDPny.jpg" align="center" width="800" height="250" div>
@@ -979,6 +979,1391 @@
   <table><tr><td bgcolor="yellow">背景色yellow</td></tr></table>]]></content>
       <categories>
         <category>hexo</category>
+      </categories>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2022/07/16/xianTrain10-javaDateTypeAddOperation/</url>
+    <content><![CDATA[<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="categories" content=",- XiAnTrain">
+<meta name="date" content="2022-07-16 14:38:44"><style>body {
+  max-width: 980px;
+  outline: 1300px solid #fff;
+  margin: 16px auto;
+}
+
+body .markdown-body
+{
+  padding: 45px;
+}
+
+@font-face {
+  font-family: fontawesome-mini;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+.markdown-body {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #333333;
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.markdown-body a {
+  background: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+
+.markdown-body b,
+.markdown-body strong {
+  font-weight: bold;
+}
+
+.markdown-body mark {
+  background: #ff0;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body sub,
+.markdown-body sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+.markdown-body sup {
+  top: -0.5em;
+}
+.markdown-body sub {
+  bottom: -0.25em;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.markdown-body img {
+  border: 0;
+}
+
+.markdown-body hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+.markdown-body pre {
+  overflow: auto;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+
+.markdown-body input {
+  line-height: normal;
+}
+
+.markdown-body input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body .codehilitetable,
+.markdown-body .highlighttable {
+  border: 0;
+  border-spacing: 0;
+}
+
+.markdown-body .codehilitetable tr,
+.markdown-body .highlighttable {
+  border: 0;
+}
+
+.markdown-body .codehilitetable pre,
+.markdown-body .codehilitetable div.codehilite,
+.markdown-body .highlighttable pre,
+.markdown-body .highlighttable div.highlight {
+  margin: 0;
+}
+
+.markdown-body .linenos,
+.markdown-body .code,
+.markdown-body .codehilitetable td,
+.markdown-body .highlighttable td {
+  border: 0;
+  padding: 0;
+}
+
+.markdown-body td:not(.linenos) .linenodiv {
+  padding: 0 !important;
+}
+
+.markdown-body .code {
+  width: 100%;
+}
+
+.markdown-body .linenos div pre,
+.markdown-body .linenodiv pre,
+.markdown-body .linenodiv {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.markdown-body .code div pre,
+.markdown-body .code div {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.markdown-body * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font: 13px Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.4;
+}
+
+.markdown-body a {
+  color: #4183c4;
+  text-decoration: none;
+}
+
+.markdown-body a:hover,
+.markdown-body a:focus,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown-body hr:before,
+.markdown-body hr:after {
+  display: table;
+  content: " ";
+}
+
+.markdown-body hr:after {
+  clear: both;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.markdown-body h1 {
+  font-size: 30px;
+}
+
+.markdown-body h2 {
+  font-size: 21px;
+}
+
+.markdown-body h3 {
+  font-size: 16px;
+}
+
+.markdown-body h4 {
+  font-size: 14px;
+}
+
+.markdown-body h5 {
+  font-size: 12px;
+}
+
+.markdown-body h6 {
+  font-size: 11px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body kbd {
+  background-color: #e7e7e7;
+  background-image: -moz-linear-gradient(#fefefe, #e7e7e7);
+  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
+  background-image: linear-gradient(#fefefe, #e7e7e7);
+  background-repeat: repeat-x;
+  border-radius: 2px;
+  border: 1px solid #cfcfcf;
+  color: #000;
+  padding: 3px 5px;
+  line-height: 10px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  display: inline-block;
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body .headerlink {
+  font: normal 400 16px fontawesome-mini;
+  vertical-align: middle;
+  margin-left: -16px;
+  float: left;
+  display: inline-block;
+  text-decoration: none;
+  opacity: 0;
+  color: #333;
+}
+
+.markdown-body .headerlink:focus {
+  outline: none;
+}
+
+.markdown-body h1 .headerlink {
+  margin-top: 0.8rem;
+}
+
+.markdown-body h2 .headerlink,
+.markdown-body h3 .headerlink {
+  margin-top: 0.6rem;
+}
+
+.markdown-body h4 .headerlink {
+  margin-top: 0.2rem;
+}
+
+.markdown-body h5 .headerlink,
+.markdown-body h6 .headerlink {
+  margin-top: 0;
+}
+
+.markdown-body .headerlink:hover,
+.markdown-body h1:hover .headerlink,
+.markdown-body h2:hover .headerlink,
+.markdown-body h3:hover .headerlink,
+.markdown-body h4:hover .headerlink,
+.markdown-body h5:hover .headerlink,
+.markdown-body h6:hover .headerlink {
+  opacity: 1;
+  text-decoration: none;
+}
+
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+
+.markdown-body h5 {
+  font-size: 1em;
+}
+
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre,
+.markdown-body .admonition {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+.markdown-body table th {
+  font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body code,
+.markdown-body samp {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .codehilite,
+.markdown-body .highlight {
+  margin-bottom: 16px;
+}
+
+.markdown-body .codehilite pre,
+.markdown-body .highlight pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+.markdown-body .codehilite pre,
+.markdown-body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+
+/* Admonition */
+.markdown-body .admonition {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  position: relative;
+  border-radius: 3px;
+  border: 1px solid #e0e0e0;
+  border-left: 6px solid #333;
+  padding: 10px 10px 10px 30px;
+}
+
+.markdown-body .admonition table {
+  color: #333;
+}
+
+.markdown-body .admonition p {
+  padding: 0;
+}
+
+.markdown-body .admonition-title {
+  font-weight: bold;
+  margin: 0;
+}
+
+.markdown-body .admonition>.admonition-title {
+  color: #333;
+}
+
+.markdown-body .attention>.admonition-title {
+  color: #a6d796;
+}
+
+.markdown-body .caution>.admonition-title {
+  color: #d7a796;
+}
+
+.markdown-body .hint>.admonition-title {
+  color: #96c6d7;
+}
+
+.markdown-body .danger>.admonition-title {
+  color: #c25f77;
+}
+
+.markdown-body .question>.admonition-title {
+  color: #96a6d7;
+}
+
+.markdown-body .note>.admonition-title {
+  color: #d7c896;
+}
+
+.markdown-body .admonition:before,
+.markdown-body .attention:before,
+.markdown-body .caution:before,
+.markdown-body .hint:before,
+.markdown-body .danger:before,
+.markdown-body .question:before,
+.markdown-body .note:before {
+  font: normal normal 16px fontawesome-mini;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  line-height: 1.5;
+  color: #333;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.markdown-body .admonition:before {
+  content: "\f056\00a0";
+  color: 333;
+}
+
+.markdown-body .attention:before {
+  content: "\f058\00a0";
+  color: #a6d796;
+}
+
+.markdown-body .caution:before {
+  content: "\f06a\00a0";
+  color: #d7a796;
+}
+
+.markdown-body .hint:before {
+  content: "\f05a\00a0";
+  color: #96c6d7;
+}
+
+.markdown-body .danger:before {
+  content: "\f057\00a0";
+  color: #c25f77;
+}
+
+.markdown-body .question:before {
+  content: "\f059\00a0";
+  color: #96a6d7;
+}
+
+.markdown-body .note:before {
+  content: "\f040\00a0";
+  color: #d7c896;
+}
+
+.markdown-body .admonition::after {
+  content: normal;
+}
+
+.markdown-body .attention {
+  border-left: 6px solid #a6d796;
+}
+
+.markdown-body .caution {
+  border-left: 6px solid #d7a796;
+}
+
+.markdown-body .hint {
+  border-left: 6px solid #96c6d7;
+}
+
+.markdown-body .danger {
+  border-left: 6px solid #c25f77;
+}
+
+.markdown-body .question {
+  border-left: 6px solid #96a6d7;
+}
+
+.markdown-body .note {
+  border-left: 6px solid #d7c896;
+}
+
+.markdown-body .admonition>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body .admonition>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* progress bar*/
+.markdown-body .progress {
+  display: block;
+  width: 300px;
+  margin: 10px 0;
+  height: 24px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #ededed;
+  position: relative;
+  box-shadow: inset -1px 1px 3px rgba(0, 0, 0, .1);
+}
+
+.markdown-body .progress-label {
+  position: absolute;
+  text-align: center;
+  font-weight: bold;
+  width: 100%; margin: 0;
+  line-height: 24px;
+  color: #333;
+  text-shadow: 1px 1px 0 #fefefe, -1px -1px 0 #fefefe, -1px 1px 0 #fefefe, 1px -1px 0 #fefefe, 0 1px 0 #fefefe, 0 -1px 0 #fefefe, 1px 0 0 #fefefe, -1px 0 0 #fefefe, 1px 1px 2px #000;
+  -webkit-font-smoothing: antialiased !important;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.markdown-body .progress-bar {
+  height: 24px;
+  float: left;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #96c6d7;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), inset 0 -1px 0 rgba(0, 0, 0, .1);
+  background-size: 30px 30px;
+  background-image: -webkit-linear-gradient(
+    135deg, rgba(255, 255, 255, .4) 27%,
+    transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%,
+    transparent 77%, transparent
+  );
+  background-image: -moz-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -ms-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -o-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+}
+
+.markdown-body .progress-100plus .progress-bar {
+  background-color: #a6d796;
+}
+
+.markdown-body .progress-80plus .progress-bar {
+  background-color: #c6d796;
+}
+
+.markdown-body .progress-60plus .progress-bar {
+  background-color: #d7c896;
+}
+
+.markdown-body .progress-40plus .progress-bar {
+  background-color: #d7a796;
+}
+
+.markdown-body .progress-20plus .progress-bar {
+  background-color: #d796a6;
+}
+
+.markdown-body .progress-0plus .progress-bar {
+  background-color: #c25f77;
+}
+
+.markdown-body .candystripe-animate .progress-bar{
+  -webkit-animation: animate-stripes 3s linear infinite;
+  -moz-animation: animate-stripes 3s linear infinite;
+  animation: animate-stripes 3s linear infinite;
+}
+
+@-webkit-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@-moz-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+.markdown-body .gloss .progress-bar {
+  box-shadow:
+    inset 0 4px 12px rgba(255, 255, 255, .7),
+    inset 0 -12px 0 rgba(0, 0, 0, .05);
+}
+
+/* MultiMarkdown Critic Blocks */
+.markdown-body .critic_mark {
+  background: #ff0;
+}
+
+.markdown-body .critic_delete {
+  color: #c82829;
+  text-decoration: line-through;
+}
+
+.markdown-body .critic_insert {
+  color: #718c00 ;
+  text-decoration: underline;
+}
+
+.markdown-body .critic_comment {
+  color: #8e908c;
+  font-style: italic;
+}
+
+.markdown-body .headeranchor {
+  font: normal normal 16px fontawesome-mini;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.headeranchor:before {
+  content: '\e157';
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 4px 0.25em -20px;
+  vertical-align: middle;
+}
+
+.markdown-body diagram-div, .markdown-body div.uml-sequence-diagram, .markdown-body, div.uml-flowchart {
+  overflow: auto;
+}
+
+/* Media */
+@media only screen and (min-width: 480px) {
+  .markdown-body {
+    font-size:14px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .markdown-body {
+    font-size:16px;
+  }
+}
+
+@media print {
+  .markdown-body * {
+    background: transparent !important;
+    color: black !important;
+    filter:none !important;
+    -ms-filter: none !important;
+  }
+
+  .markdown-body {
+    font-size:12pt;
+    max-width:100%;
+    outline:none;
+    border: 0;
+  }
+
+  .markdown-body a,
+  .markdown-body a:visited {
+    text-decoration: underline;
+  }
+
+  .markdown-body .headeranchor-link {
+    display: none;
+  }
+
+  .markdown-body a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  .markdown-body abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  .markdown-body .ir a:after,
+  .markdown-body a[href^="javascript:"]:after,
+  .markdown-body a[href^="#"]:after {
+    content: "";
+  }
+
+  .markdown-body pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  .markdown-body pre,
+  .markdown-body blockquote {
+    border: 1px solid #999;
+    padding-right: 1em;
+    page-break-inside: avoid;
+  }
+
+  .markdown-body .progress,
+  .markdown-body .progress-bar {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .markdown-body .progress {
+    border: 1px solid #ddd;
+  }
+
+  .markdown-body .progress-bar {
+    height: 22px;
+    border-right: 1px solid #ddd;
+  }
+
+  .markdown-body tr,
+  .markdown-body img {
+    page-break-inside: avoid;
+  }
+
+  .markdown-body img {
+    max-width: 100% !important;
+  }
+
+  .markdown-body p,
+  .markdown-body h2,
+  .markdown-body h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  .markdown-body h2,
+  .markdown-body h3 {
+    page-break-after: avoid;
+  }
+}
+</style><style>/*GitHub*/
+.highlight {background-color:#fff;color:#333333;}
+.highlight .hll {background-color:#ffffcc;}
+.highlight .c{color:#999988;font-style:italic}
+.highlight .err{color:#a61717;background-color:#e3d2d2}
+.highlight .k{font-weight:bold}
+.highlight .o{font-weight:bold}
+.highlight .cm{color:#999988;font-style:italic}
+.highlight .cp{color:#999999;font-weight:bold}
+.highlight .c1{color:#999988;font-style:italic}
+.highlight .cs{color:#999999;font-weight:bold;font-style:italic}
+.highlight .gd{color:#000000;background-color:#ffdddd}
+.highlight .ge{font-style:italic}
+.highlight .gr{color:#aa0000}
+.highlight .gh{color:#999999}
+.highlight .gi{color:#000000;background-color:#ddffdd}
+.highlight .go{color:#888888}
+.highlight .gp{color:#555555}
+.highlight .gs{font-weight:bold}
+.highlight .gu{color:#800080;font-weight:bold}
+.highlight .gt{color:#aa0000}
+.highlight .kc{font-weight:bold}
+.highlight .kd{font-weight:bold}
+.highlight .kn{font-weight:bold}
+.highlight .kp{font-weight:bold}
+.highlight .kr{font-weight:bold}
+.highlight .kt{color:#445588;font-weight:bold}
+.highlight .m{color:#009999}
+.highlight .s{color:#dd1144}
+.highlight .n{color:#333333}
+.highlight .na{color:teal}
+.highlight .nb{color:#0086b3}
+.highlight .nc{color:#445588;font-weight:bold}
+.highlight .no{color:teal}
+.highlight .ni{color:purple}
+.highlight .ne{color:#990000;font-weight:bold}
+.highlight .nf{color:#990000;font-weight:bold}
+.highlight .nn{color:#555555}
+.highlight .nt{color:navy}
+.highlight .nv{color:teal}
+.highlight .ow{font-weight:bold}
+.highlight .w{color:#bbbbbb}
+.highlight .mf{color:#009999}
+.highlight .mh{color:#009999}
+.highlight .mi{color:#009999}
+.highlight .mo{color:#009999}
+.highlight .sb{color:#dd1144}
+.highlight .sc{color:#dd1144}
+.highlight .sd{color:#dd1144}
+.highlight .s2{color:#dd1144}
+.highlight .se{color:#dd1144}
+.highlight .sh{color:#dd1144}
+.highlight .si{color:#dd1144}
+.highlight .sx{color:#dd1144}
+.highlight .sr{color:#009926}
+.highlight .s1{color:#dd1144}
+.highlight .ss{color:#990073}
+.highlight .bp{color:#999999}
+.highlight .vc{color:teal}
+.highlight .vg{color:teal}
+.highlight .vi{color:teal}
+.highlight .il{color:#009999}
+.highlight .gc{color:#999;background-color:#EAF2F5}
+</style><title>培训心得[java数据类型和运算符]</title></head><body><article class="markdown-body"><hr>
+<p><strong><em>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Java基础学习打卡第2天
+学习链接：<a href="https://www.yuque.com/docs/share/b9feb7da-7c3c-4ccb-8542-52a34ad5d965?#">https://www.yuque.com/docs/share/b9feb7da-7c3c-4ccb-8542-52a34ad5d965?#</a> 《第2章 Java数据类型和运算符》密码：ekp0</em></strong>
+<span id="more"></span></p>
+<blockquote>
+<p>java是一门强类型语言：</p>
+<blockquote>
+<ul>
+<li>所有的变量都必须先声明，后使用</li>
+<li>变量的类型一旦确定，那么变量的值必须和数据类型相匹配。</li>
+</ul>
+</blockquote>
+</blockquote>
+<h2 id="java">java标识符<a class="headerlink" href="#java" title="Permanent link"></a></h2>
+<blockquote>
+<ul>
+<li>标识符：类名、方法名、变量名<blockquote>
+<ul>
+<li>可以包含数字、字母、下划线、$</li>
+<li>不能数字开头</li>
+<li>不能使用Java关键字</li>
+<li>java中总共有50个关键字，如下表：</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>abstract</th>
+<th>continue</th>
+<th>for</th>
+<th>new</th>
+<th>switch</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>assert</td>
+<td>default</td>
+<td>if</td>
+<td>package</td>
+<td>synchronized</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>do</td>
+<td>goto</td>
+<td>private</td>
+<td>this</td>
+</tr>
+<tr>
+<td>break</td>
+<td>double</td>
+<td>implements</td>
+<td>protected</td>
+<td>throw</td>
+</tr>
+<tr>
+<td>byte</td>
+<td>else</td>
+<td>import</td>
+<td>public</td>
+<td>throw</td>
+</tr>
+<tr>
+<td>case</td>
+<td>enum</td>
+<td>instanceof</td>
+<td>return</td>
+<td>transient</td>
+</tr>
+<tr>
+<td>catch</td>
+<td>extends</td>
+<td>int</td>
+<td>short</td>
+<td>try</td>
+</tr>
+<tr>
+<td>char</td>
+<td>final</td>
+<td>interface</td>
+<td>static</td>
+<td>void</td>
+</tr>
+<tr>
+<td>class</td>
+<td>finally</td>
+<td>long</td>
+<td>strictfp</td>
+<td>volatile</td>
+</tr>
+<tr>
+<td>const</td>
+<td>float</td>
+<td>native</td>
+<td>super</td>
+<td></td>
+</tr>
+<tr>
+<td>while</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="java_1">Java命名方式<a class="headerlink" href="#java_1" title="Permanent link"></a></h2>
+<blockquote>
+<ul>
+<li>(Pascal)帕斯卡命名法：所有单词首字母均大写。适用于类名，例如：StudentManager</li>
+<li>(Camel)驼峰命名法：第一个单词的首字母小写，如果有多个但是，其余单词首字母均大写，适用于方法名，变量名。例如：studentAge，studentGender</li>
+</ul>
+</blockquote>
+<h2 id="java_2">Java数据类型<a class="headerlink" href="#java_2" title="Permanent link"></a></h2>
+<blockquote>
+<ul>
+<li>基本类型：byte short int long float double boolean char</li>
+<li>引用类型: 数组， 类，接口</li>
+</ul>
+</blockquote>
+<h3 id="_1">整数<a class="headerlink" href="#_1" title="Permanent link"></a></h3>
+<blockquote>
+<ul>
+<li>
+<p>整数通常可以分为以下4种：</p>
+<blockquote>
+<ul>
+<li>byte:占一个字节（占8位）,可表示范围：-128 ——— 127</li>
+<li>short:占2个字节（占16位）,可表示范围：-2^15 ——— 2^15-1</li>
+<li>int:占4个字节（占32位），可表示范围：-2^31 ——— 2^31-1</li>
+<li>long:占8个字节（占64位），可表示范围：-2^31 ——— 2^31-1(定义时需要在数值后添加<code>L</code>)</li>
+</ul>
+</blockquote>
+</li>
+<li>
+<p>JAVA中整数值有四种表示方式：十进制、二进制、十六进制、八进制，其中二进制的整数以<code>0b</code>或者<code>0B</code>开头；八进制的整数以<code>0</code>开头;十六进制的整数以<code>0x</code>或者<code>0X</code>开头，其中10-15分别以a-f表示。</p>
+</li>
+</ul>
+</blockquote>
+<h3 id="_2">浮点数<a class="headerlink" href="#_2" title="Permanent link"></a></h3>
+<blockquote>
+<ul>
+<li>浮点数可以分为：<code>float</code>和<code>double</code>。<blockquote>
+<ul>
+<li>float类型:占四个字节，第一位表示符号位，接下来8位表示指数，接下来的23位表示尾数；</li>
+<li>double类型:占八个字节，第一位表示符号位，接下来11位表示指数，接下来的52位表示尾数；</li>
+</ul>
+</blockquote>
+</li>
+<li>浮点数可用十进制和科学计数法进行表示</li>
+</ul>
+</blockquote></article></body></html>]]></content>
+  </entry>
+  <entry>
+    <title>培训心得[java数据类型和运算符]</title>
+    <url>/2022/07/16/xianTrain10-javaDateTypeAddOperation/</url>
+    <content><![CDATA[<p><em><strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Java基础学习打卡第2天<br>学习链接：<a href="https://www.yuque.com/docs/share/b9feb7da-7c3c-4ccb-8542-52a34ad5d965#">https://www.yuque.com/docs/share/b9feb7da-7c3c-4ccb-8542-52a34ad5d965?#</a> 《第2章 Java数据类型和运算符》密码：ekp0</strong></em></p>
+<span id="more"></span>
+
+<blockquote>
+<p>java是一门强类型语言：</p>
+<blockquote>
+<ul>
+<li>所有的变量都必须先声明，后使用</li>
+<li>变量的类型一旦确定，那么变量的值必须和数据类型相匹配。</li>
+</ul>
+</blockquote>
+</blockquote>
+<h2 id="java标识符"><a href="#java标识符" class="headerlink" title="java标识符"></a>java标识符</h2><blockquote>
+<ul>
+<li>标识符：类名、方法名、变量名<blockquote>
+<ul>
+<li>可以包含数字、字母、下划线、$</li>
+<li>不能数字开头</li>
+<li>不能使用Java关键字</li>
+<li>java中总共有50个关键字，如下表：</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>abstract</th>
+<th>continue</th>
+<th>for</th>
+<th>new</th>
+<th>switch</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>assert</td>
+<td>default</td>
+<td>if</td>
+<td>package</td>
+<td>synchronized</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>do</td>
+<td>goto</td>
+<td>private</td>
+<td>this</td>
+</tr>
+<tr>
+<td>break</td>
+<td>double</td>
+<td>implements</td>
+<td>protected</td>
+<td>throw</td>
+</tr>
+<tr>
+<td>byte</td>
+<td>else</td>
+<td>import</td>
+<td>public</td>
+<td>throw</td>
+</tr>
+<tr>
+<td>case</td>
+<td>enum</td>
+<td>instanceof</td>
+<td>return</td>
+<td>transient</td>
+</tr>
+<tr>
+<td>catch</td>
+<td>extends</td>
+<td>int</td>
+<td>short</td>
+<td>try</td>
+</tr>
+<tr>
+<td>char</td>
+<td>final</td>
+<td>interface</td>
+<td>static</td>
+<td>void</td>
+</tr>
+<tr>
+<td>class</td>
+<td>finally</td>
+<td>long</td>
+<td>strictfp</td>
+<td>volatile</td>
+</tr>
+<tr>
+<td>const</td>
+<td>float</td>
+<td>native</td>
+<td>super</td>
+<td></td>
+</tr>
+<tr>
+<td>while</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="Java命名方式"><a href="#Java命名方式" class="headerlink" title="Java命名方式"></a>Java命名方式</h2><blockquote>
+<ul>
+<li>(Pascal)帕斯卡命名法：所有单词首字母均大写。适用于类名，例如：StudentManager</li>
+<li>(Camel)驼峰命名法：第一个单词的首字母小写，如果有多个但是，其余单词首字母均大写，适用于方法名，变量名。例如：studentAge，studentGender</li>
+</ul>
+</blockquote>
+<h2 id="Java数据类型"><a href="#Java数据类型" class="headerlink" title="Java数据类型"></a>Java数据类型</h2><blockquote>
+<ul>
+<li>基本类型：byte short int long float double boolean char</li>
+<li>引用类型: 数组， 类，接口</li>
+</ul>
+</blockquote>
+<h3 id="整数"><a href="#整数" class="headerlink" title="整数"></a>整数</h3><blockquote>
+<ul>
+<li>整数通常可以分为以下4种：<blockquote>
+<ul>
+<li>byte:占一个字节（占8位）,可表示范围：-128 ——— 127</li>
+<li>short:占2个字节（占16位）,可表示范围：-2^15 ——— 2^15-1</li>
+<li>int:占4个字节（占32位），可表示范围：-2^31 ——— 2^31-1</li>
+<li>long:占8个字节（占64位），可表示范围：-2^31 ——— 2^31-1(定义时需要在数值后添加<code>L</code>)</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>JAVA中整数值有四种表示方式：十进制、二进制、十六进制、八进制，其中二进制的整数以<code>0b</code>或者<code>0B</code>开头；八进制的整数以<code>0</code>开头;十六进制的整数以<code>0x</code>或者<code>0X</code>开头，其中10-15分别以a-f表示。</li>
+</ul>
+</blockquote>
+<h3 id="浮点数"><a href="#浮点数" class="headerlink" title="浮点数"></a>浮点数</h3><blockquote>
+<ul>
+<li>浮点数可以分为：<code>float</code>和<code>double</code>。<blockquote>
+<ul>
+<li>float类型:占四个字节，第一位表示符号位，接下来8位表示指数，接下来的23位表示尾数；</li>
+<li>double类型:占八个字节，第一位表示符号位，接下来11位表示指数，接下来的52位表示尾数；</li>
+</ul>
+</blockquote>
+</li>
+<li>浮点数可用十进制和科学计数法进行表示</li>
+</ul>
+</blockquote>
+]]></content>
+      <categories>
+        <category>XiAnTrain</category>
       </categories>
   </entry>
   <entry>
@@ -1184,6 +2569,134 @@ elementN:  可选。可向数组添加若干元素。
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//图片翻转</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">        *&#123;</span><br><span class="line">            margin: 0 auto;</span><br><span class="line">            padding: 0px;</span><br><span class="line">        &#125;</span><br><span class="line">        .box&#123;</span><br><span class="line">            width: 500px;</span><br><span class="line">            height: 300px;</span><br><span class="line">            background-image: url(&quot;img/IMG_E1640.JPG&quot;);</span><br><span class="line">            background-size: 100%;</span><br><span class="line">            /*引用动画*/</span><br><span class="line">            animation:rotateImg 10s infinite;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        /*制作动画执行过程*/</span><br><span class="line">        @-webkit-keyframes rotateImg &#123;</span><br><span class="line">            0%&#123;</span><br><span class="line">                /*图片起始不动*/</span><br><span class="line">                -webkit-transform: rotateY(0deg);</span><br><span class="line">            &#125;</span><br><span class="line">            50%&#123;</span><br><span class="line">                -webkit-transform: rotateY(360deg);</span><br><span class="line">            &#125;</span><br><span class="line">            100%&#123;</span><br><span class="line">                -webkit-transform: rotateY(720deg);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div class=&quot;box&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h2 id="光盘旋转效果"><a href="#光盘旋转效果" class="headerlink" title="光盘旋转效果"></a>光盘旋转效果</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">        *&#123;</span><br><span class="line">            margin: 0 auto;</span><br><span class="line">            padding: 0px;</span><br><span class="line">        &#125;</span><br><span class="line">        .box&#123;</span><br><span class="line">            width: 500px;</span><br><span class="line">            height: 500px;</span><br><span class="line">            background-image: url(&quot;img/IMG_E1640.JPG&quot;);</span><br><span class="line">            background-size: 100% 100%;</span><br><span class="line">            border-radius: 50%;</span><br><span class="line">            display: flex;</span><br><span class="line">            /*引用大圆旋转动画*/</span><br><span class="line">            animation: box 30s linear infinite;</span><br><span class="line">        &#125;</span><br><span class="line">        .lb&#123;</span><br><span class="line">            width: 400px;</span><br><span class="line">            height: 400px;</span><br><span class="line">            background-image: url(&quot;img/IMG_1443.JPG&quot;);</span><br><span class="line">            background-size: 100% 100%;</span><br><span class="line">            border-radius: 50%;</span><br><span class="line">            align-self: center;</span><br><span class="line">            animation: lb 15s linear infinite;</span><br><span class="line">        &#125;</span><br><span class="line">        /*制作动画：大圆要顺时针旋转，稍慢*/</span><br><span class="line">        @-webkit-keyframes box &#123;</span><br><span class="line">            0%&#123;</span><br><span class="line">                -webkit-transform: rotate(0deg);</span><br><span class="line">            &#125;</span><br><span class="line">            100%&#123;</span><br><span class="line">                -webkit-transform: rotate(360deg);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        /*制作动画：小圆要逆时针旋转，稍快*/</span><br><span class="line">        @-webkit-keyframes lb &#123;</span><br><span class="line">            0%&#123;</span><br><span class="line">                -webkit-transform: rotate(0deg);</span><br><span class="line">            &#125;</span><br><span class="line">            100%&#123;</span><br><span class="line">                -webkit-transform: rotate(-360deg) rotateY(360deg);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div class=&quot;box&quot;&gt;</span><br><span class="line">        &lt;div class=&quot;lb&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h2 id="3D旋转相册"><a href="#3D旋转相册" class="headerlink" title="3D旋转相册"></a>3D旋转相册</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;title&gt;&lt;/title&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">body &#123;</span><br><span class="line">	background:#06081B;</span><br><span class="line">	perspective:5000px;</span><br><span class="line">&#125;</span><br><span class="line">.show &#123;</span><br><span class="line">	perspective:5000px;</span><br><span class="line">	-webkit-transform:rotateX(-45deg);</span><br><span class="line">	-moz-transform:rotateX(-45deg);</span><br><span class="line">	transform:rotateX(-45deg);</span><br><span class="line">	transform-style:preserve-3d;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">.box &#123;</span><br><span class="line">	position:relative;</span><br><span class="line">	width:150px;</span><br><span class="line">	height:250px;</span><br><span class="line"></span><br><span class="line">	margin:300px auto;</span><br><span class="line">	transform-style:preserve-3d;</span><br><span class="line">	-webkit-animation:rotate1 10s linear infinite;</span><br><span class="line">	-moz-animation:rotate1 10s linear infinite;</span><br><span class="line">	animation:rotate1 10s linear infinite;</span><br><span class="line">    background-image: url(&quot;img/IMG_E1640.JPG&quot;);</span><br><span class="line">    background-size: 100%;</span><br><span class="line">&#125;</span><br><span class="line">.box img &#123;</span><br><span class="line">	width:150px;</span><br><span class="line">	height:250px;</span><br><span class="line">	border:1px solid #ccc;</span><br><span class="line">	position:absolute;</span><br><span class="line">	left:0;</span><br><span class="line">	top:0;</span><br><span class="line">	-webkit-box-reflect:below 20px -webkit-linear-gradient(top,rgba(250,250,250,0),rgba(250,250,250,0) 30%,rgba(250,250,250,0.5));</span><br><span class="line">&#125;</span><br><span class="line">.img1 &#123;</span><br><span class="line">	-webkit-transform:translateZ(300px);</span><br><span class="line">	-moz-transform:translateZ(300px);</span><br><span class="line">	transform:translateZ(300px);</span><br><span class="line">&#125;</span><br><span class="line">.img2 &#123;</span><br><span class="line">	-webkit-transform:rotateY(36deg) translateZ(300px);</span><br><span class="line">	-moz-transform:rotateY(36deg) translateZ(300px);</span><br><span class="line">	transform:rotateY(36deg) translateZ(300px);</span><br><span class="line">&#125;</span><br><span class="line">.img3 &#123;</span><br><span class="line">	-webkit-transform:rotateY(72deg) translateZ(300px);</span><br><span class="line">	-moz-transform:rotateY(72deg) translateZ(300px);</span><br><span class="line">&#125;</span><br><span class="line">.img4 &#123;</span><br><span class="line">	-webkit-transform:rotateY(108deg) translateZ(300px);</span><br><span class="line">	-moz-transform:rotateY(108deg) translateZ(300px);</span><br><span class="line">	transform:rotateY(108deg) translateZ(300px);</span><br><span class="line">&#125;</span><br><span class="line">.img5 &#123;</span><br><span class="line">	-webkit-transform:rotateY(144deg) translateZ(300px);</span><br><span class="line">	-moz-transform:rotateY(144deg) translateZ(300px);</span><br><span class="line">	transform:rotateY(144deg) translateZ(300px);</span><br><span class="line">&#125;</span><br><span class="line">.img6 &#123;</span><br><span class="line">	-webkit-transform:rotateY(180deg) translateZ(300px);</span><br><span class="line">	-moz-transform:rotateY(180deg) translateZ(300px);</span><br><span class="line">	transform:rotateY(180deg) translateZ(300px);</span><br><span class="line">&#125;</span><br><span class="line">.img7 &#123;</span><br><span class="line">	-webkit-transform:rotateY(216deg) translateZ(300px);</span><br><span class="line">	-moz-transform:rotateY(216deg) translateZ(300px);</span><br><span class="line">	transform:rotateY(216deg) translateZ(300px);</span><br><span class="line">&#125;</span><br><span class="line">.img8 &#123;</span><br><span class="line">	-webkit-transform:rotateY(252deg) translateZ(300px);</span><br><span class="line">	-moz-transform:rotateY(252deg) translateZ(300px);</span><br><span class="line">	transform:rotateY(252deg) translateZ(300px);</span><br><span class="line">&#125;</span><br><span class="line">.img9 &#123;</span><br><span class="line">	-webkit-transform:rotateY(288deg) translateZ(300px);</span><br><span class="line">	-moz-transform:rotateY(288deg) translateZ(300px);</span><br><span class="line">	transform:rotateY(288deg) translateZ(300px);</span><br><span class="line">&#125;</span><br><span class="line">.img10 &#123;</span><br><span class="line">	-webkit-transform:rotateY(324deg) translateZ(300px);</span><br><span class="line">	-moz-transform:rotateY(324deg) translateZ(300px);</span><br><span class="line">	transform:rotateY(324deg) translateZ(300px);</span><br><span class="line">&#125;</span><br><span class="line">@-moz-keyframes rotate1 &#123;</span><br><span class="line">	0% &#123;</span><br><span class="line">	-webkit-transform:rotateY(0deg);</span><br><span class="line">	-moz-transform:rotateY(0deg);</span><br><span class="line">	transform:rotateY(0deg);</span><br><span class="line">&#125;</span><br><span class="line">100% &#123;</span><br><span class="line">	-webkit-transform:rotateY(360deg);</span><br><span class="line">	-moz-transform:rotateY(360deg);</span><br><span class="line">	transform:rotateY(360deg);</span><br><span class="line">&#125;</span><br><span class="line">&#125;@-webkit-keyframes rotate1 &#123;</span><br><span class="line">	0% &#123;</span><br><span class="line">	-webkit-transform:rotateY(0deg);</span><br><span class="line">	-moz-transform:rotateY(0deg);</span><br><span class="line">	transform:rotateY(0deg);</span><br><span class="line">&#125;</span><br><span class="line">100% &#123;</span><br><span class="line">	-webkit-transform:rotateY(360deg);</span><br><span class="line">	-moz-transform:rotateY(360deg);</span><br><span class="line">	transform:rotateY(360deg);</span><br><span class="line">&#125;</span><br><span class="line">&#125;&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div class=&quot;show&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;box&quot;&gt;</span><br><span class="line">        &lt;img src=&quot;img/IMG_E1642.JPG&quot; class=&quot;img1&quot;&gt;</span><br><span class="line">        &lt;img src=&quot;img/IMG_E1644.JPG&quot; class=&quot;img2&quot;&gt;</span><br><span class="line">        &lt;img src=&quot;img/IMG_E1640.JPG&quot; class=&quot;img3&quot;&gt;</span><br><span class="line">        &lt;img src=&quot;img/IMG_1444.JPG&quot; class=&quot;img4&quot;&gt;</span><br><span class="line">        &lt;img src=&quot;img/IMG_1440.JPG&quot; class=&quot;img5&quot;&gt;</span><br><span class="line">        &lt;img src=&quot;img/IMG_1439.JPG&quot; class=&quot;img6&quot;&gt;</span><br><span class="line">        &lt;img src=&quot;img/IMG_1430.JPG&quot; class=&quot;img7&quot;&gt;</span><br><span class="line">        &lt;img src=&quot;img/IMG_1427.JPG&quot; class=&quot;img8&quot;&gt;</span><br><span class="line">        &lt;img src=&quot;img/IMG_1429.JPG&quot; class=&quot;img9&quot;&gt;</span><br><span class="line">        &lt;img src=&quot;img/IMG_1443.JPG&quot; class=&quot;img10&quot;&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>XiAnTrain</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>培训心得 [JQuery]</title>
+    <url>/2022/07/13/xianTrain8-JQuery/</url>
+    <content><![CDATA[<p><em><strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;学习打卡第嗯-2天</strong></em></p>
+<span id="more"></span>
+<h1 id="JQuery的定义"><a href="#JQuery的定义" class="headerlink" title="JQuery的定义"></a>JQuery的定义</h1><blockquote>
+<ul>
+<li>它是javaScript的封装，它可以说是开源的JavaScript的函数</li>
+<li>简化了JavaScript开发</li>
+</ul>
+</blockquote>
+<h1 id="JQuery的下载及引用"><a href="#JQuery的下载及引用" class="headerlink" title="JQuery的下载及引用"></a>JQuery的下载及引用</h1><blockquote>
+<ul>
+<li>下载：<a href="https://jquery.com/download/">https://jquery.com/download/</a></li>
+<li>应用方法：</li>
+</ul>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script src=&quot;jquery-3.6.0.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"> &lt;script&gt;</span><br><span class="line"> //调用Jquery代码</span><br><span class="line"> &lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="JQuery选择器"><a href="#JQuery选择器" class="headerlink" title="JQuery选择器"></a>JQuery选择器</h1><blockquote>
+<ul>
+<li>JQuery选择器可以用来快速的选中一个元素，获取或修改其信息，其使用规则和CSS样式是一样的。</li>
+<li>种类<blockquote>
+<ul>
+<li>标签选择器</li>
+<li>类选择器</li>
+<li>id选择器</li>
+<li>后代选择器（层级选择器）</li>
+</ul>
+</blockquote>
+</li>
+<li>使用方法即$(CSS选择器使用规则)</li>
+</ul>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$(“#id”)</td>
+<td>$(“.class”)</td>
+<td>$(“.class ul li”)</td>
+<td>$(“div”)</td>
+</tr>
+</tbody></table>
+<h1 id="选择器过滤"><a href="#选择器过滤" class="headerlink" title="选择器过滤"></a>选择器过滤</h1><blockquote>
+<ul>
+<li>过滤就是在选择标签的集合中过滤出自己需要的标签</li>
+<li>has()<blockquote>
+<ul>
+<li>has(选择器名称)， 表示选取指定选择器的标签</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line"> &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line"> &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line"> &lt;script src=&quot;jquery-3.6.0.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"> &lt;script&gt;</span><br><span class="line"> $(function () &#123;</span><br><span class="line"> //使用has方法</span><br><span class="line"> $(&quot;div&quot;).has(&quot;#demo&quot;).css(&quot;color&quot;,&quot;red&quot;);</span><br><span class="line"> &#125;)</span><br><span class="line"> &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"> &lt;div&gt;</span><br><span class="line"> &lt;input type=&quot;text&quot;&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line"> &lt;div&gt;</span><br><span class="line"> &lt;input type=&quot;text&quot; id=&quot;demo&quot;&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<blockquote>
+<ul>
+<li>eq(索引)，表示选取指定索引的元素</li>
+</ul>
+</blockquote>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line"> &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line"> &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line"> &lt;script src=&quot;jquery-3.6.0.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"> &lt;script&gt;</span><br><span class="line"> $(function () &#123;</span><br><span class="line"> $(&quot;div&quot;).eq(0).children().css(&quot;color&quot;,&quot;red&quot;);</span><br><span class="line"> &#125;)</span><br><span class="line"> &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"> &lt;div&gt;</span><br><span class="line"> &lt;input type=&quot;text&quot; placeholder=&quot;这是第一个div里面的input&quot;&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line"> &lt;div&gt;</span><br><span class="line"> &lt;input type=&quot;text&quot; placeholder=&quot;这是第二个div里面的input&quot;&gt;</span><br><span class="line"> &lt;input type=&quot;submit&quot;&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>选择转移<blockquote>
+<ul>
+<li>我们可以以一个元素为参照，找到其它元素（节点选择）</li>
+<li>详细如下：<blockquote>
+<p>$(‘#box’).prev(); 表示选择id是box元素的兄弟节点<br>$(‘#box’).prevAll(); 表示选择id是box元素的上面所有的同级元素<br>$(‘#box’).next(); 表示选择id是box元素的兄弟节点<br>$(‘#box’).nextAll(); 表示选择id是box元素的下面所有的同级元素<br>$(‘#box’).parent(); 表示选择id是box元素的父元素<br>$(‘#box’).children(); 表示选择id是box元素的所有子元素<br>$(‘#box’).siblings(); 表示选择id是box元素的其它同级元素<br>$(‘#box’).find(‘.myClass’); 表示选择id是box元素的class等于myClass的元素</p>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line"> &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line"> &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line"> &lt;script src=&quot;jquery-3.6.0.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"> &lt;script&gt;</span><br><span class="line"> $(function () &#123;</span><br><span class="line"> //确定参照节点</span><br><span class="line"> var $div = $(&quot;#demo&quot;);</span><br><span class="line"> $div.prev().css(&quot;color&quot;,&quot;red&quot;);</span><br><span class="line"> $div.prevAll().css(&quot;font-size&quot;,33);</span><br><span class="line"> $div.next().css(&quot;color&quot;,&quot;blue&quot;);</span><br><span class="line"> $div.nextAll().css(&quot;background&quot;,&quot;gray&quot;);</span><br><span class="line"> $div.parent().css(&quot;background&quot;,&quot;#ff6700&quot;);</span><br><span class="line"> $div.children().css(&quot;color&quot;,&quot;gold&quot;);</span><br><span class="line"> &#125;)</span><br><span class="line"> &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"> &lt;h1&gt;这是一个标题&lt;/h1&gt;</span><br><span class="line">  &lt;p&gt;这是一个段落&lt;/p&gt;</span><br><span class="line"> &lt;div id=&quot;demo&quot;&gt;这是一个div</span><br><span class="line"> &lt;span&gt;这是div里面的span&lt;/span&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line"> &lt;h3&gt;这又是一个标题&lt;/h3&gt;</span><br><span class="line"> &lt;a href=&quot;#&quot;&gt;这是一个a标签&lt;/a&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>html方法的使用<blockquote>
+<ul>
+<li>在jquery中可以通过html属性为元素设置html内容</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line"> &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line"> &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line"> &lt;script src=&quot;jquery-3.6.0.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"> &lt;script&gt;</span><br><span class="line"> $(function () &#123;</span><br><span class="line"> var $div = $(&quot;#demo&quot;);</span><br><span class="line"> //如果要获取内容</span><br><span class="line"> var rs = $div.html();</span><br><span class="line"> alert(rs)</span><br><span class="line"> $div.html(&quot;&lt;span style=&#x27;color: red&#x27;&gt;哈嘿~~~~&lt;/span&gt;&quot;);</span><br><span class="line"> //在元素后追加内容</span><br><span class="line"> $div.append(&quot;&lt;span style=&#x27;color: red&#x27;&gt;大宝贝&lt;/span&gt;&quot;);</span><br><span class="line"> &#125;)</span><br><span class="line"> &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"> &lt;div id=&quot;demo&quot;&gt;</span><br><span class="line"> &lt;p&gt;这是字&lt;/p&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>获取和设置元素的属性<blockquote>
+<ul>
+<li>prop方法：css方法可以设置元素的样式属性，而该方法可以设置元素的其他属性</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line"> &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line"> &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line"> &lt;script src=&quot;jquery-3.6.0.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"> &lt;script&gt;</span><br><span class="line"> $(function () &#123;</span><br><span class="line"> var $a = $(&quot;#aId&quot;);</span><br><span class="line"> var $input = $(&quot;#InputId&quot;);</span><br><span class="line"> //可以获取</span><br><span class="line"> var Sa = $a.prop(&quot;id&quot;);</span><br><span class="line"> // alert(Sa);</span><br><span class="line"> //设置元素属性</span><br><span class="line"> $a.prop(&#123;&quot;href&quot;:&quot;http://www.baidu.com&quot;,&quot;class&quot;:&quot;aClass&quot;,&quot;title&quot;:&quot;这是</span><br><span class="line">标题&quot;&#125;);</span><br><span class="line"> //获取input中的属性value使用的是val()方法</span><br><span class="line"> // var Sinput = $input.prop(&quot;value&quot;);</span><br><span class="line"> // alert(Sinput);</span><br><span class="line"> var Sinput = $input.val();</span><br><span class="line"> alert(Sinput);</span><br><span class="line"> //设置value值</span><br><span class="line"> $input.val(&quot;12313212&quot;);</span><br><span class="line"> &#125;)</span><br><span class="line"> &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"> &lt;a id=&quot;aId&quot;&gt;这是a标签&lt;/a&gt;</span><br><span class="line"> &lt;input id=&quot;InputId&quot; type=&quot;text&quot; value=&quot;123&quot;/&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<h1 id="JQuery事件"><a href="#JQuery事件" class="headerlink" title="JQuery事件"></a>JQuery事件</h1><blockquote>
+<ul>
+<li>常用事件<blockquote>
+<ul>
+<li>click()鼠标点击事件</li>
+<li>blur() 离焦事件</li>
+<li>focus() 聚焦事件</li>
+<li>mouseover() 鼠标进入事件</li>
+<li>mouseout() 鼠标离开事件</li>
+<li>ready() DOM加载完毕触发</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line"> &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line"> &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line"> &lt;script src=&quot;jquery-3.6.0.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"> &lt;script&gt;</span><br><span class="line"> $(function () &#123;</span><br><span class="line"> var $li = $(&quot;.list li&quot;);</span><br><span class="line"> var $input = $(&quot;#in_one&quot;);</span><br><span class="line"> var $btn = $(&quot;#btn&quot;);</span><br><span class="line"> var $div = $(&quot;#demo&quot;);</span><br><span class="line"> //点击事件</span><br><span class="line"> $li.click(function () &#123;</span><br><span class="line"> $(this).css(&#123;&quot;background&quot;:&quot;red&quot;&#125;);</span><br><span class="line"> //index()方法可以获取当前元素的索引值</span><br><span class="line"> //alert($(this).index())</span><br><span class="line"> &#125;);</span><br><span class="line"> //获取焦点</span><br><span class="line">$input.focus(function () &#123;</span><br><span class="line"> $(this).val(&quot;嗨嗨嘿&quot;);</span><br><span class="line"> &#125;)</span><br><span class="line"> &#125;)</span><br><span class="line"> &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"> &lt;div id=&quot;demo&quot;&gt;</span><br><span class="line"> &lt;ul class=&quot;list&quot;&gt;</span><br><span class="line"> &lt;li&gt;这是一行字&lt;/li&gt;</span><br><span class="line"> &lt;li&gt;这是一行字&lt;/li&gt;</span><br><span class="line"> &lt;li&gt;这是一行字&lt;/li&gt;</span><br><span class="line"> &lt;li&gt;这是一行字&lt;/li&gt;</span><br><span class="line"> &lt;/ul&gt;</span><br><span class="line"> &lt;input type=&quot;text&quot; id=&quot;in_one&quot;/&gt;</span><br><span class="line"> &lt;input type=&quot;submit&quot; id=&quot;btn&quot; value=&quot;点一下&quot;/&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>XiAnTrain</category>
       </categories>
@@ -1405,134 +2918,6 @@ elementN:  可选。可向数组添加若干元素。
       </categories>
   </entry>
   <entry>
-    <title>培训心得 [JQuery]</title>
-    <url>/2022/07/13/xianTrain8-JQuery/</url>
-    <content><![CDATA[<p><em><strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;学习打卡第嗯-2天</strong></em></p>
-<span id="more"></span>
-<h1 id="JQuery的定义"><a href="#JQuery的定义" class="headerlink" title="JQuery的定义"></a>JQuery的定义</h1><blockquote>
-<ul>
-<li>它是javaScript的封装，它可以说是开源的JavaScript的函数</li>
-<li>简化了JavaScript开发</li>
-</ul>
-</blockquote>
-<h1 id="JQuery的下载及引用"><a href="#JQuery的下载及引用" class="headerlink" title="JQuery的下载及引用"></a>JQuery的下载及引用</h1><blockquote>
-<ul>
-<li>下载：<a href="https://jquery.com/download/">https://jquery.com/download/</a></li>
-<li>应用方法：</li>
-</ul>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script src=&quot;jquery-3.6.0.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"> &lt;script&gt;</span><br><span class="line"> //调用Jquery代码</span><br><span class="line"> &lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<h1 id="JQuery选择器"><a href="#JQuery选择器" class="headerlink" title="JQuery选择器"></a>JQuery选择器</h1><blockquote>
-<ul>
-<li>JQuery选择器可以用来快速的选中一个元素，获取或修改其信息，其使用规则和CSS样式是一样的。</li>
-<li>种类<blockquote>
-<ul>
-<li>标签选择器</li>
-<li>类选择器</li>
-<li>id选择器</li>
-<li>后代选择器（层级选择器）</li>
-</ul>
-</blockquote>
-</li>
-<li>使用方法即$(CSS选择器使用规则)</li>
-</ul>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>$(“#id”)</td>
-<td>$(“.class”)</td>
-<td>$(“.class ul li”)</td>
-<td>$(“div”)</td>
-</tr>
-</tbody></table>
-<h1 id="选择器过滤"><a href="#选择器过滤" class="headerlink" title="选择器过滤"></a>选择器过滤</h1><blockquote>
-<ul>
-<li>过滤就是在选择标签的集合中过滤出自己需要的标签</li>
-<li>has()<blockquote>
-<ul>
-<li>has(选择器名称)， 表示选取指定选择器的标签</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line"> &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line"> &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line"> &lt;script src=&quot;jquery-3.6.0.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"> &lt;script&gt;</span><br><span class="line"> $(function () &#123;</span><br><span class="line"> //使用has方法</span><br><span class="line"> $(&quot;div&quot;).has(&quot;#demo&quot;).css(&quot;color&quot;,&quot;red&quot;);</span><br><span class="line"> &#125;)</span><br><span class="line"> &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"> &lt;div&gt;</span><br><span class="line"> &lt;input type=&quot;text&quot;&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line"> &lt;div&gt;</span><br><span class="line"> &lt;input type=&quot;text&quot; id=&quot;demo&quot;&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<blockquote>
-<ul>
-<li>eq(索引)，表示选取指定索引的元素</li>
-</ul>
-</blockquote>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line"> &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line"> &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line"> &lt;script src=&quot;jquery-3.6.0.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"> &lt;script&gt;</span><br><span class="line"> $(function () &#123;</span><br><span class="line"> $(&quot;div&quot;).eq(0).children().css(&quot;color&quot;,&quot;red&quot;);</span><br><span class="line"> &#125;)</span><br><span class="line"> &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"> &lt;div&gt;</span><br><span class="line"> &lt;input type=&quot;text&quot; placeholder=&quot;这是第一个div里面的input&quot;&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line"> &lt;div&gt;</span><br><span class="line"> &lt;input type=&quot;text&quot; placeholder=&quot;这是第二个div里面的input&quot;&gt;</span><br><span class="line"> &lt;input type=&quot;submit&quot;&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<ul>
-<li>选择转移<blockquote>
-<ul>
-<li>我们可以以一个元素为参照，找到其它元素（节点选择）</li>
-<li>详细如下：<blockquote>
-<p>$(‘#box’).prev(); 表示选择id是box元素的兄弟节点<br>$(‘#box’).prevAll(); 表示选择id是box元素的上面所有的同级元素<br>$(‘#box’).next(); 表示选择id是box元素的兄弟节点<br>$(‘#box’).nextAll(); 表示选择id是box元素的下面所有的同级元素<br>$(‘#box’).parent(); 表示选择id是box元素的父元素<br>$(‘#box’).children(); 表示选择id是box元素的所有子元素<br>$(‘#box’).siblings(); 表示选择id是box元素的其它同级元素<br>$(‘#box’).find(‘.myClass’); 表示选择id是box元素的class等于myClass的元素</p>
-</blockquote>
-</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line"> &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line"> &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line"> &lt;script src=&quot;jquery-3.6.0.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"> &lt;script&gt;</span><br><span class="line"> $(function () &#123;</span><br><span class="line"> //确定参照节点</span><br><span class="line"> var $div = $(&quot;#demo&quot;);</span><br><span class="line"> $div.prev().css(&quot;color&quot;,&quot;red&quot;);</span><br><span class="line"> $div.prevAll().css(&quot;font-size&quot;,33);</span><br><span class="line"> $div.next().css(&quot;color&quot;,&quot;blue&quot;);</span><br><span class="line"> $div.nextAll().css(&quot;background&quot;,&quot;gray&quot;);</span><br><span class="line"> $div.parent().css(&quot;background&quot;,&quot;#ff6700&quot;);</span><br><span class="line"> $div.children().css(&quot;color&quot;,&quot;gold&quot;);</span><br><span class="line"> &#125;)</span><br><span class="line"> &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"> &lt;h1&gt;这是一个标题&lt;/h1&gt;</span><br><span class="line">  &lt;p&gt;这是一个段落&lt;/p&gt;</span><br><span class="line"> &lt;div id=&quot;demo&quot;&gt;这是一个div</span><br><span class="line"> &lt;span&gt;这是div里面的span&lt;/span&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line"> &lt;h3&gt;这又是一个标题&lt;/h3&gt;</span><br><span class="line"> &lt;a href=&quot;#&quot;&gt;这是一个a标签&lt;/a&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<blockquote>
-<ul>
-<li>html方法的使用<blockquote>
-<ul>
-<li>在jquery中可以通过html属性为元素设置html内容</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line"> &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line"> &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line"> &lt;script src=&quot;jquery-3.6.0.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"> &lt;script&gt;</span><br><span class="line"> $(function () &#123;</span><br><span class="line"> var $div = $(&quot;#demo&quot;);</span><br><span class="line"> //如果要获取内容</span><br><span class="line"> var rs = $div.html();</span><br><span class="line"> alert(rs)</span><br><span class="line"> $div.html(&quot;&lt;span style=&#x27;color: red&#x27;&gt;哈嘿~~~~&lt;/span&gt;&quot;);</span><br><span class="line"> //在元素后追加内容</span><br><span class="line"> $div.append(&quot;&lt;span style=&#x27;color: red&#x27;&gt;大宝贝&lt;/span&gt;&quot;);</span><br><span class="line"> &#125;)</span><br><span class="line"> &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"> &lt;div id=&quot;demo&quot;&gt;</span><br><span class="line"> &lt;p&gt;这是字&lt;/p&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<ul>
-<li>获取和设置元素的属性<blockquote>
-<ul>
-<li>prop方法：css方法可以设置元素的样式属性，而该方法可以设置元素的其他属性</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line"> &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line"> &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line"> &lt;script src=&quot;jquery-3.6.0.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"> &lt;script&gt;</span><br><span class="line"> $(function () &#123;</span><br><span class="line"> var $a = $(&quot;#aId&quot;);</span><br><span class="line"> var $input = $(&quot;#InputId&quot;);</span><br><span class="line"> //可以获取</span><br><span class="line"> var Sa = $a.prop(&quot;id&quot;);</span><br><span class="line"> // alert(Sa);</span><br><span class="line"> //设置元素属性</span><br><span class="line"> $a.prop(&#123;&quot;href&quot;:&quot;http://www.baidu.com&quot;,&quot;class&quot;:&quot;aClass&quot;,&quot;title&quot;:&quot;这是</span><br><span class="line">标题&quot;&#125;);</span><br><span class="line"> //获取input中的属性value使用的是val()方法</span><br><span class="line"> // var Sinput = $input.prop(&quot;value&quot;);</span><br><span class="line"> // alert(Sinput);</span><br><span class="line"> var Sinput = $input.val();</span><br><span class="line"> alert(Sinput);</span><br><span class="line"> //设置value值</span><br><span class="line"> $input.val(&quot;12313212&quot;);</span><br><span class="line"> &#125;)</span><br><span class="line"> &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"> &lt;a id=&quot;aId&quot;&gt;这是a标签&lt;/a&gt;</span><br><span class="line"> &lt;input id=&quot;InputId&quot; type=&quot;text&quot; value=&quot;123&quot;/&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-
-<h1 id="JQuery事件"><a href="#JQuery事件" class="headerlink" title="JQuery事件"></a>JQuery事件</h1><blockquote>
-<ul>
-<li>常用事件<blockquote>
-<ul>
-<li>click()鼠标点击事件</li>
-<li>blur() 离焦事件</li>
-<li>focus() 聚焦事件</li>
-<li>mouseover() 鼠标进入事件</li>
-<li>mouseout() 鼠标离开事件</li>
-<li>ready() DOM加载完毕触发</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line"> &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line"> &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line"> &lt;script src=&quot;jquery-3.6.0.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"> &lt;script&gt;</span><br><span class="line"> $(function () &#123;</span><br><span class="line"> var $li = $(&quot;.list li&quot;);</span><br><span class="line"> var $input = $(&quot;#in_one&quot;);</span><br><span class="line"> var $btn = $(&quot;#btn&quot;);</span><br><span class="line"> var $div = $(&quot;#demo&quot;);</span><br><span class="line"> //点击事件</span><br><span class="line"> $li.click(function () &#123;</span><br><span class="line"> $(this).css(&#123;&quot;background&quot;:&quot;red&quot;&#125;);</span><br><span class="line"> //index()方法可以获取当前元素的索引值</span><br><span class="line"> //alert($(this).index())</span><br><span class="line"> &#125;);</span><br><span class="line"> //获取焦点</span><br><span class="line">$input.focus(function () &#123;</span><br><span class="line"> $(this).val(&quot;嗨嗨嘿&quot;);</span><br><span class="line"> &#125;)</span><br><span class="line"> &#125;)</span><br><span class="line"> &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"> &lt;div id=&quot;demo&quot;&gt;</span><br><span class="line"> &lt;ul class=&quot;list&quot;&gt;</span><br><span class="line"> &lt;li&gt;这是一行字&lt;/li&gt;</span><br><span class="line"> &lt;li&gt;这是一行字&lt;/li&gt;</span><br><span class="line"> &lt;li&gt;这是一行字&lt;/li&gt;</span><br><span class="line"> &lt;li&gt;这是一行字&lt;/li&gt;</span><br><span class="line"> &lt;/ul&gt;</span><br><span class="line"> &lt;input type=&quot;text&quot; id=&quot;in_one&quot;/&gt;</span><br><span class="line"> &lt;input type=&quot;submit&quot; id=&quot;btn&quot; value=&quot;点一下&quot;/&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>XiAnTrain</category>
-      </categories>
-  </entry>
-  <entry>
     <title>培训心得[Java语言概述]</title>
     <url>/2022/07/15/xianTrain9-JavaSummary/</url>
     <content><![CDATA[<p><em><strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Java基础学习打卡第1天<br>学习链接：<a href="https://www.yuque.com/docs/share/8290264f-2175-46ce-8b20-711eac7ac369#">https://www.yuque.com/docs/share/8290264f-2175-46ce-8b20-711eac7ac369?#</a> 《第1章 Java语言概述》密码：syl5</strong></em></p>
@@ -1611,112 +2996,6 @@ elementN:  可选。可向数组添加若干元素。
 </blockquote>
 </blockquote>
 <p><b>注意事项：</b><br>1、Java源文件的命名和类名一致，并且首字符大写，如果有多个单词，所有单词的首字母均大写</p>
-<h2 id="java标识符"><a href="#java标识符" class="headerlink" title="java标识符"></a>java标识符</h2><blockquote>
-<ul>
-<li>标识符：类名、方法名、变量名<blockquote>
-<ul>
-<li>可以包含数字、字母、下划线、$</li>
-<li>不能数字开头</li>
-<li>不能使用Java关键字<table>
-<thead>
-<tr>
-<th>abstract</th>
-<th>continue</th>
-<th>for</th>
-<th>new</th>
-<th>switch</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>assert</td>
-<td>default</td>
-<td>if</td>
-<td>package</td>
-<td>synchronized</td>
-</tr>
-<tr>
-<td>boolean</td>
-<td>do</td>
-<td>goto</td>
-<td>private</td>
-<td>this</td>
-</tr>
-<tr>
-<td>break</td>
-<td>double</td>
-<td>implements</td>
-<td>protected</td>
-<td>throw</td>
-</tr>
-<tr>
-<td>byte</td>
-<td>else</td>
-<td>import</td>
-<td>public</td>
-<td>throw</td>
-</tr>
-<tr>
-<td>case</td>
-<td>enum</td>
-<td>instanceof</td>
-<td>return</td>
-<td>transient</td>
-</tr>
-<tr>
-<td>catch</td>
-<td>extends</td>
-<td>int</td>
-<td>short</td>
-<td>try</td>
-</tr>
-<tr>
-<td>char</td>
-<td>final</td>
-<td>interface</td>
-<td>static</td>
-<td>void</td>
-</tr>
-<tr>
-<td>class</td>
-<td>finally</td>
-<td>long</td>
-<td>strictfp</td>
-<td>volatile</td>
-</tr>
-<tr>
-<td>const</td>
-<td>float</td>
-<td>native</td>
-<td>super</td>
-<td></td>
-</tr>
-<tr>
-<td>while</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-</blockquote>
-<h2 id="Java命名方式"><a href="#Java命名方式" class="headerlink" title="Java命名方式"></a>Java命名方式</h2><blockquote>
-<ul>
-<li>帕斯卡命名法：所有单词首字母均大写。适用于类名，例如：StudentManager</li>
-<li>驼峰命名法：第一个单词的首字母小写，如果有多个但是，其余单词首字母均大写，适用于方法名，变量名。例如：studentAge，studentGender</li>
-</ul>
-</blockquote>
-<h2 id="Java数据类型"><a href="#Java数据类型" class="headerlink" title="Java数据类型"></a>Java数据类型</h2><blockquote>
-<ul>
-<li>基本类型：byte short int long float double boolean char</li>
-<li>引用类型: 数组， 类，接口</li>
-</ul>
-</blockquote>
-<p><a href="https://www.yuque.com/docs/share/b9feb7da-7c3c-4ccb-8542-52a34ad5d965#">https://www.yuque.com/docs/share/b9feb7da-7c3c-4ccb-8542-52a34ad5d965?#</a> 《第2章 Java数据类型和运算符》密码：ekp0</p>
 <p><a href="https://www.yuque.com/docs/share/89bb9cac-ccd1-44dd-b2e2-e11933c44c39#">https://www.yuque.com/docs/share/89bb9cac-ccd1-44dd-b2e2-e11933c44c39?#</a> 《第3章 流程控制》密码：zk84</p>
 <h1 id="课后作业"><a href="#课后作业" class="headerlink" title="课后作业"></a>课后作业</h1><p>1、请简述你对java的认识</p>
 <blockquote>
