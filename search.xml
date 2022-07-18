@@ -2363,6 +2363,71 @@ body .markdown-body
 </ul>
 </blockquote>
 <h3 id="字符型"><a href="#字符型" class="headerlink" title="字符型"></a>字符型</h3><p>字符型占两个字符，通常表示单个字符，字符型值必须要用单引号括起来。Java语言使用16位的Unicode字符集作为编码方式。<br>字符型值有3种表示形式。</p>
+<h3 id="整数-1"><a href="#整数-1" class="headerlink" title="整数"></a>整数</h3><blockquote>
+<ul>
+<li>整数通常可以分为以下4种：<blockquote>
+<ul>
+<li>byte:占一个字节（占8位）,可表示范围：-128 ——— 127</li>
+<li>short:占2个字节（占16位）,可表示范围：-2^15 ——— 2^15-1</li>
+<li>int:占4个字节（占32位），可表示范围：-2^31 ——— 2^31-1</li>
+<li>long:占8个字节（占64位），可表示范围：-2^31 ——— 2^31-1(定义时需要在数值后添加<code>L</code>)</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>JAVA中整数值有四种表示方式：十进制、二进制、十六进制、八进制，其中二进制的整数以<code>0b</code>或者<code>0B</code>开头；八进制的整数以<code>0</code>开头;十六进制的整数以<code>0x</code>或者<code>0X</code>开头，其中10-15分别以a-f表示。</li>
+</ul>
+</blockquote>
+<h3 id="浮点数-1"><a href="#浮点数-1" class="headerlink" title="浮点数"></a>浮点数</h3><blockquote>
+<ul>
+<li>浮点数可以分为：<code>float</code>和<code>double</code>。<blockquote>
+<ul>
+<li>float类型:占四个字节，第一位表示符号位，接下来8位表示指数，接下来的23位表示尾数；</li>
+<li>double类型:占八个字节，第一位表示符号位，接下来11位表示指数，接下来的52位表示尾数；</li>
+</ul>
+</blockquote>
+</li>
+<li>浮点数可用十进制和科学计数法进行表示</li>
+<li>java还提供了特殊的浮点数：正无穷大（infinity）、负无穷大（-infinity）、非数（NaN）。<br>注意：所有的正无穷大都是相等的，所有的负无穷大都是相等的，但是NAN与任何数值都不想等，甚至和NAN都不相等。另外，只有浮点数以0才可以得到正无穷大或者负无穷大，如果一个整数除以0，则会抛出一个异常。</li>
+</ul>
+</blockquote>
+<h3 id="字符型-1"><a href="#字符型-1" class="headerlink" title="字符型"></a>字符型</h3><p>字符型占两个字符，通常表示单个字符，字符型值必须要用单引号括起来。Java语言使用16位的Unicode字符集作为编码方式。<br>字符型值有3种表示形式。</p>
+<h2 id="基本类型的转换"><a href="#基本类型的转换" class="headerlink" title="基本类型的转换"></a>基本类型的转换</h2><blockquote>
+<p>转换的方式有两种：自动类型转换和强制类型转换<br>java中当把一个表示范围小的数值或变量赋值给另一个表示范围大的变量时，系统将自动进行转换，反之需要强制转换。</p>
+</blockquote>
+<h3 id="自动类型转换"><a href="#自动类型转换" class="headerlink" title="自动类型转换"></a>自动类型转换</h3><blockquote>
+<p>自动转换可以理解为将一个小容器的桶中的水倒入大容量的桶中，当小容量桶中的水倒入大容量的桶时通常不会有什么问题，但是当把大容量的桶中的水倒入小容量的桶就很容易溢出的情况</p>
+</blockquote>
+<p>########这需要插个图</p>
+<h3 id="强制类型转换"><a href="#强制类型转换" class="headerlink" title="强制类型转换"></a>强制类型转换</h3><blockquote>
+<p>格式：<code>(targetType)value</code>;<br>注意：这种类型转换容易造成数据的溢出</p>
+</blockquote>
+<h3 id="自动类型提升"><a href="#自动类型提升" class="headerlink" title="自动类型提升"></a>自动类型提升</h3><blockquote>
+<p>当一个算数表达式中包含多个基本类型的值时，整个算是表达式的数据类型讲噶生自动提升，提升的规则如下：</p>
+<blockquote>
+<ul>
+<li>所有的byte、short和char类型被提升到int类型</li>
+<li>整个算数表达式的数据类型自动提升到表达式中最高等级操作数相同的类型。</li>
+</ul>
+</blockquote>
+</blockquote>
+<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><blockquote>
+<p>java的运算符可以分为以下几类：</p>
+<ul>
+<li>算术运算符</li>
+<li>赋值运算符</li>
+<li>比较运算符</li>
+<li>逻辑运算符</li>
+<li>位运算符</li>
+<li>类型相关的运算符</li>
+</ul>
+</blockquote>
+<h3 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h3><blockquote>
+<p>用于执行基本的数学运算:加（+）、减（-）、乘（*）、除（/）、取余（%）</p>
+</blockquote>
 ]]></content>
       <categories>
         <category>XiAnTrain</category>
