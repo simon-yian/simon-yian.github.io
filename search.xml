@@ -388,6 +388,113 @@
 ]]></content>
   </entry>
   <entry>
+    <title>在VMware16中创建虚拟机安装ubuntu 21.04系统</title>
+    <url>/2021/10/18/VMware-ubuntu/</url>
+    <content><![CDATA[<table>
+<tr><td bgcolor="CFCFCF">此篇是创建VMware16虚拟机安装ubuntu21.04系统的超详细操作过程，希望对小白白有所帮助
+</td></tr></table>
+
+<span id="more"></span>
+
+<p>安装环境： windows 10</p>
+<p>VMware 16安装包：我用阿里云盘分享了「VMware-workstation-full-16.1.2-17966106.exe」，你可以不限速下载🚀<br>复制这段内容打开「阿里云盘」App 即可获取<br>链接：<a href="https://www.aliyundrive.com/s/7acSRwmGho2">https://www.aliyundrive.com/s/7acSRwmGho2</a></p>
+<p>ubuntu 21.04镜像：链接：<a href="https://pan.baidu.com/s/1ktE78cieRE9Y7_BhrG9vjQ">https://pan.baidu.com/s/1ktE78cieRE9Y7_BhrG9vjQ</a><br>提取码：n9ms</p>
+<h3 id="安装VMware-16"><a href="#安装VMware-16" class="headerlink" title="安装VMware 16"></a>安装VMware 16</h3><p>1、 直接双击下载好的VMware，这个过程可能会显示重新启动系统，那你点就是了。重新启动后再次双击下载好的VMware，然后点击【下一步】。</p>
+<img src="https://i.loli.net/2021/10/18/X4BvRZr2LKb5SyD.jpg" width="850" height="400" div align="right">
+
+<p>2、勾选【我接受许可协议中的条款】，点击【下一步】</p>
+<img src="https://i.loli.net/2021/10/18/Prph8EuT6vaHiyQ.jpg" width="850" height="400" div align="right">
+
+<p>3、可以默认，也可更改安装位置</p>
+<img src="https://i.loli.net/2021/10/18/DqtysojVQrFE2R9.jpg" width="850" height="400" div align="right">
+
+<p>4、选择安装位置，然后点击【确定】</p>
+<img src="https://i.loli.net/2021/10/18/VzTAbUosOP4dK3W.jpg" width="850" height="400" div align="right">
+
+<p>5、点击【下一步】</p>
+<img src="https://i.loli.net/2021/10/18/DqtysojVQrFE2R9.jpg" width="850" height="400" div align="right">
+
+<p>6、取消勾选【启动时检查产品更新】和【加入VMware客户体验改进计划】，点击【下一步</p>
+<img src="https://i.loli.net/2021/10/18/ONQ954xcuaLZYBK.jpg" width="850" height="400" div align="right">
+
+<p>7、点击【下一步】</p>
+<img src="https://i.loli.net/2021/10/18/n2RPhJVXakzLgHU.jpg" width="850" height="400" div align="right">
+
+<p>8、点击【安装】</p>
+<img src="https://i.loli.net/2021/10/18/xe8kFh4T72tSAld.jpg" width="850" height="400" div align="right">
+
+<p>9、正在安装，等待几分钟</p>
+<img src="https://i.loli.net/2021/10/18/KzBpH8OeDyn5V3F.jpg" width="850" height="400" div align="right">
+
+<p>10、点击【许可证】</p>
+<img src="https://i.loli.net/2021/10/18/AaUSlwWnMCFJ3c1.jpg" width="850" height="400" div align="right">
+
+<p>11、框中输入许可证：ZF3R0-FHED2-M80TY-8QYGC-NPKYF，（复制粘贴就可以）然后点击【输入】</p>
+<p>12、点击【完成】</p>
+<p>恭喜你这会你的虚拟机已经安装好了，是不是直接点击下一步就可以</p>
+<h3 id="在VMware中安装ubuntu-21-04系统"><a href="#在VMware中安装ubuntu-21-04系统" class="headerlink" title="在VMware中安装ubuntu 21.04系统"></a>在VMware中安装ubuntu 21.04系统</h3><p>1、双击打开你创建在桌面的虚拟机，然后点击【创建新的虚拟机】</p>
+<img src="https://i.loli.net/2021/10/18/QWASzB7OuMIb6xm.jpg" width="850" height="400" div align="right">
+
+<p>2、选择【典型】（默认便是典型），点击【下一步】</p>
+<img src="https://i.loli.net/2021/10/18/9CzmqQYUDNeRo56.jpg" width="850" height="400" div align="right">
+
+<p>3、选择【稍后安装操作系统】，点击【下一步】</p>
+<img src="https://i.loli.net/2021/10/18/XZi389ajePvqRDk.jpg" width="850" height="400" div align="right">
+
+<p>4、客户机操作系统选择【Linux】，版本选择【Ubuntu64位】，然后点击【下一步】</p>
+<img src="https://i.loli.net/2021/10/18/XAgZ4IvWTji5CUK.jpg" width="850" height="400" div align="right">
+
+<p>5、位置可更改，点击【下一步】</p>
+<img src="https://i.loli.net/2021/10/18/owxQLiVrmWdJsYa.jpg" width="850" height="400" div align="right">
+
+<p>6、最大磁盘大小【20】GB，选择【将虚拟机磁盘拆分成多个文件】，然后点击【下一步】</p>
+<img src="https://i.loli.net/2021/10/18/DKBEnuG6or3f4wx.jpg" width="850" height="400" div align="right">
+
+<p>7、点击【自定义硬件】</p>
+<img src="https://i.loli.net/2021/10/18/VlZBfoPbR9e8MSc.jpg" width="850" height="400" div align="right">
+
+<p>8、选择【内存】，此虚拟机的内存设为【2048MB】</p>
+<img src="https://i.loli.net/2021/10/18/AdjlBFmEVDNhr1O.jpg" width="850" height="400" div align="right">
+
+<p>9、选择【新CD/DVD(TATA)】后选择【使用ISO映像文件】，点击【浏览】，找到下载后文件夹里面的【ubuntu-21.04-desktop-amd64.iso】这个镜像并选择！</p>
+<img src="https://i.loli.net/2021/10/18/C8p4cyMIBuGbYWU.jpg" width="850" height="400" div align="right">
+
+<p>10、选择【网络适配器】，然后选择【仅主机模式】</p>
+<img src="https://i.loli.net/2021/10/18/IyBJxuMrLhml3Ko.jpg" width="850" height="400" div align="right">
+
+<p>11、选择【USB控制器】，点击【移除】</p>
+<img src="https://i.loli.net/2021/10/18/HwJm6DONtYMhFCz.jpg" width="850" height="400" div align="right">
+
+<p>12、选择【打印机】，点击【移除】</p>
+<img src="https://i.loli.net/2021/10/18/cjkhgORexpbFm4K.jpg" width="850" height="400" div align="right">
+
+<p>13、点击【关闭】</p>
+<img src="https://i.loli.net/2021/10/18/pfz13yURdGDW8qI.jpg" width="850" height="400" div align="right">
+
+<p>14、点击【完成】</p>
+<img src="https://i.loli.net/2021/10/18/VlZBfoPbR9e8MSc.jpg" width="850" height="400" div align="right">
+
+<p><font color="red" size="5"> 实在没有耐心放图片了，等闲了再贴图片吧,相信自己即使看文字你也可以安装完成的，加油！</font></p>
+<p>15、点击【开启此虚拟机】，等待开启</p>
+<p>16、择【中文简体】，点击【安装Ubuntu】</p>
+<p>17、点击【继续】</p>
+<p>18、点击【继续】</p>
+<p>19、点击【现在安装】</p>
+<p>20、点击【继续】</p>
+<p>21、这里默认【Shanghai】就OK</p>
+<p>22、创建用户账号（记住密码哦！）。不要担心你的计算机名是什么，你只需要输入姓名，计算机名就会自动生成。然后点击[继续]</p>
+<p>23、安装中，耐心等待（这个可能需要多点时间）</p>
+<p>24、点击【现在重启】，重启一会看屏幕中下方转圈其他都不动，键盘上点击【enter】</p>
+<p>25、点击账户，我这里是【simon-yian】</p>
+<p>26、输入之前创建用户账号时设的密码，然后点击【登录】</p>
+<p>27、至此Ubuntu系统安装完成！</p>
+<p><font color="red"><b>如果你觉得可以千万不要忘记动动你的小手，赞赏一下贫困的博客主</b><br><b>记得收藏啊，以后会有更好的内容给您分享</b></font></p>
+]]></content>
+      <categories>
+        <category>VMware</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Spring知识点梳理：</title>
     <url>/2021/11/27/SpringFrame/</url>
     <content><![CDATA[ <img src="https://i.loli.net/2021/11/15/vKFjo15HqAybLmE.png" align="center" width="600" height="400" div>
@@ -531,113 +638,6 @@
 <p>请求处理的Controller</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package com.lz.xbmu.controller;</span><br><span class="line">import java.io.File;</span><br><span class="line">import java.io.IOException;</span><br><span class="line">import java.io.UnsupportedEncodingException;</span><br><span class="line">import java.net.URLEncoder;</span><br><span class="line">import javax.servlet.http.HttpServletRequest;</span><br><span class="line">import org.apache.commons.io.FileUtils;</span><br><span class="line">import org.springframework.http.HttpHeaders;</span><br><span class="line">import org.springframework.http.HttpStatus;</span><br><span class="line">import org.springframework.http.MediaType;</span><br><span class="line">import org.springframework.http.ResponseEntity;</span><br><span class="line">import org.springframework.stereotype.Controller;</span><br><span class="line">import org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line">@Controller</span><br><span class="line">public class FileDownloadController &#123;</span><br><span class="line"> @RequestMapping(&quot;/downloadfile&quot;)</span><br><span class="line"> public ResponseEntity&lt;byte[]&gt; fileDownload(String filename,HttpServletRequest request)</span><br><span class="line"> throws IOException&#123;</span><br><span class="line"> //指定要下载的⽂件的路径</span><br><span class="line"> String path = request.getServletContext().getRealPath(&quot;/upload/&quot;);</span><br><span class="line"> //创建下载⽂件对象</span><br><span class="line"> File file = new File(path + File.separator + filename);</span><br><span class="line"> //对⽂件名编码，防⽌中⽂乱码</span><br><span class="line"> filename = this.getFilename(request,filename);</span><br><span class="line"> //设置响应头</span><br><span class="line"> HttpHeaders headers = new HttpHeaders();</span><br><span class="line"> headers.setContentDispositionFormData(&quot;attachment&quot;, filename);</span><br><span class="line"> //定义以流的形式下载返回⽂件数据</span><br><span class="line"> headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);</span><br><span class="line"> //使⽤SpringMVC框架的对象封装返回下载的数据</span><br><span class="line"> return new ResponseEntity&lt;byte[]&gt;(FileUtils.readFileToByteArray(file),</span><br><span class="line"> headers,HttpStatus.OK);</span><br><span class="line"> &#125;</span><br><span class="line"> private String getFilename(HttpServletRequest request, String filename)</span><br><span class="line"> throws UnsupportedEncodingException &#123;</span><br><span class="line"> //根据不同浏览器来判断</span><br><span class="line"> String[] IEBrowserKeyWords = &#123;&quot;MSIE&quot;,&quot;Trident&quot;,&quot;Edge&quot;&#125;;</span><br><span class="line"> //获取请求头代理信息</span><br><span class="line"> String userAgent = request.getHeader(&quot;User-Agent&quot;);</span><br><span class="line"> for (String keyWord : IEBrowserKeyWords) &#123;</span><br><span class="line"> if(userAgent.contains(keyWord)) &#123;</span><br><span class="line"> //进⾏统⼀编码</span><br><span class="line"> return URLEncoder.encode(filename,&quot;UTF-8&quot;);</span><br><span class="line"> &#125;</span><br><span class="line"> &#125;</span><br><span class="line"> //其它的浏览器统⼀为ISO-8859-1编码显示</span><br><span class="line"> return new String(filename.getBytes(&quot;UTF-8&quot;),&quot;ISO-8859-1&quot;);</span><br><span class="line"> &#125; &#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
-  </entry>
-  <entry>
-    <title>在VMware16中创建虚拟机安装ubuntu 21.04系统</title>
-    <url>/2021/10/18/VMware-ubuntu/</url>
-    <content><![CDATA[<table>
-<tr><td bgcolor="CFCFCF">此篇是创建VMware16虚拟机安装ubuntu21.04系统的超详细操作过程，希望对小白白有所帮助
-</td></tr></table>
-
-<span id="more"></span>
-
-<p>安装环境： windows 10</p>
-<p>VMware 16安装包：我用阿里云盘分享了「VMware-workstation-full-16.1.2-17966106.exe」，你可以不限速下载🚀<br>复制这段内容打开「阿里云盘」App 即可获取<br>链接：<a href="https://www.aliyundrive.com/s/7acSRwmGho2">https://www.aliyundrive.com/s/7acSRwmGho2</a></p>
-<p>ubuntu 21.04镜像：链接：<a href="https://pan.baidu.com/s/1ktE78cieRE9Y7_BhrG9vjQ">https://pan.baidu.com/s/1ktE78cieRE9Y7_BhrG9vjQ</a><br>提取码：n9ms</p>
-<h3 id="安装VMware-16"><a href="#安装VMware-16" class="headerlink" title="安装VMware 16"></a>安装VMware 16</h3><p>1、 直接双击下载好的VMware，这个过程可能会显示重新启动系统，那你点就是了。重新启动后再次双击下载好的VMware，然后点击【下一步】。</p>
-<img src="https://i.loli.net/2021/10/18/X4BvRZr2LKb5SyD.jpg" width="850" height="400" div align="right">
-
-<p>2、勾选【我接受许可协议中的条款】，点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/Prph8EuT6vaHiyQ.jpg" width="850" height="400" div align="right">
-
-<p>3、可以默认，也可更改安装位置</p>
-<img src="https://i.loli.net/2021/10/18/DqtysojVQrFE2R9.jpg" width="850" height="400" div align="right">
-
-<p>4、选择安装位置，然后点击【确定】</p>
-<img src="https://i.loli.net/2021/10/18/VzTAbUosOP4dK3W.jpg" width="850" height="400" div align="right">
-
-<p>5、点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/DqtysojVQrFE2R9.jpg" width="850" height="400" div align="right">
-
-<p>6、取消勾选【启动时检查产品更新】和【加入VMware客户体验改进计划】，点击【下一步</p>
-<img src="https://i.loli.net/2021/10/18/ONQ954xcuaLZYBK.jpg" width="850" height="400" div align="right">
-
-<p>7、点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/n2RPhJVXakzLgHU.jpg" width="850" height="400" div align="right">
-
-<p>8、点击【安装】</p>
-<img src="https://i.loli.net/2021/10/18/xe8kFh4T72tSAld.jpg" width="850" height="400" div align="right">
-
-<p>9、正在安装，等待几分钟</p>
-<img src="https://i.loli.net/2021/10/18/KzBpH8OeDyn5V3F.jpg" width="850" height="400" div align="right">
-
-<p>10、点击【许可证】</p>
-<img src="https://i.loli.net/2021/10/18/AaUSlwWnMCFJ3c1.jpg" width="850" height="400" div align="right">
-
-<p>11、框中输入许可证：ZF3R0-FHED2-M80TY-8QYGC-NPKYF，（复制粘贴就可以）然后点击【输入】</p>
-<p>12、点击【完成】</p>
-<p>恭喜你这会你的虚拟机已经安装好了，是不是直接点击下一步就可以</p>
-<h3 id="在VMware中安装ubuntu-21-04系统"><a href="#在VMware中安装ubuntu-21-04系统" class="headerlink" title="在VMware中安装ubuntu 21.04系统"></a>在VMware中安装ubuntu 21.04系统</h3><p>1、双击打开你创建在桌面的虚拟机，然后点击【创建新的虚拟机】</p>
-<img src="https://i.loli.net/2021/10/18/QWASzB7OuMIb6xm.jpg" width="850" height="400" div align="right">
-
-<p>2、选择【典型】（默认便是典型），点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/9CzmqQYUDNeRo56.jpg" width="850" height="400" div align="right">
-
-<p>3、选择【稍后安装操作系统】，点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/XZi389ajePvqRDk.jpg" width="850" height="400" div align="right">
-
-<p>4、客户机操作系统选择【Linux】，版本选择【Ubuntu64位】，然后点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/XAgZ4IvWTji5CUK.jpg" width="850" height="400" div align="right">
-
-<p>5、位置可更改，点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/owxQLiVrmWdJsYa.jpg" width="850" height="400" div align="right">
-
-<p>6、最大磁盘大小【20】GB，选择【将虚拟机磁盘拆分成多个文件】，然后点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/DKBEnuG6or3f4wx.jpg" width="850" height="400" div align="right">
-
-<p>7、点击【自定义硬件】</p>
-<img src="https://i.loli.net/2021/10/18/VlZBfoPbR9e8MSc.jpg" width="850" height="400" div align="right">
-
-<p>8、选择【内存】，此虚拟机的内存设为【2048MB】</p>
-<img src="https://i.loli.net/2021/10/18/AdjlBFmEVDNhr1O.jpg" width="850" height="400" div align="right">
-
-<p>9、选择【新CD/DVD(TATA)】后选择【使用ISO映像文件】，点击【浏览】，找到下载后文件夹里面的【ubuntu-21.04-desktop-amd64.iso】这个镜像并选择！</p>
-<img src="https://i.loli.net/2021/10/18/C8p4cyMIBuGbYWU.jpg" width="850" height="400" div align="right">
-
-<p>10、选择【网络适配器】，然后选择【仅主机模式】</p>
-<img src="https://i.loli.net/2021/10/18/IyBJxuMrLhml3Ko.jpg" width="850" height="400" div align="right">
-
-<p>11、选择【USB控制器】，点击【移除】</p>
-<img src="https://i.loli.net/2021/10/18/HwJm6DONtYMhFCz.jpg" width="850" height="400" div align="right">
-
-<p>12、选择【打印机】，点击【移除】</p>
-<img src="https://i.loli.net/2021/10/18/cjkhgORexpbFm4K.jpg" width="850" height="400" div align="right">
-
-<p>13、点击【关闭】</p>
-<img src="https://i.loli.net/2021/10/18/pfz13yURdGDW8qI.jpg" width="850" height="400" div align="right">
-
-<p>14、点击【完成】</p>
-<img src="https://i.loli.net/2021/10/18/VlZBfoPbR9e8MSc.jpg" width="850" height="400" div align="right">
-
-<p><font color="red" size="5"> 实在没有耐心放图片了，等闲了再贴图片吧,相信自己即使看文字你也可以安装完成的，加油！</font></p>
-<p>15、点击【开启此虚拟机】，等待开启</p>
-<p>16、择【中文简体】，点击【安装Ubuntu】</p>
-<p>17、点击【继续】</p>
-<p>18、点击【继续】</p>
-<p>19、点击【现在安装】</p>
-<p>20、点击【继续】</p>
-<p>21、这里默认【Shanghai】就OK</p>
-<p>22、创建用户账号（记住密码哦！）。不要担心你的计算机名是什么，你只需要输入姓名，计算机名就会自动生成。然后点击[继续]</p>
-<p>23、安装中，耐心等待（这个可能需要多点时间）</p>
-<p>24、点击【现在重启】，重启一会看屏幕中下方转圈其他都不动，键盘上点击【enter】</p>
-<p>25、点击账户，我这里是【simon-yian】</p>
-<p>26、输入之前创建用户账号时设的密码，然后点击【登录】</p>
-<p>27、至此Ubuntu系统安装完成！</p>
-<p><font color="red"><b>如果你觉得可以千万不要忘记动动你的小手，赞赏一下贫困的博客主</b><br><b>记得收藏啊，以后会有更好的内容给您分享</b></font></p>
-]]></content>
-      <categories>
-        <category>VMware</category>
-      </categories>
   </entry>
   <entry>
     <title>培训心得&amp;emsp;&amp;emsp;[走进HTML]</title>
@@ -979,229 +979,6 @@
   <table><tr><td bgcolor="yellow">背景色yellow</td></tr></table>]]></content>
       <categories>
         <category>hexo</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>培训心得[java数据类型和运算符]</title>
-    <url>/2022/07/16/xianTrain10-javaDateTypeAddOperation/</url>
-    <content><![CDATA[<p><em><strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Java基础学习打卡第2天<br>学习链接：<a href="https://www.yuque.com/docs/share/b9feb7da-7c3c-4ccb-8542-52a34ad5d965#">https://www.yuque.com/docs/share/b9feb7da-7c3c-4ccb-8542-52a34ad5d965?#</a> 《第2章 Java数据类型和运算符》密码：ekp0</strong></em></p>
-<span id="more"></span>
-
-<blockquote>
-<p>java是一门强类型语言：</p>
-<blockquote>
-<ul>
-<li>所有的变量都必须先声明，后使用</li>
-<li>变量的类型一旦确定，那么变量的值必须和数据类型相匹配。</li>
-</ul>
-</blockquote>
-</blockquote>
-<h2 id="java标识符"><a href="#java标识符" class="headerlink" title="java标识符"></a>java标识符</h2><blockquote>
-<ul>
-<li>标识符：类名、方法名、变量名<blockquote>
-<ul>
-<li>可以包含数字、字母、下划线、$</li>
-<li>不能数字开头</li>
-<li>不能使用Java关键字</li>
-<li>java中总共有50个关键字，如下表：</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>abstract</th>
-<th>continue</th>
-<th>for</th>
-<th>new</th>
-<th>switch</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>assert</td>
-<td>default</td>
-<td>if</td>
-<td>package</td>
-<td>synchronized</td>
-</tr>
-<tr>
-<td>boolean</td>
-<td>do</td>
-<td>goto</td>
-<td>private</td>
-<td>this</td>
-</tr>
-<tr>
-<td>break</td>
-<td>double</td>
-<td>implements</td>
-<td>protected</td>
-<td>throw</td>
-</tr>
-<tr>
-<td>byte</td>
-<td>else</td>
-<td>import</td>
-<td>public</td>
-<td>throw</td>
-</tr>
-<tr>
-<td>case</td>
-<td>enum</td>
-<td>instanceof</td>
-<td>return</td>
-<td>transient</td>
-</tr>
-<tr>
-<td>catch</td>
-<td>extends</td>
-<td>int</td>
-<td>short</td>
-<td>try</td>
-</tr>
-<tr>
-<td>char</td>
-<td>final</td>
-<td>interface</td>
-<td>static</td>
-<td>void</td>
-</tr>
-<tr>
-<td>class</td>
-<td>finally</td>
-<td>long</td>
-<td>strictfp</td>
-<td>volatile</td>
-</tr>
-<tr>
-<td>const</td>
-<td>float</td>
-<td>native</td>
-<td>super</td>
-<td></td>
-</tr>
-<tr>
-<td>while</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<h2 id="Java命名方式"><a href="#Java命名方式" class="headerlink" title="Java命名方式"></a>Java命名方式</h2><blockquote>
-<ul>
-<li>(Pascal)帕斯卡命名法：所有单词首字母均大写。适用于类名，例如：StudentManager</li>
-<li>(Camel)驼峰命名法：第一个单词的首字母小写，如果有多个但是，其余单词首字母均大写，适用于方法名，变量名。例如：studentAge，studentGender</li>
-</ul>
-</blockquote>
-<h2 id="Java数据类型"><a href="#Java数据类型" class="headerlink" title="Java数据类型"></a>Java数据类型</h2><blockquote>
-<ul>
-<li>基本类型：byte short int long float double boolean char</li>
-<li>引用类型: 数组， 类，接口</li>
-</ul>
-</blockquote>
-<h3 id="整数"><a href="#整数" class="headerlink" title="整数"></a>整数</h3><blockquote>
-<ul>
-<li>整数通常可以分为以下4种：<blockquote>
-<ul>
-<li>byte:占一个字节（占8位）,可表示范围：-128 ——— 127</li>
-<li>short:占2个字节（占16位）,可表示范围：-2^15 ——— 2^15-1</li>
-<li>int:占4个字节（占32位），可表示范围：-2^31 ——— 2^31-1</li>
-<li>long:占8个字节（占64位），可表示范围：-2^31 ——— 2^31-1(定义时需要在数值后添加<code>L</code>)</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
-<li>JAVA中整数值有四种表示方式：十进制、二进制、十六进制、八进制，其中二进制的整数以<code>0b</code>或者<code>0B</code>开头；八进制的整数以<code>0</code>开头;十六进制的整数以<code>0x</code>或者<code>0X</code>开头，其中10-15分别以a-f表示。</li>
-</ul>
-</blockquote>
-<h3 id="浮点数"><a href="#浮点数" class="headerlink" title="浮点数"></a>浮点数</h3><blockquote>
-<ul>
-<li>浮点数可以分为：<code>float</code>和<code>double</code>。<blockquote>
-<ul>
-<li>float类型:占四个字节，第一位表示符号位，接下来8位表示指数，接下来的23位表示尾数；</li>
-<li>double类型:占八个字节，第一位表示符号位，接下来11位表示指数，接下来的52位表示尾数；</li>
-</ul>
-</blockquote>
-</li>
-<li>浮点数可用十进制和科学计数法进行表示</li>
-<li>java还提供了特殊的浮点数：正无穷大（infinity）、负无穷大（-infinity）、非数（NaN）。<br>注意：所有的正无穷大都是相等的，所有的负无穷大都是相等的，但是NAN与任何数值都不想等，甚至和NAN都不相等。另外，只有浮点数以0才可以得到正无穷大或者负无穷大，如果一个整数除以0，则会抛出一个异常。</li>
-</ul>
-</blockquote>
-<h3 id="字符型"><a href="#字符型" class="headerlink" title="字符型"></a>字符型</h3><p>字符型占两个字符，通常表示单个字符，字符型值必须要用单引号括起来。Java语言使用16位的Unicode字符集作为编码方式。<br>字符型值有3种表示形式。</p>
-<h3 id="整数-1"><a href="#整数-1" class="headerlink" title="整数"></a>整数</h3><blockquote>
-<ul>
-<li>整数通常可以分为以下4种：<blockquote>
-<ul>
-<li>byte:占一个字节（占8位）,可表示范围：-128 ——— 127</li>
-<li>short:占2个字节（占16位）,可表示范围：-2^15 ——— 2^15-1</li>
-<li>int:占4个字节（占32位），可表示范围：-2^31 ——— 2^31-1</li>
-<li>long:占8个字节（占64位），可表示范围：-2^31 ——— 2^31-1(定义时需要在数值后添加<code>L</code>)</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
-<li>JAVA中整数值有四种表示方式：十进制、二进制、十六进制、八进制，其中二进制的整数以<code>0b</code>或者<code>0B</code>开头；八进制的整数以<code>0</code>开头;十六进制的整数以<code>0x</code>或者<code>0X</code>开头，其中10-15分别以a-f表示。</li>
-</ul>
-</blockquote>
-<h3 id="浮点数-1"><a href="#浮点数-1" class="headerlink" title="浮点数"></a>浮点数</h3><blockquote>
-<ul>
-<li>浮点数可以分为：<code>float</code>和<code>double</code>。<blockquote>
-<ul>
-<li>float类型:占四个字节，第一位表示符号位，接下来8位表示指数，接下来的23位表示尾数；</li>
-<li>double类型:占八个字节，第一位表示符号位，接下来11位表示指数，接下来的52位表示尾数；</li>
-</ul>
-</blockquote>
-</li>
-<li>浮点数可用十进制和科学计数法进行表示</li>
-<li>java还提供了特殊的浮点数：正无穷大（infinity）、负无穷大（-infinity）、非数（NaN）。<br>注意：所有的正无穷大都是相等的，所有的负无穷大都是相等的，但是NAN与任何数值都不想等，甚至和NAN都不相等。另外，只有浮点数以0才可以得到正无穷大或者负无穷大，如果一个整数除以0，则会抛出一个异常。</li>
-</ul>
-</blockquote>
-<h3 id="字符型-1"><a href="#字符型-1" class="headerlink" title="字符型"></a>字符型</h3><p>字符型占两个字符，通常表示单个字符，字符型值必须要用单引号括起来。Java语言使用16位的Unicode字符集作为编码方式。<br>字符型值有3种表示形式。</p>
-<h2 id="基本类型的转换"><a href="#基本类型的转换" class="headerlink" title="基本类型的转换"></a>基本类型的转换</h2><blockquote>
-<p>转换的方式有两种：自动类型转换和强制类型转换<br>java中当把一个表示范围小的数值或变量赋值给另一个表示范围大的变量时，系统将自动进行转换，反之需要强制转换。</p>
-</blockquote>
-<h3 id="自动类型转换"><a href="#自动类型转换" class="headerlink" title="自动类型转换"></a>自动类型转换</h3><blockquote>
-<p>自动转换可以理解为将一个小容器的桶中的水倒入大容量的桶中，当小容量桶中的水倒入大容量的桶时通常不会有什么问题，但是当把大容量的桶中的水倒入小容量的桶就很容易溢出的情况</p>
-</blockquote>
-<p>########这需要插个图</p>
-<h3 id="强制类型转换"><a href="#强制类型转换" class="headerlink" title="强制类型转换"></a>强制类型转换</h3><blockquote>
-<p>格式：<code>(targetType)value</code>;<br>注意：这种类型转换容易造成数据的溢出</p>
-</blockquote>
-<h3 id="自动类型提升"><a href="#自动类型提升" class="headerlink" title="自动类型提升"></a>自动类型提升</h3><blockquote>
-<p>当一个算数表达式中包含多个基本类型的值时，整个算是表达式的数据类型讲噶生自动提升，提升的规则如下：</p>
-<blockquote>
-<ul>
-<li>所有的byte、short和char类型被提升到int类型</li>
-<li>整个算数表达式的数据类型自动提升到表达式中最高等级操作数相同的类型。</li>
-</ul>
-</blockquote>
-</blockquote>
-<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><blockquote>
-<p>java的运算符可以分为以下几类：</p>
-<ul>
-<li>算术运算符</li>
-<li>赋值运算符</li>
-<li>比较运算符</li>
-<li>逻辑运算符</li>
-<li>位运算符</li>
-<li>类型相关的运算符</li>
-</ul>
-</blockquote>
-<h3 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h3><blockquote>
-<p>用于执行基本的数学运算:加（+）、减（-）、乘（*）、除（/）、取余（%）</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>XiAnTrain</category>
       </categories>
   </entry>
   <entry>
@@ -2434,6 +2211,273 @@ body .markdown-body
 </blockquote></article></body></html>]]></content>
   </entry>
   <entry>
+    <title>培训心得[java数据类型和运算符]</title>
+    <url>/2022/07/16/xianTrain10-javaDateTypeAddOperation/</url>
+    <content><![CDATA[<p><em><strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Java基础学习打卡第2天<br>学习链接：<a href="https://www.yuque.com/docs/share/b9feb7da-7c3c-4ccb-8542-52a34ad5d965#">https://www.yuque.com/docs/share/b9feb7da-7c3c-4ccb-8542-52a34ad5d965?#</a> 《第2章 Java数据类型和运算符》密码：ekp0</strong></em></p>
+<span id="more"></span>
+
+<blockquote>
+<p>java是一门强类型语言：</p>
+<blockquote>
+<ul>
+<li>所有的变量都必须先声明，后使用</li>
+<li>变量的类型一旦确定，那么变量的值必须和数据类型相匹配。</li>
+</ul>
+</blockquote>
+</blockquote>
+<h2 id="java标识符"><a href="#java标识符" class="headerlink" title="java标识符"></a>java标识符</h2><blockquote>
+<ul>
+<li>标识符：类名、方法名、变量名<blockquote>
+<ul>
+<li>可以包含数字、字母、下划线、$</li>
+<li>不能数字开头</li>
+<li>不能使用Java关键字</li>
+<li>java中总共有50个关键字，如下表：</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>abstract</th>
+<th>continue</th>
+<th>for</th>
+<th>new</th>
+<th>switch</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>assert</td>
+<td>default</td>
+<td>if</td>
+<td>package</td>
+<td>synchronized</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>do</td>
+<td>goto</td>
+<td>private</td>
+<td>this</td>
+</tr>
+<tr>
+<td>break</td>
+<td>double</td>
+<td>implements</td>
+<td>protected</td>
+<td>throw</td>
+</tr>
+<tr>
+<td>byte</td>
+<td>else</td>
+<td>import</td>
+<td>public</td>
+<td>throw</td>
+</tr>
+<tr>
+<td>case</td>
+<td>enum</td>
+<td>instanceof</td>
+<td>return</td>
+<td>transient</td>
+</tr>
+<tr>
+<td>catch</td>
+<td>extends</td>
+<td>int</td>
+<td>short</td>
+<td>try</td>
+</tr>
+<tr>
+<td>char</td>
+<td>final</td>
+<td>interface</td>
+<td>static</td>
+<td>void</td>
+</tr>
+<tr>
+<td>class</td>
+<td>finally</td>
+<td>long</td>
+<td>strictfp</td>
+<td>volatile</td>
+</tr>
+<tr>
+<td>const</td>
+<td>float</td>
+<td>native</td>
+<td>super</td>
+<td></td>
+</tr>
+<tr>
+<td>while</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="Java命名方式"><a href="#Java命名方式" class="headerlink" title="Java命名方式"></a>Java命名方式</h2><blockquote>
+<ul>
+<li>(Pascal)帕斯卡命名法：所有单词首字母均大写。适用于类名，例如：StudentManager</li>
+<li>(Camel)驼峰命名法：第一个单词的首字母小写，如果有多个但是，其余单词首字母均大写，适用于方法名，变量名。例如：studentAge，studentGender</li>
+</ul>
+</blockquote>
+<h2 id="Java数据类型"><a href="#Java数据类型" class="headerlink" title="Java数据类型"></a>Java数据类型</h2><blockquote>
+<ul>
+<li>基本类型：byte short int long float double boolean char</li>
+<li>引用类型: 数组， 类，接口</li>
+</ul>
+</blockquote>
+<h3 id="整数"><a href="#整数" class="headerlink" title="整数"></a>整数</h3><blockquote>
+<ul>
+<li>整数通常可以分为以下4种：<blockquote>
+<ul>
+<li>byte:占一个字节（占8位）,可表示范围：-128 ——— 127</li>
+<li>short:占2个字节（占16位）,可表示范围：-2^15 ——— 2^15-1</li>
+<li>int:占4个字节（占32位），可表示范围：-2^31 ——— 2^31-1</li>
+<li>long:占8个字节（占64位），可表示范围：-2^31 ——— 2^31-1(定义时需要在数值后添加<code>L</code>)</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>JAVA中整数值有四种表示方式：十进制、二进制、十六进制、八进制，其中二进制的整数以<code>0b</code>或者<code>0B</code>开头；八进制的整数以<code>0</code>开头;十六进制的整数以<code>0x</code>或者<code>0X</code>开头，其中10-15分别以a-f表示。</li>
+</ul>
+</blockquote>
+<h3 id="浮点数"><a href="#浮点数" class="headerlink" title="浮点数"></a>浮点数</h3><blockquote>
+<ul>
+<li>浮点数可以分为：<code>float</code>和<code>double</code>。<blockquote>
+<ul>
+<li>float类型:占四个字节，第一位表示符号位，接下来8位表示指数，接下来的23位表示尾数；</li>
+<li>double类型:占八个字节，第一位表示符号位，接下来11位表示指数，接下来的52位表示尾数；</li>
+</ul>
+</blockquote>
+</li>
+<li>浮点数可用十进制和科学计数法进行表示</li>
+<li>java还提供了特殊的浮点数：正无穷大（infinity）、负无穷大（-infinity）、非数（NaN）。<br>注意：所有的正无穷大都是相等的，所有的负无穷大都是相等的，但是NAN与任何数值都不想等，甚至和NAN都不相等。另外，只有浮点数以0才可以得到正无穷大或者负无穷大，如果一个整数除以0，则会抛出一个异常。</li>
+</ul>
+</blockquote>
+<h3 id="字符型"><a href="#字符型" class="headerlink" title="字符型"></a>字符型</h3><p>字符型占两个字符，通常表示单个字符，字符型值必须要用单引号括起来。Java语言使用16位的Unicode字符集作为编码方式。<br>字符型值有3种表示形式。</p>
+<h3 id="整数-1"><a href="#整数-1" class="headerlink" title="整数"></a>整数</h3><blockquote>
+<ul>
+<li>整数通常可以分为以下4种：<blockquote>
+<ul>
+<li>byte:占一个字节（占8位）,可表示范围：-128 ——— 127</li>
+<li>short:占2个字节（占16位）,可表示范围：-2^15 ——— 2^15-1</li>
+<li>int:占4个字节（占32位），可表示范围：-2^31 ——— 2^31-1</li>
+<li>long:占8个字节（占64位），可表示范围：-2^31 ——— 2^31-1(定义时需要在数值后添加<code>L</code>)</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>JAVA中整数值有四种表示方式：十进制、二进制、十六进制、八进制，其中二进制的整数以<code>0b</code>或者<code>0B</code>开头；八进制的整数以<code>0</code>开头;十六进制的整数以<code>0x</code>或者<code>0X</code>开头，其中10-15分别以a-f表示。</li>
+</ul>
+</blockquote>
+<h3 id="浮点数-1"><a href="#浮点数-1" class="headerlink" title="浮点数"></a>浮点数</h3><blockquote>
+<ul>
+<li>浮点数可以分为：<code>float</code>和<code>double</code>。<blockquote>
+<ul>
+<li>float类型:占四个字节，第一位表示符号位，接下来8位表示指数，接下来的23位表示尾数；</li>
+<li>double类型:占八个字节，第一位表示符号位，接下来11位表示指数，接下来的52位表示尾数；</li>
+</ul>
+</blockquote>
+</li>
+<li>浮点数可用十进制和科学计数法进行表示</li>
+<li>java还提供了特殊的浮点数：正无穷大（infinity）、负无穷大（-infinity）、非数（NaN）。<br>注意：所有的正无穷大都是相等的，所有的负无穷大都是相等的，但是NAN与任何数值都不想等，甚至和NAN都不相等。另外，只有浮点数以0才可以得到正无穷大或者负无穷大，如果一个整数除以0，则会抛出一个异常。</li>
+</ul>
+</blockquote>
+<h3 id="字符型-1"><a href="#字符型-1" class="headerlink" title="字符型"></a>字符型</h3><p>字符型占两个字符，通常表示单个字符，字符型值必须要用单引号括起来。Java语言使用16位的Unicode字符集作为编码方式。<br>字符型值有3种表示形式。</p>
+<h2 id="基本类型的转换"><a href="#基本类型的转换" class="headerlink" title="基本类型的转换"></a>基本类型的转换</h2><blockquote>
+<p>转换的方式有两种：自动类型转换和强制类型转换<br>java中当把一个表示范围小的数值或变量赋值给另一个表示范围大的变量时，系统将自动进行转换，反之需要强制转换。</p>
+</blockquote>
+<h3 id="自动类型转换"><a href="#自动类型转换" class="headerlink" title="自动类型转换"></a>自动类型转换</h3><blockquote>
+<p>自动转换可以理解为将一个小容器的桶中的水倒入大容量的桶中，当小容量桶中的水倒入大容量的桶时通常不会有什么问题，但是当把大容量的桶中的水倒入小容量的桶就很容易溢出的情况</p>
+</blockquote>
+<p>########这需要插个图</p>
+<h3 id="强制类型转换"><a href="#强制类型转换" class="headerlink" title="强制类型转换"></a>强制类型转换</h3><blockquote>
+<p>格式：<code>(targetType)value</code>;<br>注意：这种类型转换容易造成数据的溢出</p>
+</blockquote>
+<h3 id="自动类型提升"><a href="#自动类型提升" class="headerlink" title="自动类型提升"></a>自动类型提升</h3><blockquote>
+<p>当一个算数表达式中包含多个基本类型的值时，整个算是表达式的数据类型讲噶生自动提升，提升的规则如下：</p>
+<blockquote>
+<ul>
+<li>所有的byte、short和char类型被提升到int类型</li>
+<li>整个算数表达式的数据类型自动提升到表达式中最高等级操作数相同的类型。</li>
+</ul>
+</blockquote>
+</blockquote>
+<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><blockquote>
+<p>java的运算符可以分为以下几类：</p>
+<ul>
+<li>算术运算符</li>
+<li>赋值运算符</li>
+<li>比较运算符</li>
+<li>逻辑运算符</li>
+<li>位运算符</li>
+<li>类型相关的运算符</li>
+</ul>
+</blockquote>
+<h3 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h3><blockquote>
+<p>用于执行基本的数学运算:加（+）、减（-）、乘（*）、除（/）、取余（%）</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>XiAnTrain</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>培训心得&amp;emsp;&amp;emsp;[HTML5]</title>
+    <url>/2022/06/30/xianTrain3/</url>
+    <content><![CDATA[<p><em><strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;学习打卡第三天</strong></em><br>学习链接：<a href="https://www.yuque.com/docs/share/9ce7b3ef-6298-4b49-a687-39a524629130#">https://www.yuque.com/docs/share/9ce7b3ef-6298-4b49-a687-39a524629130?#</a> </p>
+<span id="more"></span>
+
+<h1 id="3-1新增元素"><a href="#3-1新增元素" class="headerlink" title="3.1新增元素"></a>3.1新增元素</h1><h2 id="3-1-1-新增的结构元素"><a href="#3-1-1-新增的结构元素" class="headerlink" title="3.1.1 新增的结构元素"></a>3.1.1 新增的结构元素</h2><h3 id="●-lt-section-gt-元素"><a href="#●-lt-section-gt-元素" class="headerlink" title="● &lt;section&gt;元素"></a>● <code>&lt;section&gt;</code>元素</h3><p><code>&lt;section&gt;</code>元素表示页面中的内容区块，如：页眉，页脚，章节等部分<br>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt; </span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt; </span><br><span class="line">&lt;title&gt;section&lt;/title&gt; </span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;section&gt;</span><br><span class="line">    &lt;h1&gt;区域一&lt;/h1&gt;</span><br><span class="line">    &lt;p&gt;这里是区域一的内容&lt;/p&gt;</span><br><span class="line">  &lt;/section&gt;</span><br><span class="line"></span><br><span class="line">  &lt;section&gt;</span><br><span class="line">   &lt;h1&gt;区域二&lt;/h1&gt;</span><br><span class="line">    &lt;p&gt;这里是区域二的内容&lt;/p&gt;</span><br><span class="line">  &lt;/section&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="●-lt-article-gt-元素"><a href="#●-lt-article-gt-元素" class="headerlink" title="● &lt;article&gt;元素"></a>● <code>&lt;article&gt;</code>元素</h3><p><code>&lt;article&gt;</code>元素表示页面中的一块与上下文不相关的独立内容，如：新闻页中诸多文章中的某篇文章<br>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt; </span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt; </span><br><span class="line">&lt;title&gt;article&lt;/title&gt; </span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">  &lt;article&gt;</span><br><span class="line">    &lt;h1&gt;两个“万岁”&lt;/h1&gt;</span><br><span class="line">    &lt;p&gt;“伟大、光荣、正确的中国共产党万岁！”&lt;/p&gt;</span><br><span class="line">		&lt;p&gt;“伟大、光荣、英雄的中国人民万岁！”&lt;/p&gt;</span><br><span class="line">  &lt;/article&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="●-lt-aside-gt-元素"><a href="#●-lt-aside-gt-元素" class="headerlink" title="● &lt;aside&gt;元素"></a>● <code>&lt;aside&gt;</code>元素</h3><p><code>&lt;aside&gt;</code>表示<code>&lt;article&gt;</code>元素的内容之外的，它的内容应该与附近内容相关<br>代码：</p>
+<figure class="highlight plaintext"><figcaption><span>html></span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt; </span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt; </span><br><span class="line">&lt;title&gt;aside&lt;/title&gt; </span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">  &lt;p&gt;神州十二号飞船成功升空&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">  &lt;aside&gt;</span><br><span class="line">    &lt;h4&gt;飞船抵达中国空间站&lt;/h4&gt;</span><br><span class="line">    &lt;p&gt;6月19日上午，神舟十二号飞船抵达距离天和核心舱200米的停留点，开始进行对接准备。</span><br><span class="line">      通过使用最先进的快速交会对接自动化技术</span><br><span class="line">      这一切都要归功于从一次次太空飞行中总结的的经验。&lt;/p&gt;</span><br><span class="line">  &lt;/aside&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="●-lt-header-gt-元素"><a href="#●-lt-header-gt-元素" class="headerlink" title="● &lt;header&gt;元素"></a>●<code> &lt;header&gt;</code>元素</h3><p><code>&lt;header&gt;</code>元素表示页面中的一个内容块或整个页面的标题<br>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt; </span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt; </span><br><span class="line">&lt;title&gt;header&lt;/title&gt; </span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;article&gt;</span><br><span class="line">    &lt;header&gt;</span><br><span class="line">      &lt;h1&gt;飞船抵达中国空间站&lt;/h1&gt;</span><br><span class="line">    &lt;/header&gt;</span><br><span class="line">    &lt;p&gt;</span><br><span class="line">      6月19日上午，神舟十二号飞船抵达距离天和核心舱200米的停留点，开始进行对接准备。</span><br><span class="line">      通过使用最先进的快速交会对接自动化技术</span><br><span class="line">      这一切都要归功于从一次次太空飞行中总结的的经验。</span><br><span class="line">    &lt;/p&gt;</span><br><span class="line">  &lt;/article&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="●-lt-footer-gt-元素"><a href="#●-lt-footer-gt-元素" class="headerlink" title="● &lt;footer&gt;元素"></a>●<code> &lt;footer&gt;</code>元素</h3><p><code>&lt;footer&gt;</code>元素表示整个页面或页面中一个区域内的脚注，一般包含作者的基本信息<br>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt; </span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;header&lt;/title&gt; </span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;article&gt;</span><br><span class="line">        &lt;header&gt;</span><br><span class="line">            &lt;h1&gt;飞船抵达中国空间站&lt;/h1&gt;</span><br><span class="line">        &lt;/header&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            6月19日上午，神舟十二号飞船抵达距离天和核心舱200米的停留点，开始进行对接准备。</span><br><span class="line">            通过使用最先进的快速交会对接自动化技术</span><br><span class="line">            这一切都要归功于从一次次太空飞行中总结的的经验。</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">    &lt;/article&gt;</span><br><span class="line">    &lt;footer&gt;</span><br><span class="line">        &lt;p&gt;&amp;copy;环球网&lt;/p&gt;</span><br><span class="line">      	&lt;p&gt;发表时间：7-12&lt;/p&gt;</span><br><span class="line">    &lt;/footer&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="●-lt-nav-gt-元素"><a href="#●-lt-nav-gt-元素" class="headerlink" title="● &lt;nav&gt;元素"></a>● <code>&lt;nav&gt;</code>元素</h3><p><code>&lt;nav&gt;</code>元素通常在内嵌套<code>&lt;a&gt;</code>标签表示页面的导航链接部分<br>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt; </span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt; </span><br><span class="line">&lt;title&gt;nav&lt;/title&gt; </span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">  &lt;nav&gt;</span><br><span class="line">    &lt;a href=&quot;/html/&quot;&gt;HTML&lt;/a&gt; |</span><br><span class="line">    &lt;a href=&quot;/css/&quot;&gt;CSS&lt;/a&gt; |</span><br><span class="line">    &lt;a href=&quot;/js/&quot;&gt;JavaScript&lt;/a&gt; |</span><br><span class="line">    &lt;a href=&quot;/jquery/&quot;&gt;jQuery&lt;/a&gt;</span><br><span class="line">  &lt;/nav&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="●-lt-video-gt-元素"><a href="#●-lt-video-gt-元素" class="headerlink" title="● &lt;video&gt;元素"></a>● <code>&lt;video&gt;</code>元素</h3><p>  ○ <code>&lt;video&gt;</code>元素用来插入视频<br>  ○ <code>&lt;video&gt;</code>元素仅支持MP4，WebM，Ogg视频格式<br>  ○ 元素属性表：<br><img src="https://s2.loli.net/2022/07/04/s2cxC4aoOdI5mwN.jpg" align="center" width="800" height="250" div></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt; </span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt; </span><br><span class="line">&lt;title&gt;video&lt;/title&gt; </span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">  &lt;video width=&quot;320&quot; height=&quot;240&quot; controls&gt;</span><br><span class="line">    &lt;source src=&quot;movie.mp4&quot;  type=&quot;video/mp4&quot;&gt;</span><br><span class="line">    &lt;source src=&quot;movie.ogg&quot;  type=&quot;video/ogg&quot;&gt;</span><br><span class="line">    您的浏览器不支持 HTML5 video 标签。</span><br><span class="line">  &lt;/video&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="●-lt-audio-gt-元素"><a href="#●-lt-audio-gt-元素" class="headerlink" title="● &lt;audio&gt;元素"></a>● <code>&lt;audio&gt;</code>元素</h3><p>  ○ <code>&lt;audio&gt;</code>元素用来插入音频<br>  ○ <code>&lt;audio&gt;</code>元素仅支持Ogg和MP3格式<br>  ○ 元素属性表<br>  <img src="https://s2.loli.net/2022/07/04/uAO9yGsiZLHmkUq.jpg" align="center" width="800" height="250" div></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">  &lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt; </span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt; </span><br><span class="line">&lt;title&gt;audio&lt;/title&gt; </span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;audio controls&gt;</span><br><span class="line">    &lt;source src=&quot;music.ogg&quot; type=&quot;audio/ogg&quot;&gt;</span><br><span class="line">    &lt;source src=&quot;music.mp3&quot; type=&quot;audio/mpeg&quot;&gt;</span><br><span class="line">  您的浏览器不支持 audio 元素。</span><br><span class="line">  &lt;/audio&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="●-lt-mark-gt-元素"><a href="#●-lt-mark-gt-元素" class="headerlink" title="● &lt;mark&gt;元素"></a>● <code>&lt;mark&gt;</code>元素</h3><p><code>&lt;mark&gt;</code>元素主要用来在视觉上向用户呈现哪些需要突出显示或高亮显示的文字，一般用在搜索结果中向用户高亮显示搜索关键词<br>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt; </span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt; </span><br><span class="line">&lt;title&gt;mark&lt;/title&gt; </span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;p&gt;神舟十二号航天员乘组圆满完成空间站阶段&lt;mark&gt;首次出舱&lt;/mark&gt;活动全部既定任务&lt;/p&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="●-lt-ruby-gt-元素"><a href="#●-lt-ruby-gt-元素" class="headerlink" title="● &lt;ruby&gt;元素"></a>● <code>&lt;ruby&gt;</code>元素</h3><p><code>&lt;ruby&gt;</code>表示中文注音或字符</p>
+<h3 id="●-lt-rt-gt-元素"><a href="#●-lt-rt-gt-元素" class="headerlink" title="● &lt;rt&gt;元素"></a>● <code>&lt;rt&gt;</code>元素</h3><p><code>&lt;rt&gt;</code>元素与<code>&lt;ruby&gt;</code>配合使用用来解释或发音</p>
+<h3 id="●-lt-rp-gt-元素"><a href="#●-lt-rp-gt-元素" class="headerlink" title="● &lt;rp&gt;元素"></a>● <code>&lt;rp&gt;</code>元素</h3><p><code>&lt;rp&gt;</code>元素与<code>&lt;ruby&gt;</code>一起使用，以定义不支持<code>&lt;ruby&gt;</code>元素的浏览器显示内容，以括号的形式出现如：汉字(Han Zi)<br>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt; </span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt; </span><br><span class="line">&lt;title&gt;ruby,rt,rp</span><br><span class="line">  &lt;/title&gt; </span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;ruby&gt;</span><br><span class="line">  汉 &lt;rp&gt;(&lt;/rp&gt;&lt;rt&gt;Han&lt;/rt&gt;&lt;rp&gt;)&lt;/rp&gt;</span><br><span class="line">  字 &lt;rp&gt;(&lt;/rp&gt;&lt;rt&gt;zi&lt;/rt&gt;&lt;rp&gt;)&lt;/rp&gt;</span><br><span class="line">&lt;/ruby&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="●-lt-details-gt-元素"><a href="#●-lt-details-gt-元素" class="headerlink" title="● &lt;details&gt;元素"></a>● <code>&lt;details&gt;</code>元素</h3><p><code>&lt;details&gt;</code>元素表示用户要求得到的细节信息，与<code>&lt;summary&gt;</code>配合使用，<code>&lt;summary&gt;</code>提供标题或图例，用户点击标题时，会显示户细节信息，<code>&lt;summary&gt;</code>元素应该是<code>&lt;details&gt;</code>元素的第一个元素<br>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;details&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;details&gt;</span><br><span class="line">        &lt;summary&gt;空间站&lt;/summary&gt;</span><br><span class="line">        空间站（space station）又称太空站、航天站。</span><br><span class="line">      	是一种在近地轨道长时间运行、可供多名航天员巡访、长期工作和生活的载人航天器。</span><br><span class="line">      	空间站分为单模块空间站和多模块空间站两种。</span><br><span class="line">      	单模块空间站可由航天运载器一次发射入轨，多模块空间站则由航天运载器分批将各模块送入轨道，在太空中将各模块组装而成。</span><br><span class="line">      	在空间站中要有人能够生活的一切设施，空间站不具备返回地球的能力。</span><br><span class="line">    &lt;/details&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="3-2-全局属性"><a href="#3-2-全局属性" class="headerlink" title="3.2 全局属性"></a>3.2 全局属性</h1><h2 id="3-2-1-contentEditable属性"><a href="#3-2-1-contentEditable属性" class="headerlink" title="3.2.1 contentEditable属性"></a>3.2.1 contentEditable属性</h2><p>contentEditable属性由微软开发并被其它浏览器反编译投入引用的一个全局属性，该属性允许用户编辑元素内容，该属性是一个布尔值的属性，可以被指定false或true<br>该属性默认inherit（继承）状态，属性为true时，元素被指定为允许编辑；属性为false时，元素被指定为不允许编辑状态；未指定值时，则由inherit状态决定，如果父元素是可编辑元素，则该元素也可编辑<br>在编辑完成后，如果想要保存其中的内容，只能把该元素的innerHTML发送到服务器端进行保存，目前还没有特别的API来保存编辑后的元素内容<br>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;contenteditable&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;ul contenteditable=&quot;true&quot;&gt;</span><br><span class="line">        &lt;li&gt;这是预编译内容&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;这是预编译内容&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;这是预编译内容&lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="3-2-2-designMode属性"><a href="#3-2-2-designMode属性" class="headerlink" title="3.2.2 designMode属性"></a>3.2.2 designMode属性</h2><p>designModel属性用来指定整个页面是否可编辑，当页面可编辑时，页面中任何支持contenteditable属性的元素都变成可编辑状态。该属性只能在JavaScript脚本里被编辑修改，该属性有两个值 “on”或“off”，当属性被指定为“on”时，页面为可编辑状态，为“off”时，页面不可编辑<br>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;designMode&lt;/title&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        document.designMode=&quot;on&quot;;</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">        &lt;li&gt;这是原有内容&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;这是原有内容&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;这是原有内容&lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">    &lt;a href=&quot;javascript:void(0)&quot;&gt;链接&lt;/a&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="3-2-3-hidden属性"><a href="#3-2-3-hidden属性" class="headerlink" title="3.2.3 hidden属性"></a>3.2.3 hidden属性</h2><p>在HTML 5中，所有的元素都允许使用一个hidden属性。该属性类似于input元素中的 hidden元素，功能是通知浏览器不渲染该元素。使该元素处干不可见状态。但是元素中的内容还是浏览器创建的，也就是说页面装载后允许使用JavaScript脚本将该属性取消，取消后该元素变为可见状态，同时元素中的内容也即时显示出来。Hidden属性是一个布尔值的属性。当设为true时，元素处于不可见状态;当设为false时，元素处于可见状态</p>
+]]></content>
+      <categories>
+        <category>XiAnTrain</category>
+      </categories>
+  </entry>
+  <entry>
     <title>培训心得 [javaScript对象]</title>
     <url>/2022/07/07/xianTrain4-jsObject/</url>
     <content><![CDATA[<p><em><strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;学习打卡第嗯天</strong></em></p>
@@ -2486,50 +2530,6 @@ body .markdown-body
 <pre><code>        使用二、当变量名域对象的属性名相同就可以不用赋值
 </code></pre>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;sccript&gt;</span><br><span class="line">Let username = &quot;sanxing&quot;;</span><br><span class="line">Let person = &#123;</span><br><span class="line">        username</span><br><span class="line">&#125;;</span><br><span class="line">Console/log(person);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>XiAnTrain</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>培训心得&amp;emsp;&amp;emsp;[HTML5]</title>
-    <url>/2022/06/30/xianTrain3/</url>
-    <content><![CDATA[<p><em><strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;学习打卡第三天</strong></em><br>学习链接：<a href="https://www.yuque.com/docs/share/9ce7b3ef-6298-4b49-a687-39a524629130#">https://www.yuque.com/docs/share/9ce7b3ef-6298-4b49-a687-39a524629130?#</a> </p>
-<span id="more"></span>
-
-<h1 id="3-1新增元素"><a href="#3-1新增元素" class="headerlink" title="3.1新增元素"></a>3.1新增元素</h1><h2 id="3-1-1-新增的结构元素"><a href="#3-1-1-新增的结构元素" class="headerlink" title="3.1.1 新增的结构元素"></a>3.1.1 新增的结构元素</h2><h3 id="●-lt-section-gt-元素"><a href="#●-lt-section-gt-元素" class="headerlink" title="● &lt;section&gt;元素"></a>● <code>&lt;section&gt;</code>元素</h3><p><code>&lt;section&gt;</code>元素表示页面中的内容区块，如：页眉，页脚，章节等部分<br>代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt; </span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt; </span><br><span class="line">&lt;title&gt;section&lt;/title&gt; </span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;section&gt;</span><br><span class="line">    &lt;h1&gt;区域一&lt;/h1&gt;</span><br><span class="line">    &lt;p&gt;这里是区域一的内容&lt;/p&gt;</span><br><span class="line">  &lt;/section&gt;</span><br><span class="line"></span><br><span class="line">  &lt;section&gt;</span><br><span class="line">   &lt;h1&gt;区域二&lt;/h1&gt;</span><br><span class="line">    &lt;p&gt;这里是区域二的内容&lt;/p&gt;</span><br><span class="line">  &lt;/section&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="●-lt-article-gt-元素"><a href="#●-lt-article-gt-元素" class="headerlink" title="● &lt;article&gt;元素"></a>● <code>&lt;article&gt;</code>元素</h3><p><code>&lt;article&gt;</code>元素表示页面中的一块与上下文不相关的独立内容，如：新闻页中诸多文章中的某篇文章<br>代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt; </span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt; </span><br><span class="line">&lt;title&gt;article&lt;/title&gt; </span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">  &lt;article&gt;</span><br><span class="line">    &lt;h1&gt;两个“万岁”&lt;/h1&gt;</span><br><span class="line">    &lt;p&gt;“伟大、光荣、正确的中国共产党万岁！”&lt;/p&gt;</span><br><span class="line">		&lt;p&gt;“伟大、光荣、英雄的中国人民万岁！”&lt;/p&gt;</span><br><span class="line">  &lt;/article&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="●-lt-aside-gt-元素"><a href="#●-lt-aside-gt-元素" class="headerlink" title="● &lt;aside&gt;元素"></a>● <code>&lt;aside&gt;</code>元素</h3><p><code>&lt;aside&gt;</code>表示<code>&lt;article&gt;</code>元素的内容之外的，它的内容应该与附近内容相关<br>代码：</p>
-<figure class="highlight plaintext"><figcaption><span>html></span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt; </span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt; </span><br><span class="line">&lt;title&gt;aside&lt;/title&gt; </span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">  &lt;p&gt;神州十二号飞船成功升空&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">  &lt;aside&gt;</span><br><span class="line">    &lt;h4&gt;飞船抵达中国空间站&lt;/h4&gt;</span><br><span class="line">    &lt;p&gt;6月19日上午，神舟十二号飞船抵达距离天和核心舱200米的停留点，开始进行对接准备。</span><br><span class="line">      通过使用最先进的快速交会对接自动化技术</span><br><span class="line">      这一切都要归功于从一次次太空飞行中总结的的经验。&lt;/p&gt;</span><br><span class="line">  &lt;/aside&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="●-lt-header-gt-元素"><a href="#●-lt-header-gt-元素" class="headerlink" title="● &lt;header&gt;元素"></a>●<code> &lt;header&gt;</code>元素</h3><p><code>&lt;header&gt;</code>元素表示页面中的一个内容块或整个页面的标题<br>代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt; </span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt; </span><br><span class="line">&lt;title&gt;header&lt;/title&gt; </span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;article&gt;</span><br><span class="line">    &lt;header&gt;</span><br><span class="line">      &lt;h1&gt;飞船抵达中国空间站&lt;/h1&gt;</span><br><span class="line">    &lt;/header&gt;</span><br><span class="line">    &lt;p&gt;</span><br><span class="line">      6月19日上午，神舟十二号飞船抵达距离天和核心舱200米的停留点，开始进行对接准备。</span><br><span class="line">      通过使用最先进的快速交会对接自动化技术</span><br><span class="line">      这一切都要归功于从一次次太空飞行中总结的的经验。</span><br><span class="line">    &lt;/p&gt;</span><br><span class="line">  &lt;/article&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="●-lt-footer-gt-元素"><a href="#●-lt-footer-gt-元素" class="headerlink" title="● &lt;footer&gt;元素"></a>●<code> &lt;footer&gt;</code>元素</h3><p><code>&lt;footer&gt;</code>元素表示整个页面或页面中一个区域内的脚注，一般包含作者的基本信息<br>代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt; </span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;header&lt;/title&gt; </span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;article&gt;</span><br><span class="line">        &lt;header&gt;</span><br><span class="line">            &lt;h1&gt;飞船抵达中国空间站&lt;/h1&gt;</span><br><span class="line">        &lt;/header&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            6月19日上午，神舟十二号飞船抵达距离天和核心舱200米的停留点，开始进行对接准备。</span><br><span class="line">            通过使用最先进的快速交会对接自动化技术</span><br><span class="line">            这一切都要归功于从一次次太空飞行中总结的的经验。</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">    &lt;/article&gt;</span><br><span class="line">    &lt;footer&gt;</span><br><span class="line">        &lt;p&gt;&amp;copy;环球网&lt;/p&gt;</span><br><span class="line">      	&lt;p&gt;发表时间：7-12&lt;/p&gt;</span><br><span class="line">    &lt;/footer&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="●-lt-nav-gt-元素"><a href="#●-lt-nav-gt-元素" class="headerlink" title="● &lt;nav&gt;元素"></a>● <code>&lt;nav&gt;</code>元素</h3><p><code>&lt;nav&gt;</code>元素通常在内嵌套<code>&lt;a&gt;</code>标签表示页面的导航链接部分<br>代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt; </span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt; </span><br><span class="line">&lt;title&gt;nav&lt;/title&gt; </span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">  &lt;nav&gt;</span><br><span class="line">    &lt;a href=&quot;/html/&quot;&gt;HTML&lt;/a&gt; |</span><br><span class="line">    &lt;a href=&quot;/css/&quot;&gt;CSS&lt;/a&gt; |</span><br><span class="line">    &lt;a href=&quot;/js/&quot;&gt;JavaScript&lt;/a&gt; |</span><br><span class="line">    &lt;a href=&quot;/jquery/&quot;&gt;jQuery&lt;/a&gt;</span><br><span class="line">  &lt;/nav&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="●-lt-video-gt-元素"><a href="#●-lt-video-gt-元素" class="headerlink" title="● &lt;video&gt;元素"></a>● <code>&lt;video&gt;</code>元素</h3><p>  ○ <code>&lt;video&gt;</code>元素用来插入视频<br>  ○ <code>&lt;video&gt;</code>元素仅支持MP4，WebM，Ogg视频格式<br>  ○ 元素属性表：<br><img src="https://s2.loli.net/2022/07/04/s2cxC4aoOdI5mwN.jpg" align="center" width="800" height="250" div></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt; </span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt; </span><br><span class="line">&lt;title&gt;video&lt;/title&gt; </span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">  &lt;video width=&quot;320&quot; height=&quot;240&quot; controls&gt;</span><br><span class="line">    &lt;source src=&quot;movie.mp4&quot;  type=&quot;video/mp4&quot;&gt;</span><br><span class="line">    &lt;source src=&quot;movie.ogg&quot;  type=&quot;video/ogg&quot;&gt;</span><br><span class="line">    您的浏览器不支持 HTML5 video 标签。</span><br><span class="line">  &lt;/video&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="●-lt-audio-gt-元素"><a href="#●-lt-audio-gt-元素" class="headerlink" title="● &lt;audio&gt;元素"></a>● <code>&lt;audio&gt;</code>元素</h3><p>  ○ <code>&lt;audio&gt;</code>元素用来插入音频<br>  ○ <code>&lt;audio&gt;</code>元素仅支持Ogg和MP3格式<br>  ○ 元素属性表<br>  <img src="https://s2.loli.net/2022/07/04/uAO9yGsiZLHmkUq.jpg" align="center" width="800" height="250" div></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">  &lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt; </span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt; </span><br><span class="line">&lt;title&gt;audio&lt;/title&gt; </span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;audio controls&gt;</span><br><span class="line">    &lt;source src=&quot;music.ogg&quot; type=&quot;audio/ogg&quot;&gt;</span><br><span class="line">    &lt;source src=&quot;music.mp3&quot; type=&quot;audio/mpeg&quot;&gt;</span><br><span class="line">  您的浏览器不支持 audio 元素。</span><br><span class="line">  &lt;/audio&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="●-lt-mark-gt-元素"><a href="#●-lt-mark-gt-元素" class="headerlink" title="● &lt;mark&gt;元素"></a>● <code>&lt;mark&gt;</code>元素</h3><p><code>&lt;mark&gt;</code>元素主要用来在视觉上向用户呈现哪些需要突出显示或高亮显示的文字，一般用在搜索结果中向用户高亮显示搜索关键词<br>代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt; </span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt; </span><br><span class="line">&lt;title&gt;mark&lt;/title&gt; </span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;p&gt;神舟十二号航天员乘组圆满完成空间站阶段&lt;mark&gt;首次出舱&lt;/mark&gt;活动全部既定任务&lt;/p&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="●-lt-ruby-gt-元素"><a href="#●-lt-ruby-gt-元素" class="headerlink" title="● &lt;ruby&gt;元素"></a>● <code>&lt;ruby&gt;</code>元素</h3><p><code>&lt;ruby&gt;</code>表示中文注音或字符</p>
-<h3 id="●-lt-rt-gt-元素"><a href="#●-lt-rt-gt-元素" class="headerlink" title="● &lt;rt&gt;元素"></a>● <code>&lt;rt&gt;</code>元素</h3><p><code>&lt;rt&gt;</code>元素与<code>&lt;ruby&gt;</code>配合使用用来解释或发音</p>
-<h3 id="●-lt-rp-gt-元素"><a href="#●-lt-rp-gt-元素" class="headerlink" title="● &lt;rp&gt;元素"></a>● <code>&lt;rp&gt;</code>元素</h3><p><code>&lt;rp&gt;</code>元素与<code>&lt;ruby&gt;</code>一起使用，以定义不支持<code>&lt;ruby&gt;</code>元素的浏览器显示内容，以括号的形式出现如：汉字(Han Zi)<br>代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt; </span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt; </span><br><span class="line">&lt;title&gt;ruby,rt,rp</span><br><span class="line">  &lt;/title&gt; </span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;ruby&gt;</span><br><span class="line">  汉 &lt;rp&gt;(&lt;/rp&gt;&lt;rt&gt;Han&lt;/rt&gt;&lt;rp&gt;)&lt;/rp&gt;</span><br><span class="line">  字 &lt;rp&gt;(&lt;/rp&gt;&lt;rt&gt;zi&lt;/rt&gt;&lt;rp&gt;)&lt;/rp&gt;</span><br><span class="line">&lt;/ruby&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="●-lt-details-gt-元素"><a href="#●-lt-details-gt-元素" class="headerlink" title="● &lt;details&gt;元素"></a>● <code>&lt;details&gt;</code>元素</h3><p><code>&lt;details&gt;</code>元素表示用户要求得到的细节信息，与<code>&lt;summary&gt;</code>配合使用，<code>&lt;summary&gt;</code>提供标题或图例，用户点击标题时，会显示户细节信息，<code>&lt;summary&gt;</code>元素应该是<code>&lt;details&gt;</code>元素的第一个元素<br>代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;details&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;details&gt;</span><br><span class="line">        &lt;summary&gt;空间站&lt;/summary&gt;</span><br><span class="line">        空间站（space station）又称太空站、航天站。</span><br><span class="line">      	是一种在近地轨道长时间运行、可供多名航天员巡访、长期工作和生活的载人航天器。</span><br><span class="line">      	空间站分为单模块空间站和多模块空间站两种。</span><br><span class="line">      	单模块空间站可由航天运载器一次发射入轨，多模块空间站则由航天运载器分批将各模块送入轨道，在太空中将各模块组装而成。</span><br><span class="line">      	在空间站中要有人能够生活的一切设施，空间站不具备返回地球的能力。</span><br><span class="line">    &lt;/details&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<h1 id="3-2-全局属性"><a href="#3-2-全局属性" class="headerlink" title="3.2 全局属性"></a>3.2 全局属性</h1><h2 id="3-2-1-contentEditable属性"><a href="#3-2-1-contentEditable属性" class="headerlink" title="3.2.1 contentEditable属性"></a>3.2.1 contentEditable属性</h2><p>contentEditable属性由微软开发并被其它浏览器反编译投入引用的一个全局属性，该属性允许用户编辑元素内容，该属性是一个布尔值的属性，可以被指定false或true<br>该属性默认inherit（继承）状态，属性为true时，元素被指定为允许编辑；属性为false时，元素被指定为不允许编辑状态；未指定值时，则由inherit状态决定，如果父元素是可编辑元素，则该元素也可编辑<br>在编辑完成后，如果想要保存其中的内容，只能把该元素的innerHTML发送到服务器端进行保存，目前还没有特别的API来保存编辑后的元素内容<br>代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;contenteditable&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;ul contenteditable=&quot;true&quot;&gt;</span><br><span class="line">        &lt;li&gt;这是预编译内容&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;这是预编译内容&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;这是预编译内容&lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="3-2-2-designMode属性"><a href="#3-2-2-designMode属性" class="headerlink" title="3.2.2 designMode属性"></a>3.2.2 designMode属性</h2><p>designModel属性用来指定整个页面是否可编辑，当页面可编辑时，页面中任何支持contenteditable属性的元素都变成可编辑状态。该属性只能在JavaScript脚本里被编辑修改，该属性有两个值 “on”或“off”，当属性被指定为“on”时，页面为可编辑状态，为“off”时，页面不可编辑<br>代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;designMode&lt;/title&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        document.designMode=&quot;on&quot;;</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">        &lt;li&gt;这是原有内容&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;这是原有内容&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;这是原有内容&lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">    &lt;a href=&quot;javascript:void(0)&quot;&gt;链接&lt;/a&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="3-2-3-hidden属性"><a href="#3-2-3-hidden属性" class="headerlink" title="3.2.3 hidden属性"></a>3.2.3 hidden属性</h2><p>在HTML 5中，所有的元素都允许使用一个hidden属性。该属性类似于input元素中的 hidden元素，功能是通知浏览器不渲染该元素。使该元素处干不可见状态。但是元素中的内容还是浏览器创建的，也就是说页面装载后允许使用JavaScript脚本将该属性取消，取消后该元素变为可见状态，同时元素中的内容也即时显示出来。Hidden属性是一个布尔值的属性。当设为true时，元素处于不可见状态;当设为false时，元素处于可见状态</p>
-]]></content>
       <categories>
         <category>XiAnTrain</category>
       </categories>
