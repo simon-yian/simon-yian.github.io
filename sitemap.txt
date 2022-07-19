@@ -36,6 +36,6 @@ https://simon-yian.github.io/
 https://simon-yian.github.io/categories/algorithm/
 https://simon-yian.github.io/categories/LeetCode/
 https://simon-yian.github.io/categories/Python%E7%AC%94%E8%AE%B0/
-https://simon-yian.github.io/categories/XiAnTrain/
 https://simon-yian.github.io/categories/VMware/
+https://simon-yian.github.io/categories/XiAnTrain/
 https://simon-yian.github.io/categories/hexo/
