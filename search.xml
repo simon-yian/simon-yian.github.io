@@ -69,6 +69,67 @@
       </categories>
   </entry>
   <entry>
+    <title>基于SSM框架的电⼦书城项⽬开发笔记</title>
+    <url>/2022/04/23/SSMknowledge/</url>
+    <content><![CDATA[<img src="https://i.loli.net/2021/10/25/lQXn9eE8fIvHCYp.jpg" align="center" width="800" height="250" div>
+<span id="more"></span>
+
+<h1 id="电⼦书城项⽬开发笔记"><a href="#电⼦书城项⽬开发笔记" class="headerlink" title="电⼦书城项⽬开发笔记"></a>电⼦书城项⽬开发笔记</h1><h2 id="⼀、项⽬简介"><a href="#⼀、项⽬简介" class="headerlink" title="⼀、项⽬简介"></a>⼀、项⽬简介</h2><p>电⼦书城项⽬的基本实现的要求与技术指标。<br>系统的功能结构：<br>前端部分：<br>⽤户操作<br>⽤户的⼀些基本操作以及相关的购买⾏为的实现<br>图书浏览<br>按类别浏览图书信息、根据图书的名称搜索相关的图书<br>后端部分：<br>商品管理、销售榜单、公告管理、订单管理</p>
+<h2 id="⼆、数据库设计"><a href="#⼆、数据库设计" class="headerlink" title="⼆、数据库设计"></a>⼆、数据库设计</h2><p>项⽬中实体E-R图的分析：<br>⽤户实体User E-R图：<br>商品实体products E-R图<br>订单实体orders E-R图<br>订单项orderitem E-R图<br>公告栏实体notice E-R图<br>根据E-R图来创建数据库及相关的表。<br> 创建数据库、数据库名称为xbmubookstore<br>create database if not exists xbmubookstore default charset=utf8mb4;<br> 使⽤use xbmubookstore来使⽤该数据库<br>use xbmubookstore;<br>查看当前数据库中存在的表信息<br>show tables;<br> 创建表格 user表<br> <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"> create table if not exists user(</span><br><span class="line"> id int(11) not null auto_increment,</span><br><span class="line"> username varchar(20) not null,</span><br><span class="line"> password varchar(20) not null,</span><br><span class="line"> gender varchar(2),</span><br><span class="line"> email varchar(50),</span><br><span class="line"> telephone varchar(20),</span><br><span class="line"> introduce varchar(100),</span><br><span class="line"> activeCode varchar(50),</span><br><span class="line"> state int(4),</span><br><span class="line"> role varchar(10),</span><br><span class="line"> registTime timestamp,</span><br><span class="line"> primary key (id)</span><br><span class="line">user:</span><br><span class="line">products:</span><br><span class="line">orders:</span><br><span class="line">orderitem:</span><br><span class="line">notice:</span><br></pre></td></tr></table></figure></p>
+<h2 id="三、SSM项⽬框架搭建"><a href="#三、SSM项⽬框架搭建" class="headerlink" title="三、SSM项⽬框架搭建"></a>三、SSM项⽬框架搭建</h2><p>使⽤Eclipse创建⼀个Web Project⼯程。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">)engine=innodb charset=utf8mb4;</span><br><span class="line">desc user;</span><br><span class="line">create table if not exists notice(</span><br><span class="line"> n_id int(11) not null auto_increment,</span><br><span class="line"> title varchar(10) not null,</span><br><span class="line"> primary key(n_id) );</span><br></pre></td></tr></table></figure>
+
+<p>选择创建Dynamic Web Project项⽬，按向导给项⽬填写名称<br>注意个性 Context root为系统的指定的上下⽂路径<br>项⽬创建完成后的结构组织图如下：<br>接着开始完成SSM的项⽬搭建⼯作</p>
+<h3 id="1-导⼊spring及springMVC相关的包"><a href="#1-导⼊spring及springMVC相关的包" class="headerlink" title="1.导⼊spring及springMVC相关的包"></a>1.导⼊spring及springMVC相关的包</h3><p>在spring framework压缩包中的libs⽬录下将以下的jar包，复制到创建的项⽬的webapp–&gt;WEB-INF–lib⽬录下。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">spring-aop-5.2.19.RELEASE.jar</span><br><span class="line">spring-aspects-5.2.19.RELEASE.jar</span><br><span class="line">spring-beans-5.2.19.RELEASE.jar</span><br><span class="line">spring-context-5.2.19.RELEASE.jar</span><br><span class="line">spring-core-5.2.19.RELEASE.jar</span><br><span class="line">spring-expression-5.2.19.RELEASE.jar</span><br><span class="line">spring-jdbc-5.2.19.RELEASE.jar</span><br><span class="line">spring-tx-5.2.19.RELEASE.jar</span><br><span class="line">spring-web-5.2.19.RELEASE.jar</span><br><span class="line">spring-webmvc-5.2.19.RELEASE.jar</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-导⼊mybatis相关的包"><a href="#2-导⼊mybatis相关的包" class="headerlink" title="2.导⼊mybatis相关的包"></a>2.导⼊mybatis相关的包</h3><p>到mybatis的压缩包中，解压后复制以下jar包到项⽬⼯程的lib⽬录下。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mybatis-3.5.6.jar</span><br><span class="line">log4j-1.2.17.jar</span><br><span class="line">log4j-api-2.13.3.jar</span><br><span class="line">log4j-core-2.13.3.jar</span><br><span class="line">commons-logging-1.2.jar</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-导⼊数据库访问及数据库连接池相关的包"><a href="#3-导⼊数据库访问及数据库连接池相关的包" class="headerlink" title="3.导⼊数据库访问及数据库连接池相关的包"></a>3.导⼊数据库访问及数据库连接池相关的包</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">commons-pool2-2.11.1.jar</span><br><span class="line">commons-dbcp2-2.9.0.jar</span><br><span class="line">mysql-connector-java-8.0.28.jar</span><br></pre></td></tr></table></figure>
+
+
+<p>4.导⼊其它的相关的jar包</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">aspectjweaver-1.9.6.jar</span><br><span class="line">commons-io-1.3.2.jar</span><br><span class="line">jstl-1.2.jar</span><br><span class="line">javax.servlet-api-3.1.0.jar</span><br><span class="line">mybatis-spring-2.0.7.jar</span><br><span class="line">standard-1.1.2.jar</span><br></pre></td></tr></table></figure>
+
+<h2 id="项⽬搭建后的结构图如下："><a href="#项⽬搭建后的结构图如下：" class="headerlink" title="项⽬搭建后的结构图如下："></a>项⽬搭建后的结构图如下：</h2><p>然后，可以启动服务器，查看创建的初步结构。<br>如果启动的过程顺利，没有错误出现，则可以进⾏⼀下步的配置⼯作。</p>
+<h3 id="1-配置SpringMVC的相关内容。"><a href="#1-配置SpringMVC的相关内容。" class="headerlink" title="1.配置SpringMVC的相关内容。"></a>1.配置SpringMVC的相关内容。</h3><p>因为要使⽤SpringMVC的技术来管理web应⽤的请求，所以需要指定替换原来Tomcat中的web应⽤处理请求的<br>Servlet(DefaultServlet)。<br>在项⽬的WEB-INF⽬录下的web.xml中进⾏如下的配置。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;web-app xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line"> xmlns=&quot;http://xmlns.jcp.org/xml/ns/javaee&quot;</span><br><span class="line"> xsi:schemaLocation=&quot;http://xmlns.jcp.org/xml/ns/javaee</span><br><span class="line">http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd&quot;</span><br><span class="line"> id=&quot;WebApp_ID&quot; version=&quot;3.1&quot;&gt;</span><br><span class="line"> &lt;!-- 配置SpringMVC的默认Servlet替换Tomcat的原默认Servlet --&gt;</span><br><span class="line"> &lt;servlet&gt;</span><br><span class="line"> &lt;servlet-name&gt;SpringMVC&lt;/servlet-name&gt;</span><br><span class="line"> &lt;servlet-class&gt;</span><br><span class="line"> org.springframework.web.servlet.DispatcherServlet</span><br><span class="line"> &lt;/servlet-class&gt;</span><br><span class="line"> &lt;load-on-startup&gt;1&lt;/load-on-startup&gt;</span><br><span class="line"> &lt;/servlet&gt;</span><br><span class="line"> &lt;servlet-mapping&gt;</span><br><span class="line"> &lt;servlet-name&gt;SpringMVC&lt;/servlet-name&gt;</span><br><span class="line"> &lt;url-pattern&gt;/&lt;/url-pattern&gt;</span><br><span class="line"> &lt;/servlet-mapping&gt;</span><br><span class="line">&lt;/web-app&gt;</span><br></pre></td></tr></table></figure>
+
+<p>配置完成后，启动服务器检查配置的情况。<br>这时会发现，启动过程中出现错误。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">严重: Servlet[SpringMVC]的Servlet.init（）引发异常</span><br><span class="line">org.springframework.beans.factory.BeanDefinitionStoreException: IOException parsing XML</span><br><span class="line">document from ServletContext resource [/WEB-INF/SpringMVC-servlet.xml]; nested exception is</span><br><span class="line">java.io.FileNotFoundException: Could not open ServletContext resource [/WEB-INF/SpringMVC￾servlet.xml]</span><br><span class="line"> at</span><br><span class="line">org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefini</span><br><span class="line">tionReader.java:342)</span><br></pre></td></tr></table></figure>
+
+<p>这是因为，配置了springmvc的DispatcherServlet后，系统会寻找spring初始化的配置⽂件，默认会到WEB-INF⽬<br>录下寻找以servlet-name为名称前缀，并且后⾯为-servlet.xml的配置⽂件，因为还没有配置该⽂件，所以系统在<br>启动时，初始化spring会报异常。<br>所以要在WEB-INF⽬录下创建⼀个spring初始化配置⽂件：<br>SpringMVC-servlet.xml</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;</span><br><span class="line"> xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line"> xmlns:context=&quot;http://www.springframework.org/schema/context&quot;</span><br><span class="line"> xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans</span><br><span class="line"> https://www.springframework.org/schema/beans/spring-beans.xsd</span><br><span class="line"> http://www.springframework.org/schema/context</span><br><span class="line"> https://www.springframework.org/schema/context/spring-context.xsd&quot;&gt;</span><br><span class="line"> </span><br><span class="line"> &lt;!-- 启⽤注解 --&gt; </span><br><span class="line"> &lt;context:annotation-config /&gt;</span><br><span class="line"> &lt;!-- 扫描包 --&gt;</span><br><span class="line"> &lt;context:component-scan base-package=&quot;com.lz.xbmu&quot;&gt;&lt;/context:component-scan&gt;</span><br><span class="line"> </span><br><span class="line">&lt;/beans&gt;</span><br></pre></td></tr></table></figure>
+
+<p>再次启动服务器，检查启动过程的⽇志，会发现没有错误出现。<br>到此基本的配置完成。<br>2.编写第⼀个控制器MyController<br>⾸先，创建包路径: com.lz.xbmu<br>在该包路径下新建包 controller及类MyController</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package com.lz.xbmu.controller;</span><br><span class="line">import org.springframework.stereotype.Controller;</span><br><span class="line">import org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line">//第⼀个控制器</span><br><span class="line">@Controller</span><br><span class="line">public class MyController &#123;</span><br><span class="line"> </span><br><span class="line"> @RequestMapping(&quot;/mytest&quot;)</span><br><span class="line"> public String myTest() &#123;</span><br><span class="line"> System.out.println(&quot;MyController myTest() is running...&quot;);</span><br><span class="line"> return &quot;hello&quot;;</span><br><span class="line"> &#125; &#125;</span><br></pre></td></tr></table></figure>
+
+<p>当通过<a href="http://loclahost:8080/book/mytest">http://loclahost:8080/book/mytest</a><br>请求访问时，系统报异常：<br>如果是循环访问的错误，则需要修改⼀下控制器的返回字符串。<br>修改完循环引⽤访问的问题后，再启动访问发现404错误。<br>这是因为没有配置视图解析器造成的，所以要配置视图解析器，可以参考帮助⽂档中的内容（web.pdf）。<br>如果提示404未找到WEB-INF/jsp⽬录下的hello.jsp⽂件，说明还没有创建该⽂件。<br>创建hello.jsp⽂件，再启动服务器。<br>2.通过springmvc请求数据发送<br>服务器启动后，访问地址<a href="http://localhost:8080/book/%E6%97%B6%EF%BC%8C%E4%BC%9A%E9%BB%98%E8%AE%A4%E8%AE%BF%E9%97%AE%E5%88%B0webapp%E2%BD%AC%E5%BD%95%E4%B8%8B%E7%9A%84index.jsp%E2%BB%9A%E2%BE%AF%EF%BC%8C%E5%BD%93%E8%AE%BF%E9%97%AE">http://localhost:8080/book/时，会默认访问到webapp⽬录下的index.jsp⻚⾯，当访问</a><br>到该⻚⾯时，其中的的jsp动作，forward会跳转访问到/mytest，也就是请求了MyControll中的相对应的⽅法，该<br>⽅法的返回字符串就是跳转后的⻚⾯的名称。<br>也就是WEB-INF/jsp/hello.jsp⻚⾯。<br>@PostMapping注解的使⽤<br>ModelAndView对象的使⽤<br>通过pojo对象来包装数据<br>中⽂乱码的解决，使⽤全局过滤器来解决。<br>3.部署client前端的资源</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- 配置视图解析器 --&gt;</span><br><span class="line"> &lt;bean id=&quot;viewResolver&quot;</span><br><span class="line"> class=&quot;org.springframework.web.servlet.view.InternalResourceViewResolver&quot;&gt;</span><br><span class="line"> &lt;property name=&quot;prefix&quot; value=&quot;/WEB-INF/jsp/&quot; /&gt;</span><br><span class="line"> &lt;property name=&quot;suffix&quot; value=&quot;.jsp&quot; /&gt;</span><br><span class="line"> &lt;/bean&gt;</span><br><span class="line">&lt;filter&gt;</span><br><span class="line"> &lt;filter-name&gt;encoding&lt;/filter-name&gt;</span><br><span class="line"> &lt;filter-class&gt;org.springframework.web.filter.CharacterEncodingFilter&lt;/filter-class&gt;</span><br><span class="line"> &lt;init-param&gt;</span><br><span class="line"> &lt;param-name&gt;encoding&lt;/param-name&gt;</span><br><span class="line"> &lt;param-value&gt;utf-8&lt;/param-value&gt;</span><br><span class="line"> &lt;/init-param&gt; </span><br><span class="line"> &lt;/filter&gt;</span><br><span class="line"> &lt;filter-mapping&gt;</span><br><span class="line"> &lt;filter-name&gt;encoding&lt;/filter-name&gt;</span><br><span class="line"> &lt;url-pattern&gt;/*&lt;/url-pattern&gt;</span><br><span class="line"> &lt;/filter-mapping&gt;</span><br></pre></td></tr></table></figure>
+<p>在该⽂件夹中存在这资源内容和相关的jsp⻚⾯。<br>将资源⽂件内容与jsp⻚⾯分别进⾏部署。<br>⾸先在webapp⽬录下创建⼀个名为client的⽬录，然后将ad，bookcover，css，images，js这五个⽬录及其中的<br>内容均考⻉到client⽬录中。<br>在WEB-INF/jsp⽬录下再创建⼀个名为client的⽬录，然后将剩余的jsp⽂件都考⻉到该⽬录下。<br>个性MyController类中的mytest请求访问⽅法的返回字符串路径：<br>四、项⽬的前端模块应⽤<br>1.部署相关的资源<br>将资源分为两个部分，⻚⾯jsp都放到webapp–&gt;WEB-INF–&gt;jsp–&gt;⽬录内，可以提⾼安全性。只能通过SpringMVC<br>的视图解析器才能访问到。<br>其它的⻚⾯内的样式表、js、图⽚等内容都放到webapp–&gt;client⽬录下，这些内容是可以通过浏览器直接访问到。<br>⻚⾯中的资源⽆法访问的原因：是因为在web.xml中配置了DispatcherServlet来处理全部的映射请求的路径，⽽该<br>servlet是SpringMVC中的前端控制器，只负责处理url映射请求对应的处理器，⽽⽆法处理静态资源，所以⻚⾯中<br>的静态资源是不能被调⽤。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">@RequestMapping(&quot;/mytest&quot;)</span><br><span class="line">public String myTest() &#123;</span><br><span class="line">System.out.println(&quot;跳转到书城的⾸⻚⾯&quot;);</span><br><span class="line">//return &quot;hello&quot;;</span><br><span class="line">return &quot;client/index&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>2.处理静态资源的⽅法<br>a.使⽤Tomcat的默认处理Servlet（defaultServlet）<br>2.将DispatcherServlet的处理url映射请求进⾏设定<br>3.使⽤SpringMVC的配置⽅式<br>将静态资源的处理过程添加到SpringMVC-servlet.xml⽂件中去<br>3.⽤户注册功能<br>要通过注册⻚⾯来实现⽤户的注册功能。<br>因为现在的jsp⻚⾯都在WEB-INF⽬录下，所以不能直接访问到。<br>通过SpringMVC视图解析器来反回⼀个注册⻚⾯。<br>⾸先分析client/index.jsp⻚⾯的组成</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"> &lt;servlet-mapping&gt;</span><br><span class="line"> &lt;servlet-name&gt;default&lt;/servlet-name&gt;</span><br><span class="line"> &lt;url-pattern&gt;*.js&lt;/url-pattern&gt;</span><br><span class="line"> &lt;url-pattern&gt;*.css&lt;/url-pattern&gt;</span><br><span class="line"> &lt;url-pattern&gt;*.jpg&lt;/url-pattern&gt;</span><br><span class="line"> &lt;url-pattern&gt;*.png&lt;/url-pattern&gt;</span><br><span class="line"> &lt;url-pattern&gt;*.gif&lt;/url-pattern&gt;</span><br><span class="line"> &lt;/servlet-mapping&gt;</span><br><span class="line">&lt;servlet&gt;</span><br><span class="line"> &lt;servlet-name&gt;SpringMVC&lt;/servlet-name&gt;</span><br><span class="line"> &lt;servlet-class&gt;</span><br><span class="line"> org.springframework.web.servlet.DispatcherServlet</span><br><span class="line"> &lt;/servlet-class&gt;</span><br><span class="line"> &lt;load-on-startup&gt;1&lt;/load-on-startup&gt;</span><br><span class="line"> &lt;/servlet&gt;</span><br><span class="line"> &lt;servlet-mapping&gt;</span><br><span class="line"> &lt;servlet-name&gt;SpringMVC&lt;/servlet-name&gt;</span><br><span class="line"> &lt;url-pattern&gt;*.action&lt;/url-pattern&gt;</span><br><span class="line"> &lt;/servlet-mapping&gt;</span><br><span class="line">&lt;!-- 静态资源解析 --&gt;</span><br><span class="line"> &lt;mvc:annotation-driven/&gt;</span><br><span class="line"> &lt;mvc:resources location=&quot;client/css/&quot; mapping=&quot;client/css/**&quot;&gt;&lt;/mvc:resources&gt;</span><br><span class="line"> &lt;mvc:resources location=&quot;client/ad/&quot; mapping=&quot;client/ad/**&quot;&gt;&lt;/mvc:resources&gt;</span><br><span class="line"> &lt;mvc:resources location=&quot;client/bookcover/&quot; mapping=&quot;client/bookcover/**&quot;&gt;&lt;/mvc:resources&gt;</span><br><span class="line"> &lt;mvc:resources location=&quot;client/js/&quot; mapping=&quot;client/js/**&quot;&gt;&lt;/mvc:resources&gt;</span><br><span class="line"> &lt;mvc:resources location=&quot;client/images/&quot; mapping=&quot;client/images/**&quot;&gt;&lt;/mvc:resources&gt;</span><br></pre></td></tr></table></figure>
+
+<p>需要在对应的⻚⾯中去设置相关的链接或是请求的url<br>在head.jsp⻚⾯中添加以下的内容<br><a href="${pageContext.request.contextPath}/registerpage">新⽤户注册</a><br>这样就可以通过请求UserController中的对应的处理器⽅法来返回指定的jsp⻚⾯。<br>通过form表单提交注册⽤户的信息<br>UserController.java</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package com.lz.xbmu.controller;</span><br><span class="line">import org.springframework.stereotype.Controller;</span><br><span class="line">import org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line">import org.springframework.web.bind.annotation.RequestMethod;</span><br><span class="line">import com.lz.xbmu.po.User;</span><br><span class="line">@Controller</span><br><span class="line">public class UserController &#123;</span><br><span class="line"> //跳转到⽤户注册⻚⾯</span><br><span class="line"> @RequestMapping(value=&quot;/registerpage&quot;,method=RequestMethod.GET)</span><br><span class="line"> public String registerPage() &#123;</span><br><span class="line"> System.out.println(&quot;跳转到⽤户注册⻚⾯...&quot;);</span><br><span class="line"> return &quot;client/register&quot;;</span><br></pre></td></tr></table></figure>
+
+<p>4.整合spring与mybatis<br>⾸先将相关的spring包及mybatis的包导⼊到项⽬中去。<br>然后是相关的数据库驱动、数据库连接、⽇志等相关的包也要导⼊到项⽬中去。<br>然后就要在项⽬添加整合的配置⽂件。<br>因为spring和springMVC都是springframework框架中的内容，所以它们之间不需要进⾏整合的配置，只是要对<br>spring与mybatis及springmvc与mybatis进⾏整合。<br>配置⽂件参考spring与mybatis整合的章节内容。<br>使⽤三层结构来完成项⽬的功能模块。<br>⾸先创建com.lz.xbmu.mapper包，在该包中创建接⼝及对应的映射⽂件。<br> }<br> <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">  //获取⽤户注册信息</span><br><span class="line"> @RequestMapping(value=&quot;/registeruser&quot;,method=RequestMethod.POST)</span><br><span class="line"> public String registerInfo(User user) &#123;</span><br><span class="line"> System.out.println(user);</span><br><span class="line"> //注册后的⽤户数据将要写⼊数据库中</span><br><span class="line"> </span><br><span class="line"> return &quot;client/registersuccess&quot;;</span><br><span class="line"> &#125; &#125;</span><br><span class="line">package com.lz.xbmu.mapper;</span><br><span class="line">import com.lz.xbmu.po.User;</span><br><span class="line">public interface UserMapper &#123;</span><br><span class="line"> public int insertUser(User user);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</span><br><span class="line">&lt;!DOCTYPE mapper</span><br><span class="line"> PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;</span><br><span class="line"> &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;</span><br><span class="line">&lt;mapper namespace=&quot;com.lz.xbmu.mapper.UserMapper&quot;&gt;</span><br><span class="line"> &lt;!-- 插⼊⽤户数据 --&gt;</span><br><span class="line"> &lt;insert id=&quot;insertUser&quot; parameterType=&quot;user&quot;&gt;</span><br><span class="line"> insert into user</span><br><span class="line"> value(null,#&#123;username&#125;,#&#123;password&#125;,#&#123;gender&#125;,#&#123;email&#125;,#&#123;telephone&#125;,#&#123;introduce&#125;,#</span><br><span class="line">&#123;activeCode&#125;,#&#123;state&#125;,#&#123;role&#125;,#&#123;registTime&#125;)</span><br><span class="line"> &lt;/insert&gt;</span><br><span class="line">&lt;/mapper&gt;</span><br></pre></td></tr></table></figure>
+
+<p>接着创建⽤户接⼝及实现类</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package com.lz.xbmu.service;</span><br><span class="line">import com.lz.xbmu.po.User;</span><br><span class="line">public interface UserService &#123;</span><br><span class="line"> public int addUser(User user);</span><br><span class="line">&#125;</span><br><span class="line">package com.lz.xbmu.service.impl;</span><br><span class="line">import java.util.Date;</span><br><span class="line">import java.util.UUID;</span><br><span class="line">import org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line">import org.springframework.stereotype.Service;</span><br><span class="line">import com.lz.xbmu.mapper.UserMapper;</span><br><span class="line">import com.lz.xbmu.po.User;</span><br><span class="line">import com.lz.xbmu.service.UserService;</span><br><span class="line">@Service</span><br><span class="line">public class UserServiceImpl implements UserService &#123;</span><br><span class="line"> </span><br><span class="line"> @Autowired</span><br><span class="line"> private UserMapper userMapper;</span><br><span class="line"> </span><br><span class="line"> @Override</span><br><span class="line"> public int addUser(User user) &#123;</span><br><span class="line"> // 添加业务⽅法</span><br><span class="line"> //activeCode 激活码</span><br><span class="line"> //user.setActiveCode(UUID.randomUUID().toString());</span><br></pre></td></tr></table></figure>
+
+<p>记得要检查所有的配置信息，否则会出现意外的错误。⽐如数据库名称，地址等配置信息的错误。<br>现在已经完成了将前端的数据获取到，并通过业务⽅法再将数据使⽤持久化的机制保存到了指定的数据库。现在就<br>完成了SSM框架的整合⼯作。<br>五、后端业务处理及数据维护<br>1.⽤户登录实现<br>在系统的前端没有设计专⻔的⽤户登录连接，⽽是通过⼏种⽅式跳转到登录⻚⾯。<br>当⽤户访问我的帐户时，因为要判断⽤户是否是登录状态，如是已经登录的状态，则跳转到我的帐户⻚⾯。不是登<br>录状态时则要跳转到登录⻚⾯完成登录后才能访问我的帐户⻚⾯。<br>如何检查⽤户是否是登录状态？<br>在登录⻚⾯中填写⽤户的登录信息，在后端检查⽤户的信息，并且进⾏登录业务处理。<br>我的帐户</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//state状态码 0末激活，1已激活</span><br><span class="line"> user.setState(1);</span><br><span class="line"> //role 普通⽤户，管理员</span><br><span class="line"> user.setRole(&quot;普通⽤户&quot;);</span><br><span class="line"> //注册时间</span><br><span class="line"> user.setRegistTime(new Date());</span><br><span class="line"> return this.userMapper.insertUser(user);</span><br><span class="line"> &#125; &#125;</span><br><span class="line"> //⽤户帐户⻚⾯跳转</span><br><span class="line"> @GetMapping(&quot;/myaccount&quot;)</span><br><span class="line"> public ModelAndView myAccount(HttpSession session, ModelAndView mav) &#123;</span><br><span class="line"> //因为在登录是会将⽤户信息存储到session中</span><br><span class="line"> User user = (User) session.getAttribute(&quot;user&quot;);</span><br><span class="line"> if (user != null) &#123;</span><br><span class="line"> mav.setViewName(&quot;client/myAccount&quot;);</span><br><span class="line"> &#125;else &#123;</span><br><span class="line"> mav.addObject(&quot;info&quot;,&quot;请先登录&quot;);</span><br><span class="line"> mav.setViewName(&quot;client/login&quot;);</span><br><span class="line"> &#125;</span><br><span class="line"> return mav;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+ <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;sql id=&quot;userColumns&quot;&gt;</span><br><span class="line">id,username,gender,email,telephone,introduce,activeCode,state,role,registTime</span><br><span class="line">&lt;/sql&gt;</span><br><span class="line">&lt;!-- 根据⽤户名及密码检查⽤户 --&gt;</span><br><span class="line">&lt;select id=&quot;selectUserByNameAndPass&quot; parameterType=&quot;Map&quot;</span><br><span class="line">resultType=&quot;user&quot;&gt;</span><br><span class="line">select &lt;include refid=&quot;userColumns&quot; /&gt;</span><br><span class="line">from user</span><br><span class="line">where username=#&#123;username&#125; and password=#&#123;password&#125;</span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package com.lz.xbmu.mapper;</span><br><span class="line">import java.util.Map;</span><br><span class="line">import com.lz.xbmu.po.User;</span><br><span class="line">public interface UserMapper &#123;</span><br><span class="line"> public int insertUser(User user);</span><br><span class="line"> public User selectUserByNameAndPass(Map&lt;String,String&gt; map);</span><br><span class="line">&#125;</span><br><span class="line"> @Override</span><br><span class="line"> public User findUserByNameAndPass(String name, String pass) &#123;</span><br><span class="line"> // TODO Auto-generated method stub</span><br><span class="line"> Map&lt;String,String&gt; map = new HashMap&lt;&gt;();</span><br><span class="line"> map.put(&quot;username&quot;, name);</span><br><span class="line"> map.put(&quot;password&quot;, pass);</span><br><span class="line"> return userMapper.selectUserByNameAndPass(map);</span><br><span class="line"> &#125;</span><br><span class="line"> //⽤户登录</span><br><span class="line"> @PostMapping(&quot;/userlogin&quot;)</span><br><span class="line"> public ModelAndView userLogin(String username,String password,</span><br><span class="line"> HttpSession session, ModelAndView mav) &#123;</span><br><span class="line"> System.out.println(&quot;username=&quot;+username+&quot;,password=&quot;+password);</span><br><span class="line"> //通过⽤户名与密码到数据库中检查是否是注册⽤户</span><br><span class="line"> User user = userService.findUserByNameAndPass(username, password);</span><br><span class="line"> System.out.println(user);</span><br><span class="line"> boolean flag = true;</span><br><span class="line"> if(user != null) &#123;</span><br><span class="line"> //if(user.getActiveCode() == null) flag = false;</span><br><span class="line"> if(user.getState() != 1) flag = false;</span><br><span class="line"> if(user.getRegistTime() == null) flag = false;</span><br><span class="line"> if(flag) &#123;</span><br><span class="line"> session.setAttribute(&quot;user&quot;, user);</span><br><span class="line"> if(&quot;普通⽤户&quot;.equalsIgnoreCase(user.getRole()))&#123;</span><br><span class="line"> mav.setViewName(&quot;client/index&quot;);</span><br><span class="line"> &#125;else &#123;</span><br><span class="line"> mav.setViewName(&quot;admin/manager&quot;);</span><br><span class="line"> &#125;</span><br><span class="line"> &#125;else &#123;</span><br><span class="line"> mav.addObject(&quot;info&quot;,&quot;登录失败&quot;);</span><br><span class="line"> mav.setViewName(&quot;client/login&quot;);</span><br><span class="line"> &#125;</span><br><span class="line"> &#125;else &#123;</span><br><span class="line"> mav.addObject(&quot;info&quot;,&quot;⽤户名或密码错误&quot;);</span><br><span class="line"> mav.setViewName(&quot;client/login&quot;);</span><br><span class="line"> &#125;</span><br><span class="line"> </span><br><span class="line"> return mav;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//⽤户退出系统</span><br><span class="line">@GetMapping(&quot;/logout&quot;)</span><br><span class="line">public String userLogout(HttpSession session) &#123;</span><br><span class="line">System.out.println(&quot;⽤户退出系统&quot;);</span><br><span class="line">session.setAttribute(&quot;user&quot;, null);</span><br><span class="line">session.setAttribute(&quot;info&quot;, null);</span><br><span class="line">session.invalidate();</span><br><span class="line">return &quot;redirect:mytest&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+  </entry>
+  <entry>
     <title>PythonNote</title>
     <url>/2021/10/25/PythonNote/</url>
     <content><![CDATA[<img src="https://i.loli.net/2021/10/25/lQXn9eE8fIvHCYp.jpg" align="center" width="800" height="250" div>
@@ -327,65 +388,111 @@
       </categories>
   </entry>
   <entry>
-    <title>基于SSM框架的电⼦书城项⽬开发笔记</title>
-    <url>/2022/04/23/SSMknowledge/</url>
-    <content><![CDATA[<img src="https://i.loli.net/2021/10/25/lQXn9eE8fIvHCYp.jpg" align="center" width="800" height="250" div>
+    <title>在VMware16中创建虚拟机安装ubuntu 21.04系统</title>
+    <url>/2021/10/18/VMware-ubuntu/</url>
+    <content><![CDATA[<table>
+<tr><td bgcolor="CFCFCF">此篇是创建VMware16虚拟机安装ubuntu21.04系统的超详细操作过程，希望对小白白有所帮助
+</td></tr></table>
+
 <span id="more"></span>
 
-<h1 id="电⼦书城项⽬开发笔记"><a href="#电⼦书城项⽬开发笔记" class="headerlink" title="电⼦书城项⽬开发笔记"></a>电⼦书城项⽬开发笔记</h1><h2 id="⼀、项⽬简介"><a href="#⼀、项⽬简介" class="headerlink" title="⼀、项⽬简介"></a>⼀、项⽬简介</h2><p>电⼦书城项⽬的基本实现的要求与技术指标。<br>系统的功能结构：<br>前端部分：<br>⽤户操作<br>⽤户的⼀些基本操作以及相关的购买⾏为的实现<br>图书浏览<br>按类别浏览图书信息、根据图书的名称搜索相关的图书<br>后端部分：<br>商品管理、销售榜单、公告管理、订单管理</p>
-<h2 id="⼆、数据库设计"><a href="#⼆、数据库设计" class="headerlink" title="⼆、数据库设计"></a>⼆、数据库设计</h2><p>项⽬中实体E-R图的分析：<br>⽤户实体User E-R图：<br>商品实体products E-R图<br>订单实体orders E-R图<br>订单项orderitem E-R图<br>公告栏实体notice E-R图<br>根据E-R图来创建数据库及相关的表。<br> 创建数据库、数据库名称为xbmubookstore<br>create database if not exists xbmubookstore default charset=utf8mb4;<br> 使⽤use xbmubookstore来使⽤该数据库<br>use xbmubookstore;<br>查看当前数据库中存在的表信息<br>show tables;<br> 创建表格 user表<br> <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"> create table if not exists user(</span><br><span class="line"> id int(11) not null auto_increment,</span><br><span class="line"> username varchar(20) not null,</span><br><span class="line"> password varchar(20) not null,</span><br><span class="line"> gender varchar(2),</span><br><span class="line"> email varchar(50),</span><br><span class="line"> telephone varchar(20),</span><br><span class="line"> introduce varchar(100),</span><br><span class="line"> activeCode varchar(50),</span><br><span class="line"> state int(4),</span><br><span class="line"> role varchar(10),</span><br><span class="line"> registTime timestamp,</span><br><span class="line"> primary key (id)</span><br><span class="line">user:</span><br><span class="line">products:</span><br><span class="line">orders:</span><br><span class="line">orderitem:</span><br><span class="line">notice:</span><br></pre></td></tr></table></figure></p>
-<h2 id="三、SSM项⽬框架搭建"><a href="#三、SSM项⽬框架搭建" class="headerlink" title="三、SSM项⽬框架搭建"></a>三、SSM项⽬框架搭建</h2><p>使⽤Eclipse创建⼀个Web Project⼯程。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">)engine=innodb charset=utf8mb4;</span><br><span class="line">desc user;</span><br><span class="line">create table if not exists notice(</span><br><span class="line"> n_id int(11) not null auto_increment,</span><br><span class="line"> title varchar(10) not null,</span><br><span class="line"> primary key(n_id) );</span><br></pre></td></tr></table></figure>
+<p>安装环境： windows 10</p>
+<p>VMware 16安装包：我用阿里云盘分享了「VMware-workstation-full-16.1.2-17966106.exe」，你可以不限速下载🚀<br>复制这段内容打开「阿里云盘」App 即可获取<br>链接：<a href="https://www.aliyundrive.com/s/7acSRwmGho2">https://www.aliyundrive.com/s/7acSRwmGho2</a></p>
+<p>ubuntu 21.04镜像：链接：<a href="https://pan.baidu.com/s/1ktE78cieRE9Y7_BhrG9vjQ">https://pan.baidu.com/s/1ktE78cieRE9Y7_BhrG9vjQ</a><br>提取码：n9ms</p>
+<h3 id="安装VMware-16"><a href="#安装VMware-16" class="headerlink" title="安装VMware 16"></a>安装VMware 16</h3><p>1、 直接双击下载好的VMware，这个过程可能会显示重新启动系统，那你点就是了。重新启动后再次双击下载好的VMware，然后点击【下一步】。</p>
+<img src="https://i.loli.net/2021/10/18/X4BvRZr2LKb5SyD.jpg" width="850" height="400" div align="right">
 
-<p>选择创建Dynamic Web Project项⽬，按向导给项⽬填写名称<br>注意个性 Context root为系统的指定的上下⽂路径<br>项⽬创建完成后的结构组织图如下：<br>接着开始完成SSM的项⽬搭建⼯作</p>
-<h3 id="1-导⼊spring及springMVC相关的包"><a href="#1-导⼊spring及springMVC相关的包" class="headerlink" title="1.导⼊spring及springMVC相关的包"></a>1.导⼊spring及springMVC相关的包</h3><p>在spring framework压缩包中的libs⽬录下将以下的jar包，复制到创建的项⽬的webapp–&gt;WEB-INF–lib⽬录下。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">spring-aop-5.2.19.RELEASE.jar</span><br><span class="line">spring-aspects-5.2.19.RELEASE.jar</span><br><span class="line">spring-beans-5.2.19.RELEASE.jar</span><br><span class="line">spring-context-5.2.19.RELEASE.jar</span><br><span class="line">spring-core-5.2.19.RELEASE.jar</span><br><span class="line">spring-expression-5.2.19.RELEASE.jar</span><br><span class="line">spring-jdbc-5.2.19.RELEASE.jar</span><br><span class="line">spring-tx-5.2.19.RELEASE.jar</span><br><span class="line">spring-web-5.2.19.RELEASE.jar</span><br><span class="line">spring-webmvc-5.2.19.RELEASE.jar</span><br></pre></td></tr></table></figure>
+<p>2、勾选【我接受许可协议中的条款】，点击【下一步】</p>
+<img src="https://i.loli.net/2021/10/18/Prph8EuT6vaHiyQ.jpg" width="850" height="400" div align="right">
 
-<h3 id="2-导⼊mybatis相关的包"><a href="#2-导⼊mybatis相关的包" class="headerlink" title="2.导⼊mybatis相关的包"></a>2.导⼊mybatis相关的包</h3><p>到mybatis的压缩包中，解压后复制以下jar包到项⽬⼯程的lib⽬录下。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mybatis-3.5.6.jar</span><br><span class="line">log4j-1.2.17.jar</span><br><span class="line">log4j-api-2.13.3.jar</span><br><span class="line">log4j-core-2.13.3.jar</span><br><span class="line">commons-logging-1.2.jar</span><br></pre></td></tr></table></figure>
+<p>3、可以默认，也可更改安装位置</p>
+<img src="https://i.loli.net/2021/10/18/DqtysojVQrFE2R9.jpg" width="850" height="400" div align="right">
 
-<h3 id="3-导⼊数据库访问及数据库连接池相关的包"><a href="#3-导⼊数据库访问及数据库连接池相关的包" class="headerlink" title="3.导⼊数据库访问及数据库连接池相关的包"></a>3.导⼊数据库访问及数据库连接池相关的包</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">commons-pool2-2.11.1.jar</span><br><span class="line">commons-dbcp2-2.9.0.jar</span><br><span class="line">mysql-connector-java-8.0.28.jar</span><br></pre></td></tr></table></figure>
+<p>4、选择安装位置，然后点击【确定】</p>
+<img src="https://i.loli.net/2021/10/18/VzTAbUosOP4dK3W.jpg" width="850" height="400" div align="right">
 
+<p>5、点击【下一步】</p>
+<img src="https://i.loli.net/2021/10/18/DqtysojVQrFE2R9.jpg" width="850" height="400" div align="right">
 
-<p>4.导⼊其它的相关的jar包</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">aspectjweaver-1.9.6.jar</span><br><span class="line">commons-io-1.3.2.jar</span><br><span class="line">jstl-1.2.jar</span><br><span class="line">javax.servlet-api-3.1.0.jar</span><br><span class="line">mybatis-spring-2.0.7.jar</span><br><span class="line">standard-1.1.2.jar</span><br></pre></td></tr></table></figure>
+<p>6、取消勾选【启动时检查产品更新】和【加入VMware客户体验改进计划】，点击【下一步</p>
+<img src="https://i.loli.net/2021/10/18/ONQ954xcuaLZYBK.jpg" width="850" height="400" div align="right">
 
-<h2 id="项⽬搭建后的结构图如下："><a href="#项⽬搭建后的结构图如下：" class="headerlink" title="项⽬搭建后的结构图如下："></a>项⽬搭建后的结构图如下：</h2><p>然后，可以启动服务器，查看创建的初步结构。<br>如果启动的过程顺利，没有错误出现，则可以进⾏⼀下步的配置⼯作。</p>
-<h3 id="1-配置SpringMVC的相关内容。"><a href="#1-配置SpringMVC的相关内容。" class="headerlink" title="1.配置SpringMVC的相关内容。"></a>1.配置SpringMVC的相关内容。</h3><p>因为要使⽤SpringMVC的技术来管理web应⽤的请求，所以需要指定替换原来Tomcat中的web应⽤处理请求的<br>Servlet(DefaultServlet)。<br>在项⽬的WEB-INF⽬录下的web.xml中进⾏如下的配置。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;web-app xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line"> xmlns=&quot;http://xmlns.jcp.org/xml/ns/javaee&quot;</span><br><span class="line"> xsi:schemaLocation=&quot;http://xmlns.jcp.org/xml/ns/javaee</span><br><span class="line">http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd&quot;</span><br><span class="line"> id=&quot;WebApp_ID&quot; version=&quot;3.1&quot;&gt;</span><br><span class="line"> &lt;!-- 配置SpringMVC的默认Servlet替换Tomcat的原默认Servlet --&gt;</span><br><span class="line"> &lt;servlet&gt;</span><br><span class="line"> &lt;servlet-name&gt;SpringMVC&lt;/servlet-name&gt;</span><br><span class="line"> &lt;servlet-class&gt;</span><br><span class="line"> org.springframework.web.servlet.DispatcherServlet</span><br><span class="line"> &lt;/servlet-class&gt;</span><br><span class="line"> &lt;load-on-startup&gt;1&lt;/load-on-startup&gt;</span><br><span class="line"> &lt;/servlet&gt;</span><br><span class="line"> &lt;servlet-mapping&gt;</span><br><span class="line"> &lt;servlet-name&gt;SpringMVC&lt;/servlet-name&gt;</span><br><span class="line"> &lt;url-pattern&gt;/&lt;/url-pattern&gt;</span><br><span class="line"> &lt;/servlet-mapping&gt;</span><br><span class="line">&lt;/web-app&gt;</span><br></pre></td></tr></table></figure>
+<p>7、点击【下一步】</p>
+<img src="https://i.loli.net/2021/10/18/n2RPhJVXakzLgHU.jpg" width="850" height="400" div align="right">
 
-<p>配置完成后，启动服务器检查配置的情况。<br>这时会发现，启动过程中出现错误。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">严重: Servlet[SpringMVC]的Servlet.init（）引发异常</span><br><span class="line">org.springframework.beans.factory.BeanDefinitionStoreException: IOException parsing XML</span><br><span class="line">document from ServletContext resource [/WEB-INF/SpringMVC-servlet.xml]; nested exception is</span><br><span class="line">java.io.FileNotFoundException: Could not open ServletContext resource [/WEB-INF/SpringMVC￾servlet.xml]</span><br><span class="line"> at</span><br><span class="line">org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefini</span><br><span class="line">tionReader.java:342)</span><br></pre></td></tr></table></figure>
+<p>8、点击【安装】</p>
+<img src="https://i.loli.net/2021/10/18/xe8kFh4T72tSAld.jpg" width="850" height="400" div align="right">
 
-<p>这是因为，配置了springmvc的DispatcherServlet后，系统会寻找spring初始化的配置⽂件，默认会到WEB-INF⽬<br>录下寻找以servlet-name为名称前缀，并且后⾯为-servlet.xml的配置⽂件，因为还没有配置该⽂件，所以系统在<br>启动时，初始化spring会报异常。<br>所以要在WEB-INF⽬录下创建⼀个spring初始化配置⽂件：<br>SpringMVC-servlet.xml</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;</span><br><span class="line"> xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line"> xmlns:context=&quot;http://www.springframework.org/schema/context&quot;</span><br><span class="line"> xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans</span><br><span class="line"> https://www.springframework.org/schema/beans/spring-beans.xsd</span><br><span class="line"> http://www.springframework.org/schema/context</span><br><span class="line"> https://www.springframework.org/schema/context/spring-context.xsd&quot;&gt;</span><br><span class="line"> </span><br><span class="line"> &lt;!-- 启⽤注解 --&gt; </span><br><span class="line"> &lt;context:annotation-config /&gt;</span><br><span class="line"> &lt;!-- 扫描包 --&gt;</span><br><span class="line"> &lt;context:component-scan base-package=&quot;com.lz.xbmu&quot;&gt;&lt;/context:component-scan&gt;</span><br><span class="line"> </span><br><span class="line">&lt;/beans&gt;</span><br></pre></td></tr></table></figure>
+<p>9、正在安装，等待几分钟</p>
+<img src="https://i.loli.net/2021/10/18/KzBpH8OeDyn5V3F.jpg" width="850" height="400" div align="right">
 
-<p>再次启动服务器，检查启动过程的⽇志，会发现没有错误出现。<br>到此基本的配置完成。<br>2.编写第⼀个控制器MyController<br>⾸先，创建包路径: com.lz.xbmu<br>在该包路径下新建包 controller及类MyController</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package com.lz.xbmu.controller;</span><br><span class="line">import org.springframework.stereotype.Controller;</span><br><span class="line">import org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line">//第⼀个控制器</span><br><span class="line">@Controller</span><br><span class="line">public class MyController &#123;</span><br><span class="line"> </span><br><span class="line"> @RequestMapping(&quot;/mytest&quot;)</span><br><span class="line"> public String myTest() &#123;</span><br><span class="line"> System.out.println(&quot;MyController myTest() is running...&quot;);</span><br><span class="line"> return &quot;hello&quot;;</span><br><span class="line"> &#125; &#125;</span><br></pre></td></tr></table></figure>
+<p>10、点击【许可证】</p>
+<img src="https://i.loli.net/2021/10/18/AaUSlwWnMCFJ3c1.jpg" width="850" height="400" div align="right">
 
-<p>当通过<a href="http://loclahost:8080/book/mytest">http://loclahost:8080/book/mytest</a><br>请求访问时，系统报异常：<br>如果是循环访问的错误，则需要修改⼀下控制器的返回字符串。<br>修改完循环引⽤访问的问题后，再启动访问发现404错误。<br>这是因为没有配置视图解析器造成的，所以要配置视图解析器，可以参考帮助⽂档中的内容（web.pdf）。<br>如果提示404未找到WEB-INF/jsp⽬录下的hello.jsp⽂件，说明还没有创建该⽂件。<br>创建hello.jsp⽂件，再启动服务器。<br>2.通过springmvc请求数据发送<br>服务器启动后，访问地址<a href="http://localhost:8080/book/%E6%97%B6%EF%BC%8C%E4%BC%9A%E9%BB%98%E8%AE%A4%E8%AE%BF%E9%97%AE%E5%88%B0webapp%E2%BD%AC%E5%BD%95%E4%B8%8B%E7%9A%84index.jsp%E2%BB%9A%E2%BE%AF%EF%BC%8C%E5%BD%93%E8%AE%BF%E9%97%AE">http://localhost:8080/book/时，会默认访问到webapp⽬录下的index.jsp⻚⾯，当访问</a><br>到该⻚⾯时，其中的的jsp动作，forward会跳转访问到/mytest，也就是请求了MyControll中的相对应的⽅法，该<br>⽅法的返回字符串就是跳转后的⻚⾯的名称。<br>也就是WEB-INF/jsp/hello.jsp⻚⾯。<br>@PostMapping注解的使⽤<br>ModelAndView对象的使⽤<br>通过pojo对象来包装数据<br>中⽂乱码的解决，使⽤全局过滤器来解决。<br>3.部署client前端的资源</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- 配置视图解析器 --&gt;</span><br><span class="line"> &lt;bean id=&quot;viewResolver&quot;</span><br><span class="line"> class=&quot;org.springframework.web.servlet.view.InternalResourceViewResolver&quot;&gt;</span><br><span class="line"> &lt;property name=&quot;prefix&quot; value=&quot;/WEB-INF/jsp/&quot; /&gt;</span><br><span class="line"> &lt;property name=&quot;suffix&quot; value=&quot;.jsp&quot; /&gt;</span><br><span class="line"> &lt;/bean&gt;</span><br><span class="line">&lt;filter&gt;</span><br><span class="line"> &lt;filter-name&gt;encoding&lt;/filter-name&gt;</span><br><span class="line"> &lt;filter-class&gt;org.springframework.web.filter.CharacterEncodingFilter&lt;/filter-class&gt;</span><br><span class="line"> &lt;init-param&gt;</span><br><span class="line"> &lt;param-name&gt;encoding&lt;/param-name&gt;</span><br><span class="line"> &lt;param-value&gt;utf-8&lt;/param-value&gt;</span><br><span class="line"> &lt;/init-param&gt; </span><br><span class="line"> &lt;/filter&gt;</span><br><span class="line"> &lt;filter-mapping&gt;</span><br><span class="line"> &lt;filter-name&gt;encoding&lt;/filter-name&gt;</span><br><span class="line"> &lt;url-pattern&gt;/*&lt;/url-pattern&gt;</span><br><span class="line"> &lt;/filter-mapping&gt;</span><br></pre></td></tr></table></figure>
-<p>在该⽂件夹中存在这资源内容和相关的jsp⻚⾯。<br>将资源⽂件内容与jsp⻚⾯分别进⾏部署。<br>⾸先在webapp⽬录下创建⼀个名为client的⽬录，然后将ad，bookcover，css，images，js这五个⽬录及其中的<br>内容均考⻉到client⽬录中。<br>在WEB-INF/jsp⽬录下再创建⼀个名为client的⽬录，然后将剩余的jsp⽂件都考⻉到该⽬录下。<br>个性MyController类中的mytest请求访问⽅法的返回字符串路径：<br>四、项⽬的前端模块应⽤<br>1.部署相关的资源<br>将资源分为两个部分，⻚⾯jsp都放到webapp–&gt;WEB-INF–&gt;jsp–&gt;⽬录内，可以提⾼安全性。只能通过SpringMVC<br>的视图解析器才能访问到。<br>其它的⻚⾯内的样式表、js、图⽚等内容都放到webapp–&gt;client⽬录下，这些内容是可以通过浏览器直接访问到。<br>⻚⾯中的资源⽆法访问的原因：是因为在web.xml中配置了DispatcherServlet来处理全部的映射请求的路径，⽽该<br>servlet是SpringMVC中的前端控制器，只负责处理url映射请求对应的处理器，⽽⽆法处理静态资源，所以⻚⾯中<br>的静态资源是不能被调⽤。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">@RequestMapping(&quot;/mytest&quot;)</span><br><span class="line">public String myTest() &#123;</span><br><span class="line">System.out.println(&quot;跳转到书城的⾸⻚⾯&quot;);</span><br><span class="line">//return &quot;hello&quot;;</span><br><span class="line">return &quot;client/index&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>11、框中输入许可证：ZF3R0-FHED2-M80TY-8QYGC-NPKYF，（复制粘贴就可以）然后点击【输入】</p>
+<p>12、点击【完成】</p>
+<p>恭喜你这会你的虚拟机已经安装好了，是不是直接点击下一步就可以</p>
+<h3 id="在VMware中安装ubuntu-21-04系统"><a href="#在VMware中安装ubuntu-21-04系统" class="headerlink" title="在VMware中安装ubuntu 21.04系统"></a>在VMware中安装ubuntu 21.04系统</h3><p>1、双击打开你创建在桌面的虚拟机，然后点击【创建新的虚拟机】</p>
+<img src="https://i.loli.net/2021/10/18/QWASzB7OuMIb6xm.jpg" width="850" height="400" div align="right">
 
-<p>2.处理静态资源的⽅法<br>a.使⽤Tomcat的默认处理Servlet（defaultServlet）<br>2.将DispatcherServlet的处理url映射请求进⾏设定<br>3.使⽤SpringMVC的配置⽅式<br>将静态资源的处理过程添加到SpringMVC-servlet.xml⽂件中去<br>3.⽤户注册功能<br>要通过注册⻚⾯来实现⽤户的注册功能。<br>因为现在的jsp⻚⾯都在WEB-INF⽬录下，所以不能直接访问到。<br>通过SpringMVC视图解析器来反回⼀个注册⻚⾯。<br>⾸先分析client/index.jsp⻚⾯的组成</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"> &lt;servlet-mapping&gt;</span><br><span class="line"> &lt;servlet-name&gt;default&lt;/servlet-name&gt;</span><br><span class="line"> &lt;url-pattern&gt;*.js&lt;/url-pattern&gt;</span><br><span class="line"> &lt;url-pattern&gt;*.css&lt;/url-pattern&gt;</span><br><span class="line"> &lt;url-pattern&gt;*.jpg&lt;/url-pattern&gt;</span><br><span class="line"> &lt;url-pattern&gt;*.png&lt;/url-pattern&gt;</span><br><span class="line"> &lt;url-pattern&gt;*.gif&lt;/url-pattern&gt;</span><br><span class="line"> &lt;/servlet-mapping&gt;</span><br><span class="line">&lt;servlet&gt;</span><br><span class="line"> &lt;servlet-name&gt;SpringMVC&lt;/servlet-name&gt;</span><br><span class="line"> &lt;servlet-class&gt;</span><br><span class="line"> org.springframework.web.servlet.DispatcherServlet</span><br><span class="line"> &lt;/servlet-class&gt;</span><br><span class="line"> &lt;load-on-startup&gt;1&lt;/load-on-startup&gt;</span><br><span class="line"> &lt;/servlet&gt;</span><br><span class="line"> &lt;servlet-mapping&gt;</span><br><span class="line"> &lt;servlet-name&gt;SpringMVC&lt;/servlet-name&gt;</span><br><span class="line"> &lt;url-pattern&gt;*.action&lt;/url-pattern&gt;</span><br><span class="line"> &lt;/servlet-mapping&gt;</span><br><span class="line">&lt;!-- 静态资源解析 --&gt;</span><br><span class="line"> &lt;mvc:annotation-driven/&gt;</span><br><span class="line"> &lt;mvc:resources location=&quot;client/css/&quot; mapping=&quot;client/css/**&quot;&gt;&lt;/mvc:resources&gt;</span><br><span class="line"> &lt;mvc:resources location=&quot;client/ad/&quot; mapping=&quot;client/ad/**&quot;&gt;&lt;/mvc:resources&gt;</span><br><span class="line"> &lt;mvc:resources location=&quot;client/bookcover/&quot; mapping=&quot;client/bookcover/**&quot;&gt;&lt;/mvc:resources&gt;</span><br><span class="line"> &lt;mvc:resources location=&quot;client/js/&quot; mapping=&quot;client/js/**&quot;&gt;&lt;/mvc:resources&gt;</span><br><span class="line"> &lt;mvc:resources location=&quot;client/images/&quot; mapping=&quot;client/images/**&quot;&gt;&lt;/mvc:resources&gt;</span><br></pre></td></tr></table></figure>
+<p>2、选择【典型】（默认便是典型），点击【下一步】</p>
+<img src="https://i.loli.net/2021/10/18/9CzmqQYUDNeRo56.jpg" width="850" height="400" div align="right">
 
-<p>需要在对应的⻚⾯中去设置相关的链接或是请求的url<br>在head.jsp⻚⾯中添加以下的内容<br><a href="${pageContext.request.contextPath}/registerpage">新⽤户注册</a><br>这样就可以通过请求UserController中的对应的处理器⽅法来返回指定的jsp⻚⾯。<br>通过form表单提交注册⽤户的信息<br>UserController.java</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package com.lz.xbmu.controller;</span><br><span class="line">import org.springframework.stereotype.Controller;</span><br><span class="line">import org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line">import org.springframework.web.bind.annotation.RequestMethod;</span><br><span class="line">import com.lz.xbmu.po.User;</span><br><span class="line">@Controller</span><br><span class="line">public class UserController &#123;</span><br><span class="line"> //跳转到⽤户注册⻚⾯</span><br><span class="line"> @RequestMapping(value=&quot;/registerpage&quot;,method=RequestMethod.GET)</span><br><span class="line"> public String registerPage() &#123;</span><br><span class="line"> System.out.println(&quot;跳转到⽤户注册⻚⾯...&quot;);</span><br><span class="line"> return &quot;client/register&quot;;</span><br></pre></td></tr></table></figure>
+<p>3、选择【稍后安装操作系统】，点击【下一步】</p>
+<img src="https://i.loli.net/2021/10/18/XZi389ajePvqRDk.jpg" width="850" height="400" div align="right">
 
-<p>4.整合spring与mybatis<br>⾸先将相关的spring包及mybatis的包导⼊到项⽬中去。<br>然后是相关的数据库驱动、数据库连接、⽇志等相关的包也要导⼊到项⽬中去。<br>然后就要在项⽬添加整合的配置⽂件。<br>因为spring和springMVC都是springframework框架中的内容，所以它们之间不需要进⾏整合的配置，只是要对<br>spring与mybatis及springmvc与mybatis进⾏整合。<br>配置⽂件参考spring与mybatis整合的章节内容。<br>使⽤三层结构来完成项⽬的功能模块。<br>⾸先创建com.lz.xbmu.mapper包，在该包中创建接⼝及对应的映射⽂件。<br> }<br> <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">  //获取⽤户注册信息</span><br><span class="line"> @RequestMapping(value=&quot;/registeruser&quot;,method=RequestMethod.POST)</span><br><span class="line"> public String registerInfo(User user) &#123;</span><br><span class="line"> System.out.println(user);</span><br><span class="line"> //注册后的⽤户数据将要写⼊数据库中</span><br><span class="line"> </span><br><span class="line"> return &quot;client/registersuccess&quot;;</span><br><span class="line"> &#125; &#125;</span><br><span class="line">package com.lz.xbmu.mapper;</span><br><span class="line">import com.lz.xbmu.po.User;</span><br><span class="line">public interface UserMapper &#123;</span><br><span class="line"> public int insertUser(User user);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</span><br><span class="line">&lt;!DOCTYPE mapper</span><br><span class="line"> PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;</span><br><span class="line"> &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;</span><br><span class="line">&lt;mapper namespace=&quot;com.lz.xbmu.mapper.UserMapper&quot;&gt;</span><br><span class="line"> &lt;!-- 插⼊⽤户数据 --&gt;</span><br><span class="line"> &lt;insert id=&quot;insertUser&quot; parameterType=&quot;user&quot;&gt;</span><br><span class="line"> insert into user</span><br><span class="line"> value(null,#&#123;username&#125;,#&#123;password&#125;,#&#123;gender&#125;,#&#123;email&#125;,#&#123;telephone&#125;,#&#123;introduce&#125;,#</span><br><span class="line">&#123;activeCode&#125;,#&#123;state&#125;,#&#123;role&#125;,#&#123;registTime&#125;)</span><br><span class="line"> &lt;/insert&gt;</span><br><span class="line">&lt;/mapper&gt;</span><br></pre></td></tr></table></figure>
+<p>4、客户机操作系统选择【Linux】，版本选择【Ubuntu64位】，然后点击【下一步】</p>
+<img src="https://i.loli.net/2021/10/18/XAgZ4IvWTji5CUK.jpg" width="850" height="400" div align="right">
 
-<p>接着创建⽤户接⼝及实现类</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package com.lz.xbmu.service;</span><br><span class="line">import com.lz.xbmu.po.User;</span><br><span class="line">public interface UserService &#123;</span><br><span class="line"> public int addUser(User user);</span><br><span class="line">&#125;</span><br><span class="line">package com.lz.xbmu.service.impl;</span><br><span class="line">import java.util.Date;</span><br><span class="line">import java.util.UUID;</span><br><span class="line">import org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line">import org.springframework.stereotype.Service;</span><br><span class="line">import com.lz.xbmu.mapper.UserMapper;</span><br><span class="line">import com.lz.xbmu.po.User;</span><br><span class="line">import com.lz.xbmu.service.UserService;</span><br><span class="line">@Service</span><br><span class="line">public class UserServiceImpl implements UserService &#123;</span><br><span class="line"> </span><br><span class="line"> @Autowired</span><br><span class="line"> private UserMapper userMapper;</span><br><span class="line"> </span><br><span class="line"> @Override</span><br><span class="line"> public int addUser(User user) &#123;</span><br><span class="line"> // 添加业务⽅法</span><br><span class="line"> //activeCode 激活码</span><br><span class="line"> //user.setActiveCode(UUID.randomUUID().toString());</span><br></pre></td></tr></table></figure>
+<p>5、位置可更改，点击【下一步】</p>
+<img src="https://i.loli.net/2021/10/18/owxQLiVrmWdJsYa.jpg" width="850" height="400" div align="right">
 
-<p>记得要检查所有的配置信息，否则会出现意外的错误。⽐如数据库名称，地址等配置信息的错误。<br>现在已经完成了将前端的数据获取到，并通过业务⽅法再将数据使⽤持久化的机制保存到了指定的数据库。现在就<br>完成了SSM框架的整合⼯作。<br>五、后端业务处理及数据维护<br>1.⽤户登录实现<br>在系统的前端没有设计专⻔的⽤户登录连接，⽽是通过⼏种⽅式跳转到登录⻚⾯。<br>当⽤户访问我的帐户时，因为要判断⽤户是否是登录状态，如是已经登录的状态，则跳转到我的帐户⻚⾯。不是登<br>录状态时则要跳转到登录⻚⾯完成登录后才能访问我的帐户⻚⾯。<br>如何检查⽤户是否是登录状态？<br>在登录⻚⾯中填写⽤户的登录信息，在后端检查⽤户的信息，并且进⾏登录业务处理。<br>我的帐户</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//state状态码 0末激活，1已激活</span><br><span class="line"> user.setState(1);</span><br><span class="line"> //role 普通⽤户，管理员</span><br><span class="line"> user.setRole(&quot;普通⽤户&quot;);</span><br><span class="line"> //注册时间</span><br><span class="line"> user.setRegistTime(new Date());</span><br><span class="line"> return this.userMapper.insertUser(user);</span><br><span class="line"> &#125; &#125;</span><br><span class="line"> //⽤户帐户⻚⾯跳转</span><br><span class="line"> @GetMapping(&quot;/myaccount&quot;)</span><br><span class="line"> public ModelAndView myAccount(HttpSession session, ModelAndView mav) &#123;</span><br><span class="line"> //因为在登录是会将⽤户信息存储到session中</span><br><span class="line"> User user = (User) session.getAttribute(&quot;user&quot;);</span><br><span class="line"> if (user != null) &#123;</span><br><span class="line"> mav.setViewName(&quot;client/myAccount&quot;);</span><br><span class="line"> &#125;else &#123;</span><br><span class="line"> mav.addObject(&quot;info&quot;,&quot;请先登录&quot;);</span><br><span class="line"> mav.setViewName(&quot;client/login&quot;);</span><br><span class="line"> &#125;</span><br><span class="line"> return mav;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
- <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;sql id=&quot;userColumns&quot;&gt;</span><br><span class="line">id,username,gender,email,telephone,introduce,activeCode,state,role,registTime</span><br><span class="line">&lt;/sql&gt;</span><br><span class="line">&lt;!-- 根据⽤户名及密码检查⽤户 --&gt;</span><br><span class="line">&lt;select id=&quot;selectUserByNameAndPass&quot; parameterType=&quot;Map&quot;</span><br><span class="line">resultType=&quot;user&quot;&gt;</span><br><span class="line">select &lt;include refid=&quot;userColumns&quot; /&gt;</span><br><span class="line">from user</span><br><span class="line">where username=#&#123;username&#125; and password=#&#123;password&#125;</span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package com.lz.xbmu.mapper;</span><br><span class="line">import java.util.Map;</span><br><span class="line">import com.lz.xbmu.po.User;</span><br><span class="line">public interface UserMapper &#123;</span><br><span class="line"> public int insertUser(User user);</span><br><span class="line"> public User selectUserByNameAndPass(Map&lt;String,String&gt; map);</span><br><span class="line">&#125;</span><br><span class="line"> @Override</span><br><span class="line"> public User findUserByNameAndPass(String name, String pass) &#123;</span><br><span class="line"> // TODO Auto-generated method stub</span><br><span class="line"> Map&lt;String,String&gt; map = new HashMap&lt;&gt;();</span><br><span class="line"> map.put(&quot;username&quot;, name);</span><br><span class="line"> map.put(&quot;password&quot;, pass);</span><br><span class="line"> return userMapper.selectUserByNameAndPass(map);</span><br><span class="line"> &#125;</span><br><span class="line"> //⽤户登录</span><br><span class="line"> @PostMapping(&quot;/userlogin&quot;)</span><br><span class="line"> public ModelAndView userLogin(String username,String password,</span><br><span class="line"> HttpSession session, ModelAndView mav) &#123;</span><br><span class="line"> System.out.println(&quot;username=&quot;+username+&quot;,password=&quot;+password);</span><br><span class="line"> //通过⽤户名与密码到数据库中检查是否是注册⽤户</span><br><span class="line"> User user = userService.findUserByNameAndPass(username, password);</span><br><span class="line"> System.out.println(user);</span><br><span class="line"> boolean flag = true;</span><br><span class="line"> if(user != null) &#123;</span><br><span class="line"> //if(user.getActiveCode() == null) flag = false;</span><br><span class="line"> if(user.getState() != 1) flag = false;</span><br><span class="line"> if(user.getRegistTime() == null) flag = false;</span><br><span class="line"> if(flag) &#123;</span><br><span class="line"> session.setAttribute(&quot;user&quot;, user);</span><br><span class="line"> if(&quot;普通⽤户&quot;.equalsIgnoreCase(user.getRole()))&#123;</span><br><span class="line"> mav.setViewName(&quot;client/index&quot;);</span><br><span class="line"> &#125;else &#123;</span><br><span class="line"> mav.setViewName(&quot;admin/manager&quot;);</span><br><span class="line"> &#125;</span><br><span class="line"> &#125;else &#123;</span><br><span class="line"> mav.addObject(&quot;info&quot;,&quot;登录失败&quot;);</span><br><span class="line"> mav.setViewName(&quot;client/login&quot;);</span><br><span class="line"> &#125;</span><br><span class="line"> &#125;else &#123;</span><br><span class="line"> mav.addObject(&quot;info&quot;,&quot;⽤户名或密码错误&quot;);</span><br><span class="line"> mav.setViewName(&quot;client/login&quot;);</span><br><span class="line"> &#125;</span><br><span class="line"> </span><br><span class="line"> return mav;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//⽤户退出系统</span><br><span class="line">@GetMapping(&quot;/logout&quot;)</span><br><span class="line">public String userLogout(HttpSession session) &#123;</span><br><span class="line">System.out.println(&quot;⽤户退出系统&quot;);</span><br><span class="line">session.setAttribute(&quot;user&quot;, null);</span><br><span class="line">session.setAttribute(&quot;info&quot;, null);</span><br><span class="line">session.invalidate();</span><br><span class="line">return &quot;redirect:mytest&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>6、最大磁盘大小【20】GB，选择【将虚拟机磁盘拆分成多个文件】，然后点击【下一步】</p>
+<img src="https://i.loli.net/2021/10/18/DKBEnuG6or3f4wx.jpg" width="850" height="400" div align="right">
+
+<p>7、点击【自定义硬件】</p>
+<img src="https://i.loli.net/2021/10/18/VlZBfoPbR9e8MSc.jpg" width="850" height="400" div align="right">
+
+<p>8、选择【内存】，此虚拟机的内存设为【2048MB】</p>
+<img src="https://i.loli.net/2021/10/18/AdjlBFmEVDNhr1O.jpg" width="850" height="400" div align="right">
+
+<p>9、选择【新CD/DVD(TATA)】后选择【使用ISO映像文件】，点击【浏览】，找到下载后文件夹里面的【ubuntu-21.04-desktop-amd64.iso】这个镜像并选择！</p>
+<img src="https://i.loli.net/2021/10/18/C8p4cyMIBuGbYWU.jpg" width="850" height="400" div align="right">
+
+<p>10、选择【网络适配器】，然后选择【仅主机模式】</p>
+<img src="https://i.loli.net/2021/10/18/IyBJxuMrLhml3Ko.jpg" width="850" height="400" div align="right">
+
+<p>11、选择【USB控制器】，点击【移除】</p>
+<img src="https://i.loli.net/2021/10/18/HwJm6DONtYMhFCz.jpg" width="850" height="400" div align="right">
+
+<p>12、选择【打印机】，点击【移除】</p>
+<img src="https://i.loli.net/2021/10/18/cjkhgORexpbFm4K.jpg" width="850" height="400" div align="right">
+
+<p>13、点击【关闭】</p>
+<img src="https://i.loli.net/2021/10/18/pfz13yURdGDW8qI.jpg" width="850" height="400" div align="right">
+
+<p>14、点击【完成】</p>
+<img src="https://i.loli.net/2021/10/18/VlZBfoPbR9e8MSc.jpg" width="850" height="400" div align="right">
+
+<p><font color="red" size="5"> 实在没有耐心放图片了，等闲了再贴图片吧,相信自己即使看文字你也可以安装完成的，加油！</font></p>
+<p>15、点击【开启此虚拟机】，等待开启</p>
+<p>16、择【中文简体】，点击【安装Ubuntu】</p>
+<p>17、点击【继续】</p>
+<p>18、点击【继续】</p>
+<p>19、点击【现在安装】</p>
+<p>20、点击【继续】</p>
+<p>21、这里默认【Shanghai】就OK</p>
+<p>22、创建用户账号（记住密码哦！）。不要担心你的计算机名是什么，你只需要输入姓名，计算机名就会自动生成。然后点击[继续]</p>
+<p>23、安装中，耐心等待（这个可能需要多点时间）</p>
+<p>24、点击【现在重启】，重启一会看屏幕中下方转圈其他都不动，键盘上点击【enter】</p>
+<p>25、点击账户，我这里是【simon-yian】</p>
+<p>26、输入之前创建用户账号时设的密码，然后点击【登录】</p>
+<p>27、至此Ubuntu系统安装完成！</p>
+<p><font color="red"><b>如果你觉得可以千万不要忘记动动你的小手，赞赏一下贫困的博客主</b><br><b>记得收藏啊，以后会有更好的内容给您分享</b></font></p>
 ]]></content>
+      <categories>
+        <category>VMware</category>
+      </categories>
   </entry>
   <entry>
     <title>Spring知识点梳理：</title>
@@ -533,111 +640,9 @@
 ]]></content>
   </entry>
   <entry>
-    <title>在VMware16中创建虚拟机安装ubuntu 21.04系统</title>
-    <url>/2021/10/18/VMware-ubuntu/</url>
-    <content><![CDATA[<table>
-<tr><td bgcolor="CFCFCF">此篇是创建VMware16虚拟机安装ubuntu21.04系统的超详细操作过程，希望对小白白有所帮助
-</td></tr></table>
-
-<span id="more"></span>
-
-<p>安装环境： windows 10</p>
-<p>VMware 16安装包：我用阿里云盘分享了「VMware-workstation-full-16.1.2-17966106.exe」，你可以不限速下载🚀<br>复制这段内容打开「阿里云盘」App 即可获取<br>链接：<a href="https://www.aliyundrive.com/s/7acSRwmGho2">https://www.aliyundrive.com/s/7acSRwmGho2</a></p>
-<p>ubuntu 21.04镜像：链接：<a href="https://pan.baidu.com/s/1ktE78cieRE9Y7_BhrG9vjQ">https://pan.baidu.com/s/1ktE78cieRE9Y7_BhrG9vjQ</a><br>提取码：n9ms</p>
-<h3 id="安装VMware-16"><a href="#安装VMware-16" class="headerlink" title="安装VMware 16"></a>安装VMware 16</h3><p>1、 直接双击下载好的VMware，这个过程可能会显示重新启动系统，那你点就是了。重新启动后再次双击下载好的VMware，然后点击【下一步】。</p>
-<img src="https://i.loli.net/2021/10/18/X4BvRZr2LKb5SyD.jpg" width="850" height="400" div align="right">
-
-<p>2、勾选【我接受许可协议中的条款】，点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/Prph8EuT6vaHiyQ.jpg" width="850" height="400" div align="right">
-
-<p>3、可以默认，也可更改安装位置</p>
-<img src="https://i.loli.net/2021/10/18/DqtysojVQrFE2R9.jpg" width="850" height="400" div align="right">
-
-<p>4、选择安装位置，然后点击【确定】</p>
-<img src="https://i.loli.net/2021/10/18/VzTAbUosOP4dK3W.jpg" width="850" height="400" div align="right">
-
-<p>5、点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/DqtysojVQrFE2R9.jpg" width="850" height="400" div align="right">
-
-<p>6、取消勾选【启动时检查产品更新】和【加入VMware客户体验改进计划】，点击【下一步</p>
-<img src="https://i.loli.net/2021/10/18/ONQ954xcuaLZYBK.jpg" width="850" height="400" div align="right">
-
-<p>7、点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/n2RPhJVXakzLgHU.jpg" width="850" height="400" div align="right">
-
-<p>8、点击【安装】</p>
-<img src="https://i.loli.net/2021/10/18/xe8kFh4T72tSAld.jpg" width="850" height="400" div align="right">
-
-<p>9、正在安装，等待几分钟</p>
-<img src="https://i.loli.net/2021/10/18/KzBpH8OeDyn5V3F.jpg" width="850" height="400" div align="right">
-
-<p>10、点击【许可证】</p>
-<img src="https://i.loli.net/2021/10/18/AaUSlwWnMCFJ3c1.jpg" width="850" height="400" div align="right">
-
-<p>11、框中输入许可证：ZF3R0-FHED2-M80TY-8QYGC-NPKYF，（复制粘贴就可以）然后点击【输入】</p>
-<p>12、点击【完成】</p>
-<p>恭喜你这会你的虚拟机已经安装好了，是不是直接点击下一步就可以</p>
-<h3 id="在VMware中安装ubuntu-21-04系统"><a href="#在VMware中安装ubuntu-21-04系统" class="headerlink" title="在VMware中安装ubuntu 21.04系统"></a>在VMware中安装ubuntu 21.04系统</h3><p>1、双击打开你创建在桌面的虚拟机，然后点击【创建新的虚拟机】</p>
-<img src="https://i.loli.net/2021/10/18/QWASzB7OuMIb6xm.jpg" width="850" height="400" div align="right">
-
-<p>2、选择【典型】（默认便是典型），点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/9CzmqQYUDNeRo56.jpg" width="850" height="400" div align="right">
-
-<p>3、选择【稍后安装操作系统】，点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/XZi389ajePvqRDk.jpg" width="850" height="400" div align="right">
-
-<p>4、客户机操作系统选择【Linux】，版本选择【Ubuntu64位】，然后点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/XAgZ4IvWTji5CUK.jpg" width="850" height="400" div align="right">
-
-<p>5、位置可更改，点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/owxQLiVrmWdJsYa.jpg" width="850" height="400" div align="right">
-
-<p>6、最大磁盘大小【20】GB，选择【将虚拟机磁盘拆分成多个文件】，然后点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/DKBEnuG6or3f4wx.jpg" width="850" height="400" div align="right">
-
-<p>7、点击【自定义硬件】</p>
-<img src="https://i.loli.net/2021/10/18/VlZBfoPbR9e8MSc.jpg" width="850" height="400" div align="right">
-
-<p>8、选择【内存】，此虚拟机的内存设为【2048MB】</p>
-<img src="https://i.loli.net/2021/10/18/AdjlBFmEVDNhr1O.jpg" width="850" height="400" div align="right">
-
-<p>9、选择【新CD/DVD(TATA)】后选择【使用ISO映像文件】，点击【浏览】，找到下载后文件夹里面的【ubuntu-21.04-desktop-amd64.iso】这个镜像并选择！</p>
-<img src="https://i.loli.net/2021/10/18/C8p4cyMIBuGbYWU.jpg" width="850" height="400" div align="right">
-
-<p>10、选择【网络适配器】，然后选择【仅主机模式】</p>
-<img src="https://i.loli.net/2021/10/18/IyBJxuMrLhml3Ko.jpg" width="850" height="400" div align="right">
-
-<p>11、选择【USB控制器】，点击【移除】</p>
-<img src="https://i.loli.net/2021/10/18/HwJm6DONtYMhFCz.jpg" width="850" height="400" div align="right">
-
-<p>12、选择【打印机】，点击【移除】</p>
-<img src="https://i.loli.net/2021/10/18/cjkhgORexpbFm4K.jpg" width="850" height="400" div align="right">
-
-<p>13、点击【关闭】</p>
-<img src="https://i.loli.net/2021/10/18/pfz13yURdGDW8qI.jpg" width="850" height="400" div align="right">
-
-<p>14、点击【完成】</p>
-<img src="https://i.loli.net/2021/10/18/VlZBfoPbR9e8MSc.jpg" width="850" height="400" div align="right">
-
-<p><font color="red" size="5"> 实在没有耐心放图片了，等闲了再贴图片吧,相信自己即使看文字你也可以安装完成的，加油！</font></p>
-<p>15、点击【开启此虚拟机】，等待开启</p>
-<p>16、择【中文简体】，点击【安装Ubuntu】</p>
-<p>17、点击【继续】</p>
-<p>18、点击【继续】</p>
-<p>19、点击【现在安装】</p>
-<p>20、点击【继续】</p>
-<p>21、这里默认【Shanghai】就OK</p>
-<p>22、创建用户账号（记住密码哦！）。不要担心你的计算机名是什么，你只需要输入姓名，计算机名就会自动生成。然后点击[继续]</p>
-<p>23、安装中，耐心等待（这个可能需要多点时间）</p>
-<p>24、点击【现在重启】，重启一会看屏幕中下方转圈其他都不动，键盘上点击【enter】</p>
-<p>25、点击账户，我这里是【simon-yian】</p>
-<p>26、输入之前创建用户账号时设的密码，然后点击【登录】</p>
-<p>27、至此Ubuntu系统安装完成！</p>
-<p><font color="red"><b>如果你觉得可以千万不要忘记动动你的小手，赞赏一下贫困的博客主</b><br><b>记得收藏啊，以后会有更好的内容给您分享</b></font></p>
-]]></content>
-      <categories>
-        <category>VMware</category>
-      </categories>
+    <title></title>
+    <url>/2022/07/15/baidu_verify_code-lKi6sS4j7S/</url>
+    <content><![CDATA[f2c7aa5496980a4ac5b119f84ca39e87]]></content>
   </entry>
   <entry>
     <title>培训心得&amp;emsp;&amp;emsp;[走进HTML]</title>
@@ -737,9 +742,19 @@
       </categories>
   </entry>
   <entry>
-    <title></title>
-    <url>/2022/07/15/baidu_verify_code-lKi6sS4j7S/</url>
-    <content><![CDATA[f2c7aa5496980a4ac5b119f84ca39e87]]></content>
+    <title>The requested URL returned error: 403</title>
+    <url>/2022/07/19/fatal220719-request403/</url>
+    <content><![CDATA[<img src="https://s2.loli.net/2022/07/19/SGyYZRvWHlaCtKp.jpg" align="center" width="600" height="120" div>
+
+<span id="more"></span>
+<p>报错结果：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">fatal: unable to access &#x27;https://github.com/simon-yian/simon-yian.github.io.git/&#x27;: The requested URL returned error: 403FATAL &#123;</span><br><span class="line">  err: Error: Spawn failed</span><br><span class="line">      at ChildProcess.&lt;anonymous&gt; (D:\Blog\simon-yian\node_modules\hexo-util\lib\spawn.js:51:21)</span><br><span class="line">      at ChildProcess.emit (events.js:400:28)</span><br><span class="line">      at ChildProcess.cp.emit (D:\Blog\simon-yian\node_modules\cross-spawn\lib\enoent.js:34:29)</span><br><span class="line">      at Process.ChildProcess._handle.onexit (internal/child_process.js:282:12) &#123;</span><br><span class="line">    code: 128</span><br><span class="line">  &#125;</span><br><span class="line">&#125; Something&#x27;s wrong. Maybe you can find the solution here: %s https://hexo.io/docs/troubleshooting.html</span><br></pre></td></tr></table></figure>
+<p><b style="color: red;">解决方法：</b><br>（1）进入github官网，点击头像，弹出下拉列表，点击Settings</p>
+<p><img src="https://s2.loli.net/2022/07/19/Mi5IhnFDfbzBsYS.png" alt="解决1_1.png"><br><img src="https://s2.loli.net/2022/07/19/FlSCbNXsjcde4UZ.png" alt="解决1_2.png"><br><img src="https://s2.loli.net/2022/07/19/qXdBASObivwkQg7.png" alt="解决1_3.png"><br><img src="https://s2.loli.net/2022/07/19/IulZsFm2Kw43jHz.png" alt="解决1_4.png"><br><img src="https://s2.loli.net/2022/07/19/lYrPFRgmhLw4pxQ.png" alt="解决1_5.png"><br><img src="https://s2.loli.net/2022/07/19/7aj6BfCNUTOKoSQ.png" alt="解决1_6.png"><br><img src="https://s2.loli.net/2022/07/19/QfjpNnYPTXDZrOR.png" alt="解决1_7.png"><br>复制完生成的令牌之后修改_config.yml文件中<br><img src="https://i.loli.net/2021/10/21/WCX7dgp9UNFxJ1B.jpg" width="850" height="200" div align="right"></p>
+]]></content>
+      <categories>
+        <category>fatal</category>
+      </categories>
   </entry>
   <entry>
     <title>培训心得&amp;emsp;&amp;emsp;[表单]</title>
@@ -1290,7 +1305,7 @@
 </ul>
 <h4 id="1-4-2-使用continue跳转次循环"><a href="#1-4-2-使用continue跳转次循环" class="headerlink" title="1.4.2 使用continue跳转次循环"></a>1.4.2 使用continue跳转次循环</h4><p>continue只是跳出次循环，继续执行剩下的循环，并不是完全终止循环。</p>
 <p>示例如下：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.bytecollege;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 本例将演示continue</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> MR.W</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ContinueDemo</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">			<span class="keyword">if</span>(i==<span class="number">7</span>) &#123;</span><br><span class="line">				<span class="keyword">continue</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println(i);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">package cn.bytecollege;</span><br><span class="line">/**</span><br><span class="line"> * 本例将演示continue</span><br><span class="line"> * @author MR.W</span><br><span class="line"> *</span><br><span class="line"> */</span><br><span class="line">public class ContinueDemo &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		for (int i = 0; i &lt; 10; i++) &#123;</span><br><span class="line">			if(i==7) &#123;</span><br><span class="line">				continue;</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println(i);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <ul>
 <li><p>循环嵌套中使用continue</p>
@@ -1316,6 +1331,58 @@
     <content><![CDATA[<p><em><strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Java基础学习打卡第2天<br>学习链接：<a href="https://www.yuque.com/docs/share/5b051183-1e6a-4c80-904f-17070f1c9653#">https://www.yuque.com/docs/share/5b051183-1e6a-4c80-904f-17070f1c9653?#</a> 《第4章 数组》密码：mg6w</strong></em></p>
 <span id="more"></span>
 
+<h2 id="1-数组"><a href="#1-数组" class="headerlink" title="1 数组"></a>1 数组</h2><p><b>数据就是：具有相同数据类型且按照一定次序排列的一组数据的集合</b></p>
+<p>注意：1、具有相同的数据类型</p>
+<p>​            2、按照一定次序排列</p>
+<p>​            3、一组数据</p>
+<h3 id="1-1-定义数组"><a href="#1-1-定义数组" class="headerlink" title="1.1 定义数组"></a>1.1 定义数组</h3><p>数组的定义方式有两种语法：(推荐使用第一种)</p>
+<blockquote>
+<ul>
+<li>type[] arrayName;</li>
+<li>type arrayName[];</li>
+</ul>
+</blockquote>
+<p><b>注意：</b></p>
+<blockquote>
+<p>1、数组的初始化一旦完成，数组在内存中所占的空间将被固定下来，因此数组的长度不可改变。</p>
+<p>2、数组是一种引用类型的变量，当仅仅是定义了数组，定义了一个变量后，这个变量还未指向任何有效内存，此时整个数组还不能使用，只有对数组初始化后才能使用。</p>
+</blockquote>
+<h4 id="1-1-1-数组的初始化"><a href="#1-1-1-数组的初始化" class="headerlink" title="1.1.1 数组的初始化"></a>1.1.1 数组的初始化</h4><p>所谓初始化，就是为数据的元素分配内存空间，并为每个元素赋初值。</p>
+<p>数组的初始化有两种方式：</p>
+<blockquote>
+<ul>
+<li><p>静态初始化：由程序员指定每个元素的初始值。由熊指定数组的长度。</p>
+<blockquote>
+<ul>
+<li><p>格式如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">arrayName = new type[]&#123;e1,e2,e3&#125;</span><br><span class="line">//或</span><br><span class="line">arrayName = &#123;e1,e2,e3&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>下面通过示例来定义并初始化数组</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package cn.bytecollege;</span><br><span class="line">/**</span><br><span class="line"> * 本例将演示定义及初始化数组</span><br><span class="line"> * @author MR.W</span><br><span class="line"> *</span><br><span class="line"> */</span><br><span class="line">public class DefineArray &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//定义了一个整型数组ary</span><br><span class="line">		int[] ary;</span><br><span class="line">		//定义了一个char类型数组chars</span><br><span class="line">		char[] chars = &#123;&#x27;a&#x27;,&#x27;b&#x27;,&#x27;c&#x27;&#125;;</span><br><span class="line">		//初始化ary</span><br><span class="line">		ary = new int[]&#123;1,2,3,4&#125;;</span><br><span class="line">		//此种写法编译器编译出错</span><br><span class="line">//		chars = &#123;&#x27;a&#x27;,&#x27;b&#x27;,&#x27;c&#x27;&#125;;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+</blockquote>
+</li>
+<li><p>动态初始化：程序员指定数组长度，由系统为元素分配初始值。</p>
+<blockquote>
+<ul>
+<li><p>格式如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">arrayName = new type[length];</span><br></pre></td></tr></table></figure></li>
+<li><p>指定初始值时，系统按如下规则分配初始值：</p>
+<blockquote>
+<ul>
+<li>数组元素的类型是基本类型中的整型(byte,shor,int,long)，则数组元素的初始值为0;</li>
+<li>数组元素的类型是基本类型中的浮点型(float，double),则数组元素的值是0.0;</li>
+<li>数组元素的类型是基本类型中的字符型(char) ,则数组元素的值是’\uo000’;</li>
+<li>数组元素的类型是基本类型中的布尔型(boolean)，则数组元素的默认值是false。</li>
+<li>数组元素的类型是基本类型中的引用类型，则数组元素的默认值是null。</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<h3 id="学习心得"><a href="#学习心得" class="headerlink" title="学习心得"></a>学习心得</h3><p>​            今天学习了一些java的控制流程和数组，基本全部掌握，毕竟在学校里这一块知识经常用到，所以再学起来也是很容易的。由于之前在客厅睡，睡的不好。昨天就给安老师说完之后，就要我搬了宿舍，现在一个人住，超喜欢一个人的感觉，超自由。刷视频想外放，就外放。</p>
 ]]></content>
       <categories>
         <category>XiAnTrain</category>
@@ -1524,134 +1591,6 @@ elementN:  可选。可向数组添加若干元素。
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//图片翻转</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">        *&#123;</span><br><span class="line">            margin: 0 auto;</span><br><span class="line">            padding: 0px;</span><br><span class="line">        &#125;</span><br><span class="line">        .box&#123;</span><br><span class="line">            width: 500px;</span><br><span class="line">            height: 300px;</span><br><span class="line">            background-image: url(&quot;img/IMG_E1640.JPG&quot;);</span><br><span class="line">            background-size: 100%;</span><br><span class="line">            /*引用动画*/</span><br><span class="line">            animation:rotateImg 10s infinite;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        /*制作动画执行过程*/</span><br><span class="line">        @-webkit-keyframes rotateImg &#123;</span><br><span class="line">            0%&#123;</span><br><span class="line">                /*图片起始不动*/</span><br><span class="line">                -webkit-transform: rotateY(0deg);</span><br><span class="line">            &#125;</span><br><span class="line">            50%&#123;</span><br><span class="line">                -webkit-transform: rotateY(360deg);</span><br><span class="line">            &#125;</span><br><span class="line">            100%&#123;</span><br><span class="line">                -webkit-transform: rotateY(720deg);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div class=&quot;box&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h2 id="光盘旋转效果"><a href="#光盘旋转效果" class="headerlink" title="光盘旋转效果"></a>光盘旋转效果</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">        *&#123;</span><br><span class="line">            margin: 0 auto;</span><br><span class="line">            padding: 0px;</span><br><span class="line">        &#125;</span><br><span class="line">        .box&#123;</span><br><span class="line">            width: 500px;</span><br><span class="line">            height: 500px;</span><br><span class="line">            background-image: url(&quot;img/IMG_E1640.JPG&quot;);</span><br><span class="line">            background-size: 100% 100%;</span><br><span class="line">            border-radius: 50%;</span><br><span class="line">            display: flex;</span><br><span class="line">            /*引用大圆旋转动画*/</span><br><span class="line">            animation: box 30s linear infinite;</span><br><span class="line">        &#125;</span><br><span class="line">        .lb&#123;</span><br><span class="line">            width: 400px;</span><br><span class="line">            height: 400px;</span><br><span class="line">            background-image: url(&quot;img/IMG_1443.JPG&quot;);</span><br><span class="line">            background-size: 100% 100%;</span><br><span class="line">            border-radius: 50%;</span><br><span class="line">            align-self: center;</span><br><span class="line">            animation: lb 15s linear infinite;</span><br><span class="line">        &#125;</span><br><span class="line">        /*制作动画：大圆要顺时针旋转，稍慢*/</span><br><span class="line">        @-webkit-keyframes box &#123;</span><br><span class="line">            0%&#123;</span><br><span class="line">                -webkit-transform: rotate(0deg);</span><br><span class="line">            &#125;</span><br><span class="line">            100%&#123;</span><br><span class="line">                -webkit-transform: rotate(360deg);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        /*制作动画：小圆要逆时针旋转，稍快*/</span><br><span class="line">        @-webkit-keyframes lb &#123;</span><br><span class="line">            0%&#123;</span><br><span class="line">                -webkit-transform: rotate(0deg);</span><br><span class="line">            &#125;</span><br><span class="line">            100%&#123;</span><br><span class="line">                -webkit-transform: rotate(-360deg) rotateY(360deg);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div class=&quot;box&quot;&gt;</span><br><span class="line">        &lt;div class=&quot;lb&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h2 id="3D旋转相册"><a href="#3D旋转相册" class="headerlink" title="3D旋转相册"></a>3D旋转相册</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;title&gt;&lt;/title&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">body &#123;</span><br><span class="line">	background:#06081B;</span><br><span class="line">	perspective:5000px;</span><br><span class="line">&#125;</span><br><span class="line">.show &#123;</span><br><span class="line">	perspective:5000px;</span><br><span class="line">	-webkit-transform:rotateX(-45deg);</span><br><span class="line">	-moz-transform:rotateX(-45deg);</span><br><span class="line">	transform:rotateX(-45deg);</span><br><span class="line">	transform-style:preserve-3d;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">.box &#123;</span><br><span class="line">	position:relative;</span><br><span class="line">	width:150px;</span><br><span class="line">	height:250px;</span><br><span class="line"></span><br><span class="line">	margin:300px auto;</span><br><span class="line">	transform-style:preserve-3d;</span><br><span class="line">	-webkit-animation:rotate1 10s linear infinite;</span><br><span class="line">	-moz-animation:rotate1 10s linear infinite;</span><br><span class="line">	animation:rotate1 10s linear infinite;</span><br><span class="line">    background-image: url(&quot;img/IMG_E1640.JPG&quot;);</span><br><span class="line">    background-size: 100%;</span><br><span class="line">&#125;</span><br><span class="line">.box img &#123;</span><br><span class="line">	width:150px;</span><br><span class="line">	height:250px;</span><br><span class="line">	border:1px solid #ccc;</span><br><span class="line">	position:absolute;</span><br><span class="line">	left:0;</span><br><span class="line">	top:0;</span><br><span class="line">	-webkit-box-reflect:below 20px -webkit-linear-gradient(top,rgba(250,250,250,0),rgba(250,250,250,0) 30%,rgba(250,250,250,0.5));</span><br><span class="line">&#125;</span><br><span class="line">.img1 &#123;</span><br><span class="line">	-webkit-transform:translateZ(300px);</span><br><span class="line">	-moz-transform:translateZ(300px);</span><br><span class="line">	transform:translateZ(300px);</span><br><span class="line">&#125;</span><br><span class="line">.img2 &#123;</span><br><span class="line">	-webkit-transform:rotateY(36deg) translateZ(300px);</span><br><span class="line">	-moz-transform:rotateY(36deg) translateZ(300px);</span><br><span class="line">	transform:rotateY(36deg) translateZ(300px);</span><br><span class="line">&#125;</span><br><span class="line">.img3 &#123;</span><br><span class="line">	-webkit-transform:rotateY(72deg) translateZ(300px);</span><br><span class="line">	-moz-transform:rotateY(72deg) translateZ(300px);</span><br><span class="line">&#125;</span><br><span class="line">.img4 &#123;</span><br><span class="line">	-webkit-transform:rotateY(108deg) translateZ(300px);</span><br><span class="line">	-moz-transform:rotateY(108deg) translateZ(300px);</span><br><span class="line">	transform:rotateY(108deg) translateZ(300px);</span><br><span class="line">&#125;</span><br><span class="line">.img5 &#123;</span><br><span class="line">	-webkit-transform:rotateY(144deg) translateZ(300px);</span><br><span class="line">	-moz-transform:rotateY(144deg) translateZ(300px);</span><br><span class="line">	transform:rotateY(144deg) translateZ(300px);</span><br><span class="line">&#125;</span><br><span class="line">.img6 &#123;</span><br><span class="line">	-webkit-transform:rotateY(180deg) translateZ(300px);</span><br><span class="line">	-moz-transform:rotateY(180deg) translateZ(300px);</span><br><span class="line">	transform:rotateY(180deg) translateZ(300px);</span><br><span class="line">&#125;</span><br><span class="line">.img7 &#123;</span><br><span class="line">	-webkit-transform:rotateY(216deg) translateZ(300px);</span><br><span class="line">	-moz-transform:rotateY(216deg) translateZ(300px);</span><br><span class="line">	transform:rotateY(216deg) translateZ(300px);</span><br><span class="line">&#125;</span><br><span class="line">.img8 &#123;</span><br><span class="line">	-webkit-transform:rotateY(252deg) translateZ(300px);</span><br><span class="line">	-moz-transform:rotateY(252deg) translateZ(300px);</span><br><span class="line">	transform:rotateY(252deg) translateZ(300px);</span><br><span class="line">&#125;</span><br><span class="line">.img9 &#123;</span><br><span class="line">	-webkit-transform:rotateY(288deg) translateZ(300px);</span><br><span class="line">	-moz-transform:rotateY(288deg) translateZ(300px);</span><br><span class="line">	transform:rotateY(288deg) translateZ(300px);</span><br><span class="line">&#125;</span><br><span class="line">.img10 &#123;</span><br><span class="line">	-webkit-transform:rotateY(324deg) translateZ(300px);</span><br><span class="line">	-moz-transform:rotateY(324deg) translateZ(300px);</span><br><span class="line">	transform:rotateY(324deg) translateZ(300px);</span><br><span class="line">&#125;</span><br><span class="line">@-moz-keyframes rotate1 &#123;</span><br><span class="line">	0% &#123;</span><br><span class="line">	-webkit-transform:rotateY(0deg);</span><br><span class="line">	-moz-transform:rotateY(0deg);</span><br><span class="line">	transform:rotateY(0deg);</span><br><span class="line">&#125;</span><br><span class="line">100% &#123;</span><br><span class="line">	-webkit-transform:rotateY(360deg);</span><br><span class="line">	-moz-transform:rotateY(360deg);</span><br><span class="line">	transform:rotateY(360deg);</span><br><span class="line">&#125;</span><br><span class="line">&#125;@-webkit-keyframes rotate1 &#123;</span><br><span class="line">	0% &#123;</span><br><span class="line">	-webkit-transform:rotateY(0deg);</span><br><span class="line">	-moz-transform:rotateY(0deg);</span><br><span class="line">	transform:rotateY(0deg);</span><br><span class="line">&#125;</span><br><span class="line">100% &#123;</span><br><span class="line">	-webkit-transform:rotateY(360deg);</span><br><span class="line">	-moz-transform:rotateY(360deg);</span><br><span class="line">	transform:rotateY(360deg);</span><br><span class="line">&#125;</span><br><span class="line">&#125;&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div class=&quot;show&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;box&quot;&gt;</span><br><span class="line">        &lt;img src=&quot;img/IMG_E1642.JPG&quot; class=&quot;img1&quot;&gt;</span><br><span class="line">        &lt;img src=&quot;img/IMG_E1644.JPG&quot; class=&quot;img2&quot;&gt;</span><br><span class="line">        &lt;img src=&quot;img/IMG_E1640.JPG&quot; class=&quot;img3&quot;&gt;</span><br><span class="line">        &lt;img src=&quot;img/IMG_1444.JPG&quot; class=&quot;img4&quot;&gt;</span><br><span class="line">        &lt;img src=&quot;img/IMG_1440.JPG&quot; class=&quot;img5&quot;&gt;</span><br><span class="line">        &lt;img src=&quot;img/IMG_1439.JPG&quot; class=&quot;img6&quot;&gt;</span><br><span class="line">        &lt;img src=&quot;img/IMG_1430.JPG&quot; class=&quot;img7&quot;&gt;</span><br><span class="line">        &lt;img src=&quot;img/IMG_1427.JPG&quot; class=&quot;img8&quot;&gt;</span><br><span class="line">        &lt;img src=&quot;img/IMG_1429.JPG&quot; class=&quot;img9&quot;&gt;</span><br><span class="line">        &lt;img src=&quot;img/IMG_1443.JPG&quot; class=&quot;img10&quot;&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>XiAnTrain</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>培训心得 [JQuery]</title>
-    <url>/2022/07/13/xianTrain8-JQuery/</url>
-    <content><![CDATA[<p><em><strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;学习打卡第嗯-2天</strong></em></p>
-<span id="more"></span>
-<h1 id="JQuery的定义"><a href="#JQuery的定义" class="headerlink" title="JQuery的定义"></a>JQuery的定义</h1><blockquote>
-<ul>
-<li>它是javaScript的封装，它可以说是开源的JavaScript的函数</li>
-<li>简化了JavaScript开发</li>
-</ul>
-</blockquote>
-<h1 id="JQuery的下载及引用"><a href="#JQuery的下载及引用" class="headerlink" title="JQuery的下载及引用"></a>JQuery的下载及引用</h1><blockquote>
-<ul>
-<li>下载：<a href="https://jquery.com/download/">https://jquery.com/download/</a></li>
-<li>应用方法：</li>
-</ul>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script src=&quot;jquery-3.6.0.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"> &lt;script&gt;</span><br><span class="line"> //调用Jquery代码</span><br><span class="line"> &lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<h1 id="JQuery选择器"><a href="#JQuery选择器" class="headerlink" title="JQuery选择器"></a>JQuery选择器</h1><blockquote>
-<ul>
-<li>JQuery选择器可以用来快速的选中一个元素，获取或修改其信息，其使用规则和CSS样式是一样的。</li>
-<li>种类<blockquote>
-<ul>
-<li>标签选择器</li>
-<li>类选择器</li>
-<li>id选择器</li>
-<li>后代选择器（层级选择器）</li>
-</ul>
-</blockquote>
-</li>
-<li>使用方法即$(CSS选择器使用规则)</li>
-</ul>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>$(“#id”)</td>
-<td>$(“.class”)</td>
-<td>$(“.class ul li”)</td>
-<td>$(“div”)</td>
-</tr>
-</tbody></table>
-<h1 id="选择器过滤"><a href="#选择器过滤" class="headerlink" title="选择器过滤"></a>选择器过滤</h1><blockquote>
-<ul>
-<li>过滤就是在选择标签的集合中过滤出自己需要的标签</li>
-<li>has()<blockquote>
-<ul>
-<li>has(选择器名称)， 表示选取指定选择器的标签</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line"> &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line"> &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line"> &lt;script src=&quot;jquery-3.6.0.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"> &lt;script&gt;</span><br><span class="line"> $(function () &#123;</span><br><span class="line"> //使用has方法</span><br><span class="line"> $(&quot;div&quot;).has(&quot;#demo&quot;).css(&quot;color&quot;,&quot;red&quot;);</span><br><span class="line"> &#125;)</span><br><span class="line"> &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"> &lt;div&gt;</span><br><span class="line"> &lt;input type=&quot;text&quot;&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line"> &lt;div&gt;</span><br><span class="line"> &lt;input type=&quot;text&quot; id=&quot;demo&quot;&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<blockquote>
-<ul>
-<li>eq(索引)，表示选取指定索引的元素</li>
-</ul>
-</blockquote>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line"> &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line"> &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line"> &lt;script src=&quot;jquery-3.6.0.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"> &lt;script&gt;</span><br><span class="line"> $(function () &#123;</span><br><span class="line"> $(&quot;div&quot;).eq(0).children().css(&quot;color&quot;,&quot;red&quot;);</span><br><span class="line"> &#125;)</span><br><span class="line"> &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"> &lt;div&gt;</span><br><span class="line"> &lt;input type=&quot;text&quot; placeholder=&quot;这是第一个div里面的input&quot;&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line"> &lt;div&gt;</span><br><span class="line"> &lt;input type=&quot;text&quot; placeholder=&quot;这是第二个div里面的input&quot;&gt;</span><br><span class="line"> &lt;input type=&quot;submit&quot;&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<ul>
-<li>选择转移<blockquote>
-<ul>
-<li>我们可以以一个元素为参照，找到其它元素（节点选择）</li>
-<li>详细如下：<blockquote>
-<p>$(‘#box’).prev(); 表示选择id是box元素的兄弟节点<br>$(‘#box’).prevAll(); 表示选择id是box元素的上面所有的同级元素<br>$(‘#box’).next(); 表示选择id是box元素的兄弟节点<br>$(‘#box’).nextAll(); 表示选择id是box元素的下面所有的同级元素<br>$(‘#box’).parent(); 表示选择id是box元素的父元素<br>$(‘#box’).children(); 表示选择id是box元素的所有子元素<br>$(‘#box’).siblings(); 表示选择id是box元素的其它同级元素<br>$(‘#box’).find(‘.myClass’); 表示选择id是box元素的class等于myClass的元素</p>
-</blockquote>
-</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line"> &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line"> &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line"> &lt;script src=&quot;jquery-3.6.0.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"> &lt;script&gt;</span><br><span class="line"> $(function () &#123;</span><br><span class="line"> //确定参照节点</span><br><span class="line"> var $div = $(&quot;#demo&quot;);</span><br><span class="line"> $div.prev().css(&quot;color&quot;,&quot;red&quot;);</span><br><span class="line"> $div.prevAll().css(&quot;font-size&quot;,33);</span><br><span class="line"> $div.next().css(&quot;color&quot;,&quot;blue&quot;);</span><br><span class="line"> $div.nextAll().css(&quot;background&quot;,&quot;gray&quot;);</span><br><span class="line"> $div.parent().css(&quot;background&quot;,&quot;#ff6700&quot;);</span><br><span class="line"> $div.children().css(&quot;color&quot;,&quot;gold&quot;);</span><br><span class="line"> &#125;)</span><br><span class="line"> &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"> &lt;h1&gt;这是一个标题&lt;/h1&gt;</span><br><span class="line">  &lt;p&gt;这是一个段落&lt;/p&gt;</span><br><span class="line"> &lt;div id=&quot;demo&quot;&gt;这是一个div</span><br><span class="line"> &lt;span&gt;这是div里面的span&lt;/span&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line"> &lt;h3&gt;这又是一个标题&lt;/h3&gt;</span><br><span class="line"> &lt;a href=&quot;#&quot;&gt;这是一个a标签&lt;/a&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<blockquote>
-<ul>
-<li>html方法的使用<blockquote>
-<ul>
-<li>在jquery中可以通过html属性为元素设置html内容</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line"> &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line"> &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line"> &lt;script src=&quot;jquery-3.6.0.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"> &lt;script&gt;</span><br><span class="line"> $(function () &#123;</span><br><span class="line"> var $div = $(&quot;#demo&quot;);</span><br><span class="line"> //如果要获取内容</span><br><span class="line"> var rs = $div.html();</span><br><span class="line"> alert(rs)</span><br><span class="line"> $div.html(&quot;&lt;span style=&#x27;color: red&#x27;&gt;哈嘿~~~~&lt;/span&gt;&quot;);</span><br><span class="line"> //在元素后追加内容</span><br><span class="line"> $div.append(&quot;&lt;span style=&#x27;color: red&#x27;&gt;大宝贝&lt;/span&gt;&quot;);</span><br><span class="line"> &#125;)</span><br><span class="line"> &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"> &lt;div id=&quot;demo&quot;&gt;</span><br><span class="line"> &lt;p&gt;这是字&lt;/p&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<ul>
-<li>获取和设置元素的属性<blockquote>
-<ul>
-<li>prop方法：css方法可以设置元素的样式属性，而该方法可以设置元素的其他属性</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line"> &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line"> &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line"> &lt;script src=&quot;jquery-3.6.0.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"> &lt;script&gt;</span><br><span class="line"> $(function () &#123;</span><br><span class="line"> var $a = $(&quot;#aId&quot;);</span><br><span class="line"> var $input = $(&quot;#InputId&quot;);</span><br><span class="line"> //可以获取</span><br><span class="line"> var Sa = $a.prop(&quot;id&quot;);</span><br><span class="line"> // alert(Sa);</span><br><span class="line"> //设置元素属性</span><br><span class="line"> $a.prop(&#123;&quot;href&quot;:&quot;http://www.baidu.com&quot;,&quot;class&quot;:&quot;aClass&quot;,&quot;title&quot;:&quot;这是</span><br><span class="line">标题&quot;&#125;);</span><br><span class="line"> //获取input中的属性value使用的是val()方法</span><br><span class="line"> // var Sinput = $input.prop(&quot;value&quot;);</span><br><span class="line"> // alert(Sinput);</span><br><span class="line"> var Sinput = $input.val();</span><br><span class="line"> alert(Sinput);</span><br><span class="line"> //设置value值</span><br><span class="line"> $input.val(&quot;12313212&quot;);</span><br><span class="line"> &#125;)</span><br><span class="line"> &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"> &lt;a id=&quot;aId&quot;&gt;这是a标签&lt;/a&gt;</span><br><span class="line"> &lt;input id=&quot;InputId&quot; type=&quot;text&quot; value=&quot;123&quot;/&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-
-<h1 id="JQuery事件"><a href="#JQuery事件" class="headerlink" title="JQuery事件"></a>JQuery事件</h1><blockquote>
-<ul>
-<li>常用事件<blockquote>
-<ul>
-<li>click()鼠标点击事件</li>
-<li>blur() 离焦事件</li>
-<li>focus() 聚焦事件</li>
-<li>mouseover() 鼠标进入事件</li>
-<li>mouseout() 鼠标离开事件</li>
-<li>ready() DOM加载完毕触发</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line"> &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line"> &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line"> &lt;script src=&quot;jquery-3.6.0.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"> &lt;script&gt;</span><br><span class="line"> $(function () &#123;</span><br><span class="line"> var $li = $(&quot;.list li&quot;);</span><br><span class="line"> var $input = $(&quot;#in_one&quot;);</span><br><span class="line"> var $btn = $(&quot;#btn&quot;);</span><br><span class="line"> var $div = $(&quot;#demo&quot;);</span><br><span class="line"> //点击事件</span><br><span class="line"> $li.click(function () &#123;</span><br><span class="line"> $(this).css(&#123;&quot;background&quot;:&quot;red&quot;&#125;);</span><br><span class="line"> //index()方法可以获取当前元素的索引值</span><br><span class="line"> //alert($(this).index())</span><br><span class="line"> &#125;);</span><br><span class="line"> //获取焦点</span><br><span class="line">$input.focus(function () &#123;</span><br><span class="line"> $(this).val(&quot;嗨嗨嘿&quot;);</span><br><span class="line"> &#125;)</span><br><span class="line"> &#125;)</span><br><span class="line"> &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"> &lt;div id=&quot;demo&quot;&gt;</span><br><span class="line"> &lt;ul class=&quot;list&quot;&gt;</span><br><span class="line"> &lt;li&gt;这是一行字&lt;/li&gt;</span><br><span class="line"> &lt;li&gt;这是一行字&lt;/li&gt;</span><br><span class="line"> &lt;li&gt;这是一行字&lt;/li&gt;</span><br><span class="line"> &lt;li&gt;这是一行字&lt;/li&gt;</span><br><span class="line"> &lt;/ul&gt;</span><br><span class="line"> &lt;input type=&quot;text&quot; id=&quot;in_one&quot;/&gt;</span><br><span class="line"> &lt;input type=&quot;submit&quot; id=&quot;btn&quot; value=&quot;点一下&quot;/&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>XiAnTrain</category>
       </categories>
@@ -1873,6 +1812,134 @@ elementN:  可选。可向数组添加若干元素。
       </categories>
   </entry>
   <entry>
+    <title>培训心得 [JQuery]</title>
+    <url>/2022/07/13/xianTrain8-JQuery/</url>
+    <content><![CDATA[<p><em><strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;学习打卡第嗯-2天</strong></em></p>
+<span id="more"></span>
+<h1 id="JQuery的定义"><a href="#JQuery的定义" class="headerlink" title="JQuery的定义"></a>JQuery的定义</h1><blockquote>
+<ul>
+<li>它是javaScript的封装，它可以说是开源的JavaScript的函数</li>
+<li>简化了JavaScript开发</li>
+</ul>
+</blockquote>
+<h1 id="JQuery的下载及引用"><a href="#JQuery的下载及引用" class="headerlink" title="JQuery的下载及引用"></a>JQuery的下载及引用</h1><blockquote>
+<ul>
+<li>下载：<a href="https://jquery.com/download/">https://jquery.com/download/</a></li>
+<li>应用方法：</li>
+</ul>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script src=&quot;jquery-3.6.0.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"> &lt;script&gt;</span><br><span class="line"> //调用Jquery代码</span><br><span class="line"> &lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="JQuery选择器"><a href="#JQuery选择器" class="headerlink" title="JQuery选择器"></a>JQuery选择器</h1><blockquote>
+<ul>
+<li>JQuery选择器可以用来快速的选中一个元素，获取或修改其信息，其使用规则和CSS样式是一样的。</li>
+<li>种类<blockquote>
+<ul>
+<li>标签选择器</li>
+<li>类选择器</li>
+<li>id选择器</li>
+<li>后代选择器（层级选择器）</li>
+</ul>
+</blockquote>
+</li>
+<li>使用方法即$(CSS选择器使用规则)</li>
+</ul>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$(“#id”)</td>
+<td>$(“.class”)</td>
+<td>$(“.class ul li”)</td>
+<td>$(“div”)</td>
+</tr>
+</tbody></table>
+<h1 id="选择器过滤"><a href="#选择器过滤" class="headerlink" title="选择器过滤"></a>选择器过滤</h1><blockquote>
+<ul>
+<li>过滤就是在选择标签的集合中过滤出自己需要的标签</li>
+<li>has()<blockquote>
+<ul>
+<li>has(选择器名称)， 表示选取指定选择器的标签</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line"> &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line"> &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line"> &lt;script src=&quot;jquery-3.6.0.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"> &lt;script&gt;</span><br><span class="line"> $(function () &#123;</span><br><span class="line"> //使用has方法</span><br><span class="line"> $(&quot;div&quot;).has(&quot;#demo&quot;).css(&quot;color&quot;,&quot;red&quot;);</span><br><span class="line"> &#125;)</span><br><span class="line"> &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"> &lt;div&gt;</span><br><span class="line"> &lt;input type=&quot;text&quot;&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line"> &lt;div&gt;</span><br><span class="line"> &lt;input type=&quot;text&quot; id=&quot;demo&quot;&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<blockquote>
+<ul>
+<li>eq(索引)，表示选取指定索引的元素</li>
+</ul>
+</blockquote>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line"> &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line"> &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line"> &lt;script src=&quot;jquery-3.6.0.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"> &lt;script&gt;</span><br><span class="line"> $(function () &#123;</span><br><span class="line"> $(&quot;div&quot;).eq(0).children().css(&quot;color&quot;,&quot;red&quot;);</span><br><span class="line"> &#125;)</span><br><span class="line"> &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"> &lt;div&gt;</span><br><span class="line"> &lt;input type=&quot;text&quot; placeholder=&quot;这是第一个div里面的input&quot;&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line"> &lt;div&gt;</span><br><span class="line"> &lt;input type=&quot;text&quot; placeholder=&quot;这是第二个div里面的input&quot;&gt;</span><br><span class="line"> &lt;input type=&quot;submit&quot;&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>选择转移<blockquote>
+<ul>
+<li>我们可以以一个元素为参照，找到其它元素（节点选择）</li>
+<li>详细如下：<blockquote>
+<p>$(‘#box’).prev(); 表示选择id是box元素的兄弟节点<br>$(‘#box’).prevAll(); 表示选择id是box元素的上面所有的同级元素<br>$(‘#box’).next(); 表示选择id是box元素的兄弟节点<br>$(‘#box’).nextAll(); 表示选择id是box元素的下面所有的同级元素<br>$(‘#box’).parent(); 表示选择id是box元素的父元素<br>$(‘#box’).children(); 表示选择id是box元素的所有子元素<br>$(‘#box’).siblings(); 表示选择id是box元素的其它同级元素<br>$(‘#box’).find(‘.myClass’); 表示选择id是box元素的class等于myClass的元素</p>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line"> &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line"> &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line"> &lt;script src=&quot;jquery-3.6.0.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"> &lt;script&gt;</span><br><span class="line"> $(function () &#123;</span><br><span class="line"> //确定参照节点</span><br><span class="line"> var $div = $(&quot;#demo&quot;);</span><br><span class="line"> $div.prev().css(&quot;color&quot;,&quot;red&quot;);</span><br><span class="line"> $div.prevAll().css(&quot;font-size&quot;,33);</span><br><span class="line"> $div.next().css(&quot;color&quot;,&quot;blue&quot;);</span><br><span class="line"> $div.nextAll().css(&quot;background&quot;,&quot;gray&quot;);</span><br><span class="line"> $div.parent().css(&quot;background&quot;,&quot;#ff6700&quot;);</span><br><span class="line"> $div.children().css(&quot;color&quot;,&quot;gold&quot;);</span><br><span class="line"> &#125;)</span><br><span class="line"> &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"> &lt;h1&gt;这是一个标题&lt;/h1&gt;</span><br><span class="line">  &lt;p&gt;这是一个段落&lt;/p&gt;</span><br><span class="line"> &lt;div id=&quot;demo&quot;&gt;这是一个div</span><br><span class="line"> &lt;span&gt;这是div里面的span&lt;/span&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line"> &lt;h3&gt;这又是一个标题&lt;/h3&gt;</span><br><span class="line"> &lt;a href=&quot;#&quot;&gt;这是一个a标签&lt;/a&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>html方法的使用<blockquote>
+<ul>
+<li>在jquery中可以通过html属性为元素设置html内容</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line"> &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line"> &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line"> &lt;script src=&quot;jquery-3.6.0.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"> &lt;script&gt;</span><br><span class="line"> $(function () &#123;</span><br><span class="line"> var $div = $(&quot;#demo&quot;);</span><br><span class="line"> //如果要获取内容</span><br><span class="line"> var rs = $div.html();</span><br><span class="line"> alert(rs)</span><br><span class="line"> $div.html(&quot;&lt;span style=&#x27;color: red&#x27;&gt;哈嘿~~~~&lt;/span&gt;&quot;);</span><br><span class="line"> //在元素后追加内容</span><br><span class="line"> $div.append(&quot;&lt;span style=&#x27;color: red&#x27;&gt;大宝贝&lt;/span&gt;&quot;);</span><br><span class="line"> &#125;)</span><br><span class="line"> &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"> &lt;div id=&quot;demo&quot;&gt;</span><br><span class="line"> &lt;p&gt;这是字&lt;/p&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>获取和设置元素的属性<blockquote>
+<ul>
+<li>prop方法：css方法可以设置元素的样式属性，而该方法可以设置元素的其他属性</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line"> &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line"> &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line"> &lt;script src=&quot;jquery-3.6.0.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"> &lt;script&gt;</span><br><span class="line"> $(function () &#123;</span><br><span class="line"> var $a = $(&quot;#aId&quot;);</span><br><span class="line"> var $input = $(&quot;#InputId&quot;);</span><br><span class="line"> //可以获取</span><br><span class="line"> var Sa = $a.prop(&quot;id&quot;);</span><br><span class="line"> // alert(Sa);</span><br><span class="line"> //设置元素属性</span><br><span class="line"> $a.prop(&#123;&quot;href&quot;:&quot;http://www.baidu.com&quot;,&quot;class&quot;:&quot;aClass&quot;,&quot;title&quot;:&quot;这是</span><br><span class="line">标题&quot;&#125;);</span><br><span class="line"> //获取input中的属性value使用的是val()方法</span><br><span class="line"> // var Sinput = $input.prop(&quot;value&quot;);</span><br><span class="line"> // alert(Sinput);</span><br><span class="line"> var Sinput = $input.val();</span><br><span class="line"> alert(Sinput);</span><br><span class="line"> //设置value值</span><br><span class="line"> $input.val(&quot;12313212&quot;);</span><br><span class="line"> &#125;)</span><br><span class="line"> &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"> &lt;a id=&quot;aId&quot;&gt;这是a标签&lt;/a&gt;</span><br><span class="line"> &lt;input id=&quot;InputId&quot; type=&quot;text&quot; value=&quot;123&quot;/&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<h1 id="JQuery事件"><a href="#JQuery事件" class="headerlink" title="JQuery事件"></a>JQuery事件</h1><blockquote>
+<ul>
+<li>常用事件<blockquote>
+<ul>
+<li>click()鼠标点击事件</li>
+<li>blur() 离焦事件</li>
+<li>focus() 聚焦事件</li>
+<li>mouseover() 鼠标进入事件</li>
+<li>mouseout() 鼠标离开事件</li>
+<li>ready() DOM加载完毕触发</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line"> &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line"> &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line"> &lt;script src=&quot;jquery-3.6.0.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"> &lt;script&gt;</span><br><span class="line"> $(function () &#123;</span><br><span class="line"> var $li = $(&quot;.list li&quot;);</span><br><span class="line"> var $input = $(&quot;#in_one&quot;);</span><br><span class="line"> var $btn = $(&quot;#btn&quot;);</span><br><span class="line"> var $div = $(&quot;#demo&quot;);</span><br><span class="line"> //点击事件</span><br><span class="line"> $li.click(function () &#123;</span><br><span class="line"> $(this).css(&#123;&quot;background&quot;:&quot;red&quot;&#125;);</span><br><span class="line"> //index()方法可以获取当前元素的索引值</span><br><span class="line"> //alert($(this).index())</span><br><span class="line"> &#125;);</span><br><span class="line"> //获取焦点</span><br><span class="line">$input.focus(function () &#123;</span><br><span class="line"> $(this).val(&quot;嗨嗨嘿&quot;);</span><br><span class="line"> &#125;)</span><br><span class="line"> &#125;)</span><br><span class="line"> &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"> &lt;div id=&quot;demo&quot;&gt;</span><br><span class="line"> &lt;ul class=&quot;list&quot;&gt;</span><br><span class="line"> &lt;li&gt;这是一行字&lt;/li&gt;</span><br><span class="line"> &lt;li&gt;这是一行字&lt;/li&gt;</span><br><span class="line"> &lt;li&gt;这是一行字&lt;/li&gt;</span><br><span class="line"> &lt;li&gt;这是一行字&lt;/li&gt;</span><br><span class="line"> &lt;/ul&gt;</span><br><span class="line"> &lt;input type=&quot;text&quot; id=&quot;in_one&quot;/&gt;</span><br><span class="line"> &lt;input type=&quot;submit&quot; id=&quot;btn&quot; value=&quot;点一下&quot;/&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>XiAnTrain</category>
+      </categories>
+  </entry>
+  <entry>
     <title>培训心得[Java语言概述]</title>
     <url>/2022/07/15/xianTrain9-JavaSummary/</url>
     <content><![CDATA[<p><em><strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Java基础学习打卡第1天<br>学习链接：<a href="https://www.yuque.com/docs/share/8290264f-2175-46ce-8b20-711eac7ac369#">https://www.yuque.com/docs/share/8290264f-2175-46ce-8b20-711eac7ac369?#</a> 《第1章 Java语言概述》密码：syl5</strong></em></p>
@@ -1951,7 +2018,6 @@ elementN:  可选。可向数组添加若干元素。
 </blockquote>
 </blockquote>
 <p><b>注意事项：</b><br>1、Java源文件的命名和类名一致，并且首字符大写，如果有多个单词，所有单词的首字母均大写</p>
-<p><a href="https://www.yuque.com/docs/share/89bb9cac-ccd1-44dd-b2e2-e11933c44c39#">https://www.yuque.com/docs/share/89bb9cac-ccd1-44dd-b2e2-e11933c44c39?#</a> 《第3章 流程控制》密码：zk84</p>
 <h1 id="课后作业"><a href="#课后作业" class="headerlink" title="课后作业"></a>课后作业</h1><p>1、请简述你对java的认识</p>
 <blockquote>
 <p>java是一个可编写跨平台、分布式应用软件的面向对象的程序设计语言，主要的特点有简单性、安全性、分布式、可移植、面向对象、多线程。java源程序需要先编译再运行。<br>2、Java的平台无关性是怎么实现的？<br>由于不同平台有相应的JVM，java源程序经过编译在不同的平台生成相同的字节码文件，再经过运行再不同的JVM中从而实现java平台的无关性。<br>3、请简述java源文件命名规则？<br>Java源文件的命名和类名一致，并且首字符大写，如果有多个单词，所有单词的首字母均大写<br>java通过</p>

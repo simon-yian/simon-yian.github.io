@@ -20,6 +20,24 @@
   </url>
   
   <url>
+    <loc>https://simon-yian.github.io/2022/07/19/fatal220719-request403/</loc>
+    
+    <lastmod>2022-07-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://simon-yian.github.io/2022/07/15/xianTrain9-JavaSummary/</loc>
+    
+    <lastmod>2022-07-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://simon-yian.github.io/2022/07/12/xianTrain7-JSBomDom/</loc>
     
     <lastmod>2022-07-18</lastmod>
@@ -32,15 +50,6 @@
     <loc>https://simon-yian.github.io/2022/07/16/xianTrain10-javaDateTypeAddOperation/</loc>
     
     <lastmod>2022-07-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://simon-yian.github.io/2022/07/15/xianTrain9-JavaSummary/</loc>
-    
-    <lastmod>2022-07-16</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -348,6 +357,13 @@
   
   <url>
     <loc>https://simon-yian.github.io/categories/XiAnTrain/</loc>
+    <lastmod>2022-07-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://simon-yian.github.io/categories/fatal/</loc>
     <lastmod>2022-07-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
