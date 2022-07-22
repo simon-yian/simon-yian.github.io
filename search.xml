@@ -2174,97 +2174,6 @@ elementN:  可选。可向数组添加若干元素。
       </categories>
   </entry>
   <entry>
-    <title>培训心得[Java语言概述]</title>
-    <url>/2022/07/15/xianTrain9-JavaSummary/</url>
-    <content><![CDATA[<p><em><strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Java基础学习打卡第1天<br>学习链接：<a href="https://www.yuque.com/docs/share/8290264f-2175-46ce-8b20-711eac7ac369#">https://www.yuque.com/docs/share/8290264f-2175-46ce-8b20-711eac7ac369?#</a> 《第1章 Java语言概述》密码：syl5</strong></em></p>
-<span id="more"></span>
-<h1 id="java语言概述"><a href="#java语言概述" class="headerlink" title="java语言概述"></a>java语言概述</h1><h2 id="Java发展简史"><a href="#Java发展简史" class="headerlink" title="Java发展简史"></a>Java发展简史</h2><blockquote>
-<ul>
-<li>Java是由Sun公司于1995年5月推出的，可以编写跨平台，分布式应用软件的面向对象的程序设计语言。</li>
-<li>java一分为三：<blockquote>
-<ul>
-<li>J2ME:主要用于移动设备和信息家电设备等（现已被淘汰）</li>
-<li>J2SE:JAVA技术的核心和技术</li>
-<li>J2EE:java技术中应用最广泛的部分</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-</blockquote>
-<h2 id="java程序的运行机制"><a href="#java程序的运行机制" class="headerlink" title="java程序的运行机制"></a>java程序的运行机制</h2><blockquote>
-<ul>
-<li>运行Java程序过程：编写源程序—&gt;编译—&gt;运行<blockquote>
-<ul>
-<li>java编译之后，不会生成特定的平台机器码，而是一种与平台无关的字节码(.class文件)。</li>
-<li>字节码（.class文件）不能直接执行，而是运行在java虚拟机中</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
-<li><b style="font-size: 20px; color: red;"> （面试题）</b>java跨平台实现的核心原理：<blockquote>
-<ul>
-<li>java源代码在运行之前会先根据JVM规范生成平台无关的字节码文件（class文件）,字节码文件不依赖于任何平台。</li>
-<li>Java为不同平台实现对应的虚拟机，JVM在加载字节码文件后由JVM生成对应平台的计算机指令</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-</blockquote>
-<h2 id="Java语言的特点"><a href="#Java语言的特点" class="headerlink" title="Java语言的特点"></a>Java语言的特点</h2><blockquote>
-<ul>
-<li>简单性：相对于c语言少了指针、头文件等，并增加了垃圾回收机制。</li>
-<li>面向对象：将重点放在数据和对象上，而不是过程中</li>
-<li>分布式：java应用程序能够通过URL打开和访问网络上的对象</li>
-<li>安全性：防范个各种攻击</li>
-<li>多线程：解决高并发存在的问题</li>
-<li>可移植：不同平台可生成相同字节码文件，通过不同平台对应的JVM来运行。</li>
-</ul>
-</blockquote>
-<h2 id="技术名词"><a href="#技术名词" class="headerlink" title="技术名词"></a>技术名词</h2><p>JDK(Java Develop Kit):Java 开发工具</p>
-<p>JRE(Java Runtime Environment)：Java 运行环境</p>
-<p>JVM(Java Virtual machine )：Java虚拟机</p>
-<h2 id="Java下载安装"><a href="#Java下载安装" class="headerlink" title="Java下载安装"></a>Java下载安装</h2><blockquote>
-<ul>
-<li>JDK下载官网：<a href="https://www.oracle.com/java/technologies/downloads/index.html">https://www.oracle.com/java/technologies/downloads/index.html</a> (安装java SE 11,点击运行安装即可)</li>
-<li>配置环境变量：<blockquote>
-<ul>
-<li>配置JAVA_HOME<blockquote>
-<p>变量名：JAVA_HOME<br>变量值: (JDK的安装路径)</p>
-</blockquote>
-</li>
-<li>配置Path<blockquote>
-<p>找到Path在变量值中添加：<code>%JAVA_HOME%\bin</code></p>
-</blockquote>
-</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-</blockquote>
-<h2 id="编写第一个程序HelloWorld"><a href="#编写第一个程序HelloWorld" class="headerlink" title="编写第一个程序HelloWorld"></a>编写第一个程序HelloWorld</h2><p>在txt中编写：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Hello&#123;</span><br><span class="line">	public static void main(String[] args)&#123;</span><br><span class="line">    	System.out.print(&quot;Hello World&quot;);</span><br><span class="line">	&#125;	   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<blockquote>
-<p>保存后修改扩展名.java<br>打开终端，进入创建该txt的文件夹(cd 位置)<br>源程序进行编译:javac Hello.java<br>运行:java Hello</p>
-</blockquote>
-</blockquote>
-<p><b>注意事项：</b><br>1、Java源文件的命名和类名一致，并且首字符大写，如果有多个单词，所有单词的首字母均大写</p>
-<h1 id="课后作业"><a href="#课后作业" class="headerlink" title="课后作业"></a>课后作业</h1><p>1、请简述你对java的认识</p>
-<blockquote>
-<p>java是一个可编写跨平台、分布式应用软件的面向对象的程序设计语言，主要的特点有简单性、安全性、分布式、可移植、面向对象、多线程。java源程序需要先编译再运行。<br>2、Java的平台无关性是怎么实现的？<br>由于不同平台有相应的JVM，java源程序经过编译在不同的平台生成相同的字节码文件，再经过运行再不同的JVM中从而实现java平台的无关性。<br>3、请简述java源文件命名规则？<br>Java源文件的命名和类名一致，并且首字符大写，如果有多个单词，所有单词的首字母均大写<br>java通过</p>
-</blockquote>
-<h1 id="学习心得"><a href="#学习心得" class="headerlink" title="学习心得"></a>学习心得</h1><blockquote>
-<p>今天上午进行了一次面试，说是面试实质了解了一下我们个人情况。当时做了一下自我介绍，就没了，还期待人家问问题，结果没有。下午就进行了分班，分到了王老师的班中，第一次听他教课，给我的感觉还算通俗易懂、挺好的。期待接下来的四个月，让自己的知识储备更加巩固，更加完善。最终取得一个满意的offer。</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>XiAnTrain</category>
-      </categories>
-  </entry>
-  <entry>
     <title>培训心得 [JQuery]</title>
     <url>/2022/07/13/xianTrain8-JQuery/</url>
     <content><![CDATA[<p><em><strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;学习打卡第嗯-2天</strong></em></p>
@@ -2388,6 +2297,97 @@ elementN:  可选。可向数组添加若干元素。
 </ul>
 </blockquote>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line"> &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line"> &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line"> &lt;script src=&quot;jquery-3.6.0.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"> &lt;script&gt;</span><br><span class="line"> $(function () &#123;</span><br><span class="line"> var $li = $(&quot;.list li&quot;);</span><br><span class="line"> var $input = $(&quot;#in_one&quot;);</span><br><span class="line"> var $btn = $(&quot;#btn&quot;);</span><br><span class="line"> var $div = $(&quot;#demo&quot;);</span><br><span class="line"> //点击事件</span><br><span class="line"> $li.click(function () &#123;</span><br><span class="line"> $(this).css(&#123;&quot;background&quot;:&quot;red&quot;&#125;);</span><br><span class="line"> //index()方法可以获取当前元素的索引值</span><br><span class="line"> //alert($(this).index())</span><br><span class="line"> &#125;);</span><br><span class="line"> //获取焦点</span><br><span class="line">$input.focus(function () &#123;</span><br><span class="line"> $(this).val(&quot;嗨嗨嘿&quot;);</span><br><span class="line"> &#125;)</span><br><span class="line"> &#125;)</span><br><span class="line"> &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"> &lt;div id=&quot;demo&quot;&gt;</span><br><span class="line"> &lt;ul class=&quot;list&quot;&gt;</span><br><span class="line"> &lt;li&gt;这是一行字&lt;/li&gt;</span><br><span class="line"> &lt;li&gt;这是一行字&lt;/li&gt;</span><br><span class="line"> &lt;li&gt;这是一行字&lt;/li&gt;</span><br><span class="line"> &lt;li&gt;这是一行字&lt;/li&gt;</span><br><span class="line"> &lt;/ul&gt;</span><br><span class="line"> &lt;input type=&quot;text&quot; id=&quot;in_one&quot;/&gt;</span><br><span class="line"> &lt;input type=&quot;submit&quot; id=&quot;btn&quot; value=&quot;点一下&quot;/&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>XiAnTrain</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>培训心得[Java语言概述]</title>
+    <url>/2022/07/15/xianTrain9-JavaSummary/</url>
+    <content><![CDATA[<p><em><strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Java基础学习打卡第1天<br>学习链接：<a href="https://www.yuque.com/docs/share/8290264f-2175-46ce-8b20-711eac7ac369#">https://www.yuque.com/docs/share/8290264f-2175-46ce-8b20-711eac7ac369?#</a> 《第1章 Java语言概述》密码：syl5</strong></em></p>
+<span id="more"></span>
+<h1 id="java语言概述"><a href="#java语言概述" class="headerlink" title="java语言概述"></a>java语言概述</h1><h2 id="Java发展简史"><a href="#Java发展简史" class="headerlink" title="Java发展简史"></a>Java发展简史</h2><blockquote>
+<ul>
+<li>Java是由Sun公司于1995年5月推出的，可以编写跨平台，分布式应用软件的面向对象的程序设计语言。</li>
+<li>java一分为三：<blockquote>
+<ul>
+<li>J2ME:主要用于移动设备和信息家电设备等（现已被淘汰）</li>
+<li>J2SE:JAVA技术的核心和技术</li>
+<li>J2EE:java技术中应用最广泛的部分</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<h2 id="java程序的运行机制"><a href="#java程序的运行机制" class="headerlink" title="java程序的运行机制"></a>java程序的运行机制</h2><blockquote>
+<ul>
+<li>运行Java程序过程：编写源程序—&gt;编译—&gt;运行<blockquote>
+<ul>
+<li>java编译之后，不会生成特定的平台机器码，而是一种与平台无关的字节码(.class文件)。</li>
+<li>字节码（.class文件）不能直接执行，而是运行在java虚拟机中</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li><b style="font-size: 20px; color: red;"> （面试题）</b>java跨平台实现的核心原理：<blockquote>
+<ul>
+<li>java源代码在运行之前会先根据JVM规范生成平台无关的字节码文件（class文件）,字节码文件不依赖于任何平台。</li>
+<li>Java为不同平台实现对应的虚拟机，JVM在加载字节码文件后由JVM生成对应平台的计算机指令</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<h2 id="Java语言的特点"><a href="#Java语言的特点" class="headerlink" title="Java语言的特点"></a>Java语言的特点</h2><blockquote>
+<ul>
+<li>简单性：相对于c语言少了指针、头文件等，并增加了垃圾回收机制。</li>
+<li>面向对象：将重点放在数据和对象上，而不是过程中</li>
+<li>分布式：java应用程序能够通过URL打开和访问网络上的对象</li>
+<li>安全性：防范个各种攻击</li>
+<li>多线程：解决高并发存在的问题</li>
+<li>可移植：不同平台可生成相同字节码文件，通过不同平台对应的JVM来运行。</li>
+</ul>
+</blockquote>
+<h2 id="技术名词"><a href="#技术名词" class="headerlink" title="技术名词"></a>技术名词</h2><p>JDK(Java Develop Kit):Java 开发工具</p>
+<p>JRE(Java Runtime Environment)：Java 运行环境</p>
+<p>JVM(Java Virtual machine )：Java虚拟机</p>
+<h2 id="Java下载安装"><a href="#Java下载安装" class="headerlink" title="Java下载安装"></a>Java下载安装</h2><blockquote>
+<ul>
+<li>JDK下载官网：<a href="https://www.oracle.com/java/technologies/downloads/index.html">https://www.oracle.com/java/technologies/downloads/index.html</a> (安装java SE 11,点击运行安装即可)</li>
+<li>配置环境变量：<blockquote>
+<ul>
+<li>配置JAVA_HOME<blockquote>
+<p>变量名：JAVA_HOME<br>变量值: (JDK的安装路径)</p>
+</blockquote>
+</li>
+<li>配置Path<blockquote>
+<p>找到Path在变量值中添加：<code>%JAVA_HOME%\bin</code></p>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<h2 id="编写第一个程序HelloWorld"><a href="#编写第一个程序HelloWorld" class="headerlink" title="编写第一个程序HelloWorld"></a>编写第一个程序HelloWorld</h2><p>在txt中编写：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Hello&#123;</span><br><span class="line">	public static void main(String[] args)&#123;</span><br><span class="line">    	System.out.print(&quot;Hello World&quot;);</span><br><span class="line">	&#125;	   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<blockquote>
+<p>保存后修改扩展名.java<br>打开终端，进入创建该txt的文件夹(cd 位置)<br>源程序进行编译:javac Hello.java<br>运行:java Hello</p>
+</blockquote>
+</blockquote>
+<p><b>注意事项：</b><br>1、Java源文件的命名和类名一致，并且首字符大写，如果有多个单词，所有单词的首字母均大写</p>
+<h1 id="课后作业"><a href="#课后作业" class="headerlink" title="课后作业"></a>课后作业</h1><p>1、请简述你对java的认识</p>
+<blockquote>
+<p>java是一个可编写跨平台、分布式应用软件的面向对象的程序设计语言，主要的特点有简单性、安全性、分布式、可移植、面向对象、多线程。java源程序需要先编译再运行。<br>2、Java的平台无关性是怎么实现的？<br>由于不同平台有相应的JVM，java源程序经过编译在不同的平台生成相同的字节码文件，再经过运行再不同的JVM中从而实现java平台的无关性。<br>3、请简述java源文件命名规则？<br>Java源文件的命名和类名一致，并且首字符大写，如果有多个单词，所有单词的首字母均大写<br>java通过</p>
+</blockquote>
+<h1 id="学习心得"><a href="#学习心得" class="headerlink" title="学习心得"></a>学习心得</h1><blockquote>
+<p>今天上午进行了一次面试，说是面试实质了解了一下我们个人情况。当时做了一下自我介绍，就没了，还期待人家问问题，结果没有。下午就进行了分班，分到了王老师的班中，第一次听他教课，给我的感觉还算通俗易懂、挺好的。期待接下来的四个月，让自己的知识储备更加巩固，更加完善。最终取得一个满意的offer。</p>
+</blockquote>
+]]></content>
       <categories>
         <category>XiAnTrain</category>
       </categories>
