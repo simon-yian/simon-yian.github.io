@@ -640,6 +640,48 @@
 ]]></content>
   </entry>
   <entry>
+    <title>培训心得&amp;emsp;&amp;emsp;[表单]</title>
+    <url>/2022/06/29/XiAnTrain20220628/</url>
+    <content><![CDATA[<p><em><strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;学习打卡第二天</strong></em><br>学习链接：<a href="https://www.yuque.com/docs/share/b84dd032-287e-4aa0-a6be-ae7eb275b0ee#">https://www.yuque.com/docs/share/b84dd032-287e-4aa0-a6be-ae7eb275b0ee?#</a></p>
+<span id="more"></span>
+<h1 id="第二章-表单"><a href="#第二章-表单" class="headerlink" title="第二章 表单"></a>第二章 表单</h1><p>表单是用来显示，收集，提交用户信息，表单在网页中主要负责数据采集功能，一个表单由三个基本部分组成：表单元素、表单域、按钮</p>
+<h2 id="2-1表单"><a href="#2-1表单" class="headerlink" title="2.1表单"></a>2.1表单</h2><p>表单是一个包含表单元素的区域，使用<code>&lt;form&gt;...&lt;/form&gt;</code>定义，通过在表单中添加对应的表单元素使得用户可以在网页上输入数据<br><code>&lt;form&gt;</code>中含有诸多属性用来规定表单的格式，详见下表</p>
+<h2 id="2-2-表单元素"><a href="#2-2-表单元素" class="headerlink" title="2.2 表单元素"></a>2.2 表单元素</h2><h3 id="2-2-1-输入标签"><a href="#2-2-1-输入标签" class="headerlink" title="2.2.1 输入标签"></a>2.2.1 输入标签</h3><p>多数情况下使用的表单元素是输入标签<code>&lt;input&gt;</code><br>元素内输入类型有标签中的type属性定义，常用的元素类型如下表：</p>
+<h3 id="2-2-2-下拉标签"><a href="#2-2-2-下拉标签" class="headerlink" title="2.2.2 下拉标签"></a>2.2.2 下拉标签</h3><p>● <code>&lt;select&gt;</code>元素为表单控件，用于在表单中接收数据<br>  ○ <code>&lt;select&gt;</code>元素可创建单选或多选菜单<br>  ○ <code>&lt;option&gt;</code>标签定义了菜单中的可选项<br>● 下拉列表支持属性</p>
+<h3 id="2-2-3-按钮"><a href="#2-2-3-按钮" class="headerlink" title="2.2.3 按钮"></a>2.2.3 按钮</h3><p>● 按钮在网页中一般用于提交，重置页面数据，也可以与javascript配置做一些交互响应事件<br>● 在HTML中按钮一般使用<code>&lt;input&gt;</code>或<code>&lt;button&gt;</code>来定义<br>● 按钮属性</p>
+<p>● <code>&lt;button&gt;</code>与<code>&lt;input&gt;</code>按钮区别<br>  ○<code> &lt;button&gt;</code>按钮如果不设置type属性，在不同浏览器中可能会提交不同值<br>  ○ <code>&lt;button&gt;</code>按钮是成对出现的，可放置文本，图像等，<code>&lt;input&gt;</code>标签只能通过value属性为其设置文本<br>  ○ 需要注意的是虽然<code>&lt;button&gt;</code>按钮可以嵌套其它标签，但不能再去嵌套按钮<br>示例</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;form&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            文本：&lt;input type=&quot;text&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            密码：&lt;input type=&quot;password&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            颜色色：&lt;input type=&quot;color&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;单选：</span><br><span class="line">            男&lt;input type=&quot;radio&quot; name=&quot;gender&quot;&gt;</span><br><span class="line">            女&lt;input type=&quot;radio&quot; name=&quot;gender&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;复选：</span><br><span class="line">            爱好1&lt;input type=&quot;checkbox&quot;&gt;</span><br><span class="line">            爱好2&lt;input type=&quot;checkbox&quot;&gt;</span><br><span class="line">            爱好3&lt;input type=&quot;checkbox&quot;&gt;</span><br><span class="line">            爱好4&lt;input type=&quot;checkbox&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            下拉：&lt;select name=&quot;&quot; &gt;</span><br><span class="line">                &lt;option value=&quot;&quot;&gt;[请输入...]&lt;/option&gt;</span><br><span class="line">                &lt;option value=&quot;&quot;&gt;选择数据一&lt;/option&gt;</span><br><span class="line">                &lt;option value=&quot;&quot;&gt;选择数据二&lt;/option&gt;</span><br><span class="line">            &lt;/select&gt;县</span><br><span class="line">            &lt;select name=&quot;&quot; &gt;</span><br><span class="line">                &lt;option value=&quot;&quot;&gt;[请输入...]&lt;/option&gt;</span><br><span class="line">                &lt;option value=&quot;&quot;&gt;选择数据一&lt;/option&gt;</span><br><span class="line">                &lt;option value=&quot;&quot;&gt;选择数据二&lt;/option&gt;</span><br><span class="line">            &lt;/select&gt;村</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            日期：&lt;input type=&quot;date&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            时间：&lt;input type=&quot;time&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            月份：&lt;input type=&quot;month&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            文件：&lt;input type=&quot;file&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            数字：&lt;input type=&quot;number&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            数字范围：&lt;input type=&quot;range&quot; max=&quot;10&quot; min=&quot;0&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            邮箱：&lt;input type=&quot;email&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            地址：&lt;input type=&quot;url&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            隐藏：&lt;input type=&quot;hidden&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            &lt;input type=&quot;submit&quot; value=&quot;input提交按钮&quot;&gt;</span><br><span class="line">            &lt;input type=&quot;reset&quot; value=&quot;input重置按钮&quot;&gt;</span><br><span class="line">            &lt;input type=&quot;button&quot; value=&quot;input按钮&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            &lt;button type=&quot;submit&quot;&gt;button提交按钮&lt;/button&gt;</span><br><span class="line">            &lt;button type=&quot;reset&quot;&gt;button重置按钮&lt;/button&gt;</span><br><span class="line">            &lt;button type=&quot;button&quot;&gt;button按钮&lt;/button&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">    &lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="2-3-HTML5-表单增强"><a href="#2-3-HTML5-表单增强" class="headerlink" title="2.3 HTML5 表单增强"></a>2.3 HTML5 表单增强</h2><h3 id="2-3-1-form属性"><a href="#2-3-1-form属性" class="headerlink" title="2.3.1 form属性"></a>2.3.1 form属性</h3><p>在HTML4中，表单内的从属元素必须书写在表单内部，但在HTML5中，可以把它书写在页面的任意地方，然后给该元素指定一个form属性，属性值为该表单的id，这样就可以声明该元素从属于指定的表单<br>示例</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;form id=&quot;formTest&quot;&gt;</span><br><span class="line">	&lt;input type=&quot;text&quot; name=&quot;username&quot;/&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line">&lt;input type=&quot;password&quot; name=&quot;password&quot; form=&quot;formTest&quot;&gt;</span><br></pre></td></tr></table></figure>
+<p>代码解析：</p>
+<ol>
+<li>第一个input标签从属form表单，它被书写在form表单内部，所以用不着对它指定form属性</li>
+<li>第二个input表单被书写在form之外，但想要它从属form，这时就可以为其添加form属性并指定表单id让它从属form表单<h3 id="2-3-2-formaction属性"><a href="#2-3-2-formaction属性" class="headerlink" title="2.3.2 formaction属性"></a>2.3.2 formaction属性</h3>在HTML 4中，一个表单内的所有元素都只能通过表单的action属性统一提交到另一个页面，而在HTML 5中可以给所有的提交按钮，诸如<code>&lt;input type=&quot;submit&quot;&gt;、&lt;inputtype=&quot;image&quot;&gt;、&lt;button type=&quot;submit&quot;&gt;</code>都增加不同的formaction属性，使得点击不同的按钮，可以将表单提交到不同的页面，formaction属性的使用方法如下：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;form id=&quot;testform&quot; action=&quot; serve.jsp&quot;&gt;</span><br><span class="line">  &lt;input type=&quot;submit&quot; name=&quot;s1&quot; value=&quot;v1&quot; formaction=&quot;s1.jsp&quot;&gt;提交到s1</span><br><span class="line">  &lt;input type=&quot;submit&quot; name=&quot;s2&quot; value=&quot;v2&quot; formaction=&quot;s2.jsp&quot;&gt;提交到s2</span><br><span class="line">  &lt;input type=&quot;submit&quot; name=&quot;s3&quot; value=&quot;v3&quot; formaction=&quot;s3.jsp&quot;&gt;提交到s3</span><br><span class="line">  &lt;input type= &quot;submit&quot;&gt;</span><br><span class="line">&lt;form&gt;</span><br></pre></td></tr></table></figure>
+注：该属性目前支持的浏览器并不多，慎重使用<h3 id="2-3-3-list属性"><a href="#2-3-3-list属性" class="headerlink" title="2.3.3 list属性"></a>2.3.3 list属性</h3>在HTML 5中，为单行文本框(<code>&lt;input type=&quot;text&quot;&gt;</code>)增加了一个list属性，该属性的值为某个datalist元素的id。datalist元素也是HTML 5中新增元素，该元素类似于选择框( select&gt;)，但是当用户想要设定的值不在选择列表之内时，允许其自行输入。该元素本身并不显示，而是当文本框获得焦点时以提示输入的方式显示。为了避免在没有支持该元素的浏览器上出现显示错误，可以用CSS等将它设定为不显示。<br>示例</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    text: &lt;input type=&quot;text&quot; name=&quot; greeting&quot; list=&quot;greetings&quot;&gt;</span><br><span class="line">    &lt;datalist id=&quot;greetings&quot;&gt;</span><br><span class="line">        &lt;option value=&quot;Good Morning&quot;&gt;Good Morning&lt;/option&gt;</span><br><span class="line">        &lt;option value=&quot;Hello&quot;&gt;Hello&lt;/option&gt;</span><br><span class="line">        &lt;option value=&quot;Good Afternoon&quot;&gt;Good Afternoon&lt;/option&gt;</span><br><span class="line">    &lt;/datalist&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="2-3-4-autocomplete属性"><a href="#2-3-4-autocomplete属性" class="headerlink" title="2.3.4 autocomplete属性"></a>2.3.4 autocomplete属性</h3><p>辅助输入所用的自动完成功能，是一个节省输入时间，同时也十分方便的功能。在HTML5之前，因为谁都可以看见输入的值，所以存在安全隐患，但只要使用autocomplete属性，安全性就可以得到很好的控制。.<br>对于autocomplete属性，可以指定“on”、“off”与“”(不指定）这三种值。不指定时，使用浏览器的默认值(取决于各浏览器的决定)。把该属性设为on时，可以显式指定候补输入的数据列表。使用detalist元素与list属性提供候补输入的数据列表，自动完成时，可以将该datalist元素中的数据作为候补输入的数据在文本框中自动显示。autocomplete属性的使用方法如下所示。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    text: &lt;input type=&quot;text&quot; name=&quot;greeting&quot; list=&quot;greetings&quot; autocomplete=&quot;on&quot;&gt;</span><br><span class="line">    &lt;datalist id=&quot;greetings&quot;&gt;</span><br><span class="line">        &lt;option value=&quot;Good Morning&quot;&gt;Good Morning&lt;/option&gt;</span><br><span class="line">        &lt;option value=&quot;Hello&quot;&gt;Hello&lt;/option&gt;</span><br><span class="line">        &lt;option value=&quot;Good Afternoon&quot;&gt;Good Afternoon&lt;/option&gt;</span><br><span class="line">    &lt;/datalist&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="2-3-5-output标签"><a href="#2-3-5-output标签" class="headerlink" title="2.3.5 output标签"></a>2.3.5 output标签</h3><p>● output为H5的新增标签，用来定义不同类型的输出，长和form表单一起使用，用来输出显示计算结果<br>● 语法</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;output name=&quot;名称&quot; for=&quot;element_id&quot;&gt;默认内容&lt;/output&gt;</span><br></pre></td></tr></table></figure>
+<p>● 标签属性<br>  ○ for：定义输出域相关的一个或多个元素，以空格隔开；<br>  ○ form：定义输入字段所属的一个或多个表单，以空格隔开；<br>  ○ name：定义对象的唯一名称（表单提交时使用）。<br>示例</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;form oninput=&quot;o.value=parseInt(a.value)&quot;&gt;</span><br><span class="line">        选择数字范围：&lt;input type=&quot;range&quot; min=&quot;0&quot; max=&quot;100&quot; id=&quot;a&quot;&gt;</span><br><span class="line">        &lt;output id=&quot;o&quot; &gt;50&lt;/output&gt;</span><br><span class="line">    &lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>示例二</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;form oninput=&quot;x.value=parseInt(a.value)+parseInt(b.value)&quot;&gt;</span><br><span class="line">        &lt;input type=&quot;number&quot; id=&quot;a&quot; value=&quot;0&quot;&gt; +</span><br><span class="line">        &lt;input type=&quot;number&quot; id=&quot;b&quot; value=&quot;0&quot;&gt; =</span><br><span class="line">        &lt;output name=&quot;x&quot; for=&quot;a b&quot;&gt;0&lt;/output&gt;</span><br><span class="line">    &lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>注：<br>oninput为表单事件，表示当对元素输入数据时触发<br>parseInt为javascript函数，用来解析一个字符串，并返回一个整数</p>
+<h3 id="2-3-6-表单验证"><a href="#2-3-6-表单验证" class="headerlink" title="2.3.6 表单验证"></a>2.3.6 表单验证</h3><p>在H5中，新增了大量在提交时对表单与表单内新增元素进行有效性验证的功能</p>
+<h3 id="2-3-6-1-自动验证"><a href="#2-3-6-1-自动验证" class="headerlink" title="2.3.6.1 自动验证"></a>2.3.6.1 自动验证</h3><p>在H5中，新增的一些表单元素本身就带有简单的提交格式验证，如邮箱（email）就有固定的格式“@”，“.”，但普通的表单元素就要通过对元素使用属性的方法，来实现在表单提交时执行自动验证的功能<br>普通表单元素的验证属性</p>
+<ol>
+<li>required属性<br>HTML 5中新增的required属性可以应用在大多数输入元素上（除了隐藏元素、图片元素按钮上)。在提交时，如果元素中内容为空白，则不允许提交，同时在浏览器中显示信息提示文字，提示用户这个元素中必须输入内容。</li>
+<li>pattern属性<br>之前提到的一些新增的input元素，譬如email、number、url等，要求输入内容符合–定的格式，对input元素使用pattern属性，并且将属性值设为某个格式的正则表达式，在提交时会检查其内容是否符合给定格式。当输入的内容不符合给定格式时，则不允许提交，同时在浏览器中显示信息提示文字，提示输入的内容必须符合给定格式。譬如下面所示，要求输入内容为三个大写字母。</li>
+<li>min属性与max属性<br>min与max这两个属性是数值类型或日期类型的input元素的专用属性，它们限制了在input元素中输入的数值与日期的范围。</li>
+</ol>
+]]></content>
+      <categories>
+        <category>XiAnTrain</category>
+      </categories>
+  </entry>
+  <entry>
     <title>培训心得&amp;emsp;&amp;emsp;[走进HTML]</title>
     <url>/2022/06/27/XiAnTrain20220627/</url>
     <content><![CDATA[<p><em><strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;学习打卡第一天</strong></em><br>学习链接：<a href="https://www.yuque.com/docs/share/7867136c-a7d4-4864-b727-a1404d1fe251">https://www.yuque.com/docs/share/7867136c-a7d4-4864-b727-a1404d1fe251</a></p>
@@ -737,53 +779,6 @@
       </categories>
   </entry>
   <entry>
-    <title>培训心得&amp;emsp;&amp;emsp;[表单]</title>
-    <url>/2022/06/29/XiAnTrain20220628/</url>
-    <content><![CDATA[<p><em><strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;学习打卡第二天</strong></em><br>学习链接：<a href="https://www.yuque.com/docs/share/b84dd032-287e-4aa0-a6be-ae7eb275b0ee#">https://www.yuque.com/docs/share/b84dd032-287e-4aa0-a6be-ae7eb275b0ee?#</a></p>
-<span id="more"></span>
-<h1 id="第二章-表单"><a href="#第二章-表单" class="headerlink" title="第二章 表单"></a>第二章 表单</h1><p>表单是用来显示，收集，提交用户信息，表单在网页中主要负责数据采集功能，一个表单由三个基本部分组成：表单元素、表单域、按钮</p>
-<h2 id="2-1表单"><a href="#2-1表单" class="headerlink" title="2.1表单"></a>2.1表单</h2><p>表单是一个包含表单元素的区域，使用<code>&lt;form&gt;...&lt;/form&gt;</code>定义，通过在表单中添加对应的表单元素使得用户可以在网页上输入数据<br><code>&lt;form&gt;</code>中含有诸多属性用来规定表单的格式，详见下表</p>
-<h2 id="2-2-表单元素"><a href="#2-2-表单元素" class="headerlink" title="2.2 表单元素"></a>2.2 表单元素</h2><h3 id="2-2-1-输入标签"><a href="#2-2-1-输入标签" class="headerlink" title="2.2.1 输入标签"></a>2.2.1 输入标签</h3><p>多数情况下使用的表单元素是输入标签<code>&lt;input&gt;</code><br>元素内输入类型有标签中的type属性定义，常用的元素类型如下表：</p>
-<h3 id="2-2-2-下拉标签"><a href="#2-2-2-下拉标签" class="headerlink" title="2.2.2 下拉标签"></a>2.2.2 下拉标签</h3><p>● <code>&lt;select&gt;</code>元素为表单控件，用于在表单中接收数据<br>  ○ <code>&lt;select&gt;</code>元素可创建单选或多选菜单<br>  ○ <code>&lt;option&gt;</code>标签定义了菜单中的可选项<br>● 下拉列表支持属性</p>
-<h3 id="2-2-3-按钮"><a href="#2-2-3-按钮" class="headerlink" title="2.2.3 按钮"></a>2.2.3 按钮</h3><p>● 按钮在网页中一般用于提交，重置页面数据，也可以与javascript配置做一些交互响应事件<br>● 在HTML中按钮一般使用<code>&lt;input&gt;</code>或<code>&lt;button&gt;</code>来定义<br>● 按钮属性</p>
-<p>● <code>&lt;button&gt;</code>与<code>&lt;input&gt;</code>按钮区别<br>  ○<code> &lt;button&gt;</code>按钮如果不设置type属性，在不同浏览器中可能会提交不同值<br>  ○ <code>&lt;button&gt;</code>按钮是成对出现的，可放置文本，图像等，<code>&lt;input&gt;</code>标签只能通过value属性为其设置文本<br>  ○ 需要注意的是虽然<code>&lt;button&gt;</code>按钮可以嵌套其它标签，但不能再去嵌套按钮<br>示例</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;form&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            文本：&lt;input type=&quot;text&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            密码：&lt;input type=&quot;password&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            颜色色：&lt;input type=&quot;color&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;单选：</span><br><span class="line">            男&lt;input type=&quot;radio&quot; name=&quot;gender&quot;&gt;</span><br><span class="line">            女&lt;input type=&quot;radio&quot; name=&quot;gender&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;复选：</span><br><span class="line">            爱好1&lt;input type=&quot;checkbox&quot;&gt;</span><br><span class="line">            爱好2&lt;input type=&quot;checkbox&quot;&gt;</span><br><span class="line">            爱好3&lt;input type=&quot;checkbox&quot;&gt;</span><br><span class="line">            爱好4&lt;input type=&quot;checkbox&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            下拉：&lt;select name=&quot;&quot; &gt;</span><br><span class="line">                &lt;option value=&quot;&quot;&gt;[请输入...]&lt;/option&gt;</span><br><span class="line">                &lt;option value=&quot;&quot;&gt;选择数据一&lt;/option&gt;</span><br><span class="line">                &lt;option value=&quot;&quot;&gt;选择数据二&lt;/option&gt;</span><br><span class="line">            &lt;/select&gt;县</span><br><span class="line">            &lt;select name=&quot;&quot; &gt;</span><br><span class="line">                &lt;option value=&quot;&quot;&gt;[请输入...]&lt;/option&gt;</span><br><span class="line">                &lt;option value=&quot;&quot;&gt;选择数据一&lt;/option&gt;</span><br><span class="line">                &lt;option value=&quot;&quot;&gt;选择数据二&lt;/option&gt;</span><br><span class="line">            &lt;/select&gt;村</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            日期：&lt;input type=&quot;date&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            时间：&lt;input type=&quot;time&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            月份：&lt;input type=&quot;month&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            文件：&lt;input type=&quot;file&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            数字：&lt;input type=&quot;number&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            数字范围：&lt;input type=&quot;range&quot; max=&quot;10&quot; min=&quot;0&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            邮箱：&lt;input type=&quot;email&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            地址：&lt;input type=&quot;url&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            隐藏：&lt;input type=&quot;hidden&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            &lt;input type=&quot;submit&quot; value=&quot;input提交按钮&quot;&gt;</span><br><span class="line">            &lt;input type=&quot;reset&quot; value=&quot;input重置按钮&quot;&gt;</span><br><span class="line">            &lt;input type=&quot;button&quot; value=&quot;input按钮&quot;&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            &lt;button type=&quot;submit&quot;&gt;button提交按钮&lt;/button&gt;</span><br><span class="line">            &lt;button type=&quot;reset&quot;&gt;button重置按钮&lt;/button&gt;</span><br><span class="line">            &lt;button type=&quot;button&quot;&gt;button按钮&lt;/button&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">    &lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="2-3-HTML5-表单增强"><a href="#2-3-HTML5-表单增强" class="headerlink" title="2.3 HTML5 表单增强"></a>2.3 HTML5 表单增强</h2><h3 id="2-3-1-form属性"><a href="#2-3-1-form属性" class="headerlink" title="2.3.1 form属性"></a>2.3.1 form属性</h3><p>在HTML4中，表单内的从属元素必须书写在表单内部，但在HTML5中，可以把它书写在页面的任意地方，然后给该元素指定一个form属性，属性值为该表单的id，这样就可以声明该元素从属于指定的表单<br>示例</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;form id=&quot;formTest&quot;&gt;</span><br><span class="line">	&lt;input type=&quot;text&quot; name=&quot;username&quot;/&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line">&lt;input type=&quot;password&quot; name=&quot;password&quot; form=&quot;formTest&quot;&gt;</span><br></pre></td></tr></table></figure>
-<p>代码解析：</p>
-<ol>
-<li>第一个input标签从属form表单，它被书写在form表单内部，所以用不着对它指定form属性</li>
-<li>第二个input表单被书写在form之外，但想要它从属form，这时就可以为其添加form属性并指定表单id让它从属form表单<h3 id="2-3-2-formaction属性"><a href="#2-3-2-formaction属性" class="headerlink" title="2.3.2 formaction属性"></a>2.3.2 formaction属性</h3>在HTML 4中，一个表单内的所有元素都只能通过表单的action属性统一提交到另一个页面，而在HTML 5中可以给所有的提交按钮，诸如<code>&lt;input type=&quot;submit&quot;&gt;、&lt;inputtype=&quot;image&quot;&gt;、&lt;button type=&quot;submit&quot;&gt;</code>都增加不同的formaction属性，使得点击不同的按钮，可以将表单提交到不同的页面，formaction属性的使用方法如下：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;form id=&quot;testform&quot; action=&quot; serve.jsp&quot;&gt;</span><br><span class="line">  &lt;input type=&quot;submit&quot; name=&quot;s1&quot; value=&quot;v1&quot; formaction=&quot;s1.jsp&quot;&gt;提交到s1</span><br><span class="line">  &lt;input type=&quot;submit&quot; name=&quot;s2&quot; value=&quot;v2&quot; formaction=&quot;s2.jsp&quot;&gt;提交到s2</span><br><span class="line">  &lt;input type=&quot;submit&quot; name=&quot;s3&quot; value=&quot;v3&quot; formaction=&quot;s3.jsp&quot;&gt;提交到s3</span><br><span class="line">  &lt;input type= &quot;submit&quot;&gt;</span><br><span class="line">&lt;form&gt;</span><br></pre></td></tr></table></figure>
-注：该属性目前支持的浏览器并不多，慎重使用<h3 id="2-3-3-list属性"><a href="#2-3-3-list属性" class="headerlink" title="2.3.3 list属性"></a>2.3.3 list属性</h3>在HTML 5中，为单行文本框(<code>&lt;input type=&quot;text&quot;&gt;</code>)增加了一个list属性，该属性的值为某个datalist元素的id。datalist元素也是HTML 5中新增元素，该元素类似于选择框( select&gt;)，但是当用户想要设定的值不在选择列表之内时，允许其自行输入。该元素本身并不显示，而是当文本框获得焦点时以提示输入的方式显示。为了避免在没有支持该元素的浏览器上出现显示错误，可以用CSS等将它设定为不显示。<br>示例</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    text: &lt;input type=&quot;text&quot; name=&quot; greeting&quot; list=&quot;greetings&quot;&gt;</span><br><span class="line">    &lt;datalist id=&quot;greetings&quot;&gt;</span><br><span class="line">        &lt;option value=&quot;Good Morning&quot;&gt;Good Morning&lt;/option&gt;</span><br><span class="line">        &lt;option value=&quot;Hello&quot;&gt;Hello&lt;/option&gt;</span><br><span class="line">        &lt;option value=&quot;Good Afternoon&quot;&gt;Good Afternoon&lt;/option&gt;</span><br><span class="line">    &lt;/datalist&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="2-3-4-autocomplete属性"><a href="#2-3-4-autocomplete属性" class="headerlink" title="2.3.4 autocomplete属性"></a>2.3.4 autocomplete属性</h3><p>辅助输入所用的自动完成功能，是一个节省输入时间，同时也十分方便的功能。在HTML5之前，因为谁都可以看见输入的值，所以存在安全隐患，但只要使用autocomplete属性，安全性就可以得到很好的控制。.<br>对于autocomplete属性，可以指定“on”、“off”与“”(不指定）这三种值。不指定时，使用浏览器的默认值(取决于各浏览器的决定)。把该属性设为on时，可以显式指定候补输入的数据列表。使用detalist元素与list属性提供候补输入的数据列表，自动完成时，可以将该datalist元素中的数据作为候补输入的数据在文本框中自动显示。autocomplete属性的使用方法如下所示。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    text: &lt;input type=&quot;text&quot; name=&quot;greeting&quot; list=&quot;greetings&quot; autocomplete=&quot;on&quot;&gt;</span><br><span class="line">    &lt;datalist id=&quot;greetings&quot;&gt;</span><br><span class="line">        &lt;option value=&quot;Good Morning&quot;&gt;Good Morning&lt;/option&gt;</span><br><span class="line">        &lt;option value=&quot;Hello&quot;&gt;Hello&lt;/option&gt;</span><br><span class="line">        &lt;option value=&quot;Good Afternoon&quot;&gt;Good Afternoon&lt;/option&gt;</span><br><span class="line">    &lt;/datalist&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="2-3-5-output标签"><a href="#2-3-5-output标签" class="headerlink" title="2.3.5 output标签"></a>2.3.5 output标签</h3><p>● output为H5的新增标签，用来定义不同类型的输出，长和form表单一起使用，用来输出显示计算结果<br>● 语法</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;output name=&quot;名称&quot; for=&quot;element_id&quot;&gt;默认内容&lt;/output&gt;</span><br></pre></td></tr></table></figure>
-<p>● 标签属性<br>  ○ for：定义输出域相关的一个或多个元素，以空格隔开；<br>  ○ form：定义输入字段所属的一个或多个表单，以空格隔开；<br>  ○ name：定义对象的唯一名称（表单提交时使用）。<br>示例</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;form oninput=&quot;o.value=parseInt(a.value)&quot;&gt;</span><br><span class="line">        选择数字范围：&lt;input type=&quot;range&quot; min=&quot;0&quot; max=&quot;100&quot; id=&quot;a&quot;&gt;</span><br><span class="line">        &lt;output id=&quot;o&quot; &gt;50&lt;/output&gt;</span><br><span class="line">    &lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<p>示例二</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;form oninput=&quot;x.value=parseInt(a.value)+parseInt(b.value)&quot;&gt;</span><br><span class="line">        &lt;input type=&quot;number&quot; id=&quot;a&quot; value=&quot;0&quot;&gt; +</span><br><span class="line">        &lt;input type=&quot;number&quot; id=&quot;b&quot; value=&quot;0&quot;&gt; =</span><br><span class="line">        &lt;output name=&quot;x&quot; for=&quot;a b&quot;&gt;0&lt;/output&gt;</span><br><span class="line">    &lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<p>注：<br>oninput为表单事件，表示当对元素输入数据时触发<br>parseInt为javascript函数，用来解析一个字符串，并返回一个整数</p>
-<h3 id="2-3-6-表单验证"><a href="#2-3-6-表单验证" class="headerlink" title="2.3.6 表单验证"></a>2.3.6 表单验证</h3><p>在H5中，新增了大量在提交时对表单与表单内新增元素进行有效性验证的功能</p>
-<h3 id="2-3-6-1-自动验证"><a href="#2-3-6-1-自动验证" class="headerlink" title="2.3.6.1 自动验证"></a>2.3.6.1 自动验证</h3><p>在H5中，新增的一些表单元素本身就带有简单的提交格式验证，如邮箱（email）就有固定的格式“@”，“.”，但普通的表单元素就要通过对元素使用属性的方法，来实现在表单提交时执行自动验证的功能<br>普通表单元素的验证属性</p>
-<ol>
-<li>required属性<br>HTML 5中新增的required属性可以应用在大多数输入元素上（除了隐藏元素、图片元素按钮上)。在提交时，如果元素中内容为空白，则不允许提交，同时在浏览器中显示信息提示文字，提示用户这个元素中必须输入内容。</li>
-<li>pattern属性<br>之前提到的一些新增的input元素，譬如email、number、url等，要求输入内容符合–定的格式，对input元素使用pattern属性，并且将属性值设为某个格式的正则表达式，在提交时会检查其内容是否符合给定格式。当输入的内容不符合给定格式时，则不允许提交，同时在浏览器中显示信息提示文字，提示输入的内容必须符合给定格式。譬如下面所示，要求输入内容为三个大写字母。</li>
-<li>min属性与max属性<br>min与max这两个属性是数值类型或日期类型的input元素的专用属性，它们限制了在input元素中输入的数值与日期的范围。</li>
-</ol>
-]]></content>
-      <categories>
-        <category>XiAnTrain</category>
-      </categories>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/2022/07/15/baidu_verify_code-lKi6sS4j7S/</url>
-    <content><![CDATA[f2c7aa5496980a4ac5b119f84ca39e87]]></content>
-  </entry>
-  <entry>
     <title>The requested URL returned error: 403</title>
     <url>/2022/07/19/fatal220719-request403/</url>
     <content><![CDATA[<img src="https://s2.loli.net/2022/07/19/SGyYZRvWHlaCtKp.jpg" align="center" width="600" height="120" div>
@@ -799,6 +794,11 @@
       <categories>
         <category>fatal</category>
       </categories>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2022/07/15/baidu_verify_code-lKi6sS4j7S/</url>
+    <content><![CDATA[f2c7aa5496980a4ac5b119f84ca39e87]]></content>
   </entry>
   <entry>
     <title>Hello World</title>
@@ -1224,110 +1224,6 @@
       </categories>
   </entry>
   <entry>
-    <title>培训心得[java控制流程]</title>
-    <url>/2022/07/18/xianTrain11-controllerStream/</url>
-    <content><![CDATA[<p><em><strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Java基础学习打卡第2天<br>学习链接：<a href="https://www.yuque.com/docs/share/89bb9cac-ccd1-44dd-b2e2-e11933c44c39#">https://www.yuque.com/docs/share/89bb9cac-ccd1-44dd-b2e2-e11933c44c39?#</a> 《第3章 流程控制》密码：zk84</strong></em></p>
-<span id="more"></span>
-
-<h3 id="1-控制流程"><a href="#1-控制流程" class="headerlink" title="1 控制流程"></a>1 控制流程</h3><blockquote>
-<ul>
-<li>可分为：顺序结构、分支结构、循环结构</li>
-</ul>
-</blockquote>
-<h3 id="1-1-顺序结构"><a href="#1-1-顺序结构" class="headerlink" title="1.1 顺序结构"></a>1.1 顺序结构</h3><blockquote>
-<p>程序自上而下依次执行，中间没有任何判断和跳转。</p>
-</blockquote>
-<h3 id="1-2-分支结构"><a href="#1-2-分支结构" class="headerlink" title="1.2 分支结构"></a>1.2 分支结构</h3><blockquote>
-<p>java提供了两种分支结构：if语句和switch语句</p>
-</blockquote>
-<h4 id="1-2-1-if条件语句"><a href="#1-2-1-if条件语句" class="headerlink" title="1.2.1 if条件语句"></a>1.2.1 if条件语句</h4><blockquote>
-<p>if语句使用布尔表达式或者布尔值作为分支条件进行分支控制，if语句有一下三种形式：</p>
-<ul>
-<li>单分支结构</li>
-</ul>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">if(logic expression)&#123;</span><br><span class="line">	statement;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&gt;+双分支结构</span><br></pre></td></tr></table></figure>
-
-<p>if(logic expression){<br>    statement;<br>}else{<br>    statement;<br>}</p>
-<blockquote>
-<ul>
-<li>多分支结构</li>
-</ul>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">if(logic expression)&#123;</span><br><span class="line">	statement;</span><br><span class="line">&#125;else if&#123;</span><br><span class="line">	statement;</span><br><span class="line">&#125;else if&#123;</span><br><span class="line">	statement；</span><br><span class="line">&#125;else&#123;</span><br><span class="line">	statement;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="1-2-2-switch条件语句"><a href="#1-2-2-switch条件语句" class="headerlink" title="1.2.2 switch条件语句"></a>1.2.2 switch条件语句</h4><blockquote>
-<p>switch语句有一个控制表达式和多个case标签组成，和if语句不同的是，switch语句后面的控制表达式的数据类型只能是byte、short、chat、int四种类型、从java7以后添加了枚举类型和String类型，switch语句和语法格式如下：</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">switch(expression)&#123;</span><br><span class="line">	case condition1:</span><br><span class="line">	&#123;</span><br><span class="line">		statement(s);</span><br><span class="line">		break;</span><br><span class="line">	&#125;</span><br><span class="line">	case condition2:</span><br><span class="line">	&#123;</span><br><span class="line">		statement(s);</span><br><span class="line">		break;</span><br><span class="line">	&#125;</span><br><span class="line">	case condition3:</span><br><span class="line">	&#123;</span><br><span class="line">		statement(s);</span><br><span class="line">		break;</span><br><span class="line">	&#125;</span><br><span class="line">	default:&#123;</span><br><span class="line">		statement(s);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="1-2-2-分支嵌套"><a href="#1-2-2-分支嵌套" class="headerlink" title="1.2.2 分支嵌套"></a>1.2.2 分支嵌套</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.bytecollege;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 本例将演示输入一个年份</span></span><br><span class="line"><span class="comment"> * 判断是否是闰年</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> MR.W</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LeapYear</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;请输入年份：&quot;</span>);</span><br><span class="line">		Scanner scanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		<span class="keyword">int</span> year = scanner.nextInt();</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span>(year%<span class="number">4</span>==<span class="number">0</span>) &#123;</span><br><span class="line">			<span class="keyword">if</span>(year%<span class="number">100</span>==<span class="number">0</span>) &#123;</span><br><span class="line">				<span class="keyword">if</span>(year%<span class="number">400</span>==<span class="number">0</span>) &#123;</span><br><span class="line">					System.out.println(year+<span class="string">&quot;是闰年&quot;</span>);</span><br><span class="line">				&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">					System.out.println(year+<span class="string">&quot;不是闰年&quot;</span>);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">				System.out.println(year+<span class="string">&quot;是闰年&quot;</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">			System.out.println(year+<span class="string">&quot;不是闰年&quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="1-3-循环结构"><a href="#1-3-循环结构" class="headerlink" title="1.3 循环结构"></a>1.3 循环结构</h3><p>循环结构是指在满足某个循环条件的情况下，反复执行同一代码，只到不满足循环条件为止。恰当的循环结构包含：初始化语句、循环条件、循环体、迭代语句；</p>
-<h4 id="1-3-1-for循环"><a href="#1-3-1-for循环" class="headerlink" title="1.3.1 for循环"></a>1.3.1 for循环</h4><p>语法格式如下：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>([init_statment];[test_exression];[iteration_statement])&#123;</span><br><span class="line">    statement;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>其中init_statement指初始化条件，test_exoression指循环条件，statement是循环体，iteration_statment迭代语句，在statement执行结束以后执行。先执行init_statement初始化语句只在混循环条件开始前执行一次，每次执行循环体之前，先计算test_exression循环条件的值。</p>
-<p>例如：计算1-100的和</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package cn.bytecollege;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 本示例将演示for循环</span><br><span class="line"> * @author MR.W</span><br><span class="line"> *</span><br><span class="line"> */</span><br><span class="line">public class ForDemo &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//定义变量保存结果</span><br><span class="line">		int sum= 0;</span><br><span class="line">		for (int i = 1;i&lt;=100;i++) &#123;</span><br><span class="line">			sum += i;</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(sum);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p><b>注意：</b></p>
-<blockquote>
-<ul>
-<li>除非特殊情况尽量不要在循环体内修改循环变量的值。</li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
-<li>for循环圆括号中只有两个分号是必须的，初始化语句、循环条件、迭代语句部分都是可以省略的。如：<code>for( ; ; )</code></li>
-</ul>
-</blockquote>
-<h4 id="1-3-2-while循环"><a href="#1-3-2-while循环" class="headerlink" title="1.3.2 while循环"></a>1.3.2 while循环</h4><p>如果while循环的循环体部分和迭代语句合并在一起，且只有一行代码，则可以省略。（但是通常不建议省略）</p>
-<p>使用while循环时，一定要保证循环条件有变成false的时候，否则这个循环将变成循环，用于无法结束循环。</p>
-<p>语法格式如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">while(循环条件)&#123;</span><br><span class="line">	//循环体</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>例如：计算1-100的和</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.bytecollege;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 本例将演示while循环</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> MR.W</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WhileDemo</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> i = <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">while</span>(i&lt;=<span class="number">100</span>) &#123;</span><br><span class="line">			sum+=i;</span><br><span class="line">			i++;</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(sum);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h4 id="1-3-3-do-while循环"><a href="#1-3-3-do-while循环" class="headerlink" title="1.3.3  do while循环"></a>1.3.3  do while循环</h4><p>do while循环是先执行一次循环体，再判断循环条件，而while循环是先判断循环条件再执行一次循环体。</p>
-<p>语法格式如下：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">do</span>&#123;</span><br><span class="line">	<span class="comment">//循环体</span></span><br><span class="line">&#125;<span class="keyword">while</span>(循环条件);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="1-4-控制循环结构"><a href="#1-4-控制循环结构" class="headerlink" title="1.4 控制循环结构"></a>1.4 控制循环结构</h3><p>java提供了continue和break空值循环结构，在java中goto只作为了保留字</p>
-<h4 id="1-4-1使用break结束循环"><a href="#1-4-1使用break结束循环" class="headerlink" title="1.4.1使用break结束循环"></a>1.4.1使用break结束循环</h4><p>break用于完全结束一个循环，跳出循环体，不管那这个哪种循环，一旦循环体中遇到break，系统将完全结束该循环，开始执行循环结构以后的代码。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package cn.bytecollege;</span><br><span class="line">/**</span><br><span class="line"> * 本例将演示break</span><br><span class="line"> * @author MR.W</span><br><span class="line"> *</span><br><span class="line"> */</span><br><span class="line">public class BreakDemo &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		for (int i = 0; i &lt; 10; i++) &#123;</span><br><span class="line">			if(i==7) &#123;</span><br><span class="line">                System.out.println(i);</span><br><span class="line">				break;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>循环嵌套中使用break</p>
-<blockquote>
-<p>遇到一个break outer语句，该语句将会导致结束outer标签指定的循环，不是break所在的循环，而是结束break循环的外层循环。</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package cn.bytecollege;</span><br><span class="line">/**</span><br><span class="line"> * 本例将演示循环嵌套中break结束外层循环</span><br><span class="line"> * @author MR.W</span><br><span class="line"> *</span><br><span class="line"> */</span><br><span class="line">public class BreakDemo3 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		outer:</span><br><span class="line">		for (int i = 0; i &lt; 5; i++) &#123;</span><br><span class="line">			//内层循环</span><br><span class="line">			for (int j = 0; j &lt; 3; j++) &#123;</span><br><span class="line">				if(j==1) &#123;</span><br><span class="line">					//跳出outer所标识的循环</span><br><span class="line">					break outer;</span><br><span class="line">				&#125;</span><br><span class="line">				System.out.println(&quot;i的值为：&quot;+i+&quot;,j的值为：&quot;+j);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;	</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-</ul>
-<h4 id="1-4-2-使用continue跳转次循环"><a href="#1-4-2-使用continue跳转次循环" class="headerlink" title="1.4.2 使用continue跳转次循环"></a>1.4.2 使用continue跳转次循环</h4><p>continue只是跳出次循环，继续执行剩下的循环，并不是完全终止循环。</p>
-<p>示例如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">package cn.bytecollege;</span><br><span class="line">/**</span><br><span class="line"> * 本例将演示continue</span><br><span class="line"> * @author MR.W</span><br><span class="line"> *</span><br><span class="line"> */</span><br><span class="line">public class ContinueDemo &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		for (int i = 0; i &lt; 10; i++) &#123;</span><br><span class="line">			if(i==7) &#123;</span><br><span class="line">				continue;</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println(i);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>循环嵌套中使用continue</p>
-<blockquote>
-<p>在多层循环中，continue会忽略当前循环，直接到外层循环继续进行循环</p>
-</blockquote>
-</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package cn.bytecollege;</span><br><span class="line">/**</span><br><span class="line"> * 本例将演示多层循环嵌套中使用Continue</span><br><span class="line"> * @author MR.W</span><br><span class="line"> *</span><br><span class="line"> */</span><br><span class="line">public class ContinueDemo2 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		outer:</span><br><span class="line">		for (int i = 0; i &lt; 5; i++) &#123;</span><br><span class="line">			//内层循环</span><br><span class="line">			for (int j = 0; j &lt; 3; j++) &#123;</span><br><span class="line">				if(j==1) &#123;</span><br><span class="line">					//跳出outer所标识的循环</span><br><span class="line">					continue outer;</span><br><span class="line">				&#125;</span><br><span class="line">				System.out.println(&quot;i的值为：&quot;+i+&quot;,j的值为：&quot;+j);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<p>课后作业：<br>1.请将101转换成二进制，并将二进制的前3位替换为1，并求出原码</p>
-<p>0000 0000 0000 0000 0000 0000 0110 0101         101的二进制<br>1110 0000 0000 0000 0000 0000 0110 0101          替换后的补码<br>1110 0000 0000 0000 0000 0000 0110 0100          补码减一<br>1001 1111 1111 1111 1111 1111 1001 1011          取反求出原码</p>
-]]></content>
-      <categories>
-        <category>XiAnTrain</category>
-      </categories>
-  </entry>
-  <entry>
     <title>培训心得[数组]</title>
     <url>/2022/07/18/xianTrain12-Array/</url>
     <content><![CDATA[<p><em><strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Java基础学习打卡第2天<br>学习链接：<a href="https://www.yuque.com/docs/share/5b051183-1e6a-4c80-904f-17070f1c9653#">https://www.yuque.com/docs/share/5b051183-1e6a-4c80-904f-17070f1c9653?#</a> 《第4章 数组》密码：mg6w</strong></em></p>
@@ -1447,6 +1343,110 @@
 </ul>
 </blockquote>
 <h3 id="学习心得"><a href="#学习心得" class="headerlink" title="学习心得"></a>学习心得</h3><p>​            今天学习了一些java的控制流程和数组，基本全部掌握，毕竟在学校里这一块知识经常用到，所以再学起来也是很容易的。由于之前在客厅睡，睡的不好。昨天就给安老师说完之后，就要我搬了宿舍，现在一个人住，超喜欢一个人的感觉，超自由。刷视频想外放，就外放。</p>
+]]></content>
+      <categories>
+        <category>XiAnTrain</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>培训心得[java控制流程]</title>
+    <url>/2022/07/18/xianTrain11-controllerStream/</url>
+    <content><![CDATA[<p><em><strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Java基础学习打卡第2天<br>学习链接：<a href="https://www.yuque.com/docs/share/89bb9cac-ccd1-44dd-b2e2-e11933c44c39#">https://www.yuque.com/docs/share/89bb9cac-ccd1-44dd-b2e2-e11933c44c39?#</a> 《第3章 流程控制》密码：zk84</strong></em></p>
+<span id="more"></span>
+
+<h3 id="1-控制流程"><a href="#1-控制流程" class="headerlink" title="1 控制流程"></a>1 控制流程</h3><blockquote>
+<ul>
+<li>可分为：顺序结构、分支结构、循环结构</li>
+</ul>
+</blockquote>
+<h3 id="1-1-顺序结构"><a href="#1-1-顺序结构" class="headerlink" title="1.1 顺序结构"></a>1.1 顺序结构</h3><blockquote>
+<p>程序自上而下依次执行，中间没有任何判断和跳转。</p>
+</blockquote>
+<h3 id="1-2-分支结构"><a href="#1-2-分支结构" class="headerlink" title="1.2 分支结构"></a>1.2 分支结构</h3><blockquote>
+<p>java提供了两种分支结构：if语句和switch语句</p>
+</blockquote>
+<h4 id="1-2-1-if条件语句"><a href="#1-2-1-if条件语句" class="headerlink" title="1.2.1 if条件语句"></a>1.2.1 if条件语句</h4><blockquote>
+<p>if语句使用布尔表达式或者布尔值作为分支条件进行分支控制，if语句有一下三种形式：</p>
+<ul>
+<li>单分支结构</li>
+</ul>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">if(logic expression)&#123;</span><br><span class="line">	statement;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&gt;+双分支结构</span><br></pre></td></tr></table></figure>
+
+<p>if(logic expression){<br>    statement;<br>}else{<br>    statement;<br>}</p>
+<blockquote>
+<ul>
+<li>多分支结构</li>
+</ul>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">if(logic expression)&#123;</span><br><span class="line">	statement;</span><br><span class="line">&#125;else if&#123;</span><br><span class="line">	statement;</span><br><span class="line">&#125;else if&#123;</span><br><span class="line">	statement；</span><br><span class="line">&#125;else&#123;</span><br><span class="line">	statement;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-2-2-switch条件语句"><a href="#1-2-2-switch条件语句" class="headerlink" title="1.2.2 switch条件语句"></a>1.2.2 switch条件语句</h4><blockquote>
+<p>switch语句有一个控制表达式和多个case标签组成，和if语句不同的是，switch语句后面的控制表达式的数据类型只能是byte、short、chat、int四种类型、从java7以后添加了枚举类型和String类型，switch语句和语法格式如下：</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">switch(expression)&#123;</span><br><span class="line">	case condition1:</span><br><span class="line">	&#123;</span><br><span class="line">		statement(s);</span><br><span class="line">		break;</span><br><span class="line">	&#125;</span><br><span class="line">	case condition2:</span><br><span class="line">	&#123;</span><br><span class="line">		statement(s);</span><br><span class="line">		break;</span><br><span class="line">	&#125;</span><br><span class="line">	case condition3:</span><br><span class="line">	&#123;</span><br><span class="line">		statement(s);</span><br><span class="line">		break;</span><br><span class="line">	&#125;</span><br><span class="line">	default:&#123;</span><br><span class="line">		statement(s);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-2-2-分支嵌套"><a href="#1-2-2-分支嵌套" class="headerlink" title="1.2.2 分支嵌套"></a>1.2.2 分支嵌套</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.bytecollege;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 本例将演示输入一个年份</span></span><br><span class="line"><span class="comment"> * 判断是否是闰年</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> MR.W</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LeapYear</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;请输入年份：&quot;</span>);</span><br><span class="line">		Scanner scanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		<span class="keyword">int</span> year = scanner.nextInt();</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span>(year%<span class="number">4</span>==<span class="number">0</span>) &#123;</span><br><span class="line">			<span class="keyword">if</span>(year%<span class="number">100</span>==<span class="number">0</span>) &#123;</span><br><span class="line">				<span class="keyword">if</span>(year%<span class="number">400</span>==<span class="number">0</span>) &#123;</span><br><span class="line">					System.out.println(year+<span class="string">&quot;是闰年&quot;</span>);</span><br><span class="line">				&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">					System.out.println(year+<span class="string">&quot;不是闰年&quot;</span>);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">				System.out.println(year+<span class="string">&quot;是闰年&quot;</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">			System.out.println(year+<span class="string">&quot;不是闰年&quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="1-3-循环结构"><a href="#1-3-循环结构" class="headerlink" title="1.3 循环结构"></a>1.3 循环结构</h3><p>循环结构是指在满足某个循环条件的情况下，反复执行同一代码，只到不满足循环条件为止。恰当的循环结构包含：初始化语句、循环条件、循环体、迭代语句；</p>
+<h4 id="1-3-1-for循环"><a href="#1-3-1-for循环" class="headerlink" title="1.3.1 for循环"></a>1.3.1 for循环</h4><p>语法格式如下：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>([init_statment];[test_exression];[iteration_statement])&#123;</span><br><span class="line">    statement;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>其中init_statement指初始化条件，test_exoression指循环条件，statement是循环体，iteration_statment迭代语句，在statement执行结束以后执行。先执行init_statement初始化语句只在混循环条件开始前执行一次，每次执行循环体之前，先计算test_exression循环条件的值。</p>
+<p>例如：计算1-100的和</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package cn.bytecollege;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 本示例将演示for循环</span><br><span class="line"> * @author MR.W</span><br><span class="line"> *</span><br><span class="line"> */</span><br><span class="line">public class ForDemo &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//定义变量保存结果</span><br><span class="line">		int sum= 0;</span><br><span class="line">		for (int i = 1;i&lt;=100;i++) &#123;</span><br><span class="line">			sum += i;</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(sum);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><b>注意：</b></p>
+<blockquote>
+<ul>
+<li>除非特殊情况尽量不要在循环体内修改循环变量的值。</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>for循环圆括号中只有两个分号是必须的，初始化语句、循环条件、迭代语句部分都是可以省略的。如：<code>for( ; ; )</code></li>
+</ul>
+</blockquote>
+<h4 id="1-3-2-while循环"><a href="#1-3-2-while循环" class="headerlink" title="1.3.2 while循环"></a>1.3.2 while循环</h4><p>如果while循环的循环体部分和迭代语句合并在一起，且只有一行代码，则可以省略。（但是通常不建议省略）</p>
+<p>使用while循环时，一定要保证循环条件有变成false的时候，否则这个循环将变成循环，用于无法结束循环。</p>
+<p>语法格式如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">while(循环条件)&#123;</span><br><span class="line">	//循环体</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>例如：计算1-100的和</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.bytecollege;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 本例将演示while循环</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> MR.W</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WhileDemo</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> i = <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">while</span>(i&lt;=<span class="number">100</span>) &#123;</span><br><span class="line">			sum+=i;</span><br><span class="line">			i++;</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(sum);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="1-3-3-do-while循环"><a href="#1-3-3-do-while循环" class="headerlink" title="1.3.3  do while循环"></a>1.3.3  do while循环</h4><p>do while循环是先执行一次循环体，再判断循环条件，而while循环是先判断循环条件再执行一次循环体。</p>
+<p>语法格式如下：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">do</span>&#123;</span><br><span class="line">	<span class="comment">//循环体</span></span><br><span class="line">&#125;<span class="keyword">while</span>(循环条件);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="1-4-控制循环结构"><a href="#1-4-控制循环结构" class="headerlink" title="1.4 控制循环结构"></a>1.4 控制循环结构</h3><p>java提供了continue和break空值循环结构，在java中goto只作为了保留字</p>
+<h4 id="1-4-1使用break结束循环"><a href="#1-4-1使用break结束循环" class="headerlink" title="1.4.1使用break结束循环"></a>1.4.1使用break结束循环</h4><p>break用于完全结束一个循环，跳出循环体，不管那这个哪种循环，一旦循环体中遇到break，系统将完全结束该循环，开始执行循环结构以后的代码。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package cn.bytecollege;</span><br><span class="line">/**</span><br><span class="line"> * 本例将演示break</span><br><span class="line"> * @author MR.W</span><br><span class="line"> *</span><br><span class="line"> */</span><br><span class="line">public class BreakDemo &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		for (int i = 0; i &lt; 10; i++) &#123;</span><br><span class="line">			if(i==7) &#123;</span><br><span class="line">                System.out.println(i);</span><br><span class="line">				break;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>循环嵌套中使用break</p>
+<blockquote>
+<p>遇到一个break outer语句，该语句将会导致结束outer标签指定的循环，不是break所在的循环，而是结束break循环的外层循环。</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package cn.bytecollege;</span><br><span class="line">/**</span><br><span class="line"> * 本例将演示循环嵌套中break结束外层循环</span><br><span class="line"> * @author MR.W</span><br><span class="line"> *</span><br><span class="line"> */</span><br><span class="line">public class BreakDemo3 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		outer:</span><br><span class="line">		for (int i = 0; i &lt; 5; i++) &#123;</span><br><span class="line">			//内层循环</span><br><span class="line">			for (int j = 0; j &lt; 3; j++) &#123;</span><br><span class="line">				if(j==1) &#123;</span><br><span class="line">					//跳出outer所标识的循环</span><br><span class="line">					break outer;</span><br><span class="line">				&#125;</span><br><span class="line">				System.out.println(&quot;i的值为：&quot;+i+&quot;,j的值为：&quot;+j);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;	</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="1-4-2-使用continue跳转次循环"><a href="#1-4-2-使用continue跳转次循环" class="headerlink" title="1.4.2 使用continue跳转次循环"></a>1.4.2 使用continue跳转次循环</h4><p>continue只是跳出次循环，继续执行剩下的循环，并不是完全终止循环。</p>
+<p>示例如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">package cn.bytecollege;</span><br><span class="line">/**</span><br><span class="line"> * 本例将演示continue</span><br><span class="line"> * @author MR.W</span><br><span class="line"> *</span><br><span class="line"> */</span><br><span class="line">public class ContinueDemo &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		for (int i = 0; i &lt; 10; i++) &#123;</span><br><span class="line">			if(i==7) &#123;</span><br><span class="line">				continue;</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println(i);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>循环嵌套中使用continue</p>
+<blockquote>
+<p>在多层循环中，continue会忽略当前循环，直接到外层循环继续进行循环</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package cn.bytecollege;</span><br><span class="line">/**</span><br><span class="line"> * 本例将演示多层循环嵌套中使用Continue</span><br><span class="line"> * @author MR.W</span><br><span class="line"> *</span><br><span class="line"> */</span><br><span class="line">public class ContinueDemo2 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		outer:</span><br><span class="line">		for (int i = 0; i &lt; 5; i++) &#123;</span><br><span class="line">			//内层循环</span><br><span class="line">			for (int j = 0; j &lt; 3; j++) &#123;</span><br><span class="line">				if(j==1) &#123;</span><br><span class="line">					//跳出outer所标识的循环</span><br><span class="line">					continue outer;</span><br><span class="line">				&#125;</span><br><span class="line">				System.out.println(&quot;i的值为：&quot;+i+&quot;,j的值为：&quot;+j);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p>课后作业：<br>1.请将101转换成二进制，并将二进制的前3位替换为1，并求出原码</p>
+<p>0000 0000 0000 0000 0000 0000 0110 0101         101的二进制<br>1110 0000 0000 0000 0000 0000 0110 0101          替换后的补码<br>1110 0000 0000 0000 0000 0000 0110 0100          补码减一<br>1001 1111 1111 1111 1111 1111 1001 1011          取反求出原码</p>
 ]]></content>
       <categories>
         <category>XiAnTrain</category>
