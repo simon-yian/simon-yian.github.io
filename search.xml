@@ -28,6 +28,21 @@
       </categories>
   </entry>
   <entry>
+    <title>LeetCode102 二叉树的层序遍历</title>
+    <url>/2021/11/25/LeetCode102/</url>
+    <content><![CDATA[<p>层序遍历（宽度优先遍历）<br>实则将非递归先序遍历中的栈（stack）转化成队列（queue）</p>
+<span id="more"></span>
+
+<p>此题方法两种大体结构相同</p>
+<h3 id="方法1："><a href="#方法1：" class="headerlink" title="方法1："></a>方法1：</h3><p>核心思想：宽度优先遍历，再循环中设置count，当count = 0时说明当前层已经输出完毕</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">public List&lt;List&lt;Integer&gt;&gt; levelOrder(TreeNode root) &#123;</span><br><span class="line">    if(root == null)</span><br><span class="line">        return new ArrayList&lt;&gt;();</span><br><span class="line">    List&lt;List&lt;Integer&gt;&gt; res = new ArrayList&lt;&gt;();</span><br><span class="line">    Queue&lt;TreeNode&gt; queue = new LinkedList&lt;TreeNode&gt;();</span><br><span class="line">    queue.add(root);</span><br><span class="line">    while(!queue.isEmpty())&#123;</span><br><span class="line">        int count = queue.size();  //输出当前层有几个节点</span><br><span class="line">        List&lt;Integer&gt; list = new ArrayList&lt;Integer&gt;();</span><br><span class="line">        while(count &gt; 0)&#123;                    //判断当前层是否输入完毕</span><br><span class="line">            TreeNode node = queue.poll();</span><br><span class="line">            list.add(node.val);</span><br><span class="line">            if(node.left != null)</span><br><span class="line">                queue.add(node.left);</span><br><span class="line">            if(node.right != null)</span><br><span class="line">                queue.add(node.right);</span><br><span class="line">            count--;              //poll一次count减1</span><br><span class="line">        &#125;</span><br><span class="line">        res.add(list);</span><br><span class="line">    &#125;</span><br><span class="line">    return res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="方法2："><a href="#方法2：" class="headerlink" title="方法2："></a>方法2：</h3><p>核心思想：宽度优先遍历 + HashMap（记录节点对应层数）及找出最大层数；<br>通过使用宽度优先遍历的方法将整个输出的结果存放在list中<br>通过使用HashMap找到结点所对应的层数并找到最大层数，以方便后续的整体遍历产生List&lt;List<Integer>&gt;</Integer></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">	import java.util.*;</span><br><span class="line">class Solution &#123;</span><br><span class="line"></span><br><span class="line">    public List&lt;List&lt;Integer&gt;&gt; levelOrder(TreeNode node) &#123;</span><br><span class="line">        if(node == null)&#123;</span><br><span class="line">            return  new ArrayList&lt;&gt;();</span><br><span class="line">        &#125;</span><br><span class="line">        int max = 0; //存放最大层数以供后续的遍历产生 List&lt;List&lt;Integer&gt;&gt;</span><br><span class="line">        HashMap&lt;TreeNode,Integer&gt; map = new HashMap&lt;&gt;();  //存放每个结点所对应的层数</span><br><span class="line">        Queue&lt;TreeNode&gt; queue = new LinkedList&lt;TreeNode&gt;(); </span><br><span class="line">        List&lt;TreeNode&gt; list = new ArrayList&lt;&gt;();  //存放宽度优先遍历的结果</span><br><span class="line">	</span><br><span class="line">        queue.add(node);</span><br><span class="line">        map.put(node,1);  //给头结点初始值为1；</span><br><span class="line">	</span><br><span class="line">        while(!queue.isEmpty())&#123;</span><br><span class="line">            </span><br><span class="line">            TreeNode head = queue.poll();</span><br><span class="line">            list.add(head);</span><br><span class="line"></span><br><span class="line">            if(max &lt; map.get(head))&#123;   //进行判断是否是最大值</span><br><span class="line">                max = map.get(head); </span><br><span class="line">            &#125;</span><br><span class="line">            if(head.left != null)&#123;</span><br><span class="line">                queue.add(head.left);</span><br><span class="line">                map.put(head.left,map.get(head)+1);    //每个子节点都是在父节点的基础上 +1</span><br><span class="line">            &#125;</span><br><span class="line">            if(head.right != null)&#123;</span><br><span class="line">                queue.add(head.right);</span><br><span class="line">                map.put(head.right,map.get(head)+1);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        List&lt;List&lt;Integer&gt;&gt; dbList = new ArrayList&lt;&gt;();</span><br><span class="line">        int flag = map.get(node);</span><br><span class="line">        for(int i = 1; i &lt;= max;i++)&#123;   //循环最大层数次</span><br><span class="line">            List&lt;Integer&gt; num = new ArrayList&lt;&gt;();</span><br><span class="line">            for(TreeNode str : list)&#123;  </span><br><span class="line">								if(i == map.get(str))&#123;   //每个结点层数相同的放在同一个List(num)中    </span><br><span class="line">                    num.add(str.val);</span><br><span class="line">                &#125;</span><br><span class="line">                else&#123;</span><br><span class="line">                    continue;    //宽度优先遍历中结点层数是依次排好序的，当出现不同时，后续再就没有相同的值。</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            dbList.add(num);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        return dbList;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+  </entry>
+  <entry>
     <title>一致性哈希算法</title>
     <url>/2021/11/15/ConsistentHash/</url>
     <content><![CDATA[<img src="https://i.loli.net/2021/11/15/vKFjo15HqAybLmE.png" align="center" width="600" height="400" div>
@@ -51,21 +66,6 @@
 ]]></content>
       <categories>
         <category>algorithm</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>LeetCode102 二叉树的层序遍历</title>
-    <url>/2021/11/25/LeetCode102/</url>
-    <content><![CDATA[<p>层序遍历（宽度优先遍历）<br>实则将非递归先序遍历中的栈（stack）转化成队列（queue）</p>
-<span id="more"></span>
-
-<p>此题方法两种大体结构相同</p>
-<h3 id="方法1："><a href="#方法1：" class="headerlink" title="方法1："></a>方法1：</h3><p>核心思想：宽度优先遍历，再循环中设置count，当count = 0时说明当前层已经输出完毕</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">public List&lt;List&lt;Integer&gt;&gt; levelOrder(TreeNode root) &#123;</span><br><span class="line">    if(root == null)</span><br><span class="line">        return new ArrayList&lt;&gt;();</span><br><span class="line">    List&lt;List&lt;Integer&gt;&gt; res = new ArrayList&lt;&gt;();</span><br><span class="line">    Queue&lt;TreeNode&gt; queue = new LinkedList&lt;TreeNode&gt;();</span><br><span class="line">    queue.add(root);</span><br><span class="line">    while(!queue.isEmpty())&#123;</span><br><span class="line">        int count = queue.size();  //输出当前层有几个节点</span><br><span class="line">        List&lt;Integer&gt; list = new ArrayList&lt;Integer&gt;();</span><br><span class="line">        while(count &gt; 0)&#123;                    //判断当前层是否输入完毕</span><br><span class="line">            TreeNode node = queue.poll();</span><br><span class="line">            list.add(node.val);</span><br><span class="line">            if(node.left != null)</span><br><span class="line">                queue.add(node.left);</span><br><span class="line">            if(node.right != null)</span><br><span class="line">                queue.add(node.right);</span><br><span class="line">            count--;              //poll一次count减1</span><br><span class="line">        &#125;</span><br><span class="line">        res.add(list);</span><br><span class="line">    &#125;</span><br><span class="line">    return res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="方法2："><a href="#方法2：" class="headerlink" title="方法2："></a>方法2：</h3><p>核心思想：宽度优先遍历 + HashMap（记录节点对应层数）及找出最大层数；<br>通过使用宽度优先遍历的方法将整个输出的结果存放在list中<br>通过使用HashMap找到结点所对应的层数并找到最大层数，以方便后续的整体遍历产生List&lt;List<Integer>&gt;</Integer></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">	import java.util.*;</span><br><span class="line">class Solution &#123;</span><br><span class="line"></span><br><span class="line">    public List&lt;List&lt;Integer&gt;&gt; levelOrder(TreeNode node) &#123;</span><br><span class="line">        if(node == null)&#123;</span><br><span class="line">            return  new ArrayList&lt;&gt;();</span><br><span class="line">        &#125;</span><br><span class="line">        int max = 0; //存放最大层数以供后续的遍历产生 List&lt;List&lt;Integer&gt;&gt;</span><br><span class="line">        HashMap&lt;TreeNode,Integer&gt; map = new HashMap&lt;&gt;();  //存放每个结点所对应的层数</span><br><span class="line">        Queue&lt;TreeNode&gt; queue = new LinkedList&lt;TreeNode&gt;(); </span><br><span class="line">        List&lt;TreeNode&gt; list = new ArrayList&lt;&gt;();  //存放宽度优先遍历的结果</span><br><span class="line">	</span><br><span class="line">        queue.add(node);</span><br><span class="line">        map.put(node,1);  //给头结点初始值为1；</span><br><span class="line">	</span><br><span class="line">        while(!queue.isEmpty())&#123;</span><br><span class="line">            </span><br><span class="line">            TreeNode head = queue.poll();</span><br><span class="line">            list.add(head);</span><br><span class="line"></span><br><span class="line">            if(max &lt; map.get(head))&#123;   //进行判断是否是最大值</span><br><span class="line">                max = map.get(head); </span><br><span class="line">            &#125;</span><br><span class="line">            if(head.left != null)&#123;</span><br><span class="line">                queue.add(head.left);</span><br><span class="line">                map.put(head.left,map.get(head)+1);    //每个子节点都是在父节点的基础上 +1</span><br><span class="line">            &#125;</span><br><span class="line">            if(head.right != null)&#123;</span><br><span class="line">                queue.add(head.right);</span><br><span class="line">                map.put(head.right,map.get(head)+1);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        List&lt;List&lt;Integer&gt;&gt; dbList = new ArrayList&lt;&gt;();</span><br><span class="line">        int flag = map.get(node);</span><br><span class="line">        for(int i = 1; i &lt;= max;i++)&#123;   //循环最大层数次</span><br><span class="line">            List&lt;Integer&gt; num = new ArrayList&lt;&gt;();</span><br><span class="line">            for(TreeNode str : list)&#123;  </span><br><span class="line">								if(i == map.get(str))&#123;   //每个结点层数相同的放在同一个List(num)中    </span><br><span class="line">                    num.add(str.val);</span><br><span class="line">                &#125;</span><br><span class="line">                else&#123;</span><br><span class="line">                    continue;    //宽度优先遍历中结点层数是依次排好序的，当出现不同时，后续再就没有相同的值。</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            dbList.add(num);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        return dbList;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>LeetCode</category>
       </categories>
   </entry>
   <entry>
@@ -495,6 +495,103 @@
       </categories>
   </entry>
   <entry>
+    <title>培训心得&amp;emsp;&amp;emsp;[走进HTML]</title>
+    <url>/2022/06/27/XiAnTrain20220627/</url>
+    <content><![CDATA[<p><em><strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;学习打卡第一天</strong></em><br>学习链接：<a href="https://www.yuque.com/docs/share/7867136c-a7d4-4864-b727-a1404d1fe251">https://www.yuque.com/docs/share/7867136c-a7d4-4864-b727-a1404d1fe251</a></p>
+<span id="more"></span>
+
+
+<h1 id="1-1HTML简介"><a href="#1-1HTML简介" class="headerlink" title="1. 1HTML简介"></a>1. 1HTML简介</h1><p>&emsp;&emsp;&emsp;HTML的英文全称是 Hyper Text Markup Language，即超文本标记语言。HTML是由Web的发明者 Tim Berners-Lee和同事 Daniel W. Connolly于1990年创立的一种标记语言，它是标准通用化标记语言SGML的应用。用HTML编写的超文本文档称为HTML文档，它能独立于各种操作系统平台(如UNIX， Windows等)。使用HTML，将所需要表达的信息按某种规则写成HTML文件，通过专用的浏览器来识别，并将这些HTML文件“翻译”成可以识别的信息，即现在所见到的网页。<br>&emsp;&emsp;&emsp;自1990年以来，HTML就一直被用作万维网的信息表示语言，使用HTML描述的文件需要通过web浏览器显示出效果。HTML是一种建立网页文件的语言，通过标记式的指令(Tag)，将影像、声音、图片、文字动画、影视等内容显示出来。事实上，每一个HTML文档都是一种静态的网页文件，这个文件里面包含了HTML指令代码，这些指令代码并不是一种程序语言，只是一种排版网页中资料显示位置的标记结构语言，易学易懂，非常简单。HTML的普遍应用就是带来了超文本的技术―通过单击鼠标从一个主题跳转到另一个主题，从一个页面跳转到另一个页面，与世界各地主机的文件链接超文本传输协议规定了浏览器在运行HTML文档时所遵循的规则和进行的操作。HTTP的制定使浏览器在运行超文本时有了统一的规则和标准。<br>&emsp;&emsp;&emsp;万维网（world wide web，简称www）上的一个超媒体文档称之为一个页面（外语：page）。作为一个组织或者个人在万维网上放置开始点的页面称为主页（外语：Homepage）或首页，主页中通常包括有指向其他相关页面或其他节点的指针（超级链接），所谓超级链接，就是一种统一资源定位器（Uniform Resource Locator，外语缩写：URL）指针，通过激活（点击）它，可使浏览器方便地获取新的网页。这也是HTML获得广泛应用的最重要的原因之一。在逻辑上将视为一个整体的一系列页面的有机集合称为网站（Website或Site）。超文本标记语言（英文缩写：HTML）是为“网页创建和其它可在网页浏览器中看到的信息”设计的一种标记语言。<br>&emsp;&emsp;&emsp;网页的本质就是超文本标记语言，通过结合使用其他的Web技术（如：脚本语言、公共网关接口、组件等），可以创造出功能强大的网页。因而，超文本标记语言是万维网（Web）编程的基础，也就是说万维网是建立在超文本基础之上的。超文本标记语言之所以称为超文本标记语言，是因为文本中包含了所谓“超级链接”点。</p>
+<h2 id="1-2-HTML版本"><a href="#1-2-HTML版本" class="headerlink" title="1.2 HTML版本"></a>1.2 HTML版本</h2><p>&emsp;&emsp;&emsp;HTML是用来标记Web信息如何展示以及其他特性的一种语法规则，它最初于1989年由CERN的Tim Berners-Lee发明。HTML基于更古老一些的语言SGML定义，并简化了其中的语言元素。这些元素用于告诉浏览器如何在用户的屏幕上展示数据，所以很早就得到各个Web浏览器厂商的支持。 [5]<br>HTML历史上有如下版本： [5]<br>①HTML 1.0：在1993年6月作为互联网工程工作小组(IETF)工作草案发布。<br>②HTML 2.0：1995年1 1月作为RFC 1866发布，于2000年6月发布之后被宣布已经过时。<br>③HTML 3.2：1997年1月14日，W3C推荐标准。<br>④HTML 4.0：1997年12月18日，W3C推荐标准。<br>⑤HTML 4.01（微小改进）：1999年12月24日，W3C推荐标准。<br>⑥HTML 5：HTML5是公认的下一代Web语言，极大地提升了Web在富媒体、富内容和富应用等方面的能力，被喻为终将改变移动互联网的重要推手。Internet Explorer 8及以前的版本不支持。</p>
+<h2 id="1-3-迎接新的Web时代"><a href="#1-3-迎接新的Web时代" class="headerlink" title="1.3 迎接新的Web时代"></a>1.3 迎接新的Web时代</h2><p>&emsp;&emsp;&emsp;HTML5并不是革命性的改变，而只是发展性的。而且对于之前HTML4的很多标准都是兼容的，所有通过最新HTML5标准制作的Web应用也可以轻松的在老版本的浏览器上运行。HTML5标准中的确是集成了很多实用的功能比如：音视频、本地存储、Socket通信、动画等都是之前应用开发中确实感觉到Web端的鸡肋才得到重视和升级的。<br>HTML5的目标是：它通过一些新标签，新功能为开发更加简、独立、标准的通用Web应用提供了标准。新的标准解决了三大问题：浏览器兼容问题，解决了文档结构不明确的问题，解决了Web应用程序功能受限等问题。<br>号称“CSS之父”的Hakon Wium Lie认为，HTML5与CSS3将是全球互联网发展的未来趋势。<br>自从2010年HTML5正式推出以来，它就以一种惊人的速度被迅速推广使用，微软也因此在IE上做了关于HTML5的标准改进，使其能够支持HTML5，google Chrome，Safari，Opera，Mozilla等主要Web浏览器也针对HTML5制定了相应的支持措施。<br>目前主流的浏览器厂商也纷纷在研发HTML5相关产品，从目前这些浏览器对HTML5的支持来看，Web的未来属于HTML5</p>
+<h2 id="1-4-HTML的开发环境和运行环境"><a href="#1-4-HTML的开发环境和运行环境" class="headerlink" title="1.4 HTML的开发环境和运行环境"></a>1.4 HTML的开发环境和运行环境</h2><p>&emsp;&emsp;&emsp;HTML本质上就是一个文档，市面上常见的一些简单的文本编辑器都是可以用来开发HTML，编辑之后只需将后缀修改为”.html”即可 如：记事本，EditPlus等<br>&emsp;&emsp;&emsp;前端开发也有众多专业的开发软件，如：Webstrom，Sublime Text，Dreamweaver，HBuilder等，本书主要以webstrom为主要开发软件<br>HTML运行环境即各种浏览器，如:IE，edge，Chrome，Firefox，Safari等均可作为HTML的运行环境</p>
+<h2 id="1-5-HTML文档结构"><a href="#1-5-HTML文档结构" class="headerlink" title="1.5 HTML文档结构"></a>1.5 HTML文档结构</h2><p>HTML文档有明确的文档结构，包含三个部分：<code>&lt;HTML&gt;中包含&lt;head&gt;...&lt;/head&gt;部分和&lt;body&gt;...&lt;/body&gt;部分</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">注：</span><br><span class="line">1. 第1行，HTML5的文档声明，声明开发版本</span><br><span class="line">2. 第2行，&lt;html&gt;表示HTML的文档起点，&quot;lang=en&quot;表示开发语言为英语，与之对应的在文档的最后一行&lt;/html&gt;表示文档的结束位置</span><br><span class="line">3. 第3，6行，表示文档的头部信息，该部分中的内容不在浏览器的主体中显示，文档头部中主要用来做一些辅助功能。</span><br><span class="line">4. 第4行，&lt;meta&gt;是&lt;head&gt;中的一个辅助性标签，不包含任何内容，它的属性定义了与文档相关联的名称/值，它提供了相关页面的元信息如：针对搜索引擎和更新频度的描述和关键词， 详见下节&lt;meta&gt;标签</span><br><span class="line">5. 第5行，&lt;title&gt;用来添加网页的标题，网页标题显示在浏览器的标题栏中</span><br></pre></td></tr></table></figure>
+
+<h2 id="1-6-Hello-World"><a href="#1-6-Hello-World" class="headerlink" title="1.6 Hello World"></a>1.6 Hello World</h2><h3 id="1-创建html文件，并键入如下代码："><a href="#1-创建html文件，并键入如下代码：" class="headerlink" title="1. 创建html文件，并键入如下代码："></a>1. 创建html文件，并键入如下代码：</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;我的第一个网页&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    Hello World</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-运行结果"><a href="#2-运行结果" class="headerlink" title="2. 运行结果"></a>2. 运行结果</h3><h2 id="1-7-标签"><a href="#1-7-标签" class="headerlink" title="1.7 标签"></a>1.7 <meta>标签</h2><p>● *<code>&lt;meta&gt;</code><em>标签位于</em><code>&lt;head&gt;</code>*标签区域内提供了HTML的文档元数据（注：元数据是数据的数据信息且元数据不会显示在客户端，但是会被浏览器解析）<br>● *<code>&lt;meta&gt;</code>*标签提供了文档的字符集，使用语言，作者等基本信息，此外还涉及关键词和网页等级设定<br>● *<code>&lt;meta&gt;</code>*标签常用属性表<br>| 属性 |    值 | 描述 |<br>| — | — | — |<br>| charset |    character_set |    定义文档的字符编码。|<br>| content |    text |    定义与 http-equiv 或 name 属性相关的元信息。|<br>| http-equiv |    content-typ<br>                edefault-style<br>                refresh            | 把 content 属性关联到 HTTP 头部。|</p>
+<p>|name|<br>    application-nam<br>eauthor<br>description<br>generator<br>keywords|    把 content 属性关联到一个名称。|</p>
+<p>|scheme| format/URI | HTML5不支持。定义用于翻译 content 属性值的格式。|</p>
+<p>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;!--声明文档的字符编码，中文常用的还有GBK，gb2312--&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;!--页面关键词--&gt;</span><br><span class="line">　　&lt;meta name=&quot;keywords&quot; content=&quot;软件咨询，软件开发，影视后期&quot;/&gt;</span><br><span class="line">　　&lt;!--页面描述--&gt;</span><br><span class="line">　　&lt;meta name=&quot;description&quot; content=&quot;软件开发，影视后期，我们可以快速的帮你提升职业技能水平&quot;&gt;</span><br><span class="line">　　&lt;!--网页作者--&gt;</span><br><span class="line">　　&lt;meta name=&quot;author&quot; content=&quot;Mr.cai&quot;&gt;</span><br><span class="line">　　&lt;!--搜索引擎抓取robots是一组使用逗号（，）分割的值，通常有如下几种取值：none，noindex，nofollow，all，index和follow。--&gt;</span><br><span class="line">　　&lt;meta name=&quot;robots&quot; content=&quot;noindex&quot;/&gt;</span><br><span class="line">    &lt;!--上面示例定义了此网页不被搜索引擎索引进数据库，但搜索引擎可以通过此网页的链接继续索引其它网页--&gt;</span><br><span class="line">    &lt;meta name=&quot;robots&quot; content=&quot;nofollow&quot;/&gt;</span><br><span class="line">    &lt;!--上面示例定义此网页被搜索引擎索引进数据库，但搜索引擎不可以通过此网页的链接继续索引其它网页--&gt;</span><br><span class="line">    &lt;meta name=&quot;robots&quot; content=&quot;none&quot;/&gt;</span><br><span class="line">    &lt;!--上面示例定义了此网页不被搜索引擎索引进数据库，且搜索引擎不可以通过此网页的链接继续索引其它网页--&gt;</span><br><span class="line">    &lt;!--针对谷歌GOOGLEBOT使用robots--&gt;</span><br><span class="line">    &lt;!--可以将name的属性只定义为GOOGLEBOT标识为谷歌搜索引擎。 使用元标记拦截或删除网页--&gt;</span><br><span class="line">    &lt;meta name=&quot;googlebot&quot; content=&quot;noindex, nofollow&quot;/&gt;</span><br><span class="line">    &lt;!--针对百度baiduspider使用robots--&gt;</span><br><span class="line">    &lt;!--可以将name的属性只定义为baiduspider标识为百度搜索引擎。禁止搜索引擎收录的方法--&gt;</span><br><span class="line">    &lt;meta name=&quot;baiduspider&quot; content=&quot;noarchive&quot;/&gt;</span><br><span class="line">　　&lt;!--页面重定向和刷新--&gt;</span><br><span class="line">　　&lt;meta http-equiv=&quot;refresh&quot; content=&quot;0;url=http://www.baidu.com&quot;/&gt;</span><br><span class="line">　　&lt;!--禁止Chrome浏览器中自动提示翻译--&gt;</span><br><span class="line">　　&lt;meta name=&quot;google&quot; value=&quot;notranslate&quot;&gt;</span><br><span class="line">　　&lt;!--禁止百度转码--&gt;</span><br><span class="line">　　&lt;meta http-equiv=&quot;Cache-Control&quot; content=&quot;no-siteapp&quot;&gt;</span><br><span class="line">　　&lt;!--自定义标签：app版本号说明--&gt;</span><br><span class="line">　　&lt;meta name=&quot;app-version&quot;content=&quot;1.13.3&quot;&gt;</span><br><span class="line">    &lt;title&gt;meta&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="1-8-元素"><a href="#1-8-元素" class="headerlink" title="1.8 元素"></a>1.8 元素</h2><p>&emsp;&emsp;&emsp;HTML文档由HTML元素定义，一个基本元素由“开始标签”，“元素内容”，“结束标签”构成<br>&lt;开始标签&gt;    元素内容    &lt;/结束标签&gt;<br>HTML元素以开始标签起始    元素内容即开始标签和结束标签之间的内容    HTML元素以结束标签终结</p>
+<h2 id="1-9-块级标签和行级标签"><a href="#1-9-块级标签和行级标签" class="headerlink" title="1.9 块级标签和行级标签"></a>1.9 块级标签和行级标签</h2><p>HTML中，所有标签都是预定义的，也就是说所有的标签都有各自的特点属性，根据这些特点可将标签分为块级标签和行级标签两类</p>
+<h3 id="1-9-1-块级标签"><a href="#1-9-1-块级标签" class="headerlink" title="1.9.1 块级标签"></a>1.9.1 块级标签</h3><p>块级标签编译后在浏览器中默认没有高度，其高度由其添加的内容决定，其宽度默认为屏幕宽度，也就是说块级标签默认占一行</p>
+<h3 id="1-9-2-行级标签"><a href="#1-9-2-行级标签" class="headerlink" title="1.9.2 行级标签"></a>1.9.2 行级标签</h3><p>行级标签编译后在浏览器中默认没有宽度和高度，其宽高均有添加的内容决定，也就是说行级标签在其内容不满一行时不会换行</p>
+<h2 id="1-10-HTML常用标签"><a href="#1-10-HTML常用标签" class="headerlink" title="1.10 HTML常用标签"></a>1.10 HTML常用标签</h2><h3 id="1-10-1-常用的块级标签"><a href="#1-10-1-常用的块级标签" class="headerlink" title="1.10.1 常用的块级标签"></a>1.10.1 常用的块级标签</h3><p>● 标题标签<br>     ○ 标题（Heading）通过<code>&lt;h1&gt;....&lt;h6&gt;</code>标签定义，表示一级标题至六级标题，其中<code>&lt;h1&gt;</code>最大，<code>&lt;h6&gt;</code>最小<br>     ○ 标题标签只用于标题<br>     ○ 标题标签不单单用于字体放大加粗，更多的是为搜索引擎使用标题帮助网页索引<br> 代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;标题标签&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;h1&gt;一级标题&lt;/h1&gt;</span><br><span class="line">    &lt;h2&gt;二级标题&lt;/h2&gt;</span><br><span class="line">    &lt;h3&gt;三级标题&lt;/h3&gt;</span><br><span class="line">    &lt;h4&gt;四级标题&lt;/h4&gt;</span><br><span class="line">    &lt;h5&gt;五级标题&lt;/h5&gt;</span><br><span class="line">    &lt;h6&gt;六级标题&lt;/h6&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt; </span><br></pre></td></tr></table></figure>
+
+<p>● 段落标签<br>     ○ 段落通过<code>&lt;p&gt;...&lt;/p&gt;</code>标签定义，表示文档中的一个自然段<br>     ○ 注：段落标签不能嵌套使用，若想要段落标签中的内容换行显示可使用<code>&lt;br/&gt;</code>标签换行<br>代码</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;p&gt;</span><br><span class="line">        面朝大海，春暖花开&lt;br/&gt;</span><br><span class="line">        作者: 海子</span><br><span class="line">    &lt;/p&gt;</span><br><span class="line">    &lt;p&gt;从明天起，做一个幸福的人&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;喂马，劈柴，周游世界&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;从明天起，关心粮食和蔬菜&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;我有一所房子，面朝大海，春暖花开&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;从明天起，和每一个亲人通信&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;告诉他们我的幸福&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;那幸福的闪电告诉我的&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;我将告诉每一个人&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;给每一条河每一座山取一个温暖的名字&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;陌生人，我也为你祝福&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;愿你有一个灿烂的前程&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;愿你有情人终成眷属&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;愿你在尘世获得幸福&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;我只愿面朝大海，春暖花开&lt;/p&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p>● div标签<br>     ○ div标签用于定义文档中的分区或节<br>     ○ 可以把文档分割为独立的，不同的部分<br>     ○ 在后期通过学习样式表，div可以与CSS配合对整个网页进行页面布局，模块划分，让网页制作不再有难度<br>     ○ div若不带样式单独使用则与段落标签<code>&lt;p&gt;</code>相似，没有特定的含义<br>代码</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;无序列表&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">  		这是div标签，用于页面划分页面布局</span><br><span class="line">  	&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p>   ● 无序列表<br>     ○ 列表可以结合链接标签用来定义新闻标题等一些较为常用的标题类链接<br>     ○ 无序列表使用<ul>定义列表，<li>定义列表中的条目，默认此列项目使用黑色小圆点进行标记<br>     ○ 通过在<ul>中添加type属性更改列表的展示标记，其中disc表示实心圆，square表示矩形显示，circle表示空心圆<br>代码：</ul></li></ul></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;无序列表&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">        &lt;li&gt;热烈庆祝xxx同学高薪就业&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;热烈庆祝xxx同学高薪就业&lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">    &lt;ul type=&quot;square&quot;&gt;</span><br><span class="line">        &lt;li&gt;热烈庆祝xxx同学高薪就业&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;热烈庆祝xxx同学高薪就业&lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">    &lt;ul type=&quot;circle&quot;&gt;</span><br><span class="line">        &lt;li&gt;热烈庆祝xxx同学高薪就业&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;热烈庆祝xxx同学高薪就业&lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p>   ● 有序列表<br>     ○ 有序列表使用<ol>定义列表，<li>定义列表中的条目，默认此列项目使用阿拉伯数字进行标记<br>     ○ 通过在<ol>中添加type属性更改列表的展示标记，其中‘A’表示大写字母，‘a’表示小写字母，‘I’表示大写罗马数字，‘i’表示小写罗马数字，‘1’表示阿拉伯数字（默认）<br>代码：</ol></li></ol></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;有序列表&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;h3&gt;工作流程&lt;/h3&gt;</span><br><span class="line">    &lt;ol&gt;</span><br><span class="line">        &lt;li&gt;每日晨会，任务分配&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;工作任务&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;工作日报&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;下班回家&lt;/li&gt;</span><br><span class="line">    &lt;/ol&gt;</span><br><span class="line">    &lt;ol type=&quot;A&quot;&gt;</span><br><span class="line">          &lt;li&gt;每日晨会，任务分配&lt;/li&gt;</span><br><span class="line">          &lt;li&gt;工作任务&lt;/li&gt;</span><br><span class="line">          &lt;li&gt;工作日报&lt;/li&gt;</span><br><span class="line">          &lt;li&gt;下班回家&lt;/li&gt;</span><br><span class="line">    &lt;/ol&gt;</span><br><span class="line">    &lt;ol type=&quot;a&quot;&gt;</span><br><span class="line">          &lt;li&gt;每日晨会，任务分配&lt;/li&gt;</span><br><span class="line">          &lt;li&gt;工作任务&lt;/li&gt;</span><br><span class="line">          &lt;li&gt;工作日报&lt;/li&gt;</span><br><span class="line">          &lt;li&gt;下班回家&lt;/li&gt;</span><br><span class="line">    &lt;/ol&gt;</span><br><span class="line">    &lt;ol type=&quot;I&quot;&gt;</span><br><span class="line">          &lt;li&gt;每日晨会，任务分配&lt;/li&gt;</span><br><span class="line">          &lt;li&gt;工作任务&lt;/li&gt;</span><br><span class="line">          &lt;li&gt;工作日报&lt;/li&gt;</span><br><span class="line">          &lt;li&gt;下班回家&lt;/li&gt;</span><br><span class="line">    &lt;/ol&gt;</span><br><span class="line">    &lt;ol type=&quot;i&quot;&gt;</span><br><span class="line">          &lt;li&gt;每日晨会，任务分配&lt;/li&gt;</span><br><span class="line">          &lt;li&gt;工作任务&lt;/li&gt;</span><br><span class="line">          &lt;li&gt;工作日报&lt;/li&gt;</span><br><span class="line">          &lt;li&gt;下班回家&lt;/li&gt;</span><br><span class="line">     &lt;/ol&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p>   ● 自定义列表<br>     ○ 使用<dl>定义列表，<dt>定义列表中的项目，<dd>定义列表条目<br>     ○ 自定义列表不单单只用了区分项目，后期通过样式，标签嵌套可以胜任诸多任务，如：商城，外卖类网站商品的模块划分<br>代码：</dd></dt></dl></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;自定义列表&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;dl&gt;</span><br><span class="line">        &lt;dt&gt;pc端游戏&lt;/dt&gt;</span><br><span class="line">        &lt;dd&gt;穿越火线&lt;/dd&gt;</span><br><span class="line">        &lt;dd&gt;英雄联盟&lt;/dd&gt;</span><br><span class="line">        &lt;dd&gt;CSGO&lt;/dd&gt;</span><br><span class="line">        &lt;dt&gt;手机游戏&lt;/dt&gt;</span><br><span class="line">        &lt;dd&gt;和平精英&lt;/dd&gt;</span><br><span class="line">        &lt;dd&gt;王者荣耀&lt;/dd&gt;</span><br><span class="line">        &lt;dd&gt;阴阳师&lt;/dd&gt;</span><br><span class="line">    &lt;/dl&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>   ● 嵌套列表<br>     ○ 列表可以通过多层嵌套实现多级列表<br>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;嵌套列表&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">        &lt;li&gt;茶</span><br><span class="line">            &lt;ul&gt;</span><br><span class="line">                &lt;li&gt;白茶&lt;/li&gt;</span><br><span class="line">                &lt;li&gt;绿茶&lt;/li&gt;</span><br><span class="line">                &lt;li&gt;红茶&lt;/li&gt;</span><br><span class="line">            &lt;/ul&gt;</span><br><span class="line">        &lt;/li&gt;</span><br><span class="line">        &lt;li&gt;咖啡</span><br><span class="line">            &lt;ul&gt;</span><br><span class="line">                &lt;li&gt;拿铁&lt;/li&gt;</span><br><span class="line">                &lt;li&gt;卡布奇洛&lt;/li&gt;</span><br><span class="line">            &lt;/ul&gt;</span><br><span class="line">        &lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-10-2-常用的行级标签"><a href="#1-10-2-常用的行级标签" class="headerlink" title="1.10.2 常用的行级标签"></a>1.10.2 常用的行级标签</h3><p>   ● 内联元素<br>     ○ 使用<span>…<span>表示<br>     ○ 单独使用没有特定的含义<br>     ○ 当与CSS一同使用，用来组合文档中的行内元素，如：在一行文字中给某一个字单独设置样式，再或者在某行字中添加小图标<br>代码：</span></span></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;span&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;p&gt;</span><br><span class="line">        &lt;span style=&quot;font-size: 33px&quot;&gt;我&lt;/span&gt;</span><br><span class="line">        最</span><br><span class="line">        &lt;span style=&quot;font-size: 33px&quot;&gt;帅&lt;/span&gt;</span><br><span class="line">    &lt;/p&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p>   ● 链接标签<br>     ○ 使用<a href="url">…</a>表示<br>     ○ 用于从一个页面跳转到另一个页面<br>     ○ href表示跳转的链接目标<br>     ○ 默认情况下链接将以以下形式出现在网页中<br>       ■ 在未点击访问时链接字体程蓝色并带同色下划线<br>       ■ 在点击后链接字体会程红色显示并带同色下划线<br>     ○ 标签常用属性<br>属性    属性值    作用<br>download    filename    指定下载链接<br>href    URL    规定链接目标<br>target    _blank<br>_parent<br>_self<br>_top    _blank：新窗口打开。<br>_parent：在父窗口中打开链接。<br>_self：默认，当前页面跳转。<br>_top：在当前窗体打开链接，并替换当前的整个窗体(框架页)。<br>  ○ 在网页开发中常用的链接有以下四种：<br>链接分类    属性参数    作用<br>空链接    href=”#”<br>href=”javascript:void(0)”    空链接即只能点击不会做页面跳转的链接，用于向页面上添加对象或行为  如：设为首页，添加收藏等<br>本地链接    href=”本地路径”    用于本地工程/服务器页面之间的相互跳转<br>网络链接    herf=”url”    用于给网站添加外部链接，点击后跳转到其它网站<br>锚链接    href=”#name”    用于添加页面内快速引导，可以从页面的一个位置快速的转到另一个位置<br>空链接示例代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;空链接&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">   &lt;a href=&quot;#&quot;&gt;空链接&lt;/a&gt;</span><br><span class="line">   &lt;a href=&quot;javascript:void(0)&quot;&gt;空链接&lt;/a&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>附：<br>空链接“#”与“javascript:void(0)”的区别：</p>
+<ol>
+<li>“#”包含一个位置信息，默认为网页顶端，当页面高度大于一屏时，点击后会跳转到网页顶部</li>
+<li>“javascript:void(0)”是一个伪协议，表示url内容通过javascript执行，而void(0)则表示不作任何操作，这样该标签既保留了链接样式还能防止页面跳转</li>
+<li>空链接通常通过添加javascript事件去做一些其它操作，如：设置收藏，设置首页，弹窗等，这些会在本书javascript事件章节详细讲解</li>
+</ol>
+<p>本地链接示例代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;首页&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">   &lt;a href=&quot;Login.html&quot;&gt;登录&lt;/a&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;登录页&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">   &lt;a href=&quot;Index.html&quot;&gt;返回首页&lt;/a&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p>附：<br>绝对路径和相对路径<br>绝对路径：是指文件在硬盘上的真正存在的路径，如：一张名为“头像.jpg”的图片或一个名为“index.html”的网页存放在我计算机中的“C:\Users\document\WebstormProjects\untitled15”目录中，则图片的绝对路径为“C:\Users\document\WebstormProjects\untitled15\头像.jpg”，网页的绝对路径为“C:\Users\document\WebstormProjects\untitled15\index.html”，但在开发时很少使用绝对路径，当指定了决定路径后在项目路径在本地计算机上是没问题的，但上传到服务器或在其它计算机上时很可能会出现找不到路径，路径错误等问题。<br>相对路径：指由文件本身相对于目标文件的路径，使用相对路径的三种写法，下边以网页index.html引用网页Login.html为例说明：<br>1.若Login.html相对index.html是在同一目录，那么网页在引用图片时则只需要通过Login.html名称+后缀引用即可<br>位置关系图示    代码示例</p>
+<pre><code>         2.若网页Login.html存在某个文件夹中，文件夹与网页index.html属于同一目录，那么网页index.html在引用网页Login.html时则需要通过找到文件夹使用分隔符“/”才能找到文件夹中相对的网页Login.html文件，这里需要注意：绝对路径使用分隔符“\”，相对路径使用分隔符“/”
+</code></pre>
+<p>位置关系图示    代码示例</p>
+<p>3.若网页index.html和网页Login.html都存在不同的文件夹中，两个不同的文件夹属于同一目录，那么网页index.html在引用网页Login.html时则需要通过“../”返回上一级路径再去引用存放网页Login.html的文件夹再使用分隔符“/”引用网页Login.html，这里需要注意一个“../”，表示网上返回一级，如果要返回多个则需要使用多个“../”<br>位置关系图示    代码示例</p>
+<p>网络链接示例代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;网络链接&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">   &lt;a href=&quot;https://www.baidu.com&quot;&gt;百度一下&lt;/a&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p>锚链接示例代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;a id=&quot;top&quot;&gt;这是网页顶部&lt;/a&gt;</span><br><span class="line">    &lt;a href=&quot;#middle&quot;&gt;跳转至网页中部&lt;/a&gt;</span><br><span class="line">    &lt;a href=&quot;#bottom&quot;&gt;跳转至网页底部&lt;/a&gt;</span><br><span class="line">    &lt;p&gt;网页内容&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;....&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;这里省略若干行相同内容&lt;/p&gt;</span><br><span class="line">    &lt;a id=&quot;middle&quot;&gt;这是网页中部&lt;/a&gt;</span><br><span class="line">    &lt;a href=&quot;#top&quot;&gt;跳转至网页顶部&lt;/a&gt;</span><br><span class="line">    &lt;a href=&quot;#bottom&quot;&gt;跳转至网页底部&lt;/a&gt;</span><br><span class="line">    &lt;p&gt;网页内容&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;....&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;这里省略若干行相同内容&lt;/p&gt;</span><br><span class="line">    &lt;a href=&quot;#middle&quot;&gt;跳转至网页中部&lt;/a&gt;</span><br><span class="line">    &lt;a href=&quot;#top&quot;&gt;跳转至网页顶部&lt;/a&gt;</span><br><span class="line">    &lt;a id=&quot;bottom&quot;&gt;这是网页底部&lt;/a&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p>附：</p>
+<ol>
+<li>锚链接是在页面内的不同位置跳转，本质上就是元素间的跳转</li>
+<li>使用锚链接首先要建立锚点目标，只需要给元素添加id或name属性即可 如：<code>&lt;a name=&quot;top&quot;&gt;,&lt;div id=&quot;top&quot;&gt;</code></li>
+<li>建立好锚点目标后再使用<code>&lt;a href=&quot;#id值或name值&quot;&gt;</code>引用锚点</li>
+<li>如果不同页面跳转，同时存在锚点，则先跳转到要跳转的页面，然后在寻找锚点元素进行跳转<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;首页&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;a href=&quot;demo.html#bottom&quot;&gt;走你&lt;/a&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;测试页&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;p&gt;这是内容&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;.....&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;此时省略若干行相同内容&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;这是内容&lt;/p&gt;</span><br><span class="line">    &lt;div id=&quot;bottom&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>● 图片标签<br>  ○ 图片标签使用<code>&lt;img/&gt;</code>表示，图片标签没有结束标签“/”表示结束<br>  ○ 标签属性<br>属性    属性值    作用<br>src（必需）    url    图片路径或网络地址<br>title    text    图片标题描述，当鼠标悬停在图片上时显示<br>alt    text    图片替换文本，当图片路径发生错误时显示<br>width    pixels    图片宽度<br>height    pixels    图片高度<br>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;图片标签&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;img src=&quot;F.jpg&quot; alt=&quot;这是替换文本&quot; title=&quot;这是一张图片&quot; width=&quot;600&quot; height=&quot;406&quot;&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p>● 图片增强（map）<br>  ○ <code>&lt;map&gt;</code>标签有助于定义图像映射。图像映射指的是图像中包含一个或多个可点击区域。<code>&lt;map&gt;</code>标签与<code>&lt;area&gt;</code>标签一起确定可点击区域。可点击区域可以是矩形、圆形或多边形区域这些形状之一。如果不指定形状，就会认为是整个图像。<br>示例</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;img src=&quot;../images/mapImages/4.png&quot; width=&quot;592&quot; height=&quot;182&quot; alt=&quot;mapSelect&quot; usemap=&quot;#circusmap&quot;&gt;</span><br><span class="line">        &lt;map name=&quot;circusmap&quot;&gt;</span><br><span class="line">            &lt;area shape=&quot;rect&quot; coords=&quot;82,70,155,133&quot; href=&quot;map2.html&quot;&gt;</span><br><span class="line">            &lt;area shape=&quot;rect&quot; coords=&quot;297,70,387, 133&quot; href=&quot;map1.html&quot;&gt;</span><br><span class="line">            &lt;area shape=&quot;rect&quot; coords=&quot;480,70,572, 133&quot; href=&quot;map3.html&quot;&gt;</span><br><span class="line">        &lt;/map&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="知识补充："><a href="#知识补充：" class="headerlink" title="知识补充："></a>知识补充：</h2><p>  ○ <code>&lt;area&gt;</code>标签定义图像映射中的区域<br>  ○ shape属性<br>    ■ shape属性用于定义图像映射中对鼠标敏感的区域的形状<br>      ● 圆形（circ或circle）<br>      ● 多边形（poly或polygon）<br>      ● 矩形（rect或rectangle）<br>  ○ coords属性<br>    ■ 圆形：shape=”circle”，coords=”x,y,z”<br>这里的 x 和 y 定义了圆心的位置（”0,0” 是图像左上角的坐标），z 是以像素为单位的圆形半径。<br>    ■ 多边形：shape=”polygon”，coords=”x1,y1,x2,y2,x3,y3,…”<br>每一对 “x,y” 坐标都定义了多边形的一个顶点（”0,0” 是图像左上角的坐标）。定义三角形至少需要三组坐标；高纬多边形则需要更多数量的顶点。<br>多边形会自动封闭，因此在列表的结尾不需要重复第一个坐标来闭合整个区域。<br>    ■ 矩形：shape=”rectangle”，coords=”x1,y1,x2,y2”<br>第一个坐标是矩形的一个角的顶点坐标，另一对坐标是对角的顶点坐标，”0,0” 是图像左上角的坐标。请注意，定义矩形实际上是定义带有四个顶点的多边形的一种简化方法。<br>● 常用文本格式化标签<br>标签    描述</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;b&gt;	定义粗体文本</span><br><span class="line">&lt;em&gt;	定义着重文字</span><br><span class="line">&lt;i&gt;	定义斜体文字</span><br><span class="line">&lt;small&gt;	定义小号文字</span><br><span class="line">&lt;strong&gt;	定义加重语气</span><br><span class="line">&lt;sub&gt;	定义下标字</span><br><span class="line">&lt;sup&gt;	定义上标字</span><br><span class="line">&lt;ins&gt;	定义插入字(加了下划线)</span><br><span class="line">&lt;del&gt;	定义删除字(加了删除线)</span><br></pre></td></tr></table></figure>
+
+<p>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE HTML&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;b&gt;定义粗体文本&lt;/b&gt;</span><br><span class="line">    &lt;br/&gt;</span><br><span class="line">    &lt;em&gt;定义着重文字&lt;/em&gt;</span><br><span class="line">    &lt;br/&gt;</span><br><span class="line">    &lt;i&gt;定义斜体文字&lt;/i&gt;</span><br><span class="line">    &lt;br/&gt;</span><br><span class="line">    &lt;small&gt;定义小号文字&lt;/small&gt;</span><br><span class="line">    &lt;br/&gt;</span><br><span class="line">    &lt;strong&gt;定义加重语气&lt;/strong&gt;</span><br><span class="line">    &lt;br/&gt;</span><br><span class="line">    定义下标字 &lt;sub&gt;aa&lt;/sub&gt;</span><br><span class="line">    &lt;br/&gt;</span><br><span class="line">    定义上标字 &lt;sup&gt;aa&lt;/sup&gt;</span><br><span class="line">    &lt;br/&gt;</span><br><span class="line">    &lt;ins&gt;定义插入字(加了下划线)&lt;/ins&gt;</span><br><span class="line">    &lt;br/&gt;</span><br><span class="line">    &lt;del&gt;定义删除字(加了删除线)&lt;/del&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="学习心得"><a href="#学习心得" class="headerlink" title="学习心得"></a>学习心得</h2><p><em><strong>今天是到这的第一天，一起都充满着好奇。下午老师就开始讲HTML相关内容，因为之前学过目前还算很好理解。听课老师说越到后面学习越困难，不过没事到这就是来学习的，为了能找到更好的工作在所不辞。由于报道的有点迟了，到现在还没求去过宿舍，不知道宿舍的环境怎么样，很是期待。西安相对于甘肃还是很热的，幸好学习的地方都用空调，不然像静下心来学习都是问题。在接下载的几个月中弥补之前的不足，学习更多的知识，向向往的的工作不断迈进。</strong></em></p>
+]]></content>
+      <categories>
+        <category>XiAnTrain</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Spring知识点梳理：</title>
     <url>/2021/11/27/SpringFrame/</url>
     <content><![CDATA[ <img src="https://i.loli.net/2021/11/15/vKFjo15HqAybLmE.png" align="center" width="600" height="400" div>
@@ -682,101 +779,9 @@
       </categories>
   </entry>
   <entry>
-    <title>培训心得&amp;emsp;&amp;emsp;[走进HTML]</title>
-    <url>/2022/06/27/XiAnTrain20220627/</url>
-    <content><![CDATA[<p><em><strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;学习打卡第一天</strong></em><br>学习链接：<a href="https://www.yuque.com/docs/share/7867136c-a7d4-4864-b727-a1404d1fe251">https://www.yuque.com/docs/share/7867136c-a7d4-4864-b727-a1404d1fe251</a></p>
-<span id="more"></span>
-
-
-<h1 id="1-1HTML简介"><a href="#1-1HTML简介" class="headerlink" title="1. 1HTML简介"></a>1. 1HTML简介</h1><p>&emsp;&emsp;&emsp;HTML的英文全称是 Hyper Text Markup Language，即超文本标记语言。HTML是由Web的发明者 Tim Berners-Lee和同事 Daniel W. Connolly于1990年创立的一种标记语言，它是标准通用化标记语言SGML的应用。用HTML编写的超文本文档称为HTML文档，它能独立于各种操作系统平台(如UNIX， Windows等)。使用HTML，将所需要表达的信息按某种规则写成HTML文件，通过专用的浏览器来识别，并将这些HTML文件“翻译”成可以识别的信息，即现在所见到的网页。<br>&emsp;&emsp;&emsp;自1990年以来，HTML就一直被用作万维网的信息表示语言，使用HTML描述的文件需要通过web浏览器显示出效果。HTML是一种建立网页文件的语言，通过标记式的指令(Tag)，将影像、声音、图片、文字动画、影视等内容显示出来。事实上，每一个HTML文档都是一种静态的网页文件，这个文件里面包含了HTML指令代码，这些指令代码并不是一种程序语言，只是一种排版网页中资料显示位置的标记结构语言，易学易懂，非常简单。HTML的普遍应用就是带来了超文本的技术―通过单击鼠标从一个主题跳转到另一个主题，从一个页面跳转到另一个页面，与世界各地主机的文件链接超文本传输协议规定了浏览器在运行HTML文档时所遵循的规则和进行的操作。HTTP的制定使浏览器在运行超文本时有了统一的规则和标准。<br>&emsp;&emsp;&emsp;万维网（world wide web，简称www）上的一个超媒体文档称之为一个页面（外语：page）。作为一个组织或者个人在万维网上放置开始点的页面称为主页（外语：Homepage）或首页，主页中通常包括有指向其他相关页面或其他节点的指针（超级链接），所谓超级链接，就是一种统一资源定位器（Uniform Resource Locator，外语缩写：URL）指针，通过激活（点击）它，可使浏览器方便地获取新的网页。这也是HTML获得广泛应用的最重要的原因之一。在逻辑上将视为一个整体的一系列页面的有机集合称为网站（Website或Site）。超文本标记语言（英文缩写：HTML）是为“网页创建和其它可在网页浏览器中看到的信息”设计的一种标记语言。<br>&emsp;&emsp;&emsp;网页的本质就是超文本标记语言，通过结合使用其他的Web技术（如：脚本语言、公共网关接口、组件等），可以创造出功能强大的网页。因而，超文本标记语言是万维网（Web）编程的基础，也就是说万维网是建立在超文本基础之上的。超文本标记语言之所以称为超文本标记语言，是因为文本中包含了所谓“超级链接”点。</p>
-<h2 id="1-2-HTML版本"><a href="#1-2-HTML版本" class="headerlink" title="1.2 HTML版本"></a>1.2 HTML版本</h2><p>&emsp;&emsp;&emsp;HTML是用来标记Web信息如何展示以及其他特性的一种语法规则，它最初于1989年由CERN的Tim Berners-Lee发明。HTML基于更古老一些的语言SGML定义，并简化了其中的语言元素。这些元素用于告诉浏览器如何在用户的屏幕上展示数据，所以很早就得到各个Web浏览器厂商的支持。 [5]<br>HTML历史上有如下版本： [5]<br>①HTML 1.0：在1993年6月作为互联网工程工作小组(IETF)工作草案发布。<br>②HTML 2.0：1995年1 1月作为RFC 1866发布，于2000年6月发布之后被宣布已经过时。<br>③HTML 3.2：1997年1月14日，W3C推荐标准。<br>④HTML 4.0：1997年12月18日，W3C推荐标准。<br>⑤HTML 4.01（微小改进）：1999年12月24日，W3C推荐标准。<br>⑥HTML 5：HTML5是公认的下一代Web语言，极大地提升了Web在富媒体、富内容和富应用等方面的能力，被喻为终将改变移动互联网的重要推手。Internet Explorer 8及以前的版本不支持。</p>
-<h2 id="1-3-迎接新的Web时代"><a href="#1-3-迎接新的Web时代" class="headerlink" title="1.3 迎接新的Web时代"></a>1.3 迎接新的Web时代</h2><p>&emsp;&emsp;&emsp;HTML5并不是革命性的改变，而只是发展性的。而且对于之前HTML4的很多标准都是兼容的，所有通过最新HTML5标准制作的Web应用也可以轻松的在老版本的浏览器上运行。HTML5标准中的确是集成了很多实用的功能比如：音视频、本地存储、Socket通信、动画等都是之前应用开发中确实感觉到Web端的鸡肋才得到重视和升级的。<br>HTML5的目标是：它通过一些新标签，新功能为开发更加简、独立、标准的通用Web应用提供了标准。新的标准解决了三大问题：浏览器兼容问题，解决了文档结构不明确的问题，解决了Web应用程序功能受限等问题。<br>号称“CSS之父”的Hakon Wium Lie认为，HTML5与CSS3将是全球互联网发展的未来趋势。<br>自从2010年HTML5正式推出以来，它就以一种惊人的速度被迅速推广使用，微软也因此在IE上做了关于HTML5的标准改进，使其能够支持HTML5，google Chrome，Safari，Opera，Mozilla等主要Web浏览器也针对HTML5制定了相应的支持措施。<br>目前主流的浏览器厂商也纷纷在研发HTML5相关产品，从目前这些浏览器对HTML5的支持来看，Web的未来属于HTML5</p>
-<h2 id="1-4-HTML的开发环境和运行环境"><a href="#1-4-HTML的开发环境和运行环境" class="headerlink" title="1.4 HTML的开发环境和运行环境"></a>1.4 HTML的开发环境和运行环境</h2><p>&emsp;&emsp;&emsp;HTML本质上就是一个文档，市面上常见的一些简单的文本编辑器都是可以用来开发HTML，编辑之后只需将后缀修改为”.html”即可 如：记事本，EditPlus等<br>&emsp;&emsp;&emsp;前端开发也有众多专业的开发软件，如：Webstrom，Sublime Text，Dreamweaver，HBuilder等，本书主要以webstrom为主要开发软件<br>HTML运行环境即各种浏览器，如:IE，edge，Chrome，Firefox，Safari等均可作为HTML的运行环境</p>
-<h2 id="1-5-HTML文档结构"><a href="#1-5-HTML文档结构" class="headerlink" title="1.5 HTML文档结构"></a>1.5 HTML文档结构</h2><p>HTML文档有明确的文档结构，包含三个部分：<code>&lt;HTML&gt;中包含&lt;head&gt;...&lt;/head&gt;部分和&lt;body&gt;...&lt;/body&gt;部分</code></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">注：</span><br><span class="line">1. 第1行，HTML5的文档声明，声明开发版本</span><br><span class="line">2. 第2行，&lt;html&gt;表示HTML的文档起点，&quot;lang=en&quot;表示开发语言为英语，与之对应的在文档的最后一行&lt;/html&gt;表示文档的结束位置</span><br><span class="line">3. 第3，6行，表示文档的头部信息，该部分中的内容不在浏览器的主体中显示，文档头部中主要用来做一些辅助功能。</span><br><span class="line">4. 第4行，&lt;meta&gt;是&lt;head&gt;中的一个辅助性标签，不包含任何内容，它的属性定义了与文档相关联的名称/值，它提供了相关页面的元信息如：针对搜索引擎和更新频度的描述和关键词， 详见下节&lt;meta&gt;标签</span><br><span class="line">5. 第5行，&lt;title&gt;用来添加网页的标题，网页标题显示在浏览器的标题栏中</span><br></pre></td></tr></table></figure>
-
-<h2 id="1-6-Hello-World"><a href="#1-6-Hello-World" class="headerlink" title="1.6 Hello World"></a>1.6 Hello World</h2><h3 id="1-创建html文件，并键入如下代码："><a href="#1-创建html文件，并键入如下代码：" class="headerlink" title="1. 创建html文件，并键入如下代码："></a>1. 创建html文件，并键入如下代码：</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;我的第一个网页&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    Hello World</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-运行结果"><a href="#2-运行结果" class="headerlink" title="2. 运行结果"></a>2. 运行结果</h3><h2 id="1-7-标签"><a href="#1-7-标签" class="headerlink" title="1.7 标签"></a>1.7 <meta>标签</h2><p>● *<code>&lt;meta&gt;</code><em>标签位于</em><code>&lt;head&gt;</code>*标签区域内提供了HTML的文档元数据（注：元数据是数据的数据信息且元数据不会显示在客户端，但是会被浏览器解析）<br>● *<code>&lt;meta&gt;</code>*标签提供了文档的字符集，使用语言，作者等基本信息，此外还涉及关键词和网页等级设定<br>● *<code>&lt;meta&gt;</code>*标签常用属性表<br>| 属性 |    值 | 描述 |<br>| — | — | — |<br>| charset |    character_set |    定义文档的字符编码。|<br>| content |    text |    定义与 http-equiv 或 name 属性相关的元信息。|<br>| http-equiv |    content-typ<br>                edefault-style<br>                refresh            | 把 content 属性关联到 HTTP 头部。|</p>
-<p>|name|<br>    application-nam<br>eauthor<br>description<br>generator<br>keywords|    把 content 属性关联到一个名称。|</p>
-<p>|scheme| format/URI | HTML5不支持。定义用于翻译 content 属性值的格式。|</p>
-<p>代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;!--声明文档的字符编码，中文常用的还有GBK，gb2312--&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;!--页面关键词--&gt;</span><br><span class="line">　　&lt;meta name=&quot;keywords&quot; content=&quot;软件咨询，软件开发，影视后期&quot;/&gt;</span><br><span class="line">　　&lt;!--页面描述--&gt;</span><br><span class="line">　　&lt;meta name=&quot;description&quot; content=&quot;软件开发，影视后期，我们可以快速的帮你提升职业技能水平&quot;&gt;</span><br><span class="line">　　&lt;!--网页作者--&gt;</span><br><span class="line">　　&lt;meta name=&quot;author&quot; content=&quot;Mr.cai&quot;&gt;</span><br><span class="line">　　&lt;!--搜索引擎抓取robots是一组使用逗号（，）分割的值，通常有如下几种取值：none，noindex，nofollow，all，index和follow。--&gt;</span><br><span class="line">　　&lt;meta name=&quot;robots&quot; content=&quot;noindex&quot;/&gt;</span><br><span class="line">    &lt;!--上面示例定义了此网页不被搜索引擎索引进数据库，但搜索引擎可以通过此网页的链接继续索引其它网页--&gt;</span><br><span class="line">    &lt;meta name=&quot;robots&quot; content=&quot;nofollow&quot;/&gt;</span><br><span class="line">    &lt;!--上面示例定义此网页被搜索引擎索引进数据库，但搜索引擎不可以通过此网页的链接继续索引其它网页--&gt;</span><br><span class="line">    &lt;meta name=&quot;robots&quot; content=&quot;none&quot;/&gt;</span><br><span class="line">    &lt;!--上面示例定义了此网页不被搜索引擎索引进数据库，且搜索引擎不可以通过此网页的链接继续索引其它网页--&gt;</span><br><span class="line">    &lt;!--针对谷歌GOOGLEBOT使用robots--&gt;</span><br><span class="line">    &lt;!--可以将name的属性只定义为GOOGLEBOT标识为谷歌搜索引擎。 使用元标记拦截或删除网页--&gt;</span><br><span class="line">    &lt;meta name=&quot;googlebot&quot; content=&quot;noindex, nofollow&quot;/&gt;</span><br><span class="line">    &lt;!--针对百度baiduspider使用robots--&gt;</span><br><span class="line">    &lt;!--可以将name的属性只定义为baiduspider标识为百度搜索引擎。禁止搜索引擎收录的方法--&gt;</span><br><span class="line">    &lt;meta name=&quot;baiduspider&quot; content=&quot;noarchive&quot;/&gt;</span><br><span class="line">　　&lt;!--页面重定向和刷新--&gt;</span><br><span class="line">　　&lt;meta http-equiv=&quot;refresh&quot; content=&quot;0;url=http://www.baidu.com&quot;/&gt;</span><br><span class="line">　　&lt;!--禁止Chrome浏览器中自动提示翻译--&gt;</span><br><span class="line">　　&lt;meta name=&quot;google&quot; value=&quot;notranslate&quot;&gt;</span><br><span class="line">　　&lt;!--禁止百度转码--&gt;</span><br><span class="line">　　&lt;meta http-equiv=&quot;Cache-Control&quot; content=&quot;no-siteapp&quot;&gt;</span><br><span class="line">　　&lt;!--自定义标签：app版本号说明--&gt;</span><br><span class="line">　　&lt;meta name=&quot;app-version&quot;content=&quot;1.13.3&quot;&gt;</span><br><span class="line">    &lt;title&gt;meta&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="1-8-元素"><a href="#1-8-元素" class="headerlink" title="1.8 元素"></a>1.8 元素</h2><p>&emsp;&emsp;&emsp;HTML文档由HTML元素定义，一个基本元素由“开始标签”，“元素内容”，“结束标签”构成<br>&lt;开始标签&gt;    元素内容    &lt;/结束标签&gt;<br>HTML元素以开始标签起始    元素内容即开始标签和结束标签之间的内容    HTML元素以结束标签终结</p>
-<h2 id="1-9-块级标签和行级标签"><a href="#1-9-块级标签和行级标签" class="headerlink" title="1.9 块级标签和行级标签"></a>1.9 块级标签和行级标签</h2><p>HTML中，所有标签都是预定义的，也就是说所有的标签都有各自的特点属性，根据这些特点可将标签分为块级标签和行级标签两类</p>
-<h3 id="1-9-1-块级标签"><a href="#1-9-1-块级标签" class="headerlink" title="1.9.1 块级标签"></a>1.9.1 块级标签</h3><p>块级标签编译后在浏览器中默认没有高度，其高度由其添加的内容决定，其宽度默认为屏幕宽度，也就是说块级标签默认占一行</p>
-<h3 id="1-9-2-行级标签"><a href="#1-9-2-行级标签" class="headerlink" title="1.9.2 行级标签"></a>1.9.2 行级标签</h3><p>行级标签编译后在浏览器中默认没有宽度和高度，其宽高均有添加的内容决定，也就是说行级标签在其内容不满一行时不会换行</p>
-<h2 id="1-10-HTML常用标签"><a href="#1-10-HTML常用标签" class="headerlink" title="1.10 HTML常用标签"></a>1.10 HTML常用标签</h2><h3 id="1-10-1-常用的块级标签"><a href="#1-10-1-常用的块级标签" class="headerlink" title="1.10.1 常用的块级标签"></a>1.10.1 常用的块级标签</h3><p>● 标题标签<br>     ○ 标题（Heading）通过<code>&lt;h1&gt;....&lt;h6&gt;</code>标签定义，表示一级标题至六级标题，其中<code>&lt;h1&gt;</code>最大，<code>&lt;h6&gt;</code>最小<br>     ○ 标题标签只用于标题<br>     ○ 标题标签不单单用于字体放大加粗，更多的是为搜索引擎使用标题帮助网页索引<br> 代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;标题标签&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;h1&gt;一级标题&lt;/h1&gt;</span><br><span class="line">    &lt;h2&gt;二级标题&lt;/h2&gt;</span><br><span class="line">    &lt;h3&gt;三级标题&lt;/h3&gt;</span><br><span class="line">    &lt;h4&gt;四级标题&lt;/h4&gt;</span><br><span class="line">    &lt;h5&gt;五级标题&lt;/h5&gt;</span><br><span class="line">    &lt;h6&gt;六级标题&lt;/h6&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt; </span><br></pre></td></tr></table></figure>
-
-<p>● 段落标签<br>     ○ 段落通过<code>&lt;p&gt;...&lt;/p&gt;</code>标签定义，表示文档中的一个自然段<br>     ○ 注：段落标签不能嵌套使用，若想要段落标签中的内容换行显示可使用<code>&lt;br/&gt;</code>标签换行<br>代码</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;p&gt;</span><br><span class="line">        面朝大海，春暖花开&lt;br/&gt;</span><br><span class="line">        作者: 海子</span><br><span class="line">    &lt;/p&gt;</span><br><span class="line">    &lt;p&gt;从明天起，做一个幸福的人&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;喂马，劈柴，周游世界&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;从明天起，关心粮食和蔬菜&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;我有一所房子，面朝大海，春暖花开&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;从明天起，和每一个亲人通信&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;告诉他们我的幸福&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;那幸福的闪电告诉我的&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;我将告诉每一个人&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;给每一条河每一座山取一个温暖的名字&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;陌生人，我也为你祝福&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;愿你有一个灿烂的前程&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;愿你有情人终成眷属&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;愿你在尘世获得幸福&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;我只愿面朝大海，春暖花开&lt;/p&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-
-<p>● div标签<br>     ○ div标签用于定义文档中的分区或节<br>     ○ 可以把文档分割为独立的，不同的部分<br>     ○ 在后期通过学习样式表，div可以与CSS配合对整个网页进行页面布局，模块划分，让网页制作不再有难度<br>     ○ div若不带样式单独使用则与段落标签<code>&lt;p&gt;</code>相似，没有特定的含义<br>代码</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;无序列表&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">  		这是div标签，用于页面划分页面布局</span><br><span class="line">  	&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-
-<p>   ● 无序列表<br>     ○ 列表可以结合链接标签用来定义新闻标题等一些较为常用的标题类链接<br>     ○ 无序列表使用<ul>定义列表，<li>定义列表中的条目，默认此列项目使用黑色小圆点进行标记<br>     ○ 通过在<ul>中添加type属性更改列表的展示标记，其中disc表示实心圆，square表示矩形显示，circle表示空心圆<br>代码：</ul></li></ul></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;无序列表&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">        &lt;li&gt;热烈庆祝xxx同学高薪就业&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;热烈庆祝xxx同学高薪就业&lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">    &lt;ul type=&quot;square&quot;&gt;</span><br><span class="line">        &lt;li&gt;热烈庆祝xxx同学高薪就业&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;热烈庆祝xxx同学高薪就业&lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">    &lt;ul type=&quot;circle&quot;&gt;</span><br><span class="line">        &lt;li&gt;热烈庆祝xxx同学高薪就业&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;热烈庆祝xxx同学高薪就业&lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-
-<p>   ● 有序列表<br>     ○ 有序列表使用<ol>定义列表，<li>定义列表中的条目，默认此列项目使用阿拉伯数字进行标记<br>     ○ 通过在<ol>中添加type属性更改列表的展示标记，其中‘A’表示大写字母，‘a’表示小写字母，‘I’表示大写罗马数字，‘i’表示小写罗马数字，‘1’表示阿拉伯数字（默认）<br>代码：</ol></li></ol></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;有序列表&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;h3&gt;工作流程&lt;/h3&gt;</span><br><span class="line">    &lt;ol&gt;</span><br><span class="line">        &lt;li&gt;每日晨会，任务分配&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;工作任务&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;工作日报&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;下班回家&lt;/li&gt;</span><br><span class="line">    &lt;/ol&gt;</span><br><span class="line">    &lt;ol type=&quot;A&quot;&gt;</span><br><span class="line">          &lt;li&gt;每日晨会，任务分配&lt;/li&gt;</span><br><span class="line">          &lt;li&gt;工作任务&lt;/li&gt;</span><br><span class="line">          &lt;li&gt;工作日报&lt;/li&gt;</span><br><span class="line">          &lt;li&gt;下班回家&lt;/li&gt;</span><br><span class="line">    &lt;/ol&gt;</span><br><span class="line">    &lt;ol type=&quot;a&quot;&gt;</span><br><span class="line">          &lt;li&gt;每日晨会，任务分配&lt;/li&gt;</span><br><span class="line">          &lt;li&gt;工作任务&lt;/li&gt;</span><br><span class="line">          &lt;li&gt;工作日报&lt;/li&gt;</span><br><span class="line">          &lt;li&gt;下班回家&lt;/li&gt;</span><br><span class="line">    &lt;/ol&gt;</span><br><span class="line">    &lt;ol type=&quot;I&quot;&gt;</span><br><span class="line">          &lt;li&gt;每日晨会，任务分配&lt;/li&gt;</span><br><span class="line">          &lt;li&gt;工作任务&lt;/li&gt;</span><br><span class="line">          &lt;li&gt;工作日报&lt;/li&gt;</span><br><span class="line">          &lt;li&gt;下班回家&lt;/li&gt;</span><br><span class="line">    &lt;/ol&gt;</span><br><span class="line">    &lt;ol type=&quot;i&quot;&gt;</span><br><span class="line">          &lt;li&gt;每日晨会，任务分配&lt;/li&gt;</span><br><span class="line">          &lt;li&gt;工作任务&lt;/li&gt;</span><br><span class="line">          &lt;li&gt;工作日报&lt;/li&gt;</span><br><span class="line">          &lt;li&gt;下班回家&lt;/li&gt;</span><br><span class="line">     &lt;/ol&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-
-<p>   ● 自定义列表<br>     ○ 使用<dl>定义列表，<dt>定义列表中的项目，<dd>定义列表条目<br>     ○ 自定义列表不单单只用了区分项目，后期通过样式，标签嵌套可以胜任诸多任务，如：商城，外卖类网站商品的模块划分<br>代码：</dd></dt></dl></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;自定义列表&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;dl&gt;</span><br><span class="line">        &lt;dt&gt;pc端游戏&lt;/dt&gt;</span><br><span class="line">        &lt;dd&gt;穿越火线&lt;/dd&gt;</span><br><span class="line">        &lt;dd&gt;英雄联盟&lt;/dd&gt;</span><br><span class="line">        &lt;dd&gt;CSGO&lt;/dd&gt;</span><br><span class="line">        &lt;dt&gt;手机游戏&lt;/dt&gt;</span><br><span class="line">        &lt;dd&gt;和平精英&lt;/dd&gt;</span><br><span class="line">        &lt;dd&gt;王者荣耀&lt;/dd&gt;</span><br><span class="line">        &lt;dd&gt;阴阳师&lt;/dd&gt;</span><br><span class="line">    &lt;/dl&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>   ● 嵌套列表<br>     ○ 列表可以通过多层嵌套实现多级列表<br>代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;嵌套列表&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">        &lt;li&gt;茶</span><br><span class="line">            &lt;ul&gt;</span><br><span class="line">                &lt;li&gt;白茶&lt;/li&gt;</span><br><span class="line">                &lt;li&gt;绿茶&lt;/li&gt;</span><br><span class="line">                &lt;li&gt;红茶&lt;/li&gt;</span><br><span class="line">            &lt;/ul&gt;</span><br><span class="line">        &lt;/li&gt;</span><br><span class="line">        &lt;li&gt;咖啡</span><br><span class="line">            &lt;ul&gt;</span><br><span class="line">                &lt;li&gt;拿铁&lt;/li&gt;</span><br><span class="line">                &lt;li&gt;卡布奇洛&lt;/li&gt;</span><br><span class="line">            &lt;/ul&gt;</span><br><span class="line">        &lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="1-10-2-常用的行级标签"><a href="#1-10-2-常用的行级标签" class="headerlink" title="1.10.2 常用的行级标签"></a>1.10.2 常用的行级标签</h3><p>   ● 内联元素<br>     ○ 使用<span>…<span>表示<br>     ○ 单独使用没有特定的含义<br>     ○ 当与CSS一同使用，用来组合文档中的行内元素，如：在一行文字中给某一个字单独设置样式，再或者在某行字中添加小图标<br>代码：</span></span></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;span&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;p&gt;</span><br><span class="line">        &lt;span style=&quot;font-size: 33px&quot;&gt;我&lt;/span&gt;</span><br><span class="line">        最</span><br><span class="line">        &lt;span style=&quot;font-size: 33px&quot;&gt;帅&lt;/span&gt;</span><br><span class="line">    &lt;/p&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-
-<p>   ● 链接标签<br>     ○ 使用<a href="url">…</a>表示<br>     ○ 用于从一个页面跳转到另一个页面<br>     ○ href表示跳转的链接目标<br>     ○ 默认情况下链接将以以下形式出现在网页中<br>       ■ 在未点击访问时链接字体程蓝色并带同色下划线<br>       ■ 在点击后链接字体会程红色显示并带同色下划线<br>     ○ 标签常用属性<br>属性    属性值    作用<br>download    filename    指定下载链接<br>href    URL    规定链接目标<br>target    _blank<br>_parent<br>_self<br>_top    _blank：新窗口打开。<br>_parent：在父窗口中打开链接。<br>_self：默认，当前页面跳转。<br>_top：在当前窗体打开链接，并替换当前的整个窗体(框架页)。<br>  ○ 在网页开发中常用的链接有以下四种：<br>链接分类    属性参数    作用<br>空链接    href=”#”<br>href=”javascript:void(0)”    空链接即只能点击不会做页面跳转的链接，用于向页面上添加对象或行为  如：设为首页，添加收藏等<br>本地链接    href=”本地路径”    用于本地工程/服务器页面之间的相互跳转<br>网络链接    herf=”url”    用于给网站添加外部链接，点击后跳转到其它网站<br>锚链接    href=”#name”    用于添加页面内快速引导，可以从页面的一个位置快速的转到另一个位置<br>空链接示例代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;空链接&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">   &lt;a href=&quot;#&quot;&gt;空链接&lt;/a&gt;</span><br><span class="line">   &lt;a href=&quot;javascript:void(0)&quot;&gt;空链接&lt;/a&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<p>附：<br>空链接“#”与“javascript:void(0)”的区别：</p>
-<ol>
-<li>“#”包含一个位置信息，默认为网页顶端，当页面高度大于一屏时，点击后会跳转到网页顶部</li>
-<li>“javascript:void(0)”是一个伪协议，表示url内容通过javascript执行，而void(0)则表示不作任何操作，这样该标签既保留了链接样式还能防止页面跳转</li>
-<li>空链接通常通过添加javascript事件去做一些其它操作，如：设置收藏，设置首页，弹窗等，这些会在本书javascript事件章节详细讲解</li>
-</ol>
-<p>本地链接示例代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;首页&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">   &lt;a href=&quot;Login.html&quot;&gt;登录&lt;/a&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;登录页&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">   &lt;a href=&quot;Index.html&quot;&gt;返回首页&lt;/a&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-
-<p>附：<br>绝对路径和相对路径<br>绝对路径：是指文件在硬盘上的真正存在的路径，如：一张名为“头像.jpg”的图片或一个名为“index.html”的网页存放在我计算机中的“C:\Users\document\WebstormProjects\untitled15”目录中，则图片的绝对路径为“C:\Users\document\WebstormProjects\untitled15\头像.jpg”，网页的绝对路径为“C:\Users\document\WebstormProjects\untitled15\index.html”，但在开发时很少使用绝对路径，当指定了决定路径后在项目路径在本地计算机上是没问题的，但上传到服务器或在其它计算机上时很可能会出现找不到路径，路径错误等问题。<br>相对路径：指由文件本身相对于目标文件的路径，使用相对路径的三种写法，下边以网页index.html引用网页Login.html为例说明：<br>1.若Login.html相对index.html是在同一目录，那么网页在引用图片时则只需要通过Login.html名称+后缀引用即可<br>位置关系图示    代码示例</p>
-<pre><code>         2.若网页Login.html存在某个文件夹中，文件夹与网页index.html属于同一目录，那么网页index.html在引用网页Login.html时则需要通过找到文件夹使用分隔符“/”才能找到文件夹中相对的网页Login.html文件，这里需要注意：绝对路径使用分隔符“\”，相对路径使用分隔符“/”
-</code></pre>
-<p>位置关系图示    代码示例</p>
-<p>3.若网页index.html和网页Login.html都存在不同的文件夹中，两个不同的文件夹属于同一目录，那么网页index.html在引用网页Login.html时则需要通过“../”返回上一级路径再去引用存放网页Login.html的文件夹再使用分隔符“/”引用网页Login.html，这里需要注意一个“../”，表示网上返回一级，如果要返回多个则需要使用多个“../”<br>位置关系图示    代码示例</p>
-<p>网络链接示例代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;网络链接&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">   &lt;a href=&quot;https://www.baidu.com&quot;&gt;百度一下&lt;/a&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-
-<p>锚链接示例代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;a id=&quot;top&quot;&gt;这是网页顶部&lt;/a&gt;</span><br><span class="line">    &lt;a href=&quot;#middle&quot;&gt;跳转至网页中部&lt;/a&gt;</span><br><span class="line">    &lt;a href=&quot;#bottom&quot;&gt;跳转至网页底部&lt;/a&gt;</span><br><span class="line">    &lt;p&gt;网页内容&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;....&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;这里省略若干行相同内容&lt;/p&gt;</span><br><span class="line">    &lt;a id=&quot;middle&quot;&gt;这是网页中部&lt;/a&gt;</span><br><span class="line">    &lt;a href=&quot;#top&quot;&gt;跳转至网页顶部&lt;/a&gt;</span><br><span class="line">    &lt;a href=&quot;#bottom&quot;&gt;跳转至网页底部&lt;/a&gt;</span><br><span class="line">    &lt;p&gt;网页内容&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;....&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;这里省略若干行相同内容&lt;/p&gt;</span><br><span class="line">    &lt;a href=&quot;#middle&quot;&gt;跳转至网页中部&lt;/a&gt;</span><br><span class="line">    &lt;a href=&quot;#top&quot;&gt;跳转至网页顶部&lt;/a&gt;</span><br><span class="line">    &lt;a id=&quot;bottom&quot;&gt;这是网页底部&lt;/a&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-
-<p>附：</p>
-<ol>
-<li>锚链接是在页面内的不同位置跳转，本质上就是元素间的跳转</li>
-<li>使用锚链接首先要建立锚点目标，只需要给元素添加id或name属性即可 如：<code>&lt;a name=&quot;top&quot;&gt;,&lt;div id=&quot;top&quot;&gt;</code></li>
-<li>建立好锚点目标后再使用<code>&lt;a href=&quot;#id值或name值&quot;&gt;</code>引用锚点</li>
-<li>如果不同页面跳转，同时存在锚点，则先跳转到要跳转的页面，然后在寻找锚点元素进行跳转<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;首页&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;a href=&quot;demo.html#bottom&quot;&gt;走你&lt;/a&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;测试页&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;p&gt;这是内容&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;.....&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;此时省略若干行相同内容&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;这是内容&lt;/p&gt;</span><br><span class="line">    &lt;div id=&quot;bottom&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></li>
-</ol>
-<p>● 图片标签<br>  ○ 图片标签使用<code>&lt;img/&gt;</code>表示，图片标签没有结束标签“/”表示结束<br>  ○ 标签属性<br>属性    属性值    作用<br>src（必需）    url    图片路径或网络地址<br>title    text    图片标题描述，当鼠标悬停在图片上时显示<br>alt    text    图片替换文本，当图片路径发生错误时显示<br>width    pixels    图片宽度<br>height    pixels    图片高度<br>代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;图片标签&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;img src=&quot;F.jpg&quot; alt=&quot;这是替换文本&quot; title=&quot;这是一张图片&quot; width=&quot;600&quot; height=&quot;406&quot;&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-
-<p>● 图片增强（map）<br>  ○ <code>&lt;map&gt;</code>标签有助于定义图像映射。图像映射指的是图像中包含一个或多个可点击区域。<code>&lt;map&gt;</code>标签与<code>&lt;area&gt;</code>标签一起确定可点击区域。可点击区域可以是矩形、圆形或多边形区域这些形状之一。如果不指定形状，就会认为是整个图像。<br>示例</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;img src=&quot;../images/mapImages/4.png&quot; width=&quot;592&quot; height=&quot;182&quot; alt=&quot;mapSelect&quot; usemap=&quot;#circusmap&quot;&gt;</span><br><span class="line">        &lt;map name=&quot;circusmap&quot;&gt;</span><br><span class="line">            &lt;area shape=&quot;rect&quot; coords=&quot;82,70,155,133&quot; href=&quot;map2.html&quot;&gt;</span><br><span class="line">            &lt;area shape=&quot;rect&quot; coords=&quot;297,70,387, 133&quot; href=&quot;map1.html&quot;&gt;</span><br><span class="line">            &lt;area shape=&quot;rect&quot; coords=&quot;480,70,572, 133&quot; href=&quot;map3.html&quot;&gt;</span><br><span class="line">        &lt;/map&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="知识补充："><a href="#知识补充：" class="headerlink" title="知识补充："></a>知识补充：</h2><p>  ○ <code>&lt;area&gt;</code>标签定义图像映射中的区域<br>  ○ shape属性<br>    ■ shape属性用于定义图像映射中对鼠标敏感的区域的形状<br>      ● 圆形（circ或circle）<br>      ● 多边形（poly或polygon）<br>      ● 矩形（rect或rectangle）<br>  ○ coords属性<br>    ■ 圆形：shape=”circle”，coords=”x,y,z”<br>这里的 x 和 y 定义了圆心的位置（”0,0” 是图像左上角的坐标），z 是以像素为单位的圆形半径。<br>    ■ 多边形：shape=”polygon”，coords=”x1,y1,x2,y2,x3,y3,…”<br>每一对 “x,y” 坐标都定义了多边形的一个顶点（”0,0” 是图像左上角的坐标）。定义三角形至少需要三组坐标；高纬多边形则需要更多数量的顶点。<br>多边形会自动封闭，因此在列表的结尾不需要重复第一个坐标来闭合整个区域。<br>    ■ 矩形：shape=”rectangle”，coords=”x1,y1,x2,y2”<br>第一个坐标是矩形的一个角的顶点坐标，另一对坐标是对角的顶点坐标，”0,0” 是图像左上角的坐标。请注意，定义矩形实际上是定义带有四个顶点的多边形的一种简化方法。<br>● 常用文本格式化标签<br>标签    描述</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;b&gt;	定义粗体文本</span><br><span class="line">&lt;em&gt;	定义着重文字</span><br><span class="line">&lt;i&gt;	定义斜体文字</span><br><span class="line">&lt;small&gt;	定义小号文字</span><br><span class="line">&lt;strong&gt;	定义加重语气</span><br><span class="line">&lt;sub&gt;	定义下标字</span><br><span class="line">&lt;sup&gt;	定义上标字</span><br><span class="line">&lt;ins&gt;	定义插入字(加了下划线)</span><br><span class="line">&lt;del&gt;	定义删除字(加了删除线)</span><br></pre></td></tr></table></figure>
-
-<p>代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE HTML&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;b&gt;定义粗体文本&lt;/b&gt;</span><br><span class="line">    &lt;br/&gt;</span><br><span class="line">    &lt;em&gt;定义着重文字&lt;/em&gt;</span><br><span class="line">    &lt;br/&gt;</span><br><span class="line">    &lt;i&gt;定义斜体文字&lt;/i&gt;</span><br><span class="line">    &lt;br/&gt;</span><br><span class="line">    &lt;small&gt;定义小号文字&lt;/small&gt;</span><br><span class="line">    &lt;br/&gt;</span><br><span class="line">    &lt;strong&gt;定义加重语气&lt;/strong&gt;</span><br><span class="line">    &lt;br/&gt;</span><br><span class="line">    定义下标字 &lt;sub&gt;aa&lt;/sub&gt;</span><br><span class="line">    &lt;br/&gt;</span><br><span class="line">    定义上标字 &lt;sup&gt;aa&lt;/sup&gt;</span><br><span class="line">    &lt;br/&gt;</span><br><span class="line">    &lt;ins&gt;定义插入字(加了下划线)&lt;/ins&gt;</span><br><span class="line">    &lt;br/&gt;</span><br><span class="line">    &lt;del&gt;定义删除字(加了删除线)&lt;/del&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="学习心得"><a href="#学习心得" class="headerlink" title="学习心得"></a>学习心得</h2><p><em><strong>今天是到这的第一天，一起都充满着好奇。下午老师就开始讲HTML相关内容，因为之前学过目前还算很好理解。听课老师说越到后面学习越困难，不过没事到这就是来学习的，为了能找到更好的工作在所不辞。由于报道的有点迟了，到现在还没求去过宿舍，不知道宿舍的环境怎么样，很是期待。西安相对于甘肃还是很热的，幸好学习的地方都用空调，不然像静下心来学习都是问题。在接下载的几个月中弥补之前的不足，学习更多的知识，向向往的的工作不断迈进。</strong></em></p>
-]]></content>
-      <categories>
-        <category>XiAnTrain</category>
-      </categories>
+    <title></title>
+    <url>/2022/07/15/baidu_verify_code-lKi6sS4j7S/</url>
+    <content><![CDATA[f2c7aa5496980a4ac5b119f84ca39e87]]></content>
   </entry>
   <entry>
     <title>The requested URL returned error: 403</title>
@@ -794,11 +799,6 @@
       <categories>
         <category>fatal</category>
       </categories>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/2022/07/15/baidu_verify_code-lKi6sS4j7S/</url>
-    <content><![CDATA[f2c7aa5496980a4ac5b119f84ca39e87]]></content>
   </entry>
   <entry>
     <title>Hello World</title>
@@ -1224,6 +1224,110 @@
       </categories>
   </entry>
   <entry>
+    <title>培训心得[java控制流程]</title>
+    <url>/2022/07/18/xianTrain11-controllerStream/</url>
+    <content><![CDATA[<p><em><strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Java基础学习打卡第2天<br>学习链接：<a href="https://www.yuque.com/docs/share/89bb9cac-ccd1-44dd-b2e2-e11933c44c39#">https://www.yuque.com/docs/share/89bb9cac-ccd1-44dd-b2e2-e11933c44c39?#</a> 《第3章 流程控制》密码：zk84</strong></em></p>
+<span id="more"></span>
+
+<h3 id="1-控制流程"><a href="#1-控制流程" class="headerlink" title="1 控制流程"></a>1 控制流程</h3><blockquote>
+<ul>
+<li>可分为：顺序结构、分支结构、循环结构</li>
+</ul>
+</blockquote>
+<h3 id="1-1-顺序结构"><a href="#1-1-顺序结构" class="headerlink" title="1.1 顺序结构"></a>1.1 顺序结构</h3><blockquote>
+<p>程序自上而下依次执行，中间没有任何判断和跳转。</p>
+</blockquote>
+<h3 id="1-2-分支结构"><a href="#1-2-分支结构" class="headerlink" title="1.2 分支结构"></a>1.2 分支结构</h3><blockquote>
+<p>java提供了两种分支结构：if语句和switch语句</p>
+</blockquote>
+<h4 id="1-2-1-if条件语句"><a href="#1-2-1-if条件语句" class="headerlink" title="1.2.1 if条件语句"></a>1.2.1 if条件语句</h4><blockquote>
+<p>if语句使用布尔表达式或者布尔值作为分支条件进行分支控制，if语句有一下三种形式：</p>
+<ul>
+<li>单分支结构</li>
+</ul>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">if(logic expression)&#123;</span><br><span class="line">	statement;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&gt;+双分支结构</span><br></pre></td></tr></table></figure>
+
+<p>if(logic expression){<br>    statement;<br>}else{<br>    statement;<br>}</p>
+<blockquote>
+<ul>
+<li>多分支结构</li>
+</ul>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">if(logic expression)&#123;</span><br><span class="line">	statement;</span><br><span class="line">&#125;else if&#123;</span><br><span class="line">	statement;</span><br><span class="line">&#125;else if&#123;</span><br><span class="line">	statement；</span><br><span class="line">&#125;else&#123;</span><br><span class="line">	statement;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-2-2-switch条件语句"><a href="#1-2-2-switch条件语句" class="headerlink" title="1.2.2 switch条件语句"></a>1.2.2 switch条件语句</h4><blockquote>
+<p>switch语句有一个控制表达式和多个case标签组成，和if语句不同的是，switch语句后面的控制表达式的数据类型只能是byte、short、chat、int四种类型、从java7以后添加了枚举类型和String类型，switch语句和语法格式如下：</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">switch(expression)&#123;</span><br><span class="line">	case condition1:</span><br><span class="line">	&#123;</span><br><span class="line">		statement(s);</span><br><span class="line">		break;</span><br><span class="line">	&#125;</span><br><span class="line">	case condition2:</span><br><span class="line">	&#123;</span><br><span class="line">		statement(s);</span><br><span class="line">		break;</span><br><span class="line">	&#125;</span><br><span class="line">	case condition3:</span><br><span class="line">	&#123;</span><br><span class="line">		statement(s);</span><br><span class="line">		break;</span><br><span class="line">	&#125;</span><br><span class="line">	default:&#123;</span><br><span class="line">		statement(s);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-2-2-分支嵌套"><a href="#1-2-2-分支嵌套" class="headerlink" title="1.2.2 分支嵌套"></a>1.2.2 分支嵌套</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.bytecollege;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 本例将演示输入一个年份</span></span><br><span class="line"><span class="comment"> * 判断是否是闰年</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> MR.W</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LeapYear</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;请输入年份：&quot;</span>);</span><br><span class="line">		Scanner scanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		<span class="keyword">int</span> year = scanner.nextInt();</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span>(year%<span class="number">4</span>==<span class="number">0</span>) &#123;</span><br><span class="line">			<span class="keyword">if</span>(year%<span class="number">100</span>==<span class="number">0</span>) &#123;</span><br><span class="line">				<span class="keyword">if</span>(year%<span class="number">400</span>==<span class="number">0</span>) &#123;</span><br><span class="line">					System.out.println(year+<span class="string">&quot;是闰年&quot;</span>);</span><br><span class="line">				&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">					System.out.println(year+<span class="string">&quot;不是闰年&quot;</span>);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">				System.out.println(year+<span class="string">&quot;是闰年&quot;</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">			System.out.println(year+<span class="string">&quot;不是闰年&quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="1-3-循环结构"><a href="#1-3-循环结构" class="headerlink" title="1.3 循环结构"></a>1.3 循环结构</h3><p>循环结构是指在满足某个循环条件的情况下，反复执行同一代码，只到不满足循环条件为止。恰当的循环结构包含：初始化语句、循环条件、循环体、迭代语句；</p>
+<h4 id="1-3-1-for循环"><a href="#1-3-1-for循环" class="headerlink" title="1.3.1 for循环"></a>1.3.1 for循环</h4><p>语法格式如下：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>([init_statment];[test_exression];[iteration_statement])&#123;</span><br><span class="line">    statement;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>其中init_statement指初始化条件，test_exoression指循环条件，statement是循环体，iteration_statment迭代语句，在statement执行结束以后执行。先执行init_statement初始化语句只在混循环条件开始前执行一次，每次执行循环体之前，先计算test_exression循环条件的值。</p>
+<p>例如：计算1-100的和</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package cn.bytecollege;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 本示例将演示for循环</span><br><span class="line"> * @author MR.W</span><br><span class="line"> *</span><br><span class="line"> */</span><br><span class="line">public class ForDemo &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//定义变量保存结果</span><br><span class="line">		int sum= 0;</span><br><span class="line">		for (int i = 1;i&lt;=100;i++) &#123;</span><br><span class="line">			sum += i;</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(sum);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><b>注意：</b></p>
+<blockquote>
+<ul>
+<li>除非特殊情况尽量不要在循环体内修改循环变量的值。</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>for循环圆括号中只有两个分号是必须的，初始化语句、循环条件、迭代语句部分都是可以省略的。如：<code>for( ; ; )</code></li>
+</ul>
+</blockquote>
+<h4 id="1-3-2-while循环"><a href="#1-3-2-while循环" class="headerlink" title="1.3.2 while循环"></a>1.3.2 while循环</h4><p>如果while循环的循环体部分和迭代语句合并在一起，且只有一行代码，则可以省略。（但是通常不建议省略）</p>
+<p>使用while循环时，一定要保证循环条件有变成false的时候，否则这个循环将变成循环，用于无法结束循环。</p>
+<p>语法格式如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">while(循环条件)&#123;</span><br><span class="line">	//循环体</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>例如：计算1-100的和</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.bytecollege;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 本例将演示while循环</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> MR.W</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WhileDemo</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> i = <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">while</span>(i&lt;=<span class="number">100</span>) &#123;</span><br><span class="line">			sum+=i;</span><br><span class="line">			i++;</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(sum);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="1-3-3-do-while循环"><a href="#1-3-3-do-while循环" class="headerlink" title="1.3.3  do while循环"></a>1.3.3  do while循环</h4><p>do while循环是先执行一次循环体，再判断循环条件，而while循环是先判断循环条件再执行一次循环体。</p>
+<p>语法格式如下：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">do</span>&#123;</span><br><span class="line">	<span class="comment">//循环体</span></span><br><span class="line">&#125;<span class="keyword">while</span>(循环条件);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="1-4-控制循环结构"><a href="#1-4-控制循环结构" class="headerlink" title="1.4 控制循环结构"></a>1.4 控制循环结构</h3><p>java提供了continue和break空值循环结构，在java中goto只作为了保留字</p>
+<h4 id="1-4-1使用break结束循环"><a href="#1-4-1使用break结束循环" class="headerlink" title="1.4.1使用break结束循环"></a>1.4.1使用break结束循环</h4><p>break用于完全结束一个循环，跳出循环体，不管那这个哪种循环，一旦循环体中遇到break，系统将完全结束该循环，开始执行循环结构以后的代码。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package cn.bytecollege;</span><br><span class="line">/**</span><br><span class="line"> * 本例将演示break</span><br><span class="line"> * @author MR.W</span><br><span class="line"> *</span><br><span class="line"> */</span><br><span class="line">public class BreakDemo &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		for (int i = 0; i &lt; 10; i++) &#123;</span><br><span class="line">			if(i==7) &#123;</span><br><span class="line">                System.out.println(i);</span><br><span class="line">				break;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>循环嵌套中使用break</p>
+<blockquote>
+<p>遇到一个break outer语句，该语句将会导致结束outer标签指定的循环，不是break所在的循环，而是结束break循环的外层循环。</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package cn.bytecollege;</span><br><span class="line">/**</span><br><span class="line"> * 本例将演示循环嵌套中break结束外层循环</span><br><span class="line"> * @author MR.W</span><br><span class="line"> *</span><br><span class="line"> */</span><br><span class="line">public class BreakDemo3 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		outer:</span><br><span class="line">		for (int i = 0; i &lt; 5; i++) &#123;</span><br><span class="line">			//内层循环</span><br><span class="line">			for (int j = 0; j &lt; 3; j++) &#123;</span><br><span class="line">				if(j==1) &#123;</span><br><span class="line">					//跳出outer所标识的循环</span><br><span class="line">					break outer;</span><br><span class="line">				&#125;</span><br><span class="line">				System.out.println(&quot;i的值为：&quot;+i+&quot;,j的值为：&quot;+j);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;	</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="1-4-2-使用continue跳转次循环"><a href="#1-4-2-使用continue跳转次循环" class="headerlink" title="1.4.2 使用continue跳转次循环"></a>1.4.2 使用continue跳转次循环</h4><p>continue只是跳出次循环，继续执行剩下的循环，并不是完全终止循环。</p>
+<p>示例如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">package cn.bytecollege;</span><br><span class="line">/**</span><br><span class="line"> * 本例将演示continue</span><br><span class="line"> * @author MR.W</span><br><span class="line"> *</span><br><span class="line"> */</span><br><span class="line">public class ContinueDemo &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		for (int i = 0; i &lt; 10; i++) &#123;</span><br><span class="line">			if(i==7) &#123;</span><br><span class="line">				continue;</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println(i);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>循环嵌套中使用continue</p>
+<blockquote>
+<p>在多层循环中，continue会忽略当前循环，直接到外层循环继续进行循环</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package cn.bytecollege;</span><br><span class="line">/**</span><br><span class="line"> * 本例将演示多层循环嵌套中使用Continue</span><br><span class="line"> * @author MR.W</span><br><span class="line"> *</span><br><span class="line"> */</span><br><span class="line">public class ContinueDemo2 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		outer:</span><br><span class="line">		for (int i = 0; i &lt; 5; i++) &#123;</span><br><span class="line">			//内层循环</span><br><span class="line">			for (int j = 0; j &lt; 3; j++) &#123;</span><br><span class="line">				if(j==1) &#123;</span><br><span class="line">					//跳出outer所标识的循环</span><br><span class="line">					continue outer;</span><br><span class="line">				&#125;</span><br><span class="line">				System.out.println(&quot;i的值为：&quot;+i+&quot;,j的值为：&quot;+j);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p>课后作业：<br>1.请将101转换成二进制，并将二进制的前3位替换为1，并求出原码</p>
+<p>0000 0000 0000 0000 0000 0000 0110 0101         101的二进制<br>1110 0000 0000 0000 0000 0000 0110 0101          替换后的补码<br>1110 0000 0000 0000 0000 0000 0110 0100          补码减一<br>1001 1111 1111 1111 1111 1111 1001 1011          取反求出原码</p>
+]]></content>
+      <categories>
+        <category>XiAnTrain</category>
+      </categories>
+  </entry>
+  <entry>
     <title>培训心得[数组]</title>
     <url>/2022/07/18/xianTrain12-Array/</url>
     <content><![CDATA[<p><em><strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Java基础学习打卡第2天<br>学习链接：<a href="https://www.yuque.com/docs/share/5b051183-1e6a-4c80-904f-17070f1c9653#">https://www.yuque.com/docs/share/5b051183-1e6a-4c80-904f-17070f1c9653?#</a> 《第4章 数组》密码：mg6w</strong></em></p>
@@ -1343,110 +1447,6 @@
 </ul>
 </blockquote>
 <h3 id="学习心得"><a href="#学习心得" class="headerlink" title="学习心得"></a>学习心得</h3><p>​            今天学习了一些java的控制流程和数组，基本全部掌握，毕竟在学校里这一块知识经常用到，所以再学起来也是很容易的。由于之前在客厅睡，睡的不好。昨天就给安老师说完之后，就要我搬了宿舍，现在一个人住，超喜欢一个人的感觉，超自由。刷视频想外放，就外放。</p>
-]]></content>
-      <categories>
-        <category>XiAnTrain</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>培训心得[java控制流程]</title>
-    <url>/2022/07/18/xianTrain11-controllerStream/</url>
-    <content><![CDATA[<p><em><strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Java基础学习打卡第2天<br>学习链接：<a href="https://www.yuque.com/docs/share/89bb9cac-ccd1-44dd-b2e2-e11933c44c39#">https://www.yuque.com/docs/share/89bb9cac-ccd1-44dd-b2e2-e11933c44c39?#</a> 《第3章 流程控制》密码：zk84</strong></em></p>
-<span id="more"></span>
-
-<h3 id="1-控制流程"><a href="#1-控制流程" class="headerlink" title="1 控制流程"></a>1 控制流程</h3><blockquote>
-<ul>
-<li>可分为：顺序结构、分支结构、循环结构</li>
-</ul>
-</blockquote>
-<h3 id="1-1-顺序结构"><a href="#1-1-顺序结构" class="headerlink" title="1.1 顺序结构"></a>1.1 顺序结构</h3><blockquote>
-<p>程序自上而下依次执行，中间没有任何判断和跳转。</p>
-</blockquote>
-<h3 id="1-2-分支结构"><a href="#1-2-分支结构" class="headerlink" title="1.2 分支结构"></a>1.2 分支结构</h3><blockquote>
-<p>java提供了两种分支结构：if语句和switch语句</p>
-</blockquote>
-<h4 id="1-2-1-if条件语句"><a href="#1-2-1-if条件语句" class="headerlink" title="1.2.1 if条件语句"></a>1.2.1 if条件语句</h4><blockquote>
-<p>if语句使用布尔表达式或者布尔值作为分支条件进行分支控制，if语句有一下三种形式：</p>
-<ul>
-<li>单分支结构</li>
-</ul>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">if(logic expression)&#123;</span><br><span class="line">	statement;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&gt;+双分支结构</span><br></pre></td></tr></table></figure>
-
-<p>if(logic expression){<br>    statement;<br>}else{<br>    statement;<br>}</p>
-<blockquote>
-<ul>
-<li>多分支结构</li>
-</ul>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">if(logic expression)&#123;</span><br><span class="line">	statement;</span><br><span class="line">&#125;else if&#123;</span><br><span class="line">	statement;</span><br><span class="line">&#125;else if&#123;</span><br><span class="line">	statement；</span><br><span class="line">&#125;else&#123;</span><br><span class="line">	statement;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="1-2-2-switch条件语句"><a href="#1-2-2-switch条件语句" class="headerlink" title="1.2.2 switch条件语句"></a>1.2.2 switch条件语句</h4><blockquote>
-<p>switch语句有一个控制表达式和多个case标签组成，和if语句不同的是，switch语句后面的控制表达式的数据类型只能是byte、short、chat、int四种类型、从java7以后添加了枚举类型和String类型，switch语句和语法格式如下：</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">switch(expression)&#123;</span><br><span class="line">	case condition1:</span><br><span class="line">	&#123;</span><br><span class="line">		statement(s);</span><br><span class="line">		break;</span><br><span class="line">	&#125;</span><br><span class="line">	case condition2:</span><br><span class="line">	&#123;</span><br><span class="line">		statement(s);</span><br><span class="line">		break;</span><br><span class="line">	&#125;</span><br><span class="line">	case condition3:</span><br><span class="line">	&#123;</span><br><span class="line">		statement(s);</span><br><span class="line">		break;</span><br><span class="line">	&#125;</span><br><span class="line">	default:&#123;</span><br><span class="line">		statement(s);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="1-2-2-分支嵌套"><a href="#1-2-2-分支嵌套" class="headerlink" title="1.2.2 分支嵌套"></a>1.2.2 分支嵌套</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.bytecollege;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 本例将演示输入一个年份</span></span><br><span class="line"><span class="comment"> * 判断是否是闰年</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> MR.W</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LeapYear</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;请输入年份：&quot;</span>);</span><br><span class="line">		Scanner scanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		<span class="keyword">int</span> year = scanner.nextInt();</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span>(year%<span class="number">4</span>==<span class="number">0</span>) &#123;</span><br><span class="line">			<span class="keyword">if</span>(year%<span class="number">100</span>==<span class="number">0</span>) &#123;</span><br><span class="line">				<span class="keyword">if</span>(year%<span class="number">400</span>==<span class="number">0</span>) &#123;</span><br><span class="line">					System.out.println(year+<span class="string">&quot;是闰年&quot;</span>);</span><br><span class="line">				&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">					System.out.println(year+<span class="string">&quot;不是闰年&quot;</span>);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">				System.out.println(year+<span class="string">&quot;是闰年&quot;</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">			System.out.println(year+<span class="string">&quot;不是闰年&quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="1-3-循环结构"><a href="#1-3-循环结构" class="headerlink" title="1.3 循环结构"></a>1.3 循环结构</h3><p>循环结构是指在满足某个循环条件的情况下，反复执行同一代码，只到不满足循环条件为止。恰当的循环结构包含：初始化语句、循环条件、循环体、迭代语句；</p>
-<h4 id="1-3-1-for循环"><a href="#1-3-1-for循环" class="headerlink" title="1.3.1 for循环"></a>1.3.1 for循环</h4><p>语法格式如下：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>([init_statment];[test_exression];[iteration_statement])&#123;</span><br><span class="line">    statement;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>其中init_statement指初始化条件，test_exoression指循环条件，statement是循环体，iteration_statment迭代语句，在statement执行结束以后执行。先执行init_statement初始化语句只在混循环条件开始前执行一次，每次执行循环体之前，先计算test_exression循环条件的值。</p>
-<p>例如：计算1-100的和</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package cn.bytecollege;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 本示例将演示for循环</span><br><span class="line"> * @author MR.W</span><br><span class="line"> *</span><br><span class="line"> */</span><br><span class="line">public class ForDemo &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//定义变量保存结果</span><br><span class="line">		int sum= 0;</span><br><span class="line">		for (int i = 1;i&lt;=100;i++) &#123;</span><br><span class="line">			sum += i;</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(sum);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p><b>注意：</b></p>
-<blockquote>
-<ul>
-<li>除非特殊情况尽量不要在循环体内修改循环变量的值。</li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
-<li>for循环圆括号中只有两个分号是必须的，初始化语句、循环条件、迭代语句部分都是可以省略的。如：<code>for( ; ; )</code></li>
-</ul>
-</blockquote>
-<h4 id="1-3-2-while循环"><a href="#1-3-2-while循环" class="headerlink" title="1.3.2 while循环"></a>1.3.2 while循环</h4><p>如果while循环的循环体部分和迭代语句合并在一起，且只有一行代码，则可以省略。（但是通常不建议省略）</p>
-<p>使用while循环时，一定要保证循环条件有变成false的时候，否则这个循环将变成循环，用于无法结束循环。</p>
-<p>语法格式如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">while(循环条件)&#123;</span><br><span class="line">	//循环体</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>例如：计算1-100的和</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.bytecollege;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 本例将演示while循环</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> MR.W</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WhileDemo</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> i = <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">while</span>(i&lt;=<span class="number">100</span>) &#123;</span><br><span class="line">			sum+=i;</span><br><span class="line">			i++;</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(sum);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h4 id="1-3-3-do-while循环"><a href="#1-3-3-do-while循环" class="headerlink" title="1.3.3  do while循环"></a>1.3.3  do while循环</h4><p>do while循环是先执行一次循环体，再判断循环条件，而while循环是先判断循环条件再执行一次循环体。</p>
-<p>语法格式如下：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">do</span>&#123;</span><br><span class="line">	<span class="comment">//循环体</span></span><br><span class="line">&#125;<span class="keyword">while</span>(循环条件);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="1-4-控制循环结构"><a href="#1-4-控制循环结构" class="headerlink" title="1.4 控制循环结构"></a>1.4 控制循环结构</h3><p>java提供了continue和break空值循环结构，在java中goto只作为了保留字</p>
-<h4 id="1-4-1使用break结束循环"><a href="#1-4-1使用break结束循环" class="headerlink" title="1.4.1使用break结束循环"></a>1.4.1使用break结束循环</h4><p>break用于完全结束一个循环，跳出循环体，不管那这个哪种循环，一旦循环体中遇到break，系统将完全结束该循环，开始执行循环结构以后的代码。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package cn.bytecollege;</span><br><span class="line">/**</span><br><span class="line"> * 本例将演示break</span><br><span class="line"> * @author MR.W</span><br><span class="line"> *</span><br><span class="line"> */</span><br><span class="line">public class BreakDemo &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		for (int i = 0; i &lt; 10; i++) &#123;</span><br><span class="line">			if(i==7) &#123;</span><br><span class="line">                System.out.println(i);</span><br><span class="line">				break;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>循环嵌套中使用break</p>
-<blockquote>
-<p>遇到一个break outer语句，该语句将会导致结束outer标签指定的循环，不是break所在的循环，而是结束break循环的外层循环。</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package cn.bytecollege;</span><br><span class="line">/**</span><br><span class="line"> * 本例将演示循环嵌套中break结束外层循环</span><br><span class="line"> * @author MR.W</span><br><span class="line"> *</span><br><span class="line"> */</span><br><span class="line">public class BreakDemo3 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		outer:</span><br><span class="line">		for (int i = 0; i &lt; 5; i++) &#123;</span><br><span class="line">			//内层循环</span><br><span class="line">			for (int j = 0; j &lt; 3; j++) &#123;</span><br><span class="line">				if(j==1) &#123;</span><br><span class="line">					//跳出outer所标识的循环</span><br><span class="line">					break outer;</span><br><span class="line">				&#125;</span><br><span class="line">				System.out.println(&quot;i的值为：&quot;+i+&quot;,j的值为：&quot;+j);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;	</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-</ul>
-<h4 id="1-4-2-使用continue跳转次循环"><a href="#1-4-2-使用continue跳转次循环" class="headerlink" title="1.4.2 使用continue跳转次循环"></a>1.4.2 使用continue跳转次循环</h4><p>continue只是跳出次循环，继续执行剩下的循环，并不是完全终止循环。</p>
-<p>示例如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">package cn.bytecollege;</span><br><span class="line">/**</span><br><span class="line"> * 本例将演示continue</span><br><span class="line"> * @author MR.W</span><br><span class="line"> *</span><br><span class="line"> */</span><br><span class="line">public class ContinueDemo &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		for (int i = 0; i &lt; 10; i++) &#123;</span><br><span class="line">			if(i==7) &#123;</span><br><span class="line">				continue;</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println(i);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>循环嵌套中使用continue</p>
-<blockquote>
-<p>在多层循环中，continue会忽略当前循环，直接到外层循环继续进行循环</p>
-</blockquote>
-</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package cn.bytecollege;</span><br><span class="line">/**</span><br><span class="line"> * 本例将演示多层循环嵌套中使用Continue</span><br><span class="line"> * @author MR.W</span><br><span class="line"> *</span><br><span class="line"> */</span><br><span class="line">public class ContinueDemo2 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		outer:</span><br><span class="line">		for (int i = 0; i &lt; 5; i++) &#123;</span><br><span class="line">			//内层循环</span><br><span class="line">			for (int j = 0; j &lt; 3; j++) &#123;</span><br><span class="line">				if(j==1) &#123;</span><br><span class="line">					//跳出outer所标识的循环</span><br><span class="line">					continue outer;</span><br><span class="line">				&#125;</span><br><span class="line">				System.out.println(&quot;i的值为：&quot;+i+&quot;,j的值为：&quot;+j);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<p>课后作业：<br>1.请将101转换成二进制，并将二进制的前3位替换为1，并求出原码</p>
-<p>0000 0000 0000 0000 0000 0000 0110 0101         101的二进制<br>1110 0000 0000 0000 0000 0000 0110 0101          替换后的补码<br>1110 0000 0000 0000 0000 0000 0110 0100          补码减一<br>1001 1111 1111 1111 1111 1111 1001 1011          取反求出原码</p>
 ]]></content>
       <categories>
         <category>XiAnTrain</category>
@@ -2283,6 +2283,97 @@ elementN:  可选。可向数组添加若干元素。
       </categories>
   </entry>
   <entry>
+    <title>培训心得[Java语言概述]</title>
+    <url>/2022/07/15/xianTrain9-JavaSummary/</url>
+    <content><![CDATA[<p><em><strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Java基础学习打卡第1天<br>学习链接：<a href="https://www.yuque.com/docs/share/8290264f-2175-46ce-8b20-711eac7ac369#">https://www.yuque.com/docs/share/8290264f-2175-46ce-8b20-711eac7ac369?#</a> 《第1章 Java语言概述》密码：syl5</strong></em></p>
+<span id="more"></span>
+<h1 id="java语言概述"><a href="#java语言概述" class="headerlink" title="java语言概述"></a>java语言概述</h1><h2 id="Java发展简史"><a href="#Java发展简史" class="headerlink" title="Java发展简史"></a>Java发展简史</h2><blockquote>
+<ul>
+<li>Java是由Sun公司于1995年5月推出的，可以编写跨平台，分布式应用软件的面向对象的程序设计语言。</li>
+<li>java一分为三：<blockquote>
+<ul>
+<li>J2ME:主要用于移动设备和信息家电设备等（现已被淘汰）</li>
+<li>J2SE:JAVA技术的核心和技术</li>
+<li>J2EE:java技术中应用最广泛的部分</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<h2 id="java程序的运行机制"><a href="#java程序的运行机制" class="headerlink" title="java程序的运行机制"></a>java程序的运行机制</h2><blockquote>
+<ul>
+<li>运行Java程序过程：编写源程序—&gt;编译—&gt;运行<blockquote>
+<ul>
+<li>java编译之后，不会生成特定的平台机器码，而是一种与平台无关的字节码(.class文件)。</li>
+<li>字节码（.class文件）不能直接执行，而是运行在java虚拟机中</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li><b style="font-size: 20px; color: red;"> （面试题）</b>java跨平台实现的核心原理：<blockquote>
+<ul>
+<li>java源代码在运行之前会先根据JVM规范生成平台无关的字节码文件（class文件）,字节码文件不依赖于任何平台。</li>
+<li>Java为不同平台实现对应的虚拟机，JVM在加载字节码文件后由JVM生成对应平台的计算机指令</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<h2 id="Java语言的特点"><a href="#Java语言的特点" class="headerlink" title="Java语言的特点"></a>Java语言的特点</h2><blockquote>
+<ul>
+<li>简单性：相对于c语言少了指针、头文件等，并增加了垃圾回收机制。</li>
+<li>面向对象：将重点放在数据和对象上，而不是过程中</li>
+<li>分布式：java应用程序能够通过URL打开和访问网络上的对象</li>
+<li>安全性：防范个各种攻击</li>
+<li>多线程：解决高并发存在的问题</li>
+<li>可移植：不同平台可生成相同字节码文件，通过不同平台对应的JVM来运行。</li>
+</ul>
+</blockquote>
+<h2 id="技术名词"><a href="#技术名词" class="headerlink" title="技术名词"></a>技术名词</h2><p>JDK(Java Develop Kit):Java 开发工具</p>
+<p>JRE(Java Runtime Environment)：Java 运行环境</p>
+<p>JVM(Java Virtual machine )：Java虚拟机</p>
+<h2 id="Java下载安装"><a href="#Java下载安装" class="headerlink" title="Java下载安装"></a>Java下载安装</h2><blockquote>
+<ul>
+<li>JDK下载官网：<a href="https://www.oracle.com/java/technologies/downloads/index.html">https://www.oracle.com/java/technologies/downloads/index.html</a> (安装java SE 11,点击运行安装即可)</li>
+<li>配置环境变量：<blockquote>
+<ul>
+<li>配置JAVA_HOME<blockquote>
+<p>变量名：JAVA_HOME<br>变量值: (JDK的安装路径)</p>
+</blockquote>
+</li>
+<li>配置Path<blockquote>
+<p>找到Path在变量值中添加：<code>%JAVA_HOME%\bin</code></p>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<h2 id="编写第一个程序HelloWorld"><a href="#编写第一个程序HelloWorld" class="headerlink" title="编写第一个程序HelloWorld"></a>编写第一个程序HelloWorld</h2><p>在txt中编写：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Hello&#123;</span><br><span class="line">	public static void main(String[] args)&#123;</span><br><span class="line">    	System.out.print(&quot;Hello World&quot;);</span><br><span class="line">	&#125;	   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<blockquote>
+<p>保存后修改扩展名.java<br>打开终端，进入创建该txt的文件夹(cd 位置)<br>源程序进行编译:javac Hello.java<br>运行:java Hello</p>
+</blockquote>
+</blockquote>
+<p><b>注意事项：</b><br>1、Java源文件的命名和类名一致，并且首字符大写，如果有多个单词，所有单词的首字母均大写</p>
+<h1 id="课后作业"><a href="#课后作业" class="headerlink" title="课后作业"></a>课后作业</h1><p>1、请简述你对java的认识</p>
+<blockquote>
+<p>java是一个可编写跨平台、分布式应用软件的面向对象的程序设计语言，主要的特点有简单性、安全性、分布式、可移植、面向对象、多线程。java源程序需要先编译再运行。<br>2、Java的平台无关性是怎么实现的？<br>由于不同平台有相应的JVM，java源程序经过编译在不同的平台生成相同的字节码文件，再经过运行再不同的JVM中从而实现java平台的无关性。<br>3、请简述java源文件命名规则？<br>Java源文件的命名和类名一致，并且首字符大写，如果有多个单词，所有单词的首字母均大写<br>java通过</p>
+</blockquote>
+<h1 id="学习心得"><a href="#学习心得" class="headerlink" title="学习心得"></a>学习心得</h1><blockquote>
+<p>今天上午进行了一次面试，说是面试实质了解了一下我们个人情况。当时做了一下自我介绍，就没了，还期待人家问问题，结果没有。下午就进行了分班，分到了王老师的班中，第一次听他教课，给我的感觉还算通俗易懂、挺好的。期待接下来的四个月，让自己的知识储备更加巩固，更加完善。最终取得一个满意的offer。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>XiAnTrain</category>
+      </categories>
+  </entry>
+  <entry>
     <title>培训心得 [JQuery]</title>
     <url>/2022/07/13/xianTrain8-JQuery/</url>
     <content><![CDATA[<p><em><strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;学习打卡第嗯-2天</strong></em></p>
@@ -2406,97 +2497,6 @@ elementN:  可选。可向数组添加若干元素。
 </ul>
 </blockquote>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line"> &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line"> &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line"> &lt;script src=&quot;jquery-3.6.0.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"> &lt;script&gt;</span><br><span class="line"> $(function () &#123;</span><br><span class="line"> var $li = $(&quot;.list li&quot;);</span><br><span class="line"> var $input = $(&quot;#in_one&quot;);</span><br><span class="line"> var $btn = $(&quot;#btn&quot;);</span><br><span class="line"> var $div = $(&quot;#demo&quot;);</span><br><span class="line"> //点击事件</span><br><span class="line"> $li.click(function () &#123;</span><br><span class="line"> $(this).css(&#123;&quot;background&quot;:&quot;red&quot;&#125;);</span><br><span class="line"> //index()方法可以获取当前元素的索引值</span><br><span class="line"> //alert($(this).index())</span><br><span class="line"> &#125;);</span><br><span class="line"> //获取焦点</span><br><span class="line">$input.focus(function () &#123;</span><br><span class="line"> $(this).val(&quot;嗨嗨嘿&quot;);</span><br><span class="line"> &#125;)</span><br><span class="line"> &#125;)</span><br><span class="line"> &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"> &lt;div id=&quot;demo&quot;&gt;</span><br><span class="line"> &lt;ul class=&quot;list&quot;&gt;</span><br><span class="line"> &lt;li&gt;这是一行字&lt;/li&gt;</span><br><span class="line"> &lt;li&gt;这是一行字&lt;/li&gt;</span><br><span class="line"> &lt;li&gt;这是一行字&lt;/li&gt;</span><br><span class="line"> &lt;li&gt;这是一行字&lt;/li&gt;</span><br><span class="line"> &lt;/ul&gt;</span><br><span class="line"> &lt;input type=&quot;text&quot; id=&quot;in_one&quot;/&gt;</span><br><span class="line"> &lt;input type=&quot;submit&quot; id=&quot;btn&quot; value=&quot;点一下&quot;/&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>XiAnTrain</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>培训心得[Java语言概述]</title>
-    <url>/2022/07/15/xianTrain9-JavaSummary/</url>
-    <content><![CDATA[<p><em><strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Java基础学习打卡第1天<br>学习链接：<a href="https://www.yuque.com/docs/share/8290264f-2175-46ce-8b20-711eac7ac369#">https://www.yuque.com/docs/share/8290264f-2175-46ce-8b20-711eac7ac369?#</a> 《第1章 Java语言概述》密码：syl5</strong></em></p>
-<span id="more"></span>
-<h1 id="java语言概述"><a href="#java语言概述" class="headerlink" title="java语言概述"></a>java语言概述</h1><h2 id="Java发展简史"><a href="#Java发展简史" class="headerlink" title="Java发展简史"></a>Java发展简史</h2><blockquote>
-<ul>
-<li>Java是由Sun公司于1995年5月推出的，可以编写跨平台，分布式应用软件的面向对象的程序设计语言。</li>
-<li>java一分为三：<blockquote>
-<ul>
-<li>J2ME:主要用于移动设备和信息家电设备等（现已被淘汰）</li>
-<li>J2SE:JAVA技术的核心和技术</li>
-<li>J2EE:java技术中应用最广泛的部分</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-</blockquote>
-<h2 id="java程序的运行机制"><a href="#java程序的运行机制" class="headerlink" title="java程序的运行机制"></a>java程序的运行机制</h2><blockquote>
-<ul>
-<li>运行Java程序过程：编写源程序—&gt;编译—&gt;运行<blockquote>
-<ul>
-<li>java编译之后，不会生成特定的平台机器码，而是一种与平台无关的字节码(.class文件)。</li>
-<li>字节码（.class文件）不能直接执行，而是运行在java虚拟机中</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
-<li><b style="font-size: 20px; color: red;"> （面试题）</b>java跨平台实现的核心原理：<blockquote>
-<ul>
-<li>java源代码在运行之前会先根据JVM规范生成平台无关的字节码文件（class文件）,字节码文件不依赖于任何平台。</li>
-<li>Java为不同平台实现对应的虚拟机，JVM在加载字节码文件后由JVM生成对应平台的计算机指令</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-</blockquote>
-<h2 id="Java语言的特点"><a href="#Java语言的特点" class="headerlink" title="Java语言的特点"></a>Java语言的特点</h2><blockquote>
-<ul>
-<li>简单性：相对于c语言少了指针、头文件等，并增加了垃圾回收机制。</li>
-<li>面向对象：将重点放在数据和对象上，而不是过程中</li>
-<li>分布式：java应用程序能够通过URL打开和访问网络上的对象</li>
-<li>安全性：防范个各种攻击</li>
-<li>多线程：解决高并发存在的问题</li>
-<li>可移植：不同平台可生成相同字节码文件，通过不同平台对应的JVM来运行。</li>
-</ul>
-</blockquote>
-<h2 id="技术名词"><a href="#技术名词" class="headerlink" title="技术名词"></a>技术名词</h2><p>JDK(Java Develop Kit):Java 开发工具</p>
-<p>JRE(Java Runtime Environment)：Java 运行环境</p>
-<p>JVM(Java Virtual machine )：Java虚拟机</p>
-<h2 id="Java下载安装"><a href="#Java下载安装" class="headerlink" title="Java下载安装"></a>Java下载安装</h2><blockquote>
-<ul>
-<li>JDK下载官网：<a href="https://www.oracle.com/java/technologies/downloads/index.html">https://www.oracle.com/java/technologies/downloads/index.html</a> (安装java SE 11,点击运行安装即可)</li>
-<li>配置环境变量：<blockquote>
-<ul>
-<li>配置JAVA_HOME<blockquote>
-<p>变量名：JAVA_HOME<br>变量值: (JDK的安装路径)</p>
-</blockquote>
-</li>
-<li>配置Path<blockquote>
-<p>找到Path在变量值中添加：<code>%JAVA_HOME%\bin</code></p>
-</blockquote>
-</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-</blockquote>
-<h2 id="编写第一个程序HelloWorld"><a href="#编写第一个程序HelloWorld" class="headerlink" title="编写第一个程序HelloWorld"></a>编写第一个程序HelloWorld</h2><p>在txt中编写：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Hello&#123;</span><br><span class="line">	public static void main(String[] args)&#123;</span><br><span class="line">    	System.out.print(&quot;Hello World&quot;);</span><br><span class="line">	&#125;	   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<blockquote>
-<p>保存后修改扩展名.java<br>打开终端，进入创建该txt的文件夹(cd 位置)<br>源程序进行编译:javac Hello.java<br>运行:java Hello</p>
-</blockquote>
-</blockquote>
-<p><b>注意事项：</b><br>1、Java源文件的命名和类名一致，并且首字符大写，如果有多个单词，所有单词的首字母均大写</p>
-<h1 id="课后作业"><a href="#课后作业" class="headerlink" title="课后作业"></a>课后作业</h1><p>1、请简述你对java的认识</p>
-<blockquote>
-<p>java是一个可编写跨平台、分布式应用软件的面向对象的程序设计语言，主要的特点有简单性、安全性、分布式、可移植、面向对象、多线程。java源程序需要先编译再运行。<br>2、Java的平台无关性是怎么实现的？<br>由于不同平台有相应的JVM，java源程序经过编译在不同的平台生成相同的字节码文件，再经过运行再不同的JVM中从而实现java平台的无关性。<br>3、请简述java源文件命名规则？<br>Java源文件的命名和类名一致，并且首字符大写，如果有多个单词，所有单词的首字母均大写<br>java通过</p>
-</blockquote>
-<h1 id="学习心得"><a href="#学习心得" class="headerlink" title="学习心得"></a>学习心得</h1><blockquote>
-<p>今天上午进行了一次面试，说是面试实质了解了一下我们个人情况。当时做了一下自我介绍，就没了，还期待人家问问题，结果没有。下午就进行了分班，分到了王老师的班中，第一次听他教课，给我的感觉还算通俗易懂、挺好的。期待接下来的四个月，让自己的知识储备更加巩固，更加完善。最终取得一个满意的offer。</p>
-</blockquote>
-]]></content>
       <categories>
         <category>XiAnTrain</category>
       </categories>
