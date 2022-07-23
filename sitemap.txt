@@ -35,7 +35,7 @@ https://simon-yian.com/tags/index-1.html
 https://simon-yian.com/about/index-1.html
 https://simon-yian.com/404.html
 https://simon-yian.com/archives/index.html
-https://simon-yian.github.io/
+https://simon-yian.com/
 https://simon-yian.com/categories/algorithm/
 https://simon-yian.com/categories/LeetCode/
 https://simon-yian.com/categories/Python%E7%AC%94%E8%AE%B0/
