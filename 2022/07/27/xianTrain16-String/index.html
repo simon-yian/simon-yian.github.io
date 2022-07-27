@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="baidu-site-verification" content="code-lKi6sS4j7S" />
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/H%20.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"simon-yian.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="***&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;Java基础学习打卡第2天">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学习心得[String和常用类]">
+<meta property="og:url" content="https://simon-yian.github.io/2022/07/27/xianTrain16-String/index.html">
+<meta property="og:site_name" content="simon·yian&#39;Blog">
+<meta property="og:description" content="***&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;Java基础学习打卡第2天">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-07-27T12:03:04.000Z">
+<meta property="article:modified_time" content="2022-07-27T12:05:12.000Z">
+<meta property="article:author" content="simon·yi an">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://simon-yian.github.io/2022/07/27/xianTrain16-String/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://simon-yian.github.io/2022/07/27/xianTrain16-String/","path":"2022/07/27/xianTrain16-String/","title":"学习心得[String和常用类]"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>学习心得[String和常用类] | simon·yian'Blog</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+
+
+  <!-- 添加萝莉-->
+  <script src="/live2d-widget/autoload.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">simon·yian'Blog</h1>
+      <i class="logo-line"></i>
+    </a>
+      <img class="custom-logo-image" src="/images/simon.png" alt="simon·yian'Blog">
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-commonweal"><a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fas fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-message"><a href="/message/" rel="section"><i class="fas fa-comment fa-fw"></i>留言板</a></li>
+        <li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="sitmap fa-fw"></i>站点地图</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">1.</span> <span class="nav-text">1. 字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-String"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 String</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#http-192-168-31-254-java-base-%E7%AC%AC8%E7%AB%A0-String%E5%92%8C%E5%B8%B8%E7%94%A8%E7%B1%BB-html-1-2-stringbuilder%E5%92%8Cstringbuffer-1-2-StringBuilder%E5%92%8CStringBuffer"><span class="nav-number">1.2.</span> <span class="nav-text">[#](http:&#x2F;&#x2F;192.168.31.254&#x2F;java-base&#x2F;第8章 String和常用类.html#_1-2-stringbuilder和stringbuffer)1.2 StringBuilder和StringBuffer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-Java%E5%AF%B9String%E7%9A%84%E4%BC%98%E5%8C%96"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 Java对String的优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-String%E5%92%8CStringBuffer%E4%BB%A5%E5%8F%8AStringBuilder%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.4.</span> <span class="nav-text">1.4 String和StringBuffer以及StringBuilder的区别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81Scanner%E8%8E%B7%E5%8F%96%E9%94%AE%E7%9B%98%E8%BE%93%E5%85%A5"><span class="nav-number">2.</span> <span class="nav-text">2、Scanner获取键盘输入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3%E3%80%81-%E7%B3%BB%E7%BB%9F%E7%9B%B8%E5%85%B3"><span class="nav-number">3.</span> <span class="nav-text">3、 系统相关</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-Runtime%E7%B1%BB"><span class="nav-number">3.1.</span> <span class="nav-text">3.2 Runtime类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4%E3%80%81%E6%95%B0%E5%AD%A6%E7%9B%B8%E5%85%B3"><span class="nav-number">4.</span> <span class="nav-text">4、数学相关</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-Math-%E5%B7%A5%E5%85%B7%E7%B1%BB"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 Math 工具类</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="simon·yi an"
+      src="/images/avator.jpg">
+  <p class="site-author-name" itemprop="name">simon·yi an</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/simon-yian" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;simon-yian" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yourname@gmail.com" title="E-Mail → mailto:yourname@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/yourname" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://plus.google.com/yourname" title="Google → https:&#x2F;&#x2F;plus.google.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-google fa-fw"></i>Google</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/yourname" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+  </div>
+
+
+
+        </div><div>
+  <canvas id="canvasDiyBlock" style="width:60%;">当前浏览器不支持canvas，请更换浏览器后再试</canvas><script src="/js/custom/clock.js"></script>
+</div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://simon-yian.github.io/2022/07/27/xianTrain16-String/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avator.jpg">
+      <meta itemprop="name" content="simon·yi an">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="simon·yian'Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          学习心得[String和常用类]
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-07-27 20:03:04 / 修改时间：20:05:12" itemprop="dateCreated datePublished" datetime="2022-07-27T20:03:04+08:00">2022-07-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/XiAnTrain/" itemprop="url" rel="index"><span itemprop="name">XiAnTrain</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>12k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>11 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>***&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Java基础学习打卡第2天</p>
+<span id="more"></span>
+<h2 id="1-字符串"><a href="#1-字符串" class="headerlink" title="1. 字符串"></a>1. 字符串</h2><h3 id="1-1-String"><a href="#1-1-String" class="headerlink" title="1.1 String"></a>1.1 String</h3><p>String类是一个不可变类，不可变类即类中的成员变量都使用final修饰，这也就说明一个String对象被创建以后，包含在这里对象中的字符序列是不可改变的，直到整个对象被销毁。并且在Java中所有字符串相关的类都是Charsquence接口的子类。<br>String类提供了大量的构造方法来创建String对象，先来看以下几个：</p>
+<ul>
+<li>String()：创建一个包含0个字符的String对象</li>
+<li>String(byte[] bytes,Charset charset)：使用指定的字符集将指定的byte[]解码成一个新的String对象</li>
+<li>String(String original)：根据字符串字面量来创建String对象。</li>
+<li>String(StringBuffer buffer)：根据StringBuffer对象来创建String</li>
+<li>String(StringBuilder builder)：根据StringBuilder来创建对应的String对象。</li>
+</ul>
+<p>下面，通过示例来学习以上构造方法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">package cn.bytecollege;</span><br><span class="line"></span><br><span class="line">import java.nio.charset.Charset;</span><br><span class="line"></span><br><span class="line">public class StringDemo &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//创建一个字符序列为空的字符串</span><br><span class="line">		String str1 = new String();</span><br><span class="line">		//使用指定的字符集将指定的byte[]解码成一个新的String对象</span><br><span class="line">		String s = &quot;天苍苍，野茫茫&quot;;</span><br><span class="line">		System.out.println(Charset.defaultCharset());</span><br><span class="line">		String str2 = new String(s.getBytes(),Charset.defaultCharset());</span><br><span class="line">		System.out.println(str2);</span><br><span class="line">		String str3 = new String(&quot;张三&quot;);</span><br><span class="line">		System.out.println(str3);</span><br><span class="line">		String str4 = new String(new StringBuffer(&quot;张三丰&quot;));</span><br><span class="line">		System.out.println(str4);</span><br><span class="line">		String str5 = new String(new StringBuilder(&quot;张无忌&quot;));</span><br><span class="line">		System.out.println(str5);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>除了以上创建字符串的方式，还可以通过字面量的方式创建字符串对象：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String s = &quot;金毛狮王&quot;;</span><br></pre></td></tr></table></figure>
+
+<p>除此之外，String还提供了诸多API用来操作字符串。</p>
+<table>
+<thead>
+<tr>
+<th>方法名称</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>equals(String string)</td>
+<td>判断两个字符串是否相等</td>
+</tr>
+<tr>
+<td>equalsIgnoreCase(String string)</td>
+<td>忽略大小写判断两个字符串是否相等</td>
+</tr>
+<tr>
+<td>length()</td>
+<td>获取字符串长度</td>
+</tr>
+<tr>
+<td>charAt(int index)</td>
+<td>获取某个索引处的字符</td>
+</tr>
+<tr>
+<td>indexOf(String string)</td>
+<td>获取字符串第一次出现的位置</td>
+</tr>
+<tr>
+<td>indexOf(String string,int startIndex)</td>
+<td>从startIndex处查找第一次出现的位置</td>
+</tr>
+<tr>
+<td>lastIndexOf(String string)</td>
+<td>字符串最后一次出现的位置</td>
+</tr>
+<tr>
+<td>startsWith(String string)</td>
+<td>判断是否以string开始</td>
+</tr>
+<tr>
+<td>endsWith(String string)</td>
+<td>判断是否以string结尾</td>
+</tr>
+<tr>
+<td>compareTo(String string)</td>
+<td>比较字符串大小</td>
+</tr>
+<tr>
+<td>toLowerCase()</td>
+<td>字符串转小写</td>
+</tr>
+<tr>
+<td>toUpperCase()</td>
+<td>字符串转大写</td>
+</tr>
+<tr>
+<td>subString(int index)</td>
+<td>从index位置处截取到字符串末尾</td>
+</tr>
+<tr>
+<td>subString(int startIndex,int endIndex)</td>
+<td>从startIndex位置开始，到endIndex结束，前闭后开</td>
+</tr>
+<tr>
+<td>trim()</td>
+<td>去除字符串首尾空格</td>
+</tr>
+<tr>
+<td>split(String string)</td>
+<td>以string对字符串进行分割，此方法会省略末尾空字符</td>
+</tr>
+<tr>
+<td>split(String string,int limit)</td>
+<td>对字符串进行分割，此方法不会省略末尾空字符</td>
+</tr>
+<tr>
+<td>join(String s,String…str)</td>
+<td>以s为连接符，连接str内字符串</td>
+</tr>
+<tr>
+<td>concat(String str)</td>
+<td>连接字符串</td>
+</tr>
+<tr>
+<td>valueOf()</td>
+<td>基本类型转字符串</td>
+</tr>
+<tr>
+<td>contains(String str)</td>
+<td>判断是否包含str</td>
+</tr>
+<tr>
+<td>toCharArray()</td>
+<td>将字符串转换成字符数组</td>
+</tr>
+<tr>
+<td>intern()</td>
+<td>判断字符串在常量池中是否存在，如果不存在，则复制，1.6是将实例复制，1.7及以后是将引用复制。</td>
+</tr>
+<tr>
+<td>isEmpty()</td>
+<td>判断字符串是否为空</td>
+</tr>
+</tbody></table>
+<p>下面，通过示例学习String的常用API</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">package cn.bytecollege;</span><br><span class="line">/**</span><br><span class="line"> * 本例将演示String常用API</span><br><span class="line"> * @author MR.W</span><br><span class="line"> *</span><br><span class="line"> */</span><br><span class="line">public class StringDemo2 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//判断两个字符串相等</span><br><span class="line">		String a = &quot;abc&quot;;</span><br><span class="line">		String b = &quot;abc&quot;;</span><br><span class="line">		String c = &quot;ABC&quot;;</span><br><span class="line">		System.out.println(a.equals(b));</span><br><span class="line">		//忽略大小写判断两个字符串是否相等</span><br><span class="line">		System.out.println(a.equalsIgnoreCase(c));</span><br><span class="line">		//获取字符串长度</span><br><span class="line">		String d = &quot;HelloWorld&quot;;</span><br><span class="line">		System.out.println(d.length());</span><br><span class="line">		//获取索引处的字符,方法参数在0-字符串长度-1之间</span><br><span class="line">		System.out.println(d.charAt(0));	</span><br><span class="line">		//从头开始查找获取字符串第一次出现的位置</span><br><span class="line">		int index = d.indexOf(&quot;lo&quot;);</span><br><span class="line">		System.out.println(index);</span><br><span class="line">		//从某个位置处查找获取字符串第一次出现的位置</span><br><span class="line">		System.out.println(d.indexOf(&quot;o&quot;,7));</span><br><span class="line">		//查找字符串最后一次出现的位置</span><br><span class="line">		System.out.println(d.lastIndexOf(&quot;o&quot;));</span><br><span class="line">		//判断字符串是否是以某个字符串开始</span><br><span class="line">		System.out.println(d.startsWith(&quot;He&quot;));</span><br><span class="line">		//判断字符串是否以某个字符串结束</span><br><span class="line">		System.out.println(d.endsWith(&quot;lo&quot;));</span><br><span class="line">		//比较两个字符串大小,如果两个字符串相等则返回0</span><br><span class="line">		//如果字符串中的字符相等，但是长度不相等则返回长度差值</span><br><span class="line">		//如果字符不相等则返回字符差值</span><br><span class="line">		System.out.println(a.compareTo(b));</span><br><span class="line">		//字符串转大小</span><br><span class="line">		System.out.println(a.toUpperCase());</span><br><span class="line">		//字符串转小写</span><br><span class="line">		System.out.println(a.toLowerCase());</span><br><span class="line">		//截取字符串，从传入位置截取到字符串末尾</span><br><span class="line">//		System.out.println(a.substring(2));</span><br><span class="line">		//截取字符串，从传入位置截取到第二个参数处，前闭后开</span><br><span class="line">//		System.out.println(a.substring(1,2));</span><br><span class="line">		//去除字符串首尾空格</span><br><span class="line">		System.out.println(&quot;   Hello   &quot;.trim());</span><br><span class="line">		//分割字符串,默认会省略末尾的空</span><br><span class="line">		String s = &quot;Hello,World&quot;;</span><br><span class="line">		String[] strs = s.split(&quot;,&quot;);</span><br><span class="line">		for (String str : strs) &#123;</span><br><span class="line">			System.out.println(s);</span><br><span class="line">		&#125;</span><br><span class="line">		//分割字符串，第二个参数传入负值，则不省略末尾的空</span><br><span class="line">		strs = s.split(&quot;,&quot;,-1);</span><br><span class="line">		//连接字符串</span><br><span class="line">		System.out.println(a.concat(b));</span><br><span class="line">		//将基本类型转成字符串</span><br><span class="line">		int k = 100;</span><br><span class="line">		System.out.println(String.valueOf(k));</span><br><span class="line">		//判断是否包含某个字符串</span><br><span class="line">		System.out.println(a.contains(&quot;@&quot;));</span><br><span class="line">		//将字符串转换成数组</span><br><span class="line">		char[] cs = a.toCharArray();</span><br><span class="line">		//判断字符串是否为空</span><br><span class="line">		System.out.println(a.isEmpty());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面的实例中演示了字符串的常用API，<strong>因为String是一个不可变类，因此要大量操作字符串时，并不建议使用String对象，而应该使用StringBuilder和StringBuffer</strong></p>
+<h3 id="http-192-168-31-254-java-base-第8章-String和常用类-html-1-2-stringbuilder和stringbuffer-1-2-StringBuilder和StringBuffer"><a href="#http-192-168-31-254-java-base-第8章-String和常用类-html-1-2-stringbuilder和stringbuffer-1-2-StringBuilder和StringBuffer" class="headerlink" title="[#](http://192.168.31.254/java-base/第8章 String和常用类.html#_1-2-stringbuilder和stringbuffer)1.2 StringBuilder和StringBuffer"></a>[#](<a target="_blank" rel="noopener" href="http://192.168.31.254/java-base/%E7%AC%AC8%E7%AB%A0">http://192.168.31.254/java-base/第8章</a> String和常用类.html#_1-2-stringbuilder和stringbuffer)1.2 StringBuilder和StringBuffer</h3><p>StringBuffer和StringBuilder通常也用于操作字符串，但是StringBuffer和StringBuilder中的字符数组不是用final修饰的，所有字符数组可以指向新的数组，也就是说用这两个类创建的字符串对象是可变的，StringBuffer和StringBuilder为开发者提供了以下几个方法。用于操作字符串：</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>append(String str)</td>
+<td>字符串末尾追加字符串</td>
+</tr>
+<tr>
+<td>delete(int start, int end)</td>
+<td>删除区间内字符</td>
+</tr>
+<tr>
+<td>deleteCharAt(int index)</td>
+<td>删除索引处字符</td>
+</tr>
+<tr>
+<td>replace(int start, int end, String str)</td>
+<td>替换区间内的字符</td>
+</tr>
+<tr>
+<td>substring(int start)</td>
+<td>从start处截取到末尾</td>
+</tr>
+<tr>
+<td>substring(int start, int end)</td>
+<td>从start处截取到end</td>
+</tr>
+<tr>
+<td>insert(int offset, String str)</td>
+<td>索引处插入字符串</td>
+</tr>
+<tr>
+<td>indexOf(String str)</td>
+<td>字符串str第一次出现的位置</td>
+</tr>
+<tr>
+<td>reverse()</td>
+<td>字符序列反转</td>
+</tr>
+<tr>
+<td>toString()</td>
+<td>对象转成字符串</td>
+</tr>
+</tbody></table>
+<p>因为StringBuffer和StringBuilder提供的方法都一样，所以方法都是通用的，下面通过示例学习<br>首先，StringBuilder提供了一下几个构造方法：</p>
+<ul>
+<li>StringBuilder StringBuilder()：创建一个空的StringBuilder对象，一个空的字符序列</li>
+<li>StringBuilder StringBuilder(StringBuilder builder)：传入StringBuilder对象创建字符序列</li>
+<li>StringBuilder StringBuilder(String str)：根据字符串创建字符序列</li>
+<li>StringBuilder(int capcity)：指定容量的StringBuilder对象</li>
+</ul>
+<p>下面通过示例学习StringBuilder的方法。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">package cn.bytecollege;</span><br><span class="line">/**</span><br><span class="line"> * 本例将演示StringBuilder常用API</span><br><span class="line"> * @author MR.W</span><br><span class="line"> *</span><br><span class="line"> */</span><br><span class="line">public class StringBuilderDemo &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		String a = &quot;Hello&quot;;</span><br><span class="line">		StringBuilder sb = new StringBuilder(a);</span><br><span class="line">		//字符序列后追加字符串</span><br><span class="line">		System.out.println(sb.append(&quot;World&quot;).toString());</span><br><span class="line">		//删除区间内的字符</span><br><span class="line">		System.out.println(sb.delete(0, 3));</span><br><span class="line">		//删除某个索引处的字符</span><br><span class="line">		System.out.println(sb.deleteCharAt(5));</span><br><span class="line">		//替换区间内的字符</span><br><span class="line">		System.out.println(sb.replace(0, 1, &quot;W&quot;));</span><br><span class="line">		//索引处插入字符串</span><br><span class="line">		System.out.println(sb.insert(0, &quot;false&quot;));</span><br><span class="line">		//反转字符串</span><br><span class="line">		System.out.println(sb.reverse());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="1-3-Java对String的优化"><a href="#1-3-Java对String的优化" class="headerlink" title="1.3 Java对String的优化"></a>1.3 Java对String的优化</h3><p>Java在底层对String进行了优化，节省了一定的内存空间，在前面的章节中可以看到，通过字面量的形式创建String对象，所谓字面量（也叫做直接量），就是在定义变量后直接给定的值。例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//下面的代码中10就是一个字面量</span><br><span class="line">int a = 10;</span><br><span class="line">//下面的代码中5.2就是字面量</span><br><span class="line">double b = 5.2;</span><br><span class="line">//字符串对象直接给的值也是字面量</span><br><span class="line">String s = &quot;张三&quot;;</span><br></pre></td></tr></table></figure>
+
+<p>因为String是一个不可变类，也就是说<strong>一旦定义好一个字符串后，字符串的值是不能被改变了，如果发生了改变一定是指向了一个新的对象</strong>。那么这样的话无疑会占用大量的内存空间。因此Java对String进行了一定的优化，在JVM中有一块区域叫做常量池，常量池里放着字符串的字面量和常量。当字面量出现一个字符串后，Java会将该字面量放入常量池，如果再有变量引用该字符串时，直接返回常量池中字符串的引用，而不创建对象。通过下面的示例可以验证以上结论：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String a = &quot;张三&quot;;</span><br><span class="line">String b = &quot;张三&quot;;</span><br><span class="line">//返回结果为true</span><br><span class="line">System.out.print(a==b);</span><br></pre></td></tr></table></figure>
+
+<p>在前面的章节中知道，两个对象用“==”判断相等时，如果返回true，则这两个变量一定指向了相同的对象。从上面的结果可以看出变量a和变量b指向了同一个对象。总结一下就是<strong>常量池中的字符串有且只有一个，一旦创建后如果出现相同的字符串则直接返回字符串对象的引用，而不创建新的字符串。</strong><br>下面深入学习Java对字符串的优化</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">String a = &quot;张三&quot;;</span><br><span class="line">String b = new String(&quot;张三&quot;);</span><br><span class="line">//返回结果为false</span><br><span class="line">System.out.print(a==b);</span><br><span class="line">//返回结果为true</span><br><span class="line">System.out.print(a.equals(b));</span><br></pre></td></tr></table></figure>
+
+<p>上面的结果可能会很疑惑，我们对上例中的代码逐行分析：当代码执行到第1行时，此时出现了字面量“张三”。因为未将该对象放入常量池，因此，运行时直接该对象的引用保存在a中。<br>代码第2行，又出现了“张三”，此时常量池已经有了这个对象，此时就不再创建，此时先返回该对象的引用，返回该引用后，又new了一个String对象，此时在堆中分配了一块内存区域，这块内存中保存这刚才返回的引用。然后将堆中的引用保存在b中，因为a指向了常量池，变量b指向了堆中，所以a和b中保存的引用不同，所以用==判断时返回false。但是两个对象的内容相等，所以使用equals时两个变量的内容相等。<br>继续看下面的示例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">String a = &quot;HelloWorld&quot;;</span><br><span class="line">String d = &quot;Hello&quot;+&quot;World&quot;;</span><br><span class="line">//返回true</span><br><span class="line">System.out.print(a==d);</span><br><span class="line">//返回true</span><br><span class="line">System.out.print(a.equals(d));</span><br></pre></td></tr></table></figure>
+
+<p>运行上面的示例，可以看到结果都为true，这又是为什么呢？这也是Java对字符串的一项优化，也就是说<strong>在编译期间就可以确定变量d的结果为“HelloWorld”</strong>,而在确定变量d的结果之前，变量a的值已经放入了常量池，此时不再创建对象，直接返回引用，因此就有了上例中的结果。<br>上面的示例可以看出字面量和字面量拼接结果是确定的，那么字面量和变量拼接，变量和变量拼接又会出现什么结果呢，针对上述的问题，JVM还对String做了优化，看下面的示例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">String a = &quot;HelloWorld&quot;;</span><br><span class="line">String b = new String(&quot;Hello&quot;);</span><br><span class="line">String c = new String(&quot;World&quot;);</span><br><span class="line">String d = b+c;</span><br><span class="line">//返回false</span><br><span class="line">System.out.print(a==d);</span><br><span class="line">//返回true</span><br><span class="line">System.out.print(a.equals(d));</span><br><span class="line">String e = &quot;Hello&quot;;</span><br><span class="line">String f = e + c;</span><br><span class="line">//返回false</span><br><span class="line">System.out.print(a==f);</span><br><span class="line">//返回true</span><br><span class="line">System.out.print(a.equals(f));</span><br></pre></td></tr></table></figure>
+
+<p>因为变量d是两个堆中的对象拼接，此时java会用StringBuilder对两个对象拼接，也就是说在<strong>堆中新创建一个对象，保存拼接后的字符串，并将引用返回给d保存</strong>，因为不是执行同一块内存，所有a中的地址和d中的地址不相同，所以返回false，两个对象的内容相同，所以使用equals方法时返回true，下面的代码也是一样，java会使用StringBuilder对两个对象进行拼接，所以返回的地址不同。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">String a = &quot;HelloWorld&quot;;</span><br><span class="line">String b = &quot;Hello&quot;+&quot;World&quot;</span><br><span class="line"></span><br><span class="line">//输出true</span><br><span class="line">System.out.println(a == b)</span><br></pre></td></tr></table></figure>
+
+<p>变量a的字面量“HelloWorld” 之前未在常量池中存放，此时将a对应的字面量存入常量池中，返回存入的地址。变量b在编译期间就已经形成“HelloWorld”,但由于a已将相同字面量“HelloWorld”放入变量池中，所以不再放入，只是将地址返回给变量b。此时a和b指向同一个地址，所以输出true；</p>
+<h3 id="1-4-String和StringBuffer以及StringBuilder的区别"><a href="#1-4-String和StringBuffer以及StringBuilder的区别" class="headerlink" title="1.4 String和StringBuffer以及StringBuilder的区别"></a>1.4 String和StringBuffer以及StringBuilder的区别</h3><ol>
+<li>String、StringBuffer、StringBuilder都是Charsquence接口的子类</li>
+<li>String、StringBuffer、StringBuilder都是final修饰的，不能被继承，也就是说三者都没有子类</li>
+<li>String是不可变类，创建的字符串序列不能被修改，StringBuffer和StringBuilder是可以修改的</li>
+<li>StringBuffer是线程安全的，StringBuilder是非线程安全的，因此StringBuilder效率更高，在不考虑线程安全或者单线程情况下优先考虑使用StringBuilder。</li>
+</ol>
+<p>判断邮箱是有合法，代码如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">package cn.bytecollege.exercise;</span><br><span class="line">/**</span><br><span class="line"> * 判断邮箱是否合法</span><br><span class="line"> * @author MR.W</span><br><span class="line"> *</span><br><span class="line"> */</span><br><span class="line">public class ValidMail &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		String str = &quot;@.cn&quot;;</span><br><span class="line">		System.out.println(valid(str));</span><br><span class="line">	&#125;</span><br><span class="line">	public static boolean valid(String str) &#123;</span><br><span class="line">		if(str.indexOf(&quot;@&quot;)&gt;-1&amp;&amp;str.indexOf(&quot;.&quot;)&gt;-1&amp;&amp;((str.indexOf(&quot;com&quot;)&gt;-1)||(str.indexOf(&quot;cn&quot;)&gt;-1))) &#123;</span><br><span class="line">			return true;</span><br><span class="line">		&#125;</span><br><span class="line">		return false;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="2、Scanner获取键盘输入"><a href="#2、Scanner获取键盘输入" class="headerlink" title="2、Scanner获取键盘输入"></a>2、Scanner获取键盘输入</h2><ul>
+<li>hasNextXXX()：是否还有下个输入项，其中XXX可以是Int，Long等代表基本类型的字符串。如果判断是否有 下一个字符串则直接使用hasNext()。</li>
+<li>nextXxx()：获取下个输入项，输入项可以是基本类型数据，如果是字符串则直接使用next()</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">package cn.bytecollege;</span><br><span class="line">import java.util.Scanner;</span><br><span class="line">public class ScannerDemo &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		System.out.println(&quot;请输入：&quot;);</span><br><span class="line">		Scanner scanner = new Scanner(System.in);</span><br><span class="line">		while(scanner.hasNext()) &#123;</span><br><span class="line">			int k = scanner.nextInt();</span><br><span class="line">			System.out.println(k);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="3、-系统相关"><a href="#3、-系统相关" class="headerlink" title="3、 系统相关"></a>3、 系统相关</h2><ul>
+<li>Map&lt;String,String&gt;getenv:获取系统所有的环境变量，保存在map集合中。</li>
+<li>String getenv(String name) : 获取指定的环境变量。</li>
+<li>Properties getProperties():获取系统的属性。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">package cn.bytecollege;</span><br><span class="line"></span><br><span class="line">import java.util.Map;</span><br><span class="line">import java.util.Map.Entry;</span><br><span class="line">import java.util.Properties;</span><br><span class="line">import java.util.Set;</span><br><span class="line"></span><br><span class="line">public class SystemDemo &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		</span><br><span class="line">		//获取所有的环境变量</span><br><span class="line">		Map&lt;String,String&gt; map = System.getenv();</span><br><span class="line">		//遍历map</span><br><span class="line">		for(String s : map.keySet()) &#123;</span><br><span class="line">			System.out.println(s+&quot;======&quot;+map.get(s));</span><br><span class="line">		&#125;</span><br><span class="line">		//获取指定名称的环境变量值,如果环境变量的名称不存在则返回null</span><br><span class="line">		System.out.println(System.getenv(&quot;JAVA_HOME&quot;));</span><br><span class="line">		//获取系统参数</span><br><span class="line">		Properties properties = System.getProperties();</span><br><span class="line">		</span><br><span class="line">		Set&lt;Entry&lt;Object, Object&gt;&gt; entry =  properties.entrySet();</span><br><span class="line">		</span><br><span class="line">		for (Entry&lt;Object, Object&gt; e : entry) &#123;</span><br><span class="line">			System.out.println(e.getKey()+&quot;=============&quot;+e.getValue());</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>long currentTimeMillis()：获取当前时间的毫秒数，返回当前时间与UTC 1970年1月1日 00:00:00的时间差，以毫秒为单位</li>
+<li>int identityHashCode(Object x)：获取指定对象的精确hashCode值.</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">package cn.bytecollege;</span><br><span class="line"></span><br><span class="line">public class SystemDemo2 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//获取当前时间的毫秒数</span><br><span class="line">		System.out.println(System.currentTimeMillis());</span><br><span class="line">		System.out.print(System.identityHashCode(&quot;Hello&quot;));</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>System还提供了一个复制数组的方法：</p>
+<ul>
+<li>void arraycopy(Object src,  int  srcPos, int destPos, int length)：该方法的作用是复制数组，第一个src是指被复制的数组，srcPos是指定复制的起始位置，dest则是指将元素粘贴到哪个数组，destPos是指目标数组粘贴的起始位置，length则可以理解为复制元素的个数。</li>
+<li>void exit(int status)：退出虚拟机。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">package cn.bytecollege;</span><br><span class="line"></span><br><span class="line">import java.util.Arrays;</span><br><span class="line"></span><br><span class="line">public class CopyArray &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		int[] a = &#123;5,9,1,4,3&#125;;</span><br><span class="line">		int[] b = new int[10];</span><br><span class="line">		//复制数组a元素粘贴的b数组</span><br><span class="line">		System.arraycopy(a, 0, b, 3, 5);</span><br><span class="line">		System.out.println(Arrays.toString(b));</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-2-Runtime类"><a href="#3-2-Runtime类" class="headerlink" title="3.2 Runtime类"></a>3.2 Runtime类</h3><p>Runtime类代表Java程序的运行时环境，每个Java程序都有一个与之对应Runtime实例。可以访问JVM相关信息，处理器数量，内存信息等</p>
+<ul>
+<li>int availableProcessors()：获取处理器数量</li>
+<li>long freeMemory()：获取jvm空闲内存</li>
+<li>long totalMemory()：获取最大内存</li>
+<li>long maxMemory()：获取虚拟机可以用最大内存</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">package cn.bytecollege;</span><br><span class="line"></span><br><span class="line">public class RuntimeDemo &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		Runtime runtime = Runtime.getRuntime();</span><br><span class="line">		System.out.println(&quot;处理器数量：&quot;+runtime.availableProcessors());</span><br><span class="line">		System.out.println(&quot;总内寸数：&quot;+runtime.totalMemory()/Math.pow(1024,2)+&quot;MB&quot;);</span><br><span class="line">		System.out.println(&quot;JVM空闲内存：&quot;+runtime.freeMemory()/Math.pow(1024, 2)+&quot;MB&quot;);</span><br><span class="line">		System.out.println(&quot;可用最大内存：&quot;+runtime.maxMemory()/Math.pow(1024, 3)+&quot;GB&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Runtime还提供了exec()方法，用于启动一个进程来运行操作系统的命令。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">runtime.exec(&quot;notepad.exe&quot;);</span><br></pre></td></tr></table></figure>
+
+<p>运行示例中的代码可以打开记事本</p>
+<h2 id="4、数学相关"><a href="#4、数学相关" class="headerlink" title="4、数学相关"></a>4、数学相关</h2><h3 id="4-1-Math-工具类"><a href="#4-1-Math-工具类" class="headerlink" title="4.1 Math 工具类"></a>4.1 Math 工具类</h3><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Math.sqrt()</td>
+<td>求平方根，参数为负数时返回NAN</td>
+</tr>
+<tr>
+<td>Math.pow(x,a)</td>
+<td>幂运算，x的a次方</td>
+</tr>
+<tr>
+<td>Math.floor(a)</td>
+<td>向下取整</td>
+</tr>
+<tr>
+<td>Math.ceil(a)</td>
+<td>向上取整</td>
+</tr>
+<tr>
+<td>Math.floorMod(x,y)</td>
+<td>求余，x%y</td>
+</tr>
+<tr>
+<td>Math.toDegree()</td>
+<td>弧度转换成角度</td>
+</tr>
+<tr>
+<td>Math.toRadians()</td>
+<td>角度转换成弧度</td>
+</tr>
+<tr>
+<td>Math.sin()</td>
+<td>求正弦</td>
+</tr>
+<tr>
+<td>Math.cos()</td>
+<td>求余弦</td>
+</tr>
+<tr>
+<td>Math.tan()</td>
+<td>求正切</td>
+</tr>
+<tr>
+<td>Math.abs()</td>
+<td>求绝对值</td>
+</tr>
+<tr>
+<td>Math.max()</td>
+<td>两个数的最大值</td>
+</tr>
+<tr>
+<td>Math.min()</td>
+<td>两个数最小值</td>
+</tr>
+<tr>
+<td>Math.random()</td>
+<td>0.0到1.0的随机数</td>
+</tr>
+</tbody></table>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">package cn.bytecollege;</span><br><span class="line">public class MathDemo &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        //求平方根</span><br><span class="line">        System.out.println(Math.sqrt(4));</span><br><span class="line">        //幂运算，x的a次方</span><br><span class="line">        System.out.println(Math.pow(3,3));</span><br><span class="line">        //求余，x%y</span><br><span class="line">        System.out.println(Math.floorMod(10,3));</span><br><span class="line">        //求正弦</span><br><span class="line">        System.out.println(Math.sin(Math.PI/2));</span><br><span class="line">        //求余弦</span><br><span class="line">        System.out.println(Math.cos(Math.PI));</span><br><span class="line">        //求正切</span><br><span class="line">        System.out.println(Math.tan(0));</span><br><span class="line">        //求绝对值</span><br><span class="line">        System.out.println(Math.abs(-101));</span><br><span class="line">        //求两个数的最大值</span><br><span class="line">        System.out.println(Math.max(-2,2));</span><br><span class="line">        //求两个数的最小值</span><br><span class="line">        System.out.println(Math.min(-2,2));</span><br><span class="line">        //0.0到1.0的随机数</span><br><span class="line">        System.out.println(Math.random());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+    
+    <div>
+      
+         <div>
+	
+		<div style="text-align:center;color:#bfbfbf;font-size:16px;"> 
+ 		<span>-------- 本文结束 </span> 
+ 		<i class="fa fa-paw"></i> 
+ 		<span> 感谢阅读 --------</span>
+		</div> 
+  	
+</div>
+      
+    </div>
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div></div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.png" alt="simon·yi an 微信">
+        <span>微信</span>
+      </div>
+
+  </div>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/07/26/xianTrain15-abstractInterface/" rel="prev" title="学习心得[抽象类和接口]">
+                  <i class="fa fa-chevron-left"></i> 学习心得[抽象类和接口]
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">simon·yi an</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">203k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">3:04</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+  <div class="powered-by">
+  <i class="fa fa-user-md"></i>
+  <span id="busuanzi_container_site_uv">
+    本站总访客数:<span id="busuanzi_value_site_uv"></span>&nbsp;&nbsp;| 
+  </span>
+  <span id="busuanzi_container_site_pv">
+      &nbsp;本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  </span>
+  </div>
+  </div>
+<script>
+      var now = new Date(); 
+      function createtime() { 
+          var grt= new Date("03/12/2019 12:00:00");//此处修改你的建站时间或者网站上线时间 
+          now.setTime(now.getTime()+250); 
+          days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+          hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+          if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+          mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+          seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+          snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+          document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+          document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+      } 
+  setInterval("createtime()",250);
+  </script>
+    </div>
+  </footer>
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="https://cdn.jsdelivr.net/npm/ribbon.js@1.0.2/dist/ribbon.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+  <script async src="/js/cursor/fireworks.js"></script>
+
+
+
+
+  <script src="/js/activate-power-mode.min.js"></script>
+  <script>
+    POWERMODE.colorful = true;
+    POWERMODE.shake = false;
+    document.body.addEventListener('input', POWERMODE);
+  </script>
+
+</body>
+</html>

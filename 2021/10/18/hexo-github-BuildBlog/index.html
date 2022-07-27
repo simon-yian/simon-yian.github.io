@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="baidu-site-verification" content="code-lKi6sS4j7S" />
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/H%20.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"simon-yian.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用hexo+github搭建博客">
+<meta property="og:url" content="https://simon-yian.github.io/2021/10/18/hexo-github-BuildBlog/index.html">
+<meta property="og:site_name" content="simon·yian&#39;Blog">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/10/18/1ZNFHxdQXjbo4Mi.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/10/19/PWDijRHqgzxFbyn.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/10/19/fDzgWhEbnkxPevL.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/10/19/7UgXJ4y3MV6Bpri.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/10/19/oT9CgyscVXWPnbF.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/10/19/y5LnHxaYiID93Cs.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/10/19/6S8LwDAmHTMvqJz.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/10/19/15flbemyaNIu4MU.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/10/19/JNnuwh4dAMHFILT.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/10/19/uglR7p4jMUSbfxe.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/10/19/pwBHNlgo2cdZiA4.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/10/19/KFMBiULjA1yY8st.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/10/19/kAnXiPatsr2zxDc.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/10/19/RMkyeoixVCAt81f.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/10/20/QHMrJse8xOnjWl5.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/10/20/u1w8kDULWQBvGzs.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/10/20/6cGuVNTXKWFSZsw.jpg">
+<meta property="og:image" content="https://s2.loli.net/2022/07/05/YuC4zwxFHcrPOgt.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/10/21/b4Px7pFjTvI5ea2.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/10/19/15flbemyaNIu4MU.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/10/21/VkyOgL5Z1746mzT.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/10/21/KsVtaRpmhUSLorF.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/10/21/6Kdwmi7Qr2MWUJf.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/10/21/LMsRWZaq8oSUwnh.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/10/21/WCX7dgp9UNFxJ1B.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/10/21/AhUeqK8sB53jp4k.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/10/21/ciqEGsyQ3l9Oorp.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/10/21/b16RkjZFNDQAEic.jpg">
+<meta property="article:published_time" content="2021-10-18T01:16:36.000Z">
+<meta property="article:modified_time" content="2022-07-05T10:22:52.000Z">
+<meta property="article:author" content="simon·yi an">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/10/18/1ZNFHxdQXjbo4Mi.jpg">
+
+
+<link rel="canonical" href="https://simon-yian.github.io/2021/10/18/hexo-github-BuildBlog/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://simon-yian.github.io/2021/10/18/hexo-github-BuildBlog/","path":"2021/10/18/hexo-github-BuildBlog/","title":"使用hexo+github搭建博客"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>使用hexo+github搭建博客 | simon·yian'Blog</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+
+
+  <!-- 添加萝莉-->
+  <script src="/live2d-widget/autoload.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">simon·yian'Blog</h1>
+      <i class="logo-line"></i>
+    </a>
+      <img class="custom-logo-image" src="/images/simon.png" alt="simon·yian'Blog">
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-commonweal"><a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fas fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-message"><a href="/message/" rel="section"><i class="fas fa-comment fa-fw"></i>留言板</a></li>
+        <li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="sitmap fa-fw"></i>站点地图</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="nav-number">1.</span> <span class="nav-text">基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFHexo%EF%BC%9F"><span class="nav-number">1.1.</span> <span class="nav-text">什么是Hexo？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo%E5%92%8CJekyll%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.2.</span> <span class="nav-text">Hexo和Jekyll的区别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83"><span class="nav-number">2.</span> <span class="nav-text">安装环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E6%9C%9F%E5%87%86%E5%A4%87"><span class="nav-number">3.</span> <span class="nav-text">前期准备</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Node-js"><span class="nav-number">3.1.</span> <span class="nav-text">安装Node.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85git"><span class="nav-number">3.2.</span> <span class="nav-text">安装git</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA"><span class="nav-number">4.</span> <span class="nav-text">开始搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8Git%E5%AE%89%E8%A3%85%E7%9B%AE%E5%BD%95%E4%B8%AD%E7%82%B9%E5%87%BB%E3%80%90git-bash-exe%E3%80%91-%E8%BE%93%E5%85%A5%E5%91%BD%E4%BB%A4%EF%BC%9A%EF%BC%88%E8%BE%93%E5%85%A5%E6%97%B6%E5%BC%95%E5%8F%B7%E4%B8%8D%E8%A6%81%E5%88%A0%EF%BC%89"><span class="nav-number">4.1.</span> <span class="nav-text">在Git安装目录中点击【git-bash.exe】,输入命令：（输入时引号不要删）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%93%E5%BC%80Github-%E7%82%B9%E5%87%BB%E5%A4%B4%E5%83%8F%E2%80%93-gt-%E3%80%90setting%E3%80%91"><span class="nav-number">4.2.</span> <span class="nav-text">打开Github,点击头像–&gt;【setting】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%82%B9%E5%87%BB%E3%80%90SSH-and-GPG-keys%E3%80%91%E2%80%93-gt-%E3%80%90New-SSH-key%E3%80%91"><span class="nav-number">4.3.</span> <span class="nav-text">点击【SSH and GPG keys】–&gt;【New SSH key】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%85%A5title%EF%BC%88%E5%8F%AF%E4%BB%A5%E9%9A%8F%E4%BE%BF%E8%BE%93%EF%BC%89%EF%BC%8C%E4%BD%86Key%E4%BD%A0%E9%9C%80%E8%A6%81%E7%94%A8%E8%AE%B0%E4%BA%8B%E6%9C%AC%E6%88%96Notepad-%E6%89%93%E5%BC%80%E7%A3%81%E7%9B%98%E4%B8%ADc-%E7%94%A8%E6%88%B7-%E7%94%A8%E6%88%B7%E5%90%8D-ssh-id-rsa-pub%E7%84%B6%E5%90%8E%E5%A4%8D%E5%88%B6%E7%B2%98%E8%B4%B4%E9%87%8C%E9%9D%A2%E7%9A%84%E5%86%85%E5%AE%B9%E5%88%B0key%E4%B8%AD%EF%BC%8C%E6%9C%80%E5%90%8E%E7%82%B9%E5%87%BB%E3%80%90ADD-SSH-key%E3%80%91%EF%BC%9B"><span class="nav-number">4.4.</span> <span class="nav-text">输入title（可以随便输），但Key你需要用记事本或Notepad++打开磁盘中c:&#x2F;用户&#x2F;用户名&#x2F;.ssh&#x2F;id_rsa.pub然后复制粘贴里面的内容到key中，最后点击【ADD SSH key】；</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85hexo"><span class="nav-number">4.5.</span> <span class="nav-text">安装hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8%E5%8D%9A%E5%AE%A2%E7%9B%AE%E5%BD%95%E4%B8%AD%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96"><span class="nav-number">4.6.</span> <span class="nav-text">在博客目录中安装依赖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Sublime-Text"><span class="nav-number">4.7.</span> <span class="nav-text">安装Sublime Text</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo%E5%8F%91%E5%B8%83%E5%88%B0Github"><span class="nav-number">4.8.</span> <span class="nav-text">hexo发布到Github</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E4%B8%AA%E4%BA%BA%E8%AE%BF%E9%97%AE%E4%BB%A4%E7%89%8C"><span class="nav-number">4.9.</span> <span class="nav-text">获取个人访问令牌</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git%E4%B8%AD%E8%AE%BE%E7%BD%AE%E4%BD%A0%E7%9A%84%E7%94%A8%E6%88%B7%E5%90%8D%E5%92%8C%E9%82%AE%E4%BB%B6%E5%90%8D"><span class="nav-number">4.10.</span> <span class="nav-text">git中设置你的用户名和邮件名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%9F%E6%88%90%E6%8F%90%E4%BA%A4"><span class="nav-number">4.11.</span> <span class="nav-text">生成提交</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E4%B8%BB%E9%A2%98"><span class="nav-number">4.12.</span> <span class="nav-text">添加主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8E%B0%E5%9C%A8%E6%9D%A5%E4%BB%8B%E7%BB%8D%E5%B8%B8%E7%94%A8%E7%9A%84Hexo-%E5%91%BD%E4%BB%A4"><span class="nav-number">4.13.</span> <span class="nav-text">现在来介绍常用的Hexo 命令</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="simon·yi an"
+      src="/images/avator.jpg">
+  <p class="site-author-name" itemprop="name">simon·yi an</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/simon-yian" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;simon-yian" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yourname@gmail.com" title="E-Mail → mailto:yourname@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/yourname" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://plus.google.com/yourname" title="Google → https:&#x2F;&#x2F;plus.google.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-google fa-fw"></i>Google</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/yourname" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+  </div>
+
+
+
+        </div><div>
+  <canvas id="canvasDiyBlock" style="width:60%;">当前浏览器不支持canvas，请更换浏览器后再试</canvas><script src="/js/custom/clock.js"></script>
+</div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://simon-yian.github.io/2021/10/18/hexo-github-BuildBlog/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avator.jpg">
+      <meta itemprop="name" content="simon·yi an">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="simon·yian'Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          使用hexo+github搭建博客
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-10-18 09:16:36" itemprop="dateCreated datePublished" datetime="2021-10-18T09:16:36+08:00">2021-10-18</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2022-07-05 18:22:52" itemprop="dateModified" datetime="2022-07-05T18:22:52+08:00">2022-07-05</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/hexo/" itemprop="url" rel="index"><span itemprop="name">hexo</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>3.4k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>3 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p><img src="https://i.loli.net/2021/10/18/1ZNFHxdQXjbo4Mi.jpg" alt="about-bg.jpg"></p>
+<span id="more"></span>
+
+<p>搭建博客千千万，最后受欢迎的9还是Hexo和Jekyll,用户用的非常多的两个静态博客生成系统。本文就介绍利用Hexo结合github page来搭建个人博客。</p>
+<h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><h3 id="什么是Hexo？"><a href="#什么是Hexo？" class="headerlink" title="什么是Hexo？"></a>什么是Hexo？</h3><p>Hexo 是一个基于 node.js 制作的快速、简洁且高效的博客框架。Hexo 可以将我们撰写的 Markdown 文档解析渲染成静态的 HTML 网页。</p>
+<h3 id="Hexo和Jekyll的区别"><a href="#Hexo和Jekyll的区别" class="headerlink" title="Hexo和Jekyll的区别"></a>Hexo和Jekyll的区别</h3><p>·本地环境<br>Jeklly 是由 Ruby 语言编写，需要到官网下载并安装 RubyInstaller。Hexo 则需要安装 Node.js 环境。网上经常看到很多人吐槽安装 Jekyll 经常碰到各种问题。</p>
+<p>·速度<br>说是比较 Hexo 和 Jeklly 这两个框架，其实要比较 Ruby 和 Node.js 的运行速度。Node.js 是一个 Javascrip t运行环境(Runtime)。实际上它是对 Google V8 引擎进行了封装。众所周知，Google JS Runtime 速度非常快，性能非常好。在本地预览上，Jekyll 是生成了页面然后进行预览，而 Hexo 是没有在根目录生成文件的，速度也快不少。因此，Hexo 在性能和速度上面更胜一筹。</p>
+<p>·部署<br>Jeklly 是将整个工程源码上传到 Github 仓库，然后 Github 会自动生成静态文件。而 Hexo 需要事先在本地生成整个站点页面，再将 Html 文件、资源文件等上传到 Github 上。</p>
+<p>·主题<br>Jekyll 使用 Liquid；它是有 Ruby 语言编写的开源模板语言。Hexo 使用的是 EJS；EJS 是 JavaScript 模板库，用来从 JSON 数据中生成 HTML 字符串。EJS 相对比较复杂，所以可实现的功能更加的多。从开发一个主题难度上看，Hexo 实现起来更方便、更简单些。</p>
+<h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><p>1、本机系统：Windows 10（64位）<br>2、Node.js：v6.9.2LTS（64位）</p>
+<h2 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h2><h3 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h3><p>简单的说 Node.js 就是运行在服务端的 JavaScript。Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境。Node.js 使用了一个事件驱动、非阻塞式 I/O 的模型，使其轻量又高效。Node.js 的包管理器 npm，是全球最大的开源库生态系统。<br>打开官网下载链接Node.js:<a target="_blank" rel="noopener" href="https://nodejs.org/en/">https://nodejs.org/en/</a> (选择长期服务，版本更稳定)</p>
+<img src="https://i.loli.net/2021/10/19/PWDijRHqgzxFbyn.jpg" width="850" height="400" div align="right">
+
+<p>下载完成之后直接双击安装包，只需点击下一步（默认所有选项），然后改变安装路径即可。</p>
+<p>测试安装是否成功：</p>
+<p>按【win+R】键，输入cmd，再按回车弹出命令窗口</p>
+<p>输入：(显示版本行)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node -v </span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+<p>显示结果：</p>
+<img src="https://i.loli.net/2021/10/19/fDzgWhEbnkxPevL.jpg" width="850" height="400" div align="right">
+
+<p>即安装成功；</p>
+<h3 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h3><p>Git是一个开源的分布式版本控制系统，可以有效、高速地处理从很小到非常大的项目版本管理。 也是Linus Torvalds为了帮助管理Linux内核开发而开发的一个开放源码的版本控制软件。</p>
+<p><b>从一般开发者的角度来看，git有以下功能：</b><br>1、从服务器上克隆完整的Git仓库（包括代码和版本信息）到单机上。<br>2、在自己的机器上根据不同的开发目的，创建分支，修改代码。<br>3、在单机上自己创建的分支上提交代码。<br>4、在单机上合并分支。<br>5、把服务器上最新版的代码fetch下来，然后跟自己的主分支合并。<br>6、生成补丁（patch），把补丁发送给主开发者。</p>
+<p>打开官网下载链接：<a target="_blank" rel="noopener" href="https://git-scm.com/downloads">https://git-scm.com/downloads</a> (选择windows版本即可)</p>
+<img src="https://i.loli.net/2021/10/19/7UgXJ4y3MV6Bpri.jpg" width="850" height="400" div align="right">
+
+
+<p>下载完成之后直接双击安装包，只需点击下一步（出下图外选项，默认所有选项），然后改变安装路径即可。</p>
+<img src="https://i.loli.net/2021/10/19/oT9CgyscVXWPnbF.jpg" width="850" height="400" div align="right">
+
+<p>测试是否安装成功：</p>
+<p>按【win+R】键，输入cmd，再按回车弹出命令窗口，再输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git</span><br></pre></td></tr></table></figure>
+<p>显示结果:</p>
+<img src="https://i.loli.net/2021/10/19/y5LnHxaYiID93Cs.jpg" width="850" height="400" div align="right">
+
+
+<h2 id="开始搭建"><a href="#开始搭建" class="headerlink" title="开始搭建"></a>开始搭建</h2><h3 id="在Git安装目录中点击【git-bash-exe】-输入命令：（输入时引号不要删）"><a href="#在Git安装目录中点击【git-bash-exe】-输入命令：（输入时引号不要删）" class="headerlink" title="在Git安装目录中点击【git-bash.exe】,输入命令：（输入时引号不要删）"></a>在Git安装目录中点击【git-bash.exe】,输入命令：（输入时引号不要删）</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;Github注册的邮箱&quot;</span><br></pre></td></tr></table></figure>
+<p>然后按四次【enter】即可，生成后如下图：</p>
+<img src="https://i.loli.net/2021/10/19/6S8LwDAmHTMvqJz.jpg" width="850" height="400" div align="right">
+
+<h3 id="打开Github-点击头像–-gt-【setting】"><a href="#打开Github-点击头像–-gt-【setting】" class="headerlink" title="打开Github,点击头像–&gt;【setting】"></a>打开Github,点击头像–&gt;【setting】</h3><img src="https://i.loli.net/2021/10/19/15flbemyaNIu4MU.jpg" width="850" height="400" div align="right">
+
+<h3 id="点击【SSH-and-GPG-keys】–-gt-【New-SSH-key】"><a href="#点击【SSH-and-GPG-keys】–-gt-【New-SSH-key】" class="headerlink" title="点击【SSH and GPG keys】–&gt;【New SSH key】"></a>点击【SSH and GPG keys】–&gt;【New SSH key】</h3><img src="https://i.loli.net/2021/10/19/JNnuwh4dAMHFILT.jpg" width="850" height="400" div align="right">
+
+<h3 id="输入title（可以随便输），但Key你需要用记事本或Notepad-打开磁盘中c-用户-用户名-ssh-id-rsa-pub然后复制粘贴里面的内容到key中，最后点击【ADD-SSH-key】；"><a href="#输入title（可以随便输），但Key你需要用记事本或Notepad-打开磁盘中c-用户-用户名-ssh-id-rsa-pub然后复制粘贴里面的内容到key中，最后点击【ADD-SSH-key】；" class="headerlink" title="输入title（可以随便输），但Key你需要用记事本或Notepad++打开磁盘中c:/用户/用户名/.ssh/id_rsa.pub然后复制粘贴里面的内容到key中，最后点击【ADD SSH key】；"></a>输入title（可以随便输），但Key你需要用记事本或Notepad++打开<b>磁盘中c:/用户/用户名/.ssh/id_rsa.pub</b>然后复制粘贴里面的内容到key中，最后点击【ADD SSH key】；</h3><img src="https://i.loli.net/2021/10/19/uglR7p4jMUSbfxe.jpg" width="850" height="300" div align="right">
+
+<h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h3><p>在想要搭建博客的目录下创建文件夹名为blog，按【win+R】键，输入cmd，再按回车弹出命令窗口，cd到创建的文件夹下，输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+
+<img src="https://i.loli.net/2021/10/19/pwBHNlgo2cdZiA4.jpg" width="850" height="300" div align="right">
+
+<p>不要关闭刚才的命令窗口，在刚才的窗口中初始化hexo，输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init 你的博客名</span><br></pre></td></tr></table></figure>
+
+<h3 id="在博客目录中安装依赖"><a href="#在博客目录中安装依赖" class="headerlink" title="在博客目录中安装依赖"></a>在博客目录中安装依赖</h3><p>在刚才的窗口中</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd 博客名</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<p>安装完成之后进行测试，窗口中输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s -p 5555</span><br></pre></td></tr></table></figure>
+<p>在浏览器上输入 localhost:5555</p>
+<img src="https://i.loli.net/2021/10/19/KFMBiULjA1yY8st.jpg" width="850" height="300" div align="right">
+
+<h3 id="安装Sublime-Text"><a href="#安装Sublime-Text" class="headerlink" title="安装Sublime Text"></a>安装Sublime Text</h3><p>打开官网下载链接：<a target="_blank" rel="noopener" href="https://www.sublimetext.com/">https://www.sublimetext.com/</a> （点击DPWNLOAD FOR WINDOWS）</p>
+<img src="https://i.loli.net/2021/10/19/kAnXiPatsr2zxDc.jpg" width="850" height="300" div align="right">
+
+<p>下载完成之后直接双击安装包，只需点击下一步（默认所有选项），然后改变安装路径即可。</p>
+<p>打开Sublime 直接将博客目录拖进Sublime即可；</p>
+<img src="https://i.loli.net/2021/10/19/RMkyeoixVCAt81f.jpg" width="850" height="400" div align="right">
+
+<h3 id="hexo发布到Github"><a href="#hexo发布到Github" class="headerlink" title="hexo发布到Github"></a>hexo发布到Github</h3><p>使用Sublime打开博客根目录中_config.yml 修改第16行的url 改为自己的网址（如 https://自己的博客名.github.io ）</p>
+<img src="https://i.loli.net/2021/10/20/QHMrJse8xOnjWl5.jpg" width="850" height="200" div align="right">
+
+<p>打开Github网页点击【Your repositories】 最后复制链接</p>
+<img src="https://i.loli.net/2021/10/20/u1w8kDULWQBvGzs.jpg" width="850" height="450" div align="right">
+
+<img src="https://i.loli.net/2021/10/20/6cGuVNTXKWFSZsw.jpg" width="850" height="300" div align="right">
+
+<img src="https://s2.loli.net/2022/07/05/YuC4zwxFHcrPOgt.jpg" width="850" height="350" div align="right">
+
+<p>在_config.yml文件最后一行添加repo</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">repo: </span><br></pre></td></tr></table></figure>
+<p>将你复制的链接添加到repo之后，用引号隔开（切记引号后面必须要有空格）</p>
+<p>在最后一行添加</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">branch: main</span><br></pre></td></tr></table></figure>
+<p>type后添加git</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">type: git</span><br></pre></td></tr></table></figure>
+
+<p>如下图<br><img src="https://i.loli.net/2021/10/21/b4Px7pFjTvI5ea2.jpg" width="850" height="200" div align="right"></p>
+<p>在博客根目录下添加插件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<h3 id="获取个人访问令牌"><a href="#获取个人访问令牌" class="headerlink" title="获取个人访问令牌"></a>获取个人访问令牌</h3><p>对密码身份验证的支持已于 2021 年 8 月 13 日移除。现在改用个人访问令牌。简单点说就是需要把你的密码换成 token。</p>
+<p>在个人设置页面，找到 Settings<br><img src="https://i.loli.net/2021/10/19/15flbemyaNIu4MU.jpg" width="850" height="400" div align="right"><br>找到 Developer settings<br><img src="https://i.loli.net/2021/10/21/VkyOgL5Z1746mzT.jpg" width="850" height="350" div align="right"><br>选择个人访问令牌 Personal access tokens，然后点击生成令牌 Generate new token<br><img src="https://i.loli.net/2021/10/21/KsVtaRpmhUSLorF.jpg" width="850" height="350" div align="right"><br>设置 token 的有效期，访问权限等，生成令牌 Generate token<br><img src="https://i.loli.net/2021/10/21/6Kdwmi7Qr2MWUJf.jpg" width="850" height="350" div align="right"><br>如下为生成的令牌<br><img src="https://i.loli.net/2021/10/21/LMsRWZaq8oSUwnh.jpg" width="850" height="350" div align="right"></p>
+<p><font color="RED">注意<br>记得把 token 保存下来，当你再次刷新网页的时候，就没办法看见了</font></p>
+<p>最后，把 token 直接添加远程仓库链接中，这样就可以避免同一个仓库每次提交代码都要输入 token 了。</p>
+<p>添加到如下图位置：（使用“@”和后面内容隔开）</p>
+<img src="https://i.loli.net/2021/10/21/WCX7dgp9UNFxJ1B.jpg" width="850" height="200" div align="right">
+
+<h3 id="git中设置你的用户名和邮件名"><a href="#git中设置你的用户名和邮件名" class="headerlink" title="git中设置你的用户名和邮件名"></a>git中设置你的用户名和邮件名</h3><p> 这一点很重要，因为每一个 Git 提交都会使用这些信息，它们会写入到你的每一次提交中。<br> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;Your Name&quot;</span><br></pre></td></tr></table></figure><br> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.email &quot;you@example.com&quot;</span><br></pre></td></tr></table></figure></p>
+<h3 id="生成提交"><a href="#生成提交" class="headerlink" title="生成提交"></a>生成提交</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<p>打开你的浏览器：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://博客名.github.io</span><br></pre></td></tr></table></figure>
+<p>恭喜您，您的博客现在已制作完成，现在只需要添加你喜欢的主题既可以开始你的博客之旅了。</p>
+<h3 id="添加主题"><a href="#添加主题" class="headerlink" title="添加主题"></a>添加主题</h3><p>hexo主题网站：<a target="_blank" rel="noopener" href="https://hexo.io/themes/">https://hexo.io/themes/</a><br><img src="https://i.loli.net/2021/10/21/AhUeqK8sB53jp4k.jpg" width="850" height="400" div align="right"></p>
+<p>找到你喜欢的主题，例如next主题 点击【next】<br><img src="https://i.loli.net/2021/10/21/ciqEGsyQ3l9Oorp.jpg" width="850" height="400" div align="right"></p>
+<p>按照文件中所说下载和修改即可<br><img src="https://i.loli.net/2021/10/21/b16RkjZFNDQAEic.jpg" width="850" height="400" div align="right"></p>
+<p>在博客根目录中打开【Git Bash Here】</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-themes-next</span><br></pre></td></tr></table></figure>
+<p>安装完成后，打开 Hexo 配置文件(_config.yml)并将theme变量设置为next.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure>
+
+<h3 id="现在来介绍常用的Hexo-命令"><a href="#现在来介绍常用的Hexo-命令" class="headerlink" title="现在来介绍常用的Hexo 命令"></a>现在来介绍常用的Hexo 命令</h3><p>npm install hexo -g #安装Hexo<br>npm update hexo -g #升级<br>hexo init #初始化博客</p>
+<p>命令简写<br>hexo n “我的博客” == hexo new “我的博客” #新建文章<br>hexo g == hexo generate #生成<br>hexo s == hexo server #启动服务预览<br>hexo d == hexo deploy #部署</p>
+<p>hexo server #Hexo会监视文件变动并自动更新，无须重启服务器<br>hexo server -s #静态模式<br>hexo server -p 5000 #更改端口<br>hexo server -i 192.168.1.1 #自定义 IP<br>hexo clean #清除缓存，若是网页正常情况下可以忽略这条命令</p>
+
+    </div>
+
+    
+    
+    
+    
+    <div>
+      
+         <div>
+	
+		<div style="text-align:center;color:#bfbfbf;font-size:16px;"> 
+ 		<span>-------- 本文结束 </span> 
+ 		<i class="fa fa-paw"></i> 
+ 		<span> 感谢阅读 --------</span>
+		</div> 
+  	
+</div>
+      
+    </div>
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div></div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.png" alt="simon·yi an 微信">
+        <span>微信</span>
+      </div>
+
+  </div>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/10/11/hello-world/" rel="prev" title="Hello World">
+                  <i class="fa fa-chevron-left"></i> Hello World
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/10/18/picture/" rel="next" title="makedown进阶（改变字体颜色，大小，设置文字背景，调整图片大小设置剧中）">
+                  makedown进阶（改变字体颜色，大小，设置文字背景，调整图片大小设置剧中） <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">simon·yi an</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">203k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">3:04</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+  <div class="powered-by">
+  <i class="fa fa-user-md"></i>
+  <span id="busuanzi_container_site_uv">
+    本站总访客数:<span id="busuanzi_value_site_uv"></span>&nbsp;&nbsp;| 
+  </span>
+  <span id="busuanzi_container_site_pv">
+      &nbsp;本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  </span>
+  </div>
+  </div>
+<script>
+      var now = new Date(); 
+      function createtime() { 
+          var grt= new Date("03/12/2019 12:00:00");//此处修改你的建站时间或者网站上线时间 
+          now.setTime(now.getTime()+250); 
+          days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+          hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+          if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+          mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+          seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+          snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+          document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+          document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+      } 
+  setInterval("createtime()",250);
+  </script>
+    </div>
+  </footer>
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="https://cdn.jsdelivr.net/npm/ribbon.js@1.0.2/dist/ribbon.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+  <script async src="/js/cursor/fireworks.js"></script>
+
+
+
+
+  <script src="/js/activate-power-mode.min.js"></script>
+  <script>
+    POWERMODE.colorful = true;
+    POWERMODE.shake = false;
+    document.body.addEventListener('input', POWERMODE);
+  </script>
+
+</body>
+</html>

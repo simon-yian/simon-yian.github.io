@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="baidu-site-verification" content="code-lKi6sS4j7S" />
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/H%20.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"simon-yian.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;Java基础学习打卡第2天学习链接：https:&#x2F;&#x2F;www.yuque.com&#x2F;docs&#x2F;share&#x2F;78386648-e93f-469b-bfc7-f557b1e8cf15?# 第5章 面向对象（基础篇) 密码：bqhg">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学习心得[高级篇]">
+<meta property="og:url" content="https://simon-yian.github.io/2022/07/21/xianTrain14-object/index.html">
+<meta property="og:site_name" content="simon·yian&#39;Blog">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;Java基础学习打卡第2天学习链接：https:&#x2F;&#x2F;www.yuque.com&#x2F;docs&#x2F;share&#x2F;78386648-e93f-469b-bfc7-f557b1e8cf15?# 第5章 面向对象（基础篇) 密码：bqhg">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-07-21T13:23:31.000Z">
+<meta property="article:modified_time" content="2022-07-26T00:35:44.000Z">
+<meta property="article:author" content="simon·yi an">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://simon-yian.github.io/2022/07/21/xianTrain14-object/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://simon-yian.github.io/2022/07/21/xianTrain14-object/","path":"2022/07/21/xianTrain14-object/","title":"学习心得[高级篇]"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>学习心得[高级篇] | simon·yian'Blog</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+
+
+  <!-- 添加萝莉-->
+  <script src="/live2d-widget/autoload.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">simon·yian'Blog</h1>
+      <i class="logo-line"></i>
+    </a>
+      <img class="custom-logo-image" src="/images/simon.png" alt="simon·yian'Blog">
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-commonweal"><a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fas fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-message"><a href="/message/" rel="section"><i class="fas fa-comment fa-fw"></i>留言板</a></li>
+        <li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="sitmap fa-fw"></i>站点地图</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%EF%BC%88%E9%AB%98%E7%BA%A7%E7%AF%87%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">面向对象（高级篇）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-%E5%B0%81%E8%A3%85"><span class="nav-number">2.</span> <span class="nav-text">1.1 封装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-1-%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E7%AC%A6"><span class="nav-number">2.1.</span> <span class="nav-text">1.1.1 访问控制符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-2-package%E3%80%81import%E5%92%8Cimport-static"><span class="nav-number">2.2.</span> <span class="nav-text">1.1.2 package、import和import static</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E5%8C%85"><span class="nav-number">2.3.</span> <span class="nav-text">常用的包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-%E6%9E%84%E9%80%A0%E5%99%A8"><span class="nav-number">2.4.</span> <span class="nav-text">1.3 构造器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-1-%E6%9E%84%E9%80%A0%E5%99%A8%E9%87%8D%E8%BD%BD"><span class="nav-number">2.4.1.</span> <span class="nav-text">1.3.1 构造器重载</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-%E7%B1%BB%E7%9A%84%E7%BB%A7%E6%89%BF"><span class="nav-number">3.</span> <span class="nav-text">1.2 类的继承</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-1-%E7%BB%A7%E6%89%BF%E7%9A%84%E7%89%B9%E7%82%B9"><span class="nav-number">3.1.</span> <span class="nav-text">1.2.1 继承的特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-2-%E6%96%B9%E6%B3%95%E9%87%8D%E5%86%99"><span class="nav-number">3.2.</span> <span class="nav-text">1.2.2 方法重写</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E9%87%8D%E5%86%99%E7%9A%84%E7%89%B9%E5%BE%81"><span class="nav-number">3.2.1.</span> <span class="nav-text">方法重写的特征</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-3-super%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">3.3.</span> <span class="nav-text">1.2.3 super关键字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-4-object%E7%B1%BB"><span class="nav-number">3.4.</span> <span class="nav-text">1.2.4 object类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-4-2-%E9%87%8D%E5%86%99equals-%E6%96%B9%E6%B3%95"><span class="nav-number">3.4.1.</span> <span class="nav-text">1.2.4.2 重写equals()方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-4-3-%E5%92%8Cequals%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">3.4.2.</span> <span class="nav-text">1.2.4.3 &#x3D;&#x3D;和equals的区别</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-%E5%A4%9A%E6%80%81"><span class="nav-number">4.</span> <span class="nav-text">1.3 多态</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-1-instabceof%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">4.1.</span> <span class="nav-text">1.3.1 instabceof运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-2-%E5%90%91%E4%B8%8A%E8%BD%AC%E5%9E%8B%E5%92%8C%E5%90%91%E4%B8%8B%E8%BD%AC%E5%9E%8B"><span class="nav-number">4.2.</span> <span class="nav-text">1.3.2 向上转型和向下转型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-%E5%88%9D%E5%A7%8B%E5%8C%96%E5%9D%97"><span class="nav-number">5.</span> <span class="nav-text">1.4 初始化块</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-1-%E9%9D%99%E6%80%81%E5%88%9D%E5%A7%8B%E5%8C%96%E5%9D%97"><span class="nav-number">5.1.</span> <span class="nav-text">1.4.1 静态初始化块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-final-%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">5.2.</span> <span class="nav-text">1.5 final 关键字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-6-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99"><span class="nav-number">5.3.</span> <span class="nav-text">1.6 软件设计原则</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97"><span class="nav-number">6.</span> <span class="nav-text">学习心得</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8A%E5%A4%A9%E5%AD%A6%E4%BC%9A%E4%BA%86%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">7.</span> <span class="nav-text">今天学会了什么？</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="simon·yi an"
+      src="/images/avator.jpg">
+  <p class="site-author-name" itemprop="name">simon·yi an</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/simon-yian" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;simon-yian" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yourname@gmail.com" title="E-Mail → mailto:yourname@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/yourname" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://plus.google.com/yourname" title="Google → https:&#x2F;&#x2F;plus.google.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-google fa-fw"></i>Google</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/yourname" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+  </div>
+
+
+
+        </div><div>
+  <canvas id="canvasDiyBlock" style="width:60%;">当前浏览器不支持canvas，请更换浏览器后再试</canvas><script src="/js/custom/clock.js"></script>
+</div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://simon-yian.github.io/2022/07/21/xianTrain14-object/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avator.jpg">
+      <meta itemprop="name" content="simon·yi an">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="simon·yian'Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          学习心得[高级篇]
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-07-21 21:23:31" itemprop="dateCreated datePublished" datetime="2022-07-21T21:23:31+08:00">2022-07-21</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2022-07-26 08:35:44" itemprop="dateModified" datetime="2022-07-26T08:35:44+08:00">2022-07-26</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/XiAnTrain/" itemprop="url" rel="index"><span itemprop="name">XiAnTrain</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>8.2k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>7 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p><em><strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Java基础学习打卡第2天<br>学习链接：<a target="_blank" rel="noopener" href="https://www.yuque.com/docs/share/78386648-e93f-469b-bfc7-f557b1e8cf15#">https://www.yuque.com/docs/share/78386648-e93f-469b-bfc7-f557b1e8cf15?#</a> 第5章 面向对象（基础篇) 密码：bqhg</strong></em></p>
+<span id="more"></span>
+
+<h2 id="面向对象（高级篇）"><a href="#面向对象（高级篇）" class="headerlink" title="面向对象（高级篇）"></a>面向对象（高级篇）</h2><p>java面向对象的三大特征：封装、继承和多态</p>
+<h2 id="1-1-封装"><a href="#1-1-封装" class="headerlink" title="1.1 封装"></a>1.1 封装</h2><p>封装是指将对象的状态信息隐藏在对象内部，不允许外部程序直接访问对象内部信息，只能通过该类提供的方法来访问来实现对内部信息的操作和访问。</p>
+<h3 id="1-1-1-访问控制符"><a href="#1-1-1-访问控制符" class="headerlink" title="1.1.1 访问控制符"></a>1.1.1 访问控制符</h3><p>java提供了4个访问控制级别分别为（从小到大）：private 、default（缺省）、protected、public</p>
+<p>public:公共的，任意位置都可以访问</p>
+<p>protected:同包和子类（同包子类，同包非子类，非同包子类）</p>
+<p>缺省：同包（同包子类，同包非子类）</p>
+<p>private：私有(类内)</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>public</th>
+<th>protected</th>
+<th>缺省</th>
+<th>private</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>类内</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>同包子类</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>×</td>
+</tr>
+<tr>
+<td>同包非子类</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>×</td>
+</tr>
+<tr>
+<td>非同包子类</td>
+<td>√</td>
+<td>√</td>
+<td>×</td>
+<td>×</td>
+</tr>
+<tr>
+<td>非同包非子类</td>
+<td>√</td>
+<td>×</td>
+<td>×</td>
+<td>×</td>
+</tr>
+</tbody></table>
+<p><strong>类的访问修饰符只有public和缺省</strong></p>
+<h3 id="1-1-2-package、import和import-static"><a href="#1-1-2-package、import和import-static" class="headerlink" title="1.1.2 package、import和import static"></a>1.1.2 package、import和import static</h3><blockquote>
+<ul>
+<li><p>包（package）机制，提供了类的多层命名空间，用于解决类的命名冲突、类文件管理等问题。包名应该全部是小写字母。package 语句必须作为源文件的第一条非注释性语句。</p>
+<ul>
+<li><p>从操作系统层面来看，包就是一个文件夹或者路径</p>
+</li>
+<li><p>从项目开发角度来看，包可以有效的管理类</p>
+</li>
+<li><p>Java中引入包概念，目的是为了解决类名冲突的问题，不同包下可以有同名的类。如果某个类在某个包中，那么在类中代码的第一行一定要声明类所在的包：package packageName</p>
+</li>
+<li><p>包的命名一般使用域名的倒置例如：cn.bytecollege.util</p>
+</li>
+<li><p>Java中定义一个类，会默认导入java.lang包</p>
+</li>
+</ul>
+</li>
+<li><h3 id="常用的包"><a href="#常用的包" class="headerlink" title="常用的包"></a>常用的包</h3><p>java.io：输入输出流</p>
+<p>java.lang：通用包</p>
+<p>java.lang.reflect：反射相关</p>
+<p>java.math:数学相关</p>
+<p>java.text：格式化相关</p>
+<p>java.util：集合框架相关</p>
+<p>java.sql：数据库相关</p>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li><p>如果需要使用不同包中的其他类是，我们需要在类名前加包名。例如如下写法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cn.bytecollege.Student s = <span class="keyword">new</span> cn.bytecollege.Student();</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>简化上述方法引入import关键字</p>
+<p>import语句应该出现在package语句后、类定义之前，一个Java源文件只能包含一个package语句，但可以包含多个import语句</p>
+</blockquote>
+<blockquote>
+<ul>
+<li><p>导入还有一种静态导入，静态导入使用import static语句，用于导入指定类的单个静态成员变量、方法和全部静态成员变量、方法。例如我们使用的System.out.print()。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">package cn.bytecollege;</span><br><span class="line">import static java.lang.System.*;</span><br><span class="line">/**</span><br><span class="line"> * 本例将演示静态导入</span><br><span class="line"> * @author MR.W</span><br><span class="line"> *</span><br><span class="line"> */</span><br><span class="line">public class StaticImport &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		out.print(&quot;Hello&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+</blockquote>
+<h3 id="1-3-构造器"><a href="#1-3-构造器" class="headerlink" title="1.3 构造器"></a>1.3 构造器</h3><p>构造器主要用于被其他方法调用，用以返回该类的实例，因而通常把构造器设置成 public 访问权限，从而允许系统中任何位置的类来创建该类的对象。</p>
+<h4 id="1-3-1-构造器重载"><a href="#1-3-1-构造器重载" class="headerlink" title="1.3.1 构造器重载"></a>1.3.1 构造器重载</h4><p>同一个类里具有多个构造器，多个构造器的形参列表不同，即被称为构造器重载。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">package cn.bytecollege;</span><br><span class="line">/**</span><br><span class="line"> * 本例将演示使用自定义构造方法</span><br><span class="line"> * 初始化实例变量</span><br><span class="line"> * @author MR.W</span><br><span class="line"> *</span><br><span class="line"> */</span><br><span class="line">public class Student &#123;</span><br><span class="line">	private String name;</span><br><span class="line">	private int age;</span><br><span class="line">	/**</span><br><span class="line">	 * 提供一个自定义构造方法用于初始化实例变量</span><br><span class="line">	 * @param name</span><br><span class="line">	 * @param age</span><br><span class="line">	 */</span><br><span class="line">	public Student(String name, int age) &#123;</span><br><span class="line">		super();</span><br><span class="line">		this.name = name;</span><br><span class="line">		this.age = age;</span><br><span class="line">	&#125;</span><br><span class="line">	/**</span><br><span class="line">	 * 提供一个无参构造</span><br><span class="line">	 */</span><br><span class="line">	public Student() &#123;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	public Student(int age) &#123;</span><br><span class="line">		this.age = age;</span><br><span class="line">	&#125;</span><br><span class="line">	public Student(String name) &#123;</span><br><span class="line">		this.name = name;</span><br><span class="line">	&#125;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		Student s = new Student(&quot;周芷若&quot;,18);</span><br><span class="line">		System.out.println(s.name);</span><br><span class="line">		System.out.println(s.age);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="1-2-类的继承"><a href="#1-2-类的继承" class="headerlink" title="1.2 类的继承"></a>1.2 类的继承</h2><p><strong>Java的继承具有单继承的特点，也就是所每个类有且只能有一个父类。</strong></p>
+<p>所谓继承就是在已有类的基础上构建一个新类，使用extends关键字来实现，从而达到代码复用的目的，其中已有类也叫做父类、基类或者超类，新扩展的的类叫做子类或者派生类。</p>
+<h3 id="1-2-1-继承的特点"><a href="#1-2-1-继承的特点" class="headerlink" title="1.2.1 继承的特点"></a>1.2.1 继承的特点</h3><p>java中继承的语法格式如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">修饰符 class SubClass extends SuperClass&#123;</span><br><span class="line"> 	 //此处省略类成员</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Java中所有的类都是Object的子类，每个类都会直接或者间接继承Object。</p>
+<h3 id="1-2-2-方法重写"><a href="#1-2-2-方法重写" class="headerlink" title="1.2.2 方法重写"></a>1.2.2 方法重写</h3><p>当子类从父类继承的方法不能满足子类需要时，子类可以对父类的方法进行重写，也叫方法覆盖</p>
+<blockquote>
+<h4 id="方法重写的特征"><a href="#方法重写的特征" class="headerlink" title="方法重写的特征"></a>方法重写的特征</h4><ol>
+<li>方法重写只存在于继承关系中</li>
+<li>方法名相同参数列表相同</li>
+<li>返回类型和父类方法返回值类型一致或者是父类方法的返回值类型的子类</li>
+<li>访问修饰符权限大于等于父类方法访问修饰符权限</li>
+<li>子类方法抛出异常小于等于父类方法抛出异常</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>一大两小两相等</p>
+</blockquote>
+<p>构造方法能不能被重写？</p>
+<blockquote>
+<p>构造方法不能被重写，因为构造方法不属于类的成员，而继承的前提条件是继承类的成员。</p>
+</blockquote>
+<h3 id="1-2-3-super关键字"><a href="#1-2-3-super关键字" class="headerlink" title="1.2.3 super关键字"></a>1.2.3 super关键字</h3><p>super指代父类对象 ，用于访问从父类继承得到的实例变量或者方法，同时可以访问父类的构造方法。</p>
+<p>注：</p>
+<p>1、在构造方法中super（）必须放在第一行。</p>
+<p>2、创建子类对象时会先创建父类对象，如果没有手动加super（），编译时会自动添加super（）。</p>
+<p>如果在某个方法中访问某个成员变量，但是没有显式的指定调用者，则编译器查找顺序如下：</p>
+<ol>
+<li>查找该方法中是否含有该局部变量</li>
+<li>查找当前类中是否包含该实例变量</li>
+<li>查找直接父类中是否包含该变量，依次向上追溯所有父类，如果直到Object类还是没有找到，则编译错误</li>
+</ol>
+<h3 id="1-2-4-object类"><a href="#1-2-4-object类" class="headerlink" title="1.2.4 object类"></a>1.2.4 object类</h3><p>Object是所有类的父类，当一个类没有使用extends关键字显式的指定父类，则该类继承Object类，</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>getClass()</td>
+<td>获得当前对象的类对象</td>
+</tr>
+<tr>
+<td>hashCode()</td>
+<td>返回当前对象的hashCode()</td>
+</tr>
+<tr>
+<td>equals()</td>
+<td>判断两个对象是否相等</td>
+</tr>
+<tr>
+<td>clone()</td>
+<td>克隆并返回当前对象副本</td>
+</tr>
+<tr>
+<td>toString()</td>
+<td>打印该对象</td>
+</tr>
+<tr>
+<td>notify()</td>
+<td>线程唤醒</td>
+</tr>
+<tr>
+<td>notifyAll()</td>
+<td>线程唤醒</td>
+</tr>
+<tr>
+<td>wait()</td>
+<td>线程等待</td>
+</tr>
+<tr>
+<td>finalize()</td>
+<td>通知垃圾回收器回收，该方法不确实实际执行时间，不推荐使用</td>
+</tr>
+</tbody></table>
+<h4 id="1-2-4-2-重写equals-方法"><a href="#1-2-4-2-重写equals-方法" class="headerlink" title="1.2.4.2 重写equals()方法"></a>1.2.4.2 重写equals()方法</h4><p>重写equals()方法需要满足以下条件：</p>
+<ul>
+<li>自反性∶ 对任意 x，x.equals（x）一定返回 true。</li>
+<li>对称性∶ 对任意x和 y，如果 y.equals（x）返回 true，则x.equals（y）也返回 true。</li>
+<li>传递性∶ 对任意x，y，z，如果x.equals（y）返回 ture，y.equals（z）返回 true，则x.equals（z）一定返回 true。</li>
+<li>一致性∶ 对任意x和 y，如果对象中用于等价比较的信息没有改变，那么无论调用 x.equals（y） 多少次，返回的结果应该保持一致，要么一直是 true，要么一直是 false。</li>
+<li>对任何不是 null 的x，x.equals（null）一定返回 false。</li>
+</ul>
+<p>重写步骤：</p>
+<ul>
+<li><p>判断是否是同一引用，如果是则返回true</p>
+</li>
+<li><p>判断obj是否为null，如果是则返回false；</p>
+</li>
+<li><p>判断是否是同一类型</p>
+</li>
+<li><p>转换为同一类型对象</p>
+</li>
+<li><p>判读那所有实例变量是否相等，基本类型使用“==”，引用类型使用equals。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">package cn.bytecollege;</span><br><span class="line">/**</span><br><span class="line"> * 定义Student类，并给定两个实例变量</span><br><span class="line"> * @author MR.W</span><br><span class="line"> *</span><br><span class="line"> */</span><br><span class="line">public class Student &#123;</span><br><span class="line">	private String name;</span><br><span class="line">	private int age;</span><br><span class="line">	public Student(String name, int age) &#123;</span><br><span class="line">		super();</span><br><span class="line">		this.name = name;</span><br><span class="line">		this.age = age;</span><br><span class="line">	&#125;</span><br><span class="line">	@Override</span><br><span class="line">	public boolean equals(Object obj) &#123;</span><br><span class="line">		//1.判断是否是同一引用，如果是则直接返回true</span><br><span class="line">		if(this == obj) &#123;</span><br><span class="line">			return true;</span><br><span class="line">		&#125;</span><br><span class="line">		//2.判断obj是否为null，如果是则返回false</span><br><span class="line">		if(obj == null) &#123;</span><br><span class="line">			return false;</span><br><span class="line">		&#125;</span><br><span class="line">		//3.判断是否是同一类型</span><br><span class="line">		//if(!(obj instanceof Student) ) &#123;</span><br><span class="line">		//	return false;</span><br><span class="line">		//&#125;</span><br><span class="line">		//上述方法可在没有子类的时使用</span><br><span class="line">		if(this.getClass() != obj.class)&#123;</span><br><span class="line">			return false;</span><br><span class="line">		&#125;</span><br><span class="line">		//4.转换为同一类型对象</span><br><span class="line">		Student s = (Student) obj;</span><br><span class="line">		//5.判断所有实例变量是否相等</span><br><span class="line">		if(this.name.equals(s.name)&amp;&amp;this.age==s.age) &#123;</span><br><span class="line">			return true;</span><br><span class="line">		&#125;</span><br><span class="line">		return false;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="1-2-4-3-和equals的区别"><a href="#1-2-4-3-和equals的区别" class="headerlink" title="1.2.4.3 ==和equals的区别"></a>1.2.4.3 ==和equals的区别</h4><p>我们在判断两个基本类型是否相等时，通常使用双等号，但是判断两个对象相等，使用==就比较有局限性了，因为使用双等号只能判断两个变量指向同一引用的情况，而我们在日常开发中通常两个对象的所有实例变量相等，即可认为两个对象相等。从内存的角度来说，==用于判断变量栈内存中保存的内容是否相等，而equals则是判断对象在堆内存中的内容是否相等。简而言之，基本类型相等的判断使用==，而判断两个对象是否相等，则需要重写equals方法来判断。</p>
+</li>
+</ul>
+<h2 id="1-3-多态"><a href="#1-3-多态" class="headerlink" title="1.3 多态"></a>1.3 多态</h2><p>java中创建对象时，有编译时类型和运行时类型（分别在等号左边和等号右边）。当编译时类型和运行时类型不一样时，就会产生多态。多态可以理解为同一对象调用相同方法，展示的不同行为，主要通过方法重写和方法重载实现。</p>
+<p><strong>父类引用指向子类对象时，调用方法看右边（子类对象中如果存在该方法则调用子类对象的，如果不存在该方法则调用父类对象的），访问实例变量看左边。</strong></p>
+<p><em><strong>” 对象的实例变量不具备多态性 “</strong></em></p>
+<h3 id="1-3-1-instabceof运算符"><a href="#1-3-1-instabceof运算符" class="headerlink" title="1.3.1 instabceof运算符"></a>1.3.1 instabceof运算符</h3><p>instanceof 运算符的作用是判断对象是否是某个类型，第一个操作数通常是一个引用类型的变量，后面的操作数通常是一个类，或者是其子类等等，如果是则返回true，如果不是则返回false。<br>在使用 instanceof 运算符时需要注意; instanceof 运算符前面操作数的编译时类型要么与后面的类相同，要么与后面的类具有父子继承关系，否则会引起编译错误。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">package cn.bytecollege.instance;</span><br><span class="line">/**</span><br><span class="line"> * 定义Person类型</span><br><span class="line"> * @author MR.W</span><br><span class="line"> *</span><br><span class="line"> */</span><br><span class="line">public class Person &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">package cn.bytecollege.instance;</span><br><span class="line">/**</span><br><span class="line"> * 定义Student类</span><br><span class="line"> * @author MR.W</span><br><span class="line"> *</span><br><span class="line"> */</span><br><span class="line">public class Student extends Person&#123;</span><br><span class="line">&#125;</span><br><span class="line">package cn.bytecollege.instance;</span><br><span class="line"></span><br><span class="line">public class Test &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		</span><br><span class="line">		//定义Student类型对象</span><br><span class="line">		Student s = new Student();</span><br><span class="line">		//s 是Student类型的对象，因此返回true</span><br><span class="line">		System.out.println(s instanceof Student);</span><br><span class="line">		//父类引用指向子类对象</span><br><span class="line">		Person p = new Student();</span><br><span class="line">		//因为Student和Person存在继承关系，所以p可以看做是Person类型</span><br><span class="line">		//返回true</span><br><span class="line">		System.out.println(p instanceof Person);</span><br><span class="line">		//因为运行时类型就是Student类型，所以返回true</span><br><span class="line">		System.out.println(p instanceof Student);</span><br><span class="line">        //p不是String类型，编译出错</span><br><span class="line">        System.out.println(p instanceof String);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="1-3-2-向上转型和向下转型"><a href="#1-3-2-向上转型和向下转型" class="headerlink" title="1.3.2 向上转型和向下转型"></a>1.3.2 向上转型和向下转型</h3><p>我们通过示例来学习向上转型和向下转型：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">package cn.bytecollege.instance;</span><br><span class="line"></span><br><span class="line">public class CastDemo &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		Student s = new Student();</span><br><span class="line">		//子类对象转成父类，向上转型，自动转换</span><br><span class="line">		Person p = s;</span><br><span class="line">		Person p2 = new Person();</span><br><span class="line">		//父类对象转子类，向下转型，强制转换</span><br><span class="line">		Student s2 = (Student) p;</span><br><span class="line">		//String和Person没有任何关系，转换时会编译出错</span><br><span class="line">		String str = p2;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="1-4-初始化块"><a href="#1-4-初始化块" class="headerlink" title="1.4 初始化块"></a>1.4 初始化块</h2><p>一个类中可以存在多个初始化块，相同类型的初始化块按照书写的先后顺序执行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">package cn.bytecollege.init;</span><br><span class="line"></span><br><span class="line">public class Student &#123;</span><br><span class="line">	private String name;</span><br><span class="line">	//定义初始化块</span><br><span class="line">	&#123;	</span><br><span class="line">		System.out.println(&quot;执行了第1个初始化块&quot;);</span><br><span class="line">		//初始化中也可以对实例变量初始化</span><br><span class="line">		name = &quot;张三&quot;;</span><br><span class="line">	&#125;</span><br><span class="line">	public Student() &#123;</span><br><span class="line">		System.out.println(&quot;执行了构造方法&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	//定义初始化块</span><br><span class="line">	&#123;</span><br><span class="line">		System.out.println(&quot;执行了第2个初始化块&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		Student student = new Student();</span><br><span class="line">		System.out.println(&quot;main方法中访问name属性：&quot;+student.name);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>输出结果：</p>
+<blockquote>
+<p>执行了第1个初始化块</p>
+<p>执行了第2个初始化块</p>
+<p>执行了构造方法</p>
+<p>main方法中访问name属性：张三</p>
+</blockquote>
+<p>注：从反编译的角度来看，初始化块中的代码在运行时会合并进构造器中</p>
+<h3 id="1-4-1-静态初始化块"><a href="#1-4-1-静态初始化块" class="headerlink" title="1.4.1 静态初始化块"></a>1.4.1 静态初始化块</h3><p>使用static修饰的初始化块，称之为静态初始化块（类初始化块）。</p>
+<p>普通初始化块负责对对象进行初始化，类初始化块则负责对类进行初始化。静态初始化块是类相关的，系统将在类初始化阶段执行静态初始化块，而不是在创建对象时才执行，因此静态初始化块比普通初始化块先执行。并且类初始化块通常用于对类变量进行初始化处理，静态初始化块不能对实例变量进行初始化。</p>
+<p>系统在类初始化阶段执行静态初始化块时，不仅会执行本类的静态初始化块，而且还会一直上溯到 java.lang.Object 类。然后依次向下执行静态初始化块</p>
+<p><strong>注意：静态初始化块也被称为类初始化块，同样静态成员不能访问非静态成员，因此静态初始化块不能访问实例变量和实例方法。</strong></p>
+<p>我们通过示例来学习静态初始化块：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.bytecollege.init;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Base</span> </span>&#123;</span><br><span class="line">	<span class="comment">//静态初始化块</span></span><br><span class="line">	<span class="keyword">static</span>&#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;Base静态块&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	&#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;Base初始化块&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Base</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;Base构造方法&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">package</span> cn.bytecollege.init;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Sub</span> <span class="keyword">extends</span> <span class="title">Base</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">static</span> &#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;Sub静态块&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	&#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;Sub初始化块&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Sub</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;Sub构造方法&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">package</span> cn.bytecollege.init;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Sub s = <span class="keyword">new</span> Sub();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我们可以归纳出静态代码块和初始化块的顺序</p>
+<p>父类静态块–》子类静态块–》父类初始化块和构造器–》子类初始化块和构造器</p>
+<h3 id="1-5-final-关键字"><a href="#1-5-final-关键字" class="headerlink" title="1.5 final 关键字"></a>1.5 final 关键字</h3><p>final关键字可以用于修饰类、变量和方法，用于表示不可改变的意思</p>
+<ul>
+<li><p>final修饰成员变量初始化后不能被重新赋值</p>
+<p>(成员变量是随类初始化或对象初始化而初始化的)</p>
+<ul>
+<li>类变量:必须在 <strong>静态初始化块</strong>中指定初始值 或 <strong>声明该类变量</strong>时指定初始值 ，而且只能在两个地 方的其中之一指定。</li>
+<li>实例变量∶ 必须在<strong>非静态初始化块、声明该实例变量</strong>或<strong>构造器</strong>中指定初始值，而且只能在三个 地方的其中之一指定。</li>
+</ul>
+</li>
+<li><p>final修饰的方法不可被重写（但可以被重载）</p>
+</li>
+<li><p>final修饰类不能被继承</p>
+<ul>
+<li>java共有9个类是final修饰的：八个包装类、一个java.lang.String类。</li>
+<li>八个包装类：Integer、Character、Long、Double、Float、Short、Byte、Boolean</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-6-软件设计原则"><a href="#1-6-软件设计原则" class="headerlink" title="1.6 软件设计原则"></a>1.6 软件设计原则</h3><ul>
+<li> 单一职责原则（Single Responsibility Principle）</li>
+</ul>
+<p>​       单一职责简要来说就是对于一个类而言，应该只专注做一件事情</p>
+<ul>
+<li>里式替换原则(Liskov Substitution Principle)</li>
+</ul>
+<p>​        只要父类能出现的地方子类就可以出现，而且替换为子类也不会产生任何错误或者异常。但是反过来则不行，子类能出现的地方，父类一不定能出现，这一点要尤为注意</p>
+<h2 id="学习心得"><a href="#学习心得" class="headerlink" title="学习心得"></a>学习心得</h2><p>今天王哥给我们看了一下之后要学习的内容，好多东西我都没听过什么这个锁那个锁的，这个算法那个算法的实在太多了。感觉现在才学到这有点慢了，后面还有那么多知识点，况且还不熟悉，总之卷死他们，先开始预习了。</p>
+<h2 id="今天学会了什么？"><a href="#今天学会了什么？" class="headerlink" title="今天学会了什么？"></a>今天学会了什么？</h2><p>​         今天温度还算比较凉快，上课比较精神，偶尔只是打个盹。现在开始内容慢慢的变得有趣，因为有些知识之前没有考虑到被忽略了。今天买了一个电饭锅准备以后有时间自己烧饭，还买了一点餐具，调味品杂七杂八的。</p>
+
+    </div>
+
+    
+    
+    
+    
+    <div>
+      
+         <div>
+	
+		<div style="text-align:center;color:#bfbfbf;font-size:16px;"> 
+ 		<span>-------- 本文结束 </span> 
+ 		<i class="fa fa-paw"></i> 
+ 		<span> 感谢阅读 --------</span>
+		</div> 
+  	
+</div>
+      
+    </div>
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div></div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.png" alt="simon·yi an 微信">
+        <span>微信</span>
+      </div>
+
+  </div>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/07/20/xianTrain13-objectO/" rel="prev" title="学习心得[基础篇]">
+                  <i class="fa fa-chevron-left"></i> 学习心得[基础篇]
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/07/26/xianTrain15-abstractInterface/" rel="next" title="学习心得[抽象类和接口]">
+                  学习心得[抽象类和接口] <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">simon·yi an</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">203k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">3:04</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+  <div class="powered-by">
+  <i class="fa fa-user-md"></i>
+  <span id="busuanzi_container_site_uv">
+    本站总访客数:<span id="busuanzi_value_site_uv"></span>&nbsp;&nbsp;| 
+  </span>
+  <span id="busuanzi_container_site_pv">
+      &nbsp;本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  </span>
+  </div>
+  </div>
+<script>
+      var now = new Date(); 
+      function createtime() { 
+          var grt= new Date("03/12/2019 12:00:00");//此处修改你的建站时间或者网站上线时间 
+          now.setTime(now.getTime()+250); 
+          days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+          hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+          if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+          mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+          seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+          snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+          document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+          document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+      } 
+  setInterval("createtime()",250);
+  </script>
+    </div>
+  </footer>
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="https://cdn.jsdelivr.net/npm/ribbon.js@1.0.2/dist/ribbon.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+  <script async src="/js/cursor/fireworks.js"></script>
+
+
+
+
+  <script src="/js/activate-power-mode.min.js"></script>
+  <script>
+    POWERMODE.colorful = true;
+    POWERMODE.shake = false;
+    document.body.addEventListener('input', POWERMODE);
+  </script>
+
+</body>
+</html>

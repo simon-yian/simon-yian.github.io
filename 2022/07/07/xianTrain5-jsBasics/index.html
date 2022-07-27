@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="baidu-site-verification" content="code-lKi6sS4j7S" />
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/H%20.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"simon-yian.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;学习打卡第嗯-1天">
+<meta property="og:type" content="article">
+<meta property="og:title" content="培训心得 [javaScript基础]">
+<meta property="og:url" content="https://simon-yian.github.io/2022/07/07/xianTrain5-jsBasics/index.html">
+<meta property="og:site_name" content="simon·yian&#39;Blog">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;学习打卡第嗯-1天">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.loli.net/2022/07/08/muvq3ZkTxF8Hbdo.jpg">
+<meta property="article:published_time" content="2022-07-07T12:07:24.000Z">
+<meta property="article:modified_time" content="2022-07-08T11:02:38.000Z">
+<meta property="article:author" content="simon·yi an">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2022/07/08/muvq3ZkTxF8Hbdo.jpg">
+
+
+<link rel="canonical" href="https://simon-yian.github.io/2022/07/07/xianTrain5-jsBasics/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://simon-yian.github.io/2022/07/07/xianTrain5-jsBasics/","path":"2022/07/07/xianTrain5-jsBasics/","title":"培训心得 [javaScript基础]"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>培训心得 [javaScript基础] | simon·yian'Blog</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+
+
+  <!-- 添加萝莉-->
+  <script src="/live2d-widget/autoload.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">simon·yian'Blog</h1>
+      <i class="logo-line"></i>
+    </a>
+      <img class="custom-logo-image" src="/images/simon.png" alt="simon·yian'Blog">
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-commonweal"><a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fas fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-message"><a href="/message/" rel="section"><i class="fas fa-comment fa-fw"></i>留言板</a></li>
+        <li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="sitmap fa-fw"></i>站点地图</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript%E8%83%BD%E5%81%9A%E4%BB%80%E4%B9%88"><span class="nav-number">2.</span> <span class="nav-text">JavaScript能做什么</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript%E6%9E%84%E6%88%90"><span class="nav-number">3.</span> <span class="nav-text">JavaScript构成</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript%E7%9A%84%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E4%B8%8E%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83"><span class="nav-number">4.</span> <span class="nav-text">JavaScript的开发环境与运行环境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-number">5.</span> <span class="nav-text">JavaScript的使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#javascript%E5%9F%BA%E7%A1%80"><span class="nav-number">6.</span> <span class="nav-text">javascript基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%80%BC"><span class="nav-number">6.1.</span> <span class="nav-text">值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6"><span class="nav-number">6.2.</span> <span class="nav-text">转义字符(\)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">6.3.</span> <span class="nav-text">运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%83%E5%B0%94%E5%80%BC"><span class="nav-number">6.4.</span> <span class="nav-text">布尔值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A9%BA%E5%80%BC"><span class="nav-number">6.5.</span> <span class="nav-text">空值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="nav-number">6.6.</span> <span class="nav-text">自动类型转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number">6.7.</span> <span class="nav-text">表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%91%E5%AE%9A%EF%BC%88%E5%8F%98%E9%87%8F%EF%BC%89"><span class="nav-number">6.8.</span> <span class="nav-text">绑定（变量）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E5%8F%B7"><span class="nav-number">6.9.</span> <span class="nav-text">分号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript%E4%BB%A3%E7%A0%81"><span class="nav-number">6.10.</span> <span class="nav-text">JavaScript代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript%E4%BB%A3%E7%A0%81%E5%9D%97"><span class="nav-number">6.11.</span> <span class="nav-text">JavaScript代码块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript%E8%AF%AD%E5%8F%A5%E6%A0%87%E8%AF%86%E7%AC%A6"><span class="nav-number">6.12.</span> <span class="nav-text">JavaScript语句标识符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">6.13.</span> <span class="nav-text">JavaScript数据类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E7%BB%84"><span class="nav-number">6.14.</span> <span class="nav-text">数组</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#javaScript%E5%AF%B9%E8%B1%A1"><span class="nav-number">7.</span> <span class="nav-text">javaScript对象</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%97%8F-%E5%AF%B9%E8%B1%A1%E5%B1%9E%E6%80%A7"><span class="nav-number">7.1.</span> <span class="nav-text">● 对象属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%97%8F-%E5%AF%B9%E8%B1%A1%E6%96%B9%E6%B3%95"><span class="nav-number">7.2.</span> <span class="nav-text">● 对象方法</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="simon·yi an"
+      src="/images/avator.jpg">
+  <p class="site-author-name" itemprop="name">simon·yi an</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/simon-yian" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;simon-yian" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yourname@gmail.com" title="E-Mail → mailto:yourname@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/yourname" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://plus.google.com/yourname" title="Google → https:&#x2F;&#x2F;plus.google.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-google fa-fw"></i>Google</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/yourname" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+  </div>
+
+
+
+        </div><div>
+  <canvas id="canvasDiyBlock" style="width:60%;">当前浏览器不支持canvas，请更换浏览器后再试</canvas><script src="/js/custom/clock.js"></script>
+</div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://simon-yian.github.io/2022/07/07/xianTrain5-jsBasics/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avator.jpg">
+      <meta itemprop="name" content="simon·yi an">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="simon·yian'Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          培训心得 [javaScript基础]
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-07-07 20:07:24" itemprop="dateCreated datePublished" datetime="2022-07-07T20:07:24+08:00">2022-07-07</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2022-07-08 19:02:38" itemprop="dateModified" datetime="2022-07-08T19:02:38+08:00">2022-07-08</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/XiAnTrain/" itemprop="url" rel="index"><span itemprop="name">XiAnTrain</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>4.7k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>4 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p><em><strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;学习打卡第嗯-1天</strong></em></p>
+<span id="more"></span>
+
+<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>javascript是一种属于网络的脚本语言，用于web应用开发，来为网页添加动态的功能，来为用户提供更流畅的浏览效果。</p>
+<p>● 是一种解释性脚本语言（代码不进行预编译）。<br>● 主要用来向HTML（标准通用标记语言下的一个应用）页面添加交互行为。<br>● 可以直接嵌入HTML页面，但写成单独的js文件有利于结构和行为的分离。<br>● 跨平台特性，在绝大多数浏览器的支持下，可以在多种平台下运行（如Windows、Linux、Mac、Android、iOS等）。<br>Javascript脚本语言同其他语言一样，有它自身的基本数据类型，表达式和算术运算符及程序的基本程序框架。Javascript提供了四种基本的数据类型和两种特殊数据类型用来处理数据和文字。而变量提供存放信息的地方，表达式则可以完成较复杂的信息处理</p>
+<h1 id="JavaScript能做什么"><a href="#JavaScript能做什么" class="headerlink" title="JavaScript能做什么"></a>JavaScript能做什么</h1><p>● 使网页具有交互性，例如响应用户点击，给用户提供更好的体验<br>● 可以处理表单，检验用户的输入，并提供及时反馈节省用户时间。例如，表单中要你输入电子邮箱而你却输入一个手机号，那么应该给你一个提醒。<br>● 还可以根据用户的操作，动态的创建页面。例如，发邮件时，添加附件操作。<br>● 设置cookie，cookie是存储在浏览器上的一些临时信息，例如你浏览过的网站地址，使用过的用户名<br>● JavaScript 是有规律地重复的HTML元素简化，减少下载时间。<br>● 浏览器与服务器进行数据通讯，比如现在最流行的Ajax异步传输；</p>
+<h1 id="JavaScript构成"><a href="#JavaScript构成" class="headerlink" title="JavaScript构成"></a>JavaScript构成</h1><p>● JavaScript由以下三部分组成：<br>  ○ ECMAScript，它用来描述语法和基本对象<br>  ○ 文档对象模型Doucment Object Model（DOM），用来处理网页内容</p>
+<p>  ○ 浏览器对象模型Borwser Object Model（BOM），用来处理浏览器交互</p>
+<h1 id="JavaScript的开发环境与运行环境"><a href="#JavaScript的开发环境与运行环境" class="headerlink" title="JavaScript的开发环境与运行环境"></a>JavaScript的开发环境与运行环境</h1><p>● JavaScript为轻型脚本语言，可在任意文本编辑器中编辑<br>● 由于JavaScript是内嵌在HTML中执行，所以其运行环境即浏览器</p>
+<h1 id="JavaScript的使用"><a href="#JavaScript的使用" class="headerlink" title="JavaScript的使用"></a>JavaScript的使用</h1><p>● JavaScript需在HTML中内嵌运行，其内嵌方式有两种：<br>  ○ 在网页中创建<code>&lt;script&gt;&lt;/script&gt;</code>,在标签之间写JavaScript代码<br>  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">  &lt;script&gt;</span><br><span class="line">  	alert(&quot;hello world&quot;)</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  </span><br></pre></td></tr></table></figure><br>   ○ 在外部创建“.js”文件，通过<code>&lt;script src=&quot;文件路径&quot;&gt;</code>引入到HTML文件中执行<br>       <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">   	&lt;head&gt;</span><br><span class="line">	&lt;script src=&quot;xxx/xxx.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br></pre></td></tr></table></figure></p>
+<h1 id="javascript基础"><a href="#javascript基础" class="headerlink" title="javascript基础"></a>javascript基础</h1><h2 id="值"><a href="#值" class="headerlink" title="值"></a>值</h2><p> ○ 数字类型的值(数字)<br> ○ 算术值(加减乘除等与运算,需要两个或两个以上的数字)<br> ○ 特殊数字(三种)<br>     infinity:表示正无穷大<br>     -infinity:负无穷大<br>     NaN:不是数字,不正当的算数运算得到不正当的值(0/0)</p>
+<p> ○字符串(用于表示文本,使用引号引起来即可)<br>     注:  在引号中添加特殊字符时比较难加，但是只需要添加反引号” <code> &quot;就可解决这个问题(console.log(</code>hello my   “son”`);)</p>
+<h2 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符(\)"></a>转义字符(\)</h2><p> 出现在引用文本中,表示后面有特殊字符<br> ○ 换行符(\n)<br> ○ 制表符(\t)<br> ○ 如果希望字符串中的斜杠只是斜杠，可以使用两个斜杠</p>
+<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><p>  一元运算符：有单词构成的符号 如（typeof）</p>
+<h2 id="布尔值"><a href="#布尔值" class="headerlink" title="布尔值"></a>布尔值</h2><p> ○  比较运算符(&gt;,&lt;,&lt;=,&gt;=….) [比较运算符属于二元运算符]<br> ○ 逻辑运算符（与&amp;&amp;，或||，非!）<br>       &amp;&amp;:表示逻辑与，表示结果为真才为真<br>    ||：表示逻辑或，表示一个为真，则为真<br>      !：表示逻辑非，表示取反<br>注：||具有最低优先级，然后时&amp;&amp;，然后是比较运算符，再然后时其他运算符<br>   ○  三元运算符，由问号和冒号写成 (ture?1:2)</p>
+<h2 id="空值"><a href="#空值" class="headerlink" title="空值"></a>空值</h2><p>  使用null和undefined表示空值<br>  注：  ○ Undefined表示变量不含值<br>  ○ Null可以通过将变量的值设置为Null来清空变量</p>
+<h2 id="自动类型转换"><a href="#自动类型转换" class="headerlink" title="自动类型转换"></a>自动类型转换</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">console.log(8*null)--&gt;0</span><br><span class="line">console.log(&quot;3&quot;-1)--&gt;2</span><br><span class="line">console.log(&quot;3&quot;+1)--&gt;31</span><br><span class="line">console.log(&quot;six&quot;*1)--&gt;NaN</span><br><span class="line">console.log(false==0)--&gt;true</span><br><span class="line">console.log(null==undefined)--&gt;true</span><br><span class="line">console.log(null==0)--&gt;false</span><br></pre></td></tr></table></figure>
+<h2 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h2><p>  例：console.log(1+1);</p>
+<h2 id="绑定（变量）"><a href="#绑定（变量）" class="headerlink" title="绑定（变量）"></a>绑定（变量）</h2><pre><code>let var const定义一个绑定
+例：`let a =   1*2`
+</code></pre>
+<p>注：<br>1.var全称(variable)表示变量，多用于以前得JavaScript中声明绑定<br>2.const全称（constant），表示定义一个常量绑定，只要它存在，它就一直指向相同得值</p>
+<h2 id="分号"><a href="#分号" class="headerlink" title="分号"></a>分号</h2><p>  ○ 分号用于分隔JavaScript语句<br>  ○ 通常我们在每条可执行的语句结尾添加分号，代表作一句JavaScript语句的结束<br>  ○ 使用分号的另一个好处就是。。。。能在一行多写点代码嘛</p>
+<h2 id="JavaScript代码"><a href="#JavaScript代码" class="headerlink" title="JavaScript代码"></a>JavaScript代码</h2><p>  ○ JavaScript代码是JavaScript语句的序列<br>  ○ 浏览器按照编写顺序依次执行每条语句</p>
+<h2 id="JavaScript代码块"><a href="#JavaScript代码块" class="headerlink" title="JavaScript代码块"></a>JavaScript代码块</h2><p>  ○ JavaScript可以分批地组合起来<br>  ○ 代码块以左花括号开始，以右花括号结束<br>  ○ 代码块的作用是一并执行语句序列</p>
+<h2 id="JavaScript语句标识符"><a href="#JavaScript语句标识符" class="headerlink" title="JavaScript语句标识符"></a>JavaScript语句标识符</h2><p>  ○ JavaScript语句通常以一个语句标识符为开始，并执行该语句。<br>  ○ 语句标识符是保留关键字不能作为变量名使用<br>  ○ JavaScript语句标识符（关键字）</p>
+<img src="https://s2.loli.net/2022/07/08/muvq3ZkTxF8Hbdo.jpg" width="850" height="800" div align="right">
+
+<h2 id="JavaScript数据类型"><a href="#JavaScript数据类型" class="headerlink" title="JavaScript数据类型"></a>JavaScript数据类型</h2><p>数据类型  具体描述<br>number  能存储整数和小数类型<br>string  用单引号或双引号来声明的字符串<br>boolean 只能是两个值选择：true、false<br>undefined 变量被声明后，但未被赋值<br>object  javascript中的对象、数组和null</p>
+<p>  ○ 在JavaScript中可以使用typeof()函数来检查变量的返回值类型<br>  ○ javaScript拥有动态类型，相同变量可用作不同的类型<br>   ○  当声明新变量时，可以使用关键词“new”来声明其类型<br>实例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var   name = new String; </span><br><span class="line">var age   = new Number;</span><br><span class="line">var   money = new boolean;</span><br><span class="line">var   cars = new Arrays;</span><br><span class="line">var   person = new Object;</span><br></pre></td></tr></table></figure>
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><p>  数组对象是使用单独的变量名来存储一系列<b>不相同</b>类型的值<br>  ○ 创建数组，不同的方式：<br>    常规方式：<br>      <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var myArray = new Array();</span><br><span class="line">myArray[0]=&quot;hello&quot;;</span><br><span class="line">myArray[1] = &quot;world&quot;;</span><br><span class="line"></span><br></pre></td></tr></table></figure><br>    简洁方式：<br>    <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var myArray = new Array(&quot;hello&quot;,&quot;world&quot;);</span><br><span class="line"></span><br></pre></td></tr></table></figure><br>    字面方式：<br>    <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var myArray=[&quot;hello&quot;,&quot;world&quot;];</span><br><span class="line"></span><br></pre></td></tr></table></figure><br>  ○ 数组访问<br>    语法：数组名[下标] <code>arr[]</code><br>    [0]表示第一个元素<br>    在一个数组可以有不同的对象<br>  ○ 数据方法和属性</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var    a = 数组名.length       //length元素的数量</span><br><span class="line">var    b = 数组名.indexOf(&quot;需要索引的字段&quot;)    //括号里面为索引值</span><br></pre></td></tr></table></figure>
+<pre><code>--合并两个数组-concat()
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var one=[&quot;ni&quot;,&quot;hao&quot;];</span><br><span class="line">var two=[&quot;ni&quot;,&quot;hao age&quot;];</span><br><span class="line">var he = one.concat(two);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+--用数组的元素组合字符串-join()
+arrayObject.join(separator)
+</code></pre>
+<p>separator：指定要使用的分隔符，如果省略改参数，则使用逗号作为分隔符</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function bian()&#123;</span><br><span class="line">  var bianbian=[&quot;字&quot;,&quot;变&quot;,&quot;了&quot;]；</span><br><span class="line">  document.getElementById(&quot;zi&quot;).innnerHTML = bianbian.join(&quot;&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code>--删除最后一个元素pop()
+--数组的末尾添加新的元素-push()
+--将一个数组中的元素的顺序反转排序-reverse（）
+--删除数组的第一个元素-shift()
+--从一个数据中选择元素-slice()
+--slice()方法可提取字符串的某个部分，并以新的字符产返回被提取的部分
+</code></pre>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stringObject.slice(start,end);//左开右闭</span><br></pre></td></tr></table></figure>
+<p>   –数组排序（按字母顺序升序）-sort()<br>    –数组排序（按字母顺序降序）-sort(function(a,b){return a-b})<br>    –数组排序（按字母顺序降序）-sort(function(a,b){return b-a)}</p>
+<pre><code>--插入、删除或者替换数组的元素-splice()
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">arrayObject.splice(index,howment,element1,elementN);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+index: 必需。规定从何处添加/删除元素。该参数是开始插入和(或)删除的数组元素的下标，必需是数字哦
+howmant: 必需。规定应该删除多少元素。必须是数字，但可以是（0）。如果未规定此参数，则删除从index开始到原数组结尾的所有元素
+element1:  可选。规定要添加到数组的新元素。从index所指的下标处开始插入
+elementN:  可选。可向数组添加若干元素。
+  返回值：
+    如果次年arrayObject中删除了元素，则返回的是含有被删除的元素的数组
+
+--转换数组到字符串-toString()
+--在数组开头添加新的元素-unshift()
+</code></pre>
+<h1 id="javaScript对象"><a href="#javaScript对象" class="headerlink" title="javaScript对象"></a>javaScript对象</h1><pre><code>○ 在JavaScript中，对象是拥有属性和方法的数据。
+■ 属性是与对象相关的值
+■ 方法是能够在对象上执行的动作
+○ 对象也是一个变量，但对象可以包含对个值（多个变量）
+</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var car = &#123;</span><br><span class="line"></span><br><span class="line">  name:&quot;Lamborghini&quot;,</span><br><span class="line">  price:999,</span><br><span class="line">  color:&quot;black&quot;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="●-对象属性"><a href="#●-对象属性" class="headerlink" title="● 对象属性"></a>● 对象属性</h2><p>  ○ JavaScript对象是变量的容器<br>  ○ JavaScript对象是键值对的容器<br>  ○ 键值对的基本写法为name:value（上边的例子就是喽）<br>  ○ 键值对在JavaScript对象中统称为对象属性。<br>  ○ 访问对象属性<br>    ■ 可以用对象名点属性（如：person.one）<br>    ■ 也可以用对象名[“属性”]（如：person[“one”]）</p>
+<h2 id="●-对象方法"><a href="#●-对象方法" class="headerlink" title="● 对象方法"></a>● 对象方法</h2><p>  ○ 对象的方法定义了一个函数，并作为对象的属性存储<br>  ○ 对象方法通过添加()调用（当成函数调用）<br>  ○ 下边的这个例子访问了person对象的all()方法（如果直接访问person对象的all属性，它将作为定义一个函数的字符串返回，也就是说把后边的代码直接返回，并且打印出来）<br>    ■ 访问方法（例：person.all()）<br>    ■ 访问属性（例：person.all）</p>
+
+    </div>
+
+    
+    
+    
+    
+    <div>
+      
+         <div>
+	
+		<div style="text-align:center;color:#bfbfbf;font-size:16px;"> 
+ 		<span>-------- 本文结束 </span> 
+ 		<i class="fa fa-paw"></i> 
+ 		<span> 感谢阅读 --------</span>
+		</div> 
+  	
+</div>
+      
+    </div>
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div></div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.png" alt="simon·yi an 微信">
+        <span>微信</span>
+      </div>
+
+  </div>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/07/07/xianTrain4-jsObject/" rel="prev" title="培训心得 [javaScript对象]">
+                  <i class="fa fa-chevron-left"></i> 培训心得 [javaScript对象]
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/07/08/xianTrain6-animation/" rel="next" title="培训心得 [动画]">
+                  培训心得 [动画] <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">simon·yi an</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">203k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">3:04</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+  <div class="powered-by">
+  <i class="fa fa-user-md"></i>
+  <span id="busuanzi_container_site_uv">
+    本站总访客数:<span id="busuanzi_value_site_uv"></span>&nbsp;&nbsp;| 
+  </span>
+  <span id="busuanzi_container_site_pv">
+      &nbsp;本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  </span>
+  </div>
+  </div>
+<script>
+      var now = new Date(); 
+      function createtime() { 
+          var grt= new Date("03/12/2019 12:00:00");//此处修改你的建站时间或者网站上线时间 
+          now.setTime(now.getTime()+250); 
+          days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+          hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+          if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+          mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+          seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+          snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+          document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+          document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+      } 
+  setInterval("createtime()",250);
+  </script>
+    </div>
+  </footer>
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="https://cdn.jsdelivr.net/npm/ribbon.js@1.0.2/dist/ribbon.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+  <script async src="/js/cursor/fireworks.js"></script>
+
+
+
+
+  <script src="/js/activate-power-mode.min.js"></script>
+  <script>
+    POWERMODE.colorful = true;
+    POWERMODE.shake = false;
+    document.body.addEventListener('input', POWERMODE);
+  </script>
+
+</body>
+</html>

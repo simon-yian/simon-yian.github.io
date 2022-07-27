@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="baidu-site-verification" content="code-lKi6sS4j7S" />
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/H%20.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"simon-yian.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta property="og:type" content="article">
+<meta property="og:title" content="PythonNote">
+<meta property="og:url" content="https://simon-yian.github.io/2021/10/25/PythonNote/index.html">
+<meta property="og:site_name" content="simon·yian&#39;Blog">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/10/25/lQXn9eE8fIvHCYp.jpg">
+<meta property="article:published_time" content="2021-10-25T11:30:34.000Z">
+<meta property="article:modified_time" content="2021-10-25T13:16:20.000Z">
+<meta property="article:author" content="simon·yi an">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/10/25/lQXn9eE8fIvHCYp.jpg">
+
+
+<link rel="canonical" href="https://simon-yian.github.io/2021/10/25/PythonNote/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://simon-yian.github.io/2021/10/25/PythonNote/","path":"2021/10/25/PythonNote/","title":"PythonNote"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>PythonNote | simon·yian'Blog</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+
+
+  <!-- 添加萝莉-->
+  <script src="/live2d-widget/autoload.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">simon·yian'Blog</h1>
+      <i class="logo-line"></i>
+    </a>
+      <img class="custom-logo-image" src="/images/simon.png" alt="simon·yian'Blog">
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-commonweal"><a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fas fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-message"><a href="/message/" rel="section"><i class="fas fa-comment fa-fw"></i>留言板</a></li>
+        <li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="sitmap fa-fw"></i>站点地图</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-%E7%AC%AC%E4%B8%80%E7%AB%A0"><span class="nav-number">1.</span> <span class="nav-text">               第一章</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%C2%B7%E5%8F%98%E9%87%8F"><span class="nav-number">1.1.</span> <span class="nav-text">·变量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%C2%B7%C2%B7%E6%9C%89%E5%85%B3%E5%8F%98%E9%87%8F%E7%9A%84%E8%A7%84%E5%88%99"><span class="nav-number">1.1.1.</span> <span class="nav-text">··有关变量的规则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%C2%B7%C2%B7%E5%BD%93%E8%BE%93%E5%85%A5%E7%A8%8B%E5%BA%8F%E6%9C%89%E8%AF%AF%E6%97%B6%EF%BC%8C%E8%A7%A3%E9%87%8A%E5%99%A8%E5%B0%B1%E4%BC%9A%E6%8A%A5%E9%94%99%E3%80%82"><span class="nav-number">1.1.2.</span> <span class="nav-text">··当输入程序有误时，解释器就会报错。</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%C2%B7%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">1.2.</span> <span class="nav-text">·字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%C2%B7%C2%B7%E4%BF%AE%E6%94%B9%E5%AD%97%E7%AC%A6%E7%9A%84%E5%A4%A7%E5%B0%8F%E5%86%99"><span class="nav-number">1.2.1.</span> <span class="nav-text">··修改字符的大小写</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%C2%B7%C2%B7%E5%90%88%E5%B9%B6%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">1.2.2.</span> <span class="nav-text">··合并字符串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%C2%B7%C2%B7%E4%BD%BF%E7%94%A8%E5%88%B6%E8%A1%A8%E7%AC%A6%E6%88%96%E6%8D%A2%E8%A1%8C%E7%AC%A6%E6%9D%A5%E6%B7%BB%E5%8A%A0%E7%A9%BA%E7%99%BD"><span class="nav-number">1.2.3.</span> <span class="nav-text">··使用制表符或换行符来添加空白</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%C2%B7%C2%B7%E5%88%A0%E9%99%A4%E7%A9%BA%E7%99%BD"><span class="nav-number">1.2.4.</span> <span class="nav-text">··删除空白</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%C2%B7%C2%B7%E4%BD%BF%E7%94%A8%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%97%B6%E9%81%BF%E5%85%8D%E8%AF%AD%E6%B3%95%E9%94%99%E8%AF%AF"><span class="nav-number">1.2.5.</span> <span class="nav-text">··使用字符串时避免语法错误</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%C2%B7%C2%B7python-2%E4%B8%AD%E7%9A%84print%E8%AF%AD%E5%8F%A5-print-%E2%80%9CHello-Python-2-7-world-%E2%80%9D"><span class="nav-number">1.2.6.</span> <span class="nav-text">··python 2中的print语句 print “Hello Python 2.7 world!”</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%C2%B7%E6%95%B0%E5%AD%97"><span class="nav-number">1.3.</span> <span class="nav-text">·数字</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%C2%B7%C2%B7%E6%95%B4%E6%95%B0"><span class="nav-number">1.3.1.</span> <span class="nav-text">··整数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%C2%B7%C2%B7%E6%B5%AE%E7%82%B9%E6%95%B0"><span class="nav-number">1.3.2.</span> <span class="nav-text">··浮点数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%C2%B7%C2%B7%E4%BD%BF%E7%94%A8%E5%87%BD%E6%95%B0str-%E9%81%BF%E5%85%8D%E7%B1%BB%E5%9E%8B%E9%94%99%E8%AF%AF"><span class="nav-number">1.3.3.</span> <span class="nav-text">··使用函数str()避免类型错误</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%C2%B7%C2%B7python-2-%E4%B8%AD%E7%9A%84%E6%95%B4%E6%95%B0"><span class="nav-number">1.3.4.</span> <span class="nav-text">··python 2 中的整数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%C2%B7%E6%B3%A8%E9%87%8A"><span class="nav-number">1.4.</span> <span class="nav-text">·注释</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%C2%B7%C2%B7%E5%A6%82%E4%BD%95%E7%BC%96%E5%86%99%E6%B3%A8%E9%87%8A"><span class="nav-number">1.4.1.</span> <span class="nav-text">··如何编写注释</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%C2%B7%C2%B7%E8%AF%A5%E7%BC%96%E5%86%99%E4%BB%80%E4%B9%88%E6%A0%B7%E7%9A%84%E6%B3%A8%E9%87%8A"><span class="nav-number">1.4.2.</span> <span class="nav-text">··该编写什么样的注释</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-%E7%AC%AC%E4%BA%8C%E7%AB%A0"><span class="nav-number">2.</span> <span class="nav-text">               第二章</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%C2%B7%E5%88%97%E8%A1%A8%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">2.1.</span> <span class="nav-text">·列表是什么</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%C2%B7%C2%B7%E8%AE%BF%E9%97%AE%E5%88%97%E8%A1%A8%E5%85%83%E7%B4%A0"><span class="nav-number">2.1.1.</span> <span class="nav-text">··访问列表元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%C2%B7%C2%B7%E7%B4%A2%E5%BC%95%E4%BB%8E0%E8%80%8C%E4%B8%8D%E6%98%AF1%E5%BC%80%E5%A7%8B"><span class="nav-number">2.1.2.</span> <span class="nav-text">··索引从0而不是1开始</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%C2%B7%C2%B7%E4%BD%BF%E7%94%A8%E5%88%97%E8%A1%A8%E4%B8%AD%E7%9A%84%E5%90%84%E4%B8%AA%E5%80%BC"><span class="nav-number">2.1.3.</span> <span class="nav-text">··使用列表中的各个值</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%C2%B7%E4%BF%AE%E6%94%B9%E3%80%81%E6%B7%BB%E5%8A%A0%E5%92%8C%E5%88%A0%E9%99%A4%E5%85%83%E7%B4%A0"><span class="nav-number">2.2.</span> <span class="nav-text">·修改、添加和删除元素</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%C2%B7%C2%B7%E4%BF%AE%E6%94%B9%E5%88%97%E8%A1%A8%E5%85%83%E7%B4%A0"><span class="nav-number">2.2.1.</span> <span class="nav-text">··修改列表元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%C2%B7%C2%B7%E5%9C%A8%E5%88%97%E8%A1%A8%E4%B8%AD%E6%B7%BB%E5%8A%A0%E5%85%83%E7%B4%A0"><span class="nav-number">2.2.2.</span> <span class="nav-text">··在列表中添加元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%C2%B7%C2%B7%E4%BB%8E%E5%88%97%E8%A1%A8%E4%B8%AD%E5%88%A0%E9%99%A4%E5%85%83%E7%B4%A0"><span class="nav-number">2.2.3.</span> <span class="nav-text">··从列表中删除元素</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%C2%B7%E7%BB%84%E7%BB%87%E5%88%97%E8%A1%A8"><span class="nav-number">2.3.</span> <span class="nav-text">·组织列表</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%C2%B7%C2%B7sort%EF%BC%88%EF%BC%89-gt-%E5%AF%B9%E6%95%B0%E5%88%97%E6%B0%B8%E4%B9%85%E6%80%A7%E6%8E%92%E5%BA%8F-cars-sort"><span class="nav-number">2.3.1.</span> <span class="nav-text">··sort（）-&gt;对数列永久性排序;cars.sort()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%C2%B7%C2%B7sorted-gt-%E5%AF%B9%E5%88%97%E8%A1%A8%E8%BF%9B%E8%A1%8C%E4%B8%B4%E6%97%B6%E6%8E%92%E5%BA%8F%EF%BC%9Bsorted-cars"><span class="nav-number">2.3.2.</span> <span class="nav-text">··sorted()-&gt;对列表进行临时排序；sorted(cars)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%C2%B7%C2%B7%E5%80%92%E8%BF%99%E6%89%93%E5%8D%B0%E5%88%97%E8%A1%A8"><span class="nav-number">2.3.3.</span> <span class="nav-text">··倒这打印列表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%C2%B7%C2%B7len-gt-%E7%A1%AE%E5%AE%9A%E5%88%97%E8%A1%A8%E9%95%BF%E5%BA%A6%EF%BC%9Blen-cars"><span class="nav-number">2.3.4.</span> <span class="nav-text">··len()-&gt; 确定列表长度；len(cars)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%C2%B7%C2%B7%E4%BD%BF%E7%94%A8%E5%88%97%E8%A1%A8%E6%97%B6%E9%81%BF%E5%85%8D%E7%B4%A2%E5%BC%95%E9%94%99%E8%AF%AF"><span class="nav-number">2.3.5.</span> <span class="nav-text">··使用列表时避免索引错误</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%C2%B7%E7%B4%A2%E5%BC%95-1%EF%BC%9A%E8%AE%BF%E9%97%AE%E5%88%97%E8%A1%A8%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E5%85%83%E7%B4%A0"><span class="nav-number">2.4.</span> <span class="nav-text">·索引-1：访问列表最后一个元素</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-%E7%AC%AC%E4%B8%89%E7%AB%A0"><span class="nav-number">3.</span> <span class="nav-text">               第三章</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%81%8D%E5%8E%86%E6%95%B4%E4%B8%AA%E5%88%97%E8%A1%A8"><span class="nav-number">3.1.</span> <span class="nav-text">遍历整个列表</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B7%B1%E5%85%A5%E5%9C%B0%E7%A0%94%E7%A9%B6%E5%BE%AA%E7%8E%AF"><span class="nav-number">3.1.1.</span> <span class="nav-text">深入地研究循环</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9C%A8for%E5%BE%AA%E7%8E%AF%E4%B8%AD%E6%89%A7%E8%A1%8C%E6%9B%B4%E5%A4%9A%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="nav-number">3.1.2.</span> <span class="nav-text">在for循环中执行更多的操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9C%A8for%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9D%9F%E5%90%8E%E6%89%A7%E8%A1%8C%E4%B8%80%E4%BA%9B%E6%93%8D%E4%BD%9C"><span class="nav-number">3.1.3.</span> <span class="nav-text">在for循环结束后执行一些操作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%81%BF%E5%85%8D%E7%BC%A9%E8%BF%9B%E9%94%99%E8%AF%AF"><span class="nav-number">3.2.</span> <span class="nav-text">避免缩进错误</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BF%98%E8%AE%B0%E7%BC%A9%E8%BF%9B"><span class="nav-number">3.2.1.</span> <span class="nav-text">忘记缩进</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BF%98%E8%AE%B0%E7%BC%A9%E8%BF%9B%E9%A2%9D%E5%A4%96%E7%9A%84%E4%BB%A3%E7%A0%81%E8%A1%8C"><span class="nav-number">3.2.2.</span> <span class="nav-text">忘记缩进额外的代码行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8D%E5%BF%85%E8%A6%81%E7%9A%84%E7%BC%A9%E8%BF%9B"><span class="nav-number">3.2.3.</span> <span class="nav-text">不必要的缩进</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BE%AA%E7%8E%AF%E5%90%8E%E4%B8%8D%E5%BF%85%E8%A6%81%E7%9A%84%E7%BC%A9%E8%BF%9B"><span class="nav-number">3.2.4.</span> <span class="nav-text">循环后不必要的缩进</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%81%97%E6%BC%8F%E4%BA%86%E5%86%92%E5%8F%B7%EF%BC%88%E8%AF%AD%E6%B3%95%E9%94%99%E8%AF%AF%EF%BC%89"><span class="nav-number">3.2.5.</span> <span class="nav-text">遗漏了冒号（语法错误）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E6%95%B0%E5%80%BC%E5%88%97%E8%A1%A8"><span class="nav-number">3.3.</span> <span class="nav-text">创建数值列表</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#range-gt-%E7%94%9F%E6%88%90%E4%B8%80%E7%B3%BB%E5%88%97%E7%9A%84%E6%95%B0%E5%AD%97"><span class="nav-number">3.3.1.</span> <span class="nav-text">range()-&gt;生成一系列的数字;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8range-%E5%88%9B%E5%BB%BA%E6%95%B0%E5%AD%97%E5%88%97%E8%A1%A8"><span class="nav-number">3.3.2.</span> <span class="nav-text">使用range() 创建数字列表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%B9%E6%95%B0%E5%AD%97%E5%88%97%E8%A1%A8%E6%89%A7%E8%A1%8C%E7%AE%80%E5%8D%95%E7%9A%84%E7%BB%9F%E8%AE%A1%E8%AE%A1%E7%AE%97"><span class="nav-number">3.3.3.</span> <span class="nav-text">对数字列表执行简单的统计计算</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%97%E8%A1%A8%E8%A7%A3%E6%9E%90"><span class="nav-number">3.3.4.</span> <span class="nav-text">列表解析</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%88%97%E8%A1%A8%E7%9A%84%E4%B8%80%E9%83%A8%E5%88%86"><span class="nav-number">3.4.</span> <span class="nav-text">使用列表的一部分</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%87%E7%89%87"><span class="nav-number">3.4.1.</span> <span class="nav-text">切片</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%81%8D%E5%8E%86%E5%88%87%E7%89%87"><span class="nav-number">3.4.2.</span> <span class="nav-text">遍历切片</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%8D%E5%88%B6%E5%88%97%E8%A1%A8"><span class="nav-number">3.4.3.</span> <span class="nav-text">复制列表</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%83%E7%A5%96"><span class="nav-number">3.5.</span> <span class="nav-text">元祖</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E5%85%83%E7%A5%96"><span class="nav-number">3.5.1.</span> <span class="nav-text">定义元祖</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E5%85%83%E7%B4%A0%E5%8F%98%E9%87%8F"><span class="nav-number">3.5.2.</span> <span class="nav-text">修改元素变量</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-%E7%AC%AC%E5%9B%9B%E7%AB%A0"><span class="nav-number">4.</span> <span class="nav-text">              第四章</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%A4%BA%E4%BE%8B"><span class="nav-number">4.1.</span> <span class="nav-text">一个简单示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9D%A1%E4%BB%B6%E6%B5%8B%E8%AF%95"><span class="nav-number">4.2.</span> <span class="nav-text">条件测试</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A3%80%E6%B5%8B%E6%98%AF%E5%90%A6%E7%9B%B8%E7%AD%89"><span class="nav-number">4.2.1.</span> <span class="nav-text">检测是否相等</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A3%80%E6%B5%8B%E6%98%AF%E5%90%A6%E4%B8%8D%E7%9B%B8%E7%AD%89"><span class="nav-number">4.2.2.</span> <span class="nav-text">检测是否不相等</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%AF%94%E8%BE%83%E6%95%B0%E5%AD%97"><span class="nav-number">4.2.3.</span> <span class="nav-text">比较数字</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A3%80%E6%9F%A5%E5%A4%9A%E4%B8%AA%E6%9D%A1%E4%BB%B6"><span class="nav-number">4.2.4.</span> <span class="nav-text">检查多个条件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A3%80%E6%B5%8B%E7%89%B9%E5%AE%9A%E5%80%BC%E6%98%AF%E5%90%A6%E5%8C%85%E5%90%AB%E5%9C%A8%E5%88%97%E8%A1%A8%E4%B8%AD"><span class="nav-number">4.2.5.</span> <span class="nav-text">检测特定值是否包含在列表中</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A3%80%E6%B5%8B%E7%89%B9%E5%AE%9A%E5%80%BC%E6%98%AF%E5%90%A6%E4%B8%8D%E5%8C%85%E5%90%AB%E5%9C%A8%E5%88%97%E8%A1%A8%E4%B8%AD"><span class="nav-number">4.2.6.</span> <span class="nav-text">检测特定值是否不包含在列表中</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B8%83%E5%B0%94%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number">4.2.7.</span> <span class="nav-text">布尔表达式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#if%E8%AF%AD%E5%8F%A5"><span class="nav-number">4.3.</span> <span class="nav-text">if语句</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E7%9A%84if%E8%AF%AD%E5%8F%A5"><span class="nav-number">4.3.1.</span> <span class="nav-text">简单的if语句</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#if-else%E8%AF%AD%E5%8F%A5"><span class="nav-number">4.3.2.</span> <span class="nav-text">if-else语句</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#if-elif-else%E8%AF%AD%E5%8F%A5-gt-C%E8%AF%AD%E8%A8%80if-else-if-else%E8%AF%AD%E5%8F%A5"><span class="nav-number">4.3.3.</span> <span class="nav-text">if-elif-else语句-&gt;C语言if-else if - else语句</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8if%E8%AF%AD%E5%8F%A5%E5%A4%84%E7%90%86%E5%88%97%E8%A1%A8"><span class="nav-number">4.4.</span> <span class="nav-text">使用if语句处理列表</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A3%80%E6%9F%A5%E7%89%B9%E6%AE%8A%E5%85%83%E7%B4%A0"><span class="nav-number">4.4.1.</span> <span class="nav-text">检查特殊元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A1%AE%E5%AE%9A%E5%88%97%E8%A1%A8%E4%B8%8D%E6%98%AF%E7%A9%BA%E7%9A%84"><span class="nav-number">4.4.2.</span> <span class="nav-text">确定列表不是空的</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%A4%9A%E4%B8%AA%E5%88%97%E8%A1%A8"><span class="nav-number">4.4.3.</span> <span class="nav-text">使用多个列表</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-%E7%AC%AC%E4%BA%94%E7%AB%A0"><span class="nav-number">5.</span> <span class="nav-text">              第五章</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%AD%97%E5%85%B8"><span class="nav-number">5.1.</span> <span class="nav-text">使用字典</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%BF%E9%97%AE%E5%AD%97%E5%85%B8%E4%B8%AD%E7%9A%84%E5%80%BC"><span class="nav-number">5.1.1.</span> <span class="nav-text">访问字典中的值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E9%94%AE-%E5%80%BC%E5%AF%B9"><span class="nav-number">5.1.2.</span> <span class="nav-text">添加键-值对</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%88%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%A9%BA%E5%AD%97%E5%85%B8-alien-0"><span class="nav-number">5.1.3.</span> <span class="nav-text">先创建一个空字典    alien_0 &#x3D; {}</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E5%AD%97%E5%85%B8%E4%B8%AD%E7%9A%84%E5%80%BC"><span class="nav-number">5.1.4.</span> <span class="nav-text">修改字典中的值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E9%94%AE%E2%80%94%E5%80%BC%E5%AF%B9-del-alien-0-%E2%80%98points%E2%80%99"><span class="nav-number">5.1.5.</span> <span class="nav-text">删除键—值对     del alien_0[‘points’]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%B1%E7%B1%BB%E4%BC%BC%E5%AF%B9%E8%B1%A1%E7%BB%84%E6%88%90%E7%9A%84%E5%AD%97%E5%85%B8"><span class="nav-number">5.1.6.</span> <span class="nav-text">由类似对象组成的字典</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%81%8D%E5%8E%86%E5%AD%97%E5%85%B8"><span class="nav-number">5.2.</span> <span class="nav-text">遍历字典</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%81%8D%E5%8E%86%E6%89%80%E6%9C%89%E7%9A%84%E9%94%AE%E2%80%94%E5%80%BC%E5%AF%B9"><span class="nav-number">5.2.1.</span> <span class="nav-text">遍历所有的键—值对</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%81%8D%E5%8E%86%E5%AD%97%E5%85%B8%E4%B8%AD%E7%9A%84%E6%89%80%E6%9C%89%E9%94%AE"><span class="nav-number">5.2.2.</span> <span class="nav-text">遍历字典中的所有键</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%81%8D%E5%8E%86%E5%AD%97%E5%85%B8%E4%B8%AD%E7%9A%84%E6%89%80%E6%9C%89%E5%80%BC"><span class="nav-number">5.2.3.</span> <span class="nav-text">遍历字典中的所有值</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B5%8C%E5%A5%97"><span class="nav-number">5.3.</span> <span class="nav-text">嵌套</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%97%E5%85%B8%E5%88%97%E8%A1%A8"><span class="nav-number">5.3.1.</span> <span class="nav-text">字典列表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9C%A8%E5%AD%97%E5%85%B8%E4%B8%AD%E5%82%A8%E5%AD%98%E5%88%97%E8%A1%A8"><span class="nav-number">5.3.2.</span> <span class="nav-text">在字典中储存列表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9C%A8%E5%AD%97%E5%85%B8%E4%B8%AD%E5%82%A8%E5%AD%98%E5%AD%97%E5%85%B8"><span class="nav-number">5.3.3.</span> <span class="nav-text">在字典中储存字典</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-%E7%AC%AC%E5%85%AD%E7%AB%A0"><span class="nav-number">6.</span> <span class="nav-text">              第六章</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%BD%E6%95%B0input-%EF%BC%88%EF%BC%89%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="nav-number">6.1.</span> <span class="nav-text">函数input （）的工作原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E5%86%99%E6%B8%85%E6%99%B0%E7%9A%84%E7%A8%8B%E5%BA%8F"><span class="nav-number">6.2.</span> <span class="nav-text">编写清晰的程序</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-%E7%AC%AC%E4%B8%83%E7%AB%A0"><span class="nav-number">7.</span> <span class="nav-text">              第七章</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0"><span class="nav-number">7.1.</span> <span class="nav-text">定义函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%91%E5%87%BD%E6%95%B0%E4%BC%A0%E9%80%92%E4%BF%A1%E6%81%AF"><span class="nav-number">7.1.1.</span> <span class="nav-text">向函数传递信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E5%8F%82%E5%92%8C%E5%BD%A2%E5%8F%82"><span class="nav-number">7.1.2.</span> <span class="nav-text">实参和形参</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%A0%E9%80%92%E5%AE%9E%E5%8F%82"><span class="nav-number">7.2.</span> <span class="nav-text">传递实参</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%8D%E7%BD%AE%E5%AE%9E%E5%8F%82"><span class="nav-number">7.2.1.</span> <span class="nav-text">位置实参</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B3%E9%94%AE%E5%AD%97%E5%AE%9E%E5%8F%82"><span class="nav-number">7.2.2.</span> <span class="nav-text">关键字实参</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%BB%98%E8%AE%A4%E5%80%BC"><span class="nav-number">7.2.3.</span> <span class="nav-text">默认值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AD%89%E6%95%88%E7%9A%84%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8"><span class="nav-number">7.2.4.</span> <span class="nav-text">等效的函数调用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%81%BF%E5%85%8D%E5%AE%9E%E5%8F%82%E9%94%99%E8%AF%AF"><span class="nav-number">7.2.5.</span> <span class="nav-text">避免实参错误</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%94%E5%9B%9E%E5%80%BC%EF%BC%88%E5%87%BD%E6%95%B0%E8%BF%94%E5%9B%9E%E7%9A%84%E5%80%BCreturn%EF%BC%89"><span class="nav-number">7.3.</span> <span class="nav-text">返回值（函数返回的值return）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%94%E5%9B%9E%E7%AE%80%E5%8D%95%E5%80%BC"><span class="nav-number">7.3.1.</span> <span class="nav-text">返回简单值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%A9%E5%AE%9E%E5%8F%82%E5%8F%98%E6%88%90%E5%8F%AF%E9%80%89%E7%9A%84"><span class="nav-number">7.3.2.</span> <span class="nav-text">让实参变成可选的</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%94%E5%9B%9E%E5%AD%97%E5%85%B8"><span class="nav-number">7.3.3.</span> <span class="nav-text">返回字典</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%93%E5%90%88%E4%BD%BF%E7%94%A8%E5%87%BD%E6%95%B0%E5%92%8Cwhile%E5%BE%AA%E7%8E%AF"><span class="nav-number">7.3.4.</span> <span class="nav-text">结合使用函数和while循环</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%A0%E9%80%92%E5%88%97%E8%A1%A8"><span class="nav-number">7.4.</span> <span class="nav-text">传递列表</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9C%A8%E5%87%BD%E6%95%B0%E4%B8%AD%E4%BF%AE%E6%94%B9%E5%88%97%E8%A1%A8"><span class="nav-number">7.4.1.</span> <span class="nav-text">在函数中修改列表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A6%81%E6%AD%A2%E5%87%BD%E6%95%B0%E4%BF%AE%E6%94%B9"><span class="nav-number">7.4.2.</span> <span class="nav-text">禁止函数修改</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%A0%E9%80%92%E4%BB%BB%E6%84%8F%E5%80%BC%E6%95%B0%E9%87%8F%E7%9A%84%E5%AE%9E%E5%8F%82"><span class="nav-number">7.5.</span> <span class="nav-text">传递任意值数量的实参</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%93%E5%90%88%E4%BD%BF%E7%94%A8%E4%BD%8D%E7%BD%AE%E5%AE%9E%E5%8F%82%E5%92%8C%E4%BB%BB%E6%84%8F%E6%95%B0%E9%87%8F%E5%AE%9E%E5%8F%82"><span class="nav-number">7.5.1.</span> <span class="nav-text">结合使用位置实参和任意数量实参</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%BB%E6%84%8F%E5%87%BD%E6%95%B0%E6%95%B0%E9%87%8F%E7%9A%84%E5%85%B3%E9%94%AE%E5%AD%97%E5%AE%9E%E5%8F%82"><span class="nav-number">7.5.2.</span> <span class="nav-text">任意函数数量的关键字实参</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%86%E5%87%BD%E6%95%B0%E5%82%A8%E5%AD%98%E5%9C%A8%E6%A8%A1%E5%9D%97%E4%B8%AD"><span class="nav-number">7.6.</span> <span class="nav-text">将函数储存在模块中</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%BC%E5%85%A5%E6%95%B4%E4%B8%AA%E6%A8%A1%E5%9D%97"><span class="nav-number">7.6.1.</span> <span class="nav-text">导入整个模块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%BC%E5%85%A5%E7%89%B9%E5%AE%9A%E7%9A%84%E5%87%BD%E6%95%B0"><span class="nav-number">7.6.2.</span> <span class="nav-text">导入特定的函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8as%E7%BB%99%E5%87%BD%E6%95%B0%E6%8C%87%E5%AE%9A%E5%88%AB%E5%90%8D"><span class="nav-number">7.6.3.</span> <span class="nav-text">使用as给函数指定别名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8as%E7%BB%99%E6%A8%A1%E5%9D%97%E6%8C%87%E5%AE%9A%E5%88%AB%E5%90%8D"><span class="nav-number">7.6.4.</span> <span class="nav-text">使用as给模块指定别名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%BC%E5%85%A5%E6%A8%A1%E5%9D%97%E4%B8%AD%E7%9A%84%E6%89%80%E6%9C%89%E5%87%BD%E6%95%B0"><span class="nav-number">7.6.5.</span> <span class="nav-text">导入模块中的所有函数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E7%BC%96%E5%86%99%E6%8C%87%E5%8D%97"><span class="nav-number">7.7.</span> <span class="nav-text">函数编写指南</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="simon·yi an"
+      src="/images/avator.jpg">
+  <p class="site-author-name" itemprop="name">simon·yi an</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/simon-yian" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;simon-yian" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yourname@gmail.com" title="E-Mail → mailto:yourname@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/yourname" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://plus.google.com/yourname" title="Google → https:&#x2F;&#x2F;plus.google.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-google fa-fw"></i>Google</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/yourname" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+  </div>
+
+
+
+        </div><div>
+  <canvas id="canvasDiyBlock" style="width:60%;">当前浏览器不支持canvas，请更换浏览器后再试</canvas><script src="/js/custom/clock.js"></script>
+</div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://simon-yian.github.io/2021/10/25/PythonNote/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avator.jpg">
+      <meta itemprop="name" content="simon·yi an">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="simon·yian'Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          PythonNote
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-10-25 19:30:34 / 修改时间：21:16:20" itemprop="dateCreated datePublished" datetime="2021-10-25T19:30:34+08:00">2021-10-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Python%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">Python笔记</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>13k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>12 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <img src="https://i.loli.net/2021/10/25/lQXn9eE8fIvHCYp.jpg" align="center" width="800" height="250" div>
+<span id="more"></span>
+
+<h2 id="emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-第一章"><a href="#emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-第一章" class="headerlink" title="&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 第一章"></a>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 第一章</h2><p>注：运行文件末尾的.py指这是一个python程序-&gt;python解释器读取 </p>
+<h3 id="·变量"><a href="#·变量" class="headerlink" title="·变量"></a>·变量</h3><p>在程序中可随时修改变量的值，而python将始终记录变量的最新值。 </p>
+<h4 id="··有关变量的规则"><a href="#··有关变量的规则" class="headerlink" title="··有关变量的规则"></a>··有关变量的规则</h4><p>·变量名只能包含字母、数字和下划线。变量可以字母和下划线开头，但是不能以数字开头 </p>
+<p>·变量名不能包含空格，但可使用下划线来分隔其中的单词。 </p>
+<p>·不要将python关键字和函数名作变量名，即不要使用python保留用于特殊用途的单词 </p>
+<p>·变量名应该简短又具有描述性。 </p>
+<p>·慎用小写字母l和大写字母o，因为他们可能被人错看成数字1和0. </p>
+<h4 id="··当输入程序有误时，解释器就会报错。"><a href="#··当输入程序有误时，解释器就会报错。" class="headerlink" title="··当输入程序有误时，解释器就会报错。"></a>··当输入程序有误时，解释器就会报错。</h4><h3 id="·字符串"><a href="#·字符串" class="headerlink" title="·字符串"></a>·字符串</h3><p>字符串就是一系列字符，用引号括（单引号和双引号）起来的都是字符串。 </p>
+<h4 id="··修改字符的大小写"><a href="#··修改字符的大小写" class="headerlink" title="··修改字符的大小写"></a>··修改字符的大小写</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">name=&quot;ada lovelace&quot;</span><br><span class="line">print(name.title())</span><br></pre></td></tr></table></figure>
+<p> 输出Ada Lovelace </p>
+<p>方法是Python可对数据执行的操作。 </p>
+<p>在name.title()中，name后 面的句点（.）让Python对变量name执    行方法title()指定的操作。每个方法后面都跟着一对括号， 这是因为方法通常需要额外的信息来完成其工作。这种信息是在括号内提供的。函数title()不 需要额外的信息，因此它后面的括号是空的。  </p>
+<p>title()以首字母大写的方式显示每个单词，即将每个单词的首字母都改为大写。Upper()将字符串转换成大写；lower()将字符串转换成小写； </p>
+<h4 id="··合并字符串"><a href="#··合并字符串" class="headerlink" title="··合并字符串"></a>··合并字符串</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">first_name = &quot;ada&quot;</span><br><span class="line">last_name = &quot;lovelace&quot;</span><br><span class="line">full_name = first_name + &quot; &quot; + last_name</span><br><span class="line">print(full_name) </span><br></pre></td></tr></table></figure>
+
+<p>Python使用加号（+）来合并字符串。在这个示例中，我们使用+来合并first_name、空格和 last_name，以得到完整的姓名 </p>
+<h4 id="··使用制表符或换行符来添加空白"><a href="#··使用制表符或换行符来添加空白" class="headerlink" title="··使用制表符或换行符来添加空白"></a>··使用制表符或换行符来添加空白</h4><p>/t-&gt;tab制表符；/n-&gt;换行 </p>
+<h4 id="··删除空白"><a href="#··删除空白" class="headerlink" title="··删除空白"></a>··删除空白</h4><p>rstrip()-&gt;确保字符串末尾没有空白（暂时性的删除）；要永久删除这个字符串中的空白，必须将删除操作的结果存回到变量中 </p>
+<p>Lstrip()-&gt;确保字符串的开头没有空白 </p>
+<p>strip()-&gt;确保字符串开头和结束都没有空白 </p>
+<h4 id="··使用字符串时避免语法错误"><a href="#··使用字符串时避免语法错误" class="headerlink" title="··使用字符串时避免语法错误"></a>··使用字符串时避免语法错误</h4><p>种语法错误表明，在解释器看 来，其中的有些内容不是有效的Python代码。（有撇号使用双引号） </p>
+<h4 id="··python-2中的print语句-print-“Hello-Python-2-7-world-”"><a href="#··python-2中的print语句-print-“Hello-Python-2-7-world-”" class="headerlink" title="··python 2中的print语句 print “Hello Python 2.7 world!”"></a>··python 2中的print语句 print “Hello Python 2.7 world!”</h4><h3 id="·数字"><a href="#·数字" class="headerlink" title="·数字"></a>·数字</h3><h4 id="··整数"><a href="#··整数" class="headerlink" title="··整数"></a>··整数</h4><p>python支持运算次序；，空格不影响Python计算表达式的方式；python使用两个乘号表示乘方运算； </p>
+<p>如3<strong>2=9、10</strong>6=1000000； </p>
+<h4 id="··浮点数"><a href="#··浮点数" class="headerlink" title="··浮点数"></a>··浮点数</h4><p>python将带小数点的数字都称浮点数。加减乘除都适用，但需要注意的是，结果包含的小数位数可能是不确定的。如0.2+0.1=0.3000000000000000004；暂时忽略 多余的小数位数即可； </p>
+<h4 id="··使用函数str-避免类型错误"><a href="#··使用函数str-避免类型错误" class="headerlink" title="··使用函数str()避免类型错误"></a>··使用函数str()避免类型错误</h4><p>str()-&gt;将非字符串值表示字符串如age=23      message = “Happy” + str(age)+”rd Birthday!” </p>
+<h4 id="··python-2-中的整数"><a href="#··python-2-中的整数" class="headerlink" title="··python 2 中的整数"></a>··python 2 中的整数</h4><p>3/2=1;整数除法的结果只包含整数部分，小数部 分被删除。请注意，计算整数结果时，采取的方式不是四舍五入，而是将小数部分直接删除;3.0/2=1.5    3/2.0=1.5     3.0/2.0=1.5; </p>
+<h3 id="·注释"><a href="#·注释" class="headerlink" title="·注释"></a>·注释</h3><h4 id="··如何编写注释"><a href="#··如何编写注释" class="headerlink" title="··如何编写注释"></a>··如何编写注释</h4><p>在Python中，注释用井号（#）标识。井号后面的内容都会被Python解释器忽略 </p>
+<h4 id="··该编写什么样的注释"><a href="#··该编写什么样的注释" class="headerlink" title="··该编写什么样的注释"></a>··该编写什么样的注释</h4><p>编写注释的主要目的是阐述代码要做什么，以及是如何做的。 </p>
+<h2 id="emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-第二章"><a href="#emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-第二章" class="headerlink" title="&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 第二章"></a>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 第二章</h2><h3 id="·列表是什么"><a href="#·列表是什么" class="headerlink" title="·列表是什么"></a>·列表是什么</h3><p>列表有一系列按特定顺序排列的元素组成。 </p>
+<h4 id="··访问列表元素"><a href="#··访问列表元素" class="headerlink" title="··访问列表元素"></a>··访问列表元素</h4><p>只需将元素的位置或索引告诉python如bicycles = [‘trek’, ‘cannondale’, ‘redline’, ‘specialized’] print(bicycles[0]) 输出 Trek </p>
+<h4 id="··索引从0而不是1开始"><a href="#··索引从0而不是1开始" class="headerlink" title="··索引从0而不是1开始"></a>··索引从0而不是1开始</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bicycles = [&#x27;trek&#x27;, &#x27;6给&#x27;, &#x27;redline&#x27;, &#x27;specialized&#x27;]</span><br><span class="line">print(bicycles[1]print(bicycles[3]) </span><br></pre></td></tr></table></figure>
+<p>输出cannondale  specialized//</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(bicycles[-1])</span><br></pre></td></tr></table></figure>
+<p>输出specycles </p>
+<p>索引-2返回倒数第二个列表元素， 索引-3返回倒数第三个列表元素，以此类推； </p>
+<h4 id="··使用列表中的各个值"><a href="#··使用列表中的各个值" class="headerlink" title="··使用列表中的各个值"></a>··使用列表中的各个值</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">bicycles = [&#x27;trek&#x27;, &#x27;cannondale&#x27;, &#x27;redline&#x27;, &#x27;specialized&#x27;]</span><br><span class="line">message = &quot;My first bicycle was a &quot; + bicycles[0].title() + &quot;.”</span><br><span class="line">print(message)</span><br></pre></td></tr></table></figure>
+<p> 输出My first bicycle was a Trek.  </p>
+<h3 id="·修改、添加和删除元素"><a href="#·修改、添加和删除元素" class="headerlink" title="·修改、添加和删除元素"></a>·修改、添加和删除元素</h3><h4 id="··修改列表元素"><a href="#··修改列表元素" class="headerlink" title="··修改列表元素"></a>··修改列表元素</h4><p>要修改列表元素，可指定列表名和要修改 的元素的索引，再指定该元素的新值 </p>
+<h4 id="··在列表中添加元素"><a href="#··在列表中添加元素" class="headerlink" title="··在列表中添加元素"></a>··在列表中添加元素</h4><p>append()-&gt;在列表末尾添加元素;(动态的添加列表)：motorcycles.append(‘ducati’)  </p>
+<p>Insret()-&gt;在列表中添加元素；</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">motorcycles = [&#x27;honda&#x27;, &#x27;yamaha&#x27;, &#x27;suzuki&#x27;]</span><br><span class="line">motorcycles.insert(0, &#x27;ducati&#x27;) </span><br><span class="line">print(motorcycles)</span><br></pre></td></tr></table></figure>
+<p>输出[‘ducati’, ‘honda’, ‘yamaha’, ‘suzuki’]  </p>
+<h4 id="··从列表中删除元素"><a href="#··从列表中删除元素" class="headerlink" title="··从列表中删除元素"></a>··从列表中删除元素</h4><p>·使用del语句删除元素；del motorcycles[0] </p>
+<p>·pop()-&gt;删除元素 （可删除列表末尾的元素，并让你能够接着使用它）pop(-1)==pop() </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">motorcycles = [&#x27;honda&#x27;, &#x27;yamaha&#x27;, &#x27;suzuki&#x27;]</span><br><span class="line">print(motorcycles)</span><br><span class="line">popped_motorcycle = motorcycles.pop()</span><br><span class="line">print(motorcycles)</span><br><span class="line">print(popped_motorcycle)</span><br></pre></td></tr></table></figure>
+<p>输出[‘honda’, ‘yamaha’, ‘suzuki’] [‘honda’, ‘yamaha’] suzuki  </p>
+<p>判断标准：如果你要从列表 中删除一个元素，且不再以任何方式使用它，就使用del语句；如果你要在删除元素后还能继续 使用它，就使用方法pop()。 </p>
+<p>·remove()-&gt;你不知道要从列表中删除的值所处的位置。如果你只知道要删除的元素的值;motorcycles.remove(‘ducati’) 注意: 方法remove()只删除第一个指定的值。如果要删除的值可能在列表中出现多次，就需要z使用循环来判断是否删除了所有这样的值 </p>
+<h3 id="·组织列表"><a href="#·组织列表" class="headerlink" title="·组织列表"></a>·组织列表</h3><h4 id="··sort（）-gt-对数列永久性排序-cars-sort"><a href="#··sort（）-gt-对数列永久性排序-cars-sort" class="headerlink" title="··sort（）-&gt;对数列永久性排序;cars.sort()"></a>··sort（）-&gt;对数列永久性排序;cars.sort()</h4><p>.sort(reverse=True)-&gt;以按与字母顺序相反的顺序排列列表元素;cars.sort(reverse=True) </p>
+<h4 id="··sorted-gt-对列表进行临时排序；sorted-cars"><a href="#··sorted-gt-对列表进行临时排序；sorted-cars" class="headerlink" title="··sorted()-&gt;对列表进行临时排序；sorted(cars)"></a>··sorted()-&gt;对列表进行临时排序；sorted(cars)</h4><p>sorted(XXXXX,reverse=True)-&gt;按与字母顺 序相反的顺序显示列表 </p>
+<h4 id="··倒这打印列表"><a href="#··倒这打印列表" class="headerlink" title="··倒这打印列表"></a>··倒这打印列表</h4><p>reverse()-&gt;反转列表元素的排列顺序;cars.reverse()  </p>
+<p>注意，reverse()不是指按与字母顺序相反的顺序排列列表元素，而只是反转列表元素的排 列顺序 </p>
+<h4 id="··len-gt-确定列表长度；len-cars"><a href="#··len-gt-确定列表长度；len-cars" class="headerlink" title="··len()-&gt; 确定列表长度；len(cars)"></a>··len()-&gt; 确定列表长度；len(cars)</h4><h4 id="··使用列表时避免索引错误"><a href="#··使用列表时避免索引错误" class="headerlink" title="··使用列表时避免索引错误"></a>··使用列表时避免索引错误</h4><p>Python无法理解你指定的索引 </p>
+<h3 id="·索引-1：访问列表最后一个元素"><a href="#·索引-1：访问列表最后一个元素" class="headerlink" title="·索引-1：访问列表最后一个元素"></a>·索引-1：访问列表最后一个元素</h3><h2 id="emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-第三章"><a href="#emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-第三章" class="headerlink" title="&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 第三章"></a>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 第三章</h2><h3 id="遍历整个列表"><a href="#遍历整个列表" class="headerlink" title="遍历整个列表"></a>遍历整个列表</h3><p>使用for循环    for AAA in BBB  //将BBB复制给AAA； </p>
+<h4 id="深入地研究循环"><a href="#深入地研究循环" class="headerlink" title="深入地研究循环"></a>深入地研究循环</h4><h4 id="在for循环中执行更多的操作"><a href="#在for循环中执行更多的操作" class="headerlink" title="在for循环中执行更多的操作"></a>在for循环中执行更多的操作</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">for magician in magicians:      </span><br><span class="line"></span><br><span class="line">	print(magician.title() + &quot;, that was a great trick!&quot;)  </span><br><span class="line"></span><br><span class="line">print(&quot;I can&#x27;t wait to see your next trick, &quot; + magician.title() + &quot;.\n&quot;)</span><br></pre></td></tr></table></figure>
+
+<p>for语句中后面语句执行缩进的语句； </p>
+<h4 id="在for循环结束后执行一些操作"><a href="#在for循环结束后执行一些操作" class="headerlink" title="在for循环结束后执行一些操作"></a>在for循环结束后执行一些操作</h4><p>没有缩进的代码都只执行一次，而不会重复执行 </p>
+<h3 id="避免缩进错误"><a href="#避免缩进错误" class="headerlink" title="避免缩进错误"></a>避免缩进错误</h3><h4 id="忘记缩进"><a href="#忘记缩进" class="headerlink" title="忘记缩进"></a>忘记缩进</h4><h4 id="忘记缩进额外的代码行"><a href="#忘记缩进额外的代码行" class="headerlink" title="忘记缩进额外的代码行"></a>忘记缩进额外的代码行</h4><h4 id="不必要的缩进"><a href="#不必要的缩进" class="headerlink" title="不必要的缩进"></a>不必要的缩进</h4><h4 id="循环后不必要的缩进"><a href="#循环后不必要的缩进" class="headerlink" title="循环后不必要的缩进"></a>循环后不必要的缩进</h4><h4 id="遗漏了冒号（语法错误）"><a href="#遗漏了冒号（语法错误）" class="headerlink" title="遗漏了冒号（语法错误）"></a>遗漏了冒号（语法错误）</h4><h3 id="创建数值列表"><a href="#创建数值列表" class="headerlink" title="创建数值列表"></a>创建数值列表</h3><h4 id="range-gt-生成一系列的数字"><a href="#range-gt-生成一系列的数字" class="headerlink" title="range()-&gt;生成一系列的数字;"></a>range()-&gt;生成一系列的数字;</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">for value in range(1,5):</span><br><span class="line">     print(value) </span><br></pre></td></tr></table></figure>
+<p> 输出： 1 2 3 4<br>//第一个值开始，第二个值前一个结束；即此例不输出5 </p>
+<h4 id="使用range-创建数字列表"><a href="#使用range-创建数字列表" class="headerlink" title="使用range() 创建数字列表"></a>使用range() 创建数字列表</h4><p>list()-&gt;将数字转换为列表； </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">numbers = list(range(1,6))</span><br><span class="line">print(numbers)</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[1, 2, 3, 4, 5]</span><br></pre></td></tr></table></figure>
+<h4 id="对数字列表执行简单的统计计算"><a href="#对数字列表执行简单的统计计算" class="headerlink" title="对数字列表执行简单的统计计算"></a>对数字列表执行简单的统计计算</h4><p>min()-&gt;数字列表中的最小值； </p>
+<p>max()-&gt;数值列表中的最大值； </p>
+<p>sum()-&gt;数值列表中的和； </p>
+<h4 id="列表解析"><a href="#列表解析" class="headerlink" title="列表解析"></a>列表解析</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">squares = []</span><br><span class="line">for value in range(1,11):</span><br><span class="line">    square = value**2</span><br><span class="line">    squares.append(square)</span><br><span class="line">    print(squares)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">squares = [value**2 for value in range(1,11)]</span><br><span class="line">print(squares)</span><br></pre></td></tr></table></figure>
+
+<p>两个输出语句相同结果如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]</span><br></pre></td></tr></table></figure>
+<h3 id="使用列表的一部分"><a href="#使用列表的一部分" class="headerlink" title="使用列表的一部分"></a>使用列表的一部分</h3><h4 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">players = [&#x27;charles&#x27;, &#x27;martina&#x27;, &#x27;michael&#x27;, &#x27;florence&#x27;, &#x27;eli&#x27;]</span><br><span class="line">print(players[0:3]) </span><br></pre></td></tr></table></figure>
+
+<p>输出:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[&#x27;charles&#x27;, &#x27;martina&#x27;, &#x27;michael&#x27;] </span><br></pre></td></tr></table></figure>
+<p>[0:3]-&gt;[:3] </p>
+<p>[2:]-&gt;从2开始到最后一个 </p>
+<p>[-3:]-&gt;从倒数第三个开始到最后一个 </p>
+<h4 id="遍历切片"><a href="#遍历切片" class="headerlink" title="遍历切片"></a>遍历切片</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">players = [&#x27;charles&#x27;, &#x27;martina&#x27;, &#x27;michael&#x27;, &#x27;florence&#x27;, &#x27;eli&#x27;]</span><br><span class="line">for player in players[:3]:</span><br><span class="line">	print(player.title())</span><br></pre></td></tr></table></figure>
+<p> 输出:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Charles Martina Michael</span><br></pre></td></tr></table></figure>
+
+<h4 id="复制列表"><a href="#复制列表" class="headerlink" title="复制列表"></a>复制列表</h4><p> friend_foods = my_foods[:]//之后改变friend_foods改变时my_foods不会改变  </p>
+<p>不能friend_foods = my_foods//改变一个其他的一个也会改变 </p>
+<h3 id="元祖"><a href="#元祖" class="headerlink" title="元祖"></a>元祖</h3><h4 id="定义元祖"><a href="#定义元祖" class="headerlink" title="定义元祖"></a>定义元祖</h4><p>元祖犹如列表，但使用圆括号，列表是可以改变的但元祖不可以改变dimensions = (200, 50) </p>
+<h4 id="修改元素变量"><a href="#修改元素变量" class="headerlink" title="修改元素变量"></a>修改元素变量</h4><p>不能修改元组的元素，但可以给存储元组的变量赋值，重新赋值 </p>
+<h2 id="emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-第四章"><a href="#emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-第四章" class="headerlink" title="&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;第四章"></a>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;第四章</h2><h3 id="一个简单示例"><a href="#一个简单示例" class="headerlink" title="一个简单示例"></a>一个简单示例</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cars = [&#x27;audi&#x27;, &#x27;bmw&#x27;, &#x27;subaru&#x27;, &#x27;toyota&#x27;]  </span><br><span class="line">for car in cars:</span><br><span class="line">    if car == &#x27;bmw&#x27;:</span><br><span class="line">    	print(car.upper())</span><br><span class="line">    else:        </span><br><span class="line">    	print(car.title())  </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="条件测试"><a href="#条件测试" class="headerlink" title="条件测试"></a>条件测试</h3><p>每条if语句的核心都是一个值为True或False的表达式，这种表达式被称为条件测 </p>
+<h4 id="检测是否相等"><a href="#检测是否相等" class="headerlink" title="检测是否相等"></a>检测是否相等</h4><p>==-&gt;判断左右是否相等（字符的大小也会影响） </p>
+<h4 id="检测是否不相等"><a href="#检测是否不相等" class="headerlink" title="检测是否不相等"></a>检测是否不相等</h4><p>！=-&gt;判断左右是否不相等 </p>
+<h4 id="比较数字"><a href="#比较数字" class="headerlink" title="比较数字"></a>比较数字</h4><p>==      !=      &lt;      &lt;=       &gt;       &gt;= </p>
+<h4 id="检查多个条件"><a href="#检查多个条件" class="headerlink" title="检查多个条件"></a>检查多个条件</h4><p>and  -&gt;  相当于  &amp;&amp; </p>
+<p>or  -&gt;  相当于 ||（当左边为真时在不经过右边） </p>
+<h4 id="检测特定值是否包含在列表中"><a href="#检测特定值是否包含在列表中" class="headerlink" title="检测特定值是否包含在列表中"></a>检测特定值是否包含在列表中</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; requested_toppings = [&#x27;mushrooms&#x27;, &#x27;onions&#x27;, &#x27;pineapple&#x27;]</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; &#x27;mushrooms&#x27; in requested_toppings </span><br><span class="line"></span><br><span class="line">输出： True </span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; &#x27;pepperoni&#x27; in requested_toppings </span><br><span class="line"></span><br><span class="line">输出： False </span><br></pre></td></tr></table></figure>
+
+
+<h4 id="检测特定值是否不包含在列表中"><a href="#检测特定值是否不包含在列表中" class="headerlink" title="检测特定值是否不包含在列表中"></a>检测特定值是否不包含在列表中</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">banned_users = [&#x27;andrew&#x27;, &#x27;carolina&#x27;, &#x27;david&#x27;]  </span><br><span class="line">user = &#x27;marie&#x27;   </span><br><span class="line">if user not in banned_users:</span><br><span class="line">	print(user.title() + &quot;, you can post a response if you wish.&quot;)</span><br></pre></td></tr></table></figure>
+<p>输出</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Marie, you can post a response if you wish.  </span><br></pre></td></tr></table></figure>
+
+<h4 id="布尔表达式"><a href="#布尔表达式" class="headerlink" title="布尔表达式"></a>布尔表达式</h4><p>条件测试的别名。与条 件表达式一样，布尔表达式的结果要么为True，要么为False </p>
+<h3 id="if语句"><a href="#if语句" class="headerlink" title="if语句"></a>if语句</h3><h4 id="简单的if语句"><a href="#简单的if语句" class="headerlink" title="简单的if语句"></a>简单的if语句</h4><p>if age &gt;= 18:  </p>
+<h4 id="if-else语句"><a href="#if-else语句" class="headerlink" title="if-else语句"></a>if-else语句</h4><h4 id="if-elif-else语句-gt-C语言if-else-if-else语句"><a href="#if-elif-else语句-gt-C语言if-else-if-else语句" class="headerlink" title="if-elif-else语句-&gt;C语言if-else if - else语句"></a>if-elif-else语句-&gt;C语言if-else if - else语句</h4><h3 id="使用if语句处理列表"><a href="#使用if语句处理列表" class="headerlink" title="使用if语句处理列表"></a>使用if语句处理列表</h3><h4 id="检查特殊元素"><a href="#检查特殊元素" class="headerlink" title="检查特殊元素"></a>检查特殊元素</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">requested_toppings = [&#x27;mushrooms&#x27;, &#x27;green peppers&#x27;, &#x27;extra cheese&#x27;]  </span><br><span class="line"></span><br><span class="line">for requested_topping in requested_toppings:  </span><br><span class="line"></span><br><span class="line">	if requested_topping == &#x27;green peppers&#x27;:     //检测此列表中是否出现green peppers    </span><br><span class="line"></span><br><span class="line"> 		print(&quot;Sorry, we are out of green peppers right now.&quot;)     </span><br><span class="line"></span><br><span class="line">	else:      </span><br><span class="line"></span><br><span class="line">    	print(&quot;Adding &quot; + requested_topping + &quot;.&quot;)  </span><br></pre></td></tr></table></figure>
+
+<h4 id="确定列表不是空的"><a href="#确定列表不是空的" class="headerlink" title="确定列表不是空的"></a>确定列表不是空的</h4><p>i=[]   if  i://判断i是不是空列表 </p>
+<h4 id="使用多个列表"><a href="#使用多个列表" class="headerlink" title="使用多个列表"></a>使用多个列表</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">for requested_topping in requested_toppings:</span><br><span class="line">	if requested_topping in available_toppings: //两列表进行查找时，只需循环一个即可；</span><br></pre></td></tr></table></figure>
+<h2 id="emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-第五章"><a href="#emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-第五章" class="headerlink" title="&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;第五章"></a>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;第五章</h2><h3 id="使用字典"><a href="#使用字典" class="headerlink" title="使用字典"></a>使用字典</h3><p> alien_0 = {‘color’: ‘green’, ‘points’: 5} //使用大括号 </p>
+<h4 id="访问字典中的值"><a href="#访问字典中的值" class="headerlink" title="访问字典中的值"></a>访问字典中的值</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print(alien_0[&#x27;color&#x27;])</span><br><span class="line">print(alien_0[&#x27;points&#x27;]</span><br></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">green 5 </span><br></pre></td></tr></table></figure>
+<p>str()-&gt; 函数将对象转化为适于人阅读的形式 </p>
+<h4 id="添加键-值对"><a href="#添加键-值对" class="headerlink" title="添加键-值对"></a>添加键-值对</h4><p> alien_0[‘y_position’] = 25 —-‘[y_position’:25] </p>
+<h4 id="先创建一个空字典-alien-0"><a href="#先创建一个空字典-alien-0" class="headerlink" title="先创建一个空字典    alien_0 = {}"></a>先创建一个空字典    alien_0 = {}</h4><h4 id="修改字典中的值"><a href="#修改字典中的值" class="headerlink" title="修改字典中的值"></a>修改字典中的值</h4><p> 次指定字典名、用方括号括起的键以及与该键相关联的新值，类似重新添加键-值对 </p>
+<h4 id="删除键—值对-del-alien-0-‘points’"><a href="#删除键—值对-del-alien-0-‘points’" class="headerlink" title="删除键—值对     del alien_0[‘points’]"></a>删除键—值对     del alien_0[‘points’]</h4><h4 id="由类似对象组成的字典"><a href="#由类似对象组成的字典" class="headerlink" title="由类似对象组成的字典"></a>由类似对象组成的字典</h4><h3 id="遍历字典"><a href="#遍历字典" class="headerlink" title="遍历字典"></a>遍历字典</h3><h4 id="遍历所有的键—值对"><a href="#遍历所有的键—值对" class="headerlink" title="遍历所有的键—值对"></a>遍历所有的键—值对</h4><p>items() -&gt;方法以列表返回可遍历的(键, 值) 元组数组。 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for key, value in user_0.items():    </span><br><span class="line">	print(&quot;\nKey: &quot; + key)     </span><br><span class="line">	print(&quot;Value: &quot; + value)</span><br></pre></td></tr></table></figure>
+
+<h4 id="遍历字典中的所有键"><a href="#遍历字典中的所有键" class="headerlink" title="遍历字典中的所有键"></a>遍历字典中的所有键</h4><p>keys()-&gt; 方法返回一个可迭代对象“键”，for name in favorite_languages.keys(） </p>
+<p> list()-&gt; 来转换为列表。 </p>
+<h4 id="遍历字典中的所有值"><a href="#遍历字典中的所有值" class="headerlink" title="遍历字典中的所有值"></a>遍历字典中的所有值</h4><p>Values()-&gt;返回值列表  for name in favorite_languages.keys(） </p>
+<h3 id="嵌套"><a href="#嵌套" class="headerlink" title="嵌套"></a>嵌套</h3><h4 id="字典列表"><a href="#字典列表" class="headerlink" title="字典列表"></a>字典列表</h4><p> range()-&gt; 函数可创建一个整数列表，一般用在 for 循环中 </p>
+<blockquote>
+<blockquote>
+<p>range(1, 11) # 从 1 开始到 11 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]  </p>
+</blockquote>
+</blockquote>
+<p>字典中我们可以再次嵌套字典；输出时用for即可输出 </p>
+<h4 id="在字典中储存列表"><a href="#在字典中储存列表" class="headerlink" title="在字典中储存列表"></a>在字典中储存列表</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">favorite_languages = &#123;     &#x27;jen&#x27;: [&#x27;python&#x27;, &#x27;ruby&#x27;],     &#x27;sarah&#x27;: [&#x27;c&#x27;],     &#x27;edward&#x27;: [&#x27;ruby&#x27;, &#x27;go&#x27;],     &#x27;phil&#x27;: [&#x27;python&#x27;, &#x27;haskell&#x27;]&#125;  </span><br><span class="line">for name, languages in favorite_languages.items():            </span><br><span class="line">	print(&quot;\n&quot; + name.title() + &quot;&#x27;s favorite languages are:&quot;) </span><br><span class="line">    	for language in languages: </span><br><span class="line">			print(&quot;\t&quot; + language.title()) </span><br></pre></td></tr></table></figure>
+<p>输出 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Jen&#x27;s favorite languages are:      Python      Ruby   </span><br><span class="line"></span><br><span class="line">Sarah&#x27;s favorite languages are:      C   </span><br><span class="line"></span><br><span class="line">Phil&#x27;s favorite languages are:      Python      Haskell   </span><br><span class="line"></span><br><span class="line">Edward&#x27;s favorite languages are:      Ruby      Go  </span><br></pre></td></tr></table></figure>
+
+<h4 id="在字典中储存字典"><a href="#在字典中储存字典" class="headerlink" title="在字典中储存字典"></a>在字典中储存字典</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">users = &#123;     &#x27;aeinstein&#x27;: &#123;         &#x27;first&#x27;: &#x27;albert&#x27;,         &#x27;last&#x27;: &#x27;einstein&#x27;,         &#x27;location&#x27;: &#x27;princeton&#x27;,         &#125;,  </span><br><span class="line">    &#x27;mcurie&#x27;: &#123;         &#x27;first&#x27;: &#x27;marie&#x27;,         &#x27;last&#x27;: &#x27;curie&#x27;,         &#x27;location&#x27;: &#x27;paris&#x27;,         &#125;   &#125; </span><br><span class="line">for username, user_info in users.items(): </span><br><span class="line">     print(&quot;\nUsername: &quot; + username)  </span><br><span class="line">     full_name = user_info[&#x27;first&#x27;] + &quot; &quot; + user_info[&#x27;last&#x27;] </span><br><span class="line">     location = user_info[&#x27;location&#x27;]  </span><br><span class="line">     print(&quot;\tFull name: &quot; + full_name.title()) </span><br><span class="line">     print(&quot;\tLocation: &quot; + location.title())  </span><br></pre></td></tr></table></figure>
+
+<p>另一种输出方法 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">For username , user_info in sers.items(): </span><br><span class="line">   print(&quot;\nUsername:&quot;+username) </span><br><span class="line">   for s,n in sers[username].items(): </span><br><span class="line">       print(s+&quot;:&quot;+n)</span><br></pre></td></tr></table></figure>
+<h2 id="emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-第六章"><a href="#emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-第六章" class="headerlink" title="&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;第六章"></a>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;第六章</h2><h3 id="函数input-（）的工作原理"><a href="#函数input-（）的工作原理" class="headerlink" title="函数input （）的工作原理"></a>函数input （）的工作原理</h3><p>Input()-&gt;让程序暂停运行，等待用户输入（用户按回车后运行） </p>
+<p>message = input(“Tell me something, and I will repeat it back to you: “) print(message)  </p>
+<h3 id="编写清晰的程序"><a href="#编写清晰的程序" class="headerlink" title="编写清晰的程序"></a>编写清晰的程序</h3><h2 id="emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-第七章"><a href="#emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-emsp-第七章" class="headerlink" title="&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;第七章"></a>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;第七章</h2><h3 id="定义函数"><a href="#定义函数" class="headerlink" title="定义函数"></a>定义函数</h3><pre><code> def  greet_user():       #定义一个函数 
+</code></pre>
+<p>“””显示简单的问候语”””   #文档字符串的注释用三个括号 </p>
+<p>print(“Hello!”) </p>
+<p>greet_user() </p>
+<p>中间的称为函数体 </p>
+<h4 id="向函数传递信息"><a href="#向函数传递信息" class="headerlink" title="向函数传递信息"></a>向函数传递信息</h4><p> def greet_user(username):        #添加username可指定任何值 </p>
+<pre><code>     &quot;&quot;&quot;显示简单的问候语&quot;&quot;&quot;  
+
+     print(&quot;Hello, &quot; + username.title() + &quot;!&quot;)   #输出时print前需要空格 
+</code></pre>
+<p>  greet_user(‘jesse’)      #调用函数 （可调用任意次） </p>
+<h4 id="实参和形参"><a href="#实参和形参" class="headerlink" title="实参和形参"></a>实参和形参</h4><p>以上面代码username是形参，在最后一行greet_user(“jesse”)中，值“jesse”是实参 </p>
+<p>实参是调用函数时传递给函数的信 息 </p>
+<h3 id="传递实参"><a href="#传递实参" class="headerlink" title="传递实参"></a>传递实参</h3><h4 id="位置实参"><a href="#位置实参" class="headerlink" title="位置实参"></a>位置实参</h4><p>的关联方式是基于实参的顺序。这种关联方式被称为位置实参 </p>
+<p>  def describe_pet(animal_type, pet_name): </p>
+<pre><code>       &quot;&quot;&quot;显示宠物的信息&quot;&quot;&quot; 
+
+        print(&quot;\nI have a &quot; + animal_type + &quot;.&quot;) 
+
+        print(&quot;My &quot; + animal_type + &quot;&#39;s name is &quot; + pet_name.title() + &quot;.&quot;) 
+</code></pre>
+<p>  describe_pet(‘hamster’, ‘harry’) </p>
+<p>  describe_pet(‘dog’, ‘willie’) #要再描述一个宠物，只需再次调用describe_pet()即可 </p>
+<h4 id="关键字实参"><a href="#关键字实参" class="headerlink" title="关键字实参"></a>关键字实参</h4><p>关键字实参是传递给函数的名称—值对 </p>
+<p>describe_pet(animal_type=’hamster’, pet_name=’harry’) </p>
+<p> describe_pet(pet_name=’harry’, animal_type=’hamster’)  </p>
+<p>以上两个函数调用是等效的（实参的顺序无关紧要） </p>
+<h4 id="默认值"><a href="#默认值" class="headerlink" title="默认值"></a>默认值</h4><p>编写函数时，可给每个形参指定默认值。在调用函数中给形参提供了实参时，Python将使用 指定的实参值；否则，将使用形参的默认值。因此，，给形参指定默认值后，可在函数调用中省略 相应的实参。 </p>
+<p>默认值只需在定义时赋值：def describe_pet(pet_name, animal_type=’dog’): </p>
+<h4 id="等效的函数调用"><a href="#等效的函数调用" class="headerlink" title="等效的函数调用"></a>等效的函数调用</h4><h4 id="避免实参错误"><a href="#避免实参错误" class="headerlink" title="避免实参错误"></a>避免实参错误</h4><p>实现一一对应 </p>
+<h3 id="返回值（函数返回的值return）"><a href="#返回值（函数返回的值return）" class="headerlink" title="返回值（函数返回的值return）"></a>返回值（函数返回的值return）</h3><h4 id="返回简单值"><a href="#返回简单值" class="headerlink" title="返回简单值"></a>返回简单值</h4><p> def get_formatted_name(first_name, last_name):     “””返回整洁的姓名”””      full_name = first_name + ‘ ‘ + last_name      return full_name.title() //返回函数值 </p>
+<p> musician = get_formatted_name(‘jimi’, ‘hendrix’) print(musician)  </p>
+<h4 id="让实参变成可选的"><a href="#让实参变成可选的" class="headerlink" title="让实参变成可选的"></a>让实参变成可选的</h4><p>def get_formatted_name(first_name, last_name, middle_name=’’): 再用if判断语句来判断middle_name中有无值出现 </p>
+<h4 id="返回字典"><a href="#返回字典" class="headerlink" title="返回字典"></a>返回字典</h4><p>defbuild_person(first_name,last_name): </p>
+<p>“””返回一个字典，其中包含有关一个人的信息””” </p>
+<p>person={‘first’:first_name,’last’:last_name} </p>
+<p>returnperson </p>
+<p>musician=build_person(‘jimi’,’hendrix’) </p>
+<p>print(musician) </p>
+<p>输出{‘first’: ‘jimi’, ‘last’: ‘hendrix’} </p>
+<h4 id="结合使用函数和while循环"><a href="#结合使用函数和while循环" class="headerlink" title="结合使用函数和while循环"></a>结合使用函数和while循环</h4><p>while True:     print(“\nPlease tell me your name:”)     print(“(enter ‘q’ at any time to quit)”)  </p>
+<p>简单whlie死循环；可用break退出循环； </p>
+<h3 id="传递列表"><a href="#传递列表" class="headerlink" title="传递列表"></a>传递列表</h3><p>defgreet_users(names): </p>
+<p>“””向列表中的每位用户都发出简单的问候””” </p>
+<p>fornameinnames: </p>
+<p>msg=”Hello,”+name.title()+”!” </p>
+<p>print(msg) </p>
+<p>usernames=[‘hannah’,’ty’,’margot’] </p>
+<p>greet_users(usernames) </p>
+<h4 id="在函数中修改列表"><a href="#在函数中修改列表" class="headerlink" title="在函数中修改列表"></a>在函数中修改列表</h4><p>defprint_models(unprinted_designs,completed_models): </p>
+<p>“””模拟打印每个设计，直到没有未打印的设计为止 </p>
+<p>打印每个设计后，都将其移到列表completed_models中””” </p>
+<p>whileunprinted_designs: </p>
+<p>current_design=unprinted_designs.pop()#将unprinted_designs中最后一个赋给currnt_desige </p>
+<p>#模拟根据设计制作3D打印模型的过程 </p>
+<p>print(“Printingmodel:”+current_design) </p>
+<p>completed_models.append(current_design)#将unprinted_desigens倒叙赋给completed_models </p>
+<p>defshow_completed_models(completed_models): </p>
+<p>“””显示打印好的所有模型””” </p>
+<p>print(“\nThefollowingmodelshavebeenprinted:”) </p>
+<p>forcompleted_modelincompleted_models: </p>
+<p>print(completed_model) </p>
+<p>unprinted_designs=[‘iphonecase’,’robotpendant’,’dodecahedron’] </p>
+<p>completed_models=[] </p>
+<p>print_models(unprinted_designs,completed_models) </p>
+<p>show_completed_models(completed_models) </p>
+<h4 id="禁止函数修改"><a href="#禁止函数修改" class="headerlink" title="禁止函数修改"></a>禁止函数修改</h4><p>可向函数传 递列表的副本而不是原件 </p>
+<p>function_name ( list_name [:])//切片表示法创建列表的副本 </p>
+<h3 id="传递任意值数量的实参"><a href="#传递任意值数量的实参" class="headerlink" title="传递任意值数量的实参"></a>传递任意值数量的实参</h3><p>def make_pizza(*toppings):     “””打印顾客点的所有配料”””     print(toppings)          make_pizza(‘pepperoni’) make_pizza(‘mushrooms’, ‘green peppers’, ‘extra cheese’)  </p>
+<p>形参名*toppings中星号创建一个名为toppings的空元组； </p>
+<h4 id="结合使用位置实参和任意数量实参"><a href="#结合使用位置实参和任意数量实参" class="headerlink" title="结合使用位置实参和任意数量实参"></a>结合使用位置实参和任意数量实参</h4><p>如果要让函数接受不同类型的实参，必须在函数定义中将接纳任意数量实参的形参放在 后。Python先匹配位置实参和关键字实参，再将余下的实参都收集到后一个形参中。  </p>
+<p>def make_pizza(size, *toppings):  </p>
+<h4 id="任意函数数量的关键字实参"><a href="#任意函数数量的关键字实参" class="headerlink" title="任意函数数量的关键字实参"></a>任意函数数量的关键字实参</h4><p>defbuild_profile(first,last,**user_info): </p>
+<p>“””创建一个字典，其中包含我们知道的有关用户的一切””” </p>
+<p>profile={} </p>
+<p>profile[‘first_name’]=first </p>
+<p>profile[‘last_name’]=last </p>
+<p>forkey,valueinuser_info.items(): </p>
+<p>profile[key]=value </p>
+<p>returnprofile </p>
+<p>user_profile=build_profile(‘albert’,’einstein’,location=’princeton’,field=’physics’)//键-值对 </p>
+<p>print(user_profile) </p>
+<p>输出{‘first_name’: ‘albert’, ‘last_name’: ‘einstein’, ‘location’: ‘princeton’, ‘field’: ‘physics’}  </p>
+<p>形参名**user_info两个星号创建一个名为user_info的空字典 </p>
+<h3 id="将函数储存在模块中"><a href="#将函数储存在模块中" class="headerlink" title="将函数储存在模块中"></a>将函数储存在模块中</h3><p>函数的优点之一是，使用它们可将代码块与主程序分离。 </p>
+<p>import语句允许在当前运行的程序文件中使用模块中的代码。 </p>
+<h4 id="导入整个模块"><a href="#导入整个模块" class="headerlink" title="导入整个模块"></a>导入整个模块</h4><p>Import XXXX-&gt;在其他文件中调用函数的前提 </p>
+<p>import pizza  </p>
+<p> pizza.make_pizza(16, ‘pepperoni’) pizza.make_pizza(12, ‘mushrooms’, ‘green peppers’, ‘extra cheese’)  </p>
+<p>要写pizza.make_pizza：pizza不能省 </p>
+<h4 id="导入特定的函数"><a href="#导入特定的函数" class="headerlink" title="导入特定的函数"></a>导入特定的函数</h4><p>通过用逗号分隔函数名，可根据需要从模块中导入任意数量的函数：  </p>
+<p>from module_name import function_0 , function_1 , function_2 </p>
+<p>from pizza import make_pizza  </p>
+<p>make_pizza(16, ‘pepperoni’) make_pizza(12, ‘mushrooms’, ‘green peppers’, ‘extra cheese’)  </p>
+<p>可以省去pizza </p>
+<h4 id="使用as给函数指定别名"><a href="#使用as给函数指定别名" class="headerlink" title="使用as给函数指定别名"></a>使用as给函数指定别名</h4><p>如果要导入的函数的名称可能与程序中现有的名称冲突，或者函数的名称太长，可指定简短 而独一无二的别名——函数的另一个名称  </p>
+<p>给函数make_pizza()指定了别名mp()。这是在import语句中使用make_pizza as mp实现的， 关键字as将函数重命名为你提供的别名： </p>
+<p>from pizza import make_pizza as mp  </p>
+<p>mp(16, ‘pepperoni’) mp(12, ‘mushrooms’, ‘green peppers’, ‘extra cheese’)  </p>
+<h4 id="使用as给模块指定别名"><a href="#使用as给模块指定别名" class="headerlink" title="使用as给模块指定别名"></a>使用as给模块指定别名</h4><p>import pizza as p // </p>
+<p>p.make_pizza(16, ‘pepperoni’) p.make_pizza(12, ‘mushrooms’, ‘green peppers’, ‘extra cheese’)  </p>
+<h4 id="导入模块中的所有函数"><a href="#导入模块中的所有函数" class="headerlink" title="导入模块中的所有函数"></a>导入模块中的所有函数</h4><p>使用星号（*）运算符可让Python导入模块中的所有函数：  </p>
+<h3 id="函数编写指南"><a href="#函数编写指南" class="headerlink" title="函数编写指南"></a>函数编写指南</h3><p>应给函数指定描述性名称，且只在其中使用小写字母和下 划线 </p>
+<p>给形参指定默认值时，等号两边不要有空格：  </p>
+<p>def function_name ( parameter_0 , parameter_1 =’ default value ‘)  </p>
+<p>对于函数调用中的关键字实参，也应遵循这种约定：  </p>
+<p>function_name ( value_0 , parameter_1 =’ value ‘)  </p>
+
+    </div>
+
+    
+    
+    
+    
+    <div>
+      
+         <div>
+	
+		<div style="text-align:center;color:#bfbfbf;font-size:16px;"> 
+ 		<span>-------- 本文结束 </span> 
+ 		<i class="fa fa-paw"></i> 
+ 		<span> 感谢阅读 --------</span>
+		</div> 
+  	
+</div>
+      
+    </div>
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div></div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.png" alt="simon·yi an 微信">
+        <span>微信</span>
+      </div>
+
+  </div>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/10/22/hexo-relevant/" rel="prev" title="hexo-relevant">
+                  <i class="fa fa-chevron-left"></i> hexo-relevant
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/11/15/ConsistentHash/" rel="next" title="一致性哈希算法">
+                  一致性哈希算法 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">simon·yi an</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">203k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">3:04</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+  <div class="powered-by">
+  <i class="fa fa-user-md"></i>
+  <span id="busuanzi_container_site_uv">
+    本站总访客数:<span id="busuanzi_value_site_uv"></span>&nbsp;&nbsp;| 
+  </span>
+  <span id="busuanzi_container_site_pv">
+      &nbsp;本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  </span>
+  </div>
+  </div>
+<script>
+      var now = new Date(); 
+      function createtime() { 
+          var grt= new Date("03/12/2019 12:00:00");//此处修改你的建站时间或者网站上线时间 
+          now.setTime(now.getTime()+250); 
+          days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+          hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+          if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+          mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+          seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+          snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+          document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+          document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+      } 
+  setInterval("createtime()",250);
+  </script>
+    </div>
+  </footer>
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="https://cdn.jsdelivr.net/npm/ribbon.js@1.0.2/dist/ribbon.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+  <script async src="/js/cursor/fireworks.js"></script>
+
+
+
+
+  <script src="/js/activate-power-mode.min.js"></script>
+  <script>
+    POWERMODE.colorful = true;
+    POWERMODE.shake = false;
+    document.body.addEventListener('input', POWERMODE);
+  </script>
+
+</body>
+</html>

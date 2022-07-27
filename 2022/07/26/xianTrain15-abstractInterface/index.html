@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="baidu-site-verification" content="code-lKi6sS4j7S" />
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/H%20.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"simon-yian.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="***&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;Java基础学习打卡第2天">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学习心得[抽象类和接口]">
+<meta property="og:url" content="https://simon-yian.github.io/2022/07/26/xianTrain15-abstractInterface/index.html">
+<meta property="og:site_name" content="simon·yian&#39;Blog">
+<meta property="og:description" content="***&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;Java基础学习打卡第2天">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-07-26T00:37:39.000Z">
+<meta property="article:modified_time" content="2022-07-27T12:00:40.000Z">
+<meta property="article:author" content="simon·yi an">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://simon-yian.github.io/2022/07/26/xianTrain15-abstractInterface/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://simon-yian.github.io/2022/07/26/xianTrain15-abstractInterface/","path":"2022/07/26/xianTrain15-abstractInterface/","title":"学习心得[抽象类和接口]"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>学习心得[抽象类和接口] | simon·yian'Blog</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+
+
+  <!-- 添加萝莉-->
+  <script src="/live2d-widget/autoload.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">simon·yian'Blog</h1>
+      <i class="logo-line"></i>
+    </a>
+      <img class="custom-logo-image" src="/images/simon.png" alt="simon·yian'Blog">
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-commonweal"><a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fas fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-message"><a href="/message/" rel="section"><i class="fas fa-comment fa-fw"></i>留言板</a></li>
+        <li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="sitmap fa-fw"></i>站点地图</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3"><span class="nav-number">1.</span> <span class="nav-text">抽象类和接口</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8A%BD%E8%B1%A1%E6%96%B9%E6%B3%95"><span class="nav-number">1.1.</span> <span class="nav-text">1.1抽象类和抽象方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-1-%E6%8A%BD%E8%B1%A1%E7%B1%BB"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1.1 抽象类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-2-%E6%8A%BD%E8%B1%A1%E6%96%B9%E6%B3%95"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.1.2 抽象方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-%E6%8E%A5%E5%8F%A3"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8E%A5%E5%8F%A3%E5%92%8C%E6%8A%BD%E8%B1%A1%E7%B1%BB%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.3.</span> <span class="nav-text">接口和抽象类的区别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-%E5%86%85%E9%83%A8%E7%B1%BB"><span class="nav-number">2.</span> <span class="nav-text">1.3 内部类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-1-%E9%9D%9E%E9%9D%99%E6%80%81%E5%86%85%E9%83%A8%E7%B1%BB"><span class="nav-number">2.1.</span> <span class="nav-text">1.3.1 非静态内部类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-2-%E9%9D%99%E6%80%81%E5%86%85%E9%83%A8%E7%B1%BB"><span class="nav-number">2.2.</span> <span class="nav-text">1.3.2 静态内部类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-3-%E5%B1%80%E9%83%A8%E5%86%85%E9%83%A8%E7%B1%BB"><span class="nav-number">2.3.</span> <span class="nav-text">1.3.3 局部内部类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-4%E5%8C%BF%E5%90%8D%E5%86%85%E9%83%A8%E7%B1%BB"><span class="nav-number">2.4.</span> <span class="nav-text">1.3.4匿名内部类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-%E6%9E%9A%E4%B8%BE%E7%B1%BB"><span class="nav-number">3.</span> <span class="nav-text">1.4 枚举类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-1-%E5%AE%9A%E4%B9%89%E6%9E%9A%E4%B8%BE%E7%B1%BB"><span class="nav-number">3.1.</span> <span class="nav-text">1.4.1 定义枚举类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-2-%E6%9E%9A%E4%B8%BE%E7%B1%BB%E7%9A%84%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95"><span class="nav-number">3.2.</span> <span class="nav-text">1.4.2 枚举类的构造方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-4-2-%E6%9E%9A%E4%B8%BE%E4%B8%AD%E7%9A%84%E6%8A%BD%E8%B1%A1%E6%96%B9%E6%B3%95"><span class="nav-number">3.3.</span> <span class="nav-text">7.4.2 枚举中的抽象方法</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="simon·yi an"
+      src="/images/avator.jpg">
+  <p class="site-author-name" itemprop="name">simon·yi an</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/simon-yian" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;simon-yian" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yourname@gmail.com" title="E-Mail → mailto:yourname@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/yourname" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://plus.google.com/yourname" title="Google → https:&#x2F;&#x2F;plus.google.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-google fa-fw"></i>Google</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/yourname" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+  </div>
+
+
+
+        </div><div>
+  <canvas id="canvasDiyBlock" style="width:60%;">当前浏览器不支持canvas，请更换浏览器后再试</canvas><script src="/js/custom/clock.js"></script>
+</div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://simon-yian.github.io/2022/07/26/xianTrain15-abstractInterface/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avator.jpg">
+      <meta itemprop="name" content="simon·yi an">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="simon·yian'Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          学习心得[抽象类和接口]
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-07-26 08:37:39" itemprop="dateCreated datePublished" datetime="2022-07-26T08:37:39+08:00">2022-07-26</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2022-07-27 20:00:40" itemprop="dateModified" datetime="2022-07-27T20:00:40+08:00">2022-07-27</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/XiAnTrain/" itemprop="url" rel="index"><span itemprop="name">XiAnTrain</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>6.9k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>6 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>***&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Java基础学习打卡第2天</p>
+<span id="more"></span>
+
+<h2 id="抽象类和接口"><a href="#抽象类和接口" class="headerlink" title="抽象类和接口"></a>抽象类和接口</h2><h3 id="1-1抽象类和抽象方法"><a href="#1-1抽象类和抽象方法" class="headerlink" title="1.1抽象类和抽象方法"></a>1.1抽象类和抽象方法</h3><p>​        抽象类就是使用abstract修饰的类。抽象方法就是使用abstract修饰的方法</p>
+<p>​        抽象类中抽象方法可有可无。</p>
+<h4 id="1-1-1-抽象类"><a href="#1-1-1-抽象类" class="headerlink" title="1.1.1 抽象类"></a>1.1.1 抽象类</h4><p>​    普通类中包含的内容，在抽象类中都可以包含（成员变量、成员方法、构造类、内部类）。</p>
+<p>​    当普通类继承了抽象类，那么就必须要重写抽象方法，否则普通类也必须是抽象类</p>
+<p>​    <strong>抽象类不能被实例化</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public abstract class AbstractCalc &#123;</span><br><span class="line">	/**</span><br><span class="line">	 * 普通类中可以定义的内容，抽象类中都可以定义</span><br><span class="line">	 */</span><br><span class="line">	private String type;</span><br><span class="line">	/**</span><br><span class="line">	 * 定义抽象方法，具体实现由子类实现</span><br><span class="line">	 * @param args</span><br><span class="line">	 * @return</span><br><span class="line">	 */</span><br><span class="line">	public abstract double area(double...args);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>定义子类并重写父类的方法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">public class AreaCalc extends AbstractCalc&#123;</span><br><span class="line">	/**</span><br><span class="line">	 * 计算圆面积</span><br><span class="line">	 */</span><br><span class="line">	@Override</span><br><span class="line">	public double area(double... args) &#123;</span><br><span class="line">		if(args!=null&amp;&amp;args.length&gt;0&amp;&amp;args.length==1) &#123;</span><br><span class="line">			return Math.PI*Math.pow(0, 0);</span><br><span class="line">		&#125;</span><br><span class="line">		return 0;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="1-1-2-抽象方法"><a href="#1-1-2-抽象方法" class="headerlink" title="1.1.2 抽象方法"></a>1.1.2 抽象方法</h4><p>​    抽象方法止只有方法头，没有方法体，声明方法头后直接以分号结束。</p>
+<p>​    抽象方法不能用static、final、private修饰</p>
+<h3 id="1-2-接口"><a href="#1-2-接口" class="headerlink" title="1.2 接口"></a>1.2 接口</h3><p>​     接口可以理解为对抽象类的抽象，因为抽象类中不但有抽象方法，还有实例方法以及类方法等等。一个接口可以有多个直接父类接口，但接口只能继承接口不能继承类。</p>
+<p>接口中只能包含：常量，抽象方法，私有方法，类方法，内部类（包括内部接口和枚举）不能包含构造器，初始化块，静态初始化块。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">IBird</span></span>&#123;</span><br><span class="line">    <span class="comment">//常量</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span></span><br><span class="line">    <span class="comment">//抽象方法方法</span></span><br><span class="line">    <span class="comment">//Java8新增了默认方法（可以有方法体）</span></span><br><span class="line">    <span class="comment">//Java8新增了类方法</span></span><br><span class="line">    <span class="comment">//Java9新增了私有方法（可以有方法体）</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>接口中定义的变量都是常量，默认的修饰符就是public static final ,因此即使不加，在编译时编译器也会自动添加。</p>
+<p>定义接口里的普通方法时不管是否使用 public abstract 修饰符，接口里的普通方法总是使用public abstract 来修饰。</p>
+<p>接口里的普通方不能有方法实现（方法体）；但类方法默认方法。私有方法都必须有方法体。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">public interface IBird &#123;</span><br><span class="line">	/**</span><br><span class="line">	 * 常量的命名一般使用大写，多个单词</span><br><span class="line">	 * 用_连接</span><br><span class="line">	 */</span><br><span class="line">	int MAX_AGE = 10;</span><br><span class="line">	/**</span><br><span class="line">	 * 定义抽象方法</span><br><span class="line">	 */</span><br><span class="line">	void fly();</span><br><span class="line">	/**</span><br><span class="line">	 * 定义类方法</span><br><span class="line">	 */</span><br><span class="line">	static void eat() &#123;</span><br><span class="line">		System.out.println(&quot;鸟类吃食物&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	/**</span><br><span class="line">	 * 定义默认方法</span><br><span class="line">	 *默认方法并没有 static 修饰</span><br><span class="line">	 */</span><br><span class="line">	default void sleep() &#123;</span><br><span class="line">		System.out.println(&quot;鸟类睡觉&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	private void alive() &#123;</span><br><span class="line">		System.out.println(&quot;鸟类存活了100年&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">package chapter07;</span><br><span class="line"></span><br><span class="line">public class Sparrow implements IBird&#123;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public void fly() &#123;</span><br><span class="line">		// TODO Auto-generated method stub</span><br><span class="line">	&#125;</span><br><span class="line">    //默认方法可以不重写</span><br><span class="line">	@Override</span><br><span class="line">	public void sleep() &#123;</span><br><span class="line">		// TODO Auto-generated method stub</span><br><span class="line">		IBird.super.sleep();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p>从上例中我们可以得出接口中的抽象方法子类必须重写，否则就需要用abstract修饰，默认方法则可以选择性重写，而私有方法则不需要重写。</p>
+<h3 id="接口和抽象类的区别"><a href="#接口和抽象类的区别" class="headerlink" title="接口和抽象类的区别"></a>接口和抽象类的区别</h3><ul>
+<li><p>接口和抽象类都不能被实例化</p>
+</li>
+<li><p>接口和抽象类都可以包含抽象方法，实现接口或继承抽象类的普通子类都必须实现这些抽象方法。</p>
+</li>
+<li><p>接口里只能包含抽象方法、静态方法、默认方法和私有方法， 抽象类则完全可以包含实例方法。</p>
+</li>
+<li><p>接口里只能定义静态常量，不能定义普通成员变量;抽象类里则既可以定义普通成员变量，也 可以定义静态常量。</p>
+</li>
+<li><p>接口里不包含构造器; 抽象类里可以包含构造器，抽象类里的构造器并不是用于创建对象。</p>
+</li>
+<li><p>接口里不能包含初始化块; 但抽象类则完全可以包含初始化块。</p>
+</li>
+<li><p>一个类最多只能继承一个类，包括抽象类;但一个类可以直接实现多个接口</p>
+</li>
+</ul>
+<h2 id="1-3-内部类"><a href="#1-3-内部类" class="headerlink" title="1.3 内部类"></a>1.3 内部类</h2><p>在类内部定义的类叫做内部类，包含内部类的类叫做外部类或者宿主类。</p>
+<p>内部类比外部类 多三个修饰符：private、protected、static。</p>
+<h3 id="1-3-1-非静态内部类"><a href="#1-3-1-非静态内部类" class="headerlink" title="1.3.1 非静态内部类"></a>1.3.1 非静态内部类</h3><ul>
+<li><p>内部类可以直接访问外部类的私有变量（被当作外部成员类），反之不可以。</p>
+</li>
+<li><p>外部类访问内部类的成员，必须显示创建非静态内部类对象来调用访问其实例成员。</p>
+</li>
+<li><p>非静态内部类里不饿能有静态方法，静态成员变量、静态初始化块，但是可以包含初始化块。</p>
+</li>
+<li><p>创建初始化内部类时，先初始化外部类再初始化内部类，如下所示：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//创建内部类对象</span><br><span class="line">		Inner inner = new Outer(100).new Inner(&quot;张三&quot;,18);</span><br></pre></td></tr></table></figure>
+
+<p>实例如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">package cn.bytecollege.inner;</span><br><span class="line">/**</span><br><span class="line"> * 定义一个类</span><br><span class="line"> * @author MR.W</span><br><span class="line"> *</span><br><span class="line"> */</span><br><span class="line">public class Outer &#123;</span><br><span class="line">	private int number;</span><br><span class="line">	public Outer(int number) &#123;</span><br><span class="line">		this.number = number;</span><br><span class="line">	&#125;</span><br><span class="line">	/**</span><br><span class="line">	 * 定义非静态内部类</span><br><span class="line">	 * @author MR.W</span><br><span class="line">	 *</span><br><span class="line">	 */</span><br><span class="line">	public class Inner&#123;</span><br><span class="line">		private String name;</span><br><span class="line">		private int age;</span><br><span class="line">		public Inner(String name, int age) &#123;</span><br><span class="line">			super();</span><br><span class="line">			this.name = name;</span><br><span class="line">			this.age = age;</span><br><span class="line">		&#125;</span><br><span class="line">		public void test() &#123;</span><br><span class="line">			//内部类中可访问外部类的私有成员</span><br><span class="line">			System.out.println(&quot;Outer number:&quot;+number);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">package cn.bytecollege.inner;</span><br><span class="line"></span><br><span class="line">import cn.bytecollege.inner.Outer.Inner;</span><br><span class="line"></span><br><span class="line">public class Test &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//创建内部类对象</span><br><span class="line">		Inner inner = new Outer(100).new Inner(&quot;张三&quot;,18);</span><br><span class="line">		</span><br><span class="line">		inner.test();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="1-3-2-静态内部类"><a href="#1-3-2-静态内部类" class="headerlink" title="1.3.2 静态内部类"></a>1.3.2 静态内部类</h3><ul>
+<li><p>static关键字的作用是把类的成员变成类相关，即static修饰的成员属于整个类，而不是属于单个对象。</p>
+</li>
+<li><p>静态内部类可以包含静态成员，也可以包括非静态成员</p>
+</li>
+<li><p>静态内部类不能访问外部类的实例成员，只能访问外部类的类成员</p>
+</li>
+<li><p>创建初始化内部类时，如下所示：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Inner inner = new Outer3.Inner();</span><br></pre></td></tr></table></figure></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">package cn.bytecollege.inner;</span><br><span class="line"></span><br><span class="line">public class Outer3 &#123;</span><br><span class="line">	</span><br><span class="line">	static int number = 100;</span><br><span class="line">	</span><br><span class="line">	int count = 200;</span><br><span class="line">	</span><br><span class="line">	static class Inner &#123;</span><br><span class="line">		public void  print() &#123;</span><br><span class="line">			//访问外部类类成员</span><br><span class="line">			System.out.println(number);</span><br><span class="line">			//编译出错，静态内部类不能访问外部类的实例变量</span><br><span class="line">//			System.out.println(count);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">package cn.bytecollege.inner;</span><br><span class="line"></span><br><span class="line">import cn.bytecollege.inner.Outer3.Inner;</span><br><span class="line"></span><br><span class="line">public class Test &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		Inner inner = new Outer3.Inner();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-3-3-局部内部类"><a href="#1-3-3-局部内部类" class="headerlink" title="1.3.3 局部内部类"></a>1.3.3 局部内部类</h3><p>如果把一个内部类放在方法里定义，则这个内部类就是一个局部内部类，局部内部类仅在该方法里有效。由于局部内部类不能在外部类的方法以外的地方使用，因此局部内部类也不能使用访问控制符和 static 修饰符修饰。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">package cn.bytecollege.inner;</span><br><span class="line"></span><br><span class="line">public class PartInner &#123;</span><br><span class="line">	</span><br><span class="line">	public void test() &#123;</span><br><span class="line">		/**</span><br><span class="line">		 * 定义局部内部类</span><br><span class="line">		 * @author MR.W</span><br><span class="line">		 *</span><br><span class="line">		 */</span><br><span class="line">		class Inner &#123;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="1-3-4匿名内部类"><a href="#1-3-4匿名内部类" class="headerlink" title="1.3.4匿名内部类"></a>1.3.4匿名内部类</h3><p>匿名内部类必须继承一个父类，或实现一个接口，但最多只能继承一个父类，或实现一个接口。</p>
+<ul>
+<li>匿名内部类不能是抽象类，因为系统在创建匿名内部类时，会立即创建匿名内部类的对象。</li>
+<li>匿名内部类不能定义构造器，由于匿名内部类没有类名，所以无法定义构造器。</li>
+<li>匿名内部类可以定义初始化块，可以通过实例化块来完成构造器需要完成的事情。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">package cn.bytecollege.inner;</span><br><span class="line"></span><br><span class="line">public class AnonDemo &#123;</span><br><span class="line">	public void test(IStandard standard) &#123;</span><br><span class="line">		System.out.println(standard.getCount());</span><br><span class="line">	&#125;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		AnonDemo demo = new AnonDemo();</span><br><span class="line">		//调用test方法时，需要传入一个IStandard的子类对象</span><br><span class="line">		//传入一个匿名内部类</span><br><span class="line">		demo.test(new IStandard() &#123;</span><br><span class="line">			</span><br><span class="line">			@Override</span><br><span class="line">			public int getCount() &#123;</span><br><span class="line">				return 100;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="1-4-枚举类"><a href="#1-4-枚举类" class="headerlink" title="1.4 枚举类"></a>1.4 枚举类</h2><p>在特定情况下，一个类的对象是有限且固定的，例如季节、星期、性别等，这种实例有限且固定的类，Java中称为枚举类</p>
+<p>枚举类和普通类存在一下差异：</p>
+<ul>
+<li><p>枚举类可以定义一个或多个接口，使用enum定义的枚举类默认继承了java.lang.Enum类，而不是默认继承Object类，因此枚举类不能显示继承其他父类。</p>
+</li>
+<li><p>使用 enum 定义、非抽象的枚举类默认会使用 final 修饰，因此枚举类不能派生子类。</p>
+</li>
+<li><p>枚举类的构造器只能使用private访问控制符，如果省略了构造器的访问控制符。</p>
+</li>
+<li><p>枚举类的所有实例必须在枚举类的第一行显示列出来，否则这个枚举类永远都不能产生实例，列出这些实例时，系统会自动添加<code>public static final</code>修饰，无需程序员显示添加。</p>
+</li>
+</ul>
+<h3 id="1-4-1-定义枚举类"><a href="#1-4-1-定义枚举类" class="headerlink" title="1.4.1 定义枚举类"></a>1.4.1 定义枚举类</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">package cn.bytecollege;</span><br><span class="line">/**</span><br><span class="line"> * 定义性别枚举</span><br><span class="line"> * @author MR.W</span><br><span class="line"> *</span><br><span class="line"> */</span><br><span class="line">public enum Gender &#123;</span><br><span class="line">	MALE,FEMALE;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">package cn.bytecollege;</span><br><span class="line"></span><br><span class="line">public class SwitchDemo &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		switch (Gender.FEMALE) &#123;</span><br><span class="line">		case FEMALE:</span><br><span class="line">			System.out.println(&quot;女性&quot;);</span><br><span class="line">			break;</span><br><span class="line">		case MALE:</span><br><span class="line">			System.out.println(&quot;男性&quot;);</span><br><span class="line">			break;</span><br><span class="line">		default:</span><br><span class="line">			break;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>枚举类可以使用Enum类中的方法，下面介绍3个重要的方法：</p>
+<ul>
+<li>String name()∶ 返回此枚举实例的名称，这个名称就是定义枚举类时列出的所有枚举值之一。与 此方法相比，大多数程序员应该优先考虑使用 toString（O方法，因为 toStringO）方法返回更加用户友好的名称。</li>
+<li>int ordinal()∶返回枚举值在枚举类中的索引值（就是枚举值在枚举声明中的位置，第一个枚举 值的索引值为零）。</li>
+<li>String toString()∶返回枚举常量的名称，与name 方法相似，但 toStringO方法更常用。</li>
+</ul>
+<h3 id="1-4-2-枚举类的构造方法"><a href="#1-4-2-枚举类的构造方法" class="headerlink" title="1.4.2 枚举类的构造方法"></a>1.4.2 枚举类的构造方法</h3><p>在枚举中定义构造方法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">package cn.bytecollege;</span><br><span class="line">/**</span><br><span class="line"> * 定义性别枚举</span><br><span class="line"> * @author MR.W</span><br><span class="line"> *</span><br><span class="line"> */</span><br><span class="line">public enum Gender &#123;</span><br><span class="line">	MALE(&quot;男&quot;),FEMALE(&quot;女&quot;);</span><br><span class="line">	public String name;</span><br><span class="line">	private Gender(String name) &#123;</span><br><span class="line">		this.name = name;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>在枚举类中列出枚举值时，实际上就是调用构造器创建枚举类对象，只是这里无须使用 new 关键字，也无需显式调用构造器。前面列出枚举值时无需传入参数，甚至无需使用括号，仅仅是因为前面的枚举类包含无参数的构造器。 </p>
+<h3 id="7-4-2-枚举中的抽象方法"><a href="#7-4-2-枚举中的抽象方法" class="headerlink" title="7.4.2 枚举中的抽象方法"></a>7.4.2 枚举中的抽象方法</h3><p>假设有一个 Operation 枚举类，它的 4个枚举值 PLUS，MINUS，TIMES，DIVIDE 分别代表加、减、乘、除 4 种运算，该枚举类需要定义一个eval（）方法来完成计算。 从上面描述可以看出，Operation 需要让PLUS、MINUS、TIMES、DIVIDE 四个值对 evalO方法各有不同的实现。此时可考虑为 Operation 枚举类定义一个eval()抽象方法，然后让4个枚举值分别为eval()提供不同的实现。例如如下代码。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">package cn.bytecollege;</span><br><span class="line">public enum Operation &#123;</span><br><span class="line">	PLUS</span><br><span class="line">	&#123;</span><br><span class="line">		public double eval(int a,int b) &#123;</span><br><span class="line">			return a+b;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	MINUS</span><br><span class="line">	&#123;</span><br><span class="line">		public double eval(int a,int b) &#123;</span><br><span class="line">			return a-b;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	TIMES</span><br><span class="line">	&#123;</span><br><span class="line">		public double eval(int a,int b) &#123;</span><br><span class="line">			return a*b;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	DIVDE&#123;</span><br><span class="line">		public double eval(int a,int b) &#123;</span><br><span class="line">			return a/b;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;;</span><br><span class="line">	//定义抽象方法，为不同的枚举值提供实现</span><br><span class="line">	public abstract double eval(int a,int b);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>编写测试类：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">package cn.bytecollege;</span><br><span class="line"></span><br><span class="line">public class Test &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		System.out.println(Operation.PLUS.eval(1,2));</span><br><span class="line">		System.out.println(Operation.MINUS.eval(1,2));</span><br><span class="line">		System.out.println(Operation.TIMES.eval(1,2));</span><br><span class="line">		System.out.println(Operation.DIVDE.eval(1,2));</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意：<strong>枚举类里定义抽象方法时不能使用 abstract 关键字将枚举类定义成抽象类（因为系统自动会为它添加 abstract 关铰字）</strong>，但因为枚举类需要显式创建枚举值，而不是作为父类，所以定义每个枚举值时必须为抽象方法提供实现，否则将出现编译错误。</p>
+
+    </div>
+
+    
+    
+    
+    
+    <div>
+      
+         <div>
+	
+		<div style="text-align:center;color:#bfbfbf;font-size:16px;"> 
+ 		<span>-------- 本文结束 </span> 
+ 		<i class="fa fa-paw"></i> 
+ 		<span> 感谢阅读 --------</span>
+		</div> 
+  	
+</div>
+      
+    </div>
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div></div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.png" alt="simon·yi an 微信">
+        <span>微信</span>
+      </div>
+
+  </div>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/07/21/xianTrain14-object/" rel="prev" title="学习心得[高级篇]">
+                  <i class="fa fa-chevron-left"></i> 学习心得[高级篇]
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/07/27/xianTrain16-String/" rel="next" title="学习心得[String和常用类]">
+                  学习心得[String和常用类] <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">simon·yi an</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">203k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">3:04</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+  <div class="powered-by">
+  <i class="fa fa-user-md"></i>
+  <span id="busuanzi_container_site_uv">
+    本站总访客数:<span id="busuanzi_value_site_uv"></span>&nbsp;&nbsp;| 
+  </span>
+  <span id="busuanzi_container_site_pv">
+      &nbsp;本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  </span>
+  </div>
+  </div>
+<script>
+      var now = new Date(); 
+      function createtime() { 
+          var grt= new Date("03/12/2019 12:00:00");//此处修改你的建站时间或者网站上线时间 
+          now.setTime(now.getTime()+250); 
+          days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+          hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+          if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+          mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+          seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+          snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+          document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+          document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+      } 
+  setInterval("createtime()",250);
+  </script>
+    </div>
+  </footer>
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="https://cdn.jsdelivr.net/npm/ribbon.js@1.0.2/dist/ribbon.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+  <script async src="/js/cursor/fireworks.js"></script>
+
+
+
+
+  <script src="/js/activate-power-mode.min.js"></script>
+  <script>
+    POWERMODE.colorful = true;
+    POWERMODE.shake = false;
+    document.body.addEventListener('input', POWERMODE);
+  </script>
+
+</body>
+</html>

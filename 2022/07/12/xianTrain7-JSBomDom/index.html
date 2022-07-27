@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="baidu-site-verification" content="code-lKi6sS4j7S" />
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/H%20.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"simon-yian.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;学习打卡第嗯-2天">
+<meta property="og:type" content="article">
+<meta property="og:title" content="培训心得 [JavaScript BOM与DOM]">
+<meta property="og:url" content="https://simon-yian.github.io/2022/07/12/xianTrain7-JSBomDom/index.html">
+<meta property="og:site_name" content="simon·yian&#39;Blog">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;学习打卡第嗯-2天">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.loli.net/2022/07/12/J9Kql12YeTDxd5k.png">
+<meta property="og:image" content="https://s2.loli.net/2022/07/12/yrZuFg7scCDanfe.jpg">
+<meta property="og:image" content="https://s2.loli.net/2022/07/13/B8vdX9F4PbCDLQY.jpg">
+<meta property="og:image" content="https://s2.loli.net/2022/07/13/mGzZ78RbB6HIl3e.png">
+<meta property="og:image" content="https://s2.loli.net/2022/07/13/xa76Dim3uG9HpWV.jpg">
+<meta property="og:image" content="https://s2.loli.net/2022/07/13/shO7d91MeKxAjub.jpg">
+<meta property="article:published_time" content="2022-07-12T12:24:53.000Z">
+<meta property="article:modified_time" content="2022-07-18T11:01:08.000Z">
+<meta property="article:author" content="simon·yi an">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2022/07/12/J9Kql12YeTDxd5k.png">
+
+
+<link rel="canonical" href="https://simon-yian.github.io/2022/07/12/xianTrain7-JSBomDom/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://simon-yian.github.io/2022/07/12/xianTrain7-JSBomDom/","path":"2022/07/12/xianTrain7-JSBomDom/","title":"培训心得 [JavaScript BOM与DOM]"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>培训心得 [JavaScript BOM与DOM] | simon·yian'Blog</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+
+
+  <!-- 添加萝莉-->
+  <script src="/live2d-widget/autoload.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">simon·yian'Blog</h1>
+      <i class="logo-line"></i>
+    </a>
+      <img class="custom-logo-image" src="/images/simon.png" alt="simon·yian'Blog">
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-commonweal"><a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fas fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-message"><a href="/message/" rel="section"><i class="fas fa-comment fa-fw"></i>留言板</a></li>
+        <li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="sitmap fa-fw"></i>站点地图</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#BOM-borwser-object-Model"><span class="nav-number">1.</span> <span class="nav-text">BOM (borwser object Model)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.1.</span> <span class="nav-text">浏览器对象模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#window%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.2.</span> <span class="nav-text">window对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%8F%E5%B9%95%E5%AF%B9%E8%B1%A1%EF%BC%88Screen%EF%BC%89%E7%94%A8%E6%9D%A5%E8%8E%B7%E5%8F%96%E7%94%B5%E8%84%91%E5%B1%8F%E5%B9%95%E7%9A%84%E4%B8%80%E4%BA%9B%E6%95%B0%E6%8D%AE"><span class="nav-number">1.2.1.</span> <span class="nav-text">屏幕对象（Screen）用来获取电脑屏幕的一些数据</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DOM%E7%BC%96%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">DOM编程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E6%A1%A3%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8B-doucment"><span class="nav-number">2.1.</span> <span class="nav-text">文档对象模型(doucment)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8%E6%9D%A5%E8%8E%B7%E5%8F%96%E9%A1%B5%E9%9D%A2%E8%8A%82%E7%82%B9%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">2.2.</span> <span class="nav-text">用来获取页面节点的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84%E4%BA%8B%E4%BB%B6"><span class="nav-number">2.3.</span> <span class="nav-text">JavaScript中常用的事件</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="simon·yi an"
+      src="/images/avator.jpg">
+  <p class="site-author-name" itemprop="name">simon·yi an</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/simon-yian" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;simon-yian" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yourname@gmail.com" title="E-Mail → mailto:yourname@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/yourname" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://plus.google.com/yourname" title="Google → https:&#x2F;&#x2F;plus.google.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-google fa-fw"></i>Google</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/yourname" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+  </div>
+
+
+
+        </div><div>
+  <canvas id="canvasDiyBlock" style="width:60%;">当前浏览器不支持canvas，请更换浏览器后再试</canvas><script src="/js/custom/clock.js"></script>
+</div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://simon-yian.github.io/2022/07/12/xianTrain7-JSBomDom/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avator.jpg">
+      <meta itemprop="name" content="simon·yi an">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="simon·yian'Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          培训心得 [JavaScript BOM与DOM]
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-07-12 20:24:53" itemprop="dateCreated datePublished" datetime="2022-07-12T20:24:53+08:00">2022-07-12</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2022-07-18 19:01:08" itemprop="dateModified" datetime="2022-07-18T19:01:08+08:00">2022-07-18</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/XiAnTrain/" itemprop="url" rel="index"><span itemprop="name">XiAnTrain</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>7.6k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>7 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p><em><strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;学习打卡第嗯-2天</strong></em></p>
+<span id="more"></span>
+
+<h1 id="BOM-borwser-object-Model"><a href="#BOM-borwser-object-Model" class="headerlink" title="BOM (borwser object Model)"></a>BOM (borwser object Model)</h1><h2 id="浏览器对象模型"><a href="#浏览器对象模型" class="headerlink" title="浏览器对象模型"></a>浏览器对象模型</h2><ul>
+<li>使用对象描述浏览器的各个部分</li>
+<li>BOM提供与浏览器窗口交互的对象</li>
+<li>BOM主要用于管理窗口与窗口之间的通讯，所以核心对象是窗口(window)</li>
+</ul>
+<ul>
+<li>BOM中有什么<blockquote>
+<ul>
+<li>图示<img src="https://s2.loli.net/2022/07/12/J9Kql12YeTDxd5k.png" align="center" width="600" height="400" div></li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<ul>
+<li>与浏览器进行交互的一些对象<blockquote>
+<ul>
+<li>移动,调整浏览器大小的window对象</li>
+<li>用于导航的location对象history</li>
+<li>获取浏览器,用户屏幕信息的navigator与screen对象</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<h2 id="window对象"><a href="#window对象" class="headerlink" title="window对象"></a>window对象</h2><blockquote>
+<ul>
+<li>open()方法用于打开一个新窗口或查找一个窗口<blockquote>
+<ul>
+<li><code>window.open(url,name,feature,replace)</code><img src="https://s2.loli.net/2022/07/12/yrZuFg7scCDanfe.jpg" align="center" width="600" height="400" div>
+案例：</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">        function open_win()</span><br><span class="line">        &#123;</span><br><span class="line">            window.open(&quot;hettp://www.baidu.com&quot;,&quot;-blank&quot;)</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/script&gt; </span><br><span class="line"></span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;p onclick=&quot;op()&quot;&gt;打开&lt;/p&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<blockquote>
+<blockquote>
+<ul>
+<li>窗口特性表<img src="https://s2.loli.net/2022/07/13/B8vdX9F4PbCDLQY.jpg" align="center" width="600" height="400" div></li>
+</ul>
+</blockquote>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">        function open_win()&#123;</span><br><span class="line">            window.open(&quot;http://www.baidu.com&quot;,&quot;_blank&quot;,&quot;toolbar=yes,&quot;+ &quot; location=yes,directories=no , status=no,menbar=yes,scrollbars=yes,&quot;+ &quot;resizable=no,copyhistory=yes,width=400,height=400&quot;)</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/scropt&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;form&gt;</span><br><span class="line">    &lt;input type=&quot;button&quot; value=&quot;打开窗口&quot; onclick=&quot;open_win()&quot;&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>setlnterval()每秒指定的毫秒运行指定的代码、函数</li>
+<li>setTimeout()经过指定毫秒数运行一次指定的代码</li>
+<li>location地址对象<blockquote>
+<ul>
+<li>href:设置或获取整个URL为字符串</li>
+</ul>
+</blockquote>
+</li>
+<li>reload():重新加载</li>
+<li>replace():用新文档替换当前文档</li>
+</ul>
+</blockquote>
+<h3 id="屏幕对象（Screen）用来获取电脑屏幕的一些数据"><a href="#屏幕对象（Screen）用来获取电脑屏幕的一些数据" class="headerlink" title="屏幕对象（Screen）用来获取电脑屏幕的一些数据"></a>屏幕对象（Screen）用来获取电脑屏幕的一些数据</h3><blockquote>
+<ul>
+<li>avaiHeight:获取系统屏幕的工作高度（浏览器的页面高度）</li>
+<li>availWidth：获取系统屏幕的工作区宽度（浏览器页面宽度）</li>
+<li>height：获取屏幕的垂直分辨率</li>
+<li>width：获取屏幕的水平分辨率 </li>
+</ul>
+</blockquote>
+<h1 id="DOM编程"><a href="#DOM编程" class="headerlink" title="DOM编程"></a>DOM编程</h1><h2 id="文档对象模型-doucment"><a href="#文档对象模型-doucment" class="headerlink" title="文档对象模型(doucment)"></a>文档对象模型(doucment)</h2><blockquote>
+<ul>
+<li>当一个HTML页面加载到浏览器的时候，那么浏览器会为每个标签都创建一个对应的对象，描述该标签的所有信息。</li>
+<li>我们此时所看到的网页信息实际上就是看到了这些标签的对象信息，如果我们需要操作页面的数据，我们就可以通过这些标签对象进行操作<img src="https://s2.loli.net/2022/07/13/mGzZ78RbB6HIl3e.png" align="center" width="600" height="400" div></li>
+</ul>
+</blockquote>
+<h2 id="用来获取页面节点的方法"><a href="#用来获取页面节点的方法" class="headerlink" title="用来获取页面节点的方法"></a>用来获取页面节点的方法</h2><blockquote>
+<ul>
+<li>获取也页面的所有节点：<code>document.all</code></li>
+<li>nodeName:节点名字</li>
+</ul>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//通过all返回一个页面所有标签对象的数组</span><br><span class="line">var    elements =document.all;</span><br><span class="line">alert(elements);</span><br><span class="line">for(var index = 0;index&lt;elements.length;index++)&#123;</span><br><span class="line">   alert(&quot;节点名：&quot;+elements[index].nodeName);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>通过标签获取节点（返回一个数组）<blockquote>
+<ul>
+<li>doucment.getElementsByTagName(标签名);</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;&lt;/div&gt;</span><br><span class="line">window.onload=function()&#123;</span><br><span class="line">     var    a = document.getElementsByName(&quot;div&quot;);</span><br><span class="line">     alert(a);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>通过标签的Name属性获取节点<blockquote>
+<ul>
+<li><code>doucment.getElementByName(&quot;标签的name属性&quot;)</code></li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;div name=&quot;ElName&quot;&gt;&lt;/div&gt;</span><br><span class="line">window.onload=function()&#123;</span><br><span class="line">    var    a = document.getElementsByName(&quot;ElName&quot;);</span><br><span class="line">    alert(a);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>通过关系找节点<blockquote>
+<ul>
+<li>parentNode：获取当前元素的父节点</li>
+<li>childNodes：获取当前元素的所有下一级子元素</li>
+<li>firstChild:获取当前节点的第一个子节点</li>
+<li>lastChild：获取当前节点的最后一个字节点</li>
+<li>nextElementSibling：获取当前节点的下一个节点（兄弟节点）</li>
+<li>previousElementSibling：获取当前节点的上一个节点（兄弟节点）</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">window.onload=function()&#123;</span><br><span class="line">var    a = document.getElementById(&quot;test&quot;);</span><br><span class="line">var    all = a.childNodes;</span><br><span class="line">for(var    index = 0;index&lt;all.length;index++)&#123;</span><br><span class="line">    alert(all[index].nodeName);</span><br><span class="line">    if(all[index].nodeType==1)&#123;</span><br><span class="line">       all[index].style.background=&quot;red&quot;;</span><br><span class="line">    &#125;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><b style="font-size:20px">nodeType：获取节点类型</b><br><img src="https://s2.loli.net/2022/07/13/xa76Dim3uG9HpWV.jpg" align="center" width="600" height="400" div></p>
+<blockquote>
+<ul>
+<li>创建，删除，插入节点<blockquote>
+<ul>
+<li>创建：var 节点 =  document.creatElement(“标签名”);创建新元素节点</li>
+<li>节点 .setAttribute(“属性名”,”属性值”);</li>
+<li>节点.appendChild(e);将某个节点添加到该节点的最后位置</li>
+<li>节点.insertBefore(e,child);将某个新节点添加到该节点中，某个子节点之前</li>
+<li>节点.removeChild(要删除的子节点)；删除指定的直接点<blockquote>
+<ul>
+<li>节点必须为直接父节点</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>利用节点操作css<blockquote>
+<ul>
+<li>我们可以通过上边获取节点的方式获取到节点，我们可以通过节点对象去操作标签的的样式</li>
+<li>节点.style.要操作的样式=”值”;</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<h2 id="JavaScript中常用的事件"><a href="#JavaScript中常用的事件" class="headerlink" title="JavaScript中常用的事件"></a>JavaScript中常用的事件</h2><blockquote>
+<ul>
+<li>点击事件（onclick）</li>
+</ul>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">function    sp(elementid)&#123;</span><br><span class="line">var    a = document.getElementById(elementid);</span><br><span class="line">a.style.background=&quot;red&quot;;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;title&gt;无标题文档&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"> </span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div    id=&quot;test&quot; nzmd=&quot;ElName&quot;    style=&quot;height:100px;&quot;&gt;</span><br><span class="line">               &lt;p    id=&quot;elp&quot; onclick=&quot;sp(&#x27;elp&#x27;)&quot;&gt;1&lt;/p&gt;</span><br><span class="line">        &lt;a id=&quot;ela&quot;    onclick=&quot;sp(&#x27;ela&#x27;)&quot;&gt;2&lt;/a&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>鼠标进入事件（onmouseover(),onmousemove()）</li>
+<li>鼠标离开事件（onmouseout())</li>
+</ul>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">      .box&#123;</span><br><span class="line">        width: 200px;</span><br><span class="line">        height: 500px;</span><br><span class="line">        display: none;</span><br><span class="line">      &#125;</span><br><span class="line">      .boxOne&#123;</span><br><span class="line">        background-color: red;</span><br><span class="line">      &#125;</span><br><span class="line">      .boxTwo&#123;</span><br><span class="line">        background-color: aqua;</span><br><span class="line">      &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">      function show(idName) &#123;</span><br><span class="line">        //根据id获取要显示的元素</span><br><span class="line">        var el = document.getElementById(idName);</span><br><span class="line">        el.style.display = &quot;block&quot;;</span><br><span class="line">      &#125;</span><br><span class="line">      function hide(idName) &#123;</span><br><span class="line">        var el = document.getElementById(idName);</span><br><span class="line">        el.style.display = &quot;none&quot;;</span><br><span class="line">      &#125;</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    &lt;!--悬停事件：鼠标进入元素后触发--&gt;</span><br><span class="line">    &lt;!--鼠标离开事件：鼠标离开元素后触发--&gt;</span><br><span class="line">    &lt;nav&gt;</span><br><span class="line">      &lt;a href=&quot;#&quot; onmousemove=&quot;show(&#x27;one&#x27;)&quot; onmouseout=&quot;hide(&#x27;one&#x27;)&quot;&gt;导航一&lt;/a&gt;</span><br><span class="line">      &lt;a href=&quot;#&quot; onmousemove=&quot;show(&#x27;two&#x27;)&quot; onmouseout=&quot;hide(&#x27;two&#x27;)&quot;&gt;导航二&lt;/a&gt;</span><br><span class="line">    &lt;/nav&gt;</span><br><span class="line">    &lt;div class=&quot;box boxOne&quot; onmousemove=&quot;show(&#x27;one&#x27;)&quot; onmouseout=&quot;hide(&#x27;one&#x27;)&quot; id=&quot;one&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;box boxTwo&quot; onmousemove=&quot;show(&#x27;two&#x27;)&quot; onmouseout=&quot;hide(&#x27;two&#x27;)&quot; id=&quot;two&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>获取焦点（onfocus()）</li>
+<li>失去焦点（onblur()）</li>
+</ul>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">function    of()&#123;</span><br><span class="line">var    a = document.getElementById(&quot;eli&quot;);</span><br><span class="line">   a.value=&quot;&quot;;</span><br><span class="line">&#125;</span><br><span class="line">function    ob()&#123;</span><br><span class="line">var    a = document.getElementById(&quot;eli&quot;);</span><br><span class="line">   a.value=&quot;有字&quot;;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;title&gt;无标题文档&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"> </span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;input    type=&quot;text&quot; onfocus=&quot;of()&quot; onblur=&quot;ob()&quot;    id=&quot;eli&quot;/&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">window.onload=function()&#123;</span><br><span class="line">    var    a = document.getElementById(&quot;eli&quot;);</span><br><span class="line">    a.onfocus=function()&#123;</span><br><span class="line">        a.placeholder=&quot;&quot;;</span><br><span class="line">   &#125;</span><br><span class="line">  a.onblur=function()&#123;</span><br><span class="line">      a.placeholder=&quot;有字&quot;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;title&gt;无标题文档&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"> </span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;input    type=&quot;text&quot; id=&quot;eli&quot; placeholder=&quot;hello&quot;/&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>滚动事件(onscroll())</li>
+</ul>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">               #test&#123;</span><br><span class="line">width:100%;</span><br><span class="line">height:100px;</span><br><span class="line">overflow:scroll;</span><br><span class="line">border:1px    solid black;</span><br><span class="line">&#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">window.onload=function()&#123;</span><br><span class="line">var    a = document.getElementById(&quot;test&quot;);</span><br><span class="line">a.onscroll=function()&#123;</span><br><span class="line">a.innerHTML=&quot;aaaaaa&quot;;</span><br><span class="line">&#125;;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;title&gt;无标题文档&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"> </span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div    id=&quot;test&quot; &gt;</span><br><span class="line">               啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</span><br><span class="line">    &lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>键盘按下并松开（onkeypress()）</li>
+<li>键盘按下事件（onkeydown()）</li>
+<li>键盘抬起事件（onkeyup()）</li>
+</ul>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">&lt;input type=&quot;text&quot; id=&quot;txt&quot;&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    document.getElementById(&quot;txt&quot;).onkeydown = function () &#123;</span><br><span class="line">        console.log(&quot;键盘按下了&quot;);</span><br><span class="line">    &#125;;</span><br><span class="line">    document.getElementById(&quot;txt&quot;).onkeyup = function () &#123;</span><br><span class="line">        console.log(&quot;键盘抬起了&quot;);</span><br><span class="line">    &#125;;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>keyCode获取按下的键</li>
+</ul>
+</blockquote>
+<img src="https://s2.loli.net/2022/07/13/shO7d91MeKxAjub.jpg" align="center" width="600" height="400" div>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    //页面的任何的位置.按下键盘,获取按键的值</span><br><span class="line">    document.onkeydown = function (e) &#123;</span><br><span class="line">        switch (e.keyCode) &#123;</span><br><span class="line">            case 81:</span><br><span class="line">                console.log(&quot;您按下的是Q&quot;);</span><br><span class="line">                break;</span><br><span class="line">            case 87:</span><br><span class="line">                console.log(&quot;您按下的是W&quot;);</span><br><span class="line">                break;</span><br><span class="line">            case 69:</span><br><span class="line">                console.log(&quot;您按下的是E&quot;);</span><br><span class="line">                break;</span><br><span class="line">            case 82:</span><br><span class="line">                console.log(&quot;您按下的是R&quot;);</span><br><span class="line">                break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>onmousedown / onmouseup  鼠标按下/抬起事件<blockquote>
+<ul>
+<li>当鼠标左键或右键按下或者抬起的时候触发</li>
+<li>按下或抬起滚动轮也会触发，滑动滚动轮不能触发</li>
+<li>如果鼠标比较高级，有其他按键的情况下，按下或抬起也会触发</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">        div &#123;</span><br><span class="line">            width: 50px;</span><br><span class="line">            height: 50px;</span><br><span class="line">            background-color: pink;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div id=&quot;dv&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    document.getElementById(&quot;dv&quot;).onmousedown = function () &#123;</span><br><span class="line">        console.log(&quot;鼠标按下了&quot;);</span><br><span class="line">    &#125;;</span><br><span class="line">    document.getElementById(&quot;dv&quot;).onmouseup = function () &#123;</span><br><span class="line">        console.log(&quot;鼠标抬起了&quot;);</span><br><span class="line">    &#125;;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+    
+    <div>
+      
+         <div>
+	
+		<div style="text-align:center;color:#bfbfbf;font-size:16px;"> 
+ 		<span>-------- 本文结束 </span> 
+ 		<i class="fa fa-paw"></i> 
+ 		<span> 感谢阅读 --------</span>
+		</div> 
+  	
+</div>
+      
+    </div>
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div></div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.png" alt="simon·yi an 微信">
+        <span>微信</span>
+      </div>
+
+  </div>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/07/08/xianTrain6-animation/" rel="prev" title="培训心得 [动画]">
+                  <i class="fa fa-chevron-left"></i> 培训心得 [动画]
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/07/13/xianTrain8-JQuery/" rel="next" title="培训心得 [JQuery]">
+                  培训心得 [JQuery] <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">simon·yi an</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">203k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">3:04</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+  <div class="powered-by">
+  <i class="fa fa-user-md"></i>
+  <span id="busuanzi_container_site_uv">
+    本站总访客数:<span id="busuanzi_value_site_uv"></span>&nbsp;&nbsp;| 
+  </span>
+  <span id="busuanzi_container_site_pv">
+      &nbsp;本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  </span>
+  </div>
+  </div>
+<script>
+      var now = new Date(); 
+      function createtime() { 
+          var grt= new Date("03/12/2019 12:00:00");//此处修改你的建站时间或者网站上线时间 
+          now.setTime(now.getTime()+250); 
+          days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+          hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+          if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+          mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+          seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+          snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+          document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+          document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+      } 
+  setInterval("createtime()",250);
+  </script>
+    </div>
+  </footer>
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="https://cdn.jsdelivr.net/npm/ribbon.js@1.0.2/dist/ribbon.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+  <script async src="/js/cursor/fireworks.js"></script>
+
+
+
+
+  <script src="/js/activate-power-mode.min.js"></script>
+  <script>
+    POWERMODE.colorful = true;
+    POWERMODE.shake = false;
+    document.body.addEventListener('input', POWERMODE);
+  </script>
+
+</body>
+</html>
