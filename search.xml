@@ -388,6 +388,113 @@
 ]]></content>
   </entry>
   <entry>
+    <title>在VMware16中创建虚拟机安装ubuntu 21.04系统</title>
+    <url>/2021/10/18/VMware-ubuntu/</url>
+    <content><![CDATA[<table>
+<tr><td bgcolor="CFCFCF">此篇是创建VMware16虚拟机安装ubuntu21.04系统的超详细操作过程，希望对小白白有所帮助
+</td></tr></table>
+
+<span id="more"></span>
+
+<p>安装环境： windows 10</p>
+<p>VMware 16安装包：我用阿里云盘分享了「VMware-workstation-full-16.1.2-17966106.exe」，你可以不限速下载🚀<br>复制这段内容打开「阿里云盘」App 即可获取<br>链接：<a href="https://www.aliyundrive.com/s/7acSRwmGho2">https://www.aliyundrive.com/s/7acSRwmGho2</a></p>
+<p>ubuntu 21.04镜像：链接：<a href="https://pan.baidu.com/s/1ktE78cieRE9Y7_BhrG9vjQ">https://pan.baidu.com/s/1ktE78cieRE9Y7_BhrG9vjQ</a><br>提取码：n9ms</p>
+<h3 id="安装VMware-16"><a href="#安装VMware-16" class="headerlink" title="安装VMware 16"></a>安装VMware 16</h3><p>1、 直接双击下载好的VMware，这个过程可能会显示重新启动系统，那你点就是了。重新启动后再次双击下载好的VMware，然后点击【下一步】。</p>
+<img src="https://i.loli.net/2021/10/18/X4BvRZr2LKb5SyD.jpg" width="850" height="400" div align="right">
+
+<p>2、勾选【我接受许可协议中的条款】，点击【下一步】</p>
+<img src="https://i.loli.net/2021/10/18/Prph8EuT6vaHiyQ.jpg" width="850" height="400" div align="right">
+
+<p>3、可以默认，也可更改安装位置</p>
+<img src="https://i.loli.net/2021/10/18/DqtysojVQrFE2R9.jpg" width="850" height="400" div align="right">
+
+<p>4、选择安装位置，然后点击【确定】</p>
+<img src="https://i.loli.net/2021/10/18/VzTAbUosOP4dK3W.jpg" width="850" height="400" div align="right">
+
+<p>5、点击【下一步】</p>
+<img src="https://i.loli.net/2021/10/18/DqtysojVQrFE2R9.jpg" width="850" height="400" div align="right">
+
+<p>6、取消勾选【启动时检查产品更新】和【加入VMware客户体验改进计划】，点击【下一步</p>
+<img src="https://i.loli.net/2021/10/18/ONQ954xcuaLZYBK.jpg" width="850" height="400" div align="right">
+
+<p>7、点击【下一步】</p>
+<img src="https://i.loli.net/2021/10/18/n2RPhJVXakzLgHU.jpg" width="850" height="400" div align="right">
+
+<p>8、点击【安装】</p>
+<img src="https://i.loli.net/2021/10/18/xe8kFh4T72tSAld.jpg" width="850" height="400" div align="right">
+
+<p>9、正在安装，等待几分钟</p>
+<img src="https://i.loli.net/2021/10/18/KzBpH8OeDyn5V3F.jpg" width="850" height="400" div align="right">
+
+<p>10、点击【许可证】</p>
+<img src="https://i.loli.net/2021/10/18/AaUSlwWnMCFJ3c1.jpg" width="850" height="400" div align="right">
+
+<p>11、框中输入许可证：ZF3R0-FHED2-M80TY-8QYGC-NPKYF，（复制粘贴就可以）然后点击【输入】</p>
+<p>12、点击【完成】</p>
+<p>恭喜你这会你的虚拟机已经安装好了，是不是直接点击下一步就可以</p>
+<h3 id="在VMware中安装ubuntu-21-04系统"><a href="#在VMware中安装ubuntu-21-04系统" class="headerlink" title="在VMware中安装ubuntu 21.04系统"></a>在VMware中安装ubuntu 21.04系统</h3><p>1、双击打开你创建在桌面的虚拟机，然后点击【创建新的虚拟机】</p>
+<img src="https://i.loli.net/2021/10/18/QWASzB7OuMIb6xm.jpg" width="850" height="400" div align="right">
+
+<p>2、选择【典型】（默认便是典型），点击【下一步】</p>
+<img src="https://i.loli.net/2021/10/18/9CzmqQYUDNeRo56.jpg" width="850" height="400" div align="right">
+
+<p>3、选择【稍后安装操作系统】，点击【下一步】</p>
+<img src="https://i.loli.net/2021/10/18/XZi389ajePvqRDk.jpg" width="850" height="400" div align="right">
+
+<p>4、客户机操作系统选择【Linux】，版本选择【Ubuntu64位】，然后点击【下一步】</p>
+<img src="https://i.loli.net/2021/10/18/XAgZ4IvWTji5CUK.jpg" width="850" height="400" div align="right">
+
+<p>5、位置可更改，点击【下一步】</p>
+<img src="https://i.loli.net/2021/10/18/owxQLiVrmWdJsYa.jpg" width="850" height="400" div align="right">
+
+<p>6、最大磁盘大小【20】GB，选择【将虚拟机磁盘拆分成多个文件】，然后点击【下一步】</p>
+<img src="https://i.loli.net/2021/10/18/DKBEnuG6or3f4wx.jpg" width="850" height="400" div align="right">
+
+<p>7、点击【自定义硬件】</p>
+<img src="https://i.loli.net/2021/10/18/VlZBfoPbR9e8MSc.jpg" width="850" height="400" div align="right">
+
+<p>8、选择【内存】，此虚拟机的内存设为【2048MB】</p>
+<img src="https://i.loli.net/2021/10/18/AdjlBFmEVDNhr1O.jpg" width="850" height="400" div align="right">
+
+<p>9、选择【新CD/DVD(TATA)】后选择【使用ISO映像文件】，点击【浏览】，找到下载后文件夹里面的【ubuntu-21.04-desktop-amd64.iso】这个镜像并选择！</p>
+<img src="https://i.loli.net/2021/10/18/C8p4cyMIBuGbYWU.jpg" width="850" height="400" div align="right">
+
+<p>10、选择【网络适配器】，然后选择【仅主机模式】</p>
+<img src="https://i.loli.net/2021/10/18/IyBJxuMrLhml3Ko.jpg" width="850" height="400" div align="right">
+
+<p>11、选择【USB控制器】，点击【移除】</p>
+<img src="https://i.loli.net/2021/10/18/HwJm6DONtYMhFCz.jpg" width="850" height="400" div align="right">
+
+<p>12、选择【打印机】，点击【移除】</p>
+<img src="https://i.loli.net/2021/10/18/cjkhgORexpbFm4K.jpg" width="850" height="400" div align="right">
+
+<p>13、点击【关闭】</p>
+<img src="https://i.loli.net/2021/10/18/pfz13yURdGDW8qI.jpg" width="850" height="400" div align="right">
+
+<p>14、点击【完成】</p>
+<img src="https://i.loli.net/2021/10/18/VlZBfoPbR9e8MSc.jpg" width="850" height="400" div align="right">
+
+<p><font color="red" size="5"> 实在没有耐心放图片了，等闲了再贴图片吧,相信自己即使看文字你也可以安装完成的，加油！</font></p>
+<p>15、点击【开启此虚拟机】，等待开启</p>
+<p>16、择【中文简体】，点击【安装Ubuntu】</p>
+<p>17、点击【继续】</p>
+<p>18、点击【继续】</p>
+<p>19、点击【现在安装】</p>
+<p>20、点击【继续】</p>
+<p>21、这里默认【Shanghai】就OK</p>
+<p>22、创建用户账号（记住密码哦！）。不要担心你的计算机名是什么，你只需要输入姓名，计算机名就会自动生成。然后点击[继续]</p>
+<p>23、安装中，耐心等待（这个可能需要多点时间）</p>
+<p>24、点击【现在重启】，重启一会看屏幕中下方转圈其他都不动，键盘上点击【enter】</p>
+<p>25、点击账户，我这里是【simon-yian】</p>
+<p>26、输入之前创建用户账号时设的密码，然后点击【登录】</p>
+<p>27、至此Ubuntu系统安装完成！</p>
+<p><font color="red"><b>如果你觉得可以千万不要忘记动动你的小手，赞赏一下贫困的博客主</b><br><b>记得收藏啊，以后会有更好的内容给您分享</b></font></p>
+]]></content>
+      <categories>
+        <category>VMware</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Spring知识点梳理：</title>
     <url>/2021/11/27/SpringFrame/</url>
     <content><![CDATA[ <img src="https://i.loli.net/2021/11/15/vKFjo15HqAybLmE.png" align="center" width="600" height="400" div>
@@ -531,113 +638,6 @@
 <p>请求处理的Controller</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package com.lz.xbmu.controller;</span><br><span class="line">import java.io.File;</span><br><span class="line">import java.io.IOException;</span><br><span class="line">import java.io.UnsupportedEncodingException;</span><br><span class="line">import java.net.URLEncoder;</span><br><span class="line">import javax.servlet.http.HttpServletRequest;</span><br><span class="line">import org.apache.commons.io.FileUtils;</span><br><span class="line">import org.springframework.http.HttpHeaders;</span><br><span class="line">import org.springframework.http.HttpStatus;</span><br><span class="line">import org.springframework.http.MediaType;</span><br><span class="line">import org.springframework.http.ResponseEntity;</span><br><span class="line">import org.springframework.stereotype.Controller;</span><br><span class="line">import org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line">@Controller</span><br><span class="line">public class FileDownloadController &#123;</span><br><span class="line"> @RequestMapping(&quot;/downloadfile&quot;)</span><br><span class="line"> public ResponseEntity&lt;byte[]&gt; fileDownload(String filename,HttpServletRequest request)</span><br><span class="line"> throws IOException&#123;</span><br><span class="line"> //指定要下载的⽂件的路径</span><br><span class="line"> String path = request.getServletContext().getRealPath(&quot;/upload/&quot;);</span><br><span class="line"> //创建下载⽂件对象</span><br><span class="line"> File file = new File(path + File.separator + filename);</span><br><span class="line"> //对⽂件名编码，防⽌中⽂乱码</span><br><span class="line"> filename = this.getFilename(request,filename);</span><br><span class="line"> //设置响应头</span><br><span class="line"> HttpHeaders headers = new HttpHeaders();</span><br><span class="line"> headers.setContentDispositionFormData(&quot;attachment&quot;, filename);</span><br><span class="line"> //定义以流的形式下载返回⽂件数据</span><br><span class="line"> headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);</span><br><span class="line"> //使⽤SpringMVC框架的对象封装返回下载的数据</span><br><span class="line"> return new ResponseEntity&lt;byte[]&gt;(FileUtils.readFileToByteArray(file),</span><br><span class="line"> headers,HttpStatus.OK);</span><br><span class="line"> &#125;</span><br><span class="line"> private String getFilename(HttpServletRequest request, String filename)</span><br><span class="line"> throws UnsupportedEncodingException &#123;</span><br><span class="line"> //根据不同浏览器来判断</span><br><span class="line"> String[] IEBrowserKeyWords = &#123;&quot;MSIE&quot;,&quot;Trident&quot;,&quot;Edge&quot;&#125;;</span><br><span class="line"> //获取请求头代理信息</span><br><span class="line"> String userAgent = request.getHeader(&quot;User-Agent&quot;);</span><br><span class="line"> for (String keyWord : IEBrowserKeyWords) &#123;</span><br><span class="line"> if(userAgent.contains(keyWord)) &#123;</span><br><span class="line"> //进⾏统⼀编码</span><br><span class="line"> return URLEncoder.encode(filename,&quot;UTF-8&quot;);</span><br><span class="line"> &#125;</span><br><span class="line"> &#125;</span><br><span class="line"> //其它的浏览器统⼀为ISO-8859-1编码显示</span><br><span class="line"> return new String(filename.getBytes(&quot;UTF-8&quot;),&quot;ISO-8859-1&quot;);</span><br><span class="line"> &#125; &#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
-  </entry>
-  <entry>
-    <title>在VMware16中创建虚拟机安装ubuntu 21.04系统</title>
-    <url>/2021/10/18/VMware-ubuntu/</url>
-    <content><![CDATA[<table>
-<tr><td bgcolor="CFCFCF">此篇是创建VMware16虚拟机安装ubuntu21.04系统的超详细操作过程，希望对小白白有所帮助
-</td></tr></table>
-
-<span id="more"></span>
-
-<p>安装环境： windows 10</p>
-<p>VMware 16安装包：我用阿里云盘分享了「VMware-workstation-full-16.1.2-17966106.exe」，你可以不限速下载🚀<br>复制这段内容打开「阿里云盘」App 即可获取<br>链接：<a href="https://www.aliyundrive.com/s/7acSRwmGho2">https://www.aliyundrive.com/s/7acSRwmGho2</a></p>
-<p>ubuntu 21.04镜像：链接：<a href="https://pan.baidu.com/s/1ktE78cieRE9Y7_BhrG9vjQ">https://pan.baidu.com/s/1ktE78cieRE9Y7_BhrG9vjQ</a><br>提取码：n9ms</p>
-<h3 id="安装VMware-16"><a href="#安装VMware-16" class="headerlink" title="安装VMware 16"></a>安装VMware 16</h3><p>1、 直接双击下载好的VMware，这个过程可能会显示重新启动系统，那你点就是了。重新启动后再次双击下载好的VMware，然后点击【下一步】。</p>
-<img src="https://i.loli.net/2021/10/18/X4BvRZr2LKb5SyD.jpg" width="850" height="400" div align="right">
-
-<p>2、勾选【我接受许可协议中的条款】，点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/Prph8EuT6vaHiyQ.jpg" width="850" height="400" div align="right">
-
-<p>3、可以默认，也可更改安装位置</p>
-<img src="https://i.loli.net/2021/10/18/DqtysojVQrFE2R9.jpg" width="850" height="400" div align="right">
-
-<p>4、选择安装位置，然后点击【确定】</p>
-<img src="https://i.loli.net/2021/10/18/VzTAbUosOP4dK3W.jpg" width="850" height="400" div align="right">
-
-<p>5、点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/DqtysojVQrFE2R9.jpg" width="850" height="400" div align="right">
-
-<p>6、取消勾选【启动时检查产品更新】和【加入VMware客户体验改进计划】，点击【下一步</p>
-<img src="https://i.loli.net/2021/10/18/ONQ954xcuaLZYBK.jpg" width="850" height="400" div align="right">
-
-<p>7、点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/n2RPhJVXakzLgHU.jpg" width="850" height="400" div align="right">
-
-<p>8、点击【安装】</p>
-<img src="https://i.loli.net/2021/10/18/xe8kFh4T72tSAld.jpg" width="850" height="400" div align="right">
-
-<p>9、正在安装，等待几分钟</p>
-<img src="https://i.loli.net/2021/10/18/KzBpH8OeDyn5V3F.jpg" width="850" height="400" div align="right">
-
-<p>10、点击【许可证】</p>
-<img src="https://i.loli.net/2021/10/18/AaUSlwWnMCFJ3c1.jpg" width="850" height="400" div align="right">
-
-<p>11、框中输入许可证：ZF3R0-FHED2-M80TY-8QYGC-NPKYF，（复制粘贴就可以）然后点击【输入】</p>
-<p>12、点击【完成】</p>
-<p>恭喜你这会你的虚拟机已经安装好了，是不是直接点击下一步就可以</p>
-<h3 id="在VMware中安装ubuntu-21-04系统"><a href="#在VMware中安装ubuntu-21-04系统" class="headerlink" title="在VMware中安装ubuntu 21.04系统"></a>在VMware中安装ubuntu 21.04系统</h3><p>1、双击打开你创建在桌面的虚拟机，然后点击【创建新的虚拟机】</p>
-<img src="https://i.loli.net/2021/10/18/QWASzB7OuMIb6xm.jpg" width="850" height="400" div align="right">
-
-<p>2、选择【典型】（默认便是典型），点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/9CzmqQYUDNeRo56.jpg" width="850" height="400" div align="right">
-
-<p>3、选择【稍后安装操作系统】，点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/XZi389ajePvqRDk.jpg" width="850" height="400" div align="right">
-
-<p>4、客户机操作系统选择【Linux】，版本选择【Ubuntu64位】，然后点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/XAgZ4IvWTji5CUK.jpg" width="850" height="400" div align="right">
-
-<p>5、位置可更改，点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/owxQLiVrmWdJsYa.jpg" width="850" height="400" div align="right">
-
-<p>6、最大磁盘大小【20】GB，选择【将虚拟机磁盘拆分成多个文件】，然后点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/DKBEnuG6or3f4wx.jpg" width="850" height="400" div align="right">
-
-<p>7、点击【自定义硬件】</p>
-<img src="https://i.loli.net/2021/10/18/VlZBfoPbR9e8MSc.jpg" width="850" height="400" div align="right">
-
-<p>8、选择【内存】，此虚拟机的内存设为【2048MB】</p>
-<img src="https://i.loli.net/2021/10/18/AdjlBFmEVDNhr1O.jpg" width="850" height="400" div align="right">
-
-<p>9、选择【新CD/DVD(TATA)】后选择【使用ISO映像文件】，点击【浏览】，找到下载后文件夹里面的【ubuntu-21.04-desktop-amd64.iso】这个镜像并选择！</p>
-<img src="https://i.loli.net/2021/10/18/C8p4cyMIBuGbYWU.jpg" width="850" height="400" div align="right">
-
-<p>10、选择【网络适配器】，然后选择【仅主机模式】</p>
-<img src="https://i.loli.net/2021/10/18/IyBJxuMrLhml3Ko.jpg" width="850" height="400" div align="right">
-
-<p>11、选择【USB控制器】，点击【移除】</p>
-<img src="https://i.loli.net/2021/10/18/HwJm6DONtYMhFCz.jpg" width="850" height="400" div align="right">
-
-<p>12、选择【打印机】，点击【移除】</p>
-<img src="https://i.loli.net/2021/10/18/cjkhgORexpbFm4K.jpg" width="850" height="400" div align="right">
-
-<p>13、点击【关闭】</p>
-<img src="https://i.loli.net/2021/10/18/pfz13yURdGDW8qI.jpg" width="850" height="400" div align="right">
-
-<p>14、点击【完成】</p>
-<img src="https://i.loli.net/2021/10/18/VlZBfoPbR9e8MSc.jpg" width="850" height="400" div align="right">
-
-<p><font color="red" size="5"> 实在没有耐心放图片了，等闲了再贴图片吧,相信自己即使看文字你也可以安装完成的，加油！</font></p>
-<p>15、点击【开启此虚拟机】，等待开启</p>
-<p>16、择【中文简体】，点击【安装Ubuntu】</p>
-<p>17、点击【继续】</p>
-<p>18、点击【继续】</p>
-<p>19、点击【现在安装】</p>
-<p>20、点击【继续】</p>
-<p>21、这里默认【Shanghai】就OK</p>
-<p>22、创建用户账号（记住密码哦！）。不要担心你的计算机名是什么，你只需要输入姓名，计算机名就会自动生成。然后点击[继续]</p>
-<p>23、安装中，耐心等待（这个可能需要多点时间）</p>
-<p>24、点击【现在重启】，重启一会看屏幕中下方转圈其他都不动，键盘上点击【enter】</p>
-<p>25、点击账户，我这里是【simon-yian】</p>
-<p>26、输入之前创建用户账号时设的密码，然后点击【登录】</p>
-<p>27、至此Ubuntu系统安装完成！</p>
-<p><font color="red"><b>如果你觉得可以千万不要忘记动动你的小手，赞赏一下贫困的博客主</b><br><b>记得收藏啊，以后会有更好的内容给您分享</b></font></p>
-]]></content>
-      <categories>
-        <category>VMware</category>
-      </categories>
   </entry>
   <entry>
     <title>培训心得&amp;emsp;&amp;emsp;[走进HTML]</title>
@@ -2340,6 +2340,326 @@
 </tr>
 </tbody></table>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package cn.bytecollege;</span><br><span class="line">public class MathDemo &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        //求平方根</span><br><span class="line">        System.out.println(Math.sqrt(4));</span><br><span class="line">        //幂运算，x的a次方</span><br><span class="line">        System.out.println(Math.pow(3,3));</span><br><span class="line">        //求余，x%y</span><br><span class="line">        System.out.println(Math.floorMod(10,3));</span><br><span class="line">        //求正弦</span><br><span class="line">        System.out.println(Math.sin(Math.PI/2));</span><br><span class="line">        //求余弦</span><br><span class="line">        System.out.println(Math.cos(Math.PI));</span><br><span class="line">        //求正切</span><br><span class="line">        System.out.println(Math.tan(0));</span><br><span class="line">        //求绝对值</span><br><span class="line">        System.out.println(Math.abs(-101));</span><br><span class="line">        //求两个数的最大值</span><br><span class="line">        System.out.println(Math.max(-2,2));</span><br><span class="line">        //求两个数的最小值</span><br><span class="line">        System.out.println(Math.min(-2,2));</span><br><span class="line">        //0.0到1.0的随机数</span><br><span class="line">        System.out.println(Math.random());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="4-2、-Random-生成随机数"><a href="#4-2、-Random-生成随机数" class="headerlink" title="4.2、 Random 生成随机数"></a>4.2、 Random 生成随机数</h3><p>Random类用于生成一个伪随机数，Random类包含两个构造方法：</p>
+<ul>
+<li>Random（）：以当前时间作为种子 </li>
+<li>Random (long seed):需要开发者显示传入long型的种子</li>
+</ul>
+<h3 id="4-3、-BigDecimal"><a href="#4-3、-BigDecimal" class="headerlink" title="4.3、 BigDecimal"></a>4.3、 BigDecimal</h3><p>在之前使用float和double在计算时很容易出现精度问题，如下问题：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">double s = 0.2 + 0.1</span><br><span class="line">System.out.println(s);</span><br></pre></td></tr></table></figure>
+
+<p>输出结果为：0.300000000000000001</p>
+<p>使用BigDecimal类的方法得以解决这个精度问题，如下所示：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">import java.math.BigDecimal;</span><br><span class="line"></span><br><span class="line">public class BigDecimalDemo &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		BigDecimal d1 = new BigDecimal(&quot;0.2&quot;);</span><br><span class="line">		BigDecimal d2 = new BigDecimal(&quot;0.1&quot;);</span><br><span class="line">		//加法</span><br><span class="line">		System.out.println(d1.add(d2));</span><br><span class="line">		//减法</span><br><span class="line">		System.out.println(d1.subtract(d2));</span><br><span class="line">		//乘法</span><br><span class="line">		System.out.println(d1.multiply(d2));</span><br><span class="line">		//除法</span><br><span class="line">		System.out.println(d1.divide(d2));</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="5、-包装类"><a href="#5、-包装类" class="headerlink" title="5、 包装类"></a>5、 包装类</h3><p>定义基本类型变量时，并没有new对象，也就是说8中基本类型并不支持面向对象，不具备对象的特征，没有成员变量和成员方法可以被调用。</p>
+<p>java针对每个基本类提供了对应的包装类，如下表所示：</p>
+<table>
+<thead>
+<tr>
+<th>基本类型</th>
+<th>包装类</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>byte</td>
+<td>Byte</td>
+</tr>
+<tr>
+<td>short</td>
+<td>Short</td>
+</tr>
+<tr>
+<td>int</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>long</td>
+<td>Long</td>
+</tr>
+<tr>
+<td>char</td>
+<td>Character</td>
+</tr>
+<tr>
+<td>float</td>
+<td>Float</td>
+</tr>
+<tr>
+<td>double</td>
+<td>Double</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>Boolean</td>
+</tr>
+</tbody></table>
+<h4 id="5-1-基本类型和包装类之间的转换"><a href="#5-1-基本类型和包装类之间的转换" class="headerlink" title="5.1 基本类型和包装类之间的转换"></a>5.1 基本类型和包装类之间的转换</h4><ul>
+<li>基本类型转换成包装类叫做自动装箱</li>
+<li>包装类转换成基本类型时叫做自动拆箱</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">int a = 100;</span><br><span class="line">//自动装箱</span><br><span class="line">Integer b = Integer.valueOf(a);</span><br><span class="line">//自动拆箱</span><br><span class="line">Integer c = new Integer(100);</span><br><span class="line">int d = c;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Integer-类中的缓存"><a href="#Integer-类中的缓存" class="headerlink" title="Integer 类中的缓存"></a>Integer 类中的缓存</h4><p>Integer类提供了缓存，将-128到127之间的Integer对象创建好放置在内存中，使用时直接返回对象的引用，如下所示：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//Java会自动进行装箱</span><br><span class="line">Integer a = 100;</span><br><span class="line">Integer b = 100;</span><br><span class="line">System.out.print(a==b);</span><br></pre></td></tr></table></figure>
+
+<p>‘==’如果指向同一地址就相等，运行结果为true，当创建a、b两个对象时，直接从缓存中获取对象，即a和b指向相同的地址。如果变量的值超出了缓存范围，则会创建新的对象。</p>
+<p>注意：</p>
+<p><strong>Byte、Short、Integer、Long这4个包装类，都具有-128到127之间的缓存，Float和Double类型则不具有。Boolean类型中表示true和false的对象则是两个常量</strong></p>
+<h4 id="1-5-2-Integer-类常用方法"><a href="#1-5-2-Integer-类常用方法" class="headerlink" title="1.5.2 Integer 类常用方法"></a>1.5.2 Integer 类常用方法</h4><h2 id="6、-日期时间类"><a href="#6、-日期时间类" class="headerlink" title="6、 日期时间类"></a>6、 日期时间类</h2><h3 id="6-1-Date类"><a href="#6-1-Date类" class="headerlink" title="6.1 Date类"></a>6.1 Date类</h3><ul>
+<li><p>Date()：创建一个代表当前时间的Date对象。</p>
+</li>
+<li><p>Date(long date)：根据指定的long类型整数生成一个Date对象。其中参数表示创建Date对象和GMT 1970年1月1日08:00:00之间的时间差。单位是毫秒。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//当前时间</span><br><span class="line">Date date = new Date();</span><br><span class="line">//指定时间</span><br><span class="line">Date date2 = new Date(1000000);</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>Date类还为开发者提供了四种方法：</p>
+<ul>
+<li>boolean after（Date when）:测试日期是否在指定日期when之后。</li>
+<li>boolean before（Date when）：测试该日期是否在指定日期when之前。</li>
+<li>long getTime()：返回该时间对应的long型整数，即从GMT1970-01-01 00∶00∶00 到该Date 对象 之间的时间差，以毫秒作为计时单位。</li>
+<li>void setTime(long time):设置该Date对象的时间。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import java.util.Date;</span><br><span class="line">public class DateDemo &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Date date = new Date(2020,10,01);</span><br><span class="line">        Date newdate = new Date(2021,10,02);</span><br><span class="line">        //测试该日期是否在指定日期 when 之后</span><br><span class="line">        boolean a = date.after(newdate);</span><br><span class="line">        //测试该日期是否在指定日期 when 之前</span><br><span class="line">        boolean b = date.before(newdate);</span><br><span class="line">        //返回该时间对应的 long型整数</span><br><span class="line">        date.setTime(86400);</span><br><span class="line">        //设置该Date对象的时间</span><br><span class="line">        long c = date.getTime();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="6-2-Calender类"><a href="#6-2-Calender类" class="headerlink" title="6.2 Calender类"></a>6.2 Calender类</h4><p>Calender是一个抽象类。它用了几个静态方法用来获取Calender对象，如下所示：</p>
+<ul>
+<li>void add(int field,int amount)：根据日历的规则，为给定的日历字段添加或减去指定的时间量。</li>
+<li>int get(int field)：返回指定日历字段的值。</li>
+<li>int getActualMaximum(int field)：返回指定日历字段可能拥有的最大值，例如月，最大值为11.</li>
+<li>int getActualMinimum（int field）∶ 返回指定日历字段可能拥有的最小值。例如月，最小值为 0。</li>
+<li>void roll（int field， int amount）∶与 add()方法类似，区别在于加上 amount 后超过了该字段所能表 示的最大范围时，也不会向上一个字段进位。</li>
+<li>void set（int field， int value）∶将给定的日历字段设置为给定值。</li>
+<li>void set（int year， int month， int date）∶ 设置 Calendar 对象的年、月、日三个字段的值。</li>
+<li>void set（int year， int month，int date，int hourOfDay， int minute，int second）∶设置 Calendar 对象的年、 月、日、时、分、秒6个字段的值。</li>
+</ul>
+<p>注：Calendar.MONTH字段代表月份，月份的起始值不是1，而是0，所以要设置8 月时，用7 而不是8。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import java.util.Calendar;</span><br><span class="line">public class CalenderDemo &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Calendar calendar = Calendar.getInstance();</span><br><span class="line">        //设置 Calendar 对象的年、月、日、时、分、秒6个字段的值</span><br><span class="line">        calendar.set(2020,10,1,20,23,59,59);</span><br><span class="line">        //返回指定日历字段的值</span><br><span class="line">        System.out.println(calendar.get(Calendar.HOUR_OF_DAY));</span><br><span class="line">        //返回指定日历字段可能拥有的最小值</span><br><span class="line">        System.out.println(calendar.getActualMinimum(Calendar.DAY_OF_MONTH));</span><br><span class="line">        //返回指定日历字段可能拥有的最大值</span><br><span class="line">        calendar.add(Calendar.MONTH,3);</span><br><span class="line">//        calendar.roll(Calendar.MONTH,-10);</span><br><span class="line">        System.out.println(calendar.getTime());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>add（int field，int amount）的功能非常强大，add 主要用于改变 Calendar 的特定字段的值。如果需要增加某字段的值，则让 amount 为正数;如果需要减少某字段的值，则让 amount 为负数即可。 add（int field， int amount）有如下两条规则：</p>
+<ul>
+<li>当被修改的字段超出它允许的范围时，会发生进位，即上一级字段也会增大。</li>
+<li>如果下一级字段也需要改变，那么该字段会修正到变化最小的值</li>
+</ul>
+<p>roll()的规则与 add()的处理规则不同∶当被修改的字段超出它允许的范围时，上一级字段不会增大。</p>
+<h3 id="6-3-java-time包（java8新增）"><a href="#6-3-java-time包（java8新增）" class="headerlink" title="6.3 java.time包（java8新增）"></a>6.3 java.time包（java8新增）</h3><ul>
+<li><p>LocalDate：该类代表不带时区的日期。</p>
+</li>
+<li><p>LocalTime：该类代表不带时区的时间。</p>
+</li>
+<li><p>LocalDateTime：该类代表不带时期的时间，日期。</p>
+<p>以上类提供了静态的 now()方法来获取 当前日期，它还提供了 minusXxx()方法在当前年份基础上减去几年、几月、几周或几日等，也提供了 plusXxx()方法在当前年份基础上加上几年、几月、几周或几日等</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">import java.time.LocalDate;</span><br><span class="line">import java.time.LocalDateTime;</span><br><span class="line">import java.time.LocalTime;</span><br><span class="line"></span><br><span class="line">public class LocalDemo &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		LocalDate ld = LocalDate.now();</span><br><span class="line">		System.out.println(ld);</span><br><span class="line">		LocalTime lt = LocalTime.now();</span><br><span class="line">		System.out.println(lt);</span><br><span class="line">		LocalDateTime ldt = LocalDateTime.now();</span><br><span class="line">		System.out.println(ldt);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="7、-格式化"><a href="#7、-格式化" class="headerlink" title="7、 格式化"></a>7、 格式化</h2><h4 id="7-1-数字格式化"><a href="#7-1-数字格式化" class="headerlink" title="7.1 数字格式化"></a>7.1 数字格式化</h4><p>NumberFormat 是所有数值格式的抽象基类。此类提供格式化和解析数值的接口。NumberFormat提供了以下方法用于格式化。</p>
+<ul>
+<li>getInstance()、getNumberInstance()。返回当前默认语言环境的通用数值格式。</li>
+<li>getInstance(Locale)、getNumberInstance(Locale)。返回指定语言环境的通用数值格式。</li>
+<li>NumberFormat.setMinimumIntegerDigits(int)。设置数的整数部分所允许的最小位数。</li>
+<li>NumberFormat.setMaximumIntegerDigits(int)。设置数的整数部分所允许的最大位数。</li>
+<li>NumberFormat.setMinimumFractionDigits(int)。设置最少小数点位数，不足的位数以0补位，超出的话按实际位数输出。</li>
+<li>NumberFormat.setMaximumFractionDigits(int)。设置最多保留小数位数，不足不补0。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">import java.text.NumberFormat;</span><br><span class="line">import java.util.Locale;</span><br><span class="line"></span><br><span class="line">public class NumberFormatDemo &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		double d = 12345.676688000;</span><br><span class="line">        NumberFormat nf = NumberFormat.getNumberInstance();</span><br><span class="line">        System.out.println(nf.format(d));//12,345.677 默认只保留到小数点后三位</span><br><span class="line">        nf.setMinimumIntegerDigits(2);</span><br><span class="line">        System.out.println(nf.format(d));//12,345.677 整数部分大于2位按默认最小数位数3位输出</span><br><span class="line">        d = 1234.0;</span><br><span class="line">        nf.setMaximumIntegerDigits(3);</span><br><span class="line">        System.out.println(nf.format(d));//234</span><br><span class="line">        nf = NumberFormat.getInstance();</span><br><span class="line">        d = 12345.6766;</span><br><span class="line">        nf.setMinimumFractionDigits(1);</span><br><span class="line">        System.out.println(nf.format(d));//12,345.677 小数部分大于1位，按默认最大小数位数3位输出</span><br><span class="line">        nf.setMinimumFractionDigits(5);</span><br><span class="line">        System.out.println(nf.format(d));//12,345.67660 不够位数补0</span><br><span class="line">        nf.setMaximumFractionDigits(1);</span><br><span class="line">        System.out.println(nf.format(d));//12,345.7</span><br><span class="line">        nf = NumberFormat.getNumberInstance(Locale.CHINA);</span><br><span class="line">        d = 12345.6789;</span><br><span class="line">        System.out.println(nf.format(d));//12,345.679</span><br><span class="line">        nf = NumberFormat.getNumberInstance(Locale.US);</span><br><span class="line">        System.out.println(nf.format(d));//12 345,679</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="7-2-日期格式化"><a href="#7-2-日期格式化" class="headerlink" title="7.2 日期格式化"></a>7.2 日期格式化</h4><p>SimpleDateFormat对象格式化日期，yyyy（年）、MM（月）、dd（日）、 HH（小时）、mm（分）、ss（秒）</p>
+<p>如下所示：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import java.text.ParseException;</span><br><span class="line">import java.text.SimpleDateFormat;</span><br><span class="line">import java.util.Date;</span><br><span class="line"></span><br><span class="line">public class DateFormatDemo &#123;</span><br><span class="line">	public static void main(String[] args) throws ParseException &#123;</span><br><span class="line">		Date date = new Date(158764354);</span><br><span class="line">		SimpleDateFormat format = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;);</span><br><span class="line">		String str = format.format(date);</span><br><span class="line">		System.out.println(str);</span><br><span class="line">		//将字符串转换成Date类型，字符串格式也要符合构造方法中的参数格式</span><br><span class="line">		String s = &quot;1990-08-18 12:00:00&quot;;</span><br><span class="line">		//parse方法用于解析</span><br><span class="line">		Date d = format.parse(s);</span><br><span class="line">		System.out.println(d);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>Java 8位开发者提供了更强大的格式化工具DateFormatter，格式化之前需要先获取DateFormatter对象。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import java.time.LocalDateTime;</span><br><span class="line">import java.time.format.DateTimeFormatter;</span><br><span class="line"></span><br><span class="line">public class DateFormatterDemo &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		DateTimeFormatter formatter = DateTimeFormatter.ofPattern(&quot;yyyy-MM-dd HH:mm:ss&quot;);</span><br><span class="line">		String str = formatter.format(LocalDateTime.now());</span><br><span class="line">		System.out.println(str);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="1-8-正则表达式"><a href="#1-8-正则表达式" class="headerlink" title="1.8 正则表达式"></a>1.8 正则表达式</h2><p>正则表达式(regular expression)描述了一种字符串匹配的模式（pattern），可以用来检查一个串是否含有某种子串、将匹配的子串替换或者从某个串中取出符合某个条件的子串等。</p>
+<table>
+<thead>
+<tr>
+<th>字符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>\</td>
+<td>将下一个字符标记为一个特殊字符、或一个原义字符、或一个 向后引用、或一个八进制转义符。例如，’n’ 匹配字符 “n”。’\n’ 匹配一个换行符。序列 ‘\‘ 匹配 “&quot; 而 “(“ 则匹配 “(“。</td>
+</tr>
+<tr>
+<td>^</td>
+<td>匹配输入字符串的开始位置。如果设置了 RegExp 对象的 Multiline 属性，^ 也匹配 ‘\n’ 或 ‘\r’ 之后的位置。</td>
+</tr>
+<tr>
+<td>$</td>
+<td>匹配输入字符串的结束位置。如果设置了RegExp 对象的 Multiline 属性，$ 也匹配 ‘\n’ 或 ‘\r’ 之前的位置。</td>
+</tr>
+<tr>
+<td>*</td>
+<td>匹配前面的子表达式零次或多次。例如，zo* 能匹配 “z” 以及 “zoo”。* 等价于{0,}。</td>
+</tr>
+<tr>
+<td>+</td>
+<td>匹配前面的子表达式一次或多次。例如，’zo+’ 能匹配 “zo” 以及 “zoo”，但不能匹配 “z”。+ 等价于 {1,}。</td>
+</tr>
+<tr>
+<td>?</td>
+<td>匹配前面的子表达式零次或一次。例如，”do(es)?” 可以匹配 “do” 或 “does” 。? 等价于 {0,1}。</td>
+</tr>
+<tr>
+<td>{n}</td>
+<td>n 是一个非负整数。匹配确定的 n 次。例如，’o{2}’ 不能匹配 “Bob” 中的 ‘o’，但是能匹配 “food” 中的两个 o。</td>
+</tr>
+<tr>
+<td>{n,}</td>
+<td>n 是一个非负整数。至少匹配n 次。例如，’o{2,}’ 不能匹配 “Bob” 中的 ‘o’，但能匹配 “foooood” 中的所有 o。’o{1,}’ 等价于 ‘o+’。’o{0,}’ 则等价于 ‘o*’。</td>
+</tr>
+<tr>
+<td>{n,m}</td>
+<td>m 和 n 均为非负整数，其中n &lt;= m。最少匹配 n 次且最多匹配 m 次。例如，”o{1,3}” 将匹配 “fooooood” 中的前三个 o。’o{0,1}’ 等价于 ‘o?’。请注意在逗号和两个数之间不能有空格。</td>
+</tr>
+<tr>
+<td>?</td>
+<td>当该字符紧跟在任何一个其他限制符 (*, +, ?, {n}, {n,}, {n,m}) 后面时，匹配模式是非贪婪的。非贪婪模式尽可能少的匹配所搜索的字符串，而默认的贪婪模式则尽可能多的匹配所搜索的字符串。例如，对于字符串 “oooo”，’o+?’ 将匹配单个 “o”，而 ‘o+’ 将匹配所有 ‘o’。</td>
+</tr>
+<tr>
+<td>.</td>
+<td>匹配除换行符（\n、\r）之外的任何单个字符。要匹配包括 ‘\n’ 在内的任何字符，请使用像”<strong>(.|\n)</strong>“的模式。</td>
+</tr>
+<tr>
+<td>(pattern)</td>
+<td>匹配 pattern 并获取这一匹配。所获取的匹配可以从产生的 Matches 集合得到，在VBScript 中使用 SubMatches 集合，在JScript 中则使用 $0…$9 属性。要匹配圆括号字符，请使用 ‘(‘ 或 ‘)‘。</td>
+</tr>
+<tr>
+<td>(?:pattern)</td>
+<td>匹配 pattern 但不获取匹配结果，也就是说这是一个非获取匹配，不进行存储供以后使用。这在使用 “或” 字符 (|) 来组合一个模式的各个部分是很有用。例如， ‘industr(?:y|ies) 就是一个比 ‘industry|industries’ 更简略的表达式。</td>
+</tr>
+<tr>
+<td>(?=pattern)</td>
+<td>正向肯定预查（look ahead positive assert），在任何匹配pattern的字符串开始处匹配查找字符串。这是一个非获取匹配，也就是说，该匹配不需要获取供以后使用。例如，”Windows(?=95|98|NT|2000)”能匹配”Windows2000”中的”Windows”，但不能匹配”Windows3.1”中的”Windows”。预查不消耗字符，也就是说，在一个匹配发生后，在最后一次匹配之后立即开始下一次匹配的搜索，而不是从包含预查的字符之后开始。</td>
+</tr>
+<tr>
+<td>(?!pattern)</td>
+<td>正向否定预查(negative assert)，在任何不匹配pattern的字符串开始处匹配查找字符串。这是一个非获取匹配，也就是说，该匹配不需要获取供以后使用。例如”Windows(?!95|98|NT|2000)”能匹配”Windows3.1”中的”Windows”，但不能匹配”Windows2000”中的”Windows”。预查不消耗字符，也就是说，在一个匹配发生后，在最后一次匹配之后立即开始下一次匹配的搜索，而不是从包含预查的字符之后开始。</td>
+</tr>
+<tr>
+<td>(?&lt;=pattern)</td>
+<td>反向(look behind)肯定预查，与正向肯定预查类似，只是方向相反。例如，”`(?&lt;=95</td>
+</tr>
+<tr>
+<td>(?&lt;!pattern)</td>
+<td>反向否定预查，与正向否定预查类似，只是方向相反。例如”`(?&lt;!95</td>
+</tr>
+<tr>
+<td>x|y</td>
+<td>匹配 x 或 y。例如，’z|food’ 能匹配 “z” 或 “food”。’(z|f)ood’ 则匹配 “zood” 或 “food”。</td>
+</tr>
+<tr>
+<td>[xyz]</td>
+<td>字符集合。匹配所包含的任意一个字符。例如， ‘[abc]’ 可以匹配 “plain” 中的 ‘a’。</td>
+</tr>
+<tr>
+<td>[^xyz]</td>
+<td>负值字符集合。匹配未包含的任意字符。例如， ‘[^abc]’ 可以匹配 “plain” 中的’p’、’l’、’i’、’n’。</td>
+</tr>
+<tr>
+<td>[a-z]</td>
+<td>字符范围。匹配指定范围内的任意字符。例如，’[a-z]’ 可以匹配 ‘a’ 到 ‘z’ 范围内的任意小写字母字符。</td>
+</tr>
+<tr>
+<td>[^a-z]</td>
+<td>负值字符范围。匹配任何不在指定范围内的任意字符。例如，’[^a-z]’ 可以匹配任何不在 ‘a’ 到 ‘z’ 范围内的任意字符。</td>
+</tr>
+<tr>
+<td>\b</td>
+<td>匹配一个单词边界，也就是指单词和空格间的位置。例如， ‘er\b’ 可以匹配”never” 中的 ‘er’，但不能匹配 “verb” 中的 ‘er’。</td>
+</tr>
+<tr>
+<td>\B</td>
+<td>匹配非单词边界。’er\B’ 能匹配 “verb” 中的 ‘er’，但不能匹配 “never” 中的 ‘er’。</td>
+</tr>
+<tr>
+<td>\cx</td>
+<td>匹配由 x 指明的控制字符。例如， \cM 匹配一个 Control-M 或回车符。x 的值必须为 A-Z 或 a-z 之一。否则，将 c 视为一个原义的 ‘c’ 字符。</td>
+</tr>
+<tr>
+<td>\d</td>
+<td>匹配一个数字字符。等价于 [0-9]。</td>
+</tr>
+<tr>
+<td>\D</td>
+<td>匹配一个非数字字符。等价于 [^0-9]。</td>
+</tr>
+<tr>
+<td>\f</td>
+<td>匹配一个换页符。等价于 \x0c 和 \cL。</td>
+</tr>
+<tr>
+<td>\n</td>
+<td>匹配一个换行符。等价于 \x0a 和 \cJ。</td>
+</tr>
+<tr>
+<td>\r</td>
+<td>匹配一个回车符。等价于 \x0d 和 \cM。</td>
+</tr>
+<tr>
+<td>\s</td>
+<td>匹配任何空白字符，包括空格、制表符、换页符等等。等价于 [ \f\n\r\t\v]。</td>
+</tr>
+<tr>
+<td>\S</td>
+<td>匹配任何非空白字符。等价于 [^ \f\n\r\t\v]。</td>
+</tr>
+<tr>
+<td>\t</td>
+<td>匹配一个制表符。等价于 \x09 和 \cI。</td>
+</tr>
+<tr>
+<td>\v</td>
+<td>匹配一个垂直制表符。等价于 \x0b 和 \cK。</td>
+</tr>
+<tr>
+<td>\w</td>
+<td>匹配字母、数字、下划线。等价于’[A-Za-z0-9_]’。</td>
+</tr>
+<tr>
+<td>\W</td>
+<td>匹配非字母、数字、下划线。等价于 ‘[^A-Za-z0-9_]’。</td>
+</tr>
+<tr>
+<td>\xn</td>
+<td>匹配 n，其中 n 为十六进制转义值。十六进制转义值必须为确定的两个数字长。例如，’\x41’ 匹配 “A”。’\x041’ 则等价于 ‘\x04’ &amp; “1”。正则表达式中可以使用 ASCII 编码。</td>
+</tr>
+<tr>
+<td>\num</td>
+<td>匹配 num，其中 num 是一个正整数。对所获取的匹配的引用。例如，’(.)\1’ 匹配两个连续的相同字符。</td>
+</tr>
+<tr>
+<td>\n</td>
+<td>标识一个八进制转义值或一个向后引用。如果 \n 之前至少 n 个获取的子表达式，则 n 为向后引用。否则，如果 n 为八进制数字 (0-7)，则 n 为一个八进制转义值。</td>
+</tr>
+<tr>
+<td>\nm</td>
+<td>标识一个八进制转义值或一个向后引用。如果 \nm 之前至少有 nm 个获得子表达式，则 nm 为向后引用。如果 \nm 之前至少有 n 个获取，则 n 为一个后跟文字 m 的向后引用。如果前面的条件都不满足，若 n 和 m 均为八进制数字 (0-7)，则 \nm 将匹配八进制转义值 nm。</td>
+</tr>
+<tr>
+<td>\nml</td>
+<td>如果 n 为八进制数字 (0-3)，且 m 和 l 均为八进制数字 (0-7)，则匹配八进制转义值 nml。</td>
+</tr>
+<tr>
+<td>\un</td>
+<td>匹配 n，其中 n 是一个用四个十六进制数字表示的 Unicode 字符。例如， \u00A9 匹配版权符号 (?)。</td>
+</tr>
+</tbody></table>
+<p>Java中为开发提供了2个类用于正则表达式：</p>
+<ul>
+<li><strong>Pattern 类：</strong>pattern 对象是一个正则表达式的编译表示。Pattern 类没有公共构造方法。要创建一个 Pattern 对象，你必须首先调用其公共静态编译方法，它返回一个 Pattern 对象。该方法接受一个正则表达式作为它的第一个参数。</li>
+<li><strong>Matcher 类：</strong>Matcher 对象是对输入字符串进行解释和匹配操作的引擎。与Pattern 类一样，Matcher 也没有公共构造方法。你需要调用 Pattern 对象的 matcher 方法来获得一个 Matcher 对象。</li>
+</ul>
+<p>下面我们通过一个简单的示例，来了解正则表达式</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.bytecollege;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.regex.Matcher;</span><br><span class="line"><span class="keyword">import</span> java.util.regex.Pattern;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RexDemo</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		String content = <span class="string">&quot;884105019@qq.com&quot;</span>;</span><br><span class="line">		Pattern p = Pattern.compile(<span class="string">&quot;^\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$&quot;</span>);</span><br><span class="line">		Matcher m = p.matcher(content);</span><br><span class="line">		System.out.println(m.matches());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="学习心得"><a href="#学习心得" class="headerlink" title="学习心得"></a>学习心得</h3><p>今天学习了一些琐碎的知识点如格式化、时间等，不是能很好的完全掌握。晚上的作业题出现了一点歧义，我们知道数组的长度是固定不变的，但第一题就题目是“add(int e):默认在数组末尾添加元素”。我是要在开辟空间添加到在加到新开辟的空间，数组指向新的地址。想了想这样写有点大费周章，所以我在数组内，在添加的元素后进行添加。</p>
 ]]></content>
       <categories>
         <category>XiAnTrain</category>
