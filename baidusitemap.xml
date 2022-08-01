@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://simon-yian.com/2022/07/15/xianTrain9-JavaSummary/</loc>
-    <lastmod>2022-07-29</lastmod>
+    <loc>https://simon-yian.com/2022/07/20/xianTrain13-objectO/</loc>
+    <lastmod>2022-08-01</lastmod>
   </url>
   <url>
     <loc>https://simon-yian.com/2022/07/29/xianTrain17-ListAddQueue/</loc>
+    <lastmod>2022-08-01</lastmod>
+  </url>
+  <url>
+    <loc>https://simon-yian.com/2022/07/15/xianTrain9-JavaSummary/</loc>
     <lastmod>2022-07-29</lastmod>
   </url>
   <url>
@@ -27,10 +31,6 @@
   <url>
     <loc>https://simon-yian.com/2022/07/21/xianTrain14-object/</loc>
     <lastmod>2022-07-26</lastmod>
-  </url>
-  <url>
-    <loc>https://simon-yian.com/2022/07/20/xianTrain13-objectO/</loc>
-    <lastmod>2022-07-21</lastmod>
   </url>
   <url>
     <loc>https://simon-yian.com/2022/07/19/fatal220719-request403/</loc>
