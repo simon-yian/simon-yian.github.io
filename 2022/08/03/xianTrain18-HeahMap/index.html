@@ -5,7 +5,7 @@
 <head>
   
   <meta name="baidu-site-verification" content="code-J1Qg17G6wT" />
-  <title>一致性哈希算法 - simon·yian&#39;Blog</title>
+  <title>xianTrain18-HeahMap - simon·yian&#39;Blog</title>
   <meta charset="UTF-8">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
@@ -16,24 +16,17 @@
     <meta name="baidu-site-verification" content="code-J1Qg17G6wT" />
 
   <link rel="shortcut icon" href="/images/head/head.jpg" type="image/png" />
-  <meta property="og:type" content="article">
-<meta property="og:title" content="一致性哈希算法">
-<meta property="og:url" content="https://simon-yian.github.io/2021/11/15/ConsistentHash/index.html">
+  <meta name="description" content="***&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;Java基础学习打卡第2天">
+<meta property="og:type" content="article">
+<meta property="og:title" content="xianTrain18-HeahMap">
+<meta property="og:url" content="https://simon-yian.github.io/2022/08/03/xianTrain18-HeahMap/index.html">
 <meta property="og:site_name" content="simon·yian&#39;Blog">
+<meta property="og:description" content="***&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;Java基础学习打卡第2天">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://i.loli.net/2021/11/15/vKFjo15HqAybLmE.png">
-<meta property="og:image" content="https://i.loli.net/2021/10/19/PWDijRHqgzxFbyn.jpg">
-<meta property="og:image" content="https://i.loli.net/2021/11/15/zadkgACX5GNmLow.png">
-<meta property="og:image" content="https://i.loli.net/2021/11/15/OXgDGroktlSe1J5.png">
-<meta property="og:image" content="https://i.loli.net/2021/11/15/MImWnqQ9EgsrbJf.png">
-<meta property="og:image" content="https://i.loli.net/2021/11/15/TsgpqS1JDF39wUr.png">
-<meta property="og:image" content="https://i.loli.net/2021/11/15/r1JtzklpaOhj63A.png">
-<meta property="og:image" content="https://i.loli.net/2021/11/15/vKFjo15HqAybLmE.png">
-<meta property="article:published_time" content="2021-11-15T12:02:16.000Z">
-<meta property="article:modified_time" content="2021-11-15T12:16:54.000Z">
+<meta property="article:published_time" content="2022-08-03T09:37:09.000Z">
+<meta property="article:modified_time" content="2022-08-03T09:37:36.000Z">
 <meta property="article:author" content="simon·yi an">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://i.loli.net/2021/11/15/vKFjo15HqAybLmE.png">
   <link rel="stylesheet" href="https://unpkg.com/highlight.js@9.15.8/styles/atom-one-dark.css" crossorigin>
   <link rel="stylesheet" href="/lib/mdui_043tiny/css/mdui.css">
   <link rel="stylesheet" href="/lib/iconfont/iconfont.css">
@@ -42,7 +35,7 @@
   
     <link rel="stylesheet" href="//at.alicdn.com/t/font_2421060_8z08qcz5sq3.css">
   
-  <link rel="stylesheet" href="/css/style.css?v=1659519471316">
+  <link rel="stylesheet" href="/css/style.css?v=1659519471277">
 <meta name="generator" content="Hexo 5.4.0"></head>
 
 <body class="mdui-drawer-body-left">
@@ -278,15 +271,15 @@
     
         <div class="nexmoe-post-cover"
              style="padding-bottom: 24.305555555555554%;">
-            <img data-src="/images/background/1.jpg" data-sizes="auto" alt="一致性哈希算法" class="lazyload">
-            <h1>一致性哈希算法</h1>
+            <img data-src="/images/background/1.jpg" data-sizes="auto" alt="xianTrain18-HeahMap" class="lazyload">
+            <h1>xianTrain18-HeahMap</h1>
         </div>
     
 
         <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
-    <a><i class="nexmoefont icon-calendar-fill"></i>2021年11月15日</a>
-    <a><i class="nexmoefont icon-areachart"></i>1.1k 字</a>
-    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 4 分钟</a>
+    <a><i class="nexmoefont icon-calendar-fill"></i>2022年08月03日</a>
+    <a><i class="nexmoefont icon-areachart"></i>5.4k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 25 分钟</a>
 </div>
 
         <div class="nexmoe-post-right">
@@ -294,24 +287,154 @@
         </div>
 
         <article>
-            <img src="https://i.loli.net/2021/11/15/vKFjo15HqAybLmE.png" align="center" width="600" height="400" div>
-
+            <p>***&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Java基础学习打卡第2天</p>
 <span id="more"></span>
-<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><h4 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h4><p>　　一致性哈希算法（Consistent Hashing）最早在论文《Consistent Hashing and Random Trees: Distributed Caching Protocols for Relieving Hot Spots on the World Wide Web》中被提出。简单来说，一致性哈希将整个哈希值空间组织成一个虚拟的圆环，如假设某哈希函数H的值空间为0-2^32-1（即哈希值是一个32位无符号整形），整个哈希空间环如下：</p>
-<!-- <img src="https://i.loli.net/2021/10/19/PWDijRHqgzxFbyn.jpg" width = "850" height = "400" div align=right /> -->
-<p><img data-fancybox="gallery" data-sizes="auto" data-src="https://i.loli.net/2021/11/15/zadkgACX5GNmLow.png" alt="一致性哈希算法1.png" class="lazyload"></p>
-<p> 整个空间按顺时针方向组织。0和232-1在零点中方向重合。</p>
-<p>　　下一步将各个服务器使用Hash进行一个哈希，具体可以选择服务器的ip或主机名作为关键字进行哈希，这样每台机器就能确定其在哈希环上的位置，这里假设将上文中四台服务器使用ip地址哈希后在环空间的位置如下：<br><img data-fancybox="gallery" data-sizes="auto" data-src="https://i.loli.net/2021/11/15/OXgDGroktlSe1J5.png" alt="一致性哈希算法2.png" class="lazyload"></p>
-<p>接下来使用如下算法定位数据访问到相应服务器：将数据key使用相同的函数Hash计算出哈希值，并确定此数据在环上的位置，从此位置沿环顺时针“行走”，第一台遇到的服务器就是其应该定位到的服务器。</p>
-<p>　　例如我们有Object A、Object B、Object C、Object D四个数据对象，经过哈希计算后，在环空间上的位置如下：<br><img data-fancybox="gallery" data-sizes="auto" data-src="https://i.loli.net/2021/11/15/MImWnqQ9EgsrbJf.png" alt="一致性哈希算法3.png" class="lazyload"></p>
-<p>根据一致性哈希算法，数据A会被定为到Node A上，B被定为到Node B上，C被定为到Node C上，D被定为到Node D上。</p>
-<p>下面分析一致性哈希算法的容错性和可扩展性。现假设Node C不幸宕机，可以看到此时对象A、B、D不会受到影响，只有C对象被重定位到Node D。一般的，在一致性哈希算法中，如果一台服务器不可用，则受影响的数据仅仅是此服务器到其环空间中前一台服务器（即沿着逆时针方向行走遇到的第一台服务器）之间数据，其它不会受到影响。</p>
-<p>下面考虑另外一种情况，如果在系统中增加一台服务器Node X，如下图所示：<br><img data-fancybox="gallery" data-sizes="auto" data-src="https://i.loli.net/2021/11/15/TsgpqS1JDF39wUr.png" alt="一致性哈希算法4.png" class="lazyload"></p>
-<p>此时对象Object A、B、D不受影响，只有对象C需要重定位到新的Node X 。一般的，在一致性哈希算法中，如果增加一台服务器，则受影响的数据仅仅是新服务器到其环空间中前一台服务器（即沿着逆时针方向行走遇到的第一台服务器）之间数据，其它数据也不会受到影响。</p>
-<p>综上所述，一致性哈希算法对于节点的增减都只需重定位环空间中的一小部分数据，具有较好的容错性和可扩展性。</p>
-<p>另外，一致性哈希算法在服务节点太少时，容易因为节点分部不均匀而造成数据倾斜问题。例如系统中只有两台服务器，其环分布如下，<br><img data-fancybox="gallery" data-sizes="auto" data-src="https://i.loli.net/2021/11/15/r1JtzklpaOhj63A.png" alt="一致性哈希算法5.png" class="lazyload"></p>
-<p>此时必然造成大量数据集中到Node A上，而只有极少量会定位到Node B上。为了解决这种数据倾斜问题，一致性哈希算法引入了虚拟节点机制，即对每一个服务节点计算多个哈希，每个计算结果位置都放置一个此服务节点，称为虚拟节点。具体做法可以在服务器ip或主机名的后面增加编号来实现。例如上面的情况，可以为每台服务器计算三个虚拟节点，于是可以分别计算 “Node A#1”、“Node A#2”、“Node A#3”、“Node B#1”、“Node B#2”、“Node B#3”的哈希值，于是形成六个虚拟节点：<br><img data-fancybox="gallery" data-sizes="auto" data-src="https://i.loli.net/2021/11/15/vKFjo15HqAybLmE.png" alt="一致性哈希算法6.png" class="lazyload"></p>
-<p>同时数据定位算法不变，只是多了一步虚拟节点到实际节点的映射，例如定位到“Node A#1”、“Node A#2”、“Node A#3”三个虚拟节点的数据均定位到Node A上。这样就解决了服务节点少时数据倾斜的问题。在实际应用中，通常将虚拟节点数设置为32甚至更大，因此即使很少的服务节点也能做到相对均匀的数据分布。</p>
+<p>10.1 Map概述<br>Map用于保存具有映射关系的数据，因此Map集合里保存着两组值，一组用于保存Map里的key，另外一组用于保存Map里的value，key和value都可以是任何引用类型的数据。Map的key不允许重复，即同一个Map对象的任何两个key通过equals方法比较总是返回false。<br>key和value之间存在单向一对一的关系，即通过指定的key，总能找到唯一的、确定的value。从Map中取出数据时，只要给出指定的key，就可以取出对应的value.<br>Map的实现类有HashMap、Hashtable、Properties、SortedMap等等。<br>1362965-20190118095106326-273814633.png</p>
+<p>10.2 HashMap</p>
+<p>10.2.1 HashMap常用API<br>方法    描述<br>put(K key,V value)    添加键值对<br>get(Object key)    根据键获取值<br>keySet()    获取keySet<br>entrySet()    获取entrySet<br>clear()    清空<br>containsKey(Object key)    判断是否存在key<br>remove(Object key)    根据key删除键值对<br>remover(Object key,Object value)    根据key和value删除键值对<br>size()    获取元素个数<br>isEmpty()    判断map是否为空<br>下面，通过示例学习HashMap的方法：</p>
+<p>package cn.bytecollege;</p>
+<p>import java.util.HashMap;</p>
+<p>public class HashMapDemo {<br>    public static void main(String[] args){<br>        HashMap&lt;Integer,String&gt; map = new HashMap&lt;Integer,String&gt;();<br>        //添加键值对<br>        map.put(1,”妲己”);<br>        map.put(2,”亚瑟”);<br>        map.put(3,”虞姬”);<br>        map.put(4,”韩信”);<br>        map.put(5,”蔡文姬”);<br>        //根据键获取值<br>        System.out.println(map.get(3));<br>        //获取keySet<br>        for (Integer i : map.keySet()){<br>            System.out.println(“key: “ + i + “ value: “ + map.get(i));<br>        }<br>        //获取entrySet<br>        System.out.println(map.entrySet());<br>        //获取元素个数<br>        System.out.println(map.size());<br>        //判断是否存在key<br>        System.out.println(map.containsKey(5));<br>        //判断是否存在value<br>        System.out.println(map.containsValue(“程咬金”));<br>        //判断map是否为空<br>        System.out.println(map.isEmpty());<br>        //根据key删除键值对<br>        map.remove(2);<br>        //根据key和value删除键值对<br>        map.remove(4,”韩信”);<br>        System.out.println(map);<br>        //清空map<br>        map.clear();<br>        System.out.println(map);<br>    }<br>}</p>
+<p>10.2.2 HashMap存放元素流程<br>HashMap元素存放是一个相对是复杂的过程，整个过程涉及到的有哈希表扩容，红黑树和链表的相互转换等过程，在本小节从源码查看整个过程。<br>在学习HashMap存放元素之前需要对HashMap中的几个关键成员变量进行了解。</p>
+<p>//HashMap默认容量16<br>static final int DEFAULT_INITIAL_CAPACITY = 1 &lt;&lt; 4;<br>//HashMap最大容量<br>static final int MAXIMUM_CAPACITY = 1 &lt;&lt; 30;<br>//HashMap负载因子<br>static final float DEFAULT_LOAD_FACTOR = 0.75f;;<br>//链表转换为红黑树的阈值<br>static final int TREEIFY_THRESHOLD = 8;<br>//红黑树转换为链表的阈值<br>static final int UNTREEIFY_THRESHOLD = 6;<br>//链表转换为红黑树时Hash表的容量阈值<br>static final int MIN_TREEIFY_CAPACITY = 64;<br>//保存HashMap的Hash表<br>transient Node&lt;K,V&gt;[] table;<br>//HashMap中元素个数<br>transient int size;<br>HashMap添加元素会调用put(K key,V value)方法，从源码可以看出在put()方法内部调用了putVal()方法。</p>
+<p>public V put(K key, V value) {<br>    //调用putVal方法<br>    return putVal(hash(key), key, value, false, true);<br>}<br>继续查看putVal()方法，这个方法即HashMap存放元素的核心流程。</p>
+<p>final V putVal(int hash, K key, V value, boolean onlyIfAbsent,<br>                   boolean evict) {<br>    Node&lt;K,V&gt;[] tab; Node&lt;K,V&gt; p; int n, i;<br>    //判断哈希表是否为空<br>    if ((tab = table) == null || (n = tab.length) == 0)<br>        //扩容<br>        n = (tab = resize()).length;<br>    if ((p = tab[i = (n - 1) &amp; hash]) == null)//判断tab[i]是否有元素<br>        //如果没有元素则直接存放<br>        tab[i] = newNode(hash, key, value, null);<br>    else {<br>         Node&lt;K,V&gt; e; K k;<br>         //判断和已有节点的key是否相等<br>         if (p.hash == hash &amp;&amp;<br>                 ((k = p.key) == key || (key != null &amp;&amp; key.equals(k))))<br>             //如果key相等则替换<br>             e = p;<br>         //如果key不相等，判断哈希表已有的节点是不是红黑树<br>         else if (p instanceof TreeNode)<br>             //如果是红黑树则以树的方式插入元素<br>             e = ((TreeNode&lt;K,V&gt;)p).putTreeVal(this, tab, hash, key, value);<br>         else {<br>             //如果不是红黑树则说明这里链表，遍历链表<br>             for (int binCount = 0; ; ++binCount) {<br>                 if ((e = p.next) == null) {<br>                     p.next = newNode(hash, key, value, null);<br>                     //如果链表长度大于等于7，则进制红黑树转换相关工作<br>                     if (binCount &gt;= TREEIFY_THRESHOLD - 1) // -1 for 1st<br>                         treeifyBin(tab, hash);<br>                         break;<br>                     }<br>                      //如果key相等则在链表中替换<br>                     if (e.hash == hash &amp;&amp;<br>                         ((k = e.key) == key || (key != null &amp;&amp; key.equals(k))))<br>                         break;</p>
+<pre><code>            &#125;
+        &#125;
+        if (e != null) &#123; // existing mapping for key
+            V oldValue = e.value;
+            if (!onlyIfAbsent || oldValue == null)
+                e.value = value;
+            afterNodeAccess(e);
+            return oldValue;
+        &#125;
+    &#125;
+    ++modCount;
+    //如果元素个数大于临界值则扩容
+    if (++size &gt; threshold)
+        resize();
+    afterNodeInsertion(evict);
+    return null;
+&#125;
+</code></pre>
+<p>在这个方法内整个过程可以描述如下：</p>
+<p>判断底层hash表是否为空，如果为空则先扩容<br>如果不为空，根据存放元素的key计算在hash表中的位置<br>判断在计算出位置处是否有元素，如果没有元素则直接放入hash表，并直接跳转到第9步<br>如果计算出位置有元素判断key是否相等，如果相等则直接赋值<br>如果计算出位置有元素并且判断key不相等，判断此处的节点是否是红黑树，如果是红黑树则以树的方式插入<br>如果计算处位置有元素并且判断key不相等，并且此处节点不是红黑树，那么这个节点处的数据结构一定是链表，则遍历链表准备插入。<br>遍历链表如果新增元素和链表中元素key相等则替换，如果新增元素和链表中已有元素key都不相等，则在已有元素末尾链表插入。<br>如果链表长度大于8，判断hash表容量是否大于64，如果大于64则转换成红黑树，并以红黑树的方式插入元素。<br>添加元素后判断元素个数是否大于扩容阈值，如果大于则扩容。<br>这9步完整的描述了HashMap添加元素的流程，描述如图：<br>image.png</p>
+<p>10.2.3 HashMap扩容流程<br>在上一小节中我们了解了HashMap添加元素的详细流程，在HashMap添加元素的过程中涉及到一个很重要的操作，那就是扩容。因为如果在HashMap内添加元素，当HashMap内部数组无法装载更多元素时，就需要扩大数组长度，以便放入更多元素，由于Java中数组是无法自动扩容的，这就需要创建一个新的数组替代已有的数组，在本小节内将详细了解HashMap的扩容机制。</p>
+<p>final Node&lt;K,V&gt;[] resize() {<br>    //获取原有hash表<br>    Node&lt;K,V&gt;[] oldTab = table;<br>    //获取原容量<br>    int oldCap = (oldTab == null) ? 0 : oldTab.length;<br>    //获取原阈值<br>    int oldThr = threshold;<br>    int newCap, newThr = 0;<br>    //如果原容量大于0<br>    if (oldCap &gt; 0) {<br>        //如果原容量已经大于最大容量则不再扩容<br>        if (oldCap &gt;= MAXIMUM_CAPACITY) {<br>            threshold = Integer.MAX_VALUE;<br>            return oldTab;<br>        }<br>        //如果原容量的2倍小于最大容量，并且原容量小于默认容量10，就将扩容阈值修改为原阈值的2倍<br>        else if ((newCap = oldCap &lt;&lt; 1) &lt; MAXIMUM_CAPACITY &amp;&amp;<br>                 oldCap &gt;= DEFAULT_INITIAL_CAPACITY)<br>            newThr = oldThr &lt;&lt; 1; // double threshold<br>        }<br>    //如果当前hash表没有数据，则使用初始化的值<br>    else if (oldThr &gt; 0) // initial capacity was placed in threshold<br>        newCap = oldThr;<br>    //如果是第一次添加元素则使用默认容量16，扩容阈值为16*0.75=12<br>    else {               // zero initial threshold signifies using defaults<br>        newCap = DEFAULT_INITIAL_CAPACITY;<br>        newThr = (int)(DEFAULT_LOAD_FACTOR * DEFAULT_INITIAL_CAPACITY);<br>    }<br>    if (newThr == 0) {<br>        float ft = (float)newCap * loadFactor;<br>        newThr = (newCap &lt; MAXIMUM_CAPACITY &amp;&amp; ft &lt; (float)MAXIMUM_CAPACITY ?<br>                  (int)ft : Integer.MAX_VALUE);<br>    }<br>    threshold = newThr;<br>    @SuppressWarnings({“rawtypes”,”unchecked”})<br>    //创建新的hash表<br>    Node&lt;K,V&gt;[] newTab = (Node&lt;K,V&gt;[])new Node[newCap];<br>    table = newTab;<br>    if (oldTab != null) {<br>        //遍历hash表开始扩容<br>        for (int j = 0; j &lt; oldCap; ++j) {<br>            Node&lt;K,V&gt; e;<br>            //如果原数据不为空，则将原数据复制到新数组<br>            if ((e = oldTab[j]) != null) {<br>                oldTab[j] = null;<br>                //如果链表只有一个节点，则直接复制<br>                if (e.next == null)<br>                    newTab[e.hash &amp; (newCap - 1)] = e;<br>                //如果元数据是红黑树<br>                else if (e instanceof TreeNode)<br>                    //进行红黑树相关操作<br>                    ((TreeNode&lt;K,V&gt;)e).split(this, newTab, j, oldCap);<br>                else { // preserve order<br>                    //链表复制操作<br>                    Node&lt;K,V&gt; loHead = null, loTail = null;<br>                    Node&lt;K,V&gt; hiHead = null, hiTail = null;<br>                    Node&lt;K,V&gt; next;<br>                    do {<br>                        next = e.next;<br>                        if ((e.hash &amp; oldCap) == 0) {<br>                            if (loTail == null)<br>                                loHead = e;<br>                            else<br>                                loTail.next = e;<br>                            loTail = e;<br>                        }<br>                        else {<br>                            if (hiTail == null)<br>                                hiHead = e;<br>                            else<br>                                hiTail.next = e;<br>                            hiTail = e;<br>                        }<br>                    } while ((e = next) != null);<br>                    if (loTail != null) {<br>                        loTail.next = null;<br>                        newTab[j] = loHead;<br>                    }<br>                    if (hiTail != null) {<br>                        hiTail.next = null;<br>                        newTab[j + oldCap] = hiHead;<br>                    }<br>                }<br>            }<br>        }<br>    }<br>    return newTab;<br>}<br>纵观整个代码HashMap扩容时会存在以下几种情况：</p>
+<p>调用无参构造器时，实例化的HashMap底层数组是null，当第一次调用put()方法时进行扩容，初始容量为16。<br>调用有参构造指定了容量和负载因子时，会根据指定的正整数找到不小于指定容量的2的次幂，将这个数赋值给扩容阈值（threshold），当第一次put()方法时，会将阈值赋值给容量，并计算新的阈值=容量x负载因子。<br>如果不是第一次扩容，则容量变为原容量的2倍，阈值也变为原来的2倍。<br>Java 7 和Java 8中HashMap的区别<br>Java8中对HashMap进行了相关的调整，主要体现在以下几个方面：</p>
+<p>Java7中HashMap数据结构采用了数组+链表，而Java8中采用了数组+链表+红黑树，当链表长度大于8并且容量大于64时，会将链表转换成红黑树（注意，如果此时如果链表长度已经是8，但是数组长度并没有到64时会先进行扩容）。当红黑树节点个数小于等于6时会退化成链表。<br>Java7中链表使用的是头插法，但是使用头插法在多线程环境下有概率出现环形链表死循环的问题，在Java8中链表采用了尾插法以及使用了红黑树，避免了出现链表死循环的问题。<br>10.2.4 HashMap的遍历方式<br>HashMap的遍历在开发中属于必备技能，HashMap的遍历方式有很多种，但是总的来说只有三种：</p>
+<p>获取keySet()后遍历keySet()获取到key然后通过key获取value<br>获取entrySet()后遍历entrySet()，相比于第一种写法稍显复杂，但是能更好的体现Map中的数据结构<br>使用Lambda表达式遍历，相比前两种是最简洁的方式，但是代码可读性略差在HashMap的遍历中，应该综合考虑性能、效率等因素做出合适的选择。下面通过实例学习HashMap的遍历。<br>package cn.bytecollege</p>
+<p>import java.util.HashMap;<br>import java.util.Iterator;<br>import java.util.Map;<br>import java.util.Map.Entry;<br>import java.util.Set;</p>
+<p>/**</p>
+<ul>
+<li>本例将演示HashMap遍历的方法</li>
+<li>@author MR.W</li>
+<li></li>
+<li>/<br>public class ForeachHashMap {<br>  public static void main(String[] args) {<pre><code>  Map&lt;String,String&gt; map = new HashMap&lt;&gt;();
+  
+  map.put(&quot;张三&quot;, &quot;计算机科学与技术&quot;);
+  map.put(&quot;李四&quot;, &quot;软件工程&quot;);
+  map.put(&quot;王五&quot;, &quot;网络工程&quot;);
+  
+  //第一种：获取keySet()并遍历
+  Set&lt;String&gt; set = map.keySet();
+  //获取迭代器
+  Iterator&lt;String&gt; it = set.iterator();
+  while(it.hasNext()) &#123;
+      String key = it.next();
+      String value = map.get(key);
+      System.out.println(key+&quot;===================&quot;+value);
+  &#125;
+  for (; it.hasNext();) &#123;
+      String key = it.next();
+      String value = map.get(key);
+      System.out.println(key+&quot;===================&quot;+value);
+  &#125;
+  for (String key : set) &#123;
+      String value = map.get(key);
+      System.out.println(key+&quot;===================&quot;+value);
+  &#125;
+  //第二种：获取Entry
+  Set&lt;Map.Entry&lt;String, String&gt;&gt; entrySet = map.entrySet();
+  //使用迭代器
+  Iterator&lt;Map.Entry&lt;String, String&gt;&gt; entryIt = entrySet.iterator();
+  
+  while (entryIt.hasNext()) &#123;
+      Map.Entry&lt;String, String&gt; entry = entryIt.next();
+      String key = entry.getKey();
+      String value = entry.getValue();
+      System.out.println(key+&quot;===================&quot;+value);
+  &#125;
+  
+  for (; entryIt.hasNext();) &#123;
+      Map.Entry&lt;String, String&gt; entry = entryIt.next();
+      String key = entry.getKey();
+      String value = entry.getValue();
+      System.out.println(key+&quot;===================&quot;+value);
+  &#125;
+  
+  for (Entry&lt;String, String&gt; entry : entrySet) &#123;
+      String key = entry.getKey();
+      String value = entry.getValue();
+      System.out.println(key+&quot;===================&quot;+value);
+  &#125;
+  //第三种：Lambda表达式
+  map.forEach((key,value)-&gt;System.out.println(key+&quot;===================&quot;+value));
+</code></pre>
+  }<br>}</li>
+</ul>
+<p>运行结果如下图所示：<br>image.png</p>
+<p>10.2.5 HashMap和Hashtable<br>HashMap 和 Hashtable 都是 Map 接口的典型实现类，它们之间的关系完全类似于 ArrayList 和 Vector的关系∶ Hashtable 是一个古老的 Map 实现类，它从 JDK 1.0起就已经出现了，当它出现时，Java还没有提供Map 接口，所以它包含了两个烦琐的方法，即 elements() 类似于 Map接口定义的 values()方法）和 keys() 类似于 Map 接口定义的 keySet()方法。<br>除此之外，Hashtable 和 HashMap 存在三点典型区别。</p>
+<p>Hashtable 是一个线程安全的 Map接口实现，但 HashMap 是线程不安全的实现，所以 HashMap 比 Hashtable 的性能高一点;但如果有多个线程访问同一个 Map 对象时，使用 Hashtable 实现类会更好。<br>Hashtable 不允许使用 null 作为 key 和 value，如果试图把 null 值放进 Hashtable 中，将会引发 NullPointerException 异常; 但 HashMap 可以使用 null 作为 key 或 value。<br>HashMap数组初始长度为16，扩容后长度是原长度的2倍，Hashtable初始长度为11，扩容后的长度是原长度的2n+1<br>10.3 LinkedHashMap<br>HashMap也有一个LinkedHashMap子类;LinkedHashMap 也使用双向链表来维护 key-value 对的次序（其实只需要考虑 key 的次序），该链表负责维护 Map 的迭代顺序，迭代顺序与 key-value 对的插入顺序保持一致。 <br>LinkedHashMap 可以避免对 HashMap、Hashtable 里的 key-value 对进行排序（只要插入 key-value对时保持顺序即可），同时又可避免使用 TreeMap 所增加的成本（TreeMap的内容将会在下一小节学习）。 LinkedHashMap 需要维护元素的插入顺序，因此性能略低于 HashMap 的性能;但因为它以链表来维护内部顺序，所以在迭代访问 Map 里的全部元素时将有较好的性能，下面通过示例学习LinkedHashMap。</p>
+<p>package cn.bytecollege;</p>
+<p>import java.util.LinkedHashMap;<br>import java.util.Set;<br>/**</p>
+<ul>
+<li>本例将演示LinkedHashMap</li>
+<li>@author MR.W</li>
+<li>/<br>public class LinkedHashMapDemo {<br>  public static void main(String[] args) {<pre><code>  LinkedHashMap&lt;String, Integer&gt; map = new LinkedHashMap&lt;&gt;();
+  map.put(&quot;语文&quot;, 90);
+  map.put(&quot;数学&quot;, 100);
+  map.put(&quot;英文&quot;, 82);
+  
+  Set&lt;String&gt; set = map.keySet();
+  for (String key : set) &#123;
+      System.out.println(key+&quot;================&quot;+map.get(key));
+  &#125;
+</code></pre>
+  }<br>}</li>
+</ul>
+<p>10.4 使用Properties读写文件<br>Properties 类是 Hashtable 类的子类，该对象在处理属性文件时特别方便（Windows 操作平台上的 ini 文件就是一种属性文件）。Properties 类可以把 Map 对象和属性文件关联起来，从而可以把Map 对象中的 key-value 对写入属性文件中，也可以把属性文件中的”属性名=属性值”加载到 Map 对象中。由于属性文件里的属性名、属性值只能是字符串类型，所以 Properties 里的 key、 value 都是字符串类型。该类提供了如下三个方法来修改 Properties 里的 key、value 值。</p>
+<p>String getProperty(String key)∶获取 Properties 中指定属性名对应的属性值，类似于 Map 的 get（Object key）方法。<br>String getProperty(String key，String defaultValue)∶该方法与前一个方法基本相似。该方法多一个功能，如果 Properties 中不存在指定的 key 时，则该方法指定默认值。<br>Object setProperty(String key， String value)∶设置属性值，类似于Hashtable 的 put() 方法。除此之外，它还提供了两个读写属性文件的方法。<br>void load(InputStream inStream)∶ 从属性文件（以输入流表示）中加载 key-value 对，把加载到的 key-value 对追加到 Properties 里（Properties 是 Hashtable 的子类，它不保证 key-value 对之间的次序）。<br>void store(OutputStream out， String comments)∶将 Properties 中的 key-value 对输出到指定的属性 文件（以输出流表示）中。 上面两个方法中使用了InputStream 类和 OutputStream 类，它们是 Java IO 体系中的两个基类，关于流的内容在后续章节讲解。下面通过示例先演示基本用法。<br>package cn.bytecollege;</p>
+<p>import java.io.File;<br>import java.io.FileInputStream;<br>import java.io.FileNotFoundException;<br>import java.io.FileOutputStream;<br>import java.io.IOException;<br>import java.util.Properties;</p>
+<p>/**</p>
+<ul>
+<li>本例将演示Properties类</li>
+<li>@author MR.W</li>
+<li></li>
+<li>/<br>public class PropertiesDemo {<br>  public static void main(String[] args) throws FileNotFoundException, IOException {<pre><code>  //--------------------读取数据--------------------------//
+  Properties properties = new Properties();
+  properties.load(new FileInputStream(new File(&quot;data.properties&quot;)));
+  
+  String username = properties.getProperty(&quot;username&quot;);
+  String password = properties.getProperty(&quot;password&quot;);
+  
+  System.out.println(username);
+  System.out.println(password);
+  //--------------------写数据--------------------------//
+  Properties properties2 = new Properties();
+  properties2.setProperty(&quot;token&quot;, &quot;123431&quot;);
+  properties2.store(new FileOutputStream(new File(&quot;data.properties&quot;)), &quot;token&quot;);
+  
+</code></pre>
+  }<br>}</li>
+</ul>
+<p>上面的示例分别演示了Properties读写配置文件，在JDBC中将会使用配置文件配置数据库连接信息。</p>
+<p>10.5 SortedMap和TreeMap<br>Map 接口也派生出一个 SortedMap 子接口，SortedMap 接口也有一个 TreeMap 实现类。 TreeMap 就是一个红黑树数据结构，每个 key-value 对即作为红黑树的一个节点。TreeMap 存储 key-value 对（节点）时，需要根据 key 对节点进行排序。TreeMap 可以保证所有的 key-value 对处于有序状态。TreeMap 也有两种排序方式。</p>
+<p>自然排序∶TreeMap的所有key 必须实现 Comparable 接口，而且所有的 key 应该是同一个类的 对象，否则将会抛出 ClassCastException 异常。<br>定制排序∶ 创建 TreeMap 时，传入一个 Comparator 对象，该对象负责对 TreeMap 中的所有key进行排序。采用定制排序时不要求 Map 的 key 实现 Comparable 接口。 类似于 TreeSet 中判断两个元素相等的标准，TreeMap 中判断两个 key 相等的标准是∶ 两个 key 通过 compareTo()方法返回 0，TreeMap 即认为这两个 key 是相等的。<br>如果使用自定义类作为 TreeMap 的 key，且想让 TreeMap 良好地工作，则重写该类的 equals()方法和 compareTo（方法时应保持一致的返回结果∶ 两个 key 通过 equals()方法比较返回 true 时，它们通过 compareTo()方法比较应该返回 0。如果 equals()方法与 compareTo()方法的返回结果不一致， TreeMap与 Map 接口的规则就会冲突。<br>TreeMap 中也提供了一系列根据 key 顺序访问 key-value 对的方法。</p>
+<p>Map.Entry firstEntry()∶ 返回该 Map 中最小 key 所对应的 key-value 对，如果该Map为空，则返回 null。<br>Object firstKey()∶返回该 Map 中的最小 key值，如果该 Map为空，则返回 null。<br>Map.Entry lastEntry()∶ 返回该 Map 中最大 key 所对应的 key-value 对，如果该 Map为空或不存 在这样的 key-value 对，则都返回 null。<br>Object lastKey()∶ 返回该 Map 中的最大 key 值，如果该 Map 为空或不存在这样的 key，则都返回nulI。<br>Map.Entry higherEntry(Object key)∶ 返回该 Map 中位于key 后一位的 key-value 对（即大于指定 key 的最小 key 所对应的 key-value 对）。如果该 Map 为空，则返回 null。<br>Object higherKey(Object key)∶返回该 Map 中位于key 后一位的 key 值（即大于指定 key 的最小 key 值）。如果该 Map 为空或不存在这样的 key-value 对，则都返回 null。<br>Map.Entry lowerEntry(Object key)∶ 返回该 Map 中位于key 前一位的 key-value 对（即小于指定 key 的最大 key 所对应的 key-value 对）。如果该 Map 为空或不存在这样的 key-value 对，则都返回 null。<br>Object lowerKey(Object key)∶返回该Map 中位于key前一位的 key 值（即小于指定 key 的最大 key 值）。如果该 Map 为空或不存在这样的 key，则都返回 null。<br>package cn.bytecollege;</p>
+<p>import java.util.TreeMap;</p>
+<p>public class MapDemo {<br>    public static void main(String[] args) {<br>        TreeMap&lt;Integer,String&gt; map = new TreeMap&lt;Integer,String&gt;();<br>        map.put(1,”刘能”);<br>        map.put(2,”谢广坤”);<br>        map.put(3,”赵四”);<br>        map.put(4,”王大拿”);<br>        map.put(5,”宋晓峰”);<br>        //返回该 Map 中最小 key 所对应的 key-value 对，如果该Map为空，则返回 null。<br>        System.out.println(map.firstEntry());<br>        //返回该 Map 中的最小 key值，如果该 Map为空，则返回 null。&gt; Map.Entry lastEntry（）∶ 返回该 Map 中最大 key 所对应的 key-value 对，如果该 Map为空或不存在这样的 key-value 对，则都返回 null。<br>        System.out.println(map.firstKey());<br>        //返回该 Map 中的最大 key 值，如果该 Map 为空或不存在这样的 key，则都返回nulI。<br>        System.out.println(map.lastKey());<br>        //返回该 Map 中位于key 后一位的 key 值（即大于指定 key 的最小key 值）。如果该 Map 为空或不存在这样的 key-value 对，则都返回 nul 。<br>        System.out.println(map.higherKey(3));<br>        //返回该 Map 中位于key 后一位的 key-value 对（即大于指定key 的最小 key 所对应的 key-value 对）。如果该 Map 为空，则返回 null。<br>        System.out.println(map.higherEntry(3));<br>        //返回该Map 中位于key前一位的 key 值（即小于指定 key 的最大key 值）。如果该 Map 为空或不存在这样的 key，则都返回 null。<br>        System.out.println(map.lowerKey(2));<br>        //返回该 Map 中位于key 前一位的 key-value 对（即小于指定key 的最大 key 所对应的 key-value 对）。如果该 Map 为空或不存在这样的 key-value 对，则都返回 null。<br>        System.out.println(map.lowerEntry(2));<br>    }<br>}</p>
+<p>10.6 各Map性能分析<br>对于 Map 的常用实现类而言，虽然 HashMap 和 Hashtable 的实现机制几乎一样，但由于Hashtable是一个古老的、线程安全的集合，因此 HashMap 通常比 Hashtable 要快。<br> TreeMap 通常比 HashMap、Hashtable 要慢（尤其在插入、删除 key-value 对时更慢），因为 TreeMap底层采用红黑树来管理 key-value 对（红黑树的每个节点就是一个 key-value 对）。 使用 TreeMap 有一个好处∶ TreeMap 中的 key-value 对总是处于有序状态，无须专门进行排序操作。当 TreeMap 被填充之后，就可以调用 keySet() ，取得由key 组成的 Set，然后使用 toArray()方法生成 key的数组，接下来使用 Arrays 的 binarySearch() 方法在已排序的数组中快速地查询对象。<br> 对于一般的应用场景，程序应该多考虑使用 HashMap，因为 HashMap 正是为快速查询设计的（HashMap 底层其实也是采用数组来存储 key-value 对）。但如果程序需要一个总是排好序的 Map 时，则可以考虑使用TreeMap。 LinkedHashMap 比 HashMap 慢一点，因为它需要维护链表来保持 Map中 key-value 时的添加顺序。</p>
 
         </article>
 
@@ -320,7 +443,7 @@
   <div class="nexmoe-post-copyright">
     <strong>本文作者：</strong>simon·yi an<br>
     
-    <strong>本文链接：</strong><a href="https://simon-yian.github.io/2021/11/15/ConsistentHash/" title="https:&#x2F;&#x2F;simon-yian.github.io&#x2F;2021&#x2F;11&#x2F;15&#x2F;ConsistentHash&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;simon-yian.github.io&#x2F;2021&#x2F;11&#x2F;15&#x2F;ConsistentHash&#x2F;</a><br>
+    <strong>本文链接：</strong><a href="https://simon-yian.github.io/2022/08/03/xianTrain18-HeahMap/" title="https:&#x2F;&#x2F;simon-yian.github.io&#x2F;2022&#x2F;08&#x2F;03&#x2F;xianTrain18-HeahMap&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;simon-yian.github.io&#x2F;2022&#x2F;08&#x2F;03&#x2F;xianTrain18-HeahMap&#x2F;</a><br>
 
     
       <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
@@ -332,7 +455,7 @@
 
         <div class="nexmoe-post-meta nexmoe-rainbow">
     
-        <a class="nexmoefont icon-appstore-fill -link" href="/categories/algorithm/">algorithm</a>
+        <a class="nexmoefont icon-appstore-fill -link" href="/categories/XiAnTrain/">XiAnTrain</a>
     
     
 </div>
@@ -1067,7 +1190,7 @@
 <script src="/lib/fancybox/js/jquery.fancybox.min.js"></script>
 
 
-<script src="/js/app.js?v=1659519471317"></script>
+<script src="/js/app.js?v=1659519471278"></script>
 
 <script src="https://unpkg.com/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
 <script>
