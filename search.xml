@@ -388,6 +388,113 @@
 ]]></content>
   </entry>
   <entry>
+    <title>在VMware16中创建虚拟机安装ubuntu 21.04系统</title>
+    <url>/2021/10/18/VMware-ubuntu/</url>
+    <content><![CDATA[<table>
+<tr><td bgcolor="CFCFCF">此篇是创建VMware16虚拟机安装ubuntu21.04系统的超详细操作过程，希望对小白白有所帮助
+</td></tr></table>
+
+<span id="more"></span>
+
+<p>安装环境： windows 10</p>
+<p>VMware 16安装包：我用阿里云盘分享了「VMware-workstation-full-16.1.2-17966106.exe」，你可以不限速下载🚀<br>复制这段内容打开「阿里云盘」App 即可获取<br>链接：<a href="https://www.aliyundrive.com/s/7acSRwmGho2">https://www.aliyundrive.com/s/7acSRwmGho2</a></p>
+<p>ubuntu 21.04镜像：链接：<a href="https://pan.baidu.com/s/1ktE78cieRE9Y7_BhrG9vjQ">https://pan.baidu.com/s/1ktE78cieRE9Y7_BhrG9vjQ</a><br>提取码：n9ms</p>
+<h3 id="安装VMware-16"><a href="#安装VMware-16" class="headerlink" title="安装VMware 16"></a>安装VMware 16</h3><p>1、 直接双击下载好的VMware，这个过程可能会显示重新启动系统，那你点就是了。重新启动后再次双击下载好的VMware，然后点击【下一步】。</p>
+<img src="https://i.loli.net/2021/10/18/X4BvRZr2LKb5SyD.jpg" width="850" height="400" div align="right">
+
+<p>2、勾选【我接受许可协议中的条款】，点击【下一步】</p>
+<img src="https://i.loli.net/2021/10/18/Prph8EuT6vaHiyQ.jpg" width="850" height="400" div align="right">
+
+<p>3、可以默认，也可更改安装位置</p>
+<img src="https://i.loli.net/2021/10/18/DqtysojVQrFE2R9.jpg" width="850" height="400" div align="right">
+
+<p>4、选择安装位置，然后点击【确定】</p>
+<img src="https://i.loli.net/2021/10/18/VzTAbUosOP4dK3W.jpg" width="850" height="400" div align="right">
+
+<p>5、点击【下一步】</p>
+<img src="https://i.loli.net/2021/10/18/DqtysojVQrFE2R9.jpg" width="850" height="400" div align="right">
+
+<p>6、取消勾选【启动时检查产品更新】和【加入VMware客户体验改进计划】，点击【下一步</p>
+<img src="https://i.loli.net/2021/10/18/ONQ954xcuaLZYBK.jpg" width="850" height="400" div align="right">
+
+<p>7、点击【下一步】</p>
+<img src="https://i.loli.net/2021/10/18/n2RPhJVXakzLgHU.jpg" width="850" height="400" div align="right">
+
+<p>8、点击【安装】</p>
+<img src="https://i.loli.net/2021/10/18/xe8kFh4T72tSAld.jpg" width="850" height="400" div align="right">
+
+<p>9、正在安装，等待几分钟</p>
+<img src="https://i.loli.net/2021/10/18/KzBpH8OeDyn5V3F.jpg" width="850" height="400" div align="right">
+
+<p>10、点击【许可证】</p>
+<img src="https://i.loli.net/2021/10/18/AaUSlwWnMCFJ3c1.jpg" width="850" height="400" div align="right">
+
+<p>11、框中输入许可证：ZF3R0-FHED2-M80TY-8QYGC-NPKYF，（复制粘贴就可以）然后点击【输入】</p>
+<p>12、点击【完成】</p>
+<p>恭喜你这会你的虚拟机已经安装好了，是不是直接点击下一步就可以</p>
+<h3 id="在VMware中安装ubuntu-21-04系统"><a href="#在VMware中安装ubuntu-21-04系统" class="headerlink" title="在VMware中安装ubuntu 21.04系统"></a>在VMware中安装ubuntu 21.04系统</h3><p>1、双击打开你创建在桌面的虚拟机，然后点击【创建新的虚拟机】</p>
+<img src="https://i.loli.net/2021/10/18/QWASzB7OuMIb6xm.jpg" width="850" height="400" div align="right">
+
+<p>2、选择【典型】（默认便是典型），点击【下一步】</p>
+<img src="https://i.loli.net/2021/10/18/9CzmqQYUDNeRo56.jpg" width="850" height="400" div align="right">
+
+<p>3、选择【稍后安装操作系统】，点击【下一步】</p>
+<img src="https://i.loli.net/2021/10/18/XZi389ajePvqRDk.jpg" width="850" height="400" div align="right">
+
+<p>4、客户机操作系统选择【Linux】，版本选择【Ubuntu64位】，然后点击【下一步】</p>
+<img src="https://i.loli.net/2021/10/18/XAgZ4IvWTji5CUK.jpg" width="850" height="400" div align="right">
+
+<p>5、位置可更改，点击【下一步】</p>
+<img src="https://i.loli.net/2021/10/18/owxQLiVrmWdJsYa.jpg" width="850" height="400" div align="right">
+
+<p>6、最大磁盘大小【20】GB，选择【将虚拟机磁盘拆分成多个文件】，然后点击【下一步】</p>
+<img src="https://i.loli.net/2021/10/18/DKBEnuG6or3f4wx.jpg" width="850" height="400" div align="right">
+
+<p>7、点击【自定义硬件】</p>
+<img src="https://i.loli.net/2021/10/18/VlZBfoPbR9e8MSc.jpg" width="850" height="400" div align="right">
+
+<p>8、选择【内存】，此虚拟机的内存设为【2048MB】</p>
+<img src="https://i.loli.net/2021/10/18/AdjlBFmEVDNhr1O.jpg" width="850" height="400" div align="right">
+
+<p>9、选择【新CD/DVD(TATA)】后选择【使用ISO映像文件】，点击【浏览】，找到下载后文件夹里面的【ubuntu-21.04-desktop-amd64.iso】这个镜像并选择！</p>
+<img src="https://i.loli.net/2021/10/18/C8p4cyMIBuGbYWU.jpg" width="850" height="400" div align="right">
+
+<p>10、选择【网络适配器】，然后选择【仅主机模式】</p>
+<img src="https://i.loli.net/2021/10/18/IyBJxuMrLhml3Ko.jpg" width="850" height="400" div align="right">
+
+<p>11、选择【USB控制器】，点击【移除】</p>
+<img src="https://i.loli.net/2021/10/18/HwJm6DONtYMhFCz.jpg" width="850" height="400" div align="right">
+
+<p>12、选择【打印机】，点击【移除】</p>
+<img src="https://i.loli.net/2021/10/18/cjkhgORexpbFm4K.jpg" width="850" height="400" div align="right">
+
+<p>13、点击【关闭】</p>
+<img src="https://i.loli.net/2021/10/18/pfz13yURdGDW8qI.jpg" width="850" height="400" div align="right">
+
+<p>14、点击【完成】</p>
+<img src="https://i.loli.net/2021/10/18/VlZBfoPbR9e8MSc.jpg" width="850" height="400" div align="right">
+
+<p><font color="red" size="5"> 实在没有耐心放图片了，等闲了再贴图片吧,相信自己即使看文字你也可以安装完成的，加油！</font></p>
+<p>15、点击【开启此虚拟机】，等待开启</p>
+<p>16、择【中文简体】，点击【安装Ubuntu】</p>
+<p>17、点击【继续】</p>
+<p>18、点击【继续】</p>
+<p>19、点击【现在安装】</p>
+<p>20、点击【继续】</p>
+<p>21、这里默认【Shanghai】就OK</p>
+<p>22、创建用户账号（记住密码哦！）。不要担心你的计算机名是什么，你只需要输入姓名，计算机名就会自动生成。然后点击[继续]</p>
+<p>23、安装中，耐心等待（这个可能需要多点时间）</p>
+<p>24、点击【现在重启】，重启一会看屏幕中下方转圈其他都不动，键盘上点击【enter】</p>
+<p>25、点击账户，我这里是【simon-yian】</p>
+<p>26、输入之前创建用户账号时设的密码，然后点击【登录】</p>
+<p>27、至此Ubuntu系统安装完成！</p>
+<p><font color="red"><b>如果你觉得可以千万不要忘记动动你的小手，赞赏一下贫困的博客主</b><br><b>记得收藏啊，以后会有更好的内容给您分享</b></font></p>
+]]></content>
+      <categories>
+        <category>VMware</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Spring知识点梳理：</title>
     <url>/2021/11/27/SpringFrame/</url>
     <content><![CDATA[ <img src="https://i.loli.net/2021/11/15/vKFjo15HqAybLmE.png" align="center" width="600" height="400" div>
@@ -531,113 +638,6 @@
 <p>请求处理的Controller</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package com.lz.xbmu.controller;</span><br><span class="line">import java.io.File;</span><br><span class="line">import java.io.IOException;</span><br><span class="line">import java.io.UnsupportedEncodingException;</span><br><span class="line">import java.net.URLEncoder;</span><br><span class="line">import javax.servlet.http.HttpServletRequest;</span><br><span class="line">import org.apache.commons.io.FileUtils;</span><br><span class="line">import org.springframework.http.HttpHeaders;</span><br><span class="line">import org.springframework.http.HttpStatus;</span><br><span class="line">import org.springframework.http.MediaType;</span><br><span class="line">import org.springframework.http.ResponseEntity;</span><br><span class="line">import org.springframework.stereotype.Controller;</span><br><span class="line">import org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line">@Controller</span><br><span class="line">public class FileDownloadController &#123;</span><br><span class="line"> @RequestMapping(&quot;/downloadfile&quot;)</span><br><span class="line"> public ResponseEntity&lt;byte[]&gt; fileDownload(String filename,HttpServletRequest request)</span><br><span class="line"> throws IOException&#123;</span><br><span class="line"> //指定要下载的⽂件的路径</span><br><span class="line"> String path = request.getServletContext().getRealPath(&quot;/upload/&quot;);</span><br><span class="line"> //创建下载⽂件对象</span><br><span class="line"> File file = new File(path + File.separator + filename);</span><br><span class="line"> //对⽂件名编码，防⽌中⽂乱码</span><br><span class="line"> filename = this.getFilename(request,filename);</span><br><span class="line"> //设置响应头</span><br><span class="line"> HttpHeaders headers = new HttpHeaders();</span><br><span class="line"> headers.setContentDispositionFormData(&quot;attachment&quot;, filename);</span><br><span class="line"> //定义以流的形式下载返回⽂件数据</span><br><span class="line"> headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);</span><br><span class="line"> //使⽤SpringMVC框架的对象封装返回下载的数据</span><br><span class="line"> return new ResponseEntity&lt;byte[]&gt;(FileUtils.readFileToByteArray(file),</span><br><span class="line"> headers,HttpStatus.OK);</span><br><span class="line"> &#125;</span><br><span class="line"> private String getFilename(HttpServletRequest request, String filename)</span><br><span class="line"> throws UnsupportedEncodingException &#123;</span><br><span class="line"> //根据不同浏览器来判断</span><br><span class="line"> String[] IEBrowserKeyWords = &#123;&quot;MSIE&quot;,&quot;Trident&quot;,&quot;Edge&quot;&#125;;</span><br><span class="line"> //获取请求头代理信息</span><br><span class="line"> String userAgent = request.getHeader(&quot;User-Agent&quot;);</span><br><span class="line"> for (String keyWord : IEBrowserKeyWords) &#123;</span><br><span class="line"> if(userAgent.contains(keyWord)) &#123;</span><br><span class="line"> //进⾏统⼀编码</span><br><span class="line"> return URLEncoder.encode(filename,&quot;UTF-8&quot;);</span><br><span class="line"> &#125;</span><br><span class="line"> &#125;</span><br><span class="line"> //其它的浏览器统⼀为ISO-8859-1编码显示</span><br><span class="line"> return new String(filename.getBytes(&quot;UTF-8&quot;),&quot;ISO-8859-1&quot;);</span><br><span class="line"> &#125; &#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
-  </entry>
-  <entry>
-    <title>在VMware16中创建虚拟机安装ubuntu 21.04系统</title>
-    <url>/2021/10/18/VMware-ubuntu/</url>
-    <content><![CDATA[<table>
-<tr><td bgcolor="CFCFCF">此篇是创建VMware16虚拟机安装ubuntu21.04系统的超详细操作过程，希望对小白白有所帮助
-</td></tr></table>
-
-<span id="more"></span>
-
-<p>安装环境： windows 10</p>
-<p>VMware 16安装包：我用阿里云盘分享了「VMware-workstation-full-16.1.2-17966106.exe」，你可以不限速下载🚀<br>复制这段内容打开「阿里云盘」App 即可获取<br>链接：<a href="https://www.aliyundrive.com/s/7acSRwmGho2">https://www.aliyundrive.com/s/7acSRwmGho2</a></p>
-<p>ubuntu 21.04镜像：链接：<a href="https://pan.baidu.com/s/1ktE78cieRE9Y7_BhrG9vjQ">https://pan.baidu.com/s/1ktE78cieRE9Y7_BhrG9vjQ</a><br>提取码：n9ms</p>
-<h3 id="安装VMware-16"><a href="#安装VMware-16" class="headerlink" title="安装VMware 16"></a>安装VMware 16</h3><p>1、 直接双击下载好的VMware，这个过程可能会显示重新启动系统，那你点就是了。重新启动后再次双击下载好的VMware，然后点击【下一步】。</p>
-<img src="https://i.loli.net/2021/10/18/X4BvRZr2LKb5SyD.jpg" width="850" height="400" div align="right">
-
-<p>2、勾选【我接受许可协议中的条款】，点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/Prph8EuT6vaHiyQ.jpg" width="850" height="400" div align="right">
-
-<p>3、可以默认，也可更改安装位置</p>
-<img src="https://i.loli.net/2021/10/18/DqtysojVQrFE2R9.jpg" width="850" height="400" div align="right">
-
-<p>4、选择安装位置，然后点击【确定】</p>
-<img src="https://i.loli.net/2021/10/18/VzTAbUosOP4dK3W.jpg" width="850" height="400" div align="right">
-
-<p>5、点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/DqtysojVQrFE2R9.jpg" width="850" height="400" div align="right">
-
-<p>6、取消勾选【启动时检查产品更新】和【加入VMware客户体验改进计划】，点击【下一步</p>
-<img src="https://i.loli.net/2021/10/18/ONQ954xcuaLZYBK.jpg" width="850" height="400" div align="right">
-
-<p>7、点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/n2RPhJVXakzLgHU.jpg" width="850" height="400" div align="right">
-
-<p>8、点击【安装】</p>
-<img src="https://i.loli.net/2021/10/18/xe8kFh4T72tSAld.jpg" width="850" height="400" div align="right">
-
-<p>9、正在安装，等待几分钟</p>
-<img src="https://i.loli.net/2021/10/18/KzBpH8OeDyn5V3F.jpg" width="850" height="400" div align="right">
-
-<p>10、点击【许可证】</p>
-<img src="https://i.loli.net/2021/10/18/AaUSlwWnMCFJ3c1.jpg" width="850" height="400" div align="right">
-
-<p>11、框中输入许可证：ZF3R0-FHED2-M80TY-8QYGC-NPKYF，（复制粘贴就可以）然后点击【输入】</p>
-<p>12、点击【完成】</p>
-<p>恭喜你这会你的虚拟机已经安装好了，是不是直接点击下一步就可以</p>
-<h3 id="在VMware中安装ubuntu-21-04系统"><a href="#在VMware中安装ubuntu-21-04系统" class="headerlink" title="在VMware中安装ubuntu 21.04系统"></a>在VMware中安装ubuntu 21.04系统</h3><p>1、双击打开你创建在桌面的虚拟机，然后点击【创建新的虚拟机】</p>
-<img src="https://i.loli.net/2021/10/18/QWASzB7OuMIb6xm.jpg" width="850" height="400" div align="right">
-
-<p>2、选择【典型】（默认便是典型），点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/9CzmqQYUDNeRo56.jpg" width="850" height="400" div align="right">
-
-<p>3、选择【稍后安装操作系统】，点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/XZi389ajePvqRDk.jpg" width="850" height="400" div align="right">
-
-<p>4、客户机操作系统选择【Linux】，版本选择【Ubuntu64位】，然后点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/XAgZ4IvWTji5CUK.jpg" width="850" height="400" div align="right">
-
-<p>5、位置可更改，点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/owxQLiVrmWdJsYa.jpg" width="850" height="400" div align="right">
-
-<p>6、最大磁盘大小【20】GB，选择【将虚拟机磁盘拆分成多个文件】，然后点击【下一步】</p>
-<img src="https://i.loli.net/2021/10/18/DKBEnuG6or3f4wx.jpg" width="850" height="400" div align="right">
-
-<p>7、点击【自定义硬件】</p>
-<img src="https://i.loli.net/2021/10/18/VlZBfoPbR9e8MSc.jpg" width="850" height="400" div align="right">
-
-<p>8、选择【内存】，此虚拟机的内存设为【2048MB】</p>
-<img src="https://i.loli.net/2021/10/18/AdjlBFmEVDNhr1O.jpg" width="850" height="400" div align="right">
-
-<p>9、选择【新CD/DVD(TATA)】后选择【使用ISO映像文件】，点击【浏览】，找到下载后文件夹里面的【ubuntu-21.04-desktop-amd64.iso】这个镜像并选择！</p>
-<img src="https://i.loli.net/2021/10/18/C8p4cyMIBuGbYWU.jpg" width="850" height="400" div align="right">
-
-<p>10、选择【网络适配器】，然后选择【仅主机模式】</p>
-<img src="https://i.loli.net/2021/10/18/IyBJxuMrLhml3Ko.jpg" width="850" height="400" div align="right">
-
-<p>11、选择【USB控制器】，点击【移除】</p>
-<img src="https://i.loli.net/2021/10/18/HwJm6DONtYMhFCz.jpg" width="850" height="400" div align="right">
-
-<p>12、选择【打印机】，点击【移除】</p>
-<img src="https://i.loli.net/2021/10/18/cjkhgORexpbFm4K.jpg" width="850" height="400" div align="right">
-
-<p>13、点击【关闭】</p>
-<img src="https://i.loli.net/2021/10/18/pfz13yURdGDW8qI.jpg" width="850" height="400" div align="right">
-
-<p>14、点击【完成】</p>
-<img src="https://i.loli.net/2021/10/18/VlZBfoPbR9e8MSc.jpg" width="850" height="400" div align="right">
-
-<p><font color="red" size="5"> 实在没有耐心放图片了，等闲了再贴图片吧,相信自己即使看文字你也可以安装完成的，加油！</font></p>
-<p>15、点击【开启此虚拟机】，等待开启</p>
-<p>16、择【中文简体】，点击【安装Ubuntu】</p>
-<p>17、点击【继续】</p>
-<p>18、点击【继续】</p>
-<p>19、点击【现在安装】</p>
-<p>20、点击【继续】</p>
-<p>21、这里默认【Shanghai】就OK</p>
-<p>22、创建用户账号（记住密码哦！）。不要担心你的计算机名是什么，你只需要输入姓名，计算机名就会自动生成。然后点击[继续]</p>
-<p>23、安装中，耐心等待（这个可能需要多点时间）</p>
-<p>24、点击【现在重启】，重启一会看屏幕中下方转圈其他都不动，键盘上点击【enter】</p>
-<p>25、点击账户，我这里是【simon-yian】</p>
-<p>26、输入之前创建用户账号时设的密码，然后点击【登录】</p>
-<p>27、至此Ubuntu系统安装完成！</p>
-<p><font color="red"><b>如果你觉得可以千万不要忘记动动你的小手，赞赏一下贫困的博客主</b><br><b>记得收藏啊，以后会有更好的内容给您分享</b></font></p>
-]]></content>
-      <categories>
-        <category>VMware</category>
-      </categories>
   </entry>
   <entry>
     <title>培训心得&amp;emsp;&amp;emsp;[走进HTML]</title>
@@ -1224,6 +1224,110 @@
       </categories>
   </entry>
   <entry>
+    <title>培训心得[java控制流程]</title>
+    <url>/2022/07/18/xianTrain11-controllerStream/</url>
+    <content><![CDATA[<p><em><strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Java基础学习打卡第2天<br>学习链接：<a href="https://www.yuque.com/docs/share/89bb9cac-ccd1-44dd-b2e2-e11933c44c39#">https://www.yuque.com/docs/share/89bb9cac-ccd1-44dd-b2e2-e11933c44c39?#</a> 《第3章 流程控制》密码：zk84</strong></em></p>
+<span id="more"></span>
+
+<h3 id="1-控制流程"><a href="#1-控制流程" class="headerlink" title="1 控制流程"></a>1 控制流程</h3><blockquote>
+<ul>
+<li>可分为：顺序结构、分支结构、循环结构</li>
+</ul>
+</blockquote>
+<h3 id="1-1-顺序结构"><a href="#1-1-顺序结构" class="headerlink" title="1.1 顺序结构"></a>1.1 顺序结构</h3><blockquote>
+<p>程序自上而下依次执行，中间没有任何判断和跳转。</p>
+</blockquote>
+<h3 id="1-2-分支结构"><a href="#1-2-分支结构" class="headerlink" title="1.2 分支结构"></a>1.2 分支结构</h3><blockquote>
+<p>java提供了两种分支结构：if语句和switch语句</p>
+</blockquote>
+<h4 id="1-2-1-if条件语句"><a href="#1-2-1-if条件语句" class="headerlink" title="1.2.1 if条件语句"></a>1.2.1 if条件语句</h4><blockquote>
+<p>if语句使用布尔表达式或者布尔值作为分支条件进行分支控制，if语句有一下三种形式：</p>
+<ul>
+<li>单分支结构</li>
+</ul>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">if(logic expression)&#123;</span><br><span class="line">	statement;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&gt;+双分支结构</span><br></pre></td></tr></table></figure>
+
+<p>if(logic expression){<br>    statement;<br>}else{<br>    statement;<br>}</p>
+<blockquote>
+<ul>
+<li>多分支结构</li>
+</ul>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">if(logic expression)&#123;</span><br><span class="line">	statement;</span><br><span class="line">&#125;else if&#123;</span><br><span class="line">	statement;</span><br><span class="line">&#125;else if&#123;</span><br><span class="line">	statement；</span><br><span class="line">&#125;else&#123;</span><br><span class="line">	statement;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-2-2-switch条件语句"><a href="#1-2-2-switch条件语句" class="headerlink" title="1.2.2 switch条件语句"></a>1.2.2 switch条件语句</h4><blockquote>
+<p>switch语句有一个控制表达式和多个case标签组成，和if语句不同的是，switch语句后面的控制表达式的数据类型只能是byte、short、chat、int四种类型、从java7以后添加了枚举类型和String类型，switch语句和语法格式如下：</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">switch(expression)&#123;</span><br><span class="line">	case condition1:</span><br><span class="line">	&#123;</span><br><span class="line">		statement(s);</span><br><span class="line">		break;</span><br><span class="line">	&#125;</span><br><span class="line">	case condition2:</span><br><span class="line">	&#123;</span><br><span class="line">		statement(s);</span><br><span class="line">		break;</span><br><span class="line">	&#125;</span><br><span class="line">	case condition3:</span><br><span class="line">	&#123;</span><br><span class="line">		statement(s);</span><br><span class="line">		break;</span><br><span class="line">	&#125;</span><br><span class="line">	default:&#123;</span><br><span class="line">		statement(s);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-2-2-分支嵌套"><a href="#1-2-2-分支嵌套" class="headerlink" title="1.2.2 分支嵌套"></a>1.2.2 分支嵌套</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.bytecollege;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 本例将演示输入一个年份</span></span><br><span class="line"><span class="comment"> * 判断是否是闰年</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> MR.W</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LeapYear</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;请输入年份：&quot;</span>);</span><br><span class="line">		Scanner scanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		<span class="keyword">int</span> year = scanner.nextInt();</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span>(year%<span class="number">4</span>==<span class="number">0</span>) &#123;</span><br><span class="line">			<span class="keyword">if</span>(year%<span class="number">100</span>==<span class="number">0</span>) &#123;</span><br><span class="line">				<span class="keyword">if</span>(year%<span class="number">400</span>==<span class="number">0</span>) &#123;</span><br><span class="line">					System.out.println(year+<span class="string">&quot;是闰年&quot;</span>);</span><br><span class="line">				&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">					System.out.println(year+<span class="string">&quot;不是闰年&quot;</span>);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">				System.out.println(year+<span class="string">&quot;是闰年&quot;</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">			System.out.println(year+<span class="string">&quot;不是闰年&quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="1-3-循环结构"><a href="#1-3-循环结构" class="headerlink" title="1.3 循环结构"></a>1.3 循环结构</h3><p>循环结构是指在满足某个循环条件的情况下，反复执行同一代码，只到不满足循环条件为止。恰当的循环结构包含：初始化语句、循环条件、循环体、迭代语句；</p>
+<h4 id="1-3-1-for循环"><a href="#1-3-1-for循环" class="headerlink" title="1.3.1 for循环"></a>1.3.1 for循环</h4><p>语法格式如下：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>([init_statment];[test_exression];[iteration_statement])&#123;</span><br><span class="line">    statement;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>其中init_statement指初始化条件，test_exoression指循环条件，statement是循环体，iteration_statment迭代语句，在statement执行结束以后执行。先执行init_statement初始化语句只在混循环条件开始前执行一次，每次执行循环体之前，先计算test_exression循环条件的值。</p>
+<p>例如：计算1-100的和</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package cn.bytecollege;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 本示例将演示for循环</span><br><span class="line"> * @author MR.W</span><br><span class="line"> *</span><br><span class="line"> */</span><br><span class="line">public class ForDemo &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//定义变量保存结果</span><br><span class="line">		int sum= 0;</span><br><span class="line">		for (int i = 1;i&lt;=100;i++) &#123;</span><br><span class="line">			sum += i;</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(sum);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><b>注意：</b></p>
+<blockquote>
+<ul>
+<li>除非特殊情况尽量不要在循环体内修改循环变量的值。</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>for循环圆括号中只有两个分号是必须的，初始化语句、循环条件、迭代语句部分都是可以省略的。如：<code>for( ; ; )</code></li>
+</ul>
+</blockquote>
+<h4 id="1-3-2-while循环"><a href="#1-3-2-while循环" class="headerlink" title="1.3.2 while循环"></a>1.3.2 while循环</h4><p>如果while循环的循环体部分和迭代语句合并在一起，且只有一行代码，则可以省略。（但是通常不建议省略）</p>
+<p>使用while循环时，一定要保证循环条件有变成false的时候，否则这个循环将变成循环，用于无法结束循环。</p>
+<p>语法格式如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">while(循环条件)&#123;</span><br><span class="line">	//循环体</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>例如：计算1-100的和</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.bytecollege;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 本例将演示while循环</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> MR.W</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WhileDemo</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> i = <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">while</span>(i&lt;=<span class="number">100</span>) &#123;</span><br><span class="line">			sum+=i;</span><br><span class="line">			i++;</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(sum);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="1-3-3-do-while循环"><a href="#1-3-3-do-while循环" class="headerlink" title="1.3.3  do while循环"></a>1.3.3  do while循环</h4><p>do while循环是先执行一次循环体，再判断循环条件，而while循环是先判断循环条件再执行一次循环体。</p>
+<p>语法格式如下：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">do</span>&#123;</span><br><span class="line">	<span class="comment">//循环体</span></span><br><span class="line">&#125;<span class="keyword">while</span>(循环条件);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="1-4-控制循环结构"><a href="#1-4-控制循环结构" class="headerlink" title="1.4 控制循环结构"></a>1.4 控制循环结构</h3><p>java提供了continue和break空值循环结构，在java中goto只作为了保留字</p>
+<h4 id="1-4-1使用break结束循环"><a href="#1-4-1使用break结束循环" class="headerlink" title="1.4.1使用break结束循环"></a>1.4.1使用break结束循环</h4><p>break用于完全结束一个循环，跳出循环体，不管那这个哪种循环，一旦循环体中遇到break，系统将完全结束该循环，开始执行循环结构以后的代码。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package cn.bytecollege;</span><br><span class="line">/**</span><br><span class="line"> * 本例将演示break</span><br><span class="line"> * @author MR.W</span><br><span class="line"> *</span><br><span class="line"> */</span><br><span class="line">public class BreakDemo &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		for (int i = 0; i &lt; 10; i++) &#123;</span><br><span class="line">			if(i==7) &#123;</span><br><span class="line">                System.out.println(i);</span><br><span class="line">				break;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>循环嵌套中使用break</p>
+<blockquote>
+<p>遇到一个break outer语句，该语句将会导致结束outer标签指定的循环，不是break所在的循环，而是结束break循环的外层循环。</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package cn.bytecollege;</span><br><span class="line">/**</span><br><span class="line"> * 本例将演示循环嵌套中break结束外层循环</span><br><span class="line"> * @author MR.W</span><br><span class="line"> *</span><br><span class="line"> */</span><br><span class="line">public class BreakDemo3 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		outer:</span><br><span class="line">		for (int i = 0; i &lt; 5; i++) &#123;</span><br><span class="line">			//内层循环</span><br><span class="line">			for (int j = 0; j &lt; 3; j++) &#123;</span><br><span class="line">				if(j==1) &#123;</span><br><span class="line">					//跳出outer所标识的循环</span><br><span class="line">					break outer;</span><br><span class="line">				&#125;</span><br><span class="line">				System.out.println(&quot;i的值为：&quot;+i+&quot;,j的值为：&quot;+j);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;	</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="1-4-2-使用continue跳转次循环"><a href="#1-4-2-使用continue跳转次循环" class="headerlink" title="1.4.2 使用continue跳转次循环"></a>1.4.2 使用continue跳转次循环</h4><p>continue只是跳出次循环，继续执行剩下的循环，并不是完全终止循环。</p>
+<p>示例如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">package cn.bytecollege;</span><br><span class="line">/**</span><br><span class="line"> * 本例将演示continue</span><br><span class="line"> * @author MR.W</span><br><span class="line"> *</span><br><span class="line"> */</span><br><span class="line">public class ContinueDemo &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		for (int i = 0; i &lt; 10; i++) &#123;</span><br><span class="line">			if(i==7) &#123;</span><br><span class="line">				continue;</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println(i);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>循环嵌套中使用continue</p>
+<blockquote>
+<p>在多层循环中，continue会忽略当前循环，直接到外层循环继续进行循环</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package cn.bytecollege;</span><br><span class="line">/**</span><br><span class="line"> * 本例将演示多层循环嵌套中使用Continue</span><br><span class="line"> * @author MR.W</span><br><span class="line"> *</span><br><span class="line"> */</span><br><span class="line">public class ContinueDemo2 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		outer:</span><br><span class="line">		for (int i = 0; i &lt; 5; i++) &#123;</span><br><span class="line">			//内层循环</span><br><span class="line">			for (int j = 0; j &lt; 3; j++) &#123;</span><br><span class="line">				if(j==1) &#123;</span><br><span class="line">					//跳出outer所标识的循环</span><br><span class="line">					continue outer;</span><br><span class="line">				&#125;</span><br><span class="line">				System.out.println(&quot;i的值为：&quot;+i+&quot;,j的值为：&quot;+j);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p>课后作业：<br>1.请将101转换成二进制，并将二进制的前3位替换为1，并求出原码</p>
+<p>0000 0000 0000 0000 0000 0000 0110 0101         101的二进制<br>1110 0000 0000 0000 0000 0000 0110 0101          替换后的补码<br>1110 0000 0000 0000 0000 0000 0110 0100          补码减一<br>1001 1111 1111 1111 1111 1111 1001 1011          取反求出原码</p>
+]]></content>
+      <categories>
+        <category>XiAnTrain</category>
+      </categories>
+  </entry>
+  <entry>
     <title>培训心得[数组]</title>
     <url>/2022/07/18/xianTrain12-Array/</url>
     <content><![CDATA[<p><em><strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Java基础学习打卡第2天<br>学习链接：<a href="https://www.yuque.com/docs/share/5b051183-1e6a-4c80-904f-17070f1c9653#">https://www.yuque.com/docs/share/5b051183-1e6a-4c80-904f-17070f1c9653?#</a> 《第4章 数组》密码：mg6w</strong></em></p>
@@ -1343,110 +1447,6 @@
 </ul>
 </blockquote>
 <h3 id="学习心得"><a href="#学习心得" class="headerlink" title="学习心得"></a>学习心得</h3><p>​            今天学习了一些java的控制流程和数组，基本全部掌握，毕竟在学校里这一块知识经常用到，所以再学起来也是很容易的。由于之前在客厅睡，睡的不好。昨天就给安老师说完之后，就要我搬了宿舍，现在一个人住，超喜欢一个人的感觉，超自由。刷视频想外放，就外放。</p>
-]]></content>
-      <categories>
-        <category>XiAnTrain</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>培训心得[java控制流程]</title>
-    <url>/2022/07/18/xianTrain11-controllerStream/</url>
-    <content><![CDATA[<p><em><strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Java基础学习打卡第2天<br>学习链接：<a href="https://www.yuque.com/docs/share/89bb9cac-ccd1-44dd-b2e2-e11933c44c39#">https://www.yuque.com/docs/share/89bb9cac-ccd1-44dd-b2e2-e11933c44c39?#</a> 《第3章 流程控制》密码：zk84</strong></em></p>
-<span id="more"></span>
-
-<h3 id="1-控制流程"><a href="#1-控制流程" class="headerlink" title="1 控制流程"></a>1 控制流程</h3><blockquote>
-<ul>
-<li>可分为：顺序结构、分支结构、循环结构</li>
-</ul>
-</blockquote>
-<h3 id="1-1-顺序结构"><a href="#1-1-顺序结构" class="headerlink" title="1.1 顺序结构"></a>1.1 顺序结构</h3><blockquote>
-<p>程序自上而下依次执行，中间没有任何判断和跳转。</p>
-</blockquote>
-<h3 id="1-2-分支结构"><a href="#1-2-分支结构" class="headerlink" title="1.2 分支结构"></a>1.2 分支结构</h3><blockquote>
-<p>java提供了两种分支结构：if语句和switch语句</p>
-</blockquote>
-<h4 id="1-2-1-if条件语句"><a href="#1-2-1-if条件语句" class="headerlink" title="1.2.1 if条件语句"></a>1.2.1 if条件语句</h4><blockquote>
-<p>if语句使用布尔表达式或者布尔值作为分支条件进行分支控制，if语句有一下三种形式：</p>
-<ul>
-<li>单分支结构</li>
-</ul>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">if(logic expression)&#123;</span><br><span class="line">	statement;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&gt;+双分支结构</span><br></pre></td></tr></table></figure>
-
-<p>if(logic expression){<br>    statement;<br>}else{<br>    statement;<br>}</p>
-<blockquote>
-<ul>
-<li>多分支结构</li>
-</ul>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">if(logic expression)&#123;</span><br><span class="line">	statement;</span><br><span class="line">&#125;else if&#123;</span><br><span class="line">	statement;</span><br><span class="line">&#125;else if&#123;</span><br><span class="line">	statement；</span><br><span class="line">&#125;else&#123;</span><br><span class="line">	statement;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="1-2-2-switch条件语句"><a href="#1-2-2-switch条件语句" class="headerlink" title="1.2.2 switch条件语句"></a>1.2.2 switch条件语句</h4><blockquote>
-<p>switch语句有一个控制表达式和多个case标签组成，和if语句不同的是，switch语句后面的控制表达式的数据类型只能是byte、short、chat、int四种类型、从java7以后添加了枚举类型和String类型，switch语句和语法格式如下：</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">switch(expression)&#123;</span><br><span class="line">	case condition1:</span><br><span class="line">	&#123;</span><br><span class="line">		statement(s);</span><br><span class="line">		break;</span><br><span class="line">	&#125;</span><br><span class="line">	case condition2:</span><br><span class="line">	&#123;</span><br><span class="line">		statement(s);</span><br><span class="line">		break;</span><br><span class="line">	&#125;</span><br><span class="line">	case condition3:</span><br><span class="line">	&#123;</span><br><span class="line">		statement(s);</span><br><span class="line">		break;</span><br><span class="line">	&#125;</span><br><span class="line">	default:&#123;</span><br><span class="line">		statement(s);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="1-2-2-分支嵌套"><a href="#1-2-2-分支嵌套" class="headerlink" title="1.2.2 分支嵌套"></a>1.2.2 分支嵌套</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.bytecollege;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 本例将演示输入一个年份</span></span><br><span class="line"><span class="comment"> * 判断是否是闰年</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> MR.W</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LeapYear</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;请输入年份：&quot;</span>);</span><br><span class="line">		Scanner scanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		<span class="keyword">int</span> year = scanner.nextInt();</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span>(year%<span class="number">4</span>==<span class="number">0</span>) &#123;</span><br><span class="line">			<span class="keyword">if</span>(year%<span class="number">100</span>==<span class="number">0</span>) &#123;</span><br><span class="line">				<span class="keyword">if</span>(year%<span class="number">400</span>==<span class="number">0</span>) &#123;</span><br><span class="line">					System.out.println(year+<span class="string">&quot;是闰年&quot;</span>);</span><br><span class="line">				&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">					System.out.println(year+<span class="string">&quot;不是闰年&quot;</span>);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">				System.out.println(year+<span class="string">&quot;是闰年&quot;</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">			System.out.println(year+<span class="string">&quot;不是闰年&quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="1-3-循环结构"><a href="#1-3-循环结构" class="headerlink" title="1.3 循环结构"></a>1.3 循环结构</h3><p>循环结构是指在满足某个循环条件的情况下，反复执行同一代码，只到不满足循环条件为止。恰当的循环结构包含：初始化语句、循环条件、循环体、迭代语句；</p>
-<h4 id="1-3-1-for循环"><a href="#1-3-1-for循环" class="headerlink" title="1.3.1 for循环"></a>1.3.1 for循环</h4><p>语法格式如下：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>([init_statment];[test_exression];[iteration_statement])&#123;</span><br><span class="line">    statement;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>其中init_statement指初始化条件，test_exoression指循环条件，statement是循环体，iteration_statment迭代语句，在statement执行结束以后执行。先执行init_statement初始化语句只在混循环条件开始前执行一次，每次执行循环体之前，先计算test_exression循环条件的值。</p>
-<p>例如：计算1-100的和</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package cn.bytecollege;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 本示例将演示for循环</span><br><span class="line"> * @author MR.W</span><br><span class="line"> *</span><br><span class="line"> */</span><br><span class="line">public class ForDemo &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//定义变量保存结果</span><br><span class="line">		int sum= 0;</span><br><span class="line">		for (int i = 1;i&lt;=100;i++) &#123;</span><br><span class="line">			sum += i;</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(sum);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p><b>注意：</b></p>
-<blockquote>
-<ul>
-<li>除非特殊情况尽量不要在循环体内修改循环变量的值。</li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
-<li>for循环圆括号中只有两个分号是必须的，初始化语句、循环条件、迭代语句部分都是可以省略的。如：<code>for( ; ; )</code></li>
-</ul>
-</blockquote>
-<h4 id="1-3-2-while循环"><a href="#1-3-2-while循环" class="headerlink" title="1.3.2 while循环"></a>1.3.2 while循环</h4><p>如果while循环的循环体部分和迭代语句合并在一起，且只有一行代码，则可以省略。（但是通常不建议省略）</p>
-<p>使用while循环时，一定要保证循环条件有变成false的时候，否则这个循环将变成循环，用于无法结束循环。</p>
-<p>语法格式如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">while(循环条件)&#123;</span><br><span class="line">	//循环体</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>例如：计算1-100的和</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.bytecollege;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 本例将演示while循环</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> MR.W</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WhileDemo</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> i = <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">while</span>(i&lt;=<span class="number">100</span>) &#123;</span><br><span class="line">			sum+=i;</span><br><span class="line">			i++;</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(sum);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h4 id="1-3-3-do-while循环"><a href="#1-3-3-do-while循环" class="headerlink" title="1.3.3  do while循环"></a>1.3.3  do while循环</h4><p>do while循环是先执行一次循环体，再判断循环条件，而while循环是先判断循环条件再执行一次循环体。</p>
-<p>语法格式如下：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">do</span>&#123;</span><br><span class="line">	<span class="comment">//循环体</span></span><br><span class="line">&#125;<span class="keyword">while</span>(循环条件);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="1-4-控制循环结构"><a href="#1-4-控制循环结构" class="headerlink" title="1.4 控制循环结构"></a>1.4 控制循环结构</h3><p>java提供了continue和break空值循环结构，在java中goto只作为了保留字</p>
-<h4 id="1-4-1使用break结束循环"><a href="#1-4-1使用break结束循环" class="headerlink" title="1.4.1使用break结束循环"></a>1.4.1使用break结束循环</h4><p>break用于完全结束一个循环，跳出循环体，不管那这个哪种循环，一旦循环体中遇到break，系统将完全结束该循环，开始执行循环结构以后的代码。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package cn.bytecollege;</span><br><span class="line">/**</span><br><span class="line"> * 本例将演示break</span><br><span class="line"> * @author MR.W</span><br><span class="line"> *</span><br><span class="line"> */</span><br><span class="line">public class BreakDemo &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		for (int i = 0; i &lt; 10; i++) &#123;</span><br><span class="line">			if(i==7) &#123;</span><br><span class="line">                System.out.println(i);</span><br><span class="line">				break;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>循环嵌套中使用break</p>
-<blockquote>
-<p>遇到一个break outer语句，该语句将会导致结束outer标签指定的循环，不是break所在的循环，而是结束break循环的外层循环。</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package cn.bytecollege;</span><br><span class="line">/**</span><br><span class="line"> * 本例将演示循环嵌套中break结束外层循环</span><br><span class="line"> * @author MR.W</span><br><span class="line"> *</span><br><span class="line"> */</span><br><span class="line">public class BreakDemo3 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		outer:</span><br><span class="line">		for (int i = 0; i &lt; 5; i++) &#123;</span><br><span class="line">			//内层循环</span><br><span class="line">			for (int j = 0; j &lt; 3; j++) &#123;</span><br><span class="line">				if(j==1) &#123;</span><br><span class="line">					//跳出outer所标识的循环</span><br><span class="line">					break outer;</span><br><span class="line">				&#125;</span><br><span class="line">				System.out.println(&quot;i的值为：&quot;+i+&quot;,j的值为：&quot;+j);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;	</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-</ul>
-<h4 id="1-4-2-使用continue跳转次循环"><a href="#1-4-2-使用continue跳转次循环" class="headerlink" title="1.4.2 使用continue跳转次循环"></a>1.4.2 使用continue跳转次循环</h4><p>continue只是跳出次循环，继续执行剩下的循环，并不是完全终止循环。</p>
-<p>示例如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">package cn.bytecollege;</span><br><span class="line">/**</span><br><span class="line"> * 本例将演示continue</span><br><span class="line"> * @author MR.W</span><br><span class="line"> *</span><br><span class="line"> */</span><br><span class="line">public class ContinueDemo &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		for (int i = 0; i &lt; 10; i++) &#123;</span><br><span class="line">			if(i==7) &#123;</span><br><span class="line">				continue;</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println(i);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>循环嵌套中使用continue</p>
-<blockquote>
-<p>在多层循环中，continue会忽略当前循环，直接到外层循环继续进行循环</p>
-</blockquote>
-</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package cn.bytecollege;</span><br><span class="line">/**</span><br><span class="line"> * 本例将演示多层循环嵌套中使用Continue</span><br><span class="line"> * @author MR.W</span><br><span class="line"> *</span><br><span class="line"> */</span><br><span class="line">public class ContinueDemo2 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		outer:</span><br><span class="line">		for (int i = 0; i &lt; 5; i++) &#123;</span><br><span class="line">			//内层循环</span><br><span class="line">			for (int j = 0; j &lt; 3; j++) &#123;</span><br><span class="line">				if(j==1) &#123;</span><br><span class="line">					//跳出outer所标识的循环</span><br><span class="line">					continue outer;</span><br><span class="line">				&#125;</span><br><span class="line">				System.out.println(&quot;i的值为：&quot;+i+&quot;,j的值为：&quot;+j);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<p>课后作业：<br>1.请将101转换成二进制，并将二进制的前3位替换为1，并求出原码</p>
-<p>0000 0000 0000 0000 0000 0000 0110 0101         101的二进制<br>1110 0000 0000 0000 0000 0000 0110 0101          替换后的补码<br>1110 0000 0000 0000 0000 0000 0110 0100          补码减一<br>1001 1111 1111 1111 1111 1111 1001 1011          取反求出原码</p>
 ]]></content>
       <categories>
         <category>XiAnTrain</category>
@@ -2886,6 +2886,50 @@
       </categories>
   </entry>
   <entry>
+    <title>培训心得&amp;emsp;&amp;emsp;[HTML5]</title>
+    <url>/2022/06/30/xianTrain3/</url>
+    <content><![CDATA[<p><em><strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;学习打卡第三天</strong></em><br>学习链接：<a href="https://www.yuque.com/docs/share/9ce7b3ef-6298-4b49-a687-39a524629130#">https://www.yuque.com/docs/share/9ce7b3ef-6298-4b49-a687-39a524629130?#</a> </p>
+<span id="more"></span>
+
+<h1 id="3-1新增元素"><a href="#3-1新增元素" class="headerlink" title="3.1新增元素"></a>3.1新增元素</h1><h2 id="3-1-1-新增的结构元素"><a href="#3-1-1-新增的结构元素" class="headerlink" title="3.1.1 新增的结构元素"></a>3.1.1 新增的结构元素</h2><h3 id="●-lt-section-gt-元素"><a href="#●-lt-section-gt-元素" class="headerlink" title="● &lt;section&gt;元素"></a>● <code>&lt;section&gt;</code>元素</h3><p><code>&lt;section&gt;</code>元素表示页面中的内容区块，如：页眉，页脚，章节等部分<br>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt; </span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt; </span><br><span class="line">&lt;title&gt;section&lt;/title&gt; </span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;section&gt;</span><br><span class="line">    &lt;h1&gt;区域一&lt;/h1&gt;</span><br><span class="line">    &lt;p&gt;这里是区域一的内容&lt;/p&gt;</span><br><span class="line">  &lt;/section&gt;</span><br><span class="line"></span><br><span class="line">  &lt;section&gt;</span><br><span class="line">   &lt;h1&gt;区域二&lt;/h1&gt;</span><br><span class="line">    &lt;p&gt;这里是区域二的内容&lt;/p&gt;</span><br><span class="line">  &lt;/section&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="●-lt-article-gt-元素"><a href="#●-lt-article-gt-元素" class="headerlink" title="● &lt;article&gt;元素"></a>● <code>&lt;article&gt;</code>元素</h3><p><code>&lt;article&gt;</code>元素表示页面中的一块与上下文不相关的独立内容，如：新闻页中诸多文章中的某篇文章<br>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt; </span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt; </span><br><span class="line">&lt;title&gt;article&lt;/title&gt; </span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">  &lt;article&gt;</span><br><span class="line">    &lt;h1&gt;两个“万岁”&lt;/h1&gt;</span><br><span class="line">    &lt;p&gt;“伟大、光荣、正确的中国共产党万岁！”&lt;/p&gt;</span><br><span class="line">		&lt;p&gt;“伟大、光荣、英雄的中国人民万岁！”&lt;/p&gt;</span><br><span class="line">  &lt;/article&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="●-lt-aside-gt-元素"><a href="#●-lt-aside-gt-元素" class="headerlink" title="● &lt;aside&gt;元素"></a>● <code>&lt;aside&gt;</code>元素</h3><p><code>&lt;aside&gt;</code>表示<code>&lt;article&gt;</code>元素的内容之外的，它的内容应该与附近内容相关<br>代码：</p>
+<figure class="highlight plaintext"><figcaption><span>html></span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt; </span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt; </span><br><span class="line">&lt;title&gt;aside&lt;/title&gt; </span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">  &lt;p&gt;神州十二号飞船成功升空&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">  &lt;aside&gt;</span><br><span class="line">    &lt;h4&gt;飞船抵达中国空间站&lt;/h4&gt;</span><br><span class="line">    &lt;p&gt;6月19日上午，神舟十二号飞船抵达距离天和核心舱200米的停留点，开始进行对接准备。</span><br><span class="line">      通过使用最先进的快速交会对接自动化技术</span><br><span class="line">      这一切都要归功于从一次次太空飞行中总结的的经验。&lt;/p&gt;</span><br><span class="line">  &lt;/aside&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="●-lt-header-gt-元素"><a href="#●-lt-header-gt-元素" class="headerlink" title="● &lt;header&gt;元素"></a>●<code> &lt;header&gt;</code>元素</h3><p><code>&lt;header&gt;</code>元素表示页面中的一个内容块或整个页面的标题<br>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt; </span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt; </span><br><span class="line">&lt;title&gt;header&lt;/title&gt; </span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;article&gt;</span><br><span class="line">    &lt;header&gt;</span><br><span class="line">      &lt;h1&gt;飞船抵达中国空间站&lt;/h1&gt;</span><br><span class="line">    &lt;/header&gt;</span><br><span class="line">    &lt;p&gt;</span><br><span class="line">      6月19日上午，神舟十二号飞船抵达距离天和核心舱200米的停留点，开始进行对接准备。</span><br><span class="line">      通过使用最先进的快速交会对接自动化技术</span><br><span class="line">      这一切都要归功于从一次次太空飞行中总结的的经验。</span><br><span class="line">    &lt;/p&gt;</span><br><span class="line">  &lt;/article&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="●-lt-footer-gt-元素"><a href="#●-lt-footer-gt-元素" class="headerlink" title="● &lt;footer&gt;元素"></a>●<code> &lt;footer&gt;</code>元素</h3><p><code>&lt;footer&gt;</code>元素表示整个页面或页面中一个区域内的脚注，一般包含作者的基本信息<br>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt; </span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;header&lt;/title&gt; </span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;article&gt;</span><br><span class="line">        &lt;header&gt;</span><br><span class="line">            &lt;h1&gt;飞船抵达中国空间站&lt;/h1&gt;</span><br><span class="line">        &lt;/header&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            6月19日上午，神舟十二号飞船抵达距离天和核心舱200米的停留点，开始进行对接准备。</span><br><span class="line">            通过使用最先进的快速交会对接自动化技术</span><br><span class="line">            这一切都要归功于从一次次太空飞行中总结的的经验。</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">    &lt;/article&gt;</span><br><span class="line">    &lt;footer&gt;</span><br><span class="line">        &lt;p&gt;&amp;copy;环球网&lt;/p&gt;</span><br><span class="line">      	&lt;p&gt;发表时间：7-12&lt;/p&gt;</span><br><span class="line">    &lt;/footer&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="●-lt-nav-gt-元素"><a href="#●-lt-nav-gt-元素" class="headerlink" title="● &lt;nav&gt;元素"></a>● <code>&lt;nav&gt;</code>元素</h3><p><code>&lt;nav&gt;</code>元素通常在内嵌套<code>&lt;a&gt;</code>标签表示页面的导航链接部分<br>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt; </span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt; </span><br><span class="line">&lt;title&gt;nav&lt;/title&gt; </span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">  &lt;nav&gt;</span><br><span class="line">    &lt;a href=&quot;/html/&quot;&gt;HTML&lt;/a&gt; |</span><br><span class="line">    &lt;a href=&quot;/css/&quot;&gt;CSS&lt;/a&gt; |</span><br><span class="line">    &lt;a href=&quot;/js/&quot;&gt;JavaScript&lt;/a&gt; |</span><br><span class="line">    &lt;a href=&quot;/jquery/&quot;&gt;jQuery&lt;/a&gt;</span><br><span class="line">  &lt;/nav&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="●-lt-video-gt-元素"><a href="#●-lt-video-gt-元素" class="headerlink" title="● &lt;video&gt;元素"></a>● <code>&lt;video&gt;</code>元素</h3><p>  ○ <code>&lt;video&gt;</code>元素用来插入视频<br>  ○ <code>&lt;video&gt;</code>元素仅支持MP4，WebM，Ogg视频格式<br>  ○ 元素属性表：<br><img src="https://s2.loli.net/2022/07/04/s2cxC4aoOdI5mwN.jpg" align="center" width="800" height="250" div></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt; </span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt; </span><br><span class="line">&lt;title&gt;video&lt;/title&gt; </span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">  &lt;video width=&quot;320&quot; height=&quot;240&quot; controls&gt;</span><br><span class="line">    &lt;source src=&quot;movie.mp4&quot;  type=&quot;video/mp4&quot;&gt;</span><br><span class="line">    &lt;source src=&quot;movie.ogg&quot;  type=&quot;video/ogg&quot;&gt;</span><br><span class="line">    您的浏览器不支持 HTML5 video 标签。</span><br><span class="line">  &lt;/video&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="●-lt-audio-gt-元素"><a href="#●-lt-audio-gt-元素" class="headerlink" title="● &lt;audio&gt;元素"></a>● <code>&lt;audio&gt;</code>元素</h3><p>  ○ <code>&lt;audio&gt;</code>元素用来插入音频<br>  ○ <code>&lt;audio&gt;</code>元素仅支持Ogg和MP3格式<br>  ○ 元素属性表<br>  <img src="https://s2.loli.net/2022/07/04/uAO9yGsiZLHmkUq.jpg" align="center" width="800" height="250" div></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">  &lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt; </span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt; </span><br><span class="line">&lt;title&gt;audio&lt;/title&gt; </span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;audio controls&gt;</span><br><span class="line">    &lt;source src=&quot;music.ogg&quot; type=&quot;audio/ogg&quot;&gt;</span><br><span class="line">    &lt;source src=&quot;music.mp3&quot; type=&quot;audio/mpeg&quot;&gt;</span><br><span class="line">  您的浏览器不支持 audio 元素。</span><br><span class="line">  &lt;/audio&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="●-lt-mark-gt-元素"><a href="#●-lt-mark-gt-元素" class="headerlink" title="● &lt;mark&gt;元素"></a>● <code>&lt;mark&gt;</code>元素</h3><p><code>&lt;mark&gt;</code>元素主要用来在视觉上向用户呈现哪些需要突出显示或高亮显示的文字，一般用在搜索结果中向用户高亮显示搜索关键词<br>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt; </span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt; </span><br><span class="line">&lt;title&gt;mark&lt;/title&gt; </span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;p&gt;神舟十二号航天员乘组圆满完成空间站阶段&lt;mark&gt;首次出舱&lt;/mark&gt;活动全部既定任务&lt;/p&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="●-lt-ruby-gt-元素"><a href="#●-lt-ruby-gt-元素" class="headerlink" title="● &lt;ruby&gt;元素"></a>● <code>&lt;ruby&gt;</code>元素</h3><p><code>&lt;ruby&gt;</code>表示中文注音或字符</p>
+<h3 id="●-lt-rt-gt-元素"><a href="#●-lt-rt-gt-元素" class="headerlink" title="● &lt;rt&gt;元素"></a>● <code>&lt;rt&gt;</code>元素</h3><p><code>&lt;rt&gt;</code>元素与<code>&lt;ruby&gt;</code>配合使用用来解释或发音</p>
+<h3 id="●-lt-rp-gt-元素"><a href="#●-lt-rp-gt-元素" class="headerlink" title="● &lt;rp&gt;元素"></a>● <code>&lt;rp&gt;</code>元素</h3><p><code>&lt;rp&gt;</code>元素与<code>&lt;ruby&gt;</code>一起使用，以定义不支持<code>&lt;ruby&gt;</code>元素的浏览器显示内容，以括号的形式出现如：汉字(Han Zi)<br>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt; </span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt; </span><br><span class="line">&lt;title&gt;ruby,rt,rp</span><br><span class="line">  &lt;/title&gt; </span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;ruby&gt;</span><br><span class="line">  汉 &lt;rp&gt;(&lt;/rp&gt;&lt;rt&gt;Han&lt;/rt&gt;&lt;rp&gt;)&lt;/rp&gt;</span><br><span class="line">  字 &lt;rp&gt;(&lt;/rp&gt;&lt;rt&gt;zi&lt;/rt&gt;&lt;rp&gt;)&lt;/rp&gt;</span><br><span class="line">&lt;/ruby&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="●-lt-details-gt-元素"><a href="#●-lt-details-gt-元素" class="headerlink" title="● &lt;details&gt;元素"></a>● <code>&lt;details&gt;</code>元素</h3><p><code>&lt;details&gt;</code>元素表示用户要求得到的细节信息，与<code>&lt;summary&gt;</code>配合使用，<code>&lt;summary&gt;</code>提供标题或图例，用户点击标题时，会显示户细节信息，<code>&lt;summary&gt;</code>元素应该是<code>&lt;details&gt;</code>元素的第一个元素<br>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;details&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;details&gt;</span><br><span class="line">        &lt;summary&gt;空间站&lt;/summary&gt;</span><br><span class="line">        空间站（space station）又称太空站、航天站。</span><br><span class="line">      	是一种在近地轨道长时间运行、可供多名航天员巡访、长期工作和生活的载人航天器。</span><br><span class="line">      	空间站分为单模块空间站和多模块空间站两种。</span><br><span class="line">      	单模块空间站可由航天运载器一次发射入轨，多模块空间站则由航天运载器分批将各模块送入轨道，在太空中将各模块组装而成。</span><br><span class="line">      	在空间站中要有人能够生活的一切设施，空间站不具备返回地球的能力。</span><br><span class="line">    &lt;/details&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="3-2-全局属性"><a href="#3-2-全局属性" class="headerlink" title="3.2 全局属性"></a>3.2 全局属性</h1><h2 id="3-2-1-contentEditable属性"><a href="#3-2-1-contentEditable属性" class="headerlink" title="3.2.1 contentEditable属性"></a>3.2.1 contentEditable属性</h2><p>contentEditable属性由微软开发并被其它浏览器反编译投入引用的一个全局属性，该属性允许用户编辑元素内容，该属性是一个布尔值的属性，可以被指定false或true<br>该属性默认inherit（继承）状态，属性为true时，元素被指定为允许编辑；属性为false时，元素被指定为不允许编辑状态；未指定值时，则由inherit状态决定，如果父元素是可编辑元素，则该元素也可编辑<br>在编辑完成后，如果想要保存其中的内容，只能把该元素的innerHTML发送到服务器端进行保存，目前还没有特别的API来保存编辑后的元素内容<br>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;contenteditable&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;ul contenteditable=&quot;true&quot;&gt;</span><br><span class="line">        &lt;li&gt;这是预编译内容&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;这是预编译内容&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;这是预编译内容&lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="3-2-2-designMode属性"><a href="#3-2-2-designMode属性" class="headerlink" title="3.2.2 designMode属性"></a>3.2.2 designMode属性</h2><p>designModel属性用来指定整个页面是否可编辑，当页面可编辑时，页面中任何支持contenteditable属性的元素都变成可编辑状态。该属性只能在JavaScript脚本里被编辑修改，该属性有两个值 “on”或“off”，当属性被指定为“on”时，页面为可编辑状态，为“off”时，页面不可编辑<br>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;designMode&lt;/title&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        document.designMode=&quot;on&quot;;</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">        &lt;li&gt;这是原有内容&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;这是原有内容&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;这是原有内容&lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">    &lt;a href=&quot;javascript:void(0)&quot;&gt;链接&lt;/a&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="3-2-3-hidden属性"><a href="#3-2-3-hidden属性" class="headerlink" title="3.2.3 hidden属性"></a>3.2.3 hidden属性</h2><p>在HTML 5中，所有的元素都允许使用一个hidden属性。该属性类似于input元素中的 hidden元素，功能是通知浏览器不渲染该元素。使该元素处干不可见状态。但是元素中的内容还是浏览器创建的，也就是说页面装载后允许使用JavaScript脚本将该属性取消，取消后该元素变为可见状态，同时元素中的内容也即时显示出来。Hidden属性是一个布尔值的属性。当设为true时，元素处于不可见状态;当设为false时，元素处于可见状态</p>
+]]></content>
+      <categories>
+        <category>XiAnTrain</category>
+      </categories>
+  </entry>
+  <entry>
     <title>xianTrain18-HeahMap</title>
     <url>/2022/08/03/xianTrain18-HeahMap/</url>
     <content><![CDATA[<p>***&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Java基础学习打卡第2天</p>
@@ -2908,10 +2952,12 @@
 <p>注：Integer类型的hashcode值为本身。返回值没有65536；</p>
 <p>继续查看putVal()方法，这个方法即HashMap存放元素的核心流程。</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">final V putVal(int hash,K key,V value,boolean onlyIfAbent,boolean evict)&#123;</span><br><span class="line">    Node&lt;K,V&gt;[] tab ;</span><br><span class="line">    Node&lt;K,V&gt; p; </span><br><span class="line">    int n,i;</span><br><span class="line">    //判断哈希表是否为空</span><br><span class="line">    if(( tab = table) == null || (n = tab.length) == 0)</span><br><span class="line">        //扩展</span><br><span class="line">        n = (tab = resize()).length;</span><br><span class="line">    //判断tab[i]是否为空，使用&amp;将值限制在n-1范围之内</span><br><span class="line">    if((p = tab[i = (n - 1) &amp; heah]) == null)</span><br><span class="line">        //如果没有元素则直接存放</span><br><span class="line">        tab[i] = newNode(hash,key,value,null);</span><br><span class="line">    else&#123;</span><br><span class="line">        Node&lt;K,V&gt; e;</span><br><span class="line">        K k;</span><br><span class="line">        //判断和已有节点的key是否相同,p为tab[i]对应的节点</span><br><span class="line">        if(p.hash == hash &amp;&amp; </span><br><span class="line">            ((k = p.key) == key) || (key != null &amp;&amp; key.equals(k)))</span><br><span class="line">            //如果相等则替换</span><br><span class="line">            e = p;</span><br><span class="line">        //如果key不相等，判断哈希表已有的节点是不是红黑树</span><br><span class="line">        else if( p instanceof TreeNode)</span><br><span class="line">            //如果是红黑树则以树的方式插入元素</span><br><span class="line">            e = ((TreeNode&lt;K,V&gt; P)).putTreeVal(this,tab,hash, key, value)</span><br><span class="line">        else&#123;</span><br><span class="line">            //如果不是红黑树则说明这里是链表，遍历链表</span><br><span class="line">            for(int binCount = 0; ; ++binCount)&#123;</span><br><span class="line">                //尾插法,将p的下一个节点赋值给e</span><br><span class="line">                if((e = p.next) == null)&#123;</span><br><span class="line">                    p.next = newNode(hash,key,value,null)</span><br><span class="line">                    //如果链表长度大于等于7（binCount从0开始遍历），则进行红黑树转换相关工作</span><br><span class="line">                    if(binCount &gt;= TREEIF_THRESHOLD - 1)&#123;</span><br><span class="line">                        treeifyBin(tab,hash);</span><br><span class="line">                        break;</span><br><span class="line">                    &#125;</span><br><span class="line">                    //如果key相等则在链表中替换</span><br><span class="line">                    if(e.hash == hash &amp;&amp; ((k = e.key) == key) || (key != null &amp;&amp; key.equals(k)))</span><br><span class="line">                        break;</span><br><span class="line">                    //最后将e再赋给p；实现遍历效果</span><br><span class="line">                    p = e;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">           //如果循环完成之后  e!=null 代表需要替换e所指节点 Value</span><br><span class="line">            if (e != null) &#123; // existing mapping for key</span><br><span class="line">                ////保存原来的 Value 作为返回值</span><br><span class="line">                V oldValue = e.value;</span><br><span class="line">                </span><br><span class="line">                if (!onlyIfAbsent || oldValue == null)</span><br><span class="line">                    e.value = value;</span><br><span class="line">                afterNodeAccess(e);</span><br><span class="line">                return oldValue;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">  //操作数增加</span><br><span class="line">        ++modCount;</span><br><span class="line">      //如果size大于扩容阈值，则表示需要扩容</span><br><span class="line">        if (++size &gt; threshold)</span><br><span class="line">            resize();</span><br><span class="line">        afterNodeInsertion(evict);</span><br><span class="line">        return null;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="1-2-3-HashMap扩容流程"><a href="#1-2-3-HashMap扩容流程" class="headerlink" title="1.2.3 HashMap扩容流程"></a>1.2.3 HashMap扩容流程</h3><p>在上一小节中我们了解了HashMap添加元素的详细流程，在HashMap添加元素的过程中涉及到一个很重要的操作，那就是扩容。因为如果在HashMap内添加元素，当HashMap内部数组无法装载更多元素时，就需要扩大数组长度，以便放入更多元素，由于Java中数组是无法自动扩容的，这就需要创建一个新的数组替代已有的数组，在本小节内将详细了解HashMap的扩容机制。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">final Node&lt;K,V&gt;[] resize() &#123;</span><br><span class="line">        Node&lt;K,V&gt;[] oldTab = table;</span><br><span class="line">        //获取了原容量，如果哈希表为null则返回0，否则返回原长度</span><br><span class="line">        int oldCap = (oldTab == null) ? 0 : oldTab.length;</span><br><span class="line">        //获取原来的扩容阈值</span><br><span class="line">        int oldThr = threshold;</span><br><span class="line">        //定义两个变量保存新的容量和阈值</span><br><span class="line">        int newCap, newThr = 0;</span><br><span class="line">        //如果原容量长度大于0</span><br><span class="line">        if (oldCap &gt; 0) &#123;</span><br><span class="line">            //如果原容量大于最大容量，直接返回原哈希表，不在扩容</span><br><span class="line">            if (oldCap &gt;= MAXIMUM_CAPACITY) &#123;</span><br><span class="line">                //扩容阈值设置为Integer的最大值</span><br><span class="line">                threshold = Integer.MAX_VALUE;</span><br><span class="line">                return oldTab;</span><br><span class="line">            &#125;</span><br><span class="line">            //将原容量扩大两倍</span><br><span class="line">            //如果新容量小于最大容量，并且原容量大于等于默认容量</span><br><span class="line">            //将扩容的阈值扩大两倍</span><br><span class="line">            else if ((newCap = oldCap &lt;&lt; 1) &lt; MAXIMUM_CAPACITY &amp;&amp;</span><br><span class="line">                     oldCap &gt;= DEFAULT_INITIAL_CAPACITY)</span><br><span class="line">                newThr = oldThr &lt;&lt; 1; // double threshold</span><br><span class="line">        &#125;</span><br><span class="line">        else if (oldThr &gt; 0) // initial capacity was placed in threshold</span><br><span class="line">            newCap = oldThr;</span><br><span class="line">        else &#123;               // zero initial threshold signifies using defaults</span><br><span class="line">            //使用HashMap无参构造创建对象后，第一次扩容，会执行到此处</span><br><span class="line">            //容量赋值为初始容量</span><br><span class="line">            newCap = DEFAULT_INITIAL_CAPACITY;</span><br><span class="line">            //计算扩容阈值</span><br><span class="line">            newThr = (int)(DEFAULT_LOAD_FACTOR * DEFAULT_INITIAL_CAPACITY);</span><br><span class="line">        &#125;</span><br><span class="line">        //调用HashMap有参构造指定了容量和负载因子后第一次扩容时会执行到次数</span><br><span class="line">        if (newThr == 0) &#123;</span><br><span class="line">            //指定了容量和负载因子后，计算扩容原值</span><br><span class="line">            float ft = (float)newCap * loadFactor;</span><br><span class="line">            newThr = (newCap &lt; MAXIMUM_CAPACITY &amp;&amp; ft &lt; (float)MAXIMUM_CAPACITY ?</span><br><span class="line">                      (int)ft : Integer.MAX_VALUE);</span><br><span class="line">        &#125;</span><br><span class="line">        threshold = newThr;</span><br><span class="line">        @SuppressWarnings(&#123;&quot;rawtypes&quot;,&quot;unchecked&quot;&#125;)</span><br><span class="line">        Node&lt;K,V&gt;[] newTab = (Node&lt;K,V&gt;[])new Node[newCap];</span><br><span class="line">        table = newTab;</span><br><span class="line">        //如果原hash表不为null</span><br><span class="line">        if (oldTab != null) &#123;</span><br><span class="line">            //遍历hash表</span><br><span class="line">            for (int j = 0; j &lt; oldCap; ++j) &#123;</span><br><span class="line">                Node&lt;K,V&gt; e;</span><br><span class="line">                //如果某个位置上有元素</span><br><span class="line">                if ((e = oldTab[j]) != null) &#123;</span><br><span class="line">                    oldTab[j] = null;</span><br><span class="line">                    //如果这个位置上只是一个Node,没有链表</span><br><span class="line">                    if (e.next == null)</span><br><span class="line">                        //计算在新哈希表中的位置</span><br><span class="line">                        newTab[e.hash &amp; (newCap - 1)] = e;</span><br><span class="line">                    //如果该位置处是树</span><br><span class="line">                    else if (e instanceof TreeNode)</span><br><span class="line">                        ((TreeNode&lt;K,V&gt;)e).split(this, newTab, j, oldCap);</span><br><span class="line">                    else &#123; // preserve order</span><br><span class="line">                        //如果不是树，则复制该出的链表</span><br><span class="line">                        Node&lt;K,V&gt; loHead = null, loTail = null;</span><br><span class="line">                        Node&lt;K,V&gt; hiHead = null, hiTail = null;</span><br><span class="line">                        Node&lt;K,V&gt; next;</span><br><span class="line">                        do &#123;</span><br><span class="line">                            next = e.next;</span><br><span class="line">                            if ((e.hash &amp; oldCap) == 0) &#123;</span><br><span class="line">                                if (loTail == null)</span><br><span class="line">                                    loHead = e;</span><br><span class="line">                                else</span><br><span class="line">                                    loTail.next = e;</span><br><span class="line">                                loTail = e;</span><br><span class="line">                            &#125;</span><br><span class="line">                            else &#123;</span><br><span class="line">                                if (hiTail == null)</span><br><span class="line">                                    hiHead = e;</span><br><span class="line">                                else</span><br><span class="line">                                    hiTail.next = e;</span><br><span class="line">                                hiTail = e;</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125; while ((e = next) != null);</span><br><span class="line">                        if (loTail != null) &#123;</span><br><span class="line">                            loTail.next = null;</span><br><span class="line">                            newTab[j] = loHead;</span><br><span class="line">                        &#125;</span><br><span class="line">                        if (hiTail != null) &#123;</span><br><span class="line">                            hiTail.next = null;</span><br><span class="line">                            newTab[j + oldCap] = hiHead;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return newTab;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
+<p>哈希冲突：两个不相等的元素在hash表中的位置相同。</p>
+<p>解决hash冲突的办法：</p>
+<ol>
+<li>拉链法</li>
+<li>开放寻址<h3 id="1-2-3-HashMap扩容流程"><a href="#1-2-3-HashMap扩容流程" class="headerlink" title="1.2.3 HashMap扩容流程"></a>1.2.3 HashMap扩容流程</h3>在上一小节中我们了解了HashMap添加元素的详细流程，在HashMap添加元素的过程中涉及到一个很重要的操作，那就是扩容。因为如果在HashMap内添加元素，当HashMap内部数组无法装载更多元素时，就需要扩大数组长度，以便放入更多元素，由于Java中数组是无法自动扩容的，这就需要创建一个新的数组替代已有的数组，在本小节内将详细了解HashMap的扩容机制。<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">final Node&lt;K,V&gt;[] resize() &#123;</span><br><span class="line">        Node&lt;K,V&gt;[] oldTab = table;</span><br><span class="line">        //获取了原容量，如果哈希表为null则返回0，否则返回原长度</span><br><span class="line">        int oldCap = (oldTab == null) ? 0 : oldTab.length;</span><br><span class="line">        //获取原来的扩容阈值</span><br><span class="line">        int oldThr = threshold;</span><br><span class="line">        //定义两个变量保存新的容量和阈值</span><br><span class="line">        int newCap, newThr = 0;</span><br><span class="line">        //如果原容量长度大于0</span><br><span class="line">        if (oldCap &gt; 0) &#123;</span><br><span class="line">            //如果原容量大于最大容量，直接返回原哈希表，不在扩容</span><br><span class="line">            if (oldCap &gt;= MAXIMUM_CAPACITY) &#123;</span><br><span class="line">                //扩容阈值设置为Integer的最大值</span><br><span class="line">                threshold = Integer.MAX_VALUE;</span><br><span class="line">                return oldTab;</span><br><span class="line">            &#125;</span><br><span class="line">            //将原容量扩大两倍</span><br><span class="line">            //如果新容量小于最大容量，并且原容量大于等于默认容量</span><br><span class="line">            //将扩容的阈值扩大两倍</span><br><span class="line">            else if ((newCap = oldCap &lt;&lt; 1) &lt; MAXIMUM_CAPACITY &amp;&amp;</span><br><span class="line">                     oldCap &gt;= DEFAULT_INITIAL_CAPACITY)</span><br><span class="line">                newThr = oldThr &lt;&lt; 1; // double threshold</span><br><span class="line">        &#125;</span><br><span class="line">        else if (oldThr &gt; 0) // initial capacity was placed in threshold</span><br><span class="line">            newCap = oldThr;</span><br><span class="line">        else &#123;               // zero initial threshold signifies using defaults</span><br><span class="line">            //使用HashMap无参构造创建对象后，第一次扩容，会执行到此处</span><br><span class="line">            //容量赋值为初始容量</span><br><span class="line">            newCap = DEFAULT_INITIAL_CAPACITY;</span><br><span class="line">            //计算扩容阈值</span><br><span class="line">            newThr = (int)(DEFAULT_LOAD_FACTOR * DEFAULT_INITIAL_CAPACITY);</span><br><span class="line">        &#125;</span><br><span class="line">        //调用HashMap有参构造指定了容量和负载因子后第一次扩容时会执行到次数</span><br><span class="line">        if (newThr == 0) &#123;</span><br><span class="line">            //指定了容量和负载因子后，计算扩容原值</span><br><span class="line">            float ft = (float)newCap * loadFactor;</span><br><span class="line">            newThr = (newCap &lt; MAXIMUM_CAPACITY &amp;&amp; ft &lt; (float)MAXIMUM_CAPACITY ?</span><br><span class="line">                      (int)ft : Integer.MAX_VALUE);</span><br><span class="line">        &#125;</span><br><span class="line">        threshold = newThr;</span><br><span class="line">        @SuppressWarnings(&#123;&quot;rawtypes&quot;,&quot;unchecked&quot;&#125;)</span><br><span class="line">        Node&lt;K,V&gt;[] newTab = (Node&lt;K,V&gt;[])new Node[newCap];</span><br><span class="line">        table = newTab;</span><br><span class="line">        //如果原hash表不为null</span><br><span class="line">        if (oldTab != null) &#123;</span><br><span class="line">            //遍历hash表</span><br><span class="line">            for (int j = 0; j &lt; oldCap; ++j) &#123;</span><br><span class="line">                Node&lt;K,V&gt; e;</span><br><span class="line">                //如果某个位置上有元素</span><br><span class="line">                if ((e = oldTab[j]) != null) &#123;</span><br><span class="line">                    oldTab[j] = null;</span><br><span class="line">                    //如果这个位置上只是一个Node,没有链表</span><br><span class="line">                    if (e.next == null)</span><br><span class="line">                        //计算在新哈希表中的位置</span><br><span class="line">                        newTab[e.hash &amp; (newCap - 1)] = e;</span><br><span class="line">                    //如果该位置处是树</span><br><span class="line">                    else if (e instanceof TreeNode)</span><br><span class="line">                        ((TreeNode&lt;K,V&gt;)e).split(this, newTab, j, oldCap);</span><br><span class="line">                    else &#123; // preserve order</span><br><span class="line">                        //如果不是树，则复制该出的链表</span><br><span class="line">                        Node&lt;K,V&gt; loHead = null, loTail = null;</span><br><span class="line">                        Node&lt;K,V&gt; hiHead = null, hiTail = null;</span><br><span class="line">                        Node&lt;K,V&gt; next;</span><br><span class="line">                        do &#123;</span><br><span class="line">                            next = e.next;</span><br><span class="line">                            if ((e.hash &amp; oldCap) == 0) &#123;</span><br><span class="line">                                if (loTail == null)</span><br><span class="line">                                    loHead = e;</span><br><span class="line">                                else</span><br><span class="line">                                    loTail.next = e;</span><br><span class="line">                                loTail = e;</span><br><span class="line">                            &#125;</span><br><span class="line">                            else &#123;</span><br><span class="line">                                if (hiTail == null)</span><br><span class="line">                                    hiHead = e;</span><br><span class="line">                                else</span><br><span class="line">                                    hiTail.next = e;</span><br><span class="line">                                hiTail = e;</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125; while ((e = next) != null);</span><br><span class="line">                        if (loTail != null) &#123;</span><br><span class="line">                            loTail.next = null;</span><br><span class="line">                            newTab[j] = loHead;</span><br><span class="line">                        &#125;</span><br><span class="line">                        if (hiTail != null) &#123;</span><br><span class="line">                            hiTail.next = null;</span><br><span class="line">                            newTab[j + oldCap] = hiHead;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return newTab;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
 <p>纵观整个代码HashMap扩容时会存在以下几种情况：</p>
 <ul>
 <li>调用无参构造器时，实例化的HashMap底层数组是null，当第一次调用put()方法时进行扩容，初始容量为16。</li>
@@ -2965,50 +3011,6 @@
 <h2 id="1-6-各Map性能分析"><a href="#1-6-各Map性能分析" class="headerlink" title="1.6 各Map性能分析"></a>1.6 各Map性能分析</h2>对于 Map 的常用实现类而言，虽然 HashMap 和 Hashtable 的实现机制几乎一样，但由于Hashtable是一个古老的、线程安全的集合，因此 HashMap 通常比 Hashtable 要快。<br> TreeMap 通常比 HashMap、Hashtable 要慢（尤其在插入、删除 key-value 对时更慢），因为 TreeMap底层采用红黑树来管理 key-value 对（红黑树的每个节点就是一个 key-value 对）。 使用 TreeMap 有一个好处∶ TreeMap 中的 key-value 对总是处于有序状态，无须专门进行排序操作。当 TreeMap 被填充之后，就可以调用 keySet() ，取得由key 组成的 Set，然后使用 toArray()方法生成 key的数组，接下来使用 Arrays 的 binarySearch() 方法在已排序的数组中快速地查询对象。<br> 对于一般的应用场景，程序应该多考虑使用 HashMap，因为 HashMap 正是为快速查询设计的（HashMap 底层其实也是采用数组来存储 key-value 对）。但如果程序需要一个总是排好序的 Map 时，则可以考虑使用TreeMap。 LinkedHashMap 比 HashMap 慢一点，因为它需要维护链表来保持 Map中 key-value 时的添加顺序。</li>
 </ul>
 <h4 id="学习心得"><a href="#学习心得" class="headerlink" title="学习心得"></a>学习心得</h4><p>今天学习了heahmap添加元素put的底层实现。总体来说，不是很容易理解，在上课的时候听的是半懂，晚自习敲了几遍时得以掌握这块内容。今天又老了一岁，算起来今年都满十八了，果果也是。再次隆重地祝果果永远十八，永驻容颜、有成鱼落雁之容、闭月羞花之貌，赛过貂蝉，胜似西施，犹如洛神赋中髣髴兮若轻云之蔽月，飘飖兮若流风之回雪</p>
-]]></content>
-      <categories>
-        <category>XiAnTrain</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>培训心得&amp;emsp;&amp;emsp;[HTML5]</title>
-    <url>/2022/06/30/xianTrain3/</url>
-    <content><![CDATA[<p><em><strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;学习打卡第三天</strong></em><br>学习链接：<a href="https://www.yuque.com/docs/share/9ce7b3ef-6298-4b49-a687-39a524629130#">https://www.yuque.com/docs/share/9ce7b3ef-6298-4b49-a687-39a524629130?#</a> </p>
-<span id="more"></span>
-
-<h1 id="3-1新增元素"><a href="#3-1新增元素" class="headerlink" title="3.1新增元素"></a>3.1新增元素</h1><h2 id="3-1-1-新增的结构元素"><a href="#3-1-1-新增的结构元素" class="headerlink" title="3.1.1 新增的结构元素"></a>3.1.1 新增的结构元素</h2><h3 id="●-lt-section-gt-元素"><a href="#●-lt-section-gt-元素" class="headerlink" title="● &lt;section&gt;元素"></a>● <code>&lt;section&gt;</code>元素</h3><p><code>&lt;section&gt;</code>元素表示页面中的内容区块，如：页眉，页脚，章节等部分<br>代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt; </span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt; </span><br><span class="line">&lt;title&gt;section&lt;/title&gt; </span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;section&gt;</span><br><span class="line">    &lt;h1&gt;区域一&lt;/h1&gt;</span><br><span class="line">    &lt;p&gt;这里是区域一的内容&lt;/p&gt;</span><br><span class="line">  &lt;/section&gt;</span><br><span class="line"></span><br><span class="line">  &lt;section&gt;</span><br><span class="line">   &lt;h1&gt;区域二&lt;/h1&gt;</span><br><span class="line">    &lt;p&gt;这里是区域二的内容&lt;/p&gt;</span><br><span class="line">  &lt;/section&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="●-lt-article-gt-元素"><a href="#●-lt-article-gt-元素" class="headerlink" title="● &lt;article&gt;元素"></a>● <code>&lt;article&gt;</code>元素</h3><p><code>&lt;article&gt;</code>元素表示页面中的一块与上下文不相关的独立内容，如：新闻页中诸多文章中的某篇文章<br>代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt; </span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt; </span><br><span class="line">&lt;title&gt;article&lt;/title&gt; </span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">  &lt;article&gt;</span><br><span class="line">    &lt;h1&gt;两个“万岁”&lt;/h1&gt;</span><br><span class="line">    &lt;p&gt;“伟大、光荣、正确的中国共产党万岁！”&lt;/p&gt;</span><br><span class="line">		&lt;p&gt;“伟大、光荣、英雄的中国人民万岁！”&lt;/p&gt;</span><br><span class="line">  &lt;/article&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="●-lt-aside-gt-元素"><a href="#●-lt-aside-gt-元素" class="headerlink" title="● &lt;aside&gt;元素"></a>● <code>&lt;aside&gt;</code>元素</h3><p><code>&lt;aside&gt;</code>表示<code>&lt;article&gt;</code>元素的内容之外的，它的内容应该与附近内容相关<br>代码：</p>
-<figure class="highlight plaintext"><figcaption><span>html></span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt; </span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt; </span><br><span class="line">&lt;title&gt;aside&lt;/title&gt; </span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">  &lt;p&gt;神州十二号飞船成功升空&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">  &lt;aside&gt;</span><br><span class="line">    &lt;h4&gt;飞船抵达中国空间站&lt;/h4&gt;</span><br><span class="line">    &lt;p&gt;6月19日上午，神舟十二号飞船抵达距离天和核心舱200米的停留点，开始进行对接准备。</span><br><span class="line">      通过使用最先进的快速交会对接自动化技术</span><br><span class="line">      这一切都要归功于从一次次太空飞行中总结的的经验。&lt;/p&gt;</span><br><span class="line">  &lt;/aside&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="●-lt-header-gt-元素"><a href="#●-lt-header-gt-元素" class="headerlink" title="● &lt;header&gt;元素"></a>●<code> &lt;header&gt;</code>元素</h3><p><code>&lt;header&gt;</code>元素表示页面中的一个内容块或整个页面的标题<br>代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt; </span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt; </span><br><span class="line">&lt;title&gt;header&lt;/title&gt; </span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;article&gt;</span><br><span class="line">    &lt;header&gt;</span><br><span class="line">      &lt;h1&gt;飞船抵达中国空间站&lt;/h1&gt;</span><br><span class="line">    &lt;/header&gt;</span><br><span class="line">    &lt;p&gt;</span><br><span class="line">      6月19日上午，神舟十二号飞船抵达距离天和核心舱200米的停留点，开始进行对接准备。</span><br><span class="line">      通过使用最先进的快速交会对接自动化技术</span><br><span class="line">      这一切都要归功于从一次次太空飞行中总结的的经验。</span><br><span class="line">    &lt;/p&gt;</span><br><span class="line">  &lt;/article&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="●-lt-footer-gt-元素"><a href="#●-lt-footer-gt-元素" class="headerlink" title="● &lt;footer&gt;元素"></a>●<code> &lt;footer&gt;</code>元素</h3><p><code>&lt;footer&gt;</code>元素表示整个页面或页面中一个区域内的脚注，一般包含作者的基本信息<br>代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt; </span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;header&lt;/title&gt; </span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;article&gt;</span><br><span class="line">        &lt;header&gt;</span><br><span class="line">            &lt;h1&gt;飞船抵达中国空间站&lt;/h1&gt;</span><br><span class="line">        &lt;/header&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            6月19日上午，神舟十二号飞船抵达距离天和核心舱200米的停留点，开始进行对接准备。</span><br><span class="line">            通过使用最先进的快速交会对接自动化技术</span><br><span class="line">            这一切都要归功于从一次次太空飞行中总结的的经验。</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">    &lt;/article&gt;</span><br><span class="line">    &lt;footer&gt;</span><br><span class="line">        &lt;p&gt;&amp;copy;环球网&lt;/p&gt;</span><br><span class="line">      	&lt;p&gt;发表时间：7-12&lt;/p&gt;</span><br><span class="line">    &lt;/footer&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="●-lt-nav-gt-元素"><a href="#●-lt-nav-gt-元素" class="headerlink" title="● &lt;nav&gt;元素"></a>● <code>&lt;nav&gt;</code>元素</h3><p><code>&lt;nav&gt;</code>元素通常在内嵌套<code>&lt;a&gt;</code>标签表示页面的导航链接部分<br>代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt; </span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt; </span><br><span class="line">&lt;title&gt;nav&lt;/title&gt; </span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">  &lt;nav&gt;</span><br><span class="line">    &lt;a href=&quot;/html/&quot;&gt;HTML&lt;/a&gt; |</span><br><span class="line">    &lt;a href=&quot;/css/&quot;&gt;CSS&lt;/a&gt; |</span><br><span class="line">    &lt;a href=&quot;/js/&quot;&gt;JavaScript&lt;/a&gt; |</span><br><span class="line">    &lt;a href=&quot;/jquery/&quot;&gt;jQuery&lt;/a&gt;</span><br><span class="line">  &lt;/nav&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="●-lt-video-gt-元素"><a href="#●-lt-video-gt-元素" class="headerlink" title="● &lt;video&gt;元素"></a>● <code>&lt;video&gt;</code>元素</h3><p>  ○ <code>&lt;video&gt;</code>元素用来插入视频<br>  ○ <code>&lt;video&gt;</code>元素仅支持MP4，WebM，Ogg视频格式<br>  ○ 元素属性表：<br><img src="https://s2.loli.net/2022/07/04/s2cxC4aoOdI5mwN.jpg" align="center" width="800" height="250" div></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt; </span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt; </span><br><span class="line">&lt;title&gt;video&lt;/title&gt; </span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">  &lt;video width=&quot;320&quot; height=&quot;240&quot; controls&gt;</span><br><span class="line">    &lt;source src=&quot;movie.mp4&quot;  type=&quot;video/mp4&quot;&gt;</span><br><span class="line">    &lt;source src=&quot;movie.ogg&quot;  type=&quot;video/ogg&quot;&gt;</span><br><span class="line">    您的浏览器不支持 HTML5 video 标签。</span><br><span class="line">  &lt;/video&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="●-lt-audio-gt-元素"><a href="#●-lt-audio-gt-元素" class="headerlink" title="● &lt;audio&gt;元素"></a>● <code>&lt;audio&gt;</code>元素</h3><p>  ○ <code>&lt;audio&gt;</code>元素用来插入音频<br>  ○ <code>&lt;audio&gt;</code>元素仅支持Ogg和MP3格式<br>  ○ 元素属性表<br>  <img src="https://s2.loli.net/2022/07/04/uAO9yGsiZLHmkUq.jpg" align="center" width="800" height="250" div></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">  &lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt; </span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt; </span><br><span class="line">&lt;title&gt;audio&lt;/title&gt; </span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;audio controls&gt;</span><br><span class="line">    &lt;source src=&quot;music.ogg&quot; type=&quot;audio/ogg&quot;&gt;</span><br><span class="line">    &lt;source src=&quot;music.mp3&quot; type=&quot;audio/mpeg&quot;&gt;</span><br><span class="line">  您的浏览器不支持 audio 元素。</span><br><span class="line">  &lt;/audio&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="●-lt-mark-gt-元素"><a href="#●-lt-mark-gt-元素" class="headerlink" title="● &lt;mark&gt;元素"></a>● <code>&lt;mark&gt;</code>元素</h3><p><code>&lt;mark&gt;</code>元素主要用来在视觉上向用户呈现哪些需要突出显示或高亮显示的文字，一般用在搜索结果中向用户高亮显示搜索关键词<br>代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt; </span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt; </span><br><span class="line">&lt;title&gt;mark&lt;/title&gt; </span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;p&gt;神舟十二号航天员乘组圆满完成空间站阶段&lt;mark&gt;首次出舱&lt;/mark&gt;活动全部既定任务&lt;/p&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="●-lt-ruby-gt-元素"><a href="#●-lt-ruby-gt-元素" class="headerlink" title="● &lt;ruby&gt;元素"></a>● <code>&lt;ruby&gt;</code>元素</h3><p><code>&lt;ruby&gt;</code>表示中文注音或字符</p>
-<h3 id="●-lt-rt-gt-元素"><a href="#●-lt-rt-gt-元素" class="headerlink" title="● &lt;rt&gt;元素"></a>● <code>&lt;rt&gt;</code>元素</h3><p><code>&lt;rt&gt;</code>元素与<code>&lt;ruby&gt;</code>配合使用用来解释或发音</p>
-<h3 id="●-lt-rp-gt-元素"><a href="#●-lt-rp-gt-元素" class="headerlink" title="● &lt;rp&gt;元素"></a>● <code>&lt;rp&gt;</code>元素</h3><p><code>&lt;rp&gt;</code>元素与<code>&lt;ruby&gt;</code>一起使用，以定义不支持<code>&lt;ruby&gt;</code>元素的浏览器显示内容，以括号的形式出现如：汉字(Han Zi)<br>代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt; </span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt; </span><br><span class="line">&lt;title&gt;ruby,rt,rp</span><br><span class="line">  &lt;/title&gt; </span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;ruby&gt;</span><br><span class="line">  汉 &lt;rp&gt;(&lt;/rp&gt;&lt;rt&gt;Han&lt;/rt&gt;&lt;rp&gt;)&lt;/rp&gt;</span><br><span class="line">  字 &lt;rp&gt;(&lt;/rp&gt;&lt;rt&gt;zi&lt;/rt&gt;&lt;rp&gt;)&lt;/rp&gt;</span><br><span class="line">&lt;/ruby&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="●-lt-details-gt-元素"><a href="#●-lt-details-gt-元素" class="headerlink" title="● &lt;details&gt;元素"></a>● <code>&lt;details&gt;</code>元素</h3><p><code>&lt;details&gt;</code>元素表示用户要求得到的细节信息，与<code>&lt;summary&gt;</code>配合使用，<code>&lt;summary&gt;</code>提供标题或图例，用户点击标题时，会显示户细节信息，<code>&lt;summary&gt;</code>元素应该是<code>&lt;details&gt;</code>元素的第一个元素<br>代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;details&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;details&gt;</span><br><span class="line">        &lt;summary&gt;空间站&lt;/summary&gt;</span><br><span class="line">        空间站（space station）又称太空站、航天站。</span><br><span class="line">      	是一种在近地轨道长时间运行、可供多名航天员巡访、长期工作和生活的载人航天器。</span><br><span class="line">      	空间站分为单模块空间站和多模块空间站两种。</span><br><span class="line">      	单模块空间站可由航天运载器一次发射入轨，多模块空间站则由航天运载器分批将各模块送入轨道，在太空中将各模块组装而成。</span><br><span class="line">      	在空间站中要有人能够生活的一切设施，空间站不具备返回地球的能力。</span><br><span class="line">    &lt;/details&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<h1 id="3-2-全局属性"><a href="#3-2-全局属性" class="headerlink" title="3.2 全局属性"></a>3.2 全局属性</h1><h2 id="3-2-1-contentEditable属性"><a href="#3-2-1-contentEditable属性" class="headerlink" title="3.2.1 contentEditable属性"></a>3.2.1 contentEditable属性</h2><p>contentEditable属性由微软开发并被其它浏览器反编译投入引用的一个全局属性，该属性允许用户编辑元素内容，该属性是一个布尔值的属性，可以被指定false或true<br>该属性默认inherit（继承）状态，属性为true时，元素被指定为允许编辑；属性为false时，元素被指定为不允许编辑状态；未指定值时，则由inherit状态决定，如果父元素是可编辑元素，则该元素也可编辑<br>在编辑完成后，如果想要保存其中的内容，只能把该元素的innerHTML发送到服务器端进行保存，目前还没有特别的API来保存编辑后的元素内容<br>代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;contenteditable&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;ul contenteditable=&quot;true&quot;&gt;</span><br><span class="line">        &lt;li&gt;这是预编译内容&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;这是预编译内容&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;这是预编译内容&lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="3-2-2-designMode属性"><a href="#3-2-2-designMode属性" class="headerlink" title="3.2.2 designMode属性"></a>3.2.2 designMode属性</h2><p>designModel属性用来指定整个页面是否可编辑，当页面可编辑时，页面中任何支持contenteditable属性的元素都变成可编辑状态。该属性只能在JavaScript脚本里被编辑修改，该属性有两个值 “on”或“off”，当属性被指定为“on”时，页面为可编辑状态，为“off”时，页面不可编辑<br>代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;designMode&lt;/title&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        document.designMode=&quot;on&quot;;</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">        &lt;li&gt;这是原有内容&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;这是原有内容&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;这是原有内容&lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">    &lt;a href=&quot;javascript:void(0)&quot;&gt;链接&lt;/a&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="3-2-3-hidden属性"><a href="#3-2-3-hidden属性" class="headerlink" title="3.2.3 hidden属性"></a>3.2.3 hidden属性</h2><p>在HTML 5中，所有的元素都允许使用一个hidden属性。该属性类似于input元素中的 hidden元素，功能是通知浏览器不渲染该元素。使该元素处干不可见状态。但是元素中的内容还是浏览器创建的，也就是说页面装载后允许使用JavaScript脚本将该属性取消，取消后该元素变为可见状态，同时元素中的内容也即时显示出来。Hidden属性是一个布尔值的属性。当设为true时，元素处于不可见状态;当设为false时，元素处于可见状态</p>
 ]]></content>
       <categories>
         <category>XiAnTrain</category>
