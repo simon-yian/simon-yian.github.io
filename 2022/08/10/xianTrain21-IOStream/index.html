@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+  
+  <meta name="baidu-site-verification" content="code-J1Qg17G6wT" />
+  <title>IO流 - simon·yian&#39;Blog</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  
+  
+
+    <!-- Site Verification -->
+    <meta name="baidu-site-verification" content="code-J1Qg17G6wT" />
+
+  <link rel="shortcut icon" href="/images/head/head.jpg" type="image/png" />
+  <meta name="description" content="在日常的开发中，经常会遇到对本地文件进行操作的功能，例如将数据库中的数据导出成Excel并保存在本地，或者将本地的文本文件读入程序中，再或者在本地新建目录删除目录等等。这些都需要对本地文件进行读写。Java为开发者提供了File类用于操作本地的文件，File类是java.io包下代表与平台无关的文件和目录，也就是说，如果希望在程序中操作文件和目录，都可以通过File类来完成。值得指出的是，不管是文">
+<meta property="og:type" content="article">
+<meta property="og:title" content="IO流">
+<meta property="og:url" content="https://simon-yian.github.io/2022/08/10/xianTrain21-IOStream/index.html">
+<meta property="og:site_name" content="simon·yian&#39;Blog">
+<meta property="og:description" content="在日常的开发中，经常会遇到对本地文件进行操作的功能，例如将数据库中的数据导出成Excel并保存在本地，或者将本地的文本文件读入程序中，再或者在本地新建目录删除目录等等。这些都需要对本地文件进行读写。Java为开发者提供了File类用于操作本地的文件，File类是java.io包下代表与平台无关的文件和目录，也就是说，如果希望在程序中操作文件和目录，都可以通过File类来完成。值得指出的是，不管是文">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s1.ax1x.com/2022/08/10/v3vBtg.png">
+<meta property="og:image" content="https://s1.ax1x.com/2022/08/10/v3vvND.png">
+<meta property="og:image" content="https://s1.ax1x.com/2022/08/10/v3v0AS.png">
+<meta property="og:image" content="https://s1.ax1x.com/2022/08/10/v3vDhQ.png">
+<meta property="og:image" content="https://s1.ax1x.com/2022/08/10/v3vjAO.png">
+<meta property="article:published_time" content="2022-08-10T12:03:41.000Z">
+<meta property="article:modified_time" content="2022-08-10T12:20:16.000Z">
+<meta property="article:author" content="simon·yi an">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s1.ax1x.com/2022/08/10/v3vBtg.png">
+  <link rel="stylesheet" href="https://unpkg.com/highlight.js@9.15.8/styles/atom-one-dark.css" crossorigin>
+  <link rel="stylesheet" href="/lib/mdui_043tiny/css/mdui.css">
+  <link rel="stylesheet" href="/lib/iconfont/iconfont.css">
+  <link rel="stylesheet" href="/lib/fancybox/css/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css">
+  
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_2421060_8z08qcz5sq3.css">
+  
+  <link rel="stylesheet" href="/css/style.css?v=1660134032089">
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="mdui-drawer-body-left">
+  
+  <div id="nexmoe-background">
+    <div class="nexmoe-bg" style="background-image: url(/images/background/1.jpg)"></div>
+    <div class="nexmoe-small" style="background-image: url(/images/background/lihui2.jpg)"></div>
+    <div class="mdui-appbar mdui-shadow-0">
+      <div class="mdui-toolbar">
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+        <div class="mdui-toolbar-spacer"></div>
+        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+        <a href="/" title="simon·yi an" class="mdui-btn mdui-btn-icon"><img src="/images/head/call.jpg" alt="simon·yi an"></a>
+       </div>
+    </div>
+  </div>
+  <div id="nexmoe-header">
+      <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="simon·yi an">
+            <img src="/images/head/call.jpg" alt="simon·yi an" alt="simon·yi an">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div class="nexmoe-count-item"><span>文章</span>34 <div class="item-radius"></div><div class="item-radius item-right"></div> </div>
+        <div class="nexmoe-count-item"><span>标签</span>0<div class="item-radius"></div><div class="item-radius item-right"></div></div>
+        <div class="nexmoe-count-item"><span>分类</span>8<div class="item-radius"></div><div class="item-radius item-right"></div></div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-meishi"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/archives.html" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-hanbao1"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" target="_blank" rel="noopener" href="https://simon-yian.com" title="我的朋友">
+            <i class="mdui-list-item-icon nexmoefont icon-cola"></i>
+            <div class="mdui-list-item-content">
+                我的朋友
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+  
+  
+<!-- 站内搜索 -->
+
+<div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search" >
+        <form id="search-form">
+            <label><input type="text" id="local-search-input" name="q" results="0" placeholder="站内搜索" class="input form-control" autocomplete="off" autocorrect="off"/></label>
+            <!-- 清空/重置搜索框 -->
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+        </form>
+    </div>
+    <div id="local-search-result"></div> <!-- 搜索结果区 -->
+    <!-- <p class='no-result'></p> 无匹配时显示，注意在 CSS 中设置默认隐藏 -->
+</div>
+
+
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="http://wpa.qq.com/msgrd?v=3&uin=127752475&site=qq&menu=yes" target="_blank" mdui-tooltip="{content: 'QQ'}" style="color: rgb(64, 196, 255);background-color: rgba(64, 196, 255, .1);">
+            <i class="nexmoefont icon-QQ"></i>
+        </a><a class="mdui-ripple" href="mailto:1281238306@qq.com" target="_blank" mdui-tooltip="{content: 'mail'}" style="color: rgb(249,8,8);background-color: rgba(249,8,8,.1);">
+            <i class="nexmoefont icon-mail-fill"></i>
+        </a><a class="mdui-ripple" href="https://i.csdn.net/#/user-center/profile?spm=1011.2124.3001.5111" target="_blank" mdui-tooltip="{content: 'CSDN'}" style="color: rgb(199,29,35);background-color: rgba(199,29,35,.1);">
+            <i class="nexmoefont icon-csdn"></i>
+        </a><a class="mdui-ripple" href="https://www.cnblogs.com/" target="_blank" mdui-tooltip="{content: '博客园'}" style="color: rgb(66, 214, 29);background-color: rgba(66, 214, 29, .1);">
+            <i class="nexmoefont icon-bokeyuan"></i>
+        </a><a class="mdui-ripple" href="https://github.com/xiguayaaaaa/" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a><a class="mdui-ripple" href="https://gitee.com" target="_blank" mdui-tooltip="{content: 'gitee'}" style="color: rgb(255, 255, 255);background-color: rgb(199,29,35);">
+            <i class="nexmoefont icon-mayun"></i>
+        </a>
+    </div>
+</div>
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章分类</h3>
+    <div class="nexmoe-widget">
+
+      <ul class="category-list">
+
+        
+
+
+        
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/LeetCode/">LeetCode</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/Python笔记/">Python笔记</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/VMware/">VMware</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/XiAnTrain/">XiAnTrain</a>
+          <span class="category-list-count">18</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/XiAnTrain-java高级篇/">XiAnTrain - java高级篇</a>
+          <span class="category-list-count">3</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/algorithm/">algorithm</a>
+          <span class="category-list-count">2</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/fatal/">fatal</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/hexo/">hexo</a>
+          <span class="category-list-count">3</span>
+        </li>
+
+        
+      </ul>
+
+    </div>
+  </div>
+
+
+  
+  
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章归档</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a><span class="archive-list-count">10</span></li></ul>
+    </div>
+  </div>
+
+
+<style>
+.nexmoe-widget .archive-list-count{
+	position : absolute;
+	right: 15px;
+	top:9px;
+	color: #DDD;
+}
+</style>
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">最新文章</h3>
+    <div class="nexmoe-widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/08/10/xianTrain21-IOStream/">IO流</a>
+          </li>
+        
+          <li>
+            <a href="/2022/08/10/xianTrain20-Exception/">异常</a>
+          </li>
+        
+          <li>
+            <a href="/2022/08/10/xianTrain19-genericParadigm/">泛型</a>
+          </li>
+        
+          <li>
+            <a href="/2022/08/03/xianTrain18-HeahMap/">xianTrain18-HeahMap</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/29/xianTrain17-ListAddQueue/">学习心得[List和Queue]</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2022 simon·yi an
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/tangyuxian/hexo-theme-tangyuxian" target="_blank">Tangyuxian</a><br/>
+        <a href="http://beian.miit.gov.cn" target="_blank">所谓伊人，在水一方</a><br/>
+        
+        <div style="font-size: 12px">
+            <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            本站总访问量  <a id="busuanzi_value_site_pv"></a> 次<br />
+            本站访客数<a id="busuanzi_value_site_uv"></a>人次
+        </div>
+        
+        
+    </div>
+
+</div><!-- .nexmoe-drawer -->
+
+  </div>
+  <div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        <div class="nexmoe-post">
+    
+        <div class="nexmoe-post-cover"
+             style="padding-bottom: 24.305555555555554%;">
+            <img data-src="/images/background/1.jpg" data-sizes="auto" alt="IO流" class="lazyload">
+            <h1>IO流</h1>
+        </div>
+    
+
+        <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2022年08月10日</a>
+    <a><i class="nexmoefont icon-areachart"></i>4.4k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 19 分钟</a>
+</div>
+
+        <div class="nexmoe-post-right">
+            
+        </div>
+
+        <article>
+            <p>在日常的开发中，经常会遇到对本地文件进行操作的功能，例如将数据库中的数据导出成Excel并保存在本地，或者将本地的文本文件读入程序中，再或者在本地新建目录删除目录等等。这些都需要对本地文件进行读写。<br>Java为开发者提供了File类用于操作本地的文件，File类是java.io包下代表与平台无关的文件和目录，也就是说，如果希望在程序中操作文件和目录，都可以通过File类来完成。值得指出的是，不管是文件还是目录都是使用File来操作的，File能新建、删除、重命名文件和目录，File不能访问文件内容本身。如果需要访问文件内容本身，则需要使用输入/输出流。</p>
+<p>14.1 访问文件和目录<br>File类可以使用文件路径字符串来创建File实例，该文件路径字符串既可以是绝对路径，也可以是相对路径。一旦创建了File对象后，就可以调用File对象的方法来访问，File类提供了很多方法来操作文件和目录，下面列出一些比较常用的方法。</p>
+<p>14.1.1访问文件名<br>方法    描述<br>String getName()    返回File对象的文件名或者路径名<br>String getPath()    返回File对象对应的路径名<br>File getAbsoluteFile()    返回File对象的绝对路径<br>String getAbsolutePath()    返回File对象的绝对路径名<br>String getParent()    返回File对象的父目录<br>boolean renameTo(File newName)    重命名文件<br>下面通过示例来学习以上方法的使用：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">package cn;</span><br><span class="line"></span><br><span class="line">import java.io.File;</span><br><span class="line"></span><br><span class="line">public class bytecollege &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        String path = &quot;E:/ByteCollege/study/Node.exe&quot;;</span><br><span class="line">        File file = new File(path);</span><br><span class="line">        File newFile = new File(&quot;E:/ByteCollege/study/Code.exe&quot;);</span><br><span class="line">        //返回File对象的文件名或者路径名</span><br><span class="line">        System.out.println(file.getName());</span><br><span class="line">        //返回File对象对应的路径名</span><br><span class="line">        System.out.println(file.getPath());</span><br><span class="line">        //返回File对象的绝对路径</span><br><span class="line">        System.out.println(file.getAbsoluteFile());</span><br><span class="line">        //返回File对象的绝对路径名</span><br><span class="line">        System.out.println(file.getAbsolutePath());</span><br><span class="line">        //返回File对象的父亲目录</span><br><span class="line">        System.out.println(file.getParent());</span><br><span class="line">        //重命名文件</span><br><span class="line">        file.renameTo(newFile);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>运行后的结果为：<br><a target="_blank" rel="noopener" href="https://imgtu.com/i/v3vBtg"><img data-fancybox="gallery" data-sizes="auto" data-src="https://s1.ax1x.com/2022/08/10/v3vBtg.png" alt="v3vBtg.png" class="lazyload"></a></p>
+<p>14.1.2 文件检测相关方法<br>方法    描述<br>boolean exists()    判断File对象所对应的文件或目录是否存在<br>boolean canWrite()    判断文件和目录是否可写<br>boolean canRead()    判断文件和目录是否可读<br>boolean isFile()    判断是否是文件<br>boolean isDirectory()    判断是否是目录<br>boolean isAbsolute()    判断是否是绝对路径<br>boolean isHidden()    判断文件是否隐藏<br>下面通过示例来学习以上方法的使用：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">package cn.bytecollege.IODemo;</span><br><span class="line"></span><br><span class="line">import java.io.File;</span><br><span class="line"></span><br><span class="line">public class FileDemo &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        File file = new File(&quot;D:/BYTE/study/Node.txt&quot;);</span><br><span class="line">        //判断File对象所对应的文件或目录是否存在</span><br><span class="line">        System.out.println(file.exists());</span><br><span class="line">        //判断文件和目录是否可写</span><br><span class="line">        System.out.println(file.canWrite());</span><br><span class="line">        //判断文件和目录是否可读</span><br><span class="line">        System.out.println(file.canRead());</span><br><span class="line">        //判断是否是文件</span><br><span class="line">        System.out.println(file.isFile());</span><br><span class="line">        //判断是否是目录</span><br><span class="line">        System.out.println(file.isDirectory());</span><br><span class="line">        //判断是否是绝对路径</span><br><span class="line">        System.out.println(file.isAbsolute());</span><br><span class="line">        //判断文件是否隐藏</span><br><span class="line">        System.out.println(file.isHidden());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>14.1.2 获取文件信息<br>方法    描述<br>long lastModified()    最后一次修改时间，返回值为修改时间的毫秒数<br>long lenght()    获取文件长度，单位为字节<br>下面通过示例来学习以上方法的使用：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">package cn.bytecollege.IODemo;</span><br><span class="line"></span><br><span class="line">import java.io.File;</span><br><span class="line"></span><br><span class="line">public class FileDemo2 &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        File file = new File(&quot;D:/BYTE/study/Node.txt&quot;);</span><br><span class="line">        System.out.println(file.lastModified());</span><br><span class="line">        System.out.println(file.length());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>运行后的结果为：<br><a target="_blank" rel="noopener" href="https://imgtu.com/i/v3vvND"><img data-fancybox="gallery" data-sizes="auto" data-src="https://s1.ax1x.com/2022/08/10/v3vvND.png" alt="v3vvND.png" class="lazyload"></a><br>14.1.3 目录操作<br>方法    描述<br>boolean mkdir()    创建新目录<br>boolean mkdirs()    创建多层目录<br>String[] list()    列出File对象子文件名和路径名，返回String数组<br>File[] listFiles()    列出File对象的索引子文件和路径<br>static File[] listRoots()    获取系统根路径<br>boolean delete()    删除文件或者路径，如果有多层路径，调用1次只删除最后一层目录，并且目录必须为空<br>下面通过示例来学习以上方法的使用：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">package cn.bytecollege.IODemo;</span><br><span class="line"></span><br><span class="line">import java.io.File;</span><br><span class="line"></span><br><span class="line">public class FileDemo3 &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        File file = new File(&quot;D:/BYTE/study/Node.txt&quot;);</span><br><span class="line">        File file2 = new File(&quot;D:/BYTE/study/code&quot;);</span><br><span class="line">        //创建新目录</span><br><span class="line">        file2.mkdir();</span><br><span class="line">        //创建多层目录</span><br><span class="line">        file2.mkdirs();</span><br><span class="line">        //列出File对象子文件名和路径名，返回String数组</span><br><span class="line">        file2.list();</span><br><span class="line">        //列出File对象的索引子文件和路径</span><br><span class="line">        file.listFiles();</span><br><span class="line">        //获取系统根目录</span><br><span class="line">        file.listRoots();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>14.1.4 获取分区大小<br>方法    描述<br>long getTotalSpace()    获取分区大小<br>long getFreeSpace()    获取分区空闲大小<br>long getUsableSpace()    获取分区可用大小<br>package cn.bytecollege.IODemo;</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">import java.io.File;</span><br><span class="line"></span><br><span class="line">public class FileDemo4 &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        String path = &quot;D:/&quot;;</span><br><span class="line">        File file = new File(path);</span><br><span class="line">        //获取分区大小</span><br><span class="line">        System.out.println(file.getTotalSpace());</span><br><span class="line">        //获取分区空闲大小</span><br><span class="line">        System.out.println(file.getFreeSpace());</span><br><span class="line">        //获取分区可用空间大小</span><br><span class="line">        System.out.println(file.getUsableSpace());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>运行后的结果为：</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/v3v0AS"><img data-fancybox="gallery" data-sizes="auto" data-src="https://s1.ax1x.com/2022/08/10/v3v0AS.png" alt="v3v0AS.png" class="lazyload"></a></p>
+<p>14.2 Java中的I/O流<br>Java中I/O流是实现输入/输出的基础，可以方便的实现输入和输出操作，Java中把不同的输入/输出源抽象表述为“流”，通过流的方式运行Java程序使用相同的方式来访问不同的输入/输出源，这里的流可以理解为字节序列，通俗一点说就是一串0和1。</p>
+<p>14.2.1 流的分类<br>流的分类可以从以下两个角度划分：</p>
+<p>流向：按照流的流向来分可以分为输入流和输出流，其中输入流只能从中读取数据，而不能向其写入数据；输出流只能向其写入数据，而不能从中读取数据。<br>读取单元：按照读取单元划分，流可以分为字节流和字符流，顾名思义所谓字节流就是输入和输出的基本单位都是字节，而字符流输入输出的基本单元都是字符。<br>上面提到的输入和输出都涉及到方向的问题，这里的输入和输出都是从程序运行所在的内存角度划分的，也就是说从硬盘或者网络读取到程序运行内存中的流叫做输入流，反之从内存中写入硬盘的流则叫做输出流，换句话说，输入流和输出流都是以当前程序运行的内存作为参照物。<br>Java中输入流主要使用InputStream和Reader作为基类，而输出流主要使用OutputStream和Writer作为基类，它们都是一些抽象类，无法直接创建实例。</p>
+<p>14.2.2 流的概念模型<br>Java把所有设备里的有序数据抽象成流模型，简化了输入/输出处理，理解了流的概念模型也就了解了Java IO。<br>Java中有关IO流的类都是从如下4个抽象类中派生的。</p>
+<p>InputStream/Reader：所有输入流的基类，前者是字节输入流，后者是字符输入流。<br>OutputStream/Writer：所有输出流的基类，前者是字节输出流，后者是字符输出流。<br>对于InputStream和Reader而言，它们把输入设备抽象成一个“水管”，这个水管里的每个“水滴”依次排列，如下图所示：<br><a target="_blank" rel="noopener" href="https://imgtu.com/i/v3vDhQ"><img data-fancybox="gallery" data-sizes="auto" data-src="https://s1.ax1x.com/2022/08/10/v3vDhQ.png" alt="v3vDhQ.png" class="lazyload"></a><br>字节流和字符流的处理方式其实非常相似，只是它们处理的输入/输出单位不同而已。输入流使用隐式的记录指针来表示当前正准备从哪个“水滴”开始读取，每当程序从InputStream或Reader里取出一个或多个“水滴”后，记录指针自动向后移动；除此之外，InputStream和Reader里都提供一些方法来控制记录指针的移动。<br>对于OutputStream和Writer而言，它们同样把输出设备抽象成一个“水管”，只是这个水管里没有任何水滴。<br>当执行输出时，程序相当于依次把“水滴”放入到输出流的水管中，输出流同样采用隐式的记录指针来标识当前水滴即将放入的位置，每当程序向OutputStream或Writer里输出一个或多个水滴后，记录指针自动向后移动。</p>
+<p>14.2.3 字节流</p>
+<p>14.2.3.1 InputStream<br>InputStream是输入流的基类，读取的最小单元是字节。由于InputStream是抽象类，所以其本身并不能创建实例来执行输入。但它们将成为所有输入流的模板，所以它们的方法是所有输入流都可使用的方法。<br>InputStream里包含如下方法：</p>
+<p>int read()：从输入流中读取单个字节（相当于从如图所示的水管中取出一滴水），返回所读取的字节数据（字节数据可直接转换为int类型）。<br>int read(byte[]b)：从输入流中最多读取b.length个字节的数据，并将其存储在字节数组b中，返回实际读取的字节数。<br>int read(byte[]b,int off,int len)：从输入流中最多读取len个字节的数据，并将其存储在数组b中，放入数组b中时，并不是从数组起点开始，而是从off位置开始，返回实际读取的字节数。<br>InputStream有个子类用于读取文件的输入流：FileInputStream，下面的程序将示范FileInputStream的使用。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">package cn.bytecollege.IODemo;</span><br><span class="line"></span><br><span class="line">import java.io.File;</span><br><span class="line">import java.io.FileInputStream;</span><br><span class="line">import java.io.IOException;</span><br><span class="line"></span><br><span class="line">public class FileDemo5 &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        String path = &quot;D:/BYTE/study/Node.txt&quot;;</span><br><span class="line">        FileInputStream fileInputStream = null;</span><br><span class="line">        File file = new File(path);</span><br><span class="line">        try&#123;</span><br><span class="line">            fileInputStream = new FileInputStream(file);</span><br><span class="line">            byte[] ch = new byte[1024];</span><br><span class="line">            int length;</span><br><span class="line">            while ((length = fileInputStream.read(ch)) != -1)&#123;</span><br><span class="line">                System.out.println(new String(ch));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; catch (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>运行后的结果为：<br><a target="_blank" rel="noopener" href="https://imgtu.com/i/v3vjAO"><img data-fancybox="gallery" data-sizes="auto" data-src="https://s1.ax1x.com/2022/08/10/v3vjAO.png" alt="v3vjAO.png" class="lazyload"></a></p>
+<p>14.2.3.2 OutputStream<br>OutputStream是输出流的基类，输入的最小单元是字节。它提供了如下方法：</p>
+<p>void write(int c)：将指定的字节输出到输出流中，其中c既可以代表字节，也可以代表字符。<br>void write(byte[] buf)：将字节数组中的数据输出到指定输出流中。<br>void write(byte[] buf,int off,int len)：将字节数组中从off位置开始，长度为len的字节/字符输出到输出流中。<br>同样OutputStream也有子类用于输入文件流：FileOutputStream，下面的程序将示范FileOutputStream的使用。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">package cn.bytecollege.IODemo;</span><br><span class="line"></span><br><span class="line">import java.io.File;</span><br><span class="line">import java.io.FileOutputStream;</span><br><span class="line">import java.io.IOException;</span><br><span class="line"></span><br><span class="line">public class FileDemo6 &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        File file = new File(&quot;D:/BYTE/study/byte.txt&quot;);</span><br><span class="line">        try&#123;</span><br><span class="line">            //创建文件</span><br><span class="line">            file.createNewFile();</span><br><span class="line">        &#125; catch (IOException  e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        try&#123;</span><br><span class="line">            //实例化FileOutputStream</span><br><span class="line">            FileOutputStream  fileOutputStream = new FileOutputStream(file);;</span><br><span class="line">            String str = &quot;Bulid Your Technical Excellence&quot;;</span><br><span class="line">            for (int i = 0;i&lt;str.length();i++) &#123;</span><br><span class="line">                int b = (int)str.charAt(i);</span><br><span class="line">                fileOutputStream.write(b);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; catch (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>接下来，同时使用输入流和输出流来复制文件。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">package cn.bytcollege.io.test;</span><br><span class="line"></span><br><span class="line">import java.io.*;</span><br><span class="line"></span><br><span class="line">public class CopyUtil &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line"></span><br><span class="line">            String input = &quot;D:/BYTE/study/Node.txt&quot;;</span><br><span class="line">            String output = &quot;F:/Node.txt&quot;;</span><br><span class="line">            System.out.println(&quot;----------------copy  start-----------------------&quot;);</span><br><span class="line">            long start = System.currentTimeMillis();</span><br><span class="line">            copy(input,output);</span><br><span class="line">            long end = System.currentTimeMillis();</span><br><span class="line">            System.out.println(&quot;-----------------copy over!-----------------------&quot;);</span><br><span class="line">            System.out.println(&quot;------------------&quot;+(end-start)+&quot;-----------------&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        public static void copy(String input,String output) &#123;</span><br><span class="line">            try&#123;</span><br><span class="line">                FileInputStream fis = new FileInputStream(input);</span><br><span class="line">                FileOutputStream fos = new FileOutputStream(output);</span><br><span class="line">                BufferedInputStream bis = new BufferedInputStream(fis);</span><br><span class="line">                BufferedOutputStream bos = new BufferedOutputStream(fos);</span><br><span class="line">                byte[] bytes = new byte[1024*10];</span><br><span class="line">                int i = 0;</span><br><span class="line">                while ((i=bis.read(bytes))&gt;-1)&#123;</span><br><span class="line">                    bos.write(bytes);</span><br><span class="line">                &#125;</span><br><span class="line">                bis.colse();</span><br><span class="line">                bos.close();</span><br><span class="line">            &#125; catch (FileNotFoundException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125; catch (IOException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>使用Java的IO流执行输出时，不要忘记关闭输出流，关闭输出流除了可以保证流的物理资源被回收之外，可能还可以将输出流缓冲区中的数据flush到物理节点里（因为在执行close()方法之前，自动执行输出流的flush()方法）</p>
+<p>14.2.4 字符流</p>
+<p>14.2.4.1 Reader<br>在Reader里包含如下3个方法：</p>
+<p>int read()：从输入流中读取单个字符（相当于如图所示的水管中取出一滴水），返回所读取的字符数据（字符数据可直接转换为int类型）。<br>int read(char[]cbuf)：从输入流中最多读取cbuf.length个字符的数据，并将其存储在字符数组cbuf中，返回实际读取的字符数。<br>int read(char[]cbuf,int off,int len)：从输入流中最多读取len个字符的数据，并将其存储在字符数组cbuf中，放入数组cbuf中时，并不是从数组起点开始，而是从off位置开始，返回实际读取的字符数。<br>对比InputStream和Reader所提供的方法，就不难发现这两个基类的功能基本是一样的，只是InputStream读取的最小单位是字节，而Reader读取的最小单位是字符。<br>Reader也有一个子类FileReader用于实现字符的读取，下面通过示例来学习FileReader的用法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">package cn.bytecollege.IODemo;</span><br><span class="line"></span><br><span class="line">import java.io.*;</span><br><span class="line"></span><br><span class="line">public class ReadDemo &#123;</span><br><span class="line">    public static void main(String[] args) throws IOException &#123;</span><br><span class="line">        Reader reader = new FileReader(&quot;d:/BYTE/study/Node.txt&quot;);</span><br><span class="line"></span><br><span class="line">        int i = 0;</span><br><span class="line">        char[] chars = new char[8];</span><br><span class="line">        while((i=reader.read(chars))&gt;-1)&#123;</span><br><span class="line">            System.out.println(new String(chars,0,i));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>14.2.4.2 Writer<br>Writer抽象类中的方法和OutputStream方法类似，只需要将方法参数中的byte[]更换成char[]即可，字符流直接以字符作为操作单位，所以Writer可以用字符串来代替字符数组，即以String对象作为参数。Writer里还包含如下两个方法。</p>
+<p>void write(String str)：将str字符串里包含的字符输出到指定输出流中。<br>void write(String str,int off,int len)：将str字符串里从off位置开始，长度为len的字符输出到指定输出流中。<br>同样Writer也有一个子类FileWriter用于实现字符的输出，下面通过示例来学习Writer的子类FileWirter的用法。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">package cn.bytecollege.IODemo;</span><br><span class="line"></span><br><span class="line">import java.io.*;</span><br><span class="line"></span><br><span class="line">public class WriterDemo &#123;</span><br><span class="line">    public static void main(String[] args) throws IOException &#123;</span><br><span class="line">        Reader reader = new FileReader(&quot;d:/BYTE/study/Node.txt&quot;);</span><br><span class="line">        Writer writer = new FileWriter(&quot;F:/2.txt&quot;);</span><br><span class="line">        int i = 0;</span><br><span class="line">        char[] chars = new char[8];</span><br><span class="line">        while((i=reader.read(chars))&gt;-1)&#123;</span><br><span class="line">            writer.write(chars);</span><br><span class="line">        &#125;</span><br><span class="line">        writer.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>14.3 对象序列化<br>对象序列化的目标是将对象保存到磁盘中，或允许在网络中直接传输对象。对象序列化机制允许把内存中的Java对象转换成平台无关的二进制流，从而允许把这种二进制流持久地保存在磁盘上，通过网络将这种二进制流传输到另一个网络节点。其他程序一旦获得了这种二进制流（无论是从磁盘中获取的，还是通过网络获取的），都可以将这种二进制流恢复成原来的Java对象。<br>序列化机制允许将实现序列化的Java对象转换成字节序列，这些字节序列可以保存在磁盘上，或通过网络传输，以备以后重新恢复成原来的对象。序列化机制使得对象可以脱离程序的运行而独立存在。对象的序列化（Serialize）指将一个Java对象写入IO流中，与此对应的是，对象的反序列化（Deserialize）则指从IO流中恢复该Java对象。<br>如果需要让某个对象支持序列化机制，则必须让它的类是可序列化的（继承serializable接口，该接口是一个标记接口，实现该接口无须实现任何方法，它只是表明该类的实例是可序列化的）<br>使用Serializable来实现序列化非常简单，主要让目标类实现Serializable标记接口即可，无须实现任何方法。<br>一旦某个类实现了Serializable接口，该类的对象就是可序列化的，程序可以通过如下两个步骤来序列化该对象。</p>
+<p>创建一个ObjectOutputStream<br>调用ObjectOutputStream对象的writeObject()方法输出可序列化对象<br>下面通过示例来学了对象的序列化和反序列化：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">package cn.bytecollege.IODemo;</span><br><span class="line"></span><br><span class="line">import java.io.Serializable;</span><br><span class="line"></span><br><span class="line">public class Student implements Serializable &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">package cn.bytecollege.IODemo;</span><br><span class="line"></span><br><span class="line">import java.io.*;</span><br><span class="line"></span><br><span class="line">public class Test &#123;</span><br><span class="line">    public static void main(String[] args) throws IOException, ClassNotFoundException &#123;</span><br><span class="line">        File file = new File(&quot;student.txt&quot;);</span><br><span class="line">        ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(file));</span><br><span class="line">        Student student = new Student();</span><br><span class="line">        oos.writeObject(student);</span><br><span class="line"></span><br><span class="line">        oos.close();</span><br><span class="line"></span><br><span class="line">        ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file));</span><br><span class="line">        Student newStudent = (Student)ois.readObject();</span><br><span class="line">        ois.close();</span><br><span class="line">        System.out.println(newStudent);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>注意：<br>1.如果修改类是仅修改了方法，则反序列化不受任何影响。不需要修改serialVersionUID的值<br>2.如果修改类时仅仅修改了静态变量或者transient实例变量，则反序列化不受任何影响。不需要修改serialVersionUID的值。<br>3.如果修改类时修改了非瞬时的实例变量，则可能导致序列化版本不兼容。如果对象流中的对象和新类中包含同名的实例变量，而实例变量类型不同，则反序列化失败，类定义应该更新serialVersionUID类变量的值。如果对象流中的对象比新类中包含更多的实例变量，则多出的实例变量值被忽略，序列化版本可以兼容，类定义可以不更新serialVersionUID的值。如果新类比对象流中的对象包含更多的实例变量，则序列化版本也可以兼容，类定义可以不更新serialVersionUID的值。但反序列化的对的新对象中多出的实例变量值都是null。</p>
+
+        </article>
+
+        
+            
+  <div class="nexmoe-post-copyright">
+    <strong>本文作者：</strong>simon·yi an<br>
+    
+    <strong>本文链接：</strong><a href="https://simon-yian.github.io/2022/08/10/xianTrain21-IOStream/" title="https:&#x2F;&#x2F;simon-yian.github.io&#x2F;2022&#x2F;08&#x2F;10&#x2F;xianTrain21-IOStream&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;simon-yian.github.io&#x2F;2022&#x2F;08&#x2F;10&#x2F;xianTrain21-IOStream&#x2F;</a><br>
+
+    
+      <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+    
+  </div>
+
+
+        
+
+        <div class="nexmoe-post-meta nexmoe-rainbow">
+    
+        <a class="nexmoefont icon-appstore-fill -link" href="/categories/XiAnTrain-java%E9%AB%98%E7%BA%A7%E7%AF%87/">XiAnTrain - java高级篇</a>
+    
+    
+</div>
+
+    <div class="nexmoe-post-footer">
+        <section class="nexmoe-comment">
+    <div class="valine"></div>
+<script src="https://unpkg.com/leancloud-storage/dist/av-min.js"></script>
+<script src='https://unpkg.com/valine@1.3.9/dist/Valine.min.js'></script>
+<script>
+    // 使用方法 https://valine.js.org/quickstart.html
+    new Valine({
+        el: '.valine',
+        appId: 'r5zxC0st0DDjPA9auXzMV7HY-gzGzoHsz',
+        appKey: '3bqCsovpyfTPHUzTHovd3V3V'
+    })
+</script>
+</section>
+    </div>
+</div>
+
+
+        <div class="nexmoe-post-right">
+          
+            <div class="nexmoe-fixed">
+              <div class="nexmoe-tool">
+                <a href="#" aria-label="回到顶部" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+              </div>
+            </div>
+          
+        </div>
+    </div>
+  </div>
+  <div id="nexmoe-pendant">
+    <div class="nexmoe-drawer mdui-drawer nexmoe-pd" id="drawer">
+        
+            <div class="nexmoe-pd-item">
+                <div class="clock">
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="memory"></div>
+        <div class="needle" id="hours"></div>
+        <div class="needle" id="minutes"></div>
+        <div class="needle" id="seconds"></div>
+        <div class="clock_logo">
+
+        </div>
+
+    </div>
+<style>
+    .clock {
+        background-color: #ffffff;
+        width: 70vw;
+        height: 70vw;
+        max-width: 70vh;
+        max-height: 70vh;
+        border: solid 2.8vw #242424;
+        position: relative;
+        overflow: hidden;
+        border-radius: 50%;
+        box-sizing: border-box;
+        box-shadow: 0 1.4vw 2.8vw rgba(0, 0, 0, 0.8);
+        zoom:0.2
+    }
+
+    .memory {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform-origin: center;
+    }
+
+    .memory:nth-child(1) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(0deg) translateY(-520%);
+    }
+
+    .memory:nth-child(2) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(6deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(3) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(12deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(4) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(18deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(5) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(24deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(6) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(30deg) translateY(-520%);
+    }
+
+    .memory:nth-child(7) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(36deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(8) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(42deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(9) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(48deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(10) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(54deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(11) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(60deg) translateY(-520%);
+    }
+
+    .memory:nth-child(12) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(66deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(13) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(72deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(14) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(78deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(15) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(84deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(16) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(90deg) translateY(-520%);
+    }
+
+    .memory:nth-child(17) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(96deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(18) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(102deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(19) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(108deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(20) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(114deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(21) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(120deg) translateY(-520%);
+    }
+
+    .memory:nth-child(22) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(126deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(23) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(132deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(24) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(138deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(25) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(144deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(26) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(150deg) translateY(-520%);
+    }
+
+    .memory:nth-child(27) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(156deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(28) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(162deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(29) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(168deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(30) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(174deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(31) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(180deg) translateY(-520%);
+    }
+
+    .memory:nth-child(32) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(186deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(33) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(192deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(34) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(198deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(35) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(204deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(36) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(210deg) translateY(-520%);
+    }
+
+    .memory:nth-child(37) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(216deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(38) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(222deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(39) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(228deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(40) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(234deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(41) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(240deg) translateY(-520%);
+    }
+
+    .memory:nth-child(42) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(246deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(43) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(252deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(44) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(258deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(45) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(264deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(46) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(270deg) translateY(-520%);
+    }
+
+    .memory:nth-child(47) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(276deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(48) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(282deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(49) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(288deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(50) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(294deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(51) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(300deg) translateY(-520%);
+    }
+
+    .memory:nth-child(52) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(306deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(53) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(312deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(54) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(318deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(55) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(324deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(56) {
+        background-color: #424242;
+        width: 2%;
+        height: 8%;
+        transform: translate(-50%, -50%) rotate(330deg) translateY(-520%);
+    }
+
+    .memory:nth-child(57) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(336deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(58) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(342deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(59) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(348deg) translateY(-1461%);
+    }
+
+    .memory:nth-child(60) {
+        background-color: #949494;
+        width: 1%;
+        height: 3%;
+        transform: translate(-50%, -50%) rotate(354deg) translateY(-1461%);
+    }
+
+    .needle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform-origin: center;
+    }
+
+    .needle#hours {
+        background-color: #1f1f1f;
+        width: 4%;
+        height: 30%;
+        transform-origin: center 75%;
+        transform: translate(-50%, -75%);
+    }
+
+    .needle#hours.moving {
+        transition: transform 150ms ease-out;
+    }
+
+    .needle#hours:after {
+        content: '';
+        background-color: #1f1f1f;
+        width: 4vw;
+        height: 4vw;
+        max-width: 4vh;
+        max-height: 4vh;
+        display: block;
+        position: absolute;
+        top: 75%;
+        left: 50%;
+        box-sizing: border-box;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .needle#minutes {
+        background-color: #1f1f1f;
+        width: 2%;
+        height: 45%;
+        transform-origin: center 75%;
+        transform: translate(-50%, -75%);
+    }
+
+    .needle#minutes.moving {
+        transition: transform 150ms ease-out;
+    }
+
+    .needle#minutes:after {
+        content: '';
+        background-color: #1f1f1f;
+        width: 4vw;
+        height: 4vw;
+        max-width: 4vh;
+        max-height: 4vh;
+        display: block;
+        position: absolute;
+        top: 75%;
+        left: 50%;
+        box-sizing: border-box;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .needle#seconds {
+        background-color: #cb2f2f;
+        width: 1%;
+        height: 50%;
+        transform-origin: center 75%;
+        transform: translate(-50%, -75%);
+    }
+
+    .needle#seconds.moving {
+        transition: transform 150ms ease-out;
+    }
+
+    .needle#seconds:after {
+        content: '';
+        background-color: #cb2f2f;
+        width: 2.5vw;
+        height: 2.5vw;
+        max-width: 2.5vh;
+        max-height: 2.5vh;
+        display: block;
+        position: absolute;
+        top: 75%;
+        left: 50%;
+        box-sizing: border-box;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .clock_logo{
+        width: 10vw;
+        height: 10vw;
+        max-width: 10vh;
+        max-height: 10vh;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        box-sizing: border-box;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+    @media (min-width: 100vh) {
+        .clock {
+            border: solid 2.8vh #242424;
+            box-shadow: 0 1.4vh 2.8vh rgba(0, 0, 0, 0.8);
+        }
+    }
+
+</style>
+
+
+
+
+
+            </div>
+        
+            <div class="nexmoe-pd-item">
+                <div class="qweather" >
+    <div id="he-plugin-standard"></div>
+    <div class="qweather-logo">
+
+    </div>
+
+</div>
+<style>
+    .qweather{
+        position: relative;
+    }
+    .qweather-logo{
+        position: absolute;
+        right: 0;
+        top: -15px;
+        width: 40px;
+        height: 40px;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+</style>
+<script>
+  WIDGET = {
+    "CONFIG": {
+      "layout": "2",
+      "width": "260",
+      "height": "230",
+      "background": "5",
+      "dataColor": "e67249",
+      "borderRadius": "15",
+      "key": "f74d1e1690e6432d801e97fa2f05a162"
+    }
+  }
+</script>
+<script src="https://widget.qweather.net/standard/static/js/he-standard-common.js?v=2.0"></script>
+
+            </div>
+        
+</div>
+<style>
+    .nexmoe-pd {
+        left: auto;
+        top: 40px;
+        right: 0;
+    }
+    .nexmoe-pd-item{
+       display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+</style>
+
+  </div>
+  <script src="https://unpkg.com/lazysizes@5.1.0/lazysizes.min.js"></script>
+<script src="https://cdn.staticfile.org/highlight.js/10.0.0/highlight.min.js"></script>
+<script src="https://unpkg.com/mdui@0.4.3/dist/js/mdui.min.js?v=1"></script>
+
+<script>
+	hljs.initHighlightingOnLoad();
+</script>
+
+<script src="https://unpkg.com/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="/lib/fancybox/js/jquery.fancybox.min.js"></script>
+
+
+<script src="/js/app.js?v=1660134032090"></script>
+
+<script src="https://unpkg.com/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
+<script>
+	$(".justified-gallery").justifiedGallery({
+		rowHeight: 160,
+		margins: 10,
+	});
+</script>
+
+  
+
+
+
+
+
+<!-- hexo injector body_end start -->
+<script src="/js/clock.js"></script>
+
+<script src="https://unpkg.com/clipboard@2.0.8/dist/clipboard.min.js"></script>
+
+<script src="/lib/codeBlock/codeBlockFuction.js"></script>
+
+<script src="/lib/codeBlock/codeLang.js"></script>
+
+<script src="/lib/codeBlock/codeCopy.js"></script>
+
+<script src="/lib/codeBlock/codeShrink.js"></script>
+
+<link rel="stylesheet" href="/lib/codeBlock/matery.css">
+
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+<script src="/js/search.js"></script>
+
+<script src="/js/webapp.js"></script>
+<!-- hexo injector body_end end --></body>
+</html>
+
+<script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/f1c2dcc3.js","daovoice")</script>
+<script>
+  daovoice('init', {
+    app_id: "f1c2dcc3"
+  });
+  daovoice('update');
+</script>
+

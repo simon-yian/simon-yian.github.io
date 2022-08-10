@@ -5,7 +5,7 @@
 <head>
   
   <meta name="baidu-site-verification" content="code-J1Qg17G6wT" />
-  <title>文章归档：2021/11 - simon·yian&#39;Blog</title>
+  <title>泛型 - simon·yian&#39;Blog</title>
   <meta charset="UTF-8">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
@@ -16,11 +16,15 @@
     <meta name="baidu-site-verification" content="code-J1Qg17G6wT" />
 
   <link rel="shortcut icon" href="/images/head/head.jpg" type="image/png" />
-  <meta property="og:type" content="website">
-<meta property="og:title" content="simon·yian&#39;Blog">
-<meta property="og:url" content="https://simon-yian.github.io/archives/2021/11/index.html">
+  <meta name="description" content="在集合框架的内容中，对泛型已经有了初步的了解。泛型是JDK 1.5中新增的特性，在集合框架中使用，某种程度上是为了让集合记住其保存的元素的类型。在泛型产生之前，集合中存入一个元素，集合并不知道存入元素的数据类型，集合会把所有对象全部当做Object类型处理。当从集合中取出元素以后，就需要对元素进行向下转型，这样很容易引发ClassCastException异常。当Java新增了泛型支持以后，集合就">
+<meta property="og:type" content="article">
+<meta property="og:title" content="泛型">
+<meta property="og:url" content="https://simon-yian.github.io/2022/08/10/xianTrain19-genericParadigm/index.html">
 <meta property="og:site_name" content="simon·yian&#39;Blog">
+<meta property="og:description" content="在集合框架的内容中，对泛型已经有了初步的了解。泛型是JDK 1.5中新增的特性，在集合框架中使用，某种程度上是为了让集合记住其保存的元素的类型。在泛型产生之前，集合中存入一个元素，集合并不知道存入元素的数据类型，集合会把所有对象全部当做Object类型处理。当从集合中取出元素以后，就需要对元素进行向下转型，这样很容易引发ClassCastException异常。当Java新增了泛型支持以后，集合就">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-08-10T11:56:35.000Z">
+<meta property="article:modified_time" content="2022-08-10T11:59:40.000Z">
 <meta property="article:author" content="simon·yi an">
 <meta name="twitter:card" content="summary">
   <link rel="stylesheet" href="https://unpkg.com/highlight.js@9.15.8/styles/atom-one-dark.css" crossorigin>
@@ -31,7 +35,7 @@
   
     <link rel="stylesheet" href="//at.alicdn.com/t/font_2421060_8z08qcz5sq3.css">
   
-  <link rel="stylesheet" href="/css/style.css?v=1660134032149">
+  <link rel="stylesheet" href="/css/style.css?v=1660134032093">
 <meta name="generator" content="Hexo 5.4.0"></head>
 
 <body class="mdui-drawer-body-left">
@@ -270,101 +274,122 @@
   </div>
   <div id="nexmoe-content">
     <div class="nexmoe-primary">
-        <section class="nexmoe-posts">
+        <div class="nexmoe-post">
     
-    <div class="nexmoe-post">
-        <a href="/2021/11/27/SpringFrame/">
-            
-                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 24.305555555555554%;">
-                    <img data-src="/images/background/1.jpg" data-sizes="auto" alt="Spring知识点梳理：" class="lazyload">
-                    <h1>Spring知识点梳理：</h1>
-                </div>
-            
-        </a>
-        
-        <div class="nexmoe-post-meta nexmoe-rainbow">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2021年11月27日</a>
-            <a><i class="nexmoefont icon-areachart"></i>10.9k 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 60 分钟</a>
+        <div class="nexmoe-post-cover"
+             style="padding-bottom: 24.305555555555554%;">
+            <img data-src="/images/background/1.jpg" data-sizes="auto" alt="泛型" class="lazyload">
+            <h1>泛型</h1>
         </div>
-        
-        <article>
-            
-                <img src="https://i.loli.net/2021/11/15/vKFjo15HqAybLmE.png" align="center" width="600" height="400" div>
-            
-        </article>
-    </div>
     
-    <div class="nexmoe-post">
-        <a href="/2021/11/25/LeetCode102/">
+
+        <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2022年08月10日</a>
+    <a><i class="nexmoefont icon-areachart"></i>3.7k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 16 分钟</a>
+</div>
+
+        <div class="nexmoe-post-right">
             
-                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 24.305555555555554%;">
-                    <img data-src="/images/background/1.jpg" data-sizes="auto" alt="LeetCode102 二叉树的层序遍历" class="lazyload">
-                    <h1>LeetCode102 二叉树的层序遍历</h1>
-                </div>
-            
-        </a>
-        
-        <div class="nexmoe-post-meta nexmoe-rainbow">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2021年11月25日</a>
-            <a><i class="nexmoefont icon-areachart"></i>625 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 3 分钟</a>
         </div>
-        
+
         <article>
-            
-                <p>层序遍历（宽度优先遍历）<br>实则将非递归先序遍历中的栈（stack）转化成队列（queue）</p>
-            
+            <p>在集合框架的内容中，对泛型已经有了初步的了解。泛型是JDK 1.5中新增的特性，在集合框架中使用，某种程度上是为了让集合记住其保存的元素的类型。在泛型产生之前，集合中存入一个元素，集合并不知道存入元素的数据类型，集合会把所有对象全部当做Object类型处理。当从集合中取出元素以后，就需要对元素进行向下转型，这样很容易引发ClassCastException异常。<br>当Java新增了泛型支持以后，集合就可以记住所添加元素的数据类型。并且在编译时可以检查被添加元素的数据类型，当试图添加和泛型规定的类型不一致的元素时会发生编译错误。<br>本章内将介绍泛型类、泛型接口、以及类型通配符、泛型方法等内容。</p>
+<p>12.1 泛型入门<br>在集合框架的内容中可以得知，集合中只能保存引用类型的数据，换句话说集合中只能保存对象。但是当把一个对象添加进集合时，集合并不确定被添加元素的类型，这是因为集合的设计者并不确定开发者会在集合中添加何种类型的元素，因此，设计者将所有的对象都当做Object对象处理，但是这么做会带来如下两个问题：</p>
+<p>集合对添加元素的类型没有限制，当存放时不会出现问题，但是在获取元素时，就有可能引发转型异常，例如一个集合中只能保存Student类型的对象，因为集合并不会对元素的类型进行检查，因此即使添加一个Teacher对象也不会出现问题。但是当取出元素时，将Object类型向下转型时，Teacher类型的对象转型时就会发生异常<br>当把对象放进集合时，集合会认为添加的类型都是Object类型的对象。取出时通常需要向下转型，这样无形中增加了编程的复杂度。<br>12.1.1 泛型<br>JDK5以后，Java引入了泛型，即“参数化类型”。允许程序在创建集合时指定集合元素的类型（允许程序在创建对象或者调用方法时动态的指定）。例如：List<Integer>中只能添加Integer类型的对象，如果试图添加一个字符串时，将会发生编译错误。也就是说Java中参数化类型被称为泛型。</Integer></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">package cn.bytecollege;</span><br><span class="line">import java.util.ArrayList;</span><br><span class="line">import java.util.List;</span><br><span class="line">public class GenericList &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//创建一个指保存Integer类型的List集合</span><br><span class="line">		List&lt;Integer&gt; list = new ArrayList&lt;Integer&gt;();</span><br><span class="line">		//向list中添加数据</span><br><span class="line">		list.add(20);</span><br><span class="line">		list.add(30);</span><br><span class="line">		list.add(40);</span><br><span class="line">		//向list中添加字符串，编译错误</span><br><span class="line">//		list.add(&quot;Byte科技&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>在上例中，创建了一个List集合，并且该List中只能保存Integer类型的对象（在List后增加了尖括号，在括号内放了Integer类型，此时这个尖括号连同里面的Integer类型表明此List只能存放Integer类型的对象）。在代码第13行试图在List中添加一个字符串，此时将发生编译错误。</p>
+<p>12.1.2 菱形语法<br>在Java 7以前，如果使用带泛型的接口、类定义变量，那么调用构造器创建对象时构造器后面也必须带泛型，例如下面的语句：</p>
+<p>List<String> list = new ArrayList<String>();<br>在Java 7以前必须要这么书写，但是从Java 7以后，Java允许构造器后不需要带完整的泛型信息，只需要给出一对尖括号即可，Java编译器可以自动推断出尖括号中是什么数据类型。因此，上面的代码可以进行简化：</String></String></p>
+<p>List<String> list = new ArrayList&lt;&gt;();<br>当将尖括号内的数据类型省略后，两个尖括号合并在一起很像是一个“菱形”，因此这种语法也被称为“菱形”语法。目的就是为了简化代码。</String></p>
+<p>12.2 深入泛型<br>所谓泛型，就是允许在定义类、接口、方法时使用类型形参，这个类型形参将在声明变量、创建对象、调用方法时动态地指定（即传入实际的类型参数，也可称为类型实参）。Java 5 改写了集合框架中的全部接口和类，为这些接口、类增加了泛型支持，从而可以在声明集合变量、创建集合对象时传入类型实参，这就是在前面程序中看到的 List<String></String></p>
+<p>12.2.1 泛型类和泛型接口<br>下面是List接口的代码片段：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public interface List&lt;E&gt; extends Collection&lt;E&gt; &#123;</span><br><span class="line">    boolean add(E e);</span><br><span class="line">    E get(int index);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>List的接口声明比较简单，尖括号中的内容就是泛型的实质：允许在定义接口、类时声明类型形参，类型形参在整个接口、类中当成类型使用，几乎所有可使用普通类型的地方都可以使用这种类型形参。<br>例如使用List时，如果E形参传入String类型，则该List只能存放String类型的数据。<br>在开发中可以为任何类、接口增加泛型声明。下面定义一个自定义泛型Student类。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">package cn.bytecollege;</span><br><span class="line"></span><br><span class="line">public class Student&lt;T&gt; &#123;</span><br><span class="line">	private T t;</span><br><span class="line">	public Student(T t) &#123;</span><br><span class="line">		this.t = t;</span><br><span class="line">	&#125;</span><br><span class="line">	public T getT() &#123;</span><br><span class="line">		return t;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setT(T t) &#123;</span><br><span class="line">		this.t = t;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public T getInfo() &#123;</span><br><span class="line">		return this.t;</span><br><span class="line">	&#125;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//由于传给T形参的类型是String，因此构造器中只能是String类型</span><br><span class="line">		Student&lt;String&gt; s1 = new Student&lt;&gt;(&quot;张无忌&quot;);</span><br><span class="line">		System.out.println(s1.getInfo());</span><br><span class="line">		//由于传给T形参的是Double，所以构造器中只能是Double类型</span><br><span class="line">		Student&lt;Double&gt; s2 = new Student&lt;&gt;(2.0);</span><br><span class="line">		System.out.println(s2.getInfo());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>上例中定义了一个带泛型声明的Student<T>类，使用Student<T>类是就可以为T类型传入实际类型。<br>定义泛型接口的方法和泛型类的方法类似，只需要在接口名后添加<T>即可。</T></T></T></p>
+<p>12.3 泛型通配符<br>当使用一个泛型类型时（包括声明变量和创建对象两种情况），都应该为这个泛型类传入一个类型实参，如果没有传入类型实际参数，编译器就会提出泛型警告。例如如下示例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args) &#123;</span><br><span class="line">	List list = new ArrayList();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面的代码中创建了一个ArrayList()集合，代码没有任何问题，但是由于List是一个有泛型声明的接口，此处使用List接口时没有传入实际类型参数，这将引起泛型警告。因此，要为List接口传入实际的类型参数——因为List集合里的元素类型是不确定的。修改上述代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args) &#123;</span><br><span class="line">	List&lt;String&gt; list = new ArrayList();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Java中可以使用类型通配符，类型通配符是一个问号（?）,将一个问号做为实际类型传给List集合，写作：List&lt;?&gt;，意思是元素类型未知的List。它的元素类型可以匹配任何类型。修改上例代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args) &#123;</span><br><span class="line">	List&lt;?&gt; list = new ArrayList();</span><br><span class="line">    //编译错误</span><br><span class="line">	list.add(1);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>但这种带通配符的List仅表示它是各种泛型List的父类，并不能把元素加入到其中，上例中第4行就会发生编译错误，因为程序无法确定集合中元素的类型，所以不能向其中添加对象。查看List<E>接口源码可以发现，add()方法有参数类型E作为集合的元素类型，所以传给add的参数必须是E类对象或者其子类的对象，但是在上例中不知道E是什么类型，所以无法将任何对象添加进集合。</E></p>
+<p>12.3.1 通配符上限<br>如果想让上例中的代码正常工作，就需要学习通配符的上下限，也就是说我们得给定统配符的上限或者下限，本小节内，将介绍通配符上限的内容。<br>Java 泛型不仅允许在使用通配符形参时设定上限，而且可以在定义类型形参时设定上限，用于表示传给该类型形参的实际类型要么是该上限类型，要么是该上限类型的子类。下面程序示范了这种用法。<br>所谓通配符的上限就是规定泛型通配符在传入化类型时只能是某个类本身或者其子类。下面通过示例来学习：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">package cn.bytecollege;</span><br><span class="line">public class Teacher&lt;T extends Number&gt; &#123;</span><br><span class="line">&#125;</span><br><span class="line">package cn.bytecollege;</span><br><span class="line"></span><br><span class="line">public class TeacherTest &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		Teacher&lt;Number&gt; t1 = new Teacher&lt;&gt;();	</span><br><span class="line">		Teacher&lt;Integer&gt; t2 =new Teacher&lt;&gt;();</span><br><span class="line">		Teacher&lt;Double&gt; t3 = new Teacher&lt;&gt;();</span><br><span class="line">        //编译错误，因为String和Number不存在继承关系</span><br><span class="line">		Teacher&lt;String&gt; t4 = new Teacher&lt;&gt;();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在上例中定义了一个泛型类，并且设置了泛型的上限Number，也就是说，当创建Teacher对象指定泛型类型时，只能传入Number类型或者Number类型的子类，在测试类中，分别传入了Number类型，Integer类型和Double类型，因为这些类型都是Number类型的子类，但是当传入String类型时，因为String并不是Number类型的子类，所以第9行代码会出现编译错误。所以设置通配符上限的目的就是限定参数化类型的传入值，只能是限定类型或者限定类型的子类。</p>
+<p>12.4 泛型方法<br>前面介绍了在定义类、接口时可以使用类型形参，在该类的方法定义和成员变量定义、接口的方法定义中，这些类型形参可被当成普通类型来用。在另外一些情况下，定义类、接口时没有使用类型形参，但定义方法时想自己定义类型形参，这也是可以的，Java 5 还提供了对泛型方法的支持。 </p>
+<p>12.4.1 定义泛型方法<br>所谓泛型方法就是在声明方法时定义一个或多个类型形参，泛型方法的语法格式如下：</p>
+<p>修饰符 <T> 返回值类型 方法名(形参列表){<br>     //方法体<br>}<br>下面通过实例学习泛型方法的定义。</T></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">package cn.bytecollege;</span><br><span class="line">/**</span><br><span class="line"> * 本例将演示泛型方法的定义及使用</span><br><span class="line"> * @author MR.W</span><br><span class="line"> *</span><br><span class="line"> */</span><br><span class="line">public class Master &#123;</span><br><span class="line">	public &lt;T&gt; T say(T t) &#123;</span><br><span class="line">		return t;</span><br><span class="line">	&#125;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		Master m = new Master();</span><br><span class="line">		String s = m.say(&quot;hello&quot;);</span><br><span class="line">		System.out.println(s);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>在上面的程序中第8行定义了一个泛型方法，并且指定了say()方法的参数和返回值都是指定的参数化类型，在main()方法中调用say()方法时，由于传入了一个String类型的参数，因此该方法的返回值类型也是指定的String类型，如果在第13行中将say的方法参数修改为整型，那么这个方法的返回值类型也会变成Integer类型，此时再使用String类型的变量接收返回值就会编译出错。<br>需要着重注意的是，在类和接口中定义的泛型，泛型的作用域是在当前类中，而方法中定义的泛型其作用域只是在当前方法。</p>
+<p>12.4.2 通配符下限<br>在上一节中学习了通配符的上限，同样也可以规定，通配符的下限。一旦规定了通配符下限，则只能传入指定类型的父类。在TreeSet的构造方法中就是用了通配符下限。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public class TreeSet&lt;E&gt; extends AbstractSet&lt;E&gt;</span><br><span class="line">    implements NavigableSet&lt;E&gt;, Cloneable, java.io.Serializable</span><br><span class="line">    public TreeSet(Comparator&lt;? super E&gt; comparator) &#123;</span><br><span class="line">            this(new TreeMap&lt;&gt;(comparator));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在上面的程序中就是用了通配符的下限，也就是说在使用该构造方法时，?所能传入的类型只能是E的父类，而E的类型则是在创建TreeSet对象时指定的对象。请看下面的示例。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">package cn.bytecollege;</span><br><span class="line"></span><br><span class="line">import java.util.Comparator;</span><br><span class="line">import java.util.TreeSet;</span><br><span class="line"></span><br><span class="line">public class TreeSetDemo &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		TreeSet&lt;String&gt; set = new TreeSet&lt;&gt;(new Comparator&lt;String&gt;() &#123;</span><br><span class="line">			@Override</span><br><span class="line">			public int compare(String o1, String o2) &#123;</span><br><span class="line">				return 0;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>通过上面的代码可以看出Comparator接口中定义了泛型下限，下限是创建TreeSet时规定了泛型是String类型，因此Comparator接口中的泛型只能是String或者其父类，如果修改为Integer类型，则会编译出错。</p>
+<p>12.5 泛型擦除<br>在严格的泛型代码里，带泛型声明的类总应该带着类型参数。但为了与老的 Java 代码保持—致，也允许在使用带泛型声明的类时不指定实际的类型参数。如果没有为这个泛型类指定实际的类型参数，则该类型参数被称作 raw type（原始类型），默认是声明该类型参数时指定的第一个上限类型。<br> 当把一个具有泛型信息的对象赋给另一个没有泛型信息的变量时，所有在尖括号之间的类型信息都将被扔掉。比如一个 List<String>类型被转换为 List，则该 List 对集合元素的类型检查变成了类型参数的上限（即 Object）。下面程序示范了这种擦除。</String></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">package cn.bytecollege;</span><br><span class="line"></span><br><span class="line">public class Bird&lt;T extends CharSequence&gt; &#123;</span><br><span class="line">	private T type;</span><br><span class="line"></span><br><span class="line">	public T getType() &#123;</span><br><span class="line">		return type;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public void setType(T type) &#123;</span><br><span class="line">		this.type = type;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>上面的程序中定义了一个泛型类，并且泛型规定了上限，只能是CharSequence的子类</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">package cn.bytecollege;</span><br><span class="line"></span><br><span class="line">public class BirdTest &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		Bird&lt;String&gt; b = new Bird&lt;String&gt;();</span><br><span class="line">		b.setType(&quot;麻雀&quot;);</span><br><span class="line">		//泛型擦除</span><br><span class="line">		Bird b2 =b;</span><br><span class="line">		//此时泛型已经擦除了，编译器只知道getType的类型是CharSequence</span><br><span class="line">		//并不知道是具体哪个子类，因此编译出错</span><br><span class="line">//		String s = b2.getType();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>在测试类中创建了Bird类的对象b，并且制定了泛型为String类型，将b赋值给不带泛型的对象b2，此时编译器就会丢失b对象的泛型信息，即所有尖括号中的信息都会丢失。在代码11行，调用getType()方法时，此时编译器只知道该方法的返回值是CharSequence，但是具体是哪个子类就不清楚了，所以出现编译错误。</p>
+
         </article>
-    </div>
-    
-    <div class="nexmoe-post">
-        <a href="/2021/11/15/BloomFilter/">
-            
-                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 24.305555555555554%;">
-                    <img data-src="/images/background/1.jpg" data-sizes="auto" alt="布隆过滤器（bloom filter）" class="lazyload">
-                    <h1>布隆过滤器（bloom filter）</h1>
-                </div>
-            
-        </a>
+
         
+            
+  <div class="nexmoe-post-copyright">
+    <strong>本文作者：</strong>simon·yi an<br>
+    
+    <strong>本文链接：</strong><a href="https://simon-yian.github.io/2022/08/10/xianTrain19-genericParadigm/" title="https:&#x2F;&#x2F;simon-yian.github.io&#x2F;2022&#x2F;08&#x2F;10&#x2F;xianTrain19-genericParadigm&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;simon-yian.github.io&#x2F;2022&#x2F;08&#x2F;10&#x2F;xianTrain19-genericParadigm&#x2F;</a><br>
+
+    
+      <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+    
+  </div>
+
+
+        
+
         <div class="nexmoe-post-meta nexmoe-rainbow">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2021年11月15日</a>
-            <a><i class="nexmoefont icon-areachart"></i>683 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 2 分钟</a>
-        </div>
-        
-        <article>
-            
-                <p><img data-fancybox="gallery" data-sizes="auto" data-src="https://i.loli.net/2021/11/15/IuhtmyETOKdRpND.png" alt="布隆过滤器.png" class="lazyload"></p>
-            
-        </article>
-    </div>
     
-    <div class="nexmoe-post">
-        <a href="/2021/11/15/ConsistentHash/">
-            
-                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 24.305555555555554%;">
-                    <img data-src="/images/background/1.jpg" data-sizes="auto" alt="一致性哈希算法" class="lazyload">
-                    <h1>一致性哈希算法</h1>
-                </div>
-            
-        </a>
-        
-        <div class="nexmoe-post-meta nexmoe-rainbow">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2021年11月15日</a>
-            <a><i class="nexmoefont icon-areachart"></i>1.1k 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 4 分钟</a>
-        </div>
-        
-        <article>
-            
-                <img src="https://i.loli.net/2021/11/15/vKFjo15HqAybLmE.png" align="center" width="600" height="400" div>
-            
-        </article>
-    </div>
+        <a class="nexmoefont icon-appstore-fill -link" href="/categories/XiAnTrain-java%E9%AB%98%E7%BA%A7%E7%AF%87/">XiAnTrain - java高级篇</a>
     
+    
+</div>
+
+    <div class="nexmoe-post-footer">
+        <section class="nexmoe-comment">
+    <div class="valine"></div>
+<script src="https://unpkg.com/leancloud-storage/dist/av-min.js"></script>
+<script src='https://unpkg.com/valine@1.3.9/dist/Valine.min.js'></script>
+<script>
+    // 使用方法 https://valine.js.org/quickstart.html
+    new Valine({
+        el: '.valine',
+        appId: 'r5zxC0st0DDjPA9auXzMV7HY-gzGzoHsz',
+        appKey: '3bqCsovpyfTPHUzTHovd3V3V'
+    })
+</script>
 </section>
+    </div>
+</div>
 
 
         <div class="nexmoe-post-right">
@@ -1079,7 +1104,7 @@
 <script src="/lib/fancybox/js/jquery.fancybox.min.js"></script>
 
 
-<script src="/js/app.js?v=1660134032150"></script>
+<script src="/js/app.js?v=1660134032094"></script>
 
 <script src="https://unpkg.com/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
 <script>
