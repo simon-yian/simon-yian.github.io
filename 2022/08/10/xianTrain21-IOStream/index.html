@@ -16,12 +16,12 @@
     <meta name="baidu-site-verification" content="code-J1Qg17G6wT" />
 
   <link rel="shortcut icon" href="/images/head/head.jpg" type="image/png" />
-  <meta name="description" content="在日常的开发中，经常会遇到对本地文件进行操作的功能，例如将数据库中的数据导出成Excel并保存在本地，或者将本地的文本文件读入程序中，再或者在本地新建目录删除目录等等。这些都需要对本地文件进行读写。Java为开发者提供了File类用于操作本地的文件，File类是java.io包下代表与平台无关的文件和目录，也就是说，如果希望在程序中操作文件和目录，都可以通过File类来完成。值得指出的是，不管是文">
+  <meta name="description" content="***&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;Java基础学习打卡第2天">
 <meta property="og:type" content="article">
 <meta property="og:title" content="IO流">
 <meta property="og:url" content="https://simon-yian.github.io/2022/08/10/xianTrain21-IOStream/index.html">
 <meta property="og:site_name" content="simon·yian&#39;Blog">
-<meta property="og:description" content="在日常的开发中，经常会遇到对本地文件进行操作的功能，例如将数据库中的数据导出成Excel并保存在本地，或者将本地的文本文件读入程序中，再或者在本地新建目录删除目录等等。这些都需要对本地文件进行读写。Java为开发者提供了File类用于操作本地的文件，File类是java.io包下代表与平台无关的文件和目录，也就是说，如果希望在程序中操作文件和目录，都可以通过File类来完成。值得指出的是，不管是文">
+<meta property="og:description" content="***&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;Java基础学习打卡第2天">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s1.ax1x.com/2022/08/10/v3vBtg.png">
 <meta property="og:image" content="https://s1.ax1x.com/2022/08/10/v3vvND.png">
@@ -29,7 +29,7 @@
 <meta property="og:image" content="https://s1.ax1x.com/2022/08/10/v3vDhQ.png">
 <meta property="og:image" content="https://s1.ax1x.com/2022/08/10/v3vjAO.png">
 <meta property="article:published_time" content="2022-08-10T12:03:41.000Z">
-<meta property="article:modified_time" content="2022-08-10T12:20:16.000Z">
+<meta property="article:modified_time" content="2022-08-10T12:23:06.000Z">
 <meta property="article:author" content="simon·yi an">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://s1.ax1x.com/2022/08/10/v3vBtg.png">
@@ -41,7 +41,7 @@
   
     <link rel="stylesheet" href="//at.alicdn.com/t/font_2421060_8z08qcz5sq3.css">
   
-  <link rel="stylesheet" href="/css/style.css?v=1660134032089">
+  <link rel="stylesheet" href="/css/style.css?v=1660134242571">
 <meta name="generator" content="Hexo 5.4.0"></head>
 
 <body class="mdui-drawer-body-left">
@@ -68,7 +68,7 @@
     <div class="nexmoe-count">
         <div class="nexmoe-count-item"><span>文章</span>34 <div class="item-radius"></div><div class="item-radius item-right"></div> </div>
         <div class="nexmoe-count-item"><span>标签</span>0<div class="item-radius"></div><div class="item-radius item-right"></div></div>
-        <div class="nexmoe-count-item"><span>分类</span>8<div class="item-radius"></div><div class="item-radius item-right"></div></div>
+        <div class="nexmoe-count-item"><span>分类</span>9<div class="item-radius"></div><div class="item-radius item-right"></div></div>
     </div>
     <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
         
@@ -168,7 +168,7 @@
 
         <li class="category-list-item">
           <a class="category-list-link" href="/categories/XiAnTrain/">XiAnTrain</a>
-          <span class="category-list-count">18</span>
+          <span class="category-list-count">17</span>
         </li>
 
         
@@ -176,6 +176,13 @@
         <li class="category-list-item">
           <a class="category-list-link" href="/categories/XiAnTrain-java高级篇/">XiAnTrain - java高级篇</a>
           <span class="category-list-count">3</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/XiAnTrain-java初级篇/">XiAnTrain -java初级篇</a>
+          <span class="category-list-count">1</span>
         </li>
 
         
@@ -247,7 +254,7 @@
           </li>
         
           <li>
-            <a href="/2022/08/03/xianTrain18-HeahMap/">xianTrain18-HeahMap</a>
+            <a href="/2022/08/03/xianTrain18-HeahMap/">HeahMap</a>
           </li>
         
           <li>
@@ -300,7 +307,9 @@
         </div>
 
         <article>
-            <p>在日常的开发中，经常会遇到对本地文件进行操作的功能，例如将数据库中的数据导出成Excel并保存在本地，或者将本地的文本文件读入程序中，再或者在本地新建目录删除目录等等。这些都需要对本地文件进行读写。<br>Java为开发者提供了File类用于操作本地的文件，File类是java.io包下代表与平台无关的文件和目录，也就是说，如果希望在程序中操作文件和目录，都可以通过File类来完成。值得指出的是，不管是文件还是目录都是使用File来操作的，File能新建、删除、重命名文件和目录，File不能访问文件内容本身。如果需要访问文件内容本身，则需要使用输入/输出流。</p>
+            <p>***&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Java基础学习打卡第2天</p>
+<span id="more"></span>
+<p>在日常的开发中，经常会遇到对本地文件进行操作的功能，例如将数据库中的数据导出成Excel并保存在本地，或者将本地的文本文件读入程序中，再或者在本地新建目录删除目录等等。这些都需要对本地文件进行读写。<br>Java为开发者提供了File类用于操作本地的文件，File类是java.io包下代表与平台无关的文件和目录，也就是说，如果希望在程序中操作文件和目录，都可以通过File类来完成。值得指出的是，不管是文件还是目录都是使用File来操作的，File能新建、删除、重命名文件和目录，File不能访问文件内容本身。如果需要访问文件内容本身，则需要使用输入/输出流。</p>
 <p>14.1 访问文件和目录<br>File类可以使用文件路径字符串来创建File实例，该文件路径字符串既可以是绝对路径，也可以是相对路径。一旦创建了File对象后，就可以调用File对象的方法来访问，File类提供了很多方法来操作文件和目录，下面列出一些比较常用的方法。</p>
 <p>14.1.1访问文件名<br>方法    描述<br>String getName()    返回File对象的文件名或者路径名<br>String getPath()    返回File对象对应的路径名<br>File getAbsoluteFile()    返回File对象的绝对路径<br>String getAbsolutePath()    返回File对象的绝对路径名<br>String getParent()    返回File对象的父目录<br>boolean renameTo(File newName)    重命名文件<br>下面通过示例来学习以上方法的使用：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">package cn;</span><br><span class="line"></span><br><span class="line">import java.io.File;</span><br><span class="line"></span><br><span class="line">public class bytecollege &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        String path = &quot;E:/ByteCollege/study/Node.exe&quot;;</span><br><span class="line">        File file = new File(path);</span><br><span class="line">        File newFile = new File(&quot;E:/ByteCollege/study/Code.exe&quot;);</span><br><span class="line">        //返回File对象的文件名或者路径名</span><br><span class="line">        System.out.println(file.getName());</span><br><span class="line">        //返回File对象对应的路径名</span><br><span class="line">        System.out.println(file.getPath());</span><br><span class="line">        //返回File对象的绝对路径</span><br><span class="line">        System.out.println(file.getAbsoluteFile());</span><br><span class="line">        //返回File对象的绝对路径名</span><br><span class="line">        System.out.println(file.getAbsolutePath());</span><br><span class="line">        //返回File对象的父亲目录</span><br><span class="line">        System.out.println(file.getParent());</span><br><span class="line">        //重命名文件</span><br><span class="line">        file.renameTo(newFile);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
@@ -1099,7 +1108,7 @@
 <script src="/lib/fancybox/js/jquery.fancybox.min.js"></script>
 
 
-<script src="/js/app.js?v=1660134032090"></script>
+<script src="/js/app.js?v=1660134242573"></script>
 
 <script src="https://unpkg.com/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
 <script>
@@ -1116,8 +1125,6 @@
 
 
 <!-- hexo injector body_end start -->
-<script src="/js/clock.js"></script>
-
 <script src="https://unpkg.com/clipboard@2.0.8/dist/clipboard.min.js"></script>
 
 <script src="/lib/codeBlock/codeBlockFuction.js"></script>
@@ -1129,6 +1136,8 @@
 <script src="/lib/codeBlock/codeShrink.js"></script>
 
 <link rel="stylesheet" href="/lib/codeBlock/matery.css">
+
+<script src="/js/clock.js"></script>
 
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 

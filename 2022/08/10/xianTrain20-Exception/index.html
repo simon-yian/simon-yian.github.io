@@ -16,16 +16,16 @@
     <meta name="baidu-site-verification" content="code-J1Qg17G6wT" />
 
   <link rel="shortcut icon" href="/images/head/head.jpg" type="image/png" />
-  <meta name="description" content="如果看一门编程语言是否健壮，那么是否提供异常处理机制就是很重要的判断标准之一，除了传统的C语言以外，目前主流的编程语言都提供了成熟的异常机制，例如C#，Python等。异常机制可以使程序中的异常处理代码和业务代码分离，保证程序更加的优雅，提高程序的健壮性。Java 的异常机制主要依赖干 try、catch、finally、throw 和 throws 五个关键字，其中 try 关键字后紧跟一个花括">
+  <meta name="description" content="***&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;Java基础学习打卡第2天">
 <meta property="og:type" content="article">
 <meta property="og:title" content="异常">
 <meta property="og:url" content="https://simon-yian.github.io/2022/08/10/xianTrain20-Exception/index.html">
 <meta property="og:site_name" content="simon·yian&#39;Blog">
-<meta property="og:description" content="如果看一门编程语言是否健壮，那么是否提供异常处理机制就是很重要的判断标准之一，除了传统的C语言以外，目前主流的编程语言都提供了成熟的异常机制，例如C#，Python等。异常机制可以使程序中的异常处理代码和业务代码分离，保证程序更加的优雅，提高程序的健壮性。Java 的异常机制主要依赖干 try、catch、finally、throw 和 throws 五个关键字，其中 try 关键字后紧跟一个花括">
+<meta property="og:description" content="***&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;Java基础学习打卡第2天">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s1.ax1x.com/2022/08/10/v3vx4e.jpg">
 <meta property="article:published_time" content="2022-08-10T12:00:10.000Z">
-<meta property="article:modified_time" content="2022-08-10T12:20:16.000Z">
+<meta property="article:modified_time" content="2022-08-10T12:23:08.000Z">
 <meta property="article:author" content="simon·yi an">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://s1.ax1x.com/2022/08/10/v3vx4e.jpg">
@@ -37,7 +37,7 @@
   
     <link rel="stylesheet" href="//at.alicdn.com/t/font_2421060_8z08qcz5sq3.css">
   
-  <link rel="stylesheet" href="/css/style.css?v=1660134032091">
+  <link rel="stylesheet" href="/css/style.css?v=1660134242574">
 <meta name="generator" content="Hexo 5.4.0"></head>
 
 <body class="mdui-drawer-body-left">
@@ -64,7 +64,7 @@
     <div class="nexmoe-count">
         <div class="nexmoe-count-item"><span>文章</span>34 <div class="item-radius"></div><div class="item-radius item-right"></div> </div>
         <div class="nexmoe-count-item"><span>标签</span>0<div class="item-radius"></div><div class="item-radius item-right"></div></div>
-        <div class="nexmoe-count-item"><span>分类</span>8<div class="item-radius"></div><div class="item-radius item-right"></div></div>
+        <div class="nexmoe-count-item"><span>分类</span>9<div class="item-radius"></div><div class="item-radius item-right"></div></div>
     </div>
     <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
         
@@ -164,7 +164,7 @@
 
         <li class="category-list-item">
           <a class="category-list-link" href="/categories/XiAnTrain/">XiAnTrain</a>
-          <span class="category-list-count">18</span>
+          <span class="category-list-count">17</span>
         </li>
 
         
@@ -172,6 +172,13 @@
         <li class="category-list-item">
           <a class="category-list-link" href="/categories/XiAnTrain-java高级篇/">XiAnTrain - java高级篇</a>
           <span class="category-list-count">3</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/XiAnTrain-java初级篇/">XiAnTrain -java初级篇</a>
+          <span class="category-list-count">1</span>
         </li>
 
         
@@ -243,7 +250,7 @@
           </li>
         
           <li>
-            <a href="/2022/08/03/xianTrain18-HeahMap/">xianTrain18-HeahMap</a>
+            <a href="/2022/08/03/xianTrain18-HeahMap/">HeahMap</a>
           </li>
         
           <li>
@@ -296,7 +303,9 @@
         </div>
 
         <article>
-            <p>如果看一门编程语言是否健壮，那么是否提供异常处理机制就是很重要的判断标准之一，除了传统的C语言以外，目前主流的编程语言都提供了成熟的异常机制，例如C#，Python等。异常机制可以使程序中的异常处理代码和业务代码分离，保证程序更加的优雅，提高程序的健壮性。<br>Java 的异常机制主要依赖干 try、catch、finally、throw 和 throws 五个关键字，其中 try 关键字后紧跟一个花括号扩起来的代码块（花括号不可省略），简称 try 块，它里面放置可能引发异常的代码。catch后对应异常类型和一个代码块，用于表明该 catch 块用于处理这种类型的代码块。多个 catch 块后还可以跟一个 finally 块，finally 块用于回收在 try 块里打开的物理资源，异常机制会保证 finally 块总被执行。 throws 关键字主要在方法签名中使用，用于声明该方法可能抛出的异常；而 throw 用于抛出—个实际的异常，throw 可以单独作为语句使用，抛出一个具体的异常对象 。<br>Java 7 进一步增强了异常处理机制的功能，包括带资源的 try 语句、捕获多异常的 catch 两个新功能，这两个功能可以极好地简化异常处理。 开发者希望所有的错误都能在编译阶段被发现，就是在试图运行程序之前排除所有错误，但这是不现实的，余下的问题必须在运行期间得到解决。Java将异常分为两种，Checked 异常和 Runtime 异常， Java 认为 Checked 异常都是可以在编译阶段被处理的异常，所以它强制程序运行前处理所有的 Checked 异常；而 Runtime 异常则无须处理。</p>
+            <p>***&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Java基础学习打卡第2天</p>
+<span id="more"></span>
+<p>如果看一门编程语言是否健壮，那么是否提供异常处理机制就是很重要的判断标准之一，除了传统的C语言以外，目前主流的编程语言都提供了成熟的异常机制，例如C#，Python等。异常机制可以使程序中的异常处理代码和业务代码分离，保证程序更加的优雅，提高程序的健壮性。<br>Java 的异常机制主要依赖干 try、catch、finally、throw 和 throws 五个关键字，其中 try 关键字后紧跟一个花括号扩起来的代码块（花括号不可省略），简称 try 块，它里面放置可能引发异常的代码。catch后对应异常类型和一个代码块，用于表明该 catch 块用于处理这种类型的代码块。多个 catch 块后还可以跟一个 finally 块，finally 块用于回收在 try 块里打开的物理资源，异常机制会保证 finally 块总被执行。 throws 关键字主要在方法签名中使用，用于声明该方法可能抛出的异常；而 throw 用于抛出—个实际的异常，throw 可以单独作为语句使用，抛出一个具体的异常对象 。<br>Java 7 进一步增强了异常处理机制的功能，包括带资源的 try 语句、捕获多异常的 catch 两个新功能，这两个功能可以极好地简化异常处理。 开发者希望所有的错误都能在编译阶段被发现，就是在试图运行程序之前排除所有错误，但这是不现实的，余下的问题必须在运行期间得到解决。Java将异常分为两种，Checked 异常和 Runtime 异常， Java 认为 Checked 异常都是可以在编译阶段被处理的异常，所以它强制程序运行前处理所有的 Checked 异常；而 Runtime 异常则无须处理。</p>
 <p>13.1 异常类的继承体系<br>Java提供了丰富的异常类，这些类有着严格的继承关系，如下图：<br><a target="_blank" rel="noopener" href="https://imgtu.com/i/v3vx4e"><img data-fancybox="gallery" data-sizes="auto" data-src="https://s1.ax1x.com/2022/08/10/v3vx4e.jpg" alt="v3vx4e.jpg" class="lazyload"></a><br>从图示中可以看出，Java把所有的非正常情况分为两大类：异常（Exception）和错误（Error），他们都是Throwable的子类。</p>
 <p>Error：和虚拟机有关的问题，如系统崩溃、虚拟机错误等，这些错误无法恢复或者不可能被抓取，将导致应用程序中断，应用程序通常无法处理这些错误，因此不应该用异常处理方法来处理Error。同样，也不能在throws字句中声明该方法可能抛出Error。<br>Exception：程序中出现的非正常情况，其中异常又分为两类，RuntimeException（运行时异常）和CheckedException（检查时异常），这两类异常都是Exception的子类，其中RuntimeException及其子类不需要开发者显示处理。如果一个Exception没有继承RuntimeException类，则属于CheckedException，这类异常通常需要开发者显示处理。否则会出现编译错误。<br>下面，先通过示例来演示运行时异常和检查时异常的区别</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">package cn.bytecollege;</span><br><span class="line"></span><br><span class="line">public class Student &#123;</span><br><span class="line">	/**</span><br><span class="line">	 * 定义方法，该方法抛出算术异常</span><br><span class="line">	 * 算术异常是运行时异常</span><br><span class="line">	 * @throws ArithmeticException</span><br><span class="line">	 */</span><br><span class="line">	public void say() throws ArithmeticException&#123;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	/**</span><br><span class="line">	 * 定义方法，该方法抛出检查时异常</span><br><span class="line">	 * 检查时异常要求开发者必须显示处理</span><br><span class="line">	 * @throws ClassNotFoundException</span><br><span class="line">	 */</span><br><span class="line">	public void hello() throws ClassNotFoundException&#123;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		</span><br><span class="line">		Student s = new Student();</span><br><span class="line">		//因为该方法抛出的是运行时异常，即使不处理也不会发生编译错误</span><br><span class="line">		s.say();</span><br><span class="line">		//该方法抛出的是检查时异常，要求开发者显示处理</span><br><span class="line">		//如果不处理则编译错误</span><br><span class="line">		s.hello();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -1100,7 +1109,7 @@
 <script src="/lib/fancybox/js/jquery.fancybox.min.js"></script>
 
 
-<script src="/js/app.js?v=1660134032093"></script>
+<script src="/js/app.js?v=1660134242575"></script>
 
 <script src="https://unpkg.com/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
 <script>
@@ -1117,8 +1126,6 @@
 
 
 <!-- hexo injector body_end start -->
-<script src="/js/clock.js"></script>
-
 <script src="https://unpkg.com/clipboard@2.0.8/dist/clipboard.min.js"></script>
 
 <script src="/lib/codeBlock/codeBlockFuction.js"></script>
@@ -1130,6 +1137,8 @@
 <script src="/lib/codeBlock/codeShrink.js"></script>
 
 <link rel="stylesheet" href="/lib/codeBlock/matery.css">
+
+<script src="/js/clock.js"></script>
 
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 
