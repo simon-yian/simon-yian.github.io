@@ -20,17 +20,17 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"simon-yian.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-<meta name="description" content="本章将会深入介绍 Java类的加载、连接和初始化知识，并重点介绍 java.lang.reflect 包下的接口和类，包括 Class、Method、Field、Constructor 和 Array等，这些类分别代表类、方法、成员变量、构造器和数组，Java 程序可以使用这些类动态地获取某个对象。某个类的运行时信息，并可以动态地创建 Java 对象，动态地调用Java方法，访问并修改指定对象的成">
+<meta name="description" content="***&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;Java基础学习打卡第2天">
 <meta property="og:type" content="article">
 <meta property="og:title" content="反射和注解">
 <meta property="og:url" content="https://simon-yian.github.io/2022/09/17/xianTrain24-reflex/index.html">
 <meta property="og:site_name" content="simon·yian&#39;Blog">
-<meta property="og:description" content="本章将会深入介绍 Java类的加载、连接和初始化知识，并重点介绍 java.lang.reflect 包下的接口和类，包括 Class、Method、Field、Constructor 和 Array等，这些类分别代表类、方法、成员变量、构造器和数组，Java 程序可以使用这些类动态地获取某个对象。某个类的运行时信息，并可以动态地创建 Java 对象，动态地调用Java方法，访问并修改指定对象的成">
+<meta property="og:description" content="***&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;Java基础学习打卡第2天">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/2745416/1646360722545-ec234165-d17a-4856-8a4f-b40d73207dc2.png#crop=0&crop=0&crop=1&crop=1&height=283&id=u3dfd8caf&margin=[object%20Object]&name=image.png&originHeight=565&originWidth=1339&originalType=binary&ratio=1&rotation=0&showTitle=false&size=49173&status=done&style=none&title=&width=669.5">
 <meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/22117562/1630061708316-b8d711b9-6760-4045-8000-86720426f120.png#crop=0&crop=0&crop=1&crop=1&height=292&id=fWi1v&margin=[object%20Object]&name=image.png&originHeight=522&originWidth=1154&originalType=binary&ratio=1&rotation=0&showTitle=false&size=320198&status=done&style=none&title=&width=645">
 <meta property="article:published_time" content="2022-09-17T08:13:16.000Z">
-<meta property="article:modified_time" content="2022-09-17T08:17:16.000Z">
+<meta property="article:modified_time" content="2022-09-17T08:22:08.000Z">
 <meta property="article:author" content="simon·yi an">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://cdn.nlark.com/yuque/0/2022/png/2745416/1646360722545-ec234165-d17a-4856-8a4f-b40d73207dc2.png#crop=0&crop=0&crop=1&crop=1&height=283&id=u3dfd8caf&margin=[object%20Object]&name=image.png&originHeight=565&originWidth=1339&originalType=binary&ratio=1&rotation=0&showTitle=false&size=49173&status=done&style=none&title=&width=669.5">
@@ -175,7 +175,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">36</span>
+          <span class="site-state-item-count">37</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -265,7 +265,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2022-09-17 16:13:16 / 修改时间：16:17:16" itemprop="dateCreated datePublished" datetime="2022-09-17T16:13:16+08:00">2022-09-17</time>
+      <time title="创建时间：2022-09-17 16:13:16 / 修改时间：16:22:08" itemprop="dateCreated datePublished" datetime="2022-09-17T16:13:16+08:00">2022-09-17</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -309,7 +309,10 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>本章将会深入介绍 Java类的加载、连接和初始化知识，并重点介绍 java.lang.reflect 包下的接口和类，包括 Class、Method、Field、Constructor 和 Array等，这些类分别代表类、方法、成员变量、构造器和数组，Java 程序可以使用这些类动态地获取某个对象。某个类的运行时信息，并可以动态地创建 Java 对象，动态地调用Java方法，访问并修改指定对象的成员变量值。</p>
+        <p>***&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Java基础学习打卡第2天</p>
+<span id="more"></span>
+
+<p>本章将会深入介绍 Java类的加载、连接和初始化知识，并重点介绍 java.lang.reflect 包下的接口和类，包括 Class、Method、Field、Constructor 和 Array等，这些类分别代表类、方法、成员变量、构造器和数组，Java 程序可以使用这些类动态地获取某个对象。某个类的运行时信息，并可以动态地创建 Java 对象，动态地调用Java方法，访问并修改指定对象的成员变量值。</p>
 <h2 id="http-192-168-31-254-java-advance-第17章-反射和注解-html-17-1-类的加载-17-1-类的加载"><a href="#http-192-168-31-254-java-advance-第17章-反射和注解-html-17-1-类的加载-17-1-类的加载" class="headerlink" title="[#](http://192.168.31.254/java-advance/第17章 反射和注解.html#_17-1-类的加载)17.1 类的加载"></a>[#](<a target="_blank" rel="noopener" href="http://192.168.31.254/java-advance/%E7%AC%AC17%E7%AB%A0">http://192.168.31.254/java-advance/第17章</a> 反射和注解.html#_17-1-类的加载)17.1 类的加载</h2><p>当程序主动使用某个类时，如果该类还未被加载到内存中，则系统会通过加载、连接、初始化三个步骤来对该类进行初始化。如果没有意外，JVM 将会连续完成这三个步骤，所以有时也把这三个步骤统称为类加载或类初始化。 类加载指的是将类的** class 文件**读入内存，并为之创建一个 java.lang.Class 对象，也就是说，当程序中使用任何类时，系统都会为之建立一个 java.lang.Class 对象。<br>类的加载由类加载器完成，类加载器通常由 JVM提供，这些类加载器也是前面所有程序运行的基础，JVM 提供的这些类加载器通常被称为系统类加载器。除此之外，开发者可以通过继承 ClassLoader基类来创建自己的类加载器。 <br>通过使用不同的类加载器，可以从不同来源加载类的二进制数据，通常有如下几种来源。</p>
 <ul>
 <li>从本地文件系统加载 class 文件，这是前面绝大部分示例程序的类加载方式。</li>
@@ -582,6 +585,9 @@
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/2022/09/17/xianTrain26-JavaNewCharacteristic/" rel="next" title="java新特性">
+                  java新特性 <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
     </footer>
@@ -614,14 +620,14 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">355k</span>
+    <span title="站点总字数">367k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:23</span>
+    <span title="站点阅读时长">5:33</span>
   </span>
 </div>
 <div class="busuanzi-count">

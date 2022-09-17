@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="baidu-site-verification" content="code-lKi6sS4j7S" />
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/H%20.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"simon-yian.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="***&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;Java基础学习打卡第2天">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java新特性">
+<meta property="og:url" content="https://simon-yian.github.io/2022/09/17/xianTrain26-JavaNewCharacteristic/index.html">
+<meta property="og:site_name" content="simon·yian&#39;Blog">
+<meta property="og:description" content="***&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;Java基础学习打卡第2天">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-09-17T08:20:16.000Z">
+<meta property="article:modified_time" content="2022-09-17T08:22:08.000Z">
+<meta property="article:author" content="simon·yi an">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://simon-yian.github.io/2022/09/17/xianTrain26-JavaNewCharacteristic/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://simon-yian.github.io/2022/09/17/xianTrain26-JavaNewCharacteristic/","path":"2022/09/17/xianTrain26-JavaNewCharacteristic/","title":"java新特性"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>java新特性 | simon·yian'Blog</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+
+
+  <!-- 添加萝莉-->
+  <script src="/live2d-widget/autoload.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">simon·yian'Blog</h1>
+      <i class="logo-line"></i>
+    </a>
+      <img class="custom-logo-image" src="/images/simon.png" alt="simon·yian'Blog">
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-commonweal"><a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fas fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-message"><a href="/message/" rel="section"><i class="fas fa-comment fa-fw"></i>留言板</a></li>
+        <li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="sitmap fa-fw"></i>站点地图</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="simon·yi an"
+      src="/images/avator.jpg">
+  <p class="site-author-name" itemprop="name">simon·yi an</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">37</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/simon-yian" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;simon-yian" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yourname@gmail.com" title="E-Mail → mailto:yourname@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/yourname" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://plus.google.com/yourname" title="Google → https:&#x2F;&#x2F;plus.google.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-google fa-fw"></i>Google</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/yourname" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+  </div>
+
+
+
+        </div><div>
+  <canvas id="canvasDiyBlock" style="width:60%;">当前浏览器不支持canvas，请更换浏览器后再试</canvas><script src="/js/custom/clock.js"></script>
+</div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://simon-yian.github.io/2022/09/17/xianTrain26-JavaNewCharacteristic/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avator.jpg">
+      <meta itemprop="name" content="simon·yi an">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="simon·yian'Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          java新特性
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-09-17 16:20:16 / 修改时间：16:22:08" itemprop="dateCreated datePublished" datetime="2022-09-17T16:20:16+08:00">2022-09-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/XiAnTrain-java%E9%AB%98%E7%BA%A7%E7%AF%87/" itemprop="url" rel="index"><span itemprop="name">XiAnTrain - java高级篇</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>11k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>10 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>***&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Java基础学习打卡第2天</p>
+<span id="more"></span>
+<p>Lambda表达式是Java8中新增的特性，lambda表达式是一个可传递的代码块，可以在以后执行一次或多次。在以前定义的方法中，只能将基本类型或者引用类型的变量作为方法参数，在Java 8以后可以将一个代码片段作为方法参数。</p>
+<p>19.1 Lambda表达式入门<br>在集合中Java为开发者提供了遍历集合的简洁方式，如下例所示：</p>
+<p>package cn.bytecollege;</p>
+<p>import java.util.List;<br>import java.util.ArrayList;<br>public class LambdaDemo {<br>    public static void main(String[] args) {<br>        List<String> list = new ArrayList&lt;&gt;();</String></p>
+<pre><code>    list.add(&quot;张三&quot;);
+    list.add(&quot;李四&quot;);
+    list.add(&quot;王五&quot;);
+    
+    list.forEach(e-&gt;System.out.println(e));
+&#125;
+</code></pre>
+<p>}</p>
+<p>在上面的示例中，调用了list对象的foreach方法，从程序可以看出，传入foreach的并不是一个变量，而是一段代码，这就是Lambda表达式。从上面的语法可以看出，Lambda表达式的主要作用就是代替匿名内部类的烦琐语法。<br>Lambda由3部分组成：</p>
+<p>形参列表：形参列表允许省略形参的数据类型，如果形参列表中有且只有1个参数，可以省略形参列表的括号<br>箭头函数：-&gt;必须有横线和大于号组成<br>代码块。如果代码块只包含一条语句，Lambda表达式允许省略代码块的花括号。<br>下面，通过示例来学习Lambda的写法：</p>
+<p>//表达式只有1个参数<br>(a)-&gt;{<br>    System.out.print(a);<br>}<br>//表达式可以简写为<br>a-&gt;{<br>    System.out.print(a);<br>}<br>//如果代码块中只有1条语句，可以省略大括号<br>a-&gt;System.out.print(a)</p>
+<p>19.2 函数式接口<br>Lambda表达式的目标类型必须是函数式接口，所谓函数式接口代表只包含一个抽象方法的接口，函数式接口可以包含多个默认方法、类方法，但是只能声明一个抽象方法。</p>
+<p>如果采用匿名内部类语法来创建函数式接口的实例，则只需要实现一个抽象方法，在这种情况下可采用Lambda表达式来创建对象。</p>
+<p>注意：Java8 专门为函数式接口提供了@FunctionalInterface注解，该注解通常放在接口定义前，该注解对程序功能没有任何作用，它的作用是用于告诉编译器执行更严格的检查，检查该接口必须是函数式接口，否则编译器出错。</p>
+<p>Lambda表达式的结果就是被作为对象，程序中晚期可以使用Lambda表达式进行赋值，例如在多线程Thread类的构造器中可以传入Runnable接口的子类对象。查看Runnable接口发现，该接口也被声明为一个函数式接口：</p>
+<p>@FunctionalInterface<br>public interface Runnable {<br>    public abstract void run();<br>}<br>所以，就可以使用Lambda表达式来创建线程：</p>
+<p>package cn.bytecollege;<br>public class ThreadLambdaDemo {<br>    public static void main(String[] args) {<br>        Thread thread = new Thread(()-&gt;{<br>            for (int i = 0; i &lt; 10; i++) {<br>                System.out.println(i);<br>            }<br>        });<br>        thread.start();<br>    }<br>}<br>Lambda 表达式实现的是匿名方法——因此它只能实现特定函数式接口中的唯一方法。这意味着 Lambda 表达式有如下两个限制。</p>
+<p>Lambda 表达式的目标类型必须是明确的函数式接口。<br>Lambda 表达式只能为函数式接口创建对象。Lambda 表达式只能实现一个方法，因此它只能为 只有一个抽象方法的接口（函数式接口）创建对象。<br>下面定义一个函数式接口深入学习Lambda表达式</p>
+<p>package cn.bytecollege;<br>//函数式接口只能有一个抽象方法，并且要使用@FunctionalInterface声明<br>@FunctionalInterface<br>public interface Consumer {<br>    int add(int a,int b);<br>}</p>
+<p>定义一个方法，方法参数是Consumer接口：</p>
+<p>package cn.bytecollege;</p>
+<p>public class MyTest {<br>    public static int test(Consumer consumer) {<br>        int a = 5;<br>        int b = 4;<br>        return consumer.add(a, b);</p>
+<pre><code>&#125;
+public static void main(String[] args) &#123;
+    int k = test((a,b)-&gt;&#123;
+        return a+b;
+    &#125;);
+    System.out.println(k);
+&#125;
+</code></pre>
+<p>}</p>
+<p>在上例中定义了一个函数式接口，在测试类的test方法传入了接口并调用了Consumer接口的add方法，需要注意的是，此时add方法并没有方法实现，在main方法中调用了test，并将一段代码（即add方法的实现）也就是lambda表达式当做参数传入了test方法。换句话说在上例中使用了lambda表达替代了烦琐的匿名内部类。对比下面的代码就可以看出Lambda表达式的独到之处。</p>
+<p>package cn.bytecollege;</p>
+<p>public class MyTest {<br>    public static int test(Consumer consumer) {<br>        int a = 5;<br>        int b = 4;<br>        return consumer.add(a, b);</p>
+<pre><code>&#125;
+public static void main(String[] args) &#123;
+    int k = test(new Consumer() &#123;
+        @Override
+        public int add(int a, int b) &#123;
+            return a+b;
+        &#125;
+    &#125;);
+    System.out.println(k);
+&#125;
+</code></pre>
+<p>}</p>
+<p>从前面的程序可以看出Lambda表达式的使用离不开函数式接口，通常函数式接口中有且只能有1个抽象方法，这样使用Lambda表达式时也就明确了是哪个抽象方法的实现，如果接口中出现了多个抽象方法，那么就不能在接口上使用@FunctionInterface注解，会编译出错。因此，Java 8在java.util.function包中预定义了大量函数式接口，通常情况下这些接口完全可以满足开发需要：</p>
+<p>XxxFunction∶ 这类接口中通常包含一个 apply()抽象方法，该方法对参数进行处理、转换（apply() 方法的处理逻辑由 Lambda 表达式来实现），然后返回一个新的值。该函数式接口通常用于对指定数据进行转换处理。<br>XxxConsumer∶ 这类接口中通常包含一个 accept()抽象方法，该方法与 XxxFunction 接口中的 apply()方法基本相似，也负责对参数进行处理，只是该方法不会返回处理结果。<br>XxxxPredicate∶这类接口中通常包含一个 test()抽象方法，该方法通常用来对参数进行某种判断 test()方法的判断逻辑由 Lambda 表达式来实现），然后返回一个 boolean 值。该接口通常用于判断参数是否满足特定条件，经常用于进行筛滤数据。<br>XxxSupplier∶ 这类接口中通常包含一个 getAsXxx()抽象方法，该方法不需要输入参数，该方法会按某种逻辑算法（getAsXxx()方法的逻辑算法由 Lambda 表达式来实现）返回一个数据。综上所述，不难发现 Lambda 表达式的本质很简单，就是使用简洁的语法来创建函数式接口的实例——这种语法避免了匿名内部类的烦琐。<br>下面在程序中示范上述接口的使用：</p>
+<p>package cn.bytecollege.lambda;</p>
+<p>import java.util.function.Function;</p>
+<p>/**</p>
+<ul>
+<li>数据转换</li>
+<li>@author MR.W</li>
+<li></li>
+<li>/<br>public class CastUtil {<br>  /**<ul>
+<li>定义方法将Object类型转换为String类型</li>
+<li>@param function</li>
+<li>@param o</li>
+<li>@return</li>
+<li>/<br>public static String castToString(Function&lt;Object, String&gt; function, Integer a) {<br>  return function.apply(a);<br>}<br>}</li>
+</ul>
+</li>
+</ul>
+<p>在上面的CastUtil类中定义了castToString，在该方法中第一个参数是一个Java 8 预定义的函数式接口，在方法内调用了Function接口的apply()方法，作用是将任意类型转换成String。但是此时这个方法并没有方法的实现，需要在调用此方法时传入方法的实现。</p>
+<p>package cn.bytecollege.lambda;<br>import java.util.function.Function;<br>public class Test {<br>    public static void main(String[] args) {<br>        Integer a = 10010;<br>        //使用Lambda表达式，此时castToString方法的第一个参数<br>        //就是Function函数式接口apply()的实现<br>        String s = CastUtil.castToString((o)-&gt;{<br>            return String.valueOf(o);<br>        }, a);<br>        System.out.println(s);<br>    }<br>}<br>在测试类中，调用了CastUtil的castToString()方法，并传入了Lambda表达式，以此Lambda表达式作为apply()方法的实现，在表达式中使用了String.valueOf()方法将对象转换成String类型。</p>
+<p>19.3 方法引用与构造器引用<br>前面已经介绍过，如果Lambda 表达式的代码块只有一条代码，程序就可以省略 Lambda 表达式中代码块的花括号。不仅如此，如果Lambda 表达式的代码块只有一条代码，还可以在代码块中使用方法引用和构造器引用。 方法引用和构造器引用可以让 Lambda表达式的代码块更加简洁。方法引用和构造器引用都需要使用两个英文冒号。<br>Lambda 表达式支持如下表所示的几种引用方式。 </p>
+<p>19.3.1 引用类方法<br>下面的示例将演示类方法的引用，首先定义一个函数式接口，接口中定义抽象方法castToString()，该方法的作用是将一个对象转换成String对象。</p>
+<p>package cn.bytecollege.lambda;<br>@FunctionalInterface<br>public interface Function&lt;T,R&gt; {<br>    R castToString(T t);<br>}</p>
+<p>在String的学习中可以知道，String类有提供了类方法valueOf(Object o)，该方法可以将任意对象转换成String类型，因此可以使用该方法作为Lambda表达式的实现代码：</p>
+<p>package cn.bytecollege.lambda;</p>
+<p>public class RefTest {<br>    public static void main(String[] args) {<br>        Function&lt;Object, String&gt; function = a-&gt;{<br>            return String.valueOf(a);<br>        };<br>        System.out.println(function.castToString(“张三”));<br>    }<br>}</p>
+<p>在上面的代码中，创建了Lambda表达式作为了Function接口中castToString()方法的实现。在Lambda表达式中调用了String.valueOf()方法来进行对象到字符串的转换，在代码第8行调用了function接口的castToString()方法，实际上调用了就是代码第5行创建的Lambda表达式。<br>上面的Lambda表达式的代码块只有一行调用类方法的代码，因此可以使用如下方法引用进行替换。代码如下：</p>
+<p>package cn.bytecollege.lambda;</p>
+<p>public class RefTest {<br>    public static void main(String[] args) {<br>        Function&lt;Object, String&gt; function = String::valueOf;<br>        System.out.println(function.castToString(“张三”));<br>    }<br>}</p>
+<p>对于上面的类方法的引用，也就是调用了String类的valueOf()方法来实现Function函数式接口中唯一抽象方法。当调用castToString()方法时，调用参数将会传给String类的valueOf()类方法。</p>
+<p>19.3.2 引用对象的实例方法<br>下面演示第二种方法引用，引用对象的实例方法，首先使用Lambda表达式创建一个Function接口的子类对象：</p>
+<p>Function&lt;Object, String&gt; function = o-&gt;o.toString();<br>上面的Lambda表达式只有一条语句，因此省略了该代码的花括号。<br>接下来程序调用function对象的castToString()方法：</p>
+<p>package cn.bytecollege.lambda;<br>public class RefTest {<br>    public static void main(String[] args) {<br>        Function&lt;Object, String&gt; function = o-&gt;o.toString();<br>        System.out.println(function.castToString(100));<br>    }<br>}</p>
+<p>上面的程序调用了function对象的castToString()方法时，由于function对象是Lambda表达式创建，castToString()方法的执行体就是Lambda表达式的代码部分，因此上面的程序输出了100.<br>上面的Lambda表达式代码只有一行，且调用了对象的o的toString()实例方法。因此代码可以进行如下替换：</p>
+<p>package cn.bytecollege.lambda;<br>public class RefTest {<br>    public static void main(String[] args) {<br>        Function&lt;Object, String&gt; function = Object::toString;<br>        System.out.println(function.castToString(100));<br>    }<br>}</p>
+<p>上面的Lambda表达式的代码只有一条语句，因此省略了代码块的花括号；而且由于表达式实现的castToString方法需要返回值，因此Lambda表达会将这行代码的值作为返回值。此时就可以使用方法引用进行替换，直接引用Object的toString()方法作为Lambda表达式的代码块。其中Function接口的castToString方法有个参数，当执行Lambda表达式代码块时，会自动调用传入参数的toString()方法。</p>
+<p>19.3.3 引用构造器<br>下面的实例将演示如何引用构造器，首先定义函数式接口：</p>
+<p>package cn.bytecollege.lambda;<br>@FunctionalInterface<br>public interface MyInterface {<br>    StringBuilder get(String s);<br>}</p>
+<p>该函数式接口包含了一个get()抽象方法，该方法的作用是使用String对象生成一个StringBuilder对象，接着使用Lambda表达式创建一个MyInterface的对象：</p>
+<p>package cn.bytecollege.lambda;<br>public class RefTest3 {<br>    public static void main(String[] args) {<br>        MyInterface myInterface = (s)-&gt; new StringBuilder(s);<br>        StringBuilder sb = myInterface.get(“张三”);<br>    }<br>}<br>上面的代码调用了myInterface对象的get()方法时，由于该对象是Lambda表达式创建的，因此get()方法执行体就是Lambda表达式的代码块部分，即执行体就是执行new StringBuilder(a)语句，并将这条语句的值作为方法的返回值。因此上面代码中Lambda表达式的代码可以进行如下替换：</p>
+<p>package cn.bytecollege.lambda;</p>
+<p>public class RefTest3 {<br>    public static void main(String[] args) {<br>        MyInterface myInterface = StringBuilder::new;<br>        StringBuilder sb = myInterface.get(“张三”);<br>    }<br>}</p>
+<p>对于上面的构造器引用，也就是调用StringBuilder类的构造方法来实现MyInteface函数式接口中唯一的抽象方法，当调用MyInterface接口的test()方法是，调用参数会传给StringBuilder构造器，从上面的程序中可以看出，调用myInterface对象的get()方法时，实际只传入了一个String类型的参数，这个String类型的参数会被传给StringBuilder的构造器。</p>
+<p>19.4 Lambda表达式和匿名内部类的联系和区别<br>从前面介绍可以看出，Lambda 表达式是匿名内部类的一种简化，因此它可以部分取代匿名内部类的作用，Lambda 表达式与匿名内部类存在如下相同点。</p>
+<p>Lambda 表达式与匿名内部类一样，都可以直接访问”effectively final”的局部变量，以及外部 类的成员变量（包括实例变量和类变量）。<br>Lambda 表达式创建的对象与匿名内部类生成的对象一样，都可以直接调用从接口中继承的默认 方法。<br>首先创建函数式接口：</p>
+<p>package cn.bytecollege.ano;<br>@FunctionalInterface<br>public interface Display {<br>    int add(int a,int b);</p>
+<pre><code>default void print() &#123;
+    System.out.println(&quot;Hello!&quot;);
+&#125;
+</code></pre>
+<p>}</p>
+<p>package cn.bytecollege.ano;</p>
+<p>public class LambdaTest {<br>    private int age = 18;<br>    private static String name = “Byte科技”;</p>
+<pre><code>public void test() &#123;
+    String book = &quot;Java编程思想&quot;;
+    Display display = (a,b)-&gt;&#123;
+        //访问外部类的实例变量
+        System.out.println(age);
+        //访问外部类的类变量
+        System.out.println(name);
+        //访问局部变量
+        System.out.println(book);
+        return a+b;
+    &#125;;
+    //调用display对象从接口继承的默认方法
+    display.print();
+</code></pre>
+<p>//        book = “Java核心技术卷”;<br>        System.out.println(display.add(1, 2));<br>    }<br>}</p>
+<p>创建测试类：</p>
+<p>package cn.bytecollege.ano;</p>
+<p>public class Test {<br>    public static void main(String[] args) {<br>        LambdaTest test = new LambdaTest();<br>        test.test();<br>    }<br>}</p>
+<p>上面的程序使用Lambda表达式创建了一个Display接口的对象，Lambda表达式分别访问了外部类的实例变量，类变量从这些来看Lambda表达式的代码块和匿名内部类的方法体是相同的。<br>和匿名内部类相似，由于Lambda表达式访问了了book局部变量，因此该局部变量相当于有一个隐式的final修饰，不允许对book局部变量重新赋值。<br>当程序使用 Lambda 表达式创建了 Display 的对象之后，该对象不仅可调用接口中唯一的抽象方法，也可调用接口中的默认方法。<br>Lambda表达式与匿名内部类主要存在如下区别:</p>
+<p>匿名内部类可以为任意接口创建实例——不管接口包含多少个抽象方法，只要匿名内部类实现 所有的抽象方法即可;但 Lambda 表达式只能为函数式接口创建实例。<br>匿名内部类可以为抽象类甚至普通类创建实例;但 Lambda 表达式只能为函数式接口创建实例。<br>匿名内部类实现的抽象方法的方法体允许调用接口中定义的默认方法;但 Lambda 表达式的代 码块不允许调用接口中定义的默认方法。 <br>19.5 Stream<br>Java8 还新增了Stream、IntStream、LongStream、DoubleStream等流式API（注意：这里的Stream并不是IO中的Stream），这些API代表多个支持串行和并行聚集操作的元素。上面的4个接口中，Stream是一个通用的流接口，而IntStream、LongStream、DoubleStream则代表元素类型为int、long、double的流。<br>Java 8 还为上面每个流式 API 提供了对应的 Builder，例如 Stream.Builder、IntStream.Builder、 LongStream.Builder、DoubleStream.Builder，开发者可以通过这些 Builder 来创建对应的流 独立使用 Stream 的步骤如下∶</p>
+<p>使用 Stream 或 XxxStream 的 builder()类方法创建该 Stream 对应的 Builder。<br>重复调用 Builder 的 add()方法向该流中添加多个元素。<br>调用 Builder 的 build()方法获取对应的 Stream。<br>调用 Stream 的聚集方法。<br>Stream提供了大量的方法进行聚集操作，这些方法可以是中间的，也可以是末端的。</p>
+<p>中间方法∶中间操作允许流保持打开状态，并允许直接调用后续方法。也就是说中间方法可以连续调用。<br>末端方法; 末端方法是对流的最终操作。当对某个 Stream 执行末端方法后，该流将会被”消耗” 且不再可用。换句话说就是末端方法一旦调用后就会关闭流，再不能对流进行操作，否则会抛出异常。<br>下面先介绍Stream常用的中间方法：</p>
+<p>filter(Predicate predicate)∶ 过滤 Stream 中所有不符合 predicate 的元素。<br>mapToXxx(ToXxxFunction mapper)∶使用 ToXxxFunction 对流中的元素执行一对一的转换，该方 法返回的新流中包含了ToXxxFunction 转换生成的所有元素。<br>peek(Consumer action)∶ 依次对每个元素执行一些操作，该方法返回的流与原有流包含相同的元 素。该方法主要用于调试。<br>distinct()∶该方法用于排序流中所有重复的元素（判断元素重复的标准是使用 equals（）比较返回 true）。这是一个有状态的方法。<br>sorted()∶该方法用于保证流中的元素在后续的访问中处于有序状态。这是一个有状态的方法。<br>limit(long maxSize)∶ 该方法用于保证对该流的后续访问中最大允许访问的元素个数。这是一个 有状态的、短路方法。<br>下面简单介绍一下 Stream 常用的末端方法。</p>
+<p>forEach(Consumer action)∶ 遍历流中所有元素，对每个元素执行 action。<br>toArray()∶将流中所有元素转换为一个数组。<br>reduce（）∶该方法有三个重载的版本，都用于通过某种操作来合并流中的元素。<br>min()∶ 返回流中所有元素的最小值。<br>max()∶ 返回流中所有元素的最大值。<br>count()∶ 返回流中所有元素的数量。<br>anyMatch(Predicate predicate)：判断流中是否至少包含一个元素符合 Predicate 条件。<br>allMatch(Predicate predicate)：判断流中是否每个元素都符合 Predicate 条件。<br>noneMatch(Predicate predicate)∶判断流中是否所有元素都不符合 Predicate 条件。<br>findFirst()∶ 返回流中的第一个元素。<br>findAny()∶返回流中的任意一个元素。<br>下面，通过示例来学习Stream的使用：</p>
+<p>package cn.bytecollege.stream;</p>
+<p>import java.util.stream.IntStream;</p>
+<p>public class IntStreamTest {<br>    public static void main(String[] args) {<br>        IntStream is = IntStream.builder()<br>                .add(100)<br>                .add(10)<br>                .add(30)<br>                .add(40)<br>                .build();<br>        //调用聚集方法,下列方法都是末端方法，因此同时只能调用1个<br>//        System.out.println(“最大值：”+is.max().getAsInt());<br>//        System.out.println(“最小值：”+is.min().getAsInt());<br>//        System.out.println(“总和：”+is.sum());<br>//        System.out.println(“总数”+is.count());<br>//        System.out.println(“平均值”+is.average());<br>//        System.out.println(“判断所有元素的是否都大于10:”+is.allMatch(e-&gt;e&gt;10));<br>//        System.out.println(“判断是否任意一个元素都大于10:”+is.anyMatch(e-&gt;e&gt;20));</p>
+<pre><code>    is.forEach(System.out::println);
+    
+&#125;
+</code></pre>
+<p>}<br>除此之外，Java8允许使用流式API来操作集合，这也是Stream的重要使用场景之一，Collection接口提供了stream()默认方法，该方法可以返回该集合对应的流，下面使用Stream来操作集合。</p>
+<p>package cn.bytecollege.stream;</p>
+<p>import java.util.ArrayList;<br>import java.util.List;<br>import java.util.stream.Stream;</p>
+<p>public class ListStreamDemo {<br>    public static void main(String[] args) {</p>
+<pre><code>    List&lt;String&gt; list = new ArrayList&lt;&gt;();
+    //list中添加元素
+    list.add(&quot;Java编程思想&quot;);
+    list.add(&quot;Java核心技术卷&quot;);
+    list.add(&quot;Effective Java&quot;);
+    list.add(&quot;Spring 入门与精通&quot;);
+    list.add(&quot;并发编程之美&quot;);
+    //获取Stream
+    Stream&lt;String&gt; stream = list.stream();
+    //统计包含Java字符串的元素总数
+</code></pre>
+<p>//        System.out.println(stream.filter(e-&gt;e.contains(“Java”)).count());<br>        //取出前3个元素<br>        stream.limit(3).forEach(System.out::println);<br>    }<br>}</p>
+<p>在上面的实例中首先获取了List的Stream，在代码20行对stream进行了过滤，筛选出了包含Java的字符串，然后调用了count()统计了过滤后的字符串个数。因为count()是末端方法，因此调用后再不能进行后续操作。代码22行是用limit取出了前3个元素，并对其进行了遍历。<br>需要注意的是，Stream对集合的操作并不影响List中保存的数据。</p>
+
+    </div>
+
+    
+    
+    
+    
+    <div>
+      
+         <div>
+	
+		<div style="text-align:center;color:#bfbfbf;font-size:16px;"> 
+ 		<span>-------- 本文结束 </span> 
+ 		<i class="fa fa-paw"></i> 
+ 		<span> 感谢阅读 --------</span>
+		</div> 
+  	
+</div>
+      
+    </div>
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div></div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.png" alt="simon·yi an 微信">
+        <span>微信</span>
+      </div>
+
+  </div>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/09/17/xianTrain24-reflex/" rel="prev" title="反射和注解">
+                  <i class="fa fa-chevron-left"></i> 反射和注解
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">simon·yi an</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">367k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">5:33</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+  <div class="powered-by">
+  <i class="fa fa-user-md"></i>
+  <span id="busuanzi_container_site_uv">
+    本站总访客数:<span id="busuanzi_value_site_uv"></span>&nbsp;&nbsp;| 
+  </span>
+  <span id="busuanzi_container_site_pv">
+      &nbsp;本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  </span>
+  </div>
+  </div>
+<script>
+      var now = new Date(); 
+      function createtime() { 
+          var grt= new Date("03/12/2019 12:00:00");//此处修改你的建站时间或者网站上线时间 
+          now.setTime(now.getTime()+250); 
+          days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+          hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+          if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+          mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+          seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+          snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+          document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+          document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+      } 
+  setInterval("createtime()",250);
+  </script>
+    </div>
+  </footer>
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="https://cdn.jsdelivr.net/npm/ribbon.js@1.0.2/dist/ribbon.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+  <script async src="/js/cursor/fireworks.js"></script>
+
+
+
+
+  <script src="/js/activate-power-mode.min.js"></script>
+  <script>
+    POWERMODE.colorful = true;
+    POWERMODE.shake = false;
+    document.body.addEventListener('input', POWERMODE);
+  </script>
+
+</body>
+</html>
